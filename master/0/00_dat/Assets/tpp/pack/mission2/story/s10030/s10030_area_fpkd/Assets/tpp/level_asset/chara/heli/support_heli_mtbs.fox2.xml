@@ -1,0 +1,324 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x5D659C0" id="0x12C7B">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="3">
+          <containerEntry key="HeliGameObject">
+            <data>0x5D663D0</data>
+          </containerEntry>
+          <containerEntry key="SupportHeli">
+            <data>0x5D66EC0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x5DE9380</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObject" classVersion="2" classID="0x58" addr="0x5D663D0" id="0x12C7D">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>HeliGameObject</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D659C0</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppHeli2</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="totalCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="realizedCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D66440</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppHeli2Parameter" classVersion="2" classID="0x158" addr="0x5D66440" id="0x12C7F">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D663D0</containerEntry>
+        </property>
+        <property name="partsFiles" type="FilePtr" container="StringMap" arraySize="3">
+          <containerEntry key="Main">
+            <data>/Assets/tpp/parts/mecha/uth/uth0_main0_def.parts</data>
+          </containerEntry>
+          <containerEntry key="Missile">
+            <data>/Assets/tpp/parts/mecha/uth/uth0_ammo0_def.parts</data>
+          </containerEntry>
+          <containerEntry key="Rocket">
+            <data>/Assets/tpp/parts/mecha/uth/uth0_ammo1_def.parts</data>
+          </containerEntry>
+        </property>
+        <property name="fmdlFiles" type="FilePtr" container="StringMap" arraySize="23">
+          <containerEntry key="PilotL">
+            <data>/Assets/tpp/chara/dds/Scenes/dds9_main0_v00_sta.fmdl</data>
+          </containerEntry>
+          <containerEntry key="PilotR">
+            <data>/Assets/tpp/chara/dds/Scenes/dds9_main0_v00_sta.fmdl</data>
+          </containerEntry>
+          <containerEntry key="GunArmL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_arms0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="GunArmR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_arms1_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="GunL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_mgun0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="GunR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_mgun0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Shield">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_shld0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ExtraWeapon">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_wepn0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherLL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherLR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherRL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherRR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherLL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherLR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherRL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherRR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Logo">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_logo1_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Glass0">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_glas0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Glass1">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_glas1_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Glass2">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_glas2_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Glass3">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_glas3_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Glass4">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_glas4_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="Glass5">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_glas5_def.fmdl</data>
+          </containerEntry>
+        </property>
+        <property name="fcnpFiles" type="FilePtr" container="StringMap" arraySize="7">
+          <containerEntry key="Main">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_main0_def.fcnp</data>
+          </containerEntry>
+          <containerEntry key="GunArmL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_arms0_def.fcnp</data>
+          </containerEntry>
+          <containerEntry key="GunArmR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_arms1_def.fcnp</data>
+          </containerEntry>
+          <containerEntry key="ExtraWeapon">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_wepn0_def.fcnp</data>
+          </containerEntry>
+          <containerEntry key="Gun">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_mgun0_def.fcnp</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncher">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.fcnp</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncher">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.fcnp</data>
+          </containerEntry>
+        </property>
+        <property name="gsklFiles" type="FilePtr" container="StringMap" arraySize="13">
+          <containerEntry key="GunArmL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_arms0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="GunArmR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_arms1_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="GunL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_mgun0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="GunR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_mgun0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="ExtraWeapon">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_wepn0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherLL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherLR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherRL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="MissileLauncherRR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_miss0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherLL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherLR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherRL">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.gskl</data>
+          </containerEntry>
+          <containerEntry key="RocketLauncherRR">
+            <data>/Assets/tpp/mecha/uth/Scenes/uth0_rckt0_def.gskl</data>
+          </containerEntry>
+        </property>
+        <property name="vfxFiles" type="FilePtr" container="StringMap" arraySize="11">
+          <containerEntry key="Downwash">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchuthdnwblr01_s5MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="Explosion">
+            <data>/Assets/tpp/effect/vfx_data/explosion/fx_tpp_expmch03_m2.vfx</data>
+          </containerEntry>
+          <containerEntry key="MuzzleFlash">
+            <data>/Assets/tpp/effect/vfx_data/muzzle/fx_tpp_mzfgg01_s0FG.vfx</data>
+          </containerEntry>
+          <containerEntry key="DownwashWater">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchuthdnwblr01d_s5MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="LauncherMuzzleFlash">
+            <data>/Assets/tpp/effect/vfx_data/muzzle/fx_tpp_mzfrpg01_s0MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="LauncherBackFire">
+            <data>/Assets/tpp/effect/vfx_data/muzzle/fx_tpp_mzfbkfrpg01_s0MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="Flare">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkflr01_m1.vfx</data>
+          </containerEntry>
+          <containerEntry key="SearchLight">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrmchsrclgt01_m5MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="BarrelHeat">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchuthblh00_s3.vfx</data>
+          </containerEntry>
+          <containerEntry key="BarrelHeatSmoke">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchnadblhsmk00_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="LensFlare">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrmchsrclgt01flr_m5.vfx</data>
+          </containerEntry>
+        </property>
+        <property name="fovaFiles" type="FilePtr" container="StringMap" arraySize="1">
+          <containerEntry key="Default">
+            <data>/Assets/tpp/fova/mecha/uth/uth_v02_fv2.fv2</data>
+          </containerEntry>
+        </property>
+        <property name="mtarFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/motion/mtar/heli/west/TppHeliWest_layers.mtar</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x5D66EC0" id="0x13006">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SupportHeli</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D659C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D678D0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppHeli2</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D67940</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x5D678D0" id="0x13009">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D66EC0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppHeli2LocatorParameter" classVersion="0" classID="0x1C" addr="0x5D67940" id="0x1300B">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D66EC0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x5DE9380" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x5D659C0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>
