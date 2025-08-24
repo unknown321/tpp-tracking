@@ -134,6 +134,14 @@ TppEquip.ReloadEquipParameterTables({
 		{ TppEquip.SWP_FakeSign, 5, 3, 60, 5 },
 		{ TppEquip.SWP_FakeSign_G01, 7, 3, 80, 7 },
 		{ TppEquip.SWP_FakeSign_G02, 9, 3, 100, 8 },
+		{ TppEquip.SWP_DarkMatter, 3, 0, 0, 7 },
+		{ TppEquip.SWP_DarkMatter_G01, 4, 0, 0, 8 },
+		{ TppEquip.SWP_DarkMatter_G02, 4, 0, 0, 10 },
+		{ TppEquip.SWP_DarkMatter_G03, 6, 0, 0, 11 },
+		{ TppEquip.SWP_StunDarkMatter, 3, 0, 0, 7 },
+		{ TppEquip.SWP_StunDarkMatter_G01, 4, 0, 0, 8 },
+		{ TppEquip.SWP_StunDarkMatter_G02, 4, 0, 0, 10 },
+		{ TppEquip.SWP_StunDarkMatter_G03, 6, 0, 0, 11 },
 	},
 })
 return this

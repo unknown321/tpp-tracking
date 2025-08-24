@@ -157,9 +157,11 @@ function this.MissionPrepare()
 		title_sequence.RegisterTitleModeOnEnterFunction(this.TitleModeOnEnterFunction)
 
 		local maxReceiverBlockSize = 272 * 1024
+		local maxSightBlockSize = 105 * 1024
 		local platform = Fox.GetPlatformName()
 		if not ((platform == "Xbox360") or (platform == "PS3")) then
-			maxReceiverBlockSize = 300 * 1024
+			maxReceiverBlockSize = 330 * 1024
+			maxSightBlockSize = 106 * 1024
 		end
 		TppEquip.CreateEquipPreviewSystem({
 			maxReceiverBlockSize = maxReceiverBlockSize,
@@ -167,7 +169,7 @@ function this.MissionPrepare()
 			maxAmmoBlockSize = 80 * 1024,
 			maxStockBlockSize = 36 * 1024,
 			maxMuzzleBlockSize = 75 * 1024,
-			maxSightBlockSize = 105 * 1024,
+			maxSightBlockSize = maxSightBlockSize,
 			maxOptionBlockSize = 25 * 1024,
 			maxUnderBlockSize = 90 * 1024,
 			equipListUpCount = 5,

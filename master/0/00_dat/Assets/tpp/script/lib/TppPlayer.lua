@@ -3,7 +3,7 @@ local s = Tpp.IsTypeFunc
 local t = Tpp.IsTypeTable
 local l = Tpp.IsTypeString
 local a = Fox.StrCode32
-local r = GkEventTimerManager.Start
+local o = GkEventTimerManager.Start
 local p = GkEventTimerManager.Stop
 local n = GameObject.GetTypeIndex
 local i = GameObject.GetGameObjectId
@@ -11,7 +11,7 @@ local d = GameObject.GetTypeIndexWithTypeName
 local n = TppGameObject.GAME_OBJECT_TYPE_SOLDIER2
 local n = TppGameObject.GAME_OBJECT_TYPE_HOSTAGE2
 local n = GameObject.NULL_ID
-local o = GameObject.SendCommand
+local r = GameObject.SendCommand
 e.MISSION_CLEAR_CAMERA_FADE_DELAY_TIME = 3
 e.MISSION_CLEAR_CAMERA_DELAY_TIME = 0
 e.PLAYER_FALL_DEAD_DELAY_TIME = 0.2
@@ -95,7 +95,7 @@ function e.ForceChangePlayerToSnake(e)
 	Player.SetItemLevel(TppEquip.EQP_SUIT, vars.sortiePrepPlayerSnakeSuitLevel)
 end
 function e.ForceChangePlayerFromOcelot()
-	if e.IsCurrentPlayerOcelot() then
+	if e.IsCurrentPlayerOcelot() or e.IsCurrentPlayerQuiet() then
 		if vars.sortiePrepPlayerType == PlayerType.SNAKE or vars.sortiePrepPlayerType == PlayerType.AVATAR then
 			vars.playerPartsType = vars.sortiePrepPlayerSnakePartsType
 			vars.playerCamoType = vars.sortiePrepPlayerSnakeCamoType
@@ -426,29 +426,29 @@ function e._SetWeapons(l, m)
 	end
 end
 function e.GetWeaponSlotInfoFromWeaponSet(e, o)
-	local r, a, n, t, i
+	local r, t, n, a, i
 	if e.primaryHip then
 		r = TppDefine.WEAPONSLOT.PRIMARY_HIP
-		a = e.primaryHip
+		t = e.primaryHip
 		n = e.magazine
-		t = e.ammo
+		a = e.ammo
 		i = e.underBarrelAmmo
 	elseif e.primaryBack then
 		r = TppDefine.WEAPONSLOT.PRIMARY_BACK
-		a = e.primaryBack
+		t = e.primaryBack
 		n = e.magazine
-		t = e.ammo
+		a = e.ammo
 	elseif e.secondary then
 		r = TppDefine.WEAPONSLOT.SECONDARY
-		a = e.secondary
+		t = e.secondary
 		n = e.magazine
-		t = e.ammo
+		a = e.ammo
 	elseif e.support then
 		o = o + 1
-		a = e.support
-		t = e.ammo
+		t = e.support
+		a = e.ammo
 	end
-	return r, o, a, n, t, i
+	return r, o, t, n, a, i
 end
 function e.SaveWeaponsToUsingTemp(n)
 	if gvars.ply_isUsingTempWeapons then
@@ -961,7 +961,7 @@ function e.StartGameOverCamera(t, a, e)
 	TppSound.PostJingleOnGameOver()
 	TppSoundDaemon.PostEvent("sfx_s_force_camera_out")
 	vars.playerDisableActionFlag = PlayerDisableAction.SUBJECTIVE_CAMERA
-	r("Timer_StartGameOverCamera", 0.25)
+	o("Timer_StartGameOverCamera", 0.25)
 end
 function e._StartGameOverCamera(e, e)
 	TppUiStatusManager.ClearStatus("AnnounceLog")
@@ -1001,7 +1001,7 @@ function e.FOBStartGameOverCamera(a, e, t)
 	mvars.ply_gameOverCameraAnnounceLog = t
 	TppUiStatusManager.SetStatus("AnnounceLog", "INVALID_LOG")
 	vars.playerDisableActionFlag = PlayerDisableAction.SUBJECTIVE_CAMERA
-	r("Timer_StartGameOverCamera", 0.25)
+	o("Timer_StartGameOverCamera", 0.25)
 end
 function e.SetTargetDeadCamera(r)
 	local o
@@ -1235,7 +1235,7 @@ function e.PlayMissionClearCamera()
 	if not e then
 		return
 	end
-	r("Timer_StartPlayMissionClearCameraStep1", 0.25)
+	o("Timer_StartPlayMissionClearCameraStep1", 0.25)
 end
 function e.SetPlayerStatusForMissionEndCamera()
 	Player.SetPadMask({ settingName = "MissionClearCamera", except = true })
@@ -1246,12 +1246,12 @@ function e.ResetMissionEndCamera()
 	Player.ResetPadMask({ settingName = "MissionClearCamera" })
 	Player.RequestToStopCameraAnimation({})
 end
-function e.PlayCommonMissionEndCamera(o, s, i, l, t, n)
+function e.PlayCommonMissionEndCamera(r, s, i, l, t, n)
 	local a
 	local e = vars.playerVehicleGameObjectId
 	if Tpp.IsHorse(e) then
 		GameObject.SendCommand(e, { id = "HorseForceStop" })
-		a = o(e, t, n)
+		a = r(e, t, n)
 	elseif Tpp.IsVehicle(e) then
 		local r = GameObject.SendCommand(e, { id = "GetVehicleType" })
 		GameObject.SendCommand(e, { id = "ForceStop", enabled = true })
@@ -1268,7 +1268,7 @@ function e.PlayCommonMissionEndCamera(o, s, i, l, t, n)
 	end
 	if a then
 		local e = "Timer_StartPlayMissionClearCameraStep" .. tostring(t + 1)
-		r(e, a)
+		o(e, a)
 	end
 end
 function e._PlayMissionClearCamera(a, t)
@@ -1304,35 +1304,35 @@ function e.PlayMissionClearCameraOnFoot(p, c)
 			end
 		end
 	end
-	local t = { "SKL_004_HEAD", "SKL_002_CHEST" }
-	local a = { Vector3(0, 0, 0.05), Vector3(0.15, 0, 0) }
-	local n = { Vector3(0.1, 0.125, 0.1), Vector3(0.15, 0.1, 0.05) }
-	local e = Vector3(0, 0, -4.5)
+	local n = { "SKL_004_HEAD", "SKL_002_CHEST" }
+	local t = { Vector3(0, 0, 0.05), Vector3(0.15, 0, 0) }
+	local e = { Vector3(0.1, 0.125, 0.1), Vector3(0.15, 0.1, 0.05) }
+	local a = Vector3(0, 0, -4.5)
 	local r = 0.3
 	local l
 	local o = false
 	local i = 20
 	local s = false
 	if p == 1 then
-		t = { "SKL_004_HEAD", "SKL_002_CHEST" }
-		a = { Vector3(0, 0, 0.05), Vector3(0.15, 0, 0) }
-		n = { Vector3(0.1, 0.125, 0.1), Vector3(0.15, 0.1, 0.05) }
-		e = Vector3(0, 0, -1.5)
+		n = { "SKL_004_HEAD", "SKL_002_CHEST" }
+		t = { Vector3(0, 0, 0.05), Vector3(0.15, 0, 0) }
+		e = { Vector3(0.1, 0.125, 0.1), Vector3(0.15, 0.1, 0.05) }
+		a = Vector3(0, 0, -1.5)
 		r = 0.3
 		l = 1
 		o = true
 	elseif c then
-		t = { "SKL_004_HEAD" }
-		a = { Vector3(0, 0, 0.05) }
-		n = { Vector3(0.1, 0.125, 0.1) }
-		e = Vector3(0, -0.5, -3.5)
+		n = { "SKL_004_HEAD" }
+		t = { Vector3(0, 0, 0.05) }
+		e = { Vector3(0.1, 0.125, 0.1) }
+		a = Vector3(0, -0.5, -3.5)
 		r = 3
 		i = 4
 	else
-		t = { "SKL_004_HEAD", "SKL_031_LLEG", "SKL_041_RLEG" }
-		a = { Vector3(0, 0, 0.05), Vector3(0.15, 0, 0), Vector3(-0.15, 0, 0) }
-		n = { Vector3(0.1, 0.125, 0.1), Vector3(0.15, 0.1, 0.05), Vector3(0.15, 0.1, 0.05) }
-		e = Vector3(0, 0, -3.2)
+		n = { "SKL_004_HEAD", "SKL_031_LLEG", "SKL_041_RLEG" }
+		t = { Vector3(0, 0, 0.05), Vector3(0.15, 0, 0), Vector3(-0.15, 0, 0) }
+		e = { Vector3(0.1, 0.125, 0.1), Vector3(0.15, 0.1, 0.05), Vector3(0.15, 0.1, 0.05) }
+		a = Vector3(0, 0, -3.2)
 		r = 3
 		s = true
 	end
@@ -1343,10 +1343,10 @@ function e.PlayMissionClearCameraOnFoot(p, c)
 		followTime = 4,
 		followDelayTime = 0.1,
 		candidateRots = { { 1, 168 }, { 1, -164 } },
-		skeletonNames = t,
-		skeletonCenterOffsets = a,
-		skeletonBoundings = n,
-		offsetPos = e,
+		skeletonNames = n,
+		skeletonCenterOffsets = t,
+		skeletonBoundings = e,
+		offsetPos = a,
 		focalLength = 28,
 		aperture = 1.875,
 		timeToSleep = i,
@@ -1416,8 +1416,8 @@ function e.PlayMissionClearCameraOnRideHorse(e, p, c)
 	return l
 end
 function e.PlayMissionClearCameraOnRideLightVehicle(e, s, l)
-	local a = Vector3(-0.35, 0.6, 0.7)
-	local e = Vector3(0, 0, -2.25)
+	local e = Vector3(-0.35, 0.6, 0.7)
+	local a = Vector3(0, 0, -2.25)
 	local t = 0.2
 	local n
 	local r = false
@@ -1427,14 +1427,14 @@ function e.PlayMissionClearCameraOnRideLightVehicle(e, s, l)
 		o = 4
 	end
 	if s == 1 then
-		a = Vector3(-0.35, 0.6, 0.7)
-		e = Vector3(0, 0, -2.25)
+		e = Vector3(-0.35, 0.6, 0.7)
+		a = Vector3(0, 0, -2.25)
 		t = 0.2
 		n = 0.5
 		r = true
 	else
-		a = Vector3(-0.35, 0.4, 0.7)
-		e = Vector3(0, 0, -4)
+		e = Vector3(-0.35, 0.4, 0.7)
+		a = Vector3(0, 0, -4)
 		t = 0.75
 		i = true
 	end
@@ -1445,8 +1445,8 @@ function e.PlayMissionClearCameraOnRideLightVehicle(e, s, l)
 		followTime = 5,
 		followDelayTime = 0,
 		candidateRots = { { 3, 160 }, { 3, -160 } },
-		offsetTarget = a,
-		offsetPos = e,
+		offsetTarget = e,
+		offsetPos = a,
 		focalLength = 28,
 		aperture = 1.875,
 		timeToSleep = o,
@@ -1606,8 +1606,8 @@ function e.PlayMissionClearCameraOnRideTank(e, l, i)
 	return o
 end
 function e.PlayMissionClearCameraOnWalkerGear(a, p, s)
-	local a = Vector3(0, 0.55, 0.35)
-	local t = Vector3(0, 0, -3.65)
+	local t = Vector3(0, 0.55, 0.35)
+	local a = Vector3(0, 0, -3.65)
 	local n = 0.2
 	local l
 	local o = false
@@ -1617,14 +1617,14 @@ function e.PlayMissionClearCameraOnWalkerGear(a, p, s)
 		r = 4
 	end
 	if p == 1 then
-		a = Vector3(0, 0.55, 0.35)
-		t = Vector3(0, 0, -3.65)
+		t = Vector3(0, 0.55, 0.35)
+		a = Vector3(0, 0, -3.65)
 		n = 0.2
 		l = 1
 		o = true
 	else
-		a = Vector3(0, 0.4, 0.35)
-		t = Vector3(0, 0, -4.95)
+		t = Vector3(0, 0.4, 0.35)
+		a = Vector3(0, 0, -4.95)
 		n = 3
 		i = true
 	end
@@ -1635,8 +1635,8 @@ function e.PlayMissionClearCameraOnWalkerGear(a, p, s)
 		followTime = 3,
 		followDelayTime = 0.1,
 		candidateRots = { { 7, 165 }, { 7, -165 } },
-		offsetTarget = a,
-		offsetPos = t,
+		offsetTarget = t,
+		offsetPos = a,
 		focalLength = 28,
 		aperture = 1.875,
 		timeToSleep = r,
@@ -1665,7 +1665,7 @@ function e.FOBPlayMissionClearCamera()
 	if not e then
 		return
 	end
-	r("Timer_FOBStartPlayMissionClearCameraStep1", 0.25)
+	o("Timer_FOBStartPlayMissionClearCameraStep1", 0.25)
 end
 function e._FOBPlayMissionClearCamera(a)
 	e.FOBPlayCommonMissionEndCamera(e.FOBPlayMissionClearCameraOnFoot, a)
@@ -1675,7 +1675,7 @@ function e.FOBPlayCommonMissionEndCamera(t, a)
 	e = t(a)
 	if e then
 		local a = "Timer_FOBStartPlayMissionClearCameraStep" .. tostring(a + 1)
-		r(a, e)
+		o(a, e)
 	end
 end
 function e.FOBRequestMissionClearMotion()
@@ -1695,7 +1695,7 @@ function e.FOBPlayMissionClearCameraOnFoot(l)
 			)
 		elseif PlayerInfo.OrCheckStatus({ PlayerStatus.SQUAT, PlayerStatus.CRAWL }) then
 			Player.RequestToSetTargetStance(PlayerStance.STAND)
-			r("Timer_FOBWaitStandStance", 1)
+			o("Timer_FOBWaitStandStance", 1)
 		else
 			e.FOBRequestMissionClearMotion()
 		end
@@ -1703,24 +1703,27 @@ function e.FOBPlayMissionClearCameraOnFoot(l)
 	local r = { "SKL_004_HEAD", "SKL_002_CHEST" }
 	local n = { Vector3(0, 0.1, 0), Vector3(0, -0.05, 0) }
 	local a = { Vector3(0.1, 0.125, 0.1), Vector3(0.15, 0.1, 0.05) }
-	local t = Vector3(0, 0, -4.5)
-	local e = 0.3
+	local e = Vector3(0, 0, -4.5)
+	local t = 0.3
 	local o
 	local i = false
 	if l == 1 then
 		r = { "SKL_004_HEAD", "SKL_002_CHEST" }
 		n = { Vector3(0, 0.25, 0), Vector3(0, -0.05, 0) }
 		a = { Vector3(0.1, 0.125, 0.1), Vector3(0.1, 0.125, 0.1) }
-		t = Vector3(0, 0, -1)
-		e = 0.3
+		e = Vector3(0, 0, -1)
+		t = 0.3
 		o = 1
 		i = true
 	else
 		r = { "SKL_004_HEAD", "SKL_002_CHEST" }
 		n = { Vector3(0, 0.15, 0), Vector3(0, -0.05, 0) }
 		a = { Vector3(0.1, 0.125, 0.1), Vector3(0.1, 0.125, 0.1) }
-		t = Vector3(0, 0, -1.5)
-		e = 3
+		e = Vector3(0, 0, -1.5)
+		t = 3
+	end
+	if vars.playerType == PlayerType.QUIET then
+		e = Vector3(0, 0.8, -1.25)
 	end
 	Player.RequestToPlayCameraNonAnimation({
 		characterId = GameObject.GetGameObjectIdByIndex("TppPlayer2", 0),
@@ -1732,11 +1735,11 @@ function e.FOBPlayMissionClearCameraOnFoot(l)
 		skeletonNames = r,
 		skeletonCenterOffsets = n,
 		skeletonBoundings = a,
-		offsetPos = t,
+		offsetPos = e,
 		focalLength = 28,
 		aperture = 1.875,
 		timeToSleep = 20,
-		interpTimeAtStart = e,
+		interpTimeAtStart = t,
 		fitOnCamera = false,
 		timeToStartToFitCamera = 1,
 		fitCameraInterpTime = 0.3,
@@ -1750,7 +1753,7 @@ function e.PlayMissionAbortCamera()
 	if not e then
 		return
 	end
-	r("Timer_StartPlayMissionAbortCamera", 0.25)
+	o("Timer_StartPlayMissionAbortCamera", 0.25)
 end
 function e._PlayMissionAbortCamera()
 	TppMusicManager.PostJingleEvent("SingleShot", "Play_bgm_common_jingle_failed")
@@ -2574,9 +2577,9 @@ end
 function e.GetSoldierFultonSucceedRatio(t)
 	local e = 0
 	local n = 0
-	local a = o(t, { id = "GetLifeStatus" })
-	local r = GameObject.SendCommand(t, { id = "GetStateFlag" })
-	if bit.band(r, StateFlag.DYING_LIFE) ~= 0 then
+	local a = r(t, { id = "GetLifeStatus" })
+	local o = GameObject.SendCommand(t, { id = "GetStateFlag" })
+	if bit.band(o, StateFlag.DYING_LIFE) ~= 0 then
 		e = -70
 	elseif (a == TppGameObject.NPC_LIFE_STATE_SLEEP) or (a == TppGameObject.NPC_LIFE_STATE_FAINT) then
 		e = 0
@@ -2596,15 +2599,15 @@ function e.GetSoldierFultonSucceedRatio(t)
 		[TppMotherBaseManagementConst.SECTION_FUNC_RANK_F] = 0,
 		[TppMotherBaseManagementConst.SECTION_FUNC_RANK_NONE] = 0,
 	}
-	local r = TppMotherBaseManagement.GetSectionFuncRank({
+	local o = TppMotherBaseManagement.GetSectionFuncRank({
 		sectionFuncId = TppMotherBaseManagementConst.SECTION_FUNC_ID_MEDICAL_STAFF_EMERGENCY,
 	})
-	local a = a[r] or 0
+	local a = a[o] or 0
 	e = e + a
 	if e > 0 then
 		e = 0
 	end
-	local a = o(t, { id = "GetStatus" })
+	local a = r(t, { id = "GetStatus" })
 	if a == EnemyState.STAND_HOLDUP then
 		n = -10
 	end
@@ -2673,11 +2676,11 @@ end
 function e.ResetStealthAssistCount()
 	vars.stealthAssistLeftCount = 0
 end
-function e.OnPickUpCollection(r, t, a, i)
-	local r = 255
-	TppCollection.RepopCountOperation("SetAt", t, r)
+function e.OnPickUpCollection(o, t, a, i)
+	local o = 255
+	TppCollection.RepopCountOperation("SetAt", t, o)
 	TppTerminal.AddPickedUpResourceToTempBuffer(a, i)
-	local r = {
+	local o = {
 		[TppCollection.TYPE_POSTER_SOL_AFGN] = "key_poster_3500",
 		[TppCollection.TYPE_POSTER_SOL_MAFR] = "key_poster_3501",
 		[TppCollection.TYPE_POSTER_GRAVURE_V] = "key_poster_3502",
@@ -2685,22 +2688,22 @@ function e.OnPickUpCollection(r, t, a, i)
 		[TppCollection.TYPE_POSTER_MOE_V] = "key_poster_3504",
 		[TppCollection.TYPE_POSTER_MOE_H] = "key_poster_3505",
 	}
-	local r = r[a]
-	if r ~= nil then
-		TppUI.ShowAnnounceLog("getPoster", r, TppTerminal.GMP_POSTER)
+	local o = o[a]
+	if o ~= nil then
+		TppUI.ShowAnnounceLog("getPoster", o, TppTerminal.GMP_POSTER)
 	end
-	local r
+	local o
 	if TppTerminal.RESOURCE_INFORMATION_TABLE[a] and TppTerminal.RESOURCE_INFORMATION_TABLE[a].count then
-		r = TppTerminal.RESOURCE_INFORMATION_TABLE[a].count
+		o = TppTerminal.RESOURCE_INFORMATION_TABLE[a].count
 	end
 	if TppCollection.IsHerbByType(a) then
 		local e = GameObject.GetGameObjectIdByIndex("TppBuddyDog2", 0)
 		if e ~= n then
-			o(e, { id = "GetPlant", uniqueId = t })
+			r(e, { id = "GetPlant", uniqueId = t })
 		end
 	end
 	if TppCollection.IsMaterialByType(a) then
-		TppUI.ShowAnnounceLog("find_processed_res", i, r)
+		TppUI.ShowAnnounceLog("find_processed_res", i, o)
 	end
 	if a == TppCollection.TYPE_DIAMOND_SMALL then
 		TppUI.ShowAnnounceLog("find_diamond", TppDefine.SMALL_DIAMOND_GMP)
@@ -2719,17 +2722,17 @@ function e.OnPickUpCollection(r, t, a, i)
 	TppTerminal.PickUpEmblem(t)
 end
 function e.CheckAllStationPickedUp()
-	local a = true
-	for t, e in ipairs(mvars.ply_stationLocatorList) do
-		local e = TppCollection.RepopCountOperation("GetAt", e)
-		if e then
-			if e < 1 then
-				a = false
+	local e = true
+	for t, a in ipairs(mvars.ply_stationLocatorList) do
+		local a = TppCollection.RepopCountOperation("GetAt", a)
+		if a then
+			if a < 1 then
+				e = false
 				break
 			end
 		end
 	end
-	if a then
+	if e then
 		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.DESIGN_3011, isShowAnnounceLog = true })
 		if TppLocation.IsAfghan() then
 			gvars.ply_isAllGotStation_Afgh = true
@@ -2744,7 +2747,7 @@ end
 function e.OnPickUpPlaced(e, e, a)
 	local e = GameObject.GetGameObjectIdByIndex("TppBuddyDog2", 0)
 	if e ~= n then
-		o(e, { id = "GetPlacedItem", index = a })
+		r(e, { id = "GetPlacedItem", index = a })
 	end
 end
 function e.OnPickUpWeapon(t, e, a)
@@ -2755,13 +2758,13 @@ end
 function e.RestoreSupplyCbox()
 	if e.IsExistSupplyCboxSystem() then
 		local e = { type = "TppSupplyCboxSystem" }
-		o(e, { id = "RestoreRequest" })
+		r(e, { id = "RestoreRequest" })
 	end
 end
 function e.StoreSupplyCbox()
 	if e.IsExistSupplyCboxSystem() then
 		local e = { type = "TppSupplyCboxSystem" }
-		o(e, { id = "StoreRequest" })
+		r(e, { id = "StoreRequest" })
 	end
 end
 function e.IsExistSupplyCboxSystem()
@@ -2774,13 +2777,13 @@ end
 function e.RestoreSupportAttack()
 	if e.IsExistSupportAttackSystem() then
 		local e = { type = "TppSupportAttackSystem" }
-		o(e, { id = "RestoreRequest" })
+		r(e, { id = "RestoreRequest" })
 	end
 end
 function e.StoreSupportAttack()
 	if e.IsExistSupportAttackSystem() then
 		local e = { type = "TppSupportAttackSystem" }
-		o(e, { id = "StoreRequest" })
+		r(e, { id = "StoreRequest" })
 	end
 end
 function e.IsExistSupportAttackSystem()
@@ -2793,7 +2796,7 @@ end
 function e.StorePlayerDecoyInfos()
 	if e.IsExistDecoySystem() then
 		local e = { type = "TppDecoySystem" }
-		o(e, { id = "StorePlayerDecoyInfos" })
+		r(e, { id = "StorePlayerDecoyInfos" })
 	end
 end
 function e.IsExistDecoySystem()
@@ -2823,7 +2826,7 @@ function e.WarpByCboxDelivery()
 		TppQuest.ClearBlockStateRequest()
 	end
 	mvars.ply_deliveryWarpState = e.DELIVERY_WARP_STATE.START_WARP
-	r("Timer_DeliveryWarpSoundCannotCancel", a)
+	o("Timer_DeliveryWarpSoundCannotCancel", a)
 	local a = { type = "TppPlayer2", index = 0 }
 	local e = { id = "WarpToStation", stationId = mvars.ply_selectedCboxDeliveryUniqueId }
 	GameObject.SendCommand(a, e)
@@ -2984,35 +2987,35 @@ function e.CheckCaptureCage(n, r)
 	if n < 2 or n > 4 then
 		return
 	end
-	local a = {}
-	local t = 5
-	local o = r / t
+	local t = {}
+	local a = 5
+	local o = r / a
 	for r = 1, o do
 		if n == 2 then
-			Player.DEBUG_PlaceAround({ radius = 5, count = t, equipId = TppEquip.EQP_SWP_CaptureCage })
+			Player.DEBUG_PlaceAround({ radius = 5, count = a, equipId = TppEquip.EQP_SWP_CaptureCage })
 		elseif n == 3 then
-			Player.DEBUG_PlaceAround({ radius = 5, count = t, equipId = TppEquip.EQP_SWP_CaptureCage_G01 })
+			Player.DEBUG_PlaceAround({ radius = 5, count = a, equipId = TppEquip.EQP_SWP_CaptureCage_G01 })
 		elseif n == 4 then
-			Player.DEBUG_PlaceAround({ radius = 5, count = t, equipId = TppEquip.EQP_SWP_CaptureCage_G02 })
+			Player.DEBUG_PlaceAround({ radius = 5, count = a, equipId = TppEquip.EQP_SWP_CaptureCage_G02 })
 		end
-		for e = 1, t do
+		for e = 1, a do
 			coroutine.yield()
 		end
-		local t = TppPlaced.GetCaptureCageInfo()
-		for n, t in pairs(t) do
-			local n, t, r, e = e.EvaluateCaptureCage(t.x, t.z, t.grade, t.material)
-			if t ~= 0 then
-				TppMotherBaseManagement.DirectAddDataBaseAnimal({ dataBaseId = t, areaName = n, isNew = true })
-				if a[e] == nil then
-					a[e] = 1
+		local a = TppPlaced.GetCaptureCageInfo()
+		for n, a in pairs(a) do
+			local n, a, r, e = e.EvaluateCaptureCage(a.x, a.z, a.grade, a.material)
+			if a ~= 0 then
+				TppMotherBaseManagement.DirectAddDataBaseAnimal({ dataBaseId = a, areaName = n, isNew = true })
+				if t[e] == nil then
+					t[e] = 1
 				else
-					a[e] = a[e] + 1
+					t[e] = t[e] + 1
 				end
 			end
 		end
 		TppPlaced.DeleteAllCaptureCage()
 	end
-	for a, e in pairs(a) do
+	for a, e in pairs(t) do
 		local e = (e / r) * 100
 	end
 end
@@ -3070,7 +3073,7 @@ function e._CheckRotation(e, a, t, n, r)
 		return false
 	end
 end
-local function n(a)
+local function r(a)
 	local n = math.random(0, 99)
 	local e = 0
 	local t = -1
@@ -3083,7 +3086,7 @@ local function n(a)
 	end
 	return t
 end
-local function p(e, a)
+local function c(e, a)
 	for t, e in pairs(e) do
 		if e == a then
 			return true
@@ -3091,10 +3094,10 @@ local function p(e, a)
 	end
 	return false
 end
-function e.EvaluateCaptureCage(i, a, o, c)
+function e.EvaluateCaptureCage(i, a, o, m)
 	local t = mvars
-	local r = t.loc_locationAnimalSettingTable
-	local l = r.captureCageAnimalAreaSetting
+	local n = t.loc_locationAnimalSettingTable
+	local l = n.captureCageAnimalAreaSetting
 	local t = "wholeArea"
 	for n, e in pairs(l) do
 		if ((i >= e.activeArea[1] and i <= e.activeArea[3]) and a >= e.activeArea[2]) and a <= e.activeArea[4] then
@@ -3104,105 +3107,105 @@ function e.EvaluateCaptureCage(i, a, o, c)
 	end
 	local a = 0
 	if o == 2 then
-		a = n(e.CageRandomTableG3)
+		a = r(e.CageRandomTableG3)
 	elseif o == 1 then
-		a = n(e.CageRandomTableG2)
+		a = r(e.CageRandomTableG2)
 	else
-		a = n(e.CageRandomTableG1)
+		a = r(e.CageRandomTableG1)
 	end
-	local e = r.captureAnimalList
-	local l = r.animalRareLevel
-	local s = r.animalInfoList
-	local n = {}
-	if e[t] == nil then
+	local r = n.captureAnimalList
+	local s = n.animalRareLevel
+	local p = n.animalInfoList
+	local e = {}
+	if r[t] == nil then
 		t = "wholeArea"
 	end
 	local i = false
-	for t, e in pairs(e[t]) do
-		local t = l[e]
-		if t >= TppMotherBaseManagementConst.ANIMAL_RARE_SR and o == 2 then
-			if not TppMotherBaseManagement.IsGotDataBase({ dataBaseId = e }) then
-				table.insert(n, e)
-				a = t
+	for n, t in pairs(r[t]) do
+		local n = s[t]
+		if n >= TppMotherBaseManagementConst.ANIMAL_RARE_SR and o == 2 then
+			if not TppMotherBaseManagement.IsGotDataBase({ dataBaseId = t }) then
+				table.insert(e, t)
+				a = n
 				i = true
 				break
 			end
 		end
 	end
 	if not i then
-		local r = a
+		local n = a
 		while a >= 0 do
-			for t, e in pairs(e[t]) do
-				if l[e] == a then
-					table.insert(n, e)
+			for n, t in pairs(r[t]) do
+				if s[t] == a then
+					table.insert(e, t)
 				end
 			end
-			if table.maxn(n) > 0 then
+			if table.maxn(e) > 0 then
 				break
 			end
 			a = a - 1
 		end
 		if a < 0 then
-			a = r
+			a = n
 			t = "wholeArea"
 			while a >= 0 do
-				for t, e in pairs(e[t]) do
-					if l[e] == a then
-						table.insert(n, e)
+				for n, t in pairs(r[t]) do
+					if s[t] == a then
+						table.insert(e, t)
 					end
 				end
-				if table.maxn(n) > 0 then
+				if table.maxn(e) > 0 then
 					break
 				end
 				a = a - 1
 			end
 		end
 	end
-	local i = r.animalMaterial
+	local l = n.animalMaterial
 	local o = {}
-	local r = a
-	if i ~= nil then
-		while r >= 0 do
-			for a, e in pairs(e.wholeArea) do
-				if i[e] == nil and l[e] == r then
+	local i = a
+	if l ~= nil then
+		while i >= 0 do
+			for a, e in pairs(r.wholeArea) do
+				if l[e] == nil and s[e] == i then
 					table.insert(o, e)
 				end
 			end
 			if table.maxn(o) > 0 then
 				break
 			end
-			r = r - 1
+			i = i - 1
 		end
 	end
-	local e = 0
-	local l = table.maxn(n)
-	if l == 1 then
-		e = n[1]
-	elseif l > 1 then
-		local a = math.random(1, l)
-		e = n[a]
+	local n = 0
+	local r = table.maxn(e)
+	if r == 1 then
+		n = e[1]
+	elseif r > 1 then
+		local a = math.random(1, r)
+		n = e[a]
 	end
 	if #o == 0 then
-		local n = ""
-		return t, e, a, n
+		local e = ""
+		return t, n, a, e
 	end
-	if i ~= nil then
-		local t = i[e]
-		if t ~= nil then
-			if p(t, c) == false then
-				local t = math.random(1, #o)
-				e = o[t]
-				a = r
+	if l ~= nil then
+		local e = l[n]
+		if e ~= nil then
+			if c(e, m) == false then
+				local e = math.random(1, #o)
+				n = o[e]
+				a = i
 			end
 		end
 	end
-	local n = ""
-	if s ~= nil then
-		if e ~= 0 then
-			n = s[e].name
+	local e = ""
+	if p ~= nil then
+		if n ~= 0 then
+			e = p[n].name
 		end
 	end
-	return t, e, a, n
+	return t, n, a, e
 end
 function e.Refresh(e)
 	if e then
@@ -3212,5 +3215,8 @@ function e.Refresh(e)
 end
 function e.IsCurrentPlayerOcelot()
 	return vars.playerType == PlayerType.OCELOT
+end
+function e.IsCurrentPlayerQuiet()
+	return vars.playerType == PlayerType.QUIET
 end
 return e

@@ -30,7 +30,7 @@ if TppGameSequence.GetTargetArea() == "ChinaKorea" then
 	LanguageBlock.Create(670 * 1024)
 	LanguageBlock.Create(96 * 1024)
 else
-	LanguageBlock.Create(690 * 1024)
+	LanguageBlock.Create(710 * 1024)
 	LanguageBlock.Create(96 * 1024)
 end
 if Fox.GetPlatformName() == "Windows" then
