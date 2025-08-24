@@ -266,7 +266,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117 },
+	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117, TppEquip.RC_30119 },
 	partsType = 1,
 	partsIds = {
 		TppEquip.BA_30102,
@@ -297,7 +297,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117 },
+	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117, TppEquip.RC_30119 },
 	partsType = 3,
 	partsIds = {
 		TppEquip.SK_30102,
@@ -329,7 +329,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117 },
+	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117, TppEquip.RC_30119 },
 	partsType = 2,
 	partsIds = {
 		TppEquip.AM_30102,
@@ -419,12 +419,41 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_30119 },
+	partsType = 6,
+	partsIds = {
+		TppEquip.ST_60304,
+		TppEquip.ST_60102,
+		TppEquip.ST_20104,
+		TppEquip.ST_30202,
+		TppEquip.ST_30204,
+		TppEquip.ST_60203,
+		TppEquip.ST_60001,
+		TppEquip.ST_60105,
+		TppEquip.ST_50303,
+		TppEquip.ST_50133,
+		TppEquip.ST_30305,
+		TppEquip.ST_20205,
+		TppEquip.ST_50003,
+		TppEquip.ST_60407,
+		TppEquip.ST_60004,
+		TppEquip.ST_60303,
+		TppEquip.ST_50136,
+		TppEquip.ST_30114,
+	},
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_30104 },
 	partsType = 7,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_30117 },
+	partsType = 7,
+	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_30119 },
 	partsType = 7,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
 })
@@ -436,6 +465,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.RC_30233,
 		TppEquip.RC_30235,
 		TppEquip.RC_30237,
+		TppEquip.RC_30239,
 	},
 	partsType = 1,
 	partsIds = {
@@ -474,6 +504,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.RC_30233,
 		TppEquip.RC_30235,
 		TppEquip.RC_30237,
+		TppEquip.RC_30239,
 	},
 	partsType = 3,
 	partsIds = {
@@ -513,6 +544,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.RC_30233,
 		TppEquip.RC_30235,
 		TppEquip.RC_30237,
+		TppEquip.RC_30239,
 	},
 	partsType = 2,
 	partsIds = {
@@ -625,6 +657,30 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_30239 },
+	partsType = 6,
+	partsIds = {
+		TppEquip.ST_60304,
+		TppEquip.ST_60102,
+		TppEquip.ST_20104,
+		TppEquip.ST_30202,
+		TppEquip.ST_30204,
+		TppEquip.ST_60203,
+		TppEquip.ST_60001,
+		TppEquip.ST_60105,
+		TppEquip.ST_50303,
+		TppEquip.ST_50133,
+		TppEquip.ST_30305,
+		TppEquip.ST_20205,
+		TppEquip.ST_50003,
+		TppEquip.ST_60407,
+		TppEquip.ST_60004,
+		TppEquip.ST_60303,
+		TppEquip.ST_50136,
+		TppEquip.ST_30114,
+	},
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_30202 },
 	partsType = 7,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
@@ -636,6 +692,11 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_30237 },
+	partsType = 7,
+	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_30239 },
 	partsType = 7,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
 })
@@ -761,7 +822,14 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_60303, TppEquip.RC_60306, TppEquip.RC_60325, TppEquip.RC_60327 },
+	receiverID = {
+		TppEquip.RC_60303,
+		TppEquip.RC_60306,
+		TppEquip.RC_60309,
+		TppEquip.RC_60325,
+		TppEquip.RC_60327,
+		TppEquip.RC_60329,
+	},
 	partsType = 1,
 	partsIds = {
 		TppEquip.BA_30102,
@@ -792,7 +860,14 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_60303, TppEquip.RC_60306, TppEquip.RC_60325, TppEquip.RC_60327 },
+	receiverID = {
+		TppEquip.RC_60303,
+		TppEquip.RC_60306,
+		TppEquip.RC_60309,
+		TppEquip.RC_60325,
+		TppEquip.RC_60327,
+		TppEquip.RC_60329,
+	},
 	partsType = 3,
 	partsIds = {
 		TppEquip.SK_30102,
@@ -824,7 +899,14 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_60303, TppEquip.RC_60306, TppEquip.RC_60325, TppEquip.RC_60327 },
+	receiverID = {
+		TppEquip.RC_60303,
+		TppEquip.RC_60306,
+		TppEquip.RC_60309,
+		TppEquip.RC_60325,
+		TppEquip.RC_60327,
+		TppEquip.RC_60329,
+	},
 	partsType = 2,
 	partsIds = {
 		TppEquip.AM_30034,
@@ -865,6 +947,30 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_60306 },
+	partsType = 6,
+	partsIds = {
+		TppEquip.ST_60304,
+		TppEquip.ST_60102,
+		TppEquip.ST_20104,
+		TppEquip.ST_30202,
+		TppEquip.ST_30204,
+		TppEquip.ST_60203,
+		TppEquip.ST_60001,
+		TppEquip.ST_60105,
+		TppEquip.ST_50303,
+		TppEquip.ST_50133,
+		TppEquip.ST_30305,
+		TppEquip.ST_20205,
+		TppEquip.ST_50003,
+		TppEquip.ST_60407,
+		TppEquip.ST_60004,
+		TppEquip.ST_60303,
+		TppEquip.ST_50136,
+		TppEquip.ST_30114,
+	},
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_60309 },
 	partsType = 6,
 	partsIds = {
 		TppEquip.ST_60304,
@@ -936,12 +1042,46 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_60329 },
+	partsType = 6,
+	partsIds = {
+		TppEquip.ST_60304,
+		TppEquip.ST_60102,
+		TppEquip.ST_20104,
+		TppEquip.ST_30202,
+		TppEquip.ST_30204,
+		TppEquip.ST_60203,
+		TppEquip.ST_60001,
+		TppEquip.ST_60105,
+		TppEquip.ST_50303,
+		TppEquip.ST_50133,
+		TppEquip.ST_30305,
+		TppEquip.ST_20205,
+		TppEquip.ST_50003,
+		TppEquip.ST_60407,
+		TppEquip.ST_60004,
+		TppEquip.ST_60303,
+		TppEquip.ST_50136,
+		TppEquip.ST_30114,
+	},
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_60306 },
 	partsType = 7,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_60309 },
+	partsType = 7,
+	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_60327 },
+	partsType = 7,
+	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_60329 },
 	partsType = 7,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_30114, TppEquip.ST_20205, TppEquip.ST_30306 },
 })
@@ -1867,7 +2007,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.LS_30104, TppEquip.LS_40034 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_70002, TppEquip.RC_70003, TppEquip.RC_70015 },
+	receiverID = { TppEquip.RC_70002, TppEquip.RC_70003, TppEquip.RC_70009, TppEquip.RC_70015 },
 	partsType = 1,
 	partsIds = {
 		TppEquip.BA_70002,
@@ -1884,7 +2024,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_70002, TppEquip.RC_70003, TppEquip.RC_70015 },
+	receiverID = { TppEquip.RC_70002, TppEquip.RC_70003, TppEquip.RC_70009, TppEquip.RC_70015 },
 	partsType = 2,
 	partsIds = {
 		TppEquip.AM_70003,
@@ -1892,10 +2032,13 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.AM_70005,
 		TppEquip.AM_70103,
 		TppEquip.AM_70114,
+		TppEquip.AM_70125,
 		TppEquip.AM_70104,
 		TppEquip.AM_70115,
+		TppEquip.AM_70126,
 		TppEquip.AM_70105,
 		TppEquip.AM_70116,
+		TppEquip.AM_70127,
 		TppEquip.AM_70205,
 		TppEquip.AM_70203,
 		TppEquip.AM_70204,
@@ -1903,6 +2046,11 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_70003 },
+	partsType = 6,
+	partsIds = { TppEquip.ST_20104, TppEquip.ST_20205, TppEquip.ST_30114, TppEquip.ST_30305, TppEquip.ST_60001 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_70009 },
 	partsType = 6,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_20205, TppEquip.ST_30114, TppEquip.ST_30305, TppEquip.ST_60001 },
 })
@@ -1969,10 +2117,13 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.AM_70005,
 		TppEquip.AM_70103,
 		TppEquip.AM_70114,
+		TppEquip.AM_70125,
 		TppEquip.AM_70104,
 		TppEquip.AM_70115,
+		TppEquip.AM_70126,
 		TppEquip.AM_70105,
 		TppEquip.AM_70116,
+		TppEquip.AM_70127,
 		TppEquip.AM_70205,
 		TppEquip.AM_70203,
 		TppEquip.AM_70204,
@@ -1984,7 +2135,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_20205, TppEquip.ST_30114, TppEquip.ST_30305, TppEquip.ST_60001 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_70103, TppEquip.RC_70104, TppEquip.RC_70114, TppEquip.RC_70115 },
+	receiverID = { TppEquip.RC_70103, TppEquip.RC_70104, TppEquip.RC_70114, TppEquip.RC_70115, TppEquip.RC_70125 },
 	partsType = 1,
 	partsIds = {
 		TppEquip.BA_70002,
@@ -2001,7 +2152,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_70103, TppEquip.RC_70104, TppEquip.RC_70114, TppEquip.RC_70115 },
+	receiverID = { TppEquip.RC_70103, TppEquip.RC_70104, TppEquip.RC_70114, TppEquip.RC_70115, TppEquip.RC_70125 },
 	partsType = 3,
 	partsIds = {
 		TppEquip.SK_30102,
@@ -2033,7 +2184,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_70103, TppEquip.RC_70104, TppEquip.RC_70114, TppEquip.RC_70115 },
+	receiverID = { TppEquip.RC_70103, TppEquip.RC_70104, TppEquip.RC_70114, TppEquip.RC_70115, TppEquip.RC_70125 },
 	partsType = 2,
 	partsIds = {
 		TppEquip.AM_70003,
@@ -2041,10 +2192,13 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.AM_70005,
 		TppEquip.AM_70103,
 		TppEquip.AM_70114,
+		TppEquip.AM_70125,
 		TppEquip.AM_70104,
 		TppEquip.AM_70115,
+		TppEquip.AM_70126,
 		TppEquip.AM_70105,
 		TppEquip.AM_70116,
+		TppEquip.AM_70127,
 		TppEquip.AM_70205,
 		TppEquip.AM_70203,
 		TppEquip.AM_70204,
@@ -2057,6 +2211,11 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_70115 },
+	partsType = 6,
+	partsIds = { TppEquip.ST_20104, TppEquip.ST_20205, TppEquip.ST_30114, TppEquip.ST_30305, TppEquip.ST_60001 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_70125 },
 	partsType = 6,
 	partsIds = { TppEquip.ST_20104, TppEquip.ST_20205, TppEquip.ST_30114, TppEquip.ST_30305, TppEquip.ST_60001 },
 })
@@ -3920,7 +4079,14 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	receiverID = { TppEquip.RC_10001, TppEquip.RC_10003, TppEquip.RC_10004, TppEquip.RC_10015 },
 	partsType = 2,
-	partsIds = { TppEquip.AM_10001, TppEquip.AM_10015_0, TppEquip.AM_SP_hg_020, TppEquip.AM_10003, TppEquip.AM_10015 },
+	partsIds = {
+		TppEquip.AM_10001,
+		TppEquip.AM_10015_0,
+		TppEquip.AM_SP_hg_020,
+		TppEquip.AM_10003,
+		TppEquip.AM_10015,
+		TppEquip.AM_1003a,
+	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	receiverID = { TppEquip.RC_10001, TppEquip.RC_10003, TppEquip.RC_10004, TppEquip.RC_10015 },
@@ -3968,12 +4134,19 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_10024, TppEquip.RC_10035 },
+	receiverID = { TppEquip.RC_10024, TppEquip.RC_10035, TppEquip.RC_1003a },
 	partsType = 2,
-	partsIds = { TppEquip.AM_10001, TppEquip.AM_10015_0, TppEquip.AM_SP_hg_020, TppEquip.AM_10003, TppEquip.AM_10015 },
+	partsIds = {
+		TppEquip.AM_10001,
+		TppEquip.AM_10015_0,
+		TppEquip.AM_SP_hg_020,
+		TppEquip.AM_10003,
+		TppEquip.AM_10015,
+		TppEquip.AM_1003a,
+	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
-	receiverID = { TppEquip.RC_10024, TppEquip.RC_10035 },
+	receiverID = { TppEquip.RC_10024, TppEquip.RC_10035, TppEquip.RC_1003a },
 	partsType = 5,
 	partsIds = {
 		TppEquip.MO_10101,
@@ -3999,12 +4172,22 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.LT_10102, TppEquip.LT_10104 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_1003a },
+	partsType = 8,
+	partsIds = { TppEquip.LT_10102, TppEquip.LT_10104 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_10024 },
 	partsType = 9,
 	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_10035 },
+	partsType = 9,
+	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_1003a },
 	partsType = 9,
 	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
 })
@@ -4356,7 +4539,14 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	receiverID = { TppEquip.RC_10006 },
 	partsType = 2,
-	partsIds = { TppEquip.AM_10001, TppEquip.AM_10015_0, TppEquip.AM_SP_hg_020, TppEquip.AM_10003, TppEquip.AM_10015 },
+	partsIds = {
+		TppEquip.AM_10001,
+		TppEquip.AM_10015_0,
+		TppEquip.AM_SP_hg_020,
+		TppEquip.AM_10003,
+		TppEquip.AM_10015,
+		TppEquip.AM_1003a,
+	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 	receiverID = { TppEquip.RC_10006 },
@@ -4584,10 +4774,12 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.RC_20104,
 		TppEquip.RC_20105,
 		TppEquip.RC_20116,
+		TppEquip.RC_20119,
 		TppEquip.RC_20302,
 		TppEquip.RC_20303,
 		TppEquip.RC_20304,
 		TppEquip.RC_20307,
+		TppEquip.RC_20309,
 	},
 	partsType = 3,
 	partsIds = { TppEquip.SK_20103, TppEquip.SK_20106 },
@@ -4598,10 +4790,12 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.RC_20104,
 		TppEquip.RC_20105,
 		TppEquip.RC_20116,
+		TppEquip.RC_20119,
 		TppEquip.RC_20302,
 		TppEquip.RC_20303,
 		TppEquip.RC_20304,
 		TppEquip.RC_20307,
+		TppEquip.RC_20309,
 	},
 	partsType = 2,
 	partsIds = {
@@ -4627,10 +4821,12 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverBase({
 		TppEquip.RC_20104,
 		TppEquip.RC_20105,
 		TppEquip.RC_20116,
+		TppEquip.RC_20119,
 		TppEquip.RC_20302,
 		TppEquip.RC_20303,
 		TppEquip.RC_20304,
 		TppEquip.RC_20307,
+		TppEquip.RC_20309,
 	},
 	partsType = 5,
 	partsIds = {
@@ -4682,6 +4878,18 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20119 },
+	partsType = 6,
+	partsIds = {
+		TppEquip.ST_20104,
+		TppEquip.ST_20205,
+		TppEquip.ST_30114,
+		TppEquip.ST_30305,
+		TppEquip.ST_60102,
+		TppEquip.ST_60001,
+	},
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20303 },
 	partsType = 6,
 	partsIds = {
@@ -4718,12 +4926,29 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20309 },
+	partsType = 6,
+	partsIds = {
+		TppEquip.ST_20104,
+		TppEquip.ST_20205,
+		TppEquip.ST_30114,
+		TppEquip.ST_30305,
+		TppEquip.ST_60102,
+		TppEquip.ST_60001,
+	},
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20105 },
 	partsType = 10,
 	partsIds = { TppEquip.UB_20105 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20116 },
+	partsType = 10,
+	partsIds = { TppEquip.UB_20105 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20119 },
 	partsType = 10,
 	partsIds = { TppEquip.UB_20105 },
 })
@@ -4738,12 +4963,22 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.UB_20105 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20309 },
+	partsType = 10,
+	partsIds = { TppEquip.UB_20105 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20105 },
 	partsType = 8,
 	partsIds = { TppEquip.LT_10102, TppEquip.LT_10104 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20116 },
+	partsType = 8,
+	partsIds = { TppEquip.LT_10102, TppEquip.LT_10104 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20119 },
 	partsType = 8,
 	partsIds = { TppEquip.LT_10102, TppEquip.LT_10104 },
 })
@@ -4758,6 +4993,11 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.LT_10102, TppEquip.LT_10104 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20309 },
+	partsType = 8,
+	partsIds = { TppEquip.LT_10102, TppEquip.LT_10104 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20105 },
 	partsType = 9,
 	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
@@ -4768,12 +5008,22 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20119 },
+	partsType = 9,
+	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20304 },
 	partsType = 9,
 	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_20307 },
+	partsType = 9,
+	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_20309 },
 	partsType = 9,
 	partsIds = { TppEquip.LS_10415, TppEquip.LT_10104, TppEquip.LS_20004 },
 })
@@ -4934,7 +5184,17 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.LT_30025, TppEquip.LT_40103, TppEquip.LT_30105 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_80119 },
+	partsType = 8,
+	partsIds = { TppEquip.LT_30025, TppEquip.LT_40103, TppEquip.LT_30105 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_80126 },
+	partsType = 8,
+	partsIds = { TppEquip.LT_30025, TppEquip.LT_40103, TppEquip.LT_30105 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_80135 },
 	partsType = 8,
 	partsIds = { TppEquip.LT_30025, TppEquip.LT_40103, TppEquip.LT_30105 },
 })
@@ -4949,10 +5209,20 @@ TppMotherBaseManagement.RegistPartsInclusionInfo({
 	partsIds = { TppEquip.LS_30104, TppEquip.LS_40034 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_80119 },
+	partsType = 9,
+	partsIds = { TppEquip.LS_30104, TppEquip.LS_40034 },
+})
+TppMotherBaseManagement.RegistPartsInclusionInfo({
 	receiverID = { TppEquip.RC_80126 },
 	partsType = 9,
 	partsIds = { TppEquip.LS_30104, TppEquip.LS_40034 },
 })
+TppMotherBaseManagement.RegistPartsInclusionInfo({
+	receiverID = { TppEquip.RC_80135 },
+	partsType = 9,
+	partsIds = { TppEquip.LS_30104, TppEquip.LS_40034 },
+})
 TppMotherBaseManagement.RegistPartsInclusionInfo_BarrelBase({
 	barrelID = { TppEquip.BA_30001, TppEquip.BA_30043, TppEquip.BA_30035, TppEquip.BA_30023 },
 	partsType = 4,
@@ -6329,7 +6599,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_BarrelBase({
 TppMotherBaseManagement.RegistPartsInclusionInfo_BarrelBase({
 	barrelID = { TppEquip.BA_60404, TppEquip.BA_60405, TppEquip.BA_60407 },
 	partsType = 5,
-	partsIds = { TppEquip.MO_60406 },
+	partsIds = { TppEquip.MO_60406, TppEquip.MO_6040a },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_BarrelBase({
 	barrelID = { TppEquip.BA_60415, TppEquip.BA_60416, TppEquip.BA_60417 },
@@ -6339,7 +6609,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_BarrelBase({
 TppMotherBaseManagement.RegistPartsInclusionInfo_BarrelBase({
 	barrelID = { TppEquip.BA_60415, TppEquip.BA_60416, TppEquip.BA_60417 },
 	partsType = 5,
-	partsIds = { TppEquip.MO_60406 },
+	partsIds = { TppEquip.MO_60406, TppEquip.MO_6040a },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_BarrelBase({
 	barrelID = { TppEquip.BA_70002 },
@@ -6929,7 +7199,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverWithUnderBarrellBase({
 	partsIds = { TppEquip.AM_30034, TppEquip.AM_60203, TppEquip.AM_30201, TppEquip.AM_60303 },
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverWithUnderBarrellBase({
-	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117 },
+	receiverID = { TppEquip.RC_30101, TppEquip.RC_30102, TppEquip.RC_30104, TppEquip.RC_30117, TppEquip.RC_30119 },
 	partsType = 2,
 	partsIds = { TppEquip.AM_30102, TppEquip.AM_30303, TppEquip.AM_60315, TppEquip.AM_30001 },
 })
@@ -6941,6 +7211,7 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverWithUnderBarrellBase({
 		TppEquip.RC_30233,
 		TppEquip.RC_30235,
 		TppEquip.RC_30237,
+		TppEquip.RC_30239,
 	},
 	partsType = 2,
 	partsIds = { TppEquip.AM_30034, TppEquip.AM_60203, TppEquip.AM_30201, TppEquip.AM_60303 },
@@ -6963,7 +7234,14 @@ TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverWithUnderBarrellBase({
 	},
 })
 TppMotherBaseManagement.RegistPartsInclusionInfo_ReceiverWithUnderBarrellBase({
-	receiverID = { TppEquip.RC_60303, TppEquip.RC_60306, TppEquip.RC_60325, TppEquip.RC_60327 },
+	receiverID = {
+		TppEquip.RC_60303,
+		TppEquip.RC_60306,
+		TppEquip.RC_60309,
+		TppEquip.RC_60325,
+		TppEquip.RC_60327,
+		TppEquip.RC_60329,
+	},
 	partsType = 2,
 	partsIds = { TppEquip.AM_30034, TppEquip.AM_60203, TppEquip.AM_30201, TppEquip.AM_60303 },
 })

@@ -8,15 +8,15 @@ local r = GameObject.GetGameObjectId
 local T = GameObject.GetGameObjectIdByIndex
 local n = TppGameObject.GAME_OBJECT_TYPE_VEHICLE
 local a = GameObject.NULL_ID
-local n = GameObject.SendCommand
-local t = Tpp.DEBUG_StrCode32ToString
+local t = GameObject.SendCommand
+local n = Tpp.DEBUG_StrCode32ToString
 local _ = "quest_cp"
 local d = EnemySubType or {}
-local function c(e)
+local function u(e)
 	local t = {}
 	for n, i in ipairs(e) do
 		if s(i) then
-			t[n] = c(i)
+			t[n] = u(i)
 		else
 			local e = r(e[n])
 			if e and e ~= a then
@@ -247,88 +247,88 @@ for t, n in pairs(e.subTypeOfCpTable) do
 		e.subTypeOfCp[n] = t
 	end
 end
-local t = TppEnemyBodyId or {}
+local n = TppEnemyBodyId or {}
 e.childBodyIdTable = {
-	t.chd0_v00,
-	t.chd0_v01,
-	t.chd0_v02,
-	t.chd0_v03,
-	t.chd0_v05,
-	t.chd0_v06,
-	t.chd0_v07,
-	t.chd0_v08,
-	t.chd0_v09,
-	t.chd0_v10,
-	t.chd0_v11,
+	n.chd0_v00,
+	n.chd0_v01,
+	n.chd0_v02,
+	n.chd0_v03,
+	n.chd0_v05,
+	n.chd0_v06,
+	n.chd0_v07,
+	n.chd0_v08,
+	n.chd0_v09,
+	n.chd0_v10,
+	n.chd0_v11,
 }
 e.bodyIdTable = {
 	SOVIET_A = {
-		ASSAULT = { t.svs0_rfl_v00_a, t.svs0_rfl_v00_a, t.svs0_rfl_v01_a, t.svs0_mcg_v00_a },
-		ASSAULT_OB = { t.svs0_rfl_v02_a, t.svs0_mcg_v02_a },
-		SNIPER = { t.svs0_snp_v00_a },
-		SHOTGUN = { t.svs0_rfl_v00_a, t.svs0_rfl_v01_a },
-		SHOTGUN_OB = { t.svs0_rfl_v02_a },
-		MG = { t.svs0_mcg_v00_a, t.svs0_mcg_v01_a },
-		MG_OB = { t.svs0_mcg_v02_a },
-		MISSILE = { t.svs0_rfl_v00_a },
-		SHIELD = { t.svs0_rfl_v00_a },
-		ARMOR = { t.sva0_v00_a },
-		RADIO = { t.svs0_rdo_v00_a },
+		ASSAULT = { n.svs0_rfl_v00_a, n.svs0_rfl_v00_a, n.svs0_rfl_v01_a, n.svs0_mcg_v00_a },
+		ASSAULT_OB = { n.svs0_rfl_v02_a, n.svs0_mcg_v02_a },
+		SNIPER = { n.svs0_snp_v00_a },
+		SHOTGUN = { n.svs0_rfl_v00_a, n.svs0_rfl_v01_a },
+		SHOTGUN_OB = { n.svs0_rfl_v02_a },
+		MG = { n.svs0_mcg_v00_a, n.svs0_mcg_v01_a },
+		MG_OB = { n.svs0_mcg_v02_a },
+		MISSILE = { n.svs0_rfl_v00_a },
+		SHIELD = { n.svs0_rfl_v00_a },
+		ARMOR = { n.sva0_v00_a },
+		RADIO = { n.svs0_rdo_v00_a },
 	},
 	SOVIET_B = {
-		ASSAULT = { t.svs0_rfl_v00_b, t.svs0_rfl_v00_b, t.svs0_rfl_v01_b, t.svs0_mcg_v00_b },
-		ASSAULT_OB = { t.svs0_rfl_v02_b, t.svs0_mcg_v02_b },
-		SNIPER = { t.svs0_snp_v00_b },
-		SHOTGUN = { t.svs0_rfl_v00_b, t.svs0_rfl_v01_b },
-		SHOTGUN_OB = { t.svs0_rfl_v02_b },
-		MG = { t.svs0_mcg_v00_b, t.svs0_mcg_v01_b },
-		MG_OB = { t.svs0_mcg_v02_b },
-		MISSILE = { t.svs0_rfl_v00_b },
-		SHIELD = { t.svs0_rfl_v00_b },
-		ARMOR = { t.sva0_v00_a },
-		RADIO = { t.svs0_rdo_v00_b },
+		ASSAULT = { n.svs0_rfl_v00_b, n.svs0_rfl_v00_b, n.svs0_rfl_v01_b, n.svs0_mcg_v00_b },
+		ASSAULT_OB = { n.svs0_rfl_v02_b, n.svs0_mcg_v02_b },
+		SNIPER = { n.svs0_snp_v00_b },
+		SHOTGUN = { n.svs0_rfl_v00_b, n.svs0_rfl_v01_b },
+		SHOTGUN_OB = { n.svs0_rfl_v02_b },
+		MG = { n.svs0_mcg_v00_b, n.svs0_mcg_v01_b },
+		MG_OB = { n.svs0_mcg_v02_b },
+		MISSILE = { n.svs0_rfl_v00_b },
+		SHIELD = { n.svs0_rfl_v00_b },
+		ARMOR = { n.sva0_v00_a },
+		RADIO = { n.svs0_rdo_v00_b },
 	},
 	PF_A = {
-		ASSAULT = { t.pfs0_rfl_v00_a, t.pfs0_mcg_v00_a },
-		ASSAULT_OB = { t.pfs0_rfl_v00_a, t.pfs0_rfl_v01_a, t.pfs0_mcg_v00_a },
-		SNIPER = { t.pfs0_snp_v00_a },
-		SHOTGUN = { t.pfs0_rfl_v00_a },
-		SHOTGUN_OB = { t.pfs0_rfl_v00_a, t.pfs0_rfl_v01_a },
-		MG = { t.pfs0_mcg_v00_a },
-		MISSILE = { t.pfs0_rfl_v00_a },
-		SHIELD = { t.pfs0_rfl_v00_a },
-		ARMOR = { t.pfa0_v00_b },
-		RADIO = { t.pfs0_rdo_v00_a },
+		ASSAULT = { n.pfs0_rfl_v00_a, n.pfs0_mcg_v00_a },
+		ASSAULT_OB = { n.pfs0_rfl_v00_a, n.pfs0_rfl_v01_a, n.pfs0_mcg_v00_a },
+		SNIPER = { n.pfs0_snp_v00_a },
+		SHOTGUN = { n.pfs0_rfl_v00_a },
+		SHOTGUN_OB = { n.pfs0_rfl_v00_a, n.pfs0_rfl_v01_a },
+		MG = { n.pfs0_mcg_v00_a },
+		MISSILE = { n.pfs0_rfl_v00_a },
+		SHIELD = { n.pfs0_rfl_v00_a },
+		ARMOR = { n.pfa0_v00_b },
+		RADIO = { n.pfs0_rdo_v00_a },
 	},
 	PF_B = {
-		ASSAULT = { t.pfs0_rfl_v00_b, t.pfs0_mcg_v00_b },
-		ASSAULT_OB = { t.pfs0_rfl_v00_b, t.pfs0_rfl_v01_b, t.pfs0_mcg_v00_b },
-		SNIPER = { t.pfs0_snp_v00_b },
-		SHOTGUN = { t.pfs0_rfl_v00_b },
-		SHOTGUN_OB = { t.pfs0_rfl_v00_b, t.pfs0_rfl_v01_b },
-		MG = { t.pfs0_mcg_v00_b },
-		MISSILE = { t.pfs0_rfl_v00_b },
-		SHIELD = { t.pfs0_rfl_v00_b },
-		ARMOR = { t.pfa0_v00_a },
-		RADIO = { t.pfs0_rdo_v00_b },
+		ASSAULT = { n.pfs0_rfl_v00_b, n.pfs0_mcg_v00_b },
+		ASSAULT_OB = { n.pfs0_rfl_v00_b, n.pfs0_rfl_v01_b, n.pfs0_mcg_v00_b },
+		SNIPER = { n.pfs0_snp_v00_b },
+		SHOTGUN = { n.pfs0_rfl_v00_b },
+		SHOTGUN_OB = { n.pfs0_rfl_v00_b, n.pfs0_rfl_v01_b },
+		MG = { n.pfs0_mcg_v00_b },
+		MISSILE = { n.pfs0_rfl_v00_b },
+		SHIELD = { n.pfs0_rfl_v00_b },
+		ARMOR = { n.pfa0_v00_a },
+		RADIO = { n.pfs0_rdo_v00_b },
 	},
 	PF_C = {
-		ASSAULT = { t.pfs0_rfl_v00_c, t.pfs0_mcg_v00_c },
-		ASSAULT_OB = { t.pfs0_rfl_v00_c, t.pfs0_rfl_v01_c, t.pfs0_mcg_v00_c },
-		SNIPER = { t.pfs0_snp_v00_c },
-		SHOTGUN = { t.pfs0_rfl_v00_c },
-		SHOTGUN_OB = { t.pfs0_rfl_v00_c, t.pfs0_rfl_v01_c },
-		MG = { t.pfs0_mcg_v00_c },
-		MISSILE = { t.pfs0_rfl_v00_c },
-		SHIELD = { t.pfs0_rfl_v01_c },
-		ARMOR = { t.pfa0_v00_c },
-		RADIO = { t.pfs0_rdo_v00_c },
+		ASSAULT = { n.pfs0_rfl_v00_c, n.pfs0_mcg_v00_c },
+		ASSAULT_OB = { n.pfs0_rfl_v00_c, n.pfs0_rfl_v01_c, n.pfs0_mcg_v00_c },
+		SNIPER = { n.pfs0_snp_v00_c },
+		SHOTGUN = { n.pfs0_rfl_v00_c },
+		SHOTGUN_OB = { n.pfs0_rfl_v00_c, n.pfs0_rfl_v01_c },
+		MG = { n.pfs0_mcg_v00_c },
+		MISSILE = { n.pfs0_rfl_v00_c },
+		SHIELD = { n.pfs0_rfl_v01_c },
+		ARMOR = { n.pfa0_v00_c },
+		RADIO = { n.pfs0_rdo_v00_c },
 	},
-	DD_A = { ASSAULT = { t.dds3_main0_v00 } },
-	DD_FOB = { ASSAULT = { t.dds5_main0_v00 } },
-	DD_PW = { ASSAULT = { t.dds0_main1_v00 } },
-	SKULL_CYPR = { ASSAULT = { t.wss0_main0_v00 } },
-	SKULL_AFGH = { ASSAULT = { t.wss4_main0_v00 } },
+	DD_A = { ASSAULT = { n.dds3_main0_v00 } },
+	DD_FOB = { ASSAULT = { n.dds5_main0_v00 } },
+	DD_PW = { ASSAULT = { n.dds0_main1_v00 } },
+	SKULL_CYPR = { ASSAULT = { n.wss0_main0_v00 } },
+	SKULL_AFGH = { ASSAULT = { n.wss4_main0_v00 } },
 	CHILD = { ASSAULT = e.childBodyIdTable },
 }
 e.weaponIdTable = {
@@ -454,104 +454,143 @@ e.gunLightWeaponIds = {
 	[TppEquip.EQP_WP_East_ar_010] = TppEquip.EQP_WP_East_ar_010_FL,
 	[TppEquip.EQP_WP_East_ar_030] = TppEquip.EQP_WP_East_ar_030_FL,
 }
-local t = MbsDevelopedEquipType or {}
+local n = MbsDevelopedEquipType or {}
 e.DDWeaponIdInfo = {
 	HANDGUN = { { equipId = TppEquip.EQP_WP_West_hg_010 } },
 	SMG = {
-		{ equipId = TppEquip.EQP_WP_East_sm_047, isNoKill = true, developedEquipType = t.SM_2040_NOKILL, developId = 2044 },
-		{ equipId = TppEquip.EQP_WP_East_sm_045, isNoKill = true, developedEquipType = t.SM_2040_NOKILL, developId = 2043 },
-		{ equipId = TppEquip.EQP_WP_East_sm_044, isNoKill = true, developedEquipType = t.SM_2040_NOKILL, developId = 2042 },
-		{ equipId = TppEquip.EQP_WP_East_sm_043, isNoKill = true, developedEquipType = t.SM_2040_NOKILL, developId = 2041 },
-		{ equipId = TppEquip.EQP_WP_East_sm_042, isNoKill = true, developedEquipType = t.SM_2040_NOKILL, developId = 2040 },
-		{ equipId = TppEquip.EQP_WP_West_sm_017, developedEquipType = t.SM_2014, developId = 2014 },
-		{ equipId = TppEquip.EQP_WP_West_sm_016, developedEquipType = t.SM_2010, developId = 2013 },
-		{ equipId = TppEquip.EQP_WP_West_sm_015, developedEquipType = t.SM_2010, developId = 2012 },
-		{ equipId = TppEquip.EQP_WP_West_sm_014, developedEquipType = t.SM_2010, developId = 2011 },
-		{ equipId = TppEquip.EQP_WP_West_sm_010, developedEquipType = t.SM_2010, developId = 2010 },
+		{ equipId = TppEquip.EQP_WP_East_sm_04b, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2102 },
+		{ equipId = TppEquip.EQP_WP_East_sm_04a, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2101 },
+		{ equipId = TppEquip.EQP_WP_East_sm_049, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2100 },
+		{ equipId = TppEquip.EQP_WP_East_sm_047, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2044 },
+		{ equipId = TppEquip.EQP_WP_East_sm_045, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2043 },
+		{ equipId = TppEquip.EQP_WP_East_sm_044, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2042 },
+		{ equipId = TppEquip.EQP_WP_East_sm_043, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2041 },
+		{ equipId = TppEquip.EQP_WP_East_sm_042, isNoKill = true, developedEquipType = n.SM_2040_NOKILL, developId = 2040 },
+		{ equipId = TppEquip.EQP_WP_West_sm_01b, developedEquipType = n.SM_2014, developId = 2072 },
+		{ equipId = TppEquip.EQP_WP_West_sm_01a, developedEquipType = n.SM_2014, developId = 2071 },
+		{ equipId = TppEquip.EQP_WP_West_sm_019, developedEquipType = n.SM_2014, developId = 2070 },
+		{ equipId = TppEquip.EQP_WP_West_sm_017, developedEquipType = n.SM_2014, developId = 2014 },
+		{ equipId = TppEquip.EQP_WP_West_sm_016, developedEquipType = n.SM_2010, developId = 2013 },
+		{ equipId = TppEquip.EQP_WP_West_sm_015, developedEquipType = n.SM_2010, developId = 2012 },
+		{ equipId = TppEquip.EQP_WP_West_sm_014, developedEquipType = n.SM_2010, developId = 2011 },
+		{ equipId = TppEquip.EQP_WP_West_sm_010, developedEquipType = n.SM_2010, developId = 2010 },
 	},
 	SHOTGUN = {
-		{ equipId = TppEquip.EQP_WP_Com_sg_038, isNoKill = true, developedEquipType = t.SG_4027_NOKILL, developId = 4028 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_030, isNoKill = true, developedEquipType = t.SG_4027_NOKILL, developId = 4027 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_025, isNoKill = true, developedEquipType = t.SG_4035_NOKILL, developId = 4037 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_024, isNoKill = true, developedEquipType = t.SG_4035_NOKILL, developId = 4036 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_023, isNoKill = true, developedEquipType = t.SG_4035_NOKILL, developId = 4035 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_018, developedEquipType = t.SG_4040, developId = 4044 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_016, developedEquipType = t.SG_4040, developId = 4043 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_015, developedEquipType = t.SG_4040, developId = 4042 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_020, developedEquipType = t.SG_4040, developId = 4041 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_013, developedEquipType = t.SG_4040, developId = 4040 },
-		{ equipId = TppEquip.EQP_WP_Com_sg_011, developedEquipType = t.SG_4020, developId = 4020 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_038, isNoKill = true, developedEquipType = n.SG_4027_NOKILL, developId = 4028 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_030, isNoKill = true, developedEquipType = n.SG_4027_NOKILL, developId = 4027 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_025, isNoKill = true, developedEquipType = n.SG_4035_NOKILL, developId = 4037 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_024, isNoKill = true, developedEquipType = n.SG_4035_NOKILL, developId = 4036 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_023, isNoKill = true, developedEquipType = n.SG_4035_NOKILL, developId = 4035 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_018, developedEquipType = n.SG_4040, developId = 4044 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_016, developedEquipType = n.SG_4040, developId = 4043 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_015, developedEquipType = n.SG_4040, developId = 4042 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_020, developedEquipType = n.SG_4040, developId = 4041 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_013, developedEquipType = n.SG_4040, developId = 4040 },
+		{ equipId = TppEquip.EQP_WP_Com_sg_011, developedEquipType = n.SG_4020, developId = 4020 },
 	},
 	ASSAULT = {
-		{ equipId = TppEquip.EQP_WP_West_ar_077, isNoKill = true, developedEquipType = t.AR_3060_NOKILL, developId = 3064 },
-		{ equipId = TppEquip.EQP_WP_West_ar_075, isNoKill = true, developedEquipType = t.AR_3060_NOKILL, developId = 3063 },
-		{ equipId = TppEquip.EQP_WP_West_ar_070, isNoKill = true, developedEquipType = t.AR_3060_NOKILL, developId = 3062 },
-		{ equipId = TppEquip.EQP_WP_West_ar_063, isNoKill = true, developedEquipType = t.AR_3060_NOKILL, developId = 3061 },
-		{ equipId = TppEquip.EQP_WP_West_ar_060, isNoKill = true, developedEquipType = t.AR_3060_NOKILL, developId = 3060 },
-		{ equipId = TppEquip.EQP_WP_West_ar_057, developedEquipType = t.AR_3036, developId = 3042 },
-		{ equipId = TppEquip.EQP_WP_West_ar_050, developedEquipType = t.AR_3036, developId = 3038 },
-		{ equipId = TppEquip.EQP_WP_West_ar_055, developedEquipType = t.AR_3036, developId = 3037 },
-		{ equipId = TppEquip.EQP_WP_West_ar_010, developedEquipType = t.AR_3036, developId = 3036 },
-		{ equipId = TppEquip.EQP_WP_West_ar_042, developedEquipType = t.AR_3030, developId = 3031 },
+		{ equipId = TppEquip.EQP_WP_West_ar_07b, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3132 },
+		{ equipId = TppEquip.EQP_WP_West_ar_07a, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3131 },
+		{ equipId = TppEquip.EQP_WP_West_ar_079, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3130 },
+		{ equipId = TppEquip.EQP_WP_West_ar_077, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3064 },
+		{ equipId = TppEquip.EQP_WP_West_ar_075, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3063 },
+		{ equipId = TppEquip.EQP_WP_West_ar_070, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3062 },
+		{ equipId = TppEquip.EQP_WP_West_ar_063, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3061 },
+		{ equipId = TppEquip.EQP_WP_West_ar_060, isNoKill = true, developedEquipType = n.AR_3060_NOKILL, developId = 3060 },
+		{ equipId = TppEquip.EQP_WP_West_ar_05b, developedEquipType = n.AR_3036, developId = 3102 },
+		{ equipId = TppEquip.EQP_WP_West_ar_05a, developedEquipType = n.AR_3036, developId = 3101 },
+		{ equipId = TppEquip.EQP_WP_West_ar_059, developedEquipType = n.AR_3036, developId = 3100 },
+		{ equipId = TppEquip.EQP_WP_West_ar_057, developedEquipType = n.AR_3036, developId = 3042 },
+		{ equipId = TppEquip.EQP_WP_West_ar_050, developedEquipType = n.AR_3036, developId = 3038 },
+		{ equipId = TppEquip.EQP_WP_West_ar_055, developedEquipType = n.AR_3036, developId = 3037 },
+		{ equipId = TppEquip.EQP_WP_West_ar_010, developedEquipType = n.AR_3036, developId = 3036 },
+		{ equipId = TppEquip.EQP_WP_West_ar_042, developedEquipType = n.AR_3030, developId = 3031 },
 		{ equipId = TppEquip.EQP_WP_West_ar_040 },
 	},
 	SNIPER = {
-		{ equipId = TppEquip.EQP_WP_West_sr_048, isNoKill = true, developedEquipType = t.SR_6037_NOKILL, developId = 6039 },
-		{ equipId = TppEquip.EQP_WP_West_sr_047, isNoKill = true, developedEquipType = t.SR_6037_NOKILL, developId = 6038 },
-		{ equipId = TppEquip.EQP_WP_West_sr_037, isNoKill = true, developedEquipType = t.SR_6037_NOKILL, developId = 6037 },
-		{ equipId = TppEquip.EQP_WP_East_sr_034, isNoKill = true, developedEquipType = t.SR_6005_NOKILL, developId = 6006 },
-		{ equipId = TppEquip.EQP_WP_East_sr_033, isNoKill = true, developedEquipType = t.SR_6005_NOKILL, developId = 6008 },
-		{ equipId = TppEquip.EQP_WP_East_sr_032, isNoKill = true, developedEquipType = t.SR_6005_NOKILL, developId = 6005 },
-		{ equipId = TppEquip.EQP_WP_West_sr_027, developedEquipType = t.SR_6030, developId = 6033 },
-		{ equipId = TppEquip.EQP_WP_West_sr_020, developedEquipType = t.SR_6030, developId = 6032 },
-		{ equipId = TppEquip.EQP_WP_West_sr_014, developedEquipType = t.SR_6030, developId = 6031 },
-		{ equipId = TppEquip.EQP_WP_West_sr_013, developedEquipType = t.SR_6030, developId = 6030 },
-		{ equipId = TppEquip.EQP_WP_West_sr_011, developedEquipType = t.SR_6010, developId = 6010 },
+		{ equipId = TppEquip.EQP_WP_West_sr_04b, isNoKill = true, developedEquipType = n.SR_6037_NOKILL, developId = 6132 },
+		{ equipId = TppEquip.EQP_WP_West_sr_04a, isNoKill = true, developedEquipType = n.SR_6037_NOKILL, developId = 6131 },
+		{ equipId = TppEquip.EQP_WP_West_sr_049, isNoKill = true, developedEquipType = n.SR_6037_NOKILL, developId = 6130 },
+		{ equipId = TppEquip.EQP_WP_West_sr_048, isNoKill = true, developedEquipType = n.SR_6037_NOKILL, developId = 6039 },
+		{ equipId = TppEquip.EQP_WP_West_sr_047, isNoKill = true, developedEquipType = n.SR_6037_NOKILL, developId = 6038 },
+		{ equipId = TppEquip.EQP_WP_West_sr_037, isNoKill = true, developedEquipType = n.SR_6037_NOKILL, developId = 6037 },
+		{ equipId = TppEquip.EQP_WP_East_sr_034, isNoKill = true, developedEquipType = n.SR_6005_NOKILL, developId = 6006 },
+		{ equipId = TppEquip.EQP_WP_East_sr_033, isNoKill = true, developedEquipType = n.SR_6005_NOKILL, developId = 6008 },
+		{ equipId = TppEquip.EQP_WP_East_sr_032, isNoKill = true, developedEquipType = n.SR_6005_NOKILL, developId = 6005 },
+		{ equipId = TppEquip.EQP_WP_West_sr_02b, developedEquipType = n.SR_6030, developId = 6102 },
+		{ equipId = TppEquip.EQP_WP_West_sr_02a, developedEquipType = n.SR_6030, developId = 6101 },
+		{ equipId = TppEquip.EQP_WP_West_sr_029, developedEquipType = n.SR_6030, developId = 6100 },
+		{ equipId = TppEquip.EQP_WP_West_sr_027, developedEquipType = n.SR_6030, developId = 6033 },
+		{ equipId = TppEquip.EQP_WP_West_sr_020, developedEquipType = n.SR_6030, developId = 6032 },
+		{ equipId = TppEquip.EQP_WP_West_sr_014, developedEquipType = n.SR_6030, developId = 6031 },
+		{ equipId = TppEquip.EQP_WP_West_sr_013, developedEquipType = n.SR_6030, developId = 6030 },
+		{ equipId = TppEquip.EQP_WP_West_sr_011, developedEquipType = n.SR_6010, developId = 6010 },
 	},
 	MG = {
-		{ equipId = TppEquip.EQP_WP_West_mg_037, developedEquipType = t.MG_7000, developId = 7004 },
-		{ equipId = TppEquip.EQP_WP_West_mg_030, developedEquipType = t.MG_7000, developId = 7003 },
-		{ equipId = TppEquip.EQP_WP_West_mg_024, developedEquipType = t.MG_7000, developId = 7002 },
-		{ equipId = TppEquip.EQP_WP_West_mg_023, developedEquipType = t.MG_7000, developId = 7001 },
-		{ equipId = TppEquip.EQP_WP_West_mg_020, developedEquipType = t.MG_7000, developId = 7e3 },
+		{ equipId = TppEquip.EQP_WP_West_mg_03b, developedEquipType = n.MG_7000, developId = 7052 },
+		{ equipId = TppEquip.EQP_WP_West_mg_03a, developedEquipType = n.MG_7000, developId = 7051 },
+		{ equipId = TppEquip.EQP_WP_West_mg_039, developedEquipType = n.MG_7000, developId = 7050 },
+		{ equipId = TppEquip.EQP_WP_West_mg_037, developedEquipType = n.MG_7000, developId = 7004 },
+		{ equipId = TppEquip.EQP_WP_West_mg_030, developedEquipType = n.MG_7000, developId = 7003 },
+		{ equipId = TppEquip.EQP_WP_West_mg_024, developedEquipType = n.MG_7000, developId = 7002 },
+		{ equipId = TppEquip.EQP_WP_West_mg_023, developedEquipType = n.MG_7000, developId = 7001 },
+		{ equipId = TppEquip.EQP_WP_West_mg_020, developedEquipType = n.MG_7000, developId = 7e3 },
 	},
 	MISSILE = {
-		{ equipId = TppEquip.EQP_WP_West_ms_020, isNoKill = true, developedEquipType = t.MS_8013_NOKILL, developId = 8013 },
-		{ equipId = TppEquip.EQP_WP_Com_ms_026, developedEquipType = t.MS_8020, developId = 8023 },
-		{ equipId = TppEquip.EQP_WP_Com_ms_020, developedEquipType = t.MS_8020, developId = 8022 },
-		{ equipId = TppEquip.EQP_WP_Com_ms_024, developedEquipType = t.MS_8020, developId = 8021 },
-		{ equipId = TppEquip.EQP_WP_Com_ms_023, developedEquipType = t.MS_8020, developId = 8020 },
+		{ equipId = TppEquip.EQP_WP_West_ms_02b, isNoKill = true, developedEquipType = n.MS_8013_NOKILL, developId = 8072 },
+		{ equipId = TppEquip.EQP_WP_West_ms_02a, isNoKill = true, developedEquipType = n.MS_8013_NOKILL, developId = 8071 },
+		{ equipId = TppEquip.EQP_WP_West_ms_029, isNoKill = true, developedEquipType = n.MS_8013_NOKILL, developId = 8070 },
+		{ equipId = TppEquip.EQP_WP_West_ms_020, isNoKill = true, developedEquipType = n.MS_8013_NOKILL, developId = 8013 },
+		{ equipId = TppEquip.EQP_WP_Com_ms_02b, developedEquipType = n.MS_8020, developId = 8052 },
+		{ equipId = TppEquip.EQP_WP_Com_ms_02a, developedEquipType = n.MS_8020, developId = 8051 },
+		{ equipId = TppEquip.EQP_WP_Com_ms_029, developedEquipType = n.MS_8020, developId = 8050 },
+		{ equipId = TppEquip.EQP_WP_Com_ms_026, developedEquipType = n.MS_8020, developId = 8023 },
+		{ equipId = TppEquip.EQP_WP_Com_ms_020, developedEquipType = n.MS_8020, developId = 8022 },
+		{ equipId = TppEquip.EQP_WP_Com_ms_024, developedEquipType = n.MS_8020, developId = 8021 },
+		{ equipId = TppEquip.EQP_WP_Com_ms_023, developedEquipType = n.MS_8020, developId = 8020 },
 	},
-	SHIELD = { { equipId = TppEquip.EQP_SLD_DD, developedEquipType = t.SD_9000, developId = 9e3 } },
+	SHIELD = { { equipId = TppEquip.EQP_SLD_DD, developedEquipType = n.SD_9000, developId = 9e3 } },
 	GRENADE = {
-		{ equipId = TppEquip.EQP_SWP_Grenade_G05, developedEquipType = t.GRENADE, developId = 10045 },
-		{ equipId = TppEquip.EQP_SWP_Grenade_G04, developedEquipType = t.GRENADE, developId = 10044 },
-		{ equipId = TppEquip.EQP_SWP_Grenade_G03, developedEquipType = t.GRENADE, developId = 10043 },
-		{ equipId = TppEquip.EQP_SWP_Grenade_G02, developedEquipType = t.GRENADE, developId = 10042 },
-		{ equipId = TppEquip.EQP_SWP_Grenade_G01, developedEquipType = t.GRENADE, developId = 10041 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G08, developedEquipType = n.GRENADE, developId = 11122 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G07, developedEquipType = n.GRENADE, developId = 11121 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G06, developedEquipType = n.GRENADE, developId = 11120 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G05, developedEquipType = n.GRENADE, developId = 10045 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G04, developedEquipType = n.GRENADE, developId = 10044 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G03, developedEquipType = n.GRENADE, developId = 10043 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G02, developedEquipType = n.GRENADE, developId = 10042 },
+		{ equipId = TppEquip.EQP_SWP_Grenade_G01, developedEquipType = n.GRENADE, developId = 10041 },
 		{ equipId = TppEquip.EQP_SWP_Grenade },
 	},
 	STUN_GRENADE = {
-		{ equipId = TppEquip.EQP_SWP_StunGrenade_G03, isNoKill = true, developedEquipType = t.STUN_GRENADE, developId = 10063 },
-		{ equipId = TppEquip.EQP_SWP_StunGrenade_G02, isNoKill = true, developedEquipType = t.STUN_GRENADE, developId = 10062 },
-		{ equipId = TppEquip.EQP_SWP_StunGrenade_G01, isNoKill = true, developedEquipType = t.STUN_GRENADE, developId = 10061 },
-		{ equipId = TppEquip.EQP_SWP_StunGrenade, isNoKill = true, developedEquipType = t.STUN_GRENADE, developId = 10060 },
+		{ equipId = TppEquip.EQP_SWP_StunGrenade_G06, isNoKill = true, developedEquipType = n.STUN_GRENADE, developId = 11152 },
+		{ equipId = TppEquip.EQP_SWP_StunGrenade_G05, isNoKill = true, developedEquipType = n.STUN_GRENADE, developId = 11151 },
+		{ equipId = TppEquip.EQP_SWP_StunGrenade_G04, isNoKill = true, developedEquipType = n.STUN_GRENADE, developId = 11150 },
+		{ equipId = TppEquip.EQP_SWP_StunGrenade_G03, isNoKill = true, developedEquipType = n.STUN_GRENADE, developId = 10063 },
+		{ equipId = TppEquip.EQP_SWP_StunGrenade_G02, isNoKill = true, developedEquipType = n.STUN_GRENADE, developId = 10062 },
+		{ equipId = TppEquip.EQP_SWP_StunGrenade_G01, isNoKill = true, developedEquipType = n.STUN_GRENADE, developId = 10061 },
+		{ equipId = TppEquip.EQP_SWP_StunGrenade, isNoKill = true, developedEquipType = n.STUN_GRENADE, developId = 10060 },
 	},
 	SNEAKING_SUIT = {
-		{ equipId = 6, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19042 },
-		{ equipId = 5, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19057 },
-		{ equipId = 4, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19056 },
-		{ equipId = 3, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19052 },
-		{ equipId = 2, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19051 },
-		{ equipId = 1, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19050 },
+		{ equipId = 9, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19302 },
+		{ equipId = 8, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19301 },
+		{ equipId = 7, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19300 },
+		{ equipId = 6, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19042 },
+		{ equipId = 5, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19057 },
+		{ equipId = 4, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19056 },
+		{ equipId = 3, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19052 },
+		{ equipId = 2, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19051 },
+		{ equipId = 1, isNoKill = true, developedEquipType = n.SNEAKING_SUIT, developId = 19050 },
 	},
 	BATTLE_DRESS = {
-		{ equipId = 6, developedEquipType = t.BATTLE_DRESS, developId = 19043 },
-		{ equipId = 5, developedEquipType = t.BATTLE_DRESS, developId = 19059 },
-		{ equipId = 4, developedEquipType = t.BATTLE_DRESS, developId = 19058 },
-		{ equipId = 3, developedEquipType = t.BATTLE_DRESS, developId = 19055 },
-		{ equipId = 2, developedEquipType = t.BATTLE_DRESS, developId = 19054 },
-		{ equipId = 1, developedEquipType = t.BATTLE_DRESS, developId = 19053 },
+		{ equipId = 9, developedEquipType = n.BATTLE_DRESS, developId = 19352 },
+		{ equipId = 8, developedEquipType = n.BATTLE_DRESS, developId = 19351 },
+		{ equipId = 7, developedEquipType = n.BATTLE_DRESS, developId = 19350 },
+		{ equipId = 6, developedEquipType = n.BATTLE_DRESS, developId = 19043 },
+		{ equipId = 5, developedEquipType = n.BATTLE_DRESS, developId = 19059 },
+		{ equipId = 4, developedEquipType = n.BATTLE_DRESS, developId = 19058 },
+		{ equipId = 3, developedEquipType = n.BATTLE_DRESS, developId = 19055 },
+		{ equipId = 2, developedEquipType = n.BATTLE_DRESS, developId = 19054 },
+		{ equipId = 1, developedEquipType = n.BATTLE_DRESS, developId = 19053 },
 	},
 }
 do
@@ -808,28 +847,28 @@ end
 function e.ClearDDParameter()
 	e.weaponIdTable.DD = nil
 end
-function e.PrepareDDParameter(n, a)
+function e.PrepareDDParameter(t, a)
 	if TppMotherBaseManagement.GetMbsDevelopedEquipGradeTable == nil then
 		e.weaponIdTable.DD =
 			{ NORMAL = { HANDGUN = TppEquip.EQP_WP_West_hg_010, ASSAULT = TppEquip.EQP_WP_West_ar_040 } }
 		return
 	end
 	local i = TppMotherBaseManagement.GetMbsDevelopedEquipGradeTable()
-	n = n or 9999
+	t = t or 9999
 	if gvars.ini_isTitleMode then
 		e.ClearDDParameter()
 	end
 	if e.weaponIdTable.DD ~= nil then
 	else
-		e.weaponIdTable.DD = e._CreateDDWeaponIdTable(i, n, a)
+		e.weaponIdTable.DD = e._CreateDDWeaponIdTable(i, t, a)
 	end
-	local a = i[t.FULTON_16001]
-	local t = i[t.FULTON_16008]
-	if a > n then
-		a = n
+	local a = i[n.FULTON_16001]
+	local i = i[n.FULTON_16008]
+	if a > t then
+		a = t
 	end
-	if t > n then
-		t = n
+	if i > t then
+		i = t
 	end
 	local n = 0
 	if a >= 4 then
@@ -839,12 +878,12 @@ function e.PrepareDDParameter(n, a)
 	elseif a >= 1 then
 		n = 1
 	end
-	local a = false
-	if t ~= 0 then
-		a = true
+	local t = false
+	if i ~= 0 then
+		t = true
 	end
 	e.weaponIdTable.DD.NORMAL.FULTON_LV = n
-	e.weaponIdTable.DD.NORMAL.WORMHOLE_FULTON = a
+	e.weaponIdTable.DD.NORMAL.WORMHOLE_FULTON = t
 end
 function e.SetUpDDParameter()
 	if not GameObject.DoesGameObjectExistWithTypeName("TppSoldier2") then
@@ -1736,9 +1775,9 @@ function e.AssignUniqueStaffType(e)
 		TppMotherBaseManagement.RegenerateGameObjectStaffParameter({ gameObjectId = e, staffType = "Unique", uniqueTypeId = n })
 	end
 end
-function e.IsActiveSoldierInRange(t, e)
-	local e = { id = "IsActiveSoldierInRange", position = t, range = e }
-	return n({ type = "TppSoldier2" }, e)
+function e.IsActiveSoldierInRange(n, e)
+	local e = { id = "IsActiveSoldierInRange", position = n, range = e }
+	return t({ type = "TppSoldier2" }, e)
 end
 function e._SetOutOfArea(n, t)
 	if s(n) then
@@ -1751,10 +1790,10 @@ function e._SetOutOfArea(n, t)
 	end
 end
 function e.SetOutOfArea(a, i)
-	local t = {}
-	e._SetOutOfArea(a, t)
-	local e = { id = "SetOutOfArea", soldiers = t, isOut = i }
-	n({ type = "TppSoldier2" }, e)
+	local n = {}
+	e._SetOutOfArea(a, n)
+	local e = { id = "SetOutOfArea", soldiers = n, isOut = i }
+	t({ type = "TppSoldier2" }, e)
 end
 function e.SetEliminateTargets(t, n)
 	mvars.ene_eliminateTargetList = {}
@@ -1799,20 +1838,20 @@ function e.SetEliminateTargets(t, n)
 		end
 	end
 end
-function e.DeleteEliminateTargetSetting(t)
+function e.DeleteEliminateTargetSetting(n)
 	if not mvars.ene_eliminateTargetList then
 		return
 	end
-	local e = r(t)
+	local e = r(n)
 	if e == a then
 		return
 	end
 	if mvars.ene_eliminateTargetList[e] then
 		mvars.ene_eliminateTargetList[e] = nil
-		local e = r("TppSoldier2", t)
+		local e = r("TppSoldier2", n)
 		if e == a then
 		else
-			n(e, { id = "ResetSoldier2Flag" })
+			t(e, { id = "ResetSoldier2Flag" })
 		end
 	elseif mvars.ene_eliminateHelicopterList[e] then
 		mvars.ene_eliminateHelicopterList[e] = nil
@@ -1850,25 +1889,25 @@ function e.GetAllHostages()
 		local e = 1
 		local i = 0
 		while i < e do
-			local t = T(r, i)
-			if t == a then
+			local n = T(r, i)
+			if n == a then
 				break
 			end
 			if e == 1 then
-				e = n({ type = r }, { id = "GetMaxInstanceCount" })
+				e = t({ type = r }, { id = "GetMaxInstanceCount" })
 				if not e or e < 1 then
 					break
 				end
 			end
 			local e = true
-			if mvars.ene_excludeHostageGameObjectId and mvars.ene_excludeHostageGameObjectId == t then
+			if mvars.ene_excludeHostageGameObjectId and mvars.ene_excludeHostageGameObjectId == n then
 				e = false
 			end
 			if e then
-				local e = n(t, { id = "GetLifeStatus" })
-				local n = n(t, { id = "GetStatus" })
-				if (n ~= s) and (e ~= TppGameObject.NPC_LIFE_STATE_DEAD) then
-					table.insert(o, t)
+				local e = t(n, { id = "GetLifeStatus" })
+				local t = t(n, { id = "GetStatus" })
+				if (t ~= s) and (e ~= TppGameObject.NPC_LIFE_STATE_DEAD) then
+					table.insert(o, n)
 				end
 			end
 			i = i + 1
@@ -1879,24 +1918,24 @@ end
 function e.GetAllActiveEnemyWalkerGear()
 	local r = {}
 	local e = 1
-	local t = 0
-	while t < e do
-		local i = T("TppCommonWalkerGear2", t)
+	local n = 0
+	while n < e do
+		local i = T("TppCommonWalkerGear2", n)
 		if i == a then
 			break
 		end
 		if e == 1 then
-			e = n({ type = "TppCommonWalkerGear2" }, { id = "GetMaxInstanceCount" })
+			e = t({ type = "TppCommonWalkerGear2" }, { id = "GetMaxInstanceCount" })
 			if not e or e < 1 then
 				break
 			end
 		end
-		local a = n(i, { id = "IsBroken" })
-		local e = n(i, { id = "IsFultonCaptured" })
+		local a = t(i, { id = "IsBroken" })
+		local e = t(i, { id = "IsFultonCaptured" })
 		if (a == false) and (e == false) then
 			table.insert(r, i)
 		end
-		t = t + 1
+		n = n + 1
 	end
 	return r
 end
@@ -1914,9 +1953,9 @@ function e.SetTargetOption(e)
 	local e = r(e)
 	if e == a then
 	else
-		n(e, { id = "SetVip" })
-		n(e, { id = "SetForceRealize" })
-		n(e, { id = "SetIgnoreSupportBlastInUnreal", enabled = true })
+		t(e, { id = "SetVip" })
+		t(e, { id = "SetForceRealize" })
+		t(e, { id = "SetIgnoreSupportBlastInUnreal", enabled = true })
 	end
 end
 function e.LetCpHasTarget(n, t)
@@ -1934,11 +1973,11 @@ function e.LetCpHasTarget(n, t)
 	GameObject.SendCommand(e, { id = "SetCpMissionTarget", enable = t })
 end
 function e.GetPhase(e)
-	local t = r(e)
-	return n(t, { id = "GetPhase", cpName = e })
+	local n = r(e)
+	return t(n, { id = "GetPhase", cpName = e })
 end
 function e.GetPhaseByCPID(e)
-	return n(e, { id = "GetPhase", cpName = mvars.ene_cpList[e] })
+	return t(e, { id = "GetPhase", cpName = mvars.ene_cpList[e] })
 end
 function e.GetLifeStatus(e)
 	if not e then
@@ -1947,7 +1986,7 @@ function e.GetLifeStatus(e)
 	if o(e) then
 		e = GameObject.GetGameObjectId(e)
 	end
-	return n(e, { id = "GetLifeStatus" })
+	return t(e, { id = "GetLifeStatus" })
 end
 function e.GetActionStatus(e)
 	if not e then
@@ -1956,17 +1995,17 @@ function e.GetActionStatus(e)
 	if o(e) then
 		e = GameObject.GetGameObjectId(e)
 	end
-	return n(e, { id = "GetActionStatus" })
+	return t(e, { id = "GetActionStatus" })
 end
-function e.GetStatus(t)
+function e.GetStatus(n)
 	local e
-	if o(t) then
-		e = r(t)
+	if o(n) then
+		e = r(n)
 	else
-		e = t
+		e = n
 	end
 	if e ~= a then
-		return n(e, { id = "GetStatus" })
+		return t(e, { id = "GetStatus" })
 	else
 		return
 	end
@@ -2016,20 +2055,20 @@ function e.ChangeLifeState(n)
 		return "Cannot get gameObjectId. targetName = " .. tostring(n)
 	end
 end
-function e.SetSneakRoute(e, s, t, r)
+function e.SetSneakRoute(e, s, n, r)
 	if not e then
 		return
 	end
 	if o(e) then
 		e = GameObject.GetGameObjectId(e)
 	end
-	t = t or 0
+	n = n or 0
 	local i = false
 	if Tpp.IsTypeTable(r) then
 		i = r.isRelaxed
 	end
 	if e ~= a then
-		n(e, { id = "SetSneakRoute", route = s, point = t, isRelaxed = i })
+		t(e, { id = "SetSneakRoute", route = s, point = n, isRelaxed = i })
 	end
 end
 function e.UnsetSneakRoute(e)
@@ -2040,19 +2079,19 @@ function e.UnsetSneakRoute(e)
 		e = GameObject.GetGameObjectId(e)
 	end
 	if e ~= a then
-		n(e, { id = "SetSneakRoute", route = "" })
+		t(e, { id = "SetSneakRoute", route = "" })
 	end
 end
-function e.SetCautionRoute(e, i, t, r)
+function e.SetCautionRoute(e, i, n, r)
 	if not e then
 		return
 	end
 	if o(e) then
 		e = GameObject.GetGameObjectId(e)
 	end
-	t = t or 0
+	n = n or 0
 	if e ~= a then
-		n(e, { id = "SetCautionRoute", route = i, point = t })
+		t(e, { id = "SetCautionRoute", route = i, point = n })
 	end
 end
 function e.UnsetCautionRoute(e)
@@ -2063,19 +2102,19 @@ function e.UnsetCautionRoute(e)
 		e = GameObject.GetGameObjectId(e)
 	end
 	if e ~= a then
-		n(e, { id = "SetCautionRoute", route = "" })
+		t(e, { id = "SetCautionRoute", route = "" })
 	end
 end
-function e.SetAlertRoute(e, i, t, r)
+function e.SetAlertRoute(e, i, n, r)
 	if not e then
 		return
 	end
 	if o(e) then
 		e = GameObject.GetGameObjectId(e)
 	end
-	t = t or 0
+	n = n or 0
 	if e ~= a then
-		n(e, { id = "SetAlertRoute", enabled = true, route = i, point = t })
+		t(e, { id = "SetAlertRoute", enabled = true, route = i, point = n })
 	end
 end
 function e.UnsetAlertRoute(e)
@@ -2086,7 +2125,7 @@ function e.UnsetAlertRoute(e)
 		e = GameObject.GetGameObjectId(e)
 	end
 	if e ~= a then
-		n(e, { id = "SetAlertRoute", enabled = false, route = "" })
+		t(e, { id = "SetAlertRoute", enabled = false, route = "" })
 	end
 end
 function e.RegistRoutePointMessage(e)
@@ -2119,18 +2158,18 @@ function e.IsOuterBaseCp(e)
 	end
 	return mvars.ene_outerBaseCpList[e]
 end
-function e.ChangeRouteSets(t, a)
+function e.ChangeRouteSets(n, a)
 	mvars.ene_routeSetsTemporary = mvars.ene_routeSets
 	mvars.ene_routeSetsPriorityTemporary = mvars.ene_routeSetsPriority
-	e.MergeRouteSetDefine(t)
+	e.MergeRouteSetDefine(n)
 	mvars.ene_routeSets = {}
 	mvars.ene_routeSetsPriority = {}
 	mvars.ene_routeSetsFixedShiftChange = {}
 	e.UpdateRouteSet(mvars.ene_routeSetsDefine)
-	local t = { { { "old", "immediately" }, { "new", "immediately" } } }
+	local n = { { { "old", "immediately" }, { "new", "immediately" } } }
 	for e, a in pairs(mvars.ene_cpList) do
-		n(e, { id = "ChangeRouteSets" })
-		n(e, { id = "ShiftChange", schedule = t })
+		t(e, { id = "ChangeRouteSets" })
+		t(e, { id = "ShiftChange", schedule = n })
 	end
 end
 function e.InitialRouteSetGroup(e)
@@ -2139,17 +2178,17 @@ function e.InitialRouteSetGroup(e)
 	if not s(e.soldierList) then
 		return
 	end
-	local t = {}
-	for n, e in pairs(e.soldierList) do
+	local n = {}
+	for t, e in pairs(e.soldierList) do
 		local e = r(e)
 		if e ~= a then
-			t[n] = e
+			n[t] = e
 		end
 	end
 	if i == a then
 		return
 	end
-	n(i, { id = "AssignSneakRouteGroup", soldiers = t, group = o })
+	t(i, { id = "AssignSneakRouteGroup", soldiers = n, group = o })
 end
 function e.RegisterHoldTime(e, n)
 	local e = r(e)
@@ -2243,15 +2282,15 @@ function e.SetEnable(e)
 		e = GameObject.GetGameObjectId(e)
 	end
 	if e ~= a then
-		n(e, { id = "SetEnabled", enabled = true })
+		t(e, { id = "SetEnabled", enabled = true })
 	end
 end
-function e.SetDisable(e, t)
+function e.SetDisable(e, n)
 	if o(e) then
 		e = GameObject.GetGameObjectId(e)
 	end
 	if e ~= a then
-		n(e, { id = "SetEnabled", enabled = false, noAssignRoute = t })
+		t(e, { id = "SetEnabled", enabled = false, noAssignRoute = n })
 	end
 end
 function e.SetEnableRestrictNotice(e)
@@ -2259,7 +2298,7 @@ function e.SetEnableRestrictNotice(e)
 		e = GameObject.GetGameObjectId(e)
 	end
 	if e ~= a then
-		n(e, { id = "SetRestrictNotice", enabled = true })
+		t(e, { id = "SetRestrictNotice", enabled = true })
 	end
 end
 function e.SetDisableRestrictNotice(e)
@@ -2267,17 +2306,17 @@ function e.SetDisableRestrictNotice(e)
 		e = GameObject.GetGameObjectId(e)
 	end
 	if e ~= a then
-		n(e, { id = "SetRestrictNotice", enabled = false })
+		t(e, { id = "SetRestrictNotice", enabled = false })
 	end
 end
 function e.RealizeParasiteSquad()
 	if not s(mvars.ene_parasiteSquadList) then
 		return
 	end
-	for t, e in pairs(mvars.ene_parasiteSquadList) do
+	for n, e in pairs(mvars.ene_parasiteSquadList) do
 		local e = r("TppParasite2", e)
 		if e ~= a then
-			n(e, { id = "Realize" })
+			t(e, { id = "Realize" })
 		end
 	end
 end
@@ -2285,10 +2324,10 @@ function e.UnRealizeParasiteSquad()
 	if not s(mvars.ene_parasiteSquadList) then
 		return
 	end
-	for t, e in pairs(mvars.ene_parasiteSquadList) do
+	for n, e in pairs(mvars.ene_parasiteSquadList) do
 		local e = r("TppParasite2", e)
 		if e ~= a then
-			n(e, { id = "Unrealize" })
+			t(e, { id = "Unrealize" })
 		end
 	end
 end
@@ -3377,31 +3416,31 @@ end
 function e.RestoreOnContinueFromCheckPoint2()
 	do
 		local e = { type = "TppCommandPost2" }
-		n(e, { id = "RestoreFromSVars" })
+		t(e, { id = "RestoreFromSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppSoldier2", 0) ~= a then
 		local e = { type = "TppSoldier2" }
-		n(e, { id = "RestoreFromSVars" })
+		t(e, { id = "RestoreFromSVars" })
 	end
 	e._RestoreOnContinueFromCheckPoint_Hostage2()
 	if GameObject.GetGameObjectIdByIndex("TppEnemyHeli", 0) ~= a then
 		local e = { type = "TppEnemyHeli" }
-		n(e, { id = "RestoreFromSVars" })
+		t(e, { id = "RestoreFromSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppVehicle2", 0) ~= a then
-		n({ type = "TppVehicle2" }, { id = "RestoreFromSVars" })
+		t({ type = "TppVehicle2" }, { id = "RestoreFromSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppCommonWalkerGear2", 0) ~= a then
-		n({ type = "TppCommonWalkerGear2" }, { id = "RestoreFromSVars" })
+		t({ type = "TppCommonWalkerGear2" }, { id = "RestoreFromSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppLiquid2", 0) ~= a then
-		n({ type = "TppLiquid2" }, { id = "RestoreFromSVars" })
+		t({ type = "TppLiquid2" }, { id = "RestoreFromSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppUav", 0) ~= a then
-		n({ type = "TppUav" }, { id = "RestoreFromSVars" })
+		t({ type = "TppUav" }, { id = "RestoreFromSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppSecurityCamera2", 0) ~= a then
-		n({ type = "TppSecurityCamera2" }, { id = "RestoreFromSVars" })
+		t({ type = "TppSecurityCamera2" }, { id = "RestoreFromSVars" })
 	end
 end
 function e.RestoreOnContinueFromCheckPoint()
@@ -3411,36 +3450,36 @@ function e.RestoreOnMissionStart()
 	e._RestoreOnMissionStart_Hostage()
 end
 function e.StoreSVars(i)
-	local t = false
+	local n = false
 	if i then
-		t = true
+		n = true
 	end
 	do
 		local e = { type = "TppCommandPost2" }
-		n(e, { id = "StoreToSVars" })
+		t(e, { id = "StoreToSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppSoldier2", 0) ~= a then
 		local e = { type = "TppSoldier2" }
-		n(e, { id = "StoreToSVars", markerOnly = t })
+		t(e, { id = "StoreToSVars", markerOnly = n })
 	end
-	e._StoreSVars_Hostage(t)
+	e._StoreSVars_Hostage(n)
 	if GameObject.GetGameObjectIdByIndex("TppEnemyHeli", 0) ~= a then
-		n({ type = "TppEnemyHeli" }, { id = "StoreToSVars" })
+		t({ type = "TppEnemyHeli" }, { id = "StoreToSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppVehicle2", 0) ~= a then
-		n({ type = "TppVehicle2" }, { id = "StoreToSVars" })
+		t({ type = "TppVehicle2" }, { id = "StoreToSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppCommonWalkerGear2", 0) ~= a then
-		n({ type = "TppCommonWalkerGear2" }, { id = "StoreToSVars" })
+		t({ type = "TppCommonWalkerGear2" }, { id = "StoreToSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppLiquid2", 0) ~= a then
-		n({ type = "TppLiquid2" }, { id = "StoreToSVars" })
+		t({ type = "TppLiquid2" }, { id = "StoreToSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppUav", 0) ~= a then
-		n({ type = "TppUav" }, { id = "StoreToSVars" })
+		t({ type = "TppUav" }, { id = "StoreToSVars" })
 	end
 	if GameObject.GetGameObjectIdByIndex("TppSecurityCamera2", 0) ~= a then
-		n({ type = "TppSecurityCamera2" }, { id = "StoreToSVars" })
+		t({ type = "TppSecurityCamera2" }, { id = "StoreToSVars" })
 	end
 end
 function e.PreMissionLoad(n, t)
@@ -3587,33 +3626,33 @@ function e.SetUpSoldiers()
 		return
 	end
 	local o = TppMission.GetMissionID()
-	for i, t in pairs(mvars.ene_soldierDefine) do
-		local t = r(i)
-		if t == a then
+	for i, n in pairs(mvars.ene_soldierDefine) do
+		local n = r(i)
+		if n == a then
 		else
 			if string.sub(i, -4) == "lrrp" then
-				n(t, { id = "SetLrrpCp" })
+				t(n, { id = "SetLrrpCp" })
 			end
 			local a = string.sub(i, -2)
 			if a == "ob" then
-				GameObject.SendCommand(t, { id = "SetOuterBaseCp" })
-				mvars.ene_outerBaseCpList[t] = true
+				GameObject.SendCommand(n, { id = "SetOuterBaseCp" })
+				mvars.ene_outerBaseCpList[n] = true
 			end
 			if a == "cp" then
-				local n = true
+				local t = true
 				if i == "mafr_outland_child_cp" then
-					n = false
+					t = false
 				end
-				if n then
+				if t then
 					e.AddCpIntelTrapTable(i)
-					mvars.ene_baseCpList[t] = true
+					mvars.ene_baseCpList[n] = true
 				end
 			end
-			TppEmblem.SetUpCpEmblemTag(i, t)
+			TppEmblem.SetUpCpEmblemTag(i, n)
 			if mvars.loc_locationSiren then
 				local e = mvars.loc_locationSiren[i]
 				if e then
-					n(t, { id = "SetCpSirenType", type = e.sirenType, pos = e.pos })
+					t(n, { id = "SetCpSirenType", type = e.sirenType, pos = e.pos })
 				end
 			end
 			local e
@@ -3627,30 +3666,30 @@ function e.SetUpSoldiers()
 				e = { id = "SetCpType", type = CpType.TYPE_AMERICA }
 			end
 			if e then
-				GameObject.SendCommand(t, e)
+				GameObject.SendCommand(n, e)
 			end
 		end
 	end
-	for e, t in pairs(mvars.ene_cpList) do
+	for e, n in pairs(mvars.ene_cpList) do
 		if mvars.ene_baseCpList[e] then
-			local e = mvars.ene_soldierDefine[t]
-			for t, e in ipairs(e) do
+			local e = mvars.ene_soldierDefine[n]
+			for n, e in ipairs(e) do
 				local e = r(e)
 				if e == a then
 				else
-					n(e, { id = "AddRouteAssignMember" })
+					t(e, { id = "AddRouteAssignMember" })
 				end
 			end
 		end
 	end
-	for i, t in pairs(mvars.ene_cpList) do
+	for i, n in pairs(mvars.ene_cpList) do
 		if not mvars.ene_baseCpList[i] then
-			local e = mvars.ene_soldierDefine[t]
-			for t, e in ipairs(e) do
+			local e = mvars.ene_soldierDefine[n]
+			for n, e in ipairs(e) do
 				local e = r(e)
 				if e == a then
 				else
-					n(e, { id = "AddRouteAssignMember" })
+					t(e, { id = "AddRouteAssignMember" })
 				end
 			end
 		end
@@ -3662,28 +3701,28 @@ function e.AssignSoldiersToCP()
 	e._ConvertSoldierNameKeysToId(mvars.ene_soldierTypes)
 	mvars.ene_soldierSubType = mvars.ene_soldierSubType or {}
 	mvars.ene_soldierLrrp = mvars.ene_soldierLrrp or {}
-	local t = e.subTypeOfCp
+	local n = e.subTypeOfCp
 	for a, p in pairs(mvars.ene_soldierIDList) do
 		local i = mvars.ene_cpList[a]
-		local o = t[i]
+		local o = n[i]
 		local s = false
-		for t, p in pairs(p) do
-			n(t, { id = "SetCommandPost", cp = i })
+		for n, p in pairs(p) do
+			t(n, { id = "SetCommandPost", cp = i })
 			if mvars.ene_lrrpTravelPlan[a] then
-				n(t, { id = "SetLrrp", travelPlan = mvars.ene_lrrpTravelPlan[a] })
-				mvars.ene_soldierLrrp[t] = true
+				t(n, { id = "SetLrrp", travelPlan = mvars.ene_lrrpTravelPlan[a] })
+				mvars.ene_soldierLrrp[n] = true
 				if mvars.ene_lrrpVehicle[a] then
 					local e = GameObject.GetGameObjectId("TppVehicle2", mvars.ene_lrrpVehicle[a])
 					local e = { id = "SetRelativeVehicle", targetId = e, rideFromBeginning = true }
-					n(t, e)
+					t(n, e)
 				end
 			end
-			local n
-			local e = e.GetSoldierType(t)
-			n = { id = "SetSoldier2Type", type = e }
-			GameObject.SendCommand(t, n)
+			local t
+			local e = e.GetSoldierType(n)
+			t = { id = "SetSoldier2Type", type = e }
+			GameObject.SendCommand(n, t)
 			if (e ~= EnemyType.TYPE_SKULL and e ~= EnemyType.TYPE_CHILD) and o then
-				mvars.ene_soldierSubType[t] = o
+				mvars.ene_soldierSubType[n] = o
 			end
 			if r ~= 10080 and r ~= 11080 then
 				if e == EnemyType.TYPE_CHILD then
@@ -3692,7 +3731,7 @@ function e.AssignSoldiersToCP()
 			end
 		end
 		if s then
-			n(a, { id = "SetChildCp" })
+			t(a, { id = "SetChildCp" })
 		end
 	end
 end
@@ -3727,8 +3766,8 @@ function e.SetCommonCpGroups()
 end
 function e.SetCpGroups()
 	local e = { type = "TppCommandPost2" }
-	local t = { id = "SetCpGroups", cpGroups = mvars.ene_cpGroups }
-	n(e, t)
+	local n = { id = "SetCpGroups", cpGroups = mvars.ene_cpGroups }
+	t(e, n)
 end
 function e.RegistVehicleSettings(e)
 	if not s(e) then
@@ -3801,13 +3840,13 @@ function e.SetUpVehicles()
 	if mvars.ene_vehicleSettings == nil then
 		return
 	end
-	for t, e in pairs(mvars.ene_vehicleSettings) do
-		if (o(t) and s(e)) and e.type then
-			local t = { id = "Spawn", locator = t, type = e.type }
+	for n, e in pairs(mvars.ene_vehicleSettings) do
+		if (o(n) and s(e)) and e.type then
+			local n = { id = "Spawn", locator = n, type = e.type }
 			if e.subType then
-				t.subType = e.subType
+				n.subType = e.subType
 			end
-			n({ type = "TppVehicle2" }, t)
+			t({ type = "TppVehicle2" }, n)
 		end
 	end
 end
@@ -3955,7 +3994,7 @@ function e.SetUpSwitchRouteFunc()
 	if not GameObject.DoesGameObjectExistWithTypeName("TppSoldier2") then
 		return
 	end
-	n({ type = "TppSoldier2" }, { id = "SetSwitchRouteFunc", func = e.SwitchRouteFunc })
+	t({ type = "TppSoldier2" }, { id = "SetSwitchRouteFunc", func = e.SwitchRouteFunc })
 end
 function e.SwitchRouteFunc(a, n, t, a, a)
 	if n == e.STR32_CAN_USE_SEARCH_LIGHT then
@@ -4002,8 +4041,8 @@ function e.SetUpCommandPost()
 	if not s(mvars.ene_soldierIDList) then
 		return
 	end
-	for t, a in pairs(mvars.ene_cpList) do
-		n(t, { id = "SetRouteSelector", func = e.RouteSelector })
+	for n, a in pairs(mvars.ene_cpList) do
+		t(n, { id = "SetRouteSelector", func = e.RouteSelector })
 	end
 end
 function e.RegisterRouteAnimation()
@@ -4040,31 +4079,31 @@ function e.MergeRouteSetDefine(o)
 			end
 		end
 	end
-	for e, t in pairs(o) do
+	for e, n in pairs(o) do
 		mvars.ene_routeSetsDefine[e] = mvars.ene_routeSetsDefine[e] or {}
-		local t = t
-		if t.walkergearpark then
+		local n = n
+		if n.walkergearpark then
 			local e = r(e)
-			n(e, { id = "SetWalkerGearParkRoute", routes = t.walkergearpark })
+			t(e, { id = "SetWalkerGearParkRoute", routes = n.walkergearpark })
 		end
 		if mvars.loc_locationCommonRouteSets then
 			if mvars.loc_locationCommonRouteSets[e] then
 				if mvars.loc_locationCommonRouteSets[e].outofrain then
 					local a = r(e)
-					if t.outofrain then
-						n(a, { id = "SetOutOfRainRoute", routes = t.outofrain })
+					if n.outofrain then
+						t(a, { id = "SetOutOfRainRoute", routes = n.outofrain })
 					else
-						n(a, { id = "SetOutOfRainRoute", routes = mvars.loc_locationCommonRouteSets[e].outofrain })
+						t(a, { id = "SetOutOfRainRoute", routes = mvars.loc_locationCommonRouteSets[e].outofrain })
 					end
 				end
 			end
-			if t.USE_COMMON_ROUTE_SETS then
+			if n.USE_COMMON_ROUTE_SETS then
 				if mvars.loc_locationCommonRouteSets[e] then
 					i(e, mvars.loc_locationCommonRouteSets[e])
 				end
 			end
 		end
-		i(e, t)
+		i(e, n)
 	end
 end
 function e.UpdateRouteSet(n)
@@ -4176,7 +4215,7 @@ function e._GetShiftChangeRouteGroup(n, o, a, l, s, i, p, t)
 	local n = n[r]
 	return a, t, e, n
 end
-function e._MakeShiftChangeUnit(t, i, n, r, o, d, l, a, T, c, _)
+function e._MakeShiftChangeUnit(t, i, n, r, o, d, l, a, T, u, _)
 	if mvars.ene_noShiftChangeGroupSetting[t] and mvars.ene_noShiftChangeGroupSetting[t][n] then
 		return nil
 	end
@@ -4247,7 +4286,7 @@ function e.MakeShiftChangeTable()
 		end
 	end
 end
-function e.ShiftChangeByTime(t)
+function e.ShiftChangeByTime(n)
 	if TppLocation.IsMotherBase() or TppLocation.IsMBQF() then
 		return
 	end
@@ -4255,16 +4294,16 @@ function e.ShiftChangeByTime(t)
 		return
 	end
 	for a, e in pairs(mvars.ene_shiftChangeTable) do
-		if e[t] then
-			n(a, { id = "ShiftChange", schedule = e[t] })
+		if e[n] then
+			t(a, { id = "ShiftChange", schedule = e[n] })
 		end
 	end
 end
-local function d(t, e, a)
-	local n = n(a, { id = "GetPosition" })
-	local e = e - n
+local function d(n, e, a)
+	local t = t(a, { id = "GetPosition" })
+	local e = e - t
 	local e = e:GetLengthSqr()
-	if e > t then
+	if e > n then
 		return false
 	else
 		return true
@@ -4442,9 +4481,9 @@ function e.SetTravelPlans(i)
 	else
 		mvars.ene_travelPlans = i
 	end
-	n({ type = "TppSoldier2" }, { id = "SetTravelPlan", travelPlan = mvars.ene_travelPlans })
+	t({ type = "TppSoldier2" }, { id = "SetTravelPlan", travelPlan = mvars.ene_travelPlans })
 	if next(mvars.ene_reinforcePlans) then
-		n({ type = "TppCommandPost2" }, { id = "SetReinforcePlan", reinforcePlan = mvars.ene_reinforcePlans })
+		t({ type = "TppCommandPost2" }, { id = "SetReinforcePlan", reinforcePlan = mvars.ene_reinforcePlans })
 	end
 end
 function e.RegistHoldBrokenState(n)
@@ -4517,17 +4556,17 @@ function e.IsVehicleBroken(e)
 		return svars.ene_isVehicleBroken[n]
 	end
 end
-function e.IsVehicleAlive(t)
+function e.IsVehicleAlive(n)
 	local e
-	if o(t) then
-		e = r(t)
-	elseif l(t) then
-		e = t
+	if o(n) then
+		e = r(n)
+	elseif l(n) then
+		e = n
 	end
 	if e == a then
 		return
 	end
-	return n(e, { id = "IsAlive" })
+	return t(e, { id = "IsAlive" })
 end
 function e.PlayTargetRescuedRadio(n)
 	local t = e.IsEliminateTarget(n)
@@ -4649,13 +4688,13 @@ function e.CheckAllTargetClear(n)
 	end
 	return true
 end
-function e.CheckSoldierEliminateTarget(t, i, a)
-	local a = n(t, { id = "GetLifeStatus" })
-	local n = n(t, { id = "GetStatus" })
-	if e._IsEliminated(a, n) then
+function e.CheckSoldierEliminateTarget(n, i, a)
+	local a = t(n, { id = "GetLifeStatus" })
+	local t = t(n, { id = "GetStatus" })
+	if e._IsEliminated(a, t) then
 		return true
-	elseif e._IsNeutralized(a, n) then
-		if d(T, i, t) then
+	elseif e._IsNeutralized(a, t) then
+		if d(T, i, n) then
 			return true
 		else
 			return false
@@ -4744,12 +4783,12 @@ function e.FultonRecoverOnMissionGameEnd()
 	end
 	TppHelicopter.ClearPassengerTable()
 end
-function e.AutoFultonRecoverNeutralizedTarget(t, a)
-	local n = n(t, { id = "GetLifeStatus" })
-	if n == e.LIFE_STATUS.SLEEP or n == e.LIFE_STATUS.FAINT then
+function e.AutoFultonRecoverNeutralizedTarget(n, a)
+	local t = t(n, { id = "GetLifeStatus" })
+	if t == e.LIFE_STATUS.SLEEP or t == e.LIFE_STATUS.FAINT then
 		local e
-		e = TppMotherBaseManagement.GetStaffIdFromGameObject({ gameObjectId = t })
-		TppTerminal.OnFulton(t, nil, nil, e, nil, a, PlayerInfo.GetLocalPlayerIndex())
+		e = TppMotherBaseManagement.GetStaffIdFromGameObject({ gameObjectId = n })
+		TppTerminal.OnFulton(n, nil, nil, e, nil, a, PlayerInfo.GetLocalPlayerIndex())
 	end
 end
 function e.CheckQuestTargetOnOutOfActiveArea(n)
@@ -4771,25 +4810,25 @@ function e.CheckQuestTargetOnOutOfActiveArea(n)
 	end
 	return t
 end
-function e.ChangeRouteUsingGimmick(e, t, a, t)
-	local t = TppGimmick.GetRouteConnectedGimmickId(e)
-	if (t ~= nil) and TppGimmick.IsBroken({ gimmickId = t }) then
-		local t
-		for e, n in pairs(mvars.ene_soldierIDList) do
-			if n[a] then
-				t = e
+function e.ChangeRouteUsingGimmick(e, n, a, n)
+	local n = TppGimmick.GetRouteConnectedGimmickId(e)
+	if (n ~= nil) and TppGimmick.IsBroken({ gimmickId = n }) then
+		local n
+		for e, t in pairs(mvars.ene_soldierIDList) do
+			if t[a] then
+				n = e
 				break
 			end
 		end
-		if t then
+		if n then
 			local e = { id = "SetRouteEnabled", routes = { e }, enabled = false }
-			n(t, e)
+			t(n, e)
 		end
 	else
 		mvars.ene_usingGimmickRouteEnemyList = mvars.ene_usingGimmickRouteEnemyList or {}
 		mvars.ene_usingGimmickRouteEnemyList[e] = mvars.ene_usingGimmickRouteEnemyList[e] or {}
 		mvars.ene_usingGimmickRouteEnemyList[e] = a
-		n(a, { id = "SetSneakRoute", route = e })
+		t(a, { id = "SetSneakRoute", route = e })
 	end
 end
 function e.DisableUseGimmickRouteOnShiftChange(a, e)
@@ -4799,16 +4838,16 @@ function e.DisableUseGimmickRouteOnShiftChange(a, e)
 	if mvars.ene_usingGimmickRouteEnemyList == nil then
 		return
 	end
-	for t, e in pairs(e) do
-		local t = p(e)
-		local t = mvars.ene_usingGimmickRouteEnemyList[t]
-		if t then
-			n(t, { id = "SetSneakRoute", route = "" })
+	for n, e in pairs(e) do
+		local n = p(e)
+		local n = mvars.ene_usingGimmickRouteEnemyList[n]
+		if n then
+			t(n, { id = "SetSneakRoute", route = "" })
 		end
-		local t = mvars.gim_routeGimmickConnectTable[p(e)]
-		if (t ~= nil) and TppGimmick.IsBroken({ gimmickId = t }) then
+		local n = mvars.gim_routeGimmickConnectTable[p(e)]
+		if (n ~= nil) and TppGimmick.IsBroken({ gimmickId = n }) then
 			local e = { id = "SetRouteEnabled", routes = { e }, enabled = false }
-			n(a, e)
+			t(a, e)
 		end
 	end
 end
@@ -4842,37 +4881,37 @@ function e.IsFemaleHostage(e)
 	local e = GameObject.SendCommand(e, { id = "isFemale" })
 	return e
 end
-function e.AddTakingOverHostage(t)
-	local a = GameObject.GetTypeIndex(t)
+function e.AddTakingOverHostage(n)
+	local a = GameObject.GetTypeIndex(n)
 	if a ~= TppGameObject.GAME_OBJECT_TYPE_HOSTAGE2 then
 		return
 	end
-	if e.IsRecovered(t) then
+	if e.IsRecovered(n) then
 		return
 	end
-	if TppHelicopter.IsInHelicopter(t) then
+	if TppHelicopter.IsInHelicopter(n) then
 		return
 	end
-	if mvars.ene_ignoreTakingOverHostage and mvars.ene_ignoreTakingOverHostage[t] then
+	if mvars.ene_ignoreTakingOverHostage and mvars.ene_ignoreTakingOverHostage[n] then
 		return
 	end
-	if e.IsRescueTarget(t) then
+	if e.IsRescueTarget(n) then
 		return
 	end
-	local n = n(t, { id = "GetMarkerEnabled" })
-	if n then
-		e._AddTakingOverHostage(t)
+	local t = t(n, { id = "GetMarkerEnabled" })
+	if t then
+		e._AddTakingOverHostage(n)
 	end
 end
-function e._AddTakingOverHostage(t)
+function e._AddTakingOverHostage(n)
 	if gvars.ene_takingOverHostageCount >= TppDefine.MAX_TAKING_OVER_HOSTAGE_COUNT then
 		return
 	end
 	local e = gvars.ene_takingOverHostageCount
-	local a = n(t, { id = "GetPosition" })
-	local o, r = n(t, { id = "GetStaffId", divided = true })
-	local i = n(t, { id = "GetFaceId" })
-	local n = n(t, { id = "GetKeepFlagValue" })
+	local a = t(n, { id = "GetPosition" })
+	local o, r = t(n, { id = "GetStaffId", divided = true })
+	local i = t(n, { id = "GetFaceId" })
+	local n = t(n, { id = "GetKeepFlagValue" })
 	gvars.ene_takingOverHostagePositions[e * 3 + 0] = a:GetX()
 	gvars.ene_takingOverHostagePositions[e * 3 + 1] = a:GetY()
 	gvars.ene_takingOverHostagePositions[e * 3 + 2] = a:GetZ()
@@ -4915,28 +4954,28 @@ function e.SpawnTakingOverHostage(n)
 		e._SpawnTakingOverHostage(t - 1, n)
 	end
 end
-function e._SpawnTakingOverHostage(t, e)
+function e._SpawnTakingOverHostage(n, e)
 	local e = r(e)
 	if e == a then
 		return
 	end
-	if t < gvars.ene_takingOverHostageCount then
+	if n < gvars.ene_takingOverHostageCount then
 		local a = gvars.ene_takingOverHostageStaffIdsUpper[infoIndex]
 		local i = gvars.ene_takingOverHostageStaffIdsLower[infoIndex]
-		n(e, { id = "SetStaffId", divided = true, staffId = a, staffId2 = i })
+		t(e, { id = "SetStaffId", divided = true, staffId = a, staffId2 = i })
 		if TppMission.IsMissionStart() then
-			n(e, { id = "SetEnabled", enabled = true })
+			t(e, { id = "SetEnabled", enabled = true })
 			local a = Vector3(
-				gvars.ene_takingOverHostagePositions[t * 3],
-				gvars.ene_takingOverHostagePositions[t * 3 + 1],
-				gvars.ene_takingOverHostagePositions[t * 3 + 2]
+				gvars.ene_takingOverHostagePositions[n * 3],
+				gvars.ene_takingOverHostagePositions[n * 3 + 1],
+				gvars.ene_takingOverHostagePositions[n * 3 + 2]
 			)
-			n(e, { id = "Warp", position = a })
-			n(e, { id = "SetFaceId", faceId = gvars.ene_takingOverHostageFaceIds[t] })
-			n(e, { id = "SetKeepFlagValue", keepFlagValue = gvars.ene_takingOverHostageFlags[t] })
+			t(e, { id = "Warp", position = a })
+			t(e, { id = "SetFaceId", faceId = gvars.ene_takingOverHostageFaceIds[n] })
+			t(e, { id = "SetKeepFlagValue", keepFlagValue = gvars.ene_takingOverHostageFlags[n] })
 		end
 	else
-		n(e, { id = "SetEnabled", enabled = false })
+		t(e, { id = "SetEnabled", enabled = false })
 	end
 end
 function e.SetIgnoreTakingOverHostage(e)
@@ -4953,19 +4992,19 @@ function e.SetIgnoreTakingOverHostage(e)
 		end
 	end
 end
-function e.SetIgnoreDisableNpc(t, i)
+function e.SetIgnoreDisableNpc(n, i)
 	local e
-	if l(t) then
-		e = t
-	elseif o(t) then
-		e = r(t)
+	if l(n) then
+		e = n
+	elseif o(n) then
+		e = r(n)
 	else
 		return
 	end
 	if e == a then
 		return
 	end
-	n(e, { id = "SetIgnoreDisableNpc", enable = i })
+	t(e, { id = "SetIgnoreDisableNpc", enable = i })
 	return true
 end
 function e.NPCEntryPointSetting(e)
@@ -5954,8 +5993,8 @@ end
 function e.CheckQuestAllTarget(p, S, T, a, t)
 	local n = TppDefine.QUEST_CLEAR_TYPE.NONE
 	local l = a or false
-	local u = t or false
-	local c = false
+	local c = t or false
+	local u = false
 	local r = 0
 	local a = 0
 	local o = 0
@@ -5976,9 +6015,9 @@ function e.CheckQuestAllTarget(p, S, T, a, t)
 			_ = true
 		end
 		e.messageId = S or "None"
-		c = true
+		u = true
 	end
-	if (l == false and u == false) and c == false then
+	if (l == false and c == false) and u == false then
 		return n
 	end
 	for n, p in pairs(mvars.ene_questTargetList) do
@@ -6052,7 +6091,7 @@ function e.CheckQuestAllTarget(p, S, T, a, t)
 			end
 		end
 	end
-	if u == true then
+	if c == true then
 		if n == TppDefine.QUEST_CLEAR_TYPE.NONE or n == TppDefine.QUEST_CLEAR_TYPE.UPDATE then
 			n = TppDefine.QUEST_CLEAR_TYPE.NONE
 		end
@@ -6144,18 +6183,18 @@ end
 function e.IsSpecialEventFOB()
 	return e.IsParasiteMetalEventFOB()
 end
-function e._OnDead(t, i)
+function e._OnDead(n, i)
 	local a
 	if i then
 		a = Tpp.IsPlayer(i)
 	end
-	local i = e.IsEliminateTarget(t)
-	local r = e.IsRescueTarget(t)
+	local i = e.IsEliminateTarget(n)
+	local r = e.IsRescueTarget(n)
 	if a then
-		if Tpp.IsHostage(t) then
-			if e.IsChildHostage(t) then
+		if Tpp.IsHostage(n) then
+			if e.IsChildHostage(n) then
 				if TppMission.GetMissionID() ~= 10100 then
-					TppMission.ReserveGameOverOnPlayerKillChild(t)
+					TppMission.ReserveGameOverOnPlayerKillChild(n)
 				end
 			else
 				if not i and not r then
@@ -6164,19 +6203,19 @@ function e._OnDead(t, i)
 			end
 		end
 	end
-	if Tpp.IsSoldier(t) then
-		local e = e.GetSoldierType(t)
+	if Tpp.IsSoldier(n) then
+		local e = e.GetSoldierType(n)
 		if e == EnemyType.TYPE_CHILD then
-			TppMission.ReserveGameOverOnPlayerKillChild(t)
+			TppMission.ReserveGameOverOnPlayerKillChild(n)
 		end
 	end
-	if Tpp.IsHostage(t) and TppMission.GetMissionID() ~= 10100 then
-		local e = n(t, { id = "IsChild" })
+	if Tpp.IsHostage(n) and TppMission.GetMissionID() ~= 10100 then
+		local e = t(n, { id = "IsChild" })
 		if e then
-			TppMission.ReserveGameOverOnPlayerKillChild(t)
+			TppMission.ReserveGameOverOnPlayerKillChild(n)
 		end
 	end
-	e.PlayTargetEliminatedRadio(t)
+	e.PlayTargetEliminatedRadio(n)
 end
 function e._OnRecoverNPC(n, t)
 	e._PlayRecoverNPCRadio(n)
@@ -6268,9 +6307,9 @@ function e._IsRouteSetTypeValid(n)
 	end
 	return false
 end
-function e._ShiftChangeByTime(t)
+function e._ShiftChangeByTime(n)
 	for e, a in pairs(mvars.ene_cpList) do
-		n(e, { id = "ShiftChange", schedule = mvars.ene_shiftChangeTable[e][t] })
+		t(e, { id = "ShiftChange", schedule = mvars.ene_shiftChangeTable[e][n] })
 	end
 end
 function e._IsEliminated(t, n)
@@ -6301,9 +6340,9 @@ function e._RestoreOnContinueFromCheckPoint_Hostage2()
 			"TppSkullFace2",
 			"TppMantis2",
 		}
-		for t, e in ipairs(e) do
+		for n, e in ipairs(e) do
 			if GameObject.GetGameObjectIdByIndex(e, 0) ~= a then
-				n({ type = e }, { id = "RestoreFromSVars" })
+				t({ type = e }, { id = "RestoreFromSVars" })
 			end
 		end
 	end
@@ -6336,7 +6375,7 @@ function e._RestoreOnMissionStart_Hostage2()
 	end
 end
 function e._StoreSVars_Hostage(i)
-	local t = {
+	local n = {
 		"TppHostage2",
 		"TppHostageUnique",
 		"TppHostageUnique2",
@@ -6348,15 +6387,15 @@ function e._StoreSVars_Hostage(i)
 		"TppMantis2",
 	}
 	if TppHostage2.SetSVarsKeyNames2 then
-		for t, e in ipairs(t) do
+		for n, e in ipairs(n) do
 			if GameObject.GetGameObjectIdByIndex(e, 0) ~= a then
-				n({ type = e }, { id = "ReadyToStoreToSVars" })
+				t({ type = e }, { id = "ReadyToStoreToSVars" })
 			end
 		end
 	end
-	for t, e in ipairs(t) do
+	for n, e in ipairs(n) do
 		if GameObject.GetGameObjectIdByIndex(e, 0) ~= a then
-			n({ type = e }, { id = "StoreToSVars", markerOnly = i })
+			t({ type = e }, { id = "StoreToSVars", markerOnly = i })
 		end
 	end
 end

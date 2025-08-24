@@ -1275,7 +1275,7 @@ function e.SetUpBuddyMBDVCMenu()
 		end
 	end
 end
-function e.DoFuncByFultonTypeSwitch(e, n, r, a, o, t, M, _, E, i, u, s, p, T, S, c, l, d)
+function e.DoFuncByFultonTypeSwitch(e, n, r, a, o, t, M, _, E, i, u, s, p, T, S, d, l, c)
 	if Tpp.IsSoldier(e) then
 		return _(e, n, r, a, o, t)
 	elseif Tpp.IsVolgin(e) then
@@ -1291,11 +1291,11 @@ function e.DoFuncByFultonTypeSwitch(e, n, r, a, o, t, M, _, E, i, u, s, p, T, S,
 	elseif Tpp.IsEnemyWalkerGear(e) then
 		return S(e, n, r, a, nil, t)
 	elseif Tpp.IsAnimal(e) then
-		return c(e, n, r, a, nil, t)
+		return d(e, n, r, a, nil, t)
 	elseif Tpp.IsBossQuiet(e) then
 		return l(e, n, r, a, o, t)
 	elseif Tpp.IsParasiteSquad(e) then
-		return d(e, n, r, a, nil, t)
+		return c(e, n, r, a, nil, t)
 	else
 		local o = Tpp.GetBuddyTypeFromGameObjectId(e)
 		if o then
@@ -1396,6 +1396,7 @@ function e.OnFultonSoldier(t, a, a, r, n, o)
 		end
 		PlayRecord.RegistPlayRecord("SOLDIER_RESCUE")
 		Tpp.IncrementPlayData("totalRescueCount")
+		TppUI.UpdateOnlineChallengeTask({ detectType = 2, diff = 1 })
 	end
 	e.AddTempStaffFulton({ staffId = a, gameObjectId = t, tempStaffStatus = M, fultonedPlayer = o })
 end
@@ -1425,16 +1426,20 @@ function e.OnFultonHostage(t, n, n, r, a, o)
 		if e then
 			TppTrophy.Unlock(31)
 		end
+		TppUI.UpdateOnlineChallengeTask({ detectType = 3, diff = 1 })
 	end
 	e.AddTempStaffFulton({ staffId = n, gameObjectId = t, tempStaffStatus = M, fultonedPlayer = o })
 end
-function e.OnFultonVehicle(a, a, a, n, a, t)
+function e.OnFultonVehicle(t, r, r, a, r, n)
 	if mvars.trm_isSkipAddResourceToTempBuffer then
 		return
 	end
-	e.AddTempResource(n, nil, t)
+	e.AddTempResource(a, nil, n)
+	if OnlineChallengeTask then
+		OnlineChallengeTask.UpdateOnFultonVehicle(t)
+	end
 end
-function e.OnFultonContainer(o, t, n, M, M, a, r)
+function e.OnFultonContainer(r, t, n, M, M, a, o)
 	if mvars.trm_isSkipAddResourceToTempBuffer then
 		return
 	end
@@ -1448,12 +1453,12 @@ function e.OnFultonContainer(o, t, n, M, M, a, r)
 		end
 		TppMotherBaseManagement.AddTempResource({ resourceId = e, count = 1, visual = t, owner = n })
 	else
-		local e = TppGimmick.GetGimmickID(o, t, n)
+		local e = TppGimmick.GetGimmickID(r, t, n)
 		if not e then
 			e = "commFacility_cntn001"
 		end
 		local t = false
-		if r == 1 then
+		if o == 1 then
 			t = true
 		end
 		Gimmick.CallFindContainerResourceLog(e, t)
@@ -1495,6 +1500,7 @@ function e.OnFultonEnemyWalkerGear(n, n, n, t, n, n)
 		return
 	end
 	e.AddTempResource(t)
+	TppUI.UpdateOnlineChallengeTask({ detectType = 8, diff = 1 })
 end
 function e.OnFultonAnimal(a, n)
 	if mvars.trm_isSkipAddResourceToTempBuffer then

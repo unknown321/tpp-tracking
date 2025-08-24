@@ -308,6 +308,7 @@ function e.OnHelicopterLostControl(n, o)
 		PlayRecord.RegistPlayRecord("HERI_DESTROY")
 		Tpp.IncrementPlayData("totalHelicopterDestoryCount")
 		e.SetAndAnnounceHeroicOgrePoint(e.ENEMY_HELI_LOST_CONTROLE)
+		TppUI.UpdateOnlineChallengeTask({ detectType = 27, diff = 1 })
 	end
 end
 function e.SetAndAnnounceHeroicOgrePointForAnnihilateCp(i, o)
@@ -559,6 +560,7 @@ function e.Messages()
 								TppTrophy.Unlock(18)
 								Tpp.IncrementPlayData("totalAnnihilateBaseCount")
 								TppChallengeTask.RequestUpdate("ENEMY_BASE")
+								TppUI.UpdateOnlineChallengeTask({ detectType = 32, diff = 1 })
 							end
 							TppEmblem.AcquireOnCommandPostAnnihilated(n)
 						elseif TppEnemy.IsOuterBaseCp(n) then
@@ -567,6 +569,7 @@ function e.Messages()
 								Tpp.IncrementPlayData("totalAnnihilateOutPostCount")
 								TppChallengeTask.RequestUpdate("ENEMY_BASE")
 								TppTrophy.Unlock(18)
+								TppUI.UpdateOnlineChallengeTask({ detectType = 33, diff = 1 })
 							end
 							TppEmblem.AcquireOnCommandPostAnnihilated(n)
 						end

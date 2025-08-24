@@ -190,9 +190,9 @@ _.PERSONAL_DATA_SAVE_FILE_NAME = "PERSONAL_DATA"
 _.CATEGORY_MISSION_RESTARTABLE = 2
 _.SAVE_FILE_INFO = {
 	[TppScriptVars.CATEGORY_GAME_GLOBAL] = { version = 107, slot = _.SAVE_SLOT.GLOBAL },
-	[TppScriptVars.CATEGORY_MISSION] = { version = 112, slot = _.SAVE_SLOT.CHECK_POINT },
+	[TppScriptVars.CATEGORY_MISSION] = { version = 114, slot = _.SAVE_SLOT.CHECK_POINT },
 	[TppScriptVars.CATEGORY_RETRY] = { version = 105, slot = _.SAVE_SLOT.RETRY },
-	[TppScriptVars.CATEGORY_MB_MANAGEMENT] = { version = 111, slot = _.SAVE_SLOT.MB_MANAGEMENT },
+	[TppScriptVars.CATEGORY_MB_MANAGEMENT] = { version = 112, slot = _.SAVE_SLOT.MB_MANAGEMENT },
 	[TppScriptVars.CATEGORY_QUEST] = { version = 104, slot = _.SAVE_SLOT.QUEST },
 	[TppScriptVars.CATEGORY_CONFIG] = { version = 103, slot = _.SAVE_SLOT.CONFIG },
 	[_.CATEGORY_MISSION_RESTARTABLE] = {

@@ -178,6 +178,7 @@ e.ANNOUNCE_LOG_TYPE = {
 	refresh = "announce_refresh",
 	get_hero = "announce_get_hero",
 	lost_hero = "announce_lost_hero",
+	challenge_task = "announce_challenge_task_d90",
 }
 e.ANNOUNCE_LOG_PRIORITY = {
 	"eliminateTarget",
@@ -265,7 +266,7 @@ function e.Messages()
 		},
 	})
 end
-local function t(e)
+local function a(e)
 	if type(e) == "string" then
 		return Fox.StrCode32(e)
 	elseif type(e) == "number" then
@@ -273,8 +274,8 @@ local function t(e)
 	end
 	return nil
 end
-function e.FadeIn(i, a, o, n)
-	local t = t(a)
+function e.FadeIn(t, i, o, n)
+	local i = a(i)
 	if n then
 		mvars.ui_onEndFadeInExceptGameStatus = n.exceptGameStatus
 	elseif mvars.ui_onEndFadeInOverrideExceptGameStatus then
@@ -283,7 +284,7 @@ function e.FadeIn(i, a, o, n)
 		mvars.ui_onEndFadeInExceptGameStatus = nil
 	end
 	TppSoundDaemon.ResetMute("Outro")
-	p(i, t, o)
+	p(t, i, o)
 	e.EnableGameStatusOnFadeInStart()
 end
 function e.OverrideFadeInGameStatus(e)
@@ -301,15 +302,15 @@ end
 function e.SetFadeColorToWhite()
 	FadeFunction.SetFadeColor(255, 255, 255, 255)
 end
-function e.FadeOut(p, o, s, n)
-	local a, i
+function e.FadeOut(o, p, s, n)
+	local i, t
 	if Tpp.IsTypeTable(n) then
-		a = n.setMute
-		i = n.exceptGameStatus
+		i = n.setMute
+		t = n.exceptGameStatus
 	end
-	local n = t(o)
-	e.DisableGameStatusOnFade(i)
-	if a then
+	local n = a(p)
+	e.DisableGameStatusOnFade(t)
+	if i then
 		TppSound.SetMuteOnLoading()
 	else
 		if
@@ -318,33 +319,33 @@ function e.FadeOut(p, o, s, n)
 			TppSoundDaemon.SetMute("Outro")
 		end
 	end
-	_(p, n, s)
+	_(o, n, s)
 end
-function e.ShowAnnounceLog(a, t, o, n, i)
+function e.ShowAnnounceLog(a, t, o, i, n)
 	if gvars.ini_isTitleMode then
 		return
 	end
 	local e = e.ANNOUNCE_LOG_TYPE[a]
 	if e then
-		if n then
-			TppUiCommand.AnnounceLogDelayTime(n)
+		if i then
+			TppUiCommand.AnnounceLogDelayTime(i)
 		end
 		TppUiCommand.AnnounceLogViewLangId(e, t, o)
-	elseif i then
-		local e = TppUiCommand.GetCurrentMissionSubGoalByNo(i)
+	elseif n then
+		local e = TppUiCommand.GetCurrentMissionSubGoalByNo(n)
 		TppUiCommand.AnnounceLogViewLangId(e)
 	end
 end
-function e.ShowColorAnnounceLog(a, t, i, n)
+function e.ShowColorAnnounceLog(i, t, a, n)
 	if gvars.ini_isTitleMode then
 		return
 	end
-	local e = e.ANNOUNCE_LOG_TYPE[a]
+	local e = e.ANNOUNCE_LOG_TYPE[i]
 	if e then
 		if n then
 			TppUiCommand.AnnounceLogDelayTime(n)
 		end
-		TppUiCommand.AnnounceLogViewLangId(e, t, i, 0, 0, true)
+		TppUiCommand.AnnounceLogViewLangId(e, t, a, 0, 0, true)
 	end
 end
 function e.ShowJoinAnnounceLog(i, o, t, a, n)
@@ -360,17 +361,17 @@ function e.ShowJoinAnnounceLog(i, o, t, a, n)
 		TppUiCommand.AnnounceLogViewJoinLangId(i, e, t, a)
 	end
 end
-function e.ShowColorJoinAnnounceLog(n, a, o, t, i)
+function e.ShowColorJoinAnnounceLog(n, t, o, a, i)
 	if gvars.ini_isTitleMode then
 		return
 	end
 	local n = e.ANNOUNCE_LOG_TYPE[n]
-	local e = e.ANNOUNCE_LOG_TYPE[a]
+	local e = e.ANNOUNCE_LOG_TYPE[t]
 	if n and e then
 		if i then
 			TppUiCommand.AnnounceLogDelayTime(i)
 		end
-		TppUiCommand.AnnounceLogViewJoinLangId(n, e, o, t, 0, 0, true)
+		TppUiCommand.AnnounceLogViewJoinLangId(n, e, o, a, 0, 0, true)
 	end
 end
 function e.ShowEmergencyAnnounceLog(n)
@@ -388,7 +389,7 @@ function e.ShowEmergencyAnnounceLog(n)
 		end
 	end
 end
-function e.EnableMissionPhoto(e, i, n, a, t)
+function e.EnableMissionPhoto(e, i, n, t, a)
 	TppUiCommand.EnableMissionPhotoId(e)
 	if TppUiCommand.IsMissionPhotoIdEnable(e) then
 		if i or n then
@@ -400,10 +401,10 @@ function e.EnableMissionPhoto(e, i, n, a, t)
 			end
 			TppUiCommand.SetAdditonalMissionPhotoId(e, i, n)
 		end
-		if a then
-		end
 		if t then
-			local n = r(t)
+		end
+		if a then
+			local n = r(a)
 			TppUiCommand.SetMissionPhotoRadioGroupName(e, n)
 		end
 	end
@@ -471,15 +472,15 @@ function e.GetMaxMissionTask(e)
 		return #e
 	end
 end
-function e.EnableMissionTask(a, t)
-	if t == nil then
-		t = true
+function e.EnableMissionTask(t, a)
+	if a == nil then
+		a = true
 	end
-	if not i(a) then
+	if not i(t) then
 		return
 	end
 	local n = {}
-	for e, i in pairs(a) do
+	for e, i in pairs(t) do
 		n[e] = i
 	end
 	local i = n.taskNo
@@ -500,20 +501,21 @@ function e.EnableMissionTask(a, t)
 	if n.isComplete then
 		n.isHide = false
 		local n = vars.missionCode
-		local o = e.GetTaskCompletedNumber(n)
+		local s = e.GetTaskCompletedNumber(n)
 		e.SetTaskLastCompleted(i, true)
-		local i = e.GetTaskCompletedNumber(n)
-		local a = e.GetMaxMissionTask(n)
-		if a == nil then
+		local t = e.GetTaskCompletedNumber(n)
+		local o = e.GetMaxMissionTask(n)
+		if o == nil then
 			return
 		end
-		if t then
-			if i > o then
-				e.ShowAnnounceLog("task_complete", i, a)
+		if a then
+			if t > s then
+				e.ShowAnnounceLog("task_complete", t, o)
 			end
 		end
 		TppMission.SetPlayRecordClearInfo()
 		TppChallengeTask.RequestUpdate("MISSION_TASK")
+		e.UpdateOnlineChallengeTask({ detectType = (34 + i), diff = 1 })
 		if e.IsAllTaskCompleted(n) then
 			TppEmblem.AcquireOnAllMissionTaskComleted(n)
 		end
@@ -578,36 +580,41 @@ function e.IsAllTaskCompleted(n)
 	end
 	return false
 end
+function e.UpdateOnlineChallengeTask(e)
+	if OnlineChallengeTask then
+		OnlineChallengeTask.Update(e)
+	end
+end
 function e.ShowControlGuide(n)
 	if not i(n) then
 		return
 	end
-	local t, o, i, a, s, p, r
-	t = n.actionName
-	o = n.continue
+	local a, s, i, p, t, o, r
+	a = n.actionName
+	s = n.continue
 	i = n.time
-	a = n.isOnce
-	s = n.isOnceThisGame
-	p = n.pauseControl
+	p = n.isOnce
+	t = n.isOnceThisGame
+	o = n.pauseControl
 	r = n.ignoreRadio
 	if not e.IsEnableToShowGuide(true) then
 		return
 	end
-	if type(t) ~= "string" then
+	if type(a) ~= "string" then
 		return
 	end
-	local e = TppDefine.CONTROL_GUIDE[t]
+	local e = TppDefine.CONTROL_GUIDE[a]
 	local n = TppDefine.CONTROL_GUIDE_LANG_ID_LIST[e]
 	if n == nil then
 		return
 	end
-	if a then
+	if p then
 		if gvars.ui_isControlGuideShownOnce[e] then
 			return
 		end
 		gvars.ui_isControlGuideShownOnce[e] = true
 	end
-	if s then
+	if t then
 		if gvars.ui_isControlGuidShownInThisGame[e] then
 			return
 		end
@@ -617,8 +624,8 @@ function e.ShowControlGuide(n)
 		i = TppTutorial.DISPLAY_TIME.DEFAULT
 	end
 	TppUiCommand.SetButtonGuideDispTime(i)
-	if not p then
-		if o == true then
+	if not o then
+		if s == true then
 			TppUiCommand.CallButtonGuideContinue(n, false, false, false)
 		else
 			TppUiCommand.CallButtonGuide(n, false, false, false)
@@ -1157,22 +1164,22 @@ end
 function e.OnReload()
 	e.Init()
 end
-function e.OnMessage(o, a, p, s, i, t, n)
-	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, o, a, p, s, i, t, n)
+function e.OnMessage(o, t, p, s, i, a, n)
+	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, o, t, p, s, i, a, n)
 end
 function e.OnChangeSVars(n, e)
 	if FobUI then
 		FobUI.OnChangeSVars(n, e)
 	end
 end
-function e.DisableGameStatusOnFade(n)
-	local e = { S_DISABLE_NPC = false }
-	if i(n) then
-		for n, i in pairs(n) do
-			e[n] = i
+function e.DisableGameStatusOnFade(e)
+	local n = { S_DISABLE_NPC = false }
+	if i(e) then
+		for e, i in pairs(e) do
+			n[e] = i
 		end
 	end
-	Tpp.SetGameStatus({ target = "all", enable = false, except = e, scriptName = "TppUI.lua" })
+	Tpp.SetGameStatus({ target = "all", enable = false, except = n, scriptName = "TppUI.lua" })
 end
 function e.DisableGameStatusOnFadeOutEnd()
 	Tpp.SetGameStatus({ target = "all", enable = false, scriptName = "TppUI.lua" })

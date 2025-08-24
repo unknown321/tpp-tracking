@@ -1,25 +1,25 @@
 local e = {}
-local r = Tpp.ApendArray
+local s = Tpp.ApendArray
 local n = Tpp.DEBUG_StrCode32ToString
 local t = Tpp.IsTypeFunc
 local i = Tpp.IsTypeTable
-local f = TppScriptVars.IsSavingOrLoading
-local M = ScriptBlock.UpdateScriptsInScriptBlocks
+local M = TppScriptVars.IsSavingOrLoading
+local f = ScriptBlock.UpdateScriptsInScriptBlocks
 local m = Mission.GetCurrentMessageResendCount
 local a = {}
-local l = 0
+local p = 0
 local c = {}
 local o = 0
 local T = {}
 local u = 0
 local n = {}
 local n = 0
-local S = {}
-local P = {}
-local s = 0
 local d = {}
 local h = {}
-local p = 0
+local r = 0
+local S = {}
+local P = {}
+local l = 0
 local function n()
 	if QuarkSystem.GetCompilerState() == QuarkSystem.COMPILER_STATE_WAITING_TO_LOAD then
 		QuarkSystem.PostRequestToLoad()
@@ -101,7 +101,7 @@ function e.OnAllocate(n)
 	e.EnablePause()
 	TppClock.Stop()
 	a = {}
-	l = 0
+	p = 0
 	T = {}
 	u = 0
 	TppUI.FadeOut(TppUI.FADE_SPEED.FADE_MOMENT, nil, nil)
@@ -134,7 +134,7 @@ function e.OnAllocate(n)
 	e.ClearStageBlockMessage()
 	TppQuest.OnAllocate(n)
 	TppAnimal.OnAllocate(n)
-	local function s()
+	local function o()
 		if TppLocation.IsAfghan() then
 			if afgh then
 				afgh.OnAllocate()
@@ -153,14 +153,14 @@ function e.OnAllocate(n)
 			end
 		end
 	end
-	s()
+	o()
 	if n.sequence then
 		if f30050_sequence then
 			function f30050_sequence.NeedPlayQuietWishGoMission()
-				local n = TppQuest.IsCleard("mtbs_q99011")
-				local i = not TppDemo.IsPlayedMBEventDemo("QuietWishGoMission")
+				local i = TppQuest.IsCleard("mtbs_q99011")
+				local n = not TppDemo.IsPlayedMBEventDemo("QuietWishGoMission")
 				local e = TppDemo.GetMBDemoName() == nil
-				return (n and i) and e
+				return (i and n) and e
 			end
 		end
 		if t(n.sequence.MissionPrepare) then
@@ -176,27 +176,30 @@ function e.OnAllocate(n)
 		end
 	end
 	do
-		local o = {}
+		local a = {}
 		for i, e in ipairs(Tpp._requireList) do
 			if _G[e] then
 				if _G[e].DeclareSVars then
-					r(o, _G[e].DeclareSVars(n))
+					s(a, _G[e].DeclareSVars(n))
 				end
 			end
 		end
-		local s = {}
+		local o = {}
 		for n, e in pairs(n) do
 			if t(e.DeclareSVars) then
-				r(s, e.DeclareSVars())
+				s(o, e.DeclareSVars())
 			end
 			if i(e.saveVarsList) then
-				r(s, TppSequence.MakeSVarsTable(e.saveVarsList))
+				s(o, TppSequence.MakeSVarsTable(e.saveVarsList))
 			end
 		end
-		r(o, s)
-		TppScriptVars.DeclareSVars(o)
+		if OnlineChallengeTask then
+			s(o, OnlineChallengeTask.DeclareSVars())
+		end
+		s(a, o)
+		TppScriptVars.DeclareSVars(a)
 		TppScriptVars.SetSVarsNotificationEnabled(false)
-		while f() do
+		while M() do
 			coroutine.yield()
 		end
 		TppRadioCommand.SetScriptDeclVars()
@@ -350,6 +353,9 @@ function e.OnInitialize(n)
 			_G[e].Init(n)
 		end
 	end
+	if OnlineChallengeTask then
+		OnlineChallengeTask.Init()
+	end
 	if n.enemy then
 		if GameObject.DoesGameObjectExistWithTypeName("TppSoldier2") then
 			GameObject.SendCommand({ type = "TppSoldier2" }, { id = "CreateFaceIdList" })
@@ -470,7 +476,7 @@ function e.OnInitialize(n)
 end
 function e.SetUpdateFunction(e)
 	a = {}
-	l = 0
+	p = 0
 	c = {}
 	o = 0
 	T = {}
@@ -483,7 +489,7 @@ function e.SetUpdateFunction(e)
 		TppPlayer.Update,
 		TppMission.UpdateForMissionLoad,
 	}
-	l = #a
+	p = #a
 	for n, e in pairs(e) do
 		if t(e.OnUpdate) then
 			o = o + 1
@@ -568,10 +574,10 @@ function e.ClearStageBlockMessage()
 	StageBlock.ClearLargeBlockNameForMessage()
 	StageBlock.ClearSmallBlockIndexForMessage()
 end
-function e.ReservePlayerLoadingPosition(n, s, o, i, t, a, p)
+function e.ReservePlayerLoadingPosition(n, s, o, t, i, p, a)
 	e.DisableGameStatus()
 	if n == TppDefine.MISSION_LOAD_TYPE.MISSION_FINALIZE then
-		if i then
+		if t then
 			TppHelicopter.ResetMissionStartHelicopterRoute()
 			TppPlayer.ResetInitialPosition()
 			TppPlayer.ResetMissionStartPosition()
@@ -599,7 +605,7 @@ function e.ReservePlayerLoadingPosition(n, s, o, i, t, a, p)
 			TppPlayer.ResetNoOrderBoxMissionStartPosition()
 			TppMission.SetIsStartFromHelispace()
 			TppMission.ResetIsStartFromFreePlay()
-		elseif t then
+		elseif i then
 			if TppLocation.IsMotherBase() then
 				TppPlayer.SetStartStatusRideOnHelicopter()
 			else
@@ -677,22 +683,22 @@ function e.ReservePlayerLoadingPosition(n, s, o, i, t, a, p)
 		TppHelicopter.ResetMissionStartHelicopterRoute()
 		TppMission.ResetIsStartFromHelispace()
 		TppMission.ResetIsStartFromFreePlay()
-		if a then
-			if t then
+		if p then
+			if i then
 				TppPlayer.SetStartStatus(TppDefine.INITIAL_PLAYER_STATE.ON_FOOT)
 				TppHelicopter.ResetMissionStartHelicopterRoute()
 				TppPlayer.SetMissionStartPositionToCurrentPosition()
 				TppPlayer.ResetNoOrderBoxMissionStartPosition()
-			elseif i then
+			elseif t then
 				TppPlayer.ResetMissionStartPosition()
 			elseif vars.missionCode ~= 5 then
 			end
 		else
-			if i then
+			if t then
 				TppHelicopter.ResetMissionStartHelicopterRoute()
 				TppPlayer.ResetInitialPosition()
 				TppPlayer.ResetMissionStartPosition()
-			elseif t then
+			elseif i then
 				TppMission.SetMissionOrderBoxPosition()
 			elseif vars.missionCode ~= 5 then
 			end
@@ -700,7 +706,7 @@ function e.ReservePlayerLoadingPosition(n, s, o, i, t, a, p)
 	elseif n == TppDefine.MISSION_LOAD_TYPE.MISSION_RESTART then
 	elseif n == TppDefine.MISSION_LOAD_TYPE.CONTINUE_FROM_CHECK_POINT then
 	end
-	if s and p then
+	if s and a then
 		Mission.AddLocationFinalizer(function()
 			e.StageBlockCurrentPosition()
 		end)
@@ -734,6 +740,9 @@ function e.OnReload(n)
 			n[i]._messageExecTable = Tpp.MakeMessageExecTable(e.Messages())
 		end
 	end
+	if OnlineChallengeTask then
+		OnlineChallengeTask.OnReload()
+	end
 	if n.enemy then
 		if i(n.enemy.routeSets) then
 			TppClock.UnregisterClockMessage("ShiftChangeAtNight")
@@ -758,51 +767,51 @@ function e.OnReload(n)
 end
 function e.OnUpdate(e)
 	local e
-	local n = a
-	local e = c
-	local i = T
-	for e = 1, l do
+	local i = a
+	local n = c
+	local e = T
+	for e = 1, p do
+		i[e]()
+	end
+	for e = 1, o do
 		n[e]()
 	end
-	for n = 1, o do
-		e[n]()
-	end
-	M()
+	f()
 end
-function e.OnChangeSVars(e, n, i)
+function e.OnChangeSVars(e, i, n)
 	for t, e in ipairs(Tpp._requireList) do
 		if _G[e].OnChangeSVars then
-			_G[e].OnChangeSVars(n, i)
+			_G[e].OnChangeSVars(i, n)
 		end
 	end
 end
 function e.SetMessageFunction(e)
-	S = {}
-	s = 0
 	d = {}
-	p = 0
+	r = 0
+	S = {}
+	l = 0
 	for n, e in ipairs(Tpp._requireList) do
 		if _G[e].OnMessage then
-			s = s + 1
-			S[s] = _G[e].OnMessage
+			r = r + 1
+			d[r] = _G[e].OnMessage
 		end
 	end
 	for n, i in pairs(e) do
 		if e[n]._messageExecTable then
-			p = p + 1
-			d[p] = e[n]._messageExecTable
+			l = l + 1
+			S[l] = e[n]._messageExecTable
 		end
 	end
 end
-function e.OnMessage(n, e, i, t, o, a, r)
+function e.OnMessage(n, e, i, a, p, t, o)
 	local n = mvars
-	local l = ""
+	local s = ""
 	local T
-	local c = Tpp.DoMessage
-	local u = TppMission.CheckMessageOption
+	local u = Tpp.DoMessage
+	local c = TppMission.CheckMessageOption
 	local T = TppDebug
-	local T = P
 	local T = h
+	local T = P
 	local T = TppDefine.MESSAGE_GENERATION[e] and TppDefine.MESSAGE_GENERATION[e][i]
 	if not T then
 		T = TppDefine.DEFAULT_MESSAGE_GENERATION
@@ -811,22 +820,25 @@ function e.OnMessage(n, e, i, t, o, a, r)
 	if m < T then
 		return Mission.ON_MESSAGE_RESULT_RESEND
 	end
-	for s = 1, s do
-		local n = l
-		S[s](e, i, t, o, a, r, n)
+	for n = 1, r do
+		local s = s
+		d[n](e, i, a, p, t, o, s)
 	end
-	for n = 1, p do
-		local s = l
-		c(d[n], u, e, i, t, o, a, r, s)
+	for r = 1, l do
+		local n = s
+		u(S[r], c, e, i, a, p, t, o, n)
+	end
+	if OnlineChallengeTask then
+		OnlineChallengeTask.OnMessage(e, i, a, p, t, o, s)
 	end
 	if n.loc_locationCommonTable then
-		n.loc_locationCommonTable.OnMessage(e, i, t, o, a, r, l)
+		n.loc_locationCommonTable.OnMessage(e, i, a, p, t, o, s)
 	end
 	if n.order_box_script then
-		n.order_box_script.OnMessage(e, i, t, o, a, r, l)
+		n.order_box_script.OnMessage(e, i, a, p, t, o, s)
 	end
 	if n.animalBlockScript and n.animalBlockScript.OnMessage then
-		n.animalBlockScript.OnMessage(e, i, t, o, a, r, l)
+		n.animalBlockScript.OnMessage(e, i, a, p, t, o, s)
 	end
 end
 function e.OnTerminate(e)

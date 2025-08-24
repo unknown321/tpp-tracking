@@ -105,6 +105,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
+	partsID = TppEquip.RC_1003a,
+	messageID = "prts_rc_1116",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_hg00_main1_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0700",
+	langPowerUpInfo1 = "ability_0516",
+	langPowerUpInfo2 = "ability_0908",
+	langPowerUpInfo3 = "ability_0031",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
 	partsID = TppEquip.RC_10101,
 	messageID = "prts_rc_1000",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_hg01_main3_def_alp",
@@ -664,6 +677,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
+	partsID = TppEquip.RC_20119,
+	messageID = "prts_rc_2014",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sm01_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0703",
+	langPowerUpInfo1 = "ability_0700",
+	langPowerUpInfo2 = "ability_0000",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
 	partsID = TppEquip.RC_20203,
 	messageID = "prts_rc_2020",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sm02_main0_def_alp",
@@ -769,6 +795,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
 	partsID = TppEquip.RC_20307,
+	messageID = "prts_rc_2310",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sm01_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0703",
+	langPowerUpInfo1 = "ability_0700",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
+	partsID = TppEquip.RC_20309,
 	messageID = "prts_rc_2310",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sm01_main0_def_alp",
 	displayInfo = 0,
@@ -911,6 +950,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
+	partsID = TppEquip.RC_30119,
+	messageID = "prts_rc_3231",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ar00_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0703",
+	langPowerUpInfo1 = "ability_0701",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
 	partsID = TppEquip.RC_30201,
 	messageID = "prts_rc_3050",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ar03_main0_def_alp",
@@ -977,6 +1029,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
 	partsID = TppEquip.RC_30237,
+	messageID = "prts_rc_3260",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ar03_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0023",
+	langPowerUpInfo1 = "ability_0703",
+	langPowerUpInfo2 = "ability_0701",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
+	partsID = TppEquip.RC_30239,
 	messageID = "prts_rc_3260",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ar03_main0_def_alp",
 	displayInfo = 0,
@@ -2120,6 +2185,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
+	partsID = TppEquip.RC_60309,
+	messageID = "prts_rc_6130",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sr00_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0701",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
 	partsID = TppEquip.RC_60315,
 	messageID = "prts_rc_6034",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sr00_main1_def_alp",
@@ -2160,6 +2238,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
 	partsID = TppEquip.RC_60327,
+	messageID = "prts_rc_6137",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sr00_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0038",
+	langPowerUpInfo1 = "ability_0701",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
+	partsID = TppEquip.RC_60329,
 	messageID = "prts_rc_6137",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_sr00_main0_def_alp",
 	displayInfo = 0,
@@ -2250,6 +2341,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
+	partsID = TppEquip.RC_70009,
+	messageID = "prts_rc_7100",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_mg01_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0703",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
 	partsID = TppEquip.RC_70015,
 	messageID = "prts_rc_7005",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_mg01_main0_def_alp",
@@ -2303,6 +2407,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
 	partsID = TppEquip.RC_70115,
+	messageID = "prts_rc_7114",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_mg03_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0002",
+	langPowerUpInfo1 = "ability_0703",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
+	partsID = TppEquip.RC_70125,
 	messageID = "prts_rc_7114",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_mg03_main0_def_alp",
 	displayInfo = 0,
@@ -2432,6 +2549,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
+	partsID = TppEquip.RC_80119,
+	messageID = "prts_rc_8013",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ms02_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0035",
+	langPowerUpInfo1 = "ability_0907",
+	langPowerUpInfo2 = "ability_0702",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
 	partsID = TppEquip.RC_80124,
 	messageID = "prts_rc_8014",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ms02_main0_def_alp",
@@ -2459,6 +2589,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
 	partsID = TppEquip.RC_80126,
+	messageID = "prts_rc_8115",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ms02_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0039",
+	langPowerUpInfo1 = "ability_0907",
+	langPowerUpInfo2 = "ability_0010",
+	langPowerUpInfo3 = "ability_0702",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
+	partsID = TppEquip.RC_80135,
 	messageID = "prts_rc_8115",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ms02_main0_def_alp",
 	displayInfo = 0,
@@ -2511,6 +2654,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 0,
 	partsID = TppEquip.RC_80206,
+	messageID = "prts_rc_8023",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ms03_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0010",
+	langPowerUpInfo1 = "ability_0913",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
+	partsID = TppEquip.RC_80209,
 	messageID = "prts_rc_8023",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ms03_main0_def_alp",
 	displayInfo = 0,
@@ -2643,6 +2799,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 	partsID = TppEquip.RC_HoneyBee,
 	messageID = "prts_rc_8020",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_ms03_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 0,
+	partsID = TppEquip.RC_EX_hg_010,
+	messageID = "prts_rc_1040",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/receiver/ui_wpp_hg06_main0_def_alp",
 	displayInfo = 0,
 	langPowerUpInfo0 = "",
 	langPowerUpInfo1 = "",
@@ -4049,6 +4218,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/magazine/ui_wpp_hg00_ammo0_def_alp",
 	displayInfo = 0,
 	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_1003a,
+	messageID = "prts_am_1015",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/magazine/ui_wpp_hg00_ammo1_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0106",
 	langPowerUpInfo1 = "",
 	langPowerUpInfo2 = "",
 	langPowerUpInfo3 = "",
@@ -5656,6 +5838,45 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 2,
+	partsID = TppEquip.AM_70125,
+	messageID = "prts_am_7014",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/magazine/ui_wpp_am07_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_70126,
+	messageID = "prts_am_7015",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/magazine/ui_wpp_am07_main1_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0108",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_70127,
+	messageID = "prts_am_7016",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/magazine/ui_wpp_am07_main2_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0109",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
 	partsID = TppEquip.AM_70203,
 	messageID = "prts_am_7020",
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/magazine/ui_wpp_am08_main1_def_alp",
@@ -5786,6 +6007,45 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 })
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 2,
+	partsID = TppEquip.AM_80119,
+	messageID = "prts_am_8013",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_8011a,
+	messageID = "prts_am_8013",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_8011b,
+	messageID = "prts_am_8013",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
 	partsID = TppEquip.AM_80124,
 	messageID = "prts_am_8014",
 	ftexPath = "",
@@ -5813,6 +6073,71 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 TppMotherBaseManagement.RegistWeaponPartsInfo({
 	type = 2,
 	partsID = TppEquip.AM_80126,
+	messageID = "prts_am_8016",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_80135,
+	messageID = "prts_am_8016",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_80136,
+	messageID = "prts_am_8016",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_80138,
+	messageID = "prts_am_8016",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_8013a,
+	messageID = "prts_am_8016",
+	ftexPath = "",
+	displayInfo = 1,
+	langPowerUpInfo0 = "",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 2,
+	partsID = TppEquip.AM_8013b,
 	messageID = "prts_am_8016",
 	ftexPath = "",
 	displayInfo = 1,
@@ -6831,6 +7156,19 @@ TppMotherBaseManagement.RegistWeaponPartsInfo({
 	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/suppressor/ui_wpp_su08_main0_def_alp",
 	displayInfo = 0,
 	langPowerUpInfo0 = "ability_0300",
+	langPowerUpInfo1 = "",
+	langPowerUpInfo2 = "",
+	langPowerUpInfo3 = "",
+	langPowerUpInfo4 = "",
+	langPowerUpInfo5 = "",
+})
+TppMotherBaseManagement.RegistWeaponPartsInfo({
+	type = 5,
+	partsID = TppEquip.MO_6040a,
+	messageID = "prts_mo_6070",
+	ftexPath = "/Assets/tpp/ui/texture/WeaponPartsIcon/suppressor/ui_wpp_su08_main0_def_alp",
+	displayInfo = 0,
+	langPowerUpInfo0 = "ability_0303",
 	langPowerUpInfo1 = "",
 	langPowerUpInfo2 = "",
 	langPowerUpInfo3 = "",

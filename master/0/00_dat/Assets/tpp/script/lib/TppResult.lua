@@ -354,6 +354,9 @@ function e.SetMissionFinalScore()
 		svars.playStyle = 0
 		e.ClearNewestPlayStyleHistory()
 	end
+	if OnlineChallengeTask then
+		OnlineChallengeTask.DecideTaskFromResult()
+	end
 end
 function e.IsUsedChickCap()
 	if bit.band(vars.playerPlayFlag, PlayerPlayFlag.USE_CHICK_CAP) == PlayerPlayFlag.USE_CHICK_CAP then
@@ -2381,6 +2384,7 @@ function e.AddTacticalActionPoint(t)
 	if a then
 		Tpp.IncrementPlayData("rnk_TotalTacticalTakeDownCount")
 		TppChallengeTask.RequestUpdate("PLAY_RECORD")
+		TppUI.UpdateOnlineChallengeTask({ detectType = 31, diff = 1 })
 	end
 	if s >= mvars.res_missionScoreTable.tacticalTakeDownPoint.countLimit then
 		return
@@ -2490,6 +2494,7 @@ function e.OnHeadShot(n, n, a, t)
 	if e then
 		Tpp.IncrementPlayData("totalheadShotCount")
 		TppChallengeTask.RequestUpdate("PLAY_RECORD")
+		TppUI.UpdateOnlineChallengeTask({ detectType = 29, diff = 1 })
 	end
 	if mvars.res_noResult then
 		return

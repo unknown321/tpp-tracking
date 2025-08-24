@@ -1,39 +1,39 @@
 do
 	return {}
 end
-local a = {}
-function a.SetPlayLogEnabled(e)
+local o = {}
+function o.SetPlayLogEnabled(e)
 	if TppPlayLog then
 		TppPlayLog.SetPlayLogEnabled(e)
 	end
 end
-function a.RequestResetPlayLog()
+function o.RequestResetPlayLog()
 	if TppPlayLog then
 		TppPlayLog.RequestResetPlayLog()
 	end
 end
-function a.RequestUploadPlayLog()
+function o.RequestUploadPlayLog()
 	if TppPlayLog then
 		TppPlayLog.RequestUploadPlayLog()
 	end
 end
-function a.ExportSavedPlayLog()
+function o.ExportSavedPlayLog()
 	if TppPlayLog and TppPlayLog.ExportSavedPlayLog then
 		TppPlayLog.ExportSavedPlayLog()
 	end
 end
-a.PERF_CHECK_TYPE = Tpp.Enum({ "OnUpdate", "OnMessage", "OnEnter" })
-local s = {}
-local m = {}
-local l = {}
-local v = 2
-local i = 0
-local n = 0
-local d = Tpp.ApendArray
-local t = Tpp.IsTypeTable
-local u = GkEventTimerManager.IsTimerActive
-local p = Tpp.DEBUG_StrCode32ToString
-a.Colors = {
+o.PERF_CHECK_TYPE = Tpp.Enum({ "OnUpdate", "OnMessage", "OnEnter" })
+local i = {}
+local g = {}
+local p = {}
+local m = 2
+local l = 0
+local s = 0
+local u = Tpp.ApendArray
+local n = Tpp.IsTypeTable
+local v = GkEventTimerManager.IsTimerActive
+local d = Tpp.DEBUG_StrCode32ToString
+o.Colors = {
 	black = Color(0, 0, 0, 1),
 	white = Color(1, 1, 1, 1),
 	red = Color(1, 0, 0, 1),
@@ -49,23 +49,23 @@ a.Colors = {
 	purple = Color(0.5, 0, 0.5, 1),
 	darkCyan = Color(0, 0.5, 0.5, 1),
 }
-function a.DEBUG_SetSVars(e)
-	if not t(e) then
+function o.DEBUG_SetSVars(e)
+	if not n(e) then
 		return
 	end
 	for e, a in pairs(e) do
 		Tpp._DEBUG_svars[e] = a
 	end
 end
-function a.DEBUG_SetGVars(e)
-	if not t(e) then
+function o.DEBUG_SetGVars(e)
+	if not n(e) then
 		return
 	end
 	for e, a in pairs(e) do
 		Tpp._DEBUG_gvars[e] = a
 	end
 end
-function a.DEBUG_RestoreSVars()
+function o.DEBUG_RestoreSVars()
 	if next(Tpp._DEBUG_svars) then
 		for a, e in pairs(Tpp._DEBUG_svars) do
 			svars[a] = e
@@ -73,7 +73,7 @@ function a.DEBUG_RestoreSVars()
 		TppSave.VarSave()
 	end
 end
-function a.DEBUG_SetOrderBoxPlayerPosition()
+function o.DEBUG_SetOrderBoxPlayerPosition()
 	if next(Tpp._DEBUG_gvars) then
 		if Tpp._DEBUG_gvars.mis_orderBoxName then
 			TppMission.SetMissionOrderBoxPosition(Tpp._DEBUG_gvars.mis_orderBoxName)
@@ -81,7 +81,7 @@ function a.DEBUG_SetOrderBoxPlayerPosition()
 		end
 	end
 end
-function a.DEBUG_SVarsClear()
+function o.DEBUG_SVarsClear()
 	if next(Tpp._DEBUG_svars) then
 		for e, a in pairs(Tpp._DEBUG_svars) do
 			if e == "dbg_seq_sequenceName" then
@@ -92,7 +92,7 @@ function a.DEBUG_SVarsClear()
 		TppSave.VarSave()
 	end
 end
-function a.DEBUG_GetSysVarsLog()
+function o.DEBUG_GetSysVarsLog()
 	local a = svars or {}
 	local e = mvars or {}
 	local e = {
@@ -129,60 +129,60 @@ function a.DEBUG_GetSysVarsLog()
 	}
 	return e
 end
-function a.DEBUG_WarpHelicopter(i, o, s, r, n)
-	if not t(soldierNameTable) then
+function o.DEBUG_WarpHelicopter(i, r, s, a, t)
+	if not n(soldierNameTable) then
 		soldierNameTable = { soldierNameTable }
 	end
-	local t = GameObject.GetGameObjectId
+	local n = GameObject.GetGameObjectId
 	local e = GameObject.SendCommand
-	if not r then
-		r = 0
+	if not a then
+		a = 0
 	end
-	for s, a in pairs(soldierNameTable) do
-		local a = t(a)
-		e(a, { id = "SetEnabled", enabled = false })
-		e(a, { id = "SetSneakRoute", route = o, point = r })
-		e(a, { id = "SetCautionRoute", route = o, point = r })
-		if n then
-			e(a, { id = "SetAlertRoute", enabled = true, route = o, point = r })
+	for s, o in pairs(soldierNameTable) do
+		local o = n(o)
+		e(o, { id = "SetEnabled", enabled = false })
+		e(o, { id = "SetSneakRoute", route = r, point = a })
+		e(o, { id = "SetCautionRoute", route = r, point = a })
+		if t then
+			e(o, { id = "SetAlertRoute", enabled = true, route = r, point = a })
 		else
-			e(a, { id = "SetAlertRoute", enabled = false, route = "", point = r })
+			e(o, { id = "SetAlertRoute", enabled = false, route = "", point = a })
 		end
-		e(a, { id = "SetEnabled", enabled = true })
+		e(o, { id = "SetEnabled", enabled = true })
 	end
-	local a = t(i)
+	local a = n(i)
 	e(a, { id = "SetPosition", position = s, rotY = 0 })
 end
-function a.DEBUG_WarpVehicleAndSoldier(o, s, n, i, r, l)
-	if not t(o) then
-		o = { o }
+function o.DEBUG_WarpVehicleAndSoldier(r, i, t, s, a, l)
+	if not n(r) then
+		r = { r }
 	end
-	local t = GameObject.GetGameObjectId
+	local n = GameObject.GetGameObjectId
 	local e = GameObject.SendCommand
-	if not r then
-		r = 0
+	if not a then
+		a = 0
 	end
-	for o, a in pairs(o) do
-		local a = t(a)
-		e(a, { id = "SetEnabled", enabled = false })
-		e(a, { id = "SetSneakRoute", route = n, point = r })
-		e(a, { id = "SetCautionRoute", route = n, point = r })
+	for r, o in pairs(r) do
+		local o = n(o)
+		e(o, { id = "SetEnabled", enabled = false })
+		e(o, { id = "SetSneakRoute", route = t, point = a })
+		e(o, { id = "SetCautionRoute", route = t, point = a })
 		if l then
-			e(a, { id = "SetAlertRoute", enabled = true, route = n, point = r })
+			e(o, { id = "SetAlertRoute", enabled = true, route = t, point = a })
 		else
-			e(a, { id = "SetAlertRoute", enabled = false, route = "", point = r })
+			e(o, { id = "SetAlertRoute", enabled = false, route = "", point = a })
 		end
-		e(a, { id = "SetEnabled", enabled = true })
+		e(o, { id = "SetEnabled", enabled = true })
 	end
-	local r = t(s)
-	e(r, { id = "SetPosition", position = i, rotY = 0 })
+	local a = n(i)
+	e(a, { id = "SetPosition", position = s, rotY = 0 })
 end
-a.DEBUG_SkipOnChangeSVarsLog = { timeLimitforSneaking = true, timeLimitforNonAbort = true }
-function a.DEBUG_AddSkipLogSVarsName(e)
-	a.DEBUG_SkipOnChangeSVarsLog[e] = true
+o.DEBUG_SkipOnChangeSVarsLog = { timeLimitforSneaking = true, timeLimitforNonAbort = true }
+function o.DEBUG_AddSkipLogSVarsName(e)
+	o.DEBUG_SkipOnChangeSVarsLog[e] = true
 end
-function a.DEBUG_FobGPU()
-	local e = function(a)
+function o.DEBUG_FobGPU()
+	local e = function(o)
 		math.randomseed(os.time())
 		TppMotherBaseManagement.SetGmp({ gmp = 1e6 })
 		local e = 300
@@ -212,10 +212,10 @@ function a.DEBUG_FobGPU()
 				Plant2007 = 100,
 				Plant2008 = 100,
 			}
-			for e, a in pairs(e) do
+			for a, e in pairs(e) do
 				TppMotherBaseManagement.SetResourceSvars({
-					resource = e,
-					usableCount = a,
+					resource = a,
+					usableCount = e,
 					processingCount = 0,
 					got = true,
 					isNew = false,
@@ -224,15 +224,15 @@ function a.DEBUG_FobGPU()
 		end
 		do
 			local e = { "Orange", "Blue", "Black", "Blick", "Gray", "Od", "Pink", "Sand" }
-			local r = math.random(1, #e)
-			TppMotherBaseManagement.SetFobSvars({ fob = "Fob1", got = true, oceanAreaId = 70, topologyType = a, color = e[r] })
+			local a = math.random(1, #e)
+			TppMotherBaseManagement.SetFobSvars({ fob = "Fob1", got = true, oceanAreaId = 70, topologyType = o, color = e[a] })
 			local e = { "Command", "Combat", "Develop", "BaseDev", "Support", "Spy", "Medical" }
-			for e, a in ipairs(e) do
-				local e = math.random(4, 4)
+			for a, e in ipairs(e) do
+				local a = math.random(4, 4)
 				TppMotherBaseManagement.SetClusterSvars({
 					base = "Fob1",
-					category = a,
-					grade = e,
+					category = e,
+					grade = a,
 					buildStatus = "Completed",
 					timeMinute = 0,
 					isNew = false,
@@ -256,7 +256,7 @@ function a.DEBUG_FobGPU()
 	end
 	e(90)
 end
-function a.DEBUG_SetFobPlayerSneak()
+function o.DEBUG_SetFobPlayerSneak()
 	vars.avatarFaceRaceIndex = 0
 	vars.avatarAcceFlag = 0
 	vars.avatarFaceTypeIndex = 1
@@ -393,7 +393,7 @@ function a.DEBUG_SetFobPlayerSneak()
 		{ id = "DEBUG_ChangeEquip", equipId = TppEquip.EQP_HAND_KILL_ROCKET }
 	)
 end
-function a.DEBUG_SetFobPlayerDefence()
+function o.DEBUG_SetFobPlayerDefence()
 	vars.avatarFaceRaceIndex = 0
 	vars.avatarAcceFlag = 0
 	vars.avatarFaceTypeIndex = 1
@@ -529,7 +529,7 @@ function a.DEBUG_SetFobPlayerDefence()
 		{ id = "DEBUG_ChangeEquip", equipId = TppEquip.EQP_HAND_KILL_ROCKET }
 	)
 end
-function a.QARELEASE_DEBUG_Init()
+function o.QARELEASE_DEBUG_Init()
 	local e
 	do
 		return
@@ -546,15 +546,19 @@ function a.QARELEASE_DEBUG_Init()
 	e.AddDebugMenu("LuaSystem", "setFobForGPU", "bool", mvars.qaDebug, "setFobForGPU")
 	mvars.qaDebug.showEventTask = false
 	e.AddDebugMenu("LuaUI", "showEventTask", "bool", mvars.qaDebug, "showEventTask")
+	mvars.qaDebug.showOnlineChallengeTask = 0
+	e.AddDebugMenu("LuaUI", "showOnlineChallengeTask", "int32", mvars.qaDebug, "showOnlineChallengeTask")
+	mvars.qaDebug.showOnTaskVersion = false
+	e.AddDebugMenu("LuaUI", "showOnTaskVersion", "bool", mvars.qaDebug, "showOnTaskVersion")
 end
-function a.QAReleaseDebugUpdate()
-	local t = svars
-	local o = mvars
+function o.QAReleaseDebugUpdate()
+	local n = svars
+	local r = mvars
 	local e = (nil).Print
-	local r = (nil).NewContext()
-	if o.seq_doneDumpCanMissionStartRefrainIds then
+	local a = (nil).NewContext()
+	if r.seq_doneDumpCanMissionStartRefrainIds then
 		e(
-			r,
+			a,
 			{ 1, 0, 0 },
 			"TppSequence: Mission.CanStart() wait is time out!\nPlease screen shot [Mission > ViewStartRefrain > true] , [Pause > ShowFlags > true] and [Pause > ShowInstances > true]"
 		)
@@ -567,7 +571,7 @@ function a.QAReleaseDebugUpdate()
 		)
 	then
 		e(
-			r,
+			a,
 			{ 1, 0.5, 0.5 },
 			"Now gvars.usingNormalMissionSlot is false, but not emergency mission. Call scripter!!!!!!"
 		)
@@ -576,55 +580,55 @@ function a.QAReleaseDebugUpdate()
 		(vars.fobSneakMode == FobMode.MODE_SHAM)
 		and not ((vars.missionCode == 50050) or (TppMission.IsHelicopterSpace(vars.missionCode)))
 	then
-		e(r, { 1, 0.5, 0.5 }, "Now vars.fobSneakMode isFobMode.MODE_SHAM, but not fob mission. Call scripter!!!!!!")
+		e(a, { 1, 0.5, 0.5 }, "Now vars.fobSneakMode isFobMode.MODE_SHAM, but not fob mission. Call scripter!!!!!!")
 	end
 	if TppSave.DEBUG_EraseAllGameDataCounter then
 		if TppSave.DEBUG_EraseAllGameDataCounter > 0 then
-			e(r, { 1, 0.5, 0.5 }, "TppSave.EraseAllGameDataSaveRequest : erase game data save request!")
+			e(a, { 1, 0.5, 0.5 }, "TppSave.EraseAllGameDataSaveRequest : erase game data save request!")
 			TppSave.DEBUG_EraseAllGameDataCounter = TppSave.DEBUG_EraseAllGameDataCounter - Time.GetFrameTime()
 		else
 			TppSave.DEBUG_EraseAllGameDataCounter = nil
 		end
 	end
-	if o.qaDebug.forceCheckPointSave then
-		o.qaDebug.forceCheckPointSave = false
+	if r.qaDebug.forceCheckPointSave then
+		r.qaDebug.forceCheckPointSave = false
 		TppMission.UpdateCheckPoint({ ignoreAlert = true, atCurrentPosition = true })
 	end
 	if gvars.DEBUG_showSysVars then
-		local a = a.DEBUG_GetSysVarsLog()
-		e(r, { 0.5, 0.5, 1 }, "LuaSystem showSysVars")
-		for o, a in ipairs(a) do
-			e(r, a)
+		local o = o.DEBUG_GetSysVarsLog()
+		e(a, { 0.5, 0.5, 1 }, "LuaSystem showSysVars")
+		for r, o in ipairs(o) do
+			e(a, o)
 		end
-		local a = {
+		local o = {
 			[FobMode.MODE_ACTUAL] = "MODE_ACTUAL",
 			[FobMode.MODE_SHAM] = "MODE_SHAM",
 			[FobMode.MODE_VISIT] = "MODE_VISIT",
 			[FobMode.MODE_NONE] = "MODE_NONE",
 		}
-		e(r, "vars.fobSneakMode = " .. tostring(a[vars.fobSneakMode]))
-		local a = TppScriptVars.GetVarValueInSlot(TppDefine.SAVE_SLOT.MB_MANAGEMENT, "vars", "mbmTppGmp", 0)
-		e(r, "GMP(inSlot) = " .. tostring(a))
-		local a = TppScriptVars.GetVarValueInSlot(TppDefine.SAVE_SLOT.MB_MANAGEMENT, "vars", "mbmTppHeroicPoint", 0)
-		e(r, "HeroicPoint(inSlot) = " .. tostring(a))
-		e(r, "killCount = " .. tostring(t.killCount))
-		e(r, "totalKillCount = " .. tostring(gvars.totalKillCount))
+		e(a, "vars.fobSneakMode = " .. tostring(o[vars.fobSneakMode]))
+		local o = TppScriptVars.GetVarValueInSlot(TppDefine.SAVE_SLOT.MB_MANAGEMENT, "vars", "mbmTppGmp", 0)
+		e(a, "GMP(inSlot) = " .. tostring(o))
+		local o = TppScriptVars.GetVarValueInSlot(TppDefine.SAVE_SLOT.MB_MANAGEMENT, "vars", "mbmTppHeroicPoint", 0)
+		e(a, "HeroicPoint(inSlot) = " .. tostring(o))
+		e(a, "killCount = " .. tostring(n.killCount))
+		e(a, "totalKillCount = " .. tostring(gvars.totalKillCount))
 	end
 	if gvars.DEBUG_showGameStatus then
-		e(r, "")
-		e(r, { 0.5, 0.5, 1 }, "LuaSystem gameStatus")
-		for a, o in pairs(TppDefine.GAME_STATUS_TYPE_ALL) do
-			local o = TppGameStatus.IsSet("TppMain.lua", a)
-			if o then
-				e(r, " statusType = " .. (tostring(a) .. (", IsSet = " .. tostring(o))))
+		e(a, "")
+		e(a, { 0.5, 0.5, 1 }, "LuaSystem gameStatus")
+		for o, r in pairs(TppDefine.GAME_STATUS_TYPE_ALL) do
+			local r = TppGameStatus.IsSet("TppMain.lua", o)
+			if r then
+				e(a, " statusType = " .. (tostring(o) .. (", IsSet = " .. tostring(r))))
 			end
 		end
-		local a = TppGameStatus.IsSet("TppMain.lua", "S_IS_BLACK_LOADING")
-		if a then
-			e(r, " statusType = " .. (tostring("S_IS_BLACK_LOADING") .. (", IsSet = " .. tostring(a))))
+		local o = TppGameStatus.IsSet("TppMain.lua", "S_IS_BLACK_LOADING")
+		if o then
+			e(a, " statusType = " .. (tostring("S_IS_BLACK_LOADING") .. (", IsSet = " .. tostring(o))))
 		end
-		e(r, "UIStatus")
-		local a = {
+		e(a, "UIStatus")
+		local o = {
 			{ CallMenu = "INVALID" },
 			{ PauseMenu = "INVALID" },
 			{ EquipHud = "INVALID" },
@@ -644,59 +648,59 @@ function a.QAReleaseDebugUpdate()
 			{ InfoTypingText = "INVALID" },
 			{ ResourcePanel = "SHOW_IN_HELI" },
 		}
-		for o, a in pairs(a) do
-			for o, a in pairs(a) do
-				if TppUiStatusManager.CheckStatus(o, a) == true then
-					e(r, string.format(" UI = %s, Status = %s", o, a))
+		for r, o in pairs(o) do
+			for r, o in pairs(o) do
+				if TppUiStatusManager.CheckStatus(r, o) == true then
+					e(a, string.format(" UI = %s, Status = %s", r, o))
 				end
 			end
 		end
 	end
-	if o.qaDebug.showWeaponVars then
-		local a = { "PRIMARY_HIP", "PRIMARY_BACK", "SECONDARY" }
-		e(r, { 0.5, 0.5, 1 }, "LuaSystem WeaponVars")
-		for a, o in ipairs(a) do
-			local a = TppDefine.WEAPONSLOT[o]
+	if r.qaDebug.showWeaponVars then
+		local o = { "PRIMARY_HIP", "PRIMARY_BACK", "SECONDARY" }
+		e(a, { 0.5, 0.5, 1 }, "LuaSystem WeaponVars")
+		for o, r in ipairs(o) do
+			local o = TppDefine.WEAPONSLOT[r]
 			e(
-				r,
+				a,
 				string.format(
 					"Slot:%16s : vars.initWeapons = %04d, vars.weapons = %04d",
-					o,
-					vars.initWeapons[a],
-					vars.weapons[a]
+					r,
+					vars.initWeapons[o],
+					vars.weapons[o]
 				)
 			)
 		end
-		for a = 0, 7 do
+		for o = 0, 7 do
 			e(
-				r,
+				a,
 				string.format(
 					"Slot:%d : vars.supportWeapons = %04d, vars.initSupportWeapons = %04d, gvars.ply_lastWeaponsUsingTemp = %04d",
-					a,
-					vars.supportWeapons[a],
-					vars.initSupportWeapons[a],
-					gvars.ply_lastWeaponsUsingTemp[a + TppDefine.WEAPONSLOT.SUPPORT_0]
+					o,
+					vars.supportWeapons[o],
+					vars.initSupportWeapons[o],
+					gvars.ply_lastWeaponsUsingTemp[o + TppDefine.WEAPONSLOT.SUPPORT_0]
 				)
 			)
 		end
-		for a = 0, 7 do
+		for o = 0, 7 do
 			e(
-				r,
+				a,
 				string.format(
 					"Slot:%d : vars.items = %04d, vars.initItems = %04d, gvars.ply_lastItemsUsingTemp = %04d",
-					a,
-					vars.items[a],
-					vars.initItems[a],
-					gvars.ply_lastItemsUsingTemp[a]
+					o,
+					vars.items[o],
+					vars.initItems[o],
+					gvars.ply_lastItemsUsingTemp[o]
 				)
 			)
 		end
 	end
-	if o.qaDebug.showPlayerPartsType then
-		e(r, { 0.5, 0.5, 1 }, "LuaSystem ShowPlayerPartsType")
-		e(r, "gvars.ply_isUsingTempPlayerType = " .. tostring(gvars.ply_isUsingTempPlayerType))
+	if r.qaDebug.showPlayerPartsType then
+		e(a, { 0.5, 0.5, 1 }, "LuaSystem ShowPlayerPartsType")
+		e(a, "gvars.ply_isUsingTempPlayerType = " .. tostring(gvars.ply_isUsingTempPlayerType))
 		e(
-			r,
+			a,
 			string.format(
 				"vars.playerPartsType = %04d, gvars.ply_lastPlayerPartsTypeUsingTemp = %04d",
 				vars.playerPartsType,
@@ -704,7 +708,7 @@ function a.QAReleaseDebugUpdate()
 			)
 		)
 		e(
-			r,
+			a,
 			string.format(
 				"vars.playerCamoType = %04d, gvars.ply_lastPlayerCamoTypeUsingTemp = %04d",
 				vars.playerCamoType,
@@ -712,7 +716,7 @@ function a.QAReleaseDebugUpdate()
 			)
 		)
 		e(
-			r,
+			a,
 			string.format(
 				"vars.playerType = %04d, gvars.ply_lastPlayerTypeUsingTemp = %04d",
 				vars.playerType,
@@ -720,80 +724,135 @@ function a.QAReleaseDebugUpdate()
 			)
 		)
 	end
-	if o.qaDebug.gotFobStatusCount then
-		e(r, { 0.5, 0.5, 1 }, ">> Done TppServerManager.GetFobStatus()")
-		o.qaDebug.gotFobStatusCount = o.qaDebug.gotFobStatusCount + 1
-		if o.qaDebug.gotFobStatusCount > 120 then
-			o.qaDebug.gotFobStatusCount = nil
+	if r.qaDebug.gotFobStatusCount then
+		e(a, { 0.5, 0.5, 1 }, ">> Done TppServerManager.GetFobStatus()")
+		r.qaDebug.gotFobStatusCount = r.qaDebug.gotFobStatusCount + 1
+		if r.qaDebug.gotFobStatusCount > 120 then
+			r.qaDebug.gotFobStatusCount = nil
 		end
 	end
-	if o.qaDebug.setFobForGPU then
-		o.qaDebug.setFobForGPU = false
-		a.DEBUG_FobGPU()
+	if r.qaDebug.setFobForGPU then
+		r.qaDebug.setFobForGPU = false
+		o.DEBUG_FobGPU()
 	end
-	if o.qaDebug.showEventTask then
-		if not o.ui_eventTaskDefine then
-			o.qaDebug.showEventTask = false
+	if r.qaDebug.showEventTask then
+		if not r.ui_eventTaskDefine then
+			r.qaDebug.showEventTask = false
 			return
 		end
-		e(r, { 0.5, 0.5, 1 }, "LuaUI ShowEventTask")
-		local function s(t, a, i)
-			local n
-			if FobUI.IsCompleteEventTask(a, i) then
-				n = " o "
+		e(a, { 0.5, 0.5, 1 }, "LuaUI ShowEventTask")
+		local function s(n, o, s)
+			local t
+			if FobUI.IsCompleteEventTask(o, s) then
+				t = " o "
 			else
-				n = " x "
+				t = " x "
 			end
-			local s = t[a] and t[a].detectType
-			if s then
-				local o = o.qaDebug.debugEventTaskTextTable and o.qaDebug.debugEventTaskTextTable[s]
-				if not o then
-					o = "threshold is"
+			local i = n[o] and n[o].detectType
+			if i then
+				local r = r.qaDebug.debugEventTaskTextTable and r.qaDebug.debugEventTaskTextTable[i]
+				if not r then
+					r = "threshold is"
 				end
 				e(
-					r,
+					a,
 					string.format(
 						"   Task %1d : [%s] %s %06.2f : ( Current %06.2f )",
-						a,
-						n,
 						o,
-						t[a].threshold,
-						FobUI.GetCurrentEventTaskValue(a, i)
+						t,
+						r,
+						n[o].threshold,
+						FobUI.GetCurrentEventTaskValue(o, s)
 					)
 				)
 			end
 		end
-		e(r, { 0.5, 1, 0.5 }, "FobSneak eventTask")
+		e(a, { 0.5, 1, 0.5 }, "FobSneak eventTask")
 		for a = 0, 7 do
-			local e = o.ui_eventTaskDefine.sneak
+			local e = r.ui_eventTaskDefine.sneak
 			if e and e[a] then
 				s(e, a, true)
 			end
 		end
-		e(r, { 0.5, 1, 0.5 }, "FobDefence eventTask")
+		e(a, { 0.5, 1, 0.5 }, "FobDefence eventTask")
 		for a = 0, 7 do
-			local e = o.ui_eventTaskDefine.defence
+			local e = r.ui_eventTaskDefine.defence
 			if e and e[a] then
 				s(e, a, false)
 			end
 		end
 	end
+	if r.qaDebug.showOnlineChallengeTask > 0 then
+		e(a, { 0.5, 0.5, 1 }, "LuaUI ShowOnlineChallengeTask")
+		if not OnlineChallengeTask then
+			e(a, "OnlineChallengeTask.lua is not loaded now. Go to mission!")
+		elseif TppGameMode.GetUserMode() ~= TppGameMode.U_KONAMI_LOGIN then
+			e(a, "Now off-line mode, please connect online!")
+		elseif not r.ui_onlineChallengeTaskDefine then
+			e(a, "Not defined online challenge task!")
+		else
+			local t = r.qaDebug.debugOnlineChallengeTaskMissionList[r.qaDebug.showOnlineChallengeTask]
+			if not t then
+				r.qaDebug.showOnlineChallengeTask = 0
+				return
+			end
+			local function i(n, o)
+				local t
+				if TppChallengeTask.IsCompletedOnlineTask(o) then
+					t = " o "
+				else
+					t = " x "
+				end
+				local s = n[o] and n[o].detectType
+				if s then
+					local r = r.qaDebug.debugOnlineChallengeTaskTextTable
+						and r.qaDebug.debugOnlineChallengeTaskTextTable[s]
+					if not r then
+						r = "threshold is"
+					end
+					e(
+						a,
+						string.format(
+							"   Task %02d : [%s] %s %06.2f : ( Current %06.2f )",
+							o,
+							t,
+							r,
+							n[o].threshold,
+							OnlineChallengeTask.GetCurrentTaskValue(o)
+						)
+					)
+				end
+			end
+			e(a, string.format("missionCode = %05d", t))
+			for a = 0, 23 do
+				local e = r.ui_onlineChallengeTaskDefine
+				if e[a] and (e[a].missionCode == t) then
+					i(e, a, true)
+				end
+			end
+		end
+	end
+	if r.qaDebug.showOnTaskVersion then
+		e(a, { 0.5, 0.5, 1 }, "LuaUI ShowOnlineChallengeTaskVersion")
+		e(a, string.format("   ServerVersion : %d", TppNetworkUtil.GetOnlineChallengeTaskVersion()))
+		e(a, string.format("    LocalVersion : %d", gvars.localOnlineChallengeTaskVersion))
+	end
 end
-function a.Print2D(e)
+function o.Print2D(e)
 	if e == nil then
 		return
 	end
-	local t = e.showTime or (3 * 30)
-	local o = e.xPos or 25
-	local n = e.yPos or 425
-	local s = e.size or 20
-	local r = e.color or "white"
+	local r = e.showTime or (3 * 30)
+	local n = e.xPos or 25
+	local s = e.yPos or 425
+	local t = e.size or 20
+	local a = e.color or "white"
 	local e = e.text or ""
-	r = a._GetColor(r)
-	GrxDebug.Print2D({ life = t, x = o, y = n, size = s, color = r, args = { e } })
+	a = o._GetColor(a)
+	GrxDebug.Print2D({ life = r, x = n, y = s, size = t, color = a, args = { e } })
 end
-function a.DEBUG_MakeUserSVarList(e)
-	if not t(e) then
+function o.DEBUG_MakeUserSVarList(e)
+	if not n(e) then
 		return
 	end
 	mvars.dbg_userSaveVarList = {}
@@ -801,10 +860,10 @@ function a.DEBUG_MakeUserSVarList(e)
 		table.insert(mvars.dbg_userSaveVarList, e.name)
 	end
 end
-function a.AddReturnToSelector(e)
+function o.AddReturnToSelector(e)
 	e:AddItem("< return", DebugSelector.Pop)
 end
-function a.DEBUG_Init()
+function o.DEBUG_Init()
 	mvars.debug.returnSelect = false
 	(nil).AddDebugMenu(" Select", "Return select", "bool", mvars.debug, "returnSelect")
 	mvars.debug.showSVars = false
@@ -863,77 +922,77 @@ function a.DEBUG_Init()
 	mvars.debug.enableWeaponChange = false
 	(nil).AddDebugMenu("LuaWeapon", "enableWeaponChange", "bool", mvars.debug, "enableWeaponChange")
 end
-function a.DEBUG_OnReload(r)
-	s = {}
-	m = {}
-	l = {}
-	i = 0
-	n = 0
-	a.PERF_CHECK_TYPE = Tpp.Enum(a.PERF_CHECK_TYPE)
+function o.DEBUG_OnReload(a)
+	i = {}
+	g = {}
+	p = {}
+	l = 0
+	s = 0
+	o.PERF_CHECK_TYPE = Tpp.Enum(o.PERF_CHECK_TYPE)
 	local e = {}
-	d(e, TppDbgStr32.DEBUG_strCode32List)
-	for r, a in pairs(r) do
+	u(e, TppDbgStr32.DEBUG_strCode32List)
+	for o, a in pairs(a) do
 		if a.DEBUG_strCode32List then
-			d(e, a.DEBUG_strCode32List)
+			u(e, a.DEBUG_strCode32List)
 		end
 	end
 	TppDbgStr32.DEBUG_RegisterStrcode32invert(e)
 end
-function a.DebugUpdate()
-	local n = svars
+function o.DebugUpdate()
+	local t = svars
 	local e = mvars
-	local t = e.debug
-	local o = (nil).Print
-	local r = (nil).NewContext()
+	local n = e.debug
+	local r = (nil).Print
+	local a = (nil).NewContext()
 	if not TppUiCommand.IsEndMissionTelop() then
-		o(r, { 0.5, 0.5, 1 }, "Now showing result.")
+		r(a, { 0.5, 0.5, 1 }, "Now showing result.")
 	end
 	if gvars.needWaitMissionInitialize then
-		o(r, { 0.5, 0.5, 1 }, "Now neew wait mission initialize.")
+		r(a, { 0.5, 0.5, 1 }, "Now neew wait mission initialize.")
 	end
-	if t.returnSelect then
+	if n.returnSelect then
 		TppUI.FadeOut(0)
 		TppSave.ReserveVarRestoreForMissionStart()
 		TppMission.SafeStopSettingOnMissionReload()
 		tpp_editor_menu2.StartTestStage(6e4)
-		t.returnSelect = false
+		n.returnSelect = false
 	end
-	if t.showSVars then
-		o(r, "")
-		o(r, { 0.5, 0.5, 1 }, "LuaMission DBG.showSVars")
-		for a, e in pairs(e.dbg_userSaveVarList) do
-			o(r, string.format(" %s = %s", tostring(e), tostring(n[e])))
+	if n.showSVars then
+		r(a, "")
+		r(a, { 0.5, 0.5, 1 }, "LuaMission DBG.showSVars")
+		for o, e in pairs(e.dbg_userSaveVarList) do
+			r(a, string.format(" %s = %s", tostring(e), tostring(t[e])))
 		end
 	end
-	if t.showMVars then
-		o(r, { 0.5, 0.5, 1 }, "LuaMission DBG.showMVars")
-		for a, e in pairs(e) do
-			o(r, string.format(" %s = %s", tostring(a), tostring(e)))
+	if n.showMVars then
+		r(a, { 0.5, 0.5, 1 }, "LuaMission DBG.showMVars")
+		for e, o in pairs(e) do
+			r(a, string.format(" %s = %s", tostring(e), tostring(o)))
 		end
 	end
-	if t.showMissionArea then
-		o(r, { 0.5, 0.5, 1 }, "LuaMission MIS.missionArea")
-		local a
+	if n.showMissionArea then
+		r(a, { 0.5, 0.5, 1 }, "LuaMission MIS.missionArea")
+		local o
 		if e.mis_isOutsideOfMissionArea then
-			a = "Outside"
+			o = "Outside"
 		else
-			a = "Inside"
+			o = "Inside"
 		end
-		o(r, "outerZone : " .. a)
+		r(a, "outerZone : " .. o)
 		if e.mis_isAlertOutOfMissionArea then
-			a = "Outside"
+			o = "Outside"
 		else
-			a = "Inside"
+			o = "Inside"
 		end
-		o(r, "innerZone : " .. a)
+		r(a, "innerZone : " .. o)
 		if e.mis_isOutsideOfHotZone then
-			a = "Outside"
+			o = "Outside"
 		else
-			a = "Inside"
+			o = "Inside"
 		end
-		o(r, "hotZone : " .. a)
-		o(
-			r,
+		r(a, "hotZone : " .. o)
+		r(
+			a,
 			"hotZone clear check : isNotAlert = "
 				.. (
 					tostring(e.debug.notHotZone_isNotAlert)
@@ -946,16 +1005,16 @@ function a.DebugUpdate()
 					)
 				)
 		)
-		o(r, "Mission clear timer: " .. tostring(u("Timer_OutsideOfHotZoneCount")))
-		o(r, { 0.5, 1, 0.5 }, "Recent all target status")
+		r(a, "Mission clear timer: " .. tostring(v("Timer_OutsideOfHotZoneCount")))
+		r(a, { 0.5, 1, 0.5 }, "Recent all target status")
 		local e = e.debug.checkedTargetStatus or {}
-		for a, e in pairs(e) do
-			o(r, "  TargetName = " .. (a .. (" : " .. e)))
+		for e, o in pairs(e) do
+			r(a, "  TargetName = " .. (e .. (" : " .. o)))
 		end
 	end
 	if e.debug.showClearState then
-		o(r, { 0.5, 0.5, 1 }, "LuaMission MIS.showClearState")
-		o(r, "missionClearState = " .. tostring(TppDefine.MISSION_CLEAR_STATE_LIST[gvars.mis_missionClearState + 1]))
+		r(a, { 0.5, 0.5, 1 }, "LuaMission MIS.showClearState")
+		r(a, "missionClearState = " .. tostring(TppDefine.MISSION_CLEAR_STATE_LIST[gvars.mis_missionClearState + 1]))
 	end
 	if e.debug.openEmergencyTimer then
 		e.debug.openEmergencyTimer = false
@@ -971,150 +1030,150 @@ function a.DebugUpdate()
 			GkEventTimerManager.Start(e.mis_closeEmergencyMissionTimerName, 1)
 		end
 	end
-	if t.showSysSVars then
-		o(r, "")
-		o(r, { 0.5, 0.5, 1 }, "LuaSystem DBG.showSysSVars")
-		for e, a in pairs(n.__as) do
-			if a <= 1 then
-				o(r, string.format(" %s = %s", tostring(e), tostring(n[e])))
+	if n.showSysSVars then
+		r(a, "")
+		r(a, { 0.5, 0.5, 1 }, "LuaSystem DBG.showSysSVars")
+		for e, o in pairs(t.__as) do
+			if o <= 1 then
+				r(a, string.format(" %s = %s", tostring(e), tostring(t[e])))
 			else
-				o(r, string.format(" %s = %s", tostring(e), tostring(a)))
-				for a = 0, (a - 1) do
-					o(r, string.format("   %s[%d] = %s", tostring(e), a, tostring(n[e][a])))
+				r(a, string.format(" %s = %s", tostring(e), tostring(o)))
+				for o = 0, (o - 1) do
+					r(a, string.format("   %s[%d] = %s", tostring(e), o, tostring(t[e][o])))
 				end
 			end
 		end
 	end
-	if t.showDebugPerfCheck then
-		o(r, { 0.5, 0.5, 1 }, "LuaSystem DBG.showPerf")
-		for t, e in pairs(l) do
-			o(r, " perf[" .. (a.PERF_CHECK_TYPE[t] .. ("] = " .. e)))
+	if n.showDebugPerfCheck then
+		r(a, { 0.5, 0.5, 1 }, "LuaSystem DBG.showPerf")
+		for n, e in pairs(p) do
+			r(a, " perf[" .. (o.PERF_CHECK_TYPE[n] .. ("] = " .. e)))
 		end
 	end
 	if e.debug.AnimalBlock then
-		o(r, { 0.5, 0.5, 1 }, "LuaSystem DBG.AnimalBlock")
-		local n, t = Tpp.GetCurrentStageSmallBlockIndex()
-		o(r, string.format("current block position (x,y) = (%03d, %03d)", n, t))
-		o(r, "Load animal block area = " .. tostring(e.animalBlockAreaName))
-		local n = ScriptBlock.GetScriptBlockId("animal_block")
-		local t
-		if n ~= ScriptBlock.SCRIPT_BLOCK_ID_INVALID then
-			t = ScriptBlock.GetScriptBlockState(n)
-		end
+		r(a, { 0.5, 0.5, 1 }, "LuaSystem DBG.AnimalBlock")
+		local t, n = Tpp.GetCurrentStageSmallBlockIndex()
+		r(a, string.format("current block position (x,y) = (%03d, %03d)", t, n))
+		r(a, "Load animal block area = " .. tostring(e.animalBlockAreaName))
+		local t = ScriptBlock.GetScriptBlockId("animal_block")
 		local n
-		if t == ScriptBlock.SCRIPT_BLOCK_STATE_EMPTY then
-			n = "SCRIPT_BLOCK_STATE_EMPTY"
-		elseif t == ScriptBlock.SCRIPT_BLOCK_STATE_PROCESSING then
-			n = "SCRIPT_BLOCK_STATE_PROCESSING"
-		elseif t == ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE then
-			n = "SCRIPT_BLOCK_STATE_INACTIVE"
-		elseif t == ScriptBlock.SCRIPT_BLOCK_STATE_ACTIVE then
-			n = "SCRIPT_BLOCK_STATE_ACTIVE"
+		if t ~= ScriptBlock.SCRIPT_BLOCK_ID_INVALID then
+			n = ScriptBlock.GetScriptBlockState(t)
 		end
-		o(r, "animal block state : " .. tostring(n))
+		local t
+		if n == ScriptBlock.SCRIPT_BLOCK_STATE_EMPTY then
+			t = "SCRIPT_BLOCK_STATE_EMPTY"
+		elseif n == ScriptBlock.SCRIPT_BLOCK_STATE_PROCESSING then
+			t = "SCRIPT_BLOCK_STATE_PROCESSING"
+		elseif n == ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE then
+			t = "SCRIPT_BLOCK_STATE_INACTIVE"
+		elseif n == ScriptBlock.SCRIPT_BLOCK_STATE_ACTIVE then
+			t = "SCRIPT_BLOCK_STATE_ACTIVE"
+		end
+		r(a, "animal block state : " .. tostring(t))
 		if e.animalBlockScript then
-			o(r, "animalBlockScript exist")
-			local t = ""
-			if e.animalBlockScript.OnMessage then
-				t = "exist"
-			else
-				t = "  not"
-			end
+			r(a, "animalBlockScript exist")
 			local n = ""
-			if e.animalBlockScript.OnReload then
+			if e.animalBlockScript.OnMessage then
 				n = "exist"
 			else
 				n = "  not"
 			end
-			o(r, "OnMessage " .. (tostring(t) .. (" OnReload " .. tostring(n))))
-			a.ShowMessageTable(r, "MessageTable", e.animalBlockScript.messageExecTable)
-		else
-			if t == ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE or t == ScriptBlock.SCRIPT_BLOCK_STATE_ACTIVE then
-				o(r, { 1, 0, 0 }, "this data is invalid!!!! please check data!!!")
+			local t = ""
+			if e.animalBlockScript.OnReload then
+				t = "exist"
 			else
-				o(r, "animalBlockScript   not")
+				t = "  not"
+			end
+			r(a, "OnMessage " .. (tostring(n) .. (" OnReload " .. tostring(t))))
+			o.ShowMessageTable(a, "MessageTable", e.animalBlockScript.messageExecTable)
+		else
+			if n == ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE or n == ScriptBlock.SCRIPT_BLOCK_STATE_ACTIVE then
+				r(a, { 1, 0, 0 }, "this data is invalid!!!! please check data!!!")
+			else
+				r(a, "animalBlockScript   not")
 			end
 		end
 	end
 	if e.debug.ply_intelTrap then
-		o(r, { 0.5, 0.5, 1 }, "LuaSystem PLY.intelTrap")
-		for e, a in pairs(e.ply_intelTrapInfo) do
+		r(a, { 0.5, 0.5, 1 }, "LuaSystem PLY.intelTrap")
+		for e, o in pairs(e.ply_intelTrapInfo) do
 			if Tpp.IsTypeString(e) then
-				o(r, { 0.5, 1, 0.5 }, "intelName = " .. tostring(e))
-				for e, a in pairs(a) do
-					o(r, tostring(e) .. (" = " .. tostring(a)))
+				r(a, { 0.5, 1, 0.5 }, "intelName = " .. tostring(e))
+				for o, e in pairs(o) do
+					r(a, tostring(o) .. (" = " .. tostring(e)))
 				end
 			end
 		end
 	end
-	if t.showSubscriptMessageTable > 0 then
-		o(r, { 0.5, 0.5, 1 }, "LuaMessage subScripts")
-		local o = { "sequence", "enemy", "demo", "radio", "sound" }
-		local o = o[e.debug.showSubscriptMessageTable]
-		if o then
-			local t = TppMission.GetMissionName() .. ("_" .. o)
-			if e.rad_subScripts[o] then
-				local e = e.rad_subScripts[o]._messageExecTable
-				a.ShowMessageTable(r, t, e)
+	if n.showSubscriptMessageTable > 0 then
+		r(a, { 0.5, 0.5, 1 }, "LuaMessage subScripts")
+		local r = { "sequence", "enemy", "demo", "radio", "sound" }
+		local r = r[e.debug.showSubscriptMessageTable]
+		if r then
+			local n = TppMission.GetMissionName() .. ("_" .. r)
+			if e.rad_subScripts[r] then
+				local e = e.rad_subScripts[r]._messageExecTable
+				o.ShowMessageTable(a, n, e)
 			end
 		end
 	end
-	if t.showSequenceMessageTable > 0 then
-		o(r, { 0.5, 0.5, 1 }, "LuaMessage sequence")
-		local o = TppSequence.GetSequenceNameWithIndex(e.debug.showSequenceMessageTable)
+	if n.showSequenceMessageTable > 0 then
+		r(a, { 0.5, 0.5, 1 }, "LuaMessage sequence")
+		local r = TppSequence.GetSequenceNameWithIndex(e.debug.showSequenceMessageTable)
 		if e.seq_sequenceTable then
-			local e = e.seq_sequenceTable[o]
+			local e = e.seq_sequenceTable[r]
 			if e then
 				local e = e._messageExecTable
-				a.ShowMessageTable(r, o, e)
+				o.ShowMessageTable(a, r, e)
 			end
 		end
 	end
-	if t.showLocationMessageTable > 0 then
-		o(r, { 0.5, 0.5, 1 }, "LuaMessage location")
+	if n.showLocationMessageTable > 0 then
+		r(a, { 0.5, 0.5, 1 }, "LuaMessage location")
 	end
-	if t.showLibraryMessageTable > 0 then
-		o(r, { 0.5, 0.5, 1 }, "LuaMessage library")
-		local e = Tpp._requireList[t.showLibraryMessageTable]
-		local o = _G[e].messageExecTable
-		a.ShowMessageTable(r, e, o)
+	if n.showLibraryMessageTable > 0 then
+		r(a, { 0.5, 0.5, 1 }, "LuaMessage library")
+		local e = Tpp._requireList[n.showLibraryMessageTable]
+		local r = _G[e].messageExecTable
+		o.ShowMessageTable(a, e, r)
 	end
 	if e.debug.showWeaponSelect then
-		o(r, { 0.5, 0.5, 1 }, "LuaWeapon")
+		r(a, { 0.5, 0.5, 1 }, "LuaWeapon")
 		if e.debug.weaponCategory < 1 then
 			e.debug.weaponCategory = 1
 		end
 		if e.debug.weaponCategory > #e.debug.weaponCategoryList then
 			e.debug.weaponCategory = #e.debug.weaponCategoryList
 		end
-		local a = e.debug.weaponCategory
-		local n = e.debug.weaponCategoryList[e.debug.weaponCategory]
-		o(r, { 0.5, 1, 0.5 }, "Current weapon category : " .. n[1])
+		local o = e.debug.weaponCategory
+		local t = e.debug.weaponCategoryList[e.debug.weaponCategory]
+		r(a, { 0.5, 1, 0.5 }, "Current weapon category : " .. t[1])
 		local l, p
-		local a, t, i = 0, 1, 5
+		local o, n, i = 0, 1, 5
 		if e.debug.selectedWeaponId > 0 then
-			t = e.debug.selectedWeaponId
+			n = e.debug.selectedWeaponId
 		end
-		for e, u in pairs(TppEquip) do
-			local d = string.sub(e, 1, n[2])
+		for e, d in pairs(TppEquip) do
+			local u = string.sub(e, 1, t[2])
 			local s = false
-			for a, e in ipairs(n[3]) do
-				if d == e then
+			for a, e in ipairs(t[3]) do
+				if u == e then
 					s = true
 				end
 			end
 			if s then
-				a = a + 1
-				if (t - a) <= i then
-					if a == t then
-						l = u
+				o = o + 1
+				if (n - o) <= i then
+					if o == n then
+						l = d
 						p = e
-						o(r, { 0.5, 1, 0.5 }, "> EquipId = TppEquip." .. e)
+						r(a, { 0.5, 1, 0.5 }, "> EquipId = TppEquip." .. e)
 					else
-						o(r, "  EquipId = TppEquip." .. e)
+						r(a, "  EquipId = TppEquip." .. e)
 					end
 				end
-				if a == (t + i) then
+				if o == (n + i) then
 					break
 				end
 			end
@@ -1128,79 +1187,79 @@ function a.DebugUpdate()
 		end
 	end
 end
-function a.ShowMessageTable(r, o, a)
-	local e = (nil).Print
-	e(r, { 0.5, 1, 0.5 }, o)
+function o.ShowMessageTable(e, r, a)
+	local o = (nil).Print
+	o(e, { 0.5, 1, 0.5 }, r)
 	if a == nil then
 		return
 	end
-	for o, a in pairs(a) do
-		local o = p(o)
+	for r, a in pairs(a) do
+		local r = d(r)
 		if a then
-			for t, a in pairs(a) do
-				local t = p(t)
+			for n, a in pairs(a) do
+				local n = d(n)
 				if a.func then
-					e(r, { 1, 1, 1 }, o .. (" : " .. (t .. (" : " .. tostring(a.func)))))
+					o(e, { 1, 1, 1 }, r .. (" : " .. (n .. (" : " .. tostring(a.func)))))
 				end
 				local a = a.sender
 				if a then
-					for n, a in pairs(a) do
-						e(r, { 1, 1, 1 }, o .. (" : " .. (t .. (" : Sender = " .. (p(n) .. (" : " .. tostring(a)))))))
+					for t, a in pairs(a) do
+						o(e, { 1, 1, 1 }, r .. (" : " .. (n .. (" : Sender = " .. (d(t) .. (" : " .. tostring(a)))))))
 					end
 				end
 			end
 		end
 	end
 end
-function a.PerfCheckStart(e)
-	local a = a
-	if (e <= 0) and (e > #a.PERF_CHECK_TYPE) then
+function o.PerfCheckStart(a)
+	local e = o
+	if (a <= 0) and (a > #e.PERF_CHECK_TYPE) then
 		return
 	end
-	if e == a.PERF_CHECK_TYPE.OnUpdate then
-		if s[a.PERF_CHECK_TYPE.OnUpdate] ~= nil then
-			i = i + (os.clock() - s[a.PERF_CHECK_TYPE.OnUpdate])
+	if a == e.PERF_CHECK_TYPE.OnUpdate then
+		if i[e.PERF_CHECK_TYPE.OnUpdate] ~= nil then
+			l = l + (os.clock() - i[e.PERF_CHECK_TYPE.OnUpdate])
 		end
 	end
-	s[e] = os.clock()
+	i[a] = os.clock()
 end
-function a.PerfCheckEnd(e, r)
-	local t = mvars
-	local o = a
-	if (e <= 0) and (e > #o.PERF_CHECK_TYPE) then
+function o.PerfCheckEnd(e, a)
+	local n = mvars
+	local r = o
+	if (e <= 0) and (e > #r.PERF_CHECK_TYPE) then
 		return
 	end
-	local p = r or ""
-	local r = 0
-	local a = os.clock() - s[e]
-	if e == o.PERF_CHECK_TYPE.OnUpdate then
-		if i < v then
-			if a > n then
-				n = a
+	local t = a or ""
+	local a = 0
+	local o = os.clock() - i[e]
+	if e == r.PERF_CHECK_TYPE.OnUpdate then
+		if l < m then
+			if o > s then
+				s = o
 			end
 		else
-			i = 0
-			n = a
+			l = 0
+			s = o
 		end
-		r = n
+		a = s
 	else
-		r = a
+		a = o
 	end
-	l[e] = string.format("%4.2f", r * 1e3) .. ("ms." .. p)
-	if t.debug and t.debug.showDebugPerfCheck then
-		if r > 1 / 60 then
+	p[e] = string.format("%4.2f", a * 1e3) .. ("ms." .. t)
+	if n.debug and n.debug.showDebugPerfCheck then
+		if a > 1 / 60 then
 		else
-			if e ~= o.PERF_CHECK_TYPE.OnUpdate then
+			if e ~= r.PERF_CHECK_TYPE.OnUpdate then
 			end
 		end
 	end
 end
-function a.ErrorNotSupportYet(e) end
-function a._GetColor(e)
-	local e = a.Colors[e]
+function o.ErrorNotSupportYet(e) end
+function o._GetColor(e)
+	local e = o.Colors[e]
 	if e == nil then
 		return nil
 	end
 	return e
 end
-return a
+return o

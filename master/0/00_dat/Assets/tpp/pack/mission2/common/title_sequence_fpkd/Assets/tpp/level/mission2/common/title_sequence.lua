@@ -993,6 +993,7 @@ sequences.Seq_Game_ChunkInstalled = {
 		this.ClearTitleMode()
 
 		TppTerminal.AcquirePrivilegeInTitleScreen()
+		TppVarInit.InitializeOnlineChallengeTaskVarsForNewMission()
 
 		TppSave.VarSave(nil, true)
 		TppSave.CheckAndSavePersonalData()

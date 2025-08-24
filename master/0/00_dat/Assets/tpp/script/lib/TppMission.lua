@@ -1860,6 +1860,14 @@ function e.Messages()
 				func = e.OnEndResultBlockLoad,
 				option = { isExecMissionClear = true, isExecGameOver = true, isExecDemoPlaying = true },
 			},
+			{
+				msg = "EndReloginSync",
+				func = function()
+					if e.IsHelicopterSpace(vars.missionCode) then
+						TppVarInit.InitializeOnlineChallengeTaskVarsForNewMission()
+					end
+				end,
+			},
 		},
 		Radio = { { msg = "Finish", func = e.OnFinishUpdateObjectiveRadio } },
 		Timer = {

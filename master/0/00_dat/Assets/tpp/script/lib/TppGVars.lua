@@ -1697,6 +1697,13 @@ e.DeclareGVarsTable = {
 		save = false,
 		category = TppScriptVars.CATEGORY_MISSION,
 	},
+	{
+		name = "localOnlineChallengeTaskVersion",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		category = TppScriptVars.CATEGORY_MB_MANAGEMENT,
+	},
 	{ name = "dbg_forceMaster", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{
 		name = "dbg_autoMissionOpenClearCheck",

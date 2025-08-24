@@ -1,6 +1,6 @@
 local e = {}
 local i = Tpp.IsTypeFunc
-local n = Tpp.IsTypeTable
+local o = Tpp.IsTypeTable
 local i = Tpp.IsTypeString
 local i = Tpp.IsTypeNumber
 local i = bit.bnot
@@ -93,32 +93,32 @@ function e.InitializeOnStatingMainFrame()
 		[TppDefine.SAVE_SLOT.MISSION_START + 1] = 10 * i,
 		[TppDefine.SAVE_SLOT.CHECK_POINT_RESTARTABLE + 1] = 10 * i,
 	}
-	local a = {}
-	local t = 0
-	for n, i in ipairs(e) do
-		t = t + i
-		a[n] = i
+	local n = {}
+	local a = 0
+	for t, i in ipairs(e) do
+		a = a + i
+		n[t] = i
 	end
-	e[TppDefine.SAVE_SLOT.SAVING + 1] = t + 92
-	local n = 1 * i
-	local t = TppGameSequence.GetTargetPlatform()
-	if (t == "Steam" or t == "Win32") or t == "Win64" then
-		n = 2 * i
+	e[TppDefine.SAVE_SLOT.SAVING + 1] = a + 92
+	local t = 1 * i
+	local a = TppGameSequence.GetTargetPlatform()
+	if (a == "Steam" or a == "Win32") or a == "Win64" then
+		t = 2 * i
 	end
-	e[TppDefine.SAVE_SLOT.CONFIG + 1] = n
+	e[TppDefine.SAVE_SLOT.CONFIG + 1] = t
 	e[TppDefine.SAVE_SLOT.CONFIG_SAVE + 1] = e[TppDefine.SAVE_SLOT.CONFIG + 1]
-	local t = 3 * i
-	e[TppDefine.SAVE_SLOT.PERSONAL + 1] = t
-	e[TppDefine.SAVE_SLOT.PERSONAL_SAVE + 1] = t
+	local a = 3 * i
+	e[TppDefine.SAVE_SLOT.PERSONAL + 1] = a
+	e[TppDefine.SAVE_SLOT.PERSONAL_SAVE + 1] = a
 	if TppSystemUtility.GetCurrentGameMode() == "MGO" then
 		local i = 16 * i
 		e[TppDefine.SAVE_SLOT.MGO + 1] = i
 		e[TppDefine.SAVE_SLOT.MGO_SAVE + 1] = i
 	end
-	Tpp.DEBUG_DumpTable(a)
+	Tpp.DEBUG_DumpTable(n)
 	Tpp.DEBUG_DumpTable(e)
 	TppScriptVars.CreateSaveSlot(e)
-	TppSave.RegistCompositSlotSize(a)
+	TppSave.RegistCompositSlotSize(n)
 	TppSave.SetUpCompositSlot()
 	TppScriptVars.SetFileSizeList({
 		{ TppSave.GetGameSaveFileName(), e[TppDefine.SAVE_SLOT.SAVING + 1] },
@@ -189,50 +189,50 @@ function e.InitializeOnNewGame()
 	TppMotherBaseManagement.DirectAddResource({ resource = "Plant2005", count = 20, isNew = true })
 	gvars.solface_groupNumber = (math.random(0, 255) * 65536) + math.random(1, 255)
 	gvars.hosface_groupNumber = (math.random(0, 65535) * 65536) + math.random(1, 65535)
-	local a, i
+	local i, a
 	do
-		a = {
+		i = {
 			{ slot = TppDefine.WEAPONSLOT.PRIMARY_HIP, equip = TppEquip.EQP_None },
 			{ slot = TppDefine.WEAPONSLOT.SECONDARY, equip = TppEquip.EQP_None },
 			{ slot = TppDefine.WEAPONSLOT.SUPPORT_0, equip = TppEquip.EQP_None },
 			{ slot = TppDefine.WEAPONSLOT.SUPPORT_1, equip = TppEquip.EQP_None },
 		}
-		i = { TppEquip.EQP_None, TppEquip.EQP_None, TppEquip.EQP_None, TppEquip.EQP_None }
+		a = { TppEquip.EQP_None, TppEquip.EQP_None, TppEquip.EQP_None, TppEquip.EQP_None }
 	end
-	e.SetInitPlayerWeapons(a)
+	e.SetInitPlayerWeapons(i)
 	TppPlayer.SupplyAllAmmoFullOnMissionFinalize()
-	e.SetInitPlayerItems(i)
+	e.SetInitPlayerItems(a)
 	e.InitializeAllPlatformForNewGame()
 end
-function e.InitializeForNewMission(e)
+function e.InitializeForNewMission(i)
 	TppSave.VarRestoreOnMissionStart()
 	TppStory.DisableMissionNewOpenFlag(vars.missionCode)
 	TppClock.RestoreMissionStartClock()
-	if e.sequence and e.sequence.MISSION_START_INITIAL_WEATHER then
-		TppWeather.SetMissionStartWeather(e.sequence.MISSION_START_INITIAL_WEATHER)
+	if i.sequence and i.sequence.MISSION_START_INITIAL_WEATHER then
+		TppWeather.SetMissionStartWeather(i.sequence.MISSION_START_INITIAL_WEATHER)
 	end
 	TppWeather.RestoreMissionStartWeather()
-	TppPlayer.SetInitialPlayerState(e)
+	TppPlayer.SetInitialPlayerState(i)
 	TppPlayer.ResetDisableAction()
 	TppEnemy.RestoreOnMissionStart()
-	if e.sequence then
+	if i.sequence then
 		TppPlayer.InitItemStockCount()
 	end
 	Player.ResetVarsOnMissionStart()
 	TppPlayer.SetSelfSubsistenceOnHardMission()
 	TppPlayer.RestoreChimeraWeaponParameter()
-	if e.sequence and n(e.sequence.playerInitialWeaponTable) then
-		TppPlayer.SetInitWeapons(e.sequence.playerInitialWeaponTable)
+	if i.sequence and o(i.sequence.playerInitialWeaponTable) then
+		TppPlayer.SetInitWeapons(i.sequence.playerInitialWeaponTable)
 	end
 	TppPlayer.RestorePlayerWeaponsOnMissionStart()
 	TppPlayer.SetMissionStartAmmoCount()
-	if e.sequence and n(e.sequence.playerInitialItemTable) then
-		TppPlayer.SetInitItems(e.sequence.playerInitialItemTable)
+	if i.sequence and o(i.sequence.playerInitialItemTable) then
+		TppPlayer.SetInitItems(i.sequence.playerInitialItemTable)
 	end
 	TppPlayer.RestorePlayerItemsOnMissionStart()
 	TppUI.OnMissionStart()
-	local e = TppMission.SetMissionOrderBoxPosition()
-	if not e then
+	local i = TppMission.SetMissionOrderBoxPosition()
+	if not i then
 		if TppMission.IsFreeMission(vars.missionCode) then
 			TppPlayer.SetMissionStartPositionFromNoOrderBoxPosition()
 		end
@@ -246,6 +246,20 @@ function e.InitializeForNewMission(e)
 	Gimmick.RestoreSaveDataPermanentGimmickFromMission()
 	TppMotherBaseManagement.SetupAfterRestoreFromSVars()
 	RecordRanking.WriteServerRankingScore()
+	if not gvars.ini_isTitleMode then
+		e.InitializeOnlineChallengeTaskVarsForNewMission()
+	end
+end
+function e.InitializeOnlineChallengeTaskVarsForNewMission()
+	if Tpp.IsOnlineMode() and (not Tpp.IsValidLocalOnlineChallengeTaskVersion()) then
+		gvars.localOnlineChallengeTaskVersion = TppNetworkUtil.GetOnlineChallengeTaskVersion()
+		e.InitializeOnlineChallengeTaskLocalCompletedVars()
+	end
+end
+function e.InitializeOnlineChallengeTaskLocalCompletedVars()
+	for e = 0, 23 do
+		TppChallengeTask.SetFlagCompletedOnlineTask(e, false)
+	end
 end
 function e.InitializeForContinue(e)
 	TppSave.VarRestoreOnContinueFromCheckPoint()
@@ -291,27 +305,27 @@ function e.SetInitPlayerWeapons(e)
 	for e, i in pairs(e) do
 		local a = i.ammo
 		local e = i.slot
-		local t = i.equip
-		local o = i.ammoMax
+		local n = i.equip
+		local t = i.ammoMax
 		local i = i.bulletId
 		if e >= TppDefine.WEAPONSLOT.SUPPORT_0 and e <= TppDefine.WEAPONSLOT.SUPPORT_3 then
-			local n = e - TppDefine.WEAPONSLOT.SUPPORT_0
-			vars.initSupportWeapons[n] = t
+			local t = e - TppDefine.WEAPONSLOT.SUPPORT_0
+			vars.initSupportWeapons[t] = n
 			vars.ammoStockIds[e] = i
 			vars.ammoStockCounts[e] = a
 		else
-			vars.initWeapons[e] = t
+			vars.initWeapons[e] = n
 			vars.ammoStockIds[e] = i
 			vars.ammoStockCounts[e] = a
-			vars.ammoInWeapons[e] = o
+			vars.ammoInWeapons[e] = t
 			vars.isInitialWeapon[e] = 1
 		end
 	end
 end
 function e.SetInitPlayerItems(e)
-	for e, i in pairs(e) do
-		vars.initItems[e - 1] = i
-		vars.items[e - 1] = i
+	for i, e in pairs(e) do
+		vars.initItems[i - 1] = e
+		vars.items[i - 1] = e
 	end
 end
 function e.DEBUG_GetDefaultPlayerWeaponAndItemTable()
@@ -347,16 +361,16 @@ function e.DEBUG_GetDefaultPlayerWeaponAndItemTable()
 	}, { TppEquip.EQP_None, TppEquip.EQP_IT_Nvg, TppEquip.EQP_IT_TimeCigarette, TppEquip.EQP_IT_CBox }
 end
 function e.InitializeAllPlatformForNewGame()
-	local t = 0
-	local n = 1
-	local a = { "Command", "Combat", "Develop", "BaseDev", "Support", "Spy", "Medical" }
+	local a = 0
+	local i = 1
+	local n = { "Command", "Combat", "Develop", "BaseDev", "Support", "Spy", "Medical" }
 	local e = { "MotherBase", "Fob1", "Fob2", "Fob3", "Fob4" }
-	for e, i in ipairs(e) do
-		for a, e in ipairs(a) do
+	for i, e in ipairs(e) do
+		for n, i in ipairs(n) do
 			TppMotherBaseManagement.SetClusterSvars({
-				base = i,
-				category = e,
-				grade = t,
+				base = e,
+				category = i,
+				grade = a,
 				buildStatus = "Completed",
 				timeMinute = 0,
 				isNew = false,
@@ -366,7 +380,7 @@ function e.InitializeAllPlatformForNewGame()
 	TppMotherBaseManagement.SetClusterSvars({
 		base = "MotherBase",
 		category = "Command",
-		grade = n,
+		grade = i,
 		buildStatus = "Completed",
 		timeMinute = 0,
 		isNew = true,

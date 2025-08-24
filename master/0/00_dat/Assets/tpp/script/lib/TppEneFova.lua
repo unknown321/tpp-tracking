@@ -1,17 +1,17 @@
 local a = {}
 local e = EnemyFova.MAX_REALIZED_COUNT
 local n = 0
-local l = 1
+local p = 1
 local d = 2
-local r = 3
+local f = 3
 local i = 4
-local p = 5
-local c = 6
-local _ = "/Assets/tpp/parts/chara/prs/prs2_main0_def_v00.parts"
-local f = "/Assets/tpp/parts/chara/prs/prs5_main0_def_v00.parts"
-local m = "/Assets/tpp/parts/chara/prs/prs3_main0_def_v00.parts"
-local y = "/Assets/tpp/parts/chara/prs/prs6_main0_def_v00.parts"
-local F = "/Assets/tpp/parts/chara/dds/dds5_main0_def_v00.parts"
+local l = 5
+local r = 6
+local m = "/Assets/tpp/parts/chara/prs/prs2_main0_def_v00.parts"
+local c = "/Assets/tpp/parts/chara/prs/prs5_main0_def_v00.parts"
+local F = "/Assets/tpp/parts/chara/prs/prs3_main0_def_v00.parts"
+local u = "/Assets/tpp/parts/chara/prs/prs6_main0_def_v00.parts"
+local y = "/Assets/tpp/parts/chara/dds/dds5_main0_def_v00.parts"
 local T = {
 	[10010] = 1,
 	[10020] = 1,
@@ -73,29 +73,29 @@ local t = {
 	[10045] = { count = 2, lang = d },
 	[10050] = { count = 0 },
 	[11050] = { count = 0 },
-	[10052] = { count = 6, lang = c, overlap = true, ignoreList = { 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 }, modelNum = 5 },
-	[11052] = { count = 6, lang = c, overlap = true, ignoreList = { 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 }, modelNum = 5 },
-	[10054] = { count = 4, lang = l, overlap = true },
-	[11054] = { count = 4, lang = l, overlap = true },
+	[10052] = { count = 6, lang = r, overlap = true, ignoreList = { 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 }, modelNum = 5 },
+	[11052] = { count = 6, lang = r, overlap = true, ignoreList = { 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 }, modelNum = 5 },
+	[10054] = { count = 4, lang = p, overlap = true },
+	[11054] = { count = 4, lang = p, overlap = true },
 	[10070] = { count = 0 },
 	[10080] = { count = 0 },
 	[11080] = { count = 0 },
 	[10081] = { count = 0 },
-	[10082] = { count = 2, lang = p, overlap = true },
-	[11082] = { count = 2, lang = p, overlap = true },
+	[10082] = { count = 2, lang = l, overlap = true },
+	[11082] = { count = 2, lang = l, overlap = true },
 	[10085] = { count = 0 },
 	[11085] = { count = 0 },
 	[10086] = { count = 0 },
 	[10090] = { count = 0 },
 	[11090] = { count = 0 },
-	[10091] = { count = 1, lang = l, useHair = true, overlap = true },
-	[11091] = { count = 1, lang = l, useHair = true, overlap = true },
+	[10091] = { count = 1, lang = p, useHair = true, overlap = true },
+	[11091] = { count = 1, lang = p, useHair = true, overlap = true },
 	[10093] = { count = 0 },
 	[10100] = { count = 0 },
 	[10110] = { count = 0 },
 	[10115] = { count = 0 },
 	[11115] = { count = 0 },
-	[10120] = { count = 1, lang = l, overlap = true },
+	[10120] = { count = 1, lang = p, overlap = true },
 	[10121] = { count = 0 },
 	[11121] = { count = 0 },
 	[10130] = { count = 0 },
@@ -109,12 +109,12 @@ local t = {
 	[10171] = { count = 0 },
 	[11171] = { count = 0 },
 	[10156] = { count = 1, lang = d, overlap = true },
-	[10195] = { count = 1, lang = p },
-	[11195] = { count = 1, lang = p },
-	[10200] = { count = 1, lang = p },
-	[11200] = { count = 1, lang = p },
+	[10195] = { count = 1, lang = l },
+	[11195] = { count = 1, lang = l },
+	[10200] = { count = 1, lang = l },
+	[11200] = { count = 1, lang = l },
 	[10240] = { count = 0 },
-	[10211] = { count = 4, lang = r, overlap = true },
+	[10211] = { count = 4, lang = f, overlap = true },
 	[11211] = { count = 4, lang = i, overlap = true },
 	[10260] = { count = 0 },
 	[10280] = { count = 0 },
@@ -166,14 +166,14 @@ a.S10240_MaleFaceIdList = {
 	223,
 }
 local n = {}
-local function o(n)
-	function n:case(a, n)
+local function o(a)
+	function a:case(a, n)
 		local e = self[a] or self.default
 		if e then
 			e(a, n)
 		end
 	end
-	return n
+	return a
 end
 function a.IsNotRequiredArmorSoldier(e)
 	if T[e] ~= nil then
@@ -181,14 +181,14 @@ function a.IsNotRequiredArmorSoldier(e)
 	end
 	return false
 end
-function a.CanUseArmorType(t, n)
-	local e =
+function a.CanUseArmorType(n, e)
+	local t =
 		{ PF_A = TppDefine.AFR_ARMOR.TYPE_CFA, PF_B = TppDefine.AFR_ARMOR.TYPE_ZRS, PF_C = TppDefine.AFR_ARMOR.TYPE_RC }
-	local e = e[n]
+	local e = t[e]
 	if e == nil then
 		return true
 	end
-	local a = a.GetArmorTypeTable(t)
+	local a = a.GetArmorTypeTable(n)
 	for n, a in ipairs(a) do
 		if a == e then
 			return true
@@ -196,24 +196,24 @@ function a.CanUseArmorType(t, n)
 	end
 	return false
 end
-function a.GetHostageCountAtMissionId(a)
-	local e = 0
-	if t[a] ~= nil then
-		local a = t[a]
-		if a ~= nil then
-			if a.count ~= nil then
-				return a.count
+function a.GetHostageCountAtMissionId(e)
+	local a = 0
+	if t[e] ~= nil then
+		local e = t[e]
+		if e ~= nil then
+			if e.count ~= nil then
+				return e.count
 			else
-				return e
+				return a
 			end
 		else
-			return e
+			return a
 		end
 	end
-	return e
+	return a
 end
 function a.GetHostageLangAtMissionId(e)
-	local a = l
+	local a = p
 	if t[e] ~= nil then
 		local e = t[e]
 		if e ~= nil then
@@ -291,10 +291,10 @@ end
 function a.SetHostageFaceTable(o)
 	local s = a.GetHostageCountAtMissionId(o)
 	local t = a.GetHostageLangAtMissionId(o)
-	local f = 0
+	local c = 0
 	if s > 0 then
 		local n = {}
-		if t == l then
+		if t == p then
 			table.insert(n, 3)
 			local e = bit.rshift(gvars.hosface_groupNumber, 8) % 100
 			if e < 40 then
@@ -302,19 +302,19 @@ function a.SetHostageFaceTable(o)
 			end
 		elseif t == d then
 			table.insert(n, 0)
-		elseif t == p then
+		elseif t == l then
 			table.insert(n, 2)
 			local e = bit.rshift(gvars.hosface_groupNumber, 8) % 100
 			if e < 10 then
 				table.insert(n, 0)
 			end
-		elseif t == c then
+		elseif t == r then
 			table.insert(n, 0)
 			table.insert(n, 1)
-			f = 1
+			c = 1
 		elseif t == i then
 			table.insert(n, 1)
-		elseif t == r then
+		elseif t == f then
 			table.insert(n, 2)
 		else
 			if TppLocation.IsAfghan() then
@@ -330,20 +330,20 @@ function a.SetHostageFaceTable(o)
 			end
 		end
 		local _ = a.GetHostageIsFaceModelOverlap(o)
-		local c = a.GetHostageIgnoreFaceList(o)
+		local r = a.GetHostageIgnoreFaceList(o)
 		local T = a.GetHostageFaceModelCount(o)
-		local c = TppSoldierFace.CreateFaceTable({
+		local r = TppSoldierFace.CreateFaceTable({
 			race = n,
 			needCount = s,
 			maxUsedFovaCount = T,
 			faceModelOverlap = _,
-			ignoreFaceList = c,
-			raceHalfMode = f,
+			ignoreFaceList = r,
+			raceHalfMode = c,
 		})
-		if c ~= nil then
+		if r ~= nil then
 			local d = {}
 			local t = {}
-			local n = #c
+			local n = #r
 			local a = e
 			if s <= n then
 				a = 1
@@ -354,7 +354,7 @@ function a.SetHostageFaceTable(o)
 			if a <= 0 then
 				a = e
 			end
-			for n, e in ipairs(c) do
+			for n, e in ipairs(r) do
 				table.insert(d, { e, 0, 0, a })
 				table.insert(t, e)
 			end
@@ -367,15 +367,15 @@ function a.SetHostageFaceTable(o)
 		else
 			local a = {}
 			local n = gvars.hosface_groupNumber % 9
-			if t == l then
+			if t == p then
 				table.insert(a, { 25 + n, 0, 0, e })
 			elseif t == d then
 				table.insert(a, { 100 + n, 0, 0, e })
-			elseif t == p then
+			elseif t == l then
 				table.insert(a, { 210 + n, 0, 0, e })
 			elseif t == i then
 				table.insert(a, { 9 + n, 0, 0, e })
-			elseif t == r then
+			elseif t == f then
 				table.insert(a, { 260 + n, 0, 0, e })
 			else
 				table.insert(a, { 55 + n, 0, 0, e })
@@ -390,12 +390,12 @@ function a.SetHostageFaceTable(o)
 end
 function a.GetFaceGroupTableAtGroupType(e)
 	local t = TppEnemyFaceGroup.GetFaceGroupTable(e)
-	local a = {}
-	local e = EnemyFova.MAX_REALIZED_COUNT
+	local e = {}
+	local a = EnemyFova.MAX_REALIZED_COUNT
 	for t, n in pairs(t) do
-		table.insert(a, { n, e, e, 0 })
+		table.insert(e, { n, a, a, 0 })
 	end
-	return a
+	return e
 end
 n[10200] = function(d, t)
 	a.SetHostageFaceTable(t)
@@ -416,7 +416,7 @@ n[10200] = function(d, t)
 	}
 	TppSoldierFace.OverwriteMissionFovaData({ body = e })
 	TppSoldierFace.SetBodyFovaUserType({ hostage = { TppEnemyBodyId.prs5_main0_v00 } })
-	TppHostage2.SetDefaultBodyFovaId({ parts = f, bodyId = TppEnemyBodyId.prs5_main0_v00 })
+	TppHostage2.SetDefaultBodyFovaId({ parts = c, bodyId = TppEnemyBodyId.prs5_main0_v00 })
 end
 n[11200] = n[10200]
 n[10120] = function(d, t)
@@ -438,16 +438,16 @@ n[10120] = function(d, t)
 	}
 	TppSoldierFace.OverwriteMissionFovaData({ body = e })
 	TppSoldierFace.SetBodyFovaUserType({ hostage = { TppEnemyBodyId.prs5_main0_v00 } })
-	TppHostage2.SetDefaultBodyFovaId({ parts = f, bodyId = TppEnemyBodyId.prs5_main0_v00 })
+	TppHostage2.SetDefaultBodyFovaId({ parts = c, bodyId = TppEnemyBodyId.prs5_main0_v00 })
 end
 n[10040] = function(e, a)
 	local e = o(n)
 	e:case("Afghan", a)
 	TppSoldierFace.SetUseZombieFova({ enabled = true })
 end
-n[10045] = function(a, e)
-	local a = o(n)
-	a:case("Afghan", e)
+n[10045] = function(e, a)
+	local e = o(n)
+	e:case("Afghan", a)
 	local e = {}
 	for a = 0, 9 do
 		table.insert(e, a)
@@ -483,9 +483,9 @@ n[10090] = function(a, e)
 	TppSoldierFace.SetUseZombieFova({ enabled = true })
 end
 n[11090] = n[10090]
-n[10091] = function(a, e)
-	local a = o(n)
-	a:case("Africa", e)
+n[10091] = function(e, a)
+	local e = o(n)
+	e:case("Africa", a)
 	local e = {}
 	for a = 0, 9 do
 		table.insert(e, a)
@@ -509,16 +509,16 @@ n[10091] = function(a, e)
 	local e = e[a]
 	local a = { { TppEnemyFaceId.pfs_balaclava, 2, 2, 0 }, { t, 1, 1, 0 }, { e, 1, 1, 0 } }
 	TppSoldierFace.OverwriteMissionFovaData({ face = a, additionalMode = true })
-	local a = 265
-	local d = 266
-	TppSoldierFace.SetSpecialFovaId({ face = { t, e }, body = { a, d } })
-	local e = { { a, 1 }, { d, 1 } }
+	local d = 265
+	local a = 266
+	TppSoldierFace.SetSpecialFovaId({ face = { t, e }, body = { d, a } })
+	local e = { { d, 1 }, { a, 1 } }
 	TppSoldierFace.OverwriteMissionFovaData({ body = e, additionalMode = true })
 end
 n[11091] = n[10091]
-n[10080] = function(t, a)
-	local t = o(n)
-	t:case("Africa", a)
+n[10080] = function(a, t)
+	local a = o(n)
+	a:case("Africa", t)
 	if TppPackList.IsMissionPackLabel("afterPumpStopDemo") then
 	else
 		TppSoldier2.SetExtendPartsInfo({ type = 2, path = "/Assets/tpp/parts/chara/chd/chd0_main0_def_v00.parts" })
@@ -560,13 +560,13 @@ n[10115] = function(a, a)
 	TppSoldierFace.SetUseFaceIdListMode({ enabled = true, staffCheck = true })
 	local e = { { 140, e }, { 141, e }, { TppEnemyBodyId.dds5_main0_v00, e } }
 	TppSoldierFace.SetBodyFovaUserType({ hostage = { TppEnemyBodyId.dds5_main0_v00 } })
-	TppHostage2.SetDefaultBodyFovaId({ parts = F, bodyId = TppEnemyBodyId.dds5_main0_v00 })
+	TppHostage2.SetDefaultBodyFovaId({ parts = y, bodyId = TppEnemyBodyId.dds5_main0_v00 })
 	TppSoldierFace.OverwriteMissionFovaData({ body = e })
 end
 n[11115] = n[10115]
-n[10130] = function(a, e)
-	local a = o(n)
-	a:case("Africa", e)
+n[10130] = function(e, a)
+	local e = o(n)
+	e:case("Africa", a)
 	TppSoldierFace.SetUseZombieFova({ enabled = true })
 end
 n[11130] = n[10130]
@@ -599,14 +599,14 @@ n[10150] = function(a, a)
 end
 n[10151] = function(e, e) end
 n[11151] = n[10151]
-n[30010] = function(t, a)
-	local t = o(n)
-	t:case("Afghan", a)
+n[30010] = function(a, t)
+	local a = o(n)
+	a:case("Afghan", t)
 	TppSoldierFace.SetUseZombieFova({ enabled = true })
 	local e = { { TppEnemyBodyId.prs3_main0_v00, e } }
 	TppSoldierFace.OverwriteMissionFovaData({ body = e })
 	TppSoldierFace.SetBodyFovaUserType({ hostage = { TppEnemyBodyId.prs3_main0_v00 } })
-	TppHostage2.SetDefaultBodyFovaId({ parts = m, bodyId = TppEnemyBodyId.prs3_main0_v00 })
+	TppHostage2.SetDefaultBodyFovaId({ parts = F, bodyId = TppEnemyBodyId.prs3_main0_v00 })
 end
 n[30020] = function(a, t)
 	local a = o(n)
@@ -615,7 +615,7 @@ n[30020] = function(a, t)
 	local e = { { TppEnemyBodyId.prs6_main0_v00, e } }
 	TppSoldierFace.OverwriteMissionFovaData({ body = e })
 	TppSoldierFace.SetBodyFovaUserType({ hostage = { TppEnemyBodyId.prs6_main0_v00 } })
-	TppHostage2.SetDefaultBodyFovaId({ parts = y, bodyId = TppEnemyBodyId.prs6_main0_v00 })
+	TppHostage2.SetDefaultBodyFovaId({ parts = u, bodyId = TppEnemyBodyId.prs6_main0_v00 })
 end
 function n.Afghan(n, t)
 	if t == 10010 then
@@ -666,20 +666,20 @@ function n.Afghan(n, t)
 	end
 	TppSoldierFace.OverwriteMissionFovaData({ body = n })
 	TppSoldierFace.SetBodyFovaUserType({ hostage = { TppEnemyBodyId.prs2_main0_v00 } })
-	TppHostage2.SetDefaultBodyFovaId({ parts = _, bodyId = TppEnemyBodyId.prs2_main0_v00 })
+	TppHostage2.SetDefaultBodyFovaId({ parts = m, bodyId = TppEnemyBodyId.prs2_main0_v00 })
 end
 function n.Africa(n, p)
-	local d = 0
+	local o = 0
 	if TppSoldierFace.IsMoreVariationMode ~= nil then
-		d = TppSoldierFace.IsMoreVariationMode()
+		o = TppSoldierFace.IsMoreVariationMode()
 	end
 	local t = 30
 	local n = gvars.solface_groupNumber
-	local o = (n % t) * 2
-	local l = TppEnemyFaceGroupId.AFRICA_GRP000_B + o
+	local d = (n % t) * 2
+	local l = TppEnemyFaceGroupId.AFRICA_GRP000_B + d
 	local i = a.GetFaceGroupTableAtGroupType(l)
 	TppSoldierFace.OverwriteMissionFovaData({ face = i })
-	if d > 0 then
+	if o > 0 then
 		for e = 1, 2 do
 			n = n + 2
 			local e = (n % t) * 2
@@ -690,11 +690,11 @@ function n.Africa(n, p)
 	end
 	t = 30
 	n = gvars.solface_groupNumber
-	o = (n % t) * 2
-	l = TppEnemyFaceGroupId.AFRICA_GRP000_W + o
-	local o = a.GetFaceGroupTableAtGroupType(l)
-	TppSoldierFace.OverwriteMissionFovaData({ face = o })
-	if d > 0 then
+	d = (n % t) * 2
+	l = TppEnemyFaceGroupId.AFRICA_GRP000_W + d
+	local d = a.GetFaceGroupTableAtGroupType(l)
+	TppSoldierFace.OverwriteMissionFovaData({ face = d })
+	if o > 0 then
 		for e = 1, 2 do
 			n = n + 2
 			local e = (n % t) * 2
@@ -742,7 +742,7 @@ function n.Africa(n, p)
 	end
 	TppSoldierFace.OverwriteMissionFovaData({ body = n })
 	TppSoldierFace.SetBodyFovaUserType({ hostage = { TppEnemyBodyId.prs5_main0_v00 } })
-	TppHostage2.SetDefaultBodyFovaId({ parts = f, bodyId = TppEnemyBodyId.prs5_main0_v00 })
+	TppHostage2.SetDefaultBodyFovaId({ parts = c, bodyId = TppEnemyBodyId.prs5_main0_v00 })
 end
 function n.Mbqf(n, n)
 	TppSoldierFace.SetSoldierOutsideFaceMode(false)
@@ -820,9 +820,9 @@ function n.Mb(n, d)
 	if TppMission.IsFOBMission(d) then
 		local l = TppMotherBaseManagement.GetStaffsFob()
 		local d = 36
-		local p = 100
+		local i = 100
 		local n = {}
-		local i = {}
+		local p = {}
 		do
 			for a, e in pairs(l) do
 				local e = TppMotherBaseManagement.StaffIdToFaceId({ staffId = e })
@@ -845,20 +845,20 @@ function n.Mb(n, d)
 			end
 		end
 		do
-			for a = d + 1, d + p do
-				local e = l[a]
-				if e == nil then
+			for e = d + 1, d + i do
+				local a = l[e]
+				if a == nil then
 					break
 				end
-				local e = TppMotherBaseManagement.StaffIdToFaceId({ staffId = e })
-				if n[e] == nil then
-					i[e] = 1
+				local a = TppMotherBaseManagement.StaffIdToFaceId({ staffId = a })
+				if n[a] == nil then
+					p[a] = 1
 				end
-				if a == p then
+				if e == i then
 					break
 				end
 			end
-			for e, a in pairs(i) do
+			for e, a in pairs(p) do
 				table.insert(t, { e, 0, 0, 0 })
 			end
 		end
@@ -1052,29 +1052,29 @@ function a.PreMissionLoad(e, a)
 		a:case(e, e)
 	end
 end
-local f = {}
+local c = {}
+local o = {}
 local p = {}
-local s = {}
 local t = {}
-local r = 0
-local i = 0
-local o = 0
-local d = 0
 local l = 0
+local d = 0
+local i = 0
+local s = 0
+local r = 0
 local m = 15
 local T = 16
 local _ = 32
-local c = 0
+local f = 0
 function a.InitializeUniqueSetting()
-	f = {}
+	c = {}
+	o = {}
 	p = {}
-	s = {}
 	t = {}
-	r = 0
-	i = 0
-	o = 0
-	d = 0
 	l = 0
+	d = 0
+	i = 0
+	s = 0
+	r = 0
 	local n = GameObject.NULL_ID
 	local a = EnemyFova.NOT_USED_FOVA_VALUE
 	for e = 0, TppDefine.ENEMY_FOVA_UNIQUE_SETTING_COUNT - 1 do
@@ -1087,37 +1087,37 @@ function a.InitializeUniqueSetting()
 		end
 	end
 end
-function a.GetStaffIdForDD(e, a)
-	local n = c
+function a.GetStaffIdForDD(e, n)
+	local a = f
 	if e == 10081 then
-		n = TppMotherBaseManagement.GetStaffS10081()
+		a = TppMotherBaseManagement.GetStaffS10081()
 	elseif e == 10091 or e == 11091 then
 		local e = TppMotherBaseManagement.GetStaffsS10091()
-		if e and a < #e then
-			n = e[a + 1]
+		if e and n < #e then
+			a = e[n + 1]
 		end
 	elseif e == 10115 or e == 11115 then
 		local e = TppMotherBaseManagement.GetStaffsS10115()
-		if e and a < #e then
-			n = e[a + 1]
+		if e and n < #e then
+			a = e[n + 1]
 		end
 	end
-	return n
+	return a
 end
 function a.GetFaceIdForDdHostage(e)
-	local n = r
-	r = r + 1
+	local n = l
+	l = l + 1
 	local a = a.GetStaffIdForDD(e, n)
 	local t = bit.bor(T, n)
-	if a ~= c then
+	if a ~= f then
 		local a = TppMotherBaseManagement.StaffIdToFaceId({ staffId = a })
 		if e == 10081 then
-			o = a
+			i = a
 		elseif e == 10091 or e == 11091 then
 			if n > 0 then
-				l = a
+				r = a
 			else
-				d = a
+				s = a
 			end
 		end
 		return a, t
@@ -1129,32 +1129,32 @@ function a.GetFaceIdForDdHostage(e)
 		a = TppSoldierFace.GetRandomFaceId({ race = { 0, 2, 3 }, gender = 0, useIndex = e })
 	end
 	if e == 10081 then
-		o = a
+		i = a
 	elseif e == 10091 or e == 11091 then
 		if n > 0 then
-			l = a
+			r = a
 		else
-			d = a
+			s = a
 		end
 	end
 	return a, t
 end
 function a.GetFaceId_s10081()
-	return o
+	return i
 end
 function a.GetFaceId_s10091_0()
-	return d
+	return s
 end
 function a.GetFaceId_s10091_1()
-	return l
+	return r
 end
 function a.GetFaceIdForFemaleHostage(e)
 	local t = _
 	if e == 10086 then
 		return 613, t
 	end
-	local n = i
-	i = i + 1
+	local n = d
+	d = d + 1
 	local a = {}
 	table.insert(a, 0)
 	if TppLocation.IsAfghan() then
@@ -1179,24 +1179,24 @@ function a.GetFaceIdForFemaleHostage(e)
 	end
 	return e, t
 end
-function a.GetFaceIdAndFlag(t, e)
-	local n = EnemyFova.NOT_USED_FOVA_VALUE
+function a.GetFaceIdAndFlag(n, e)
+	local t = EnemyFova.NOT_USED_FOVA_VALUE
 	if e == "female" then
-		if t == "hostage" then
+		if n == "hostage" then
 			return a.GetFaceIdForFemaleHostage(vars.missionCode)
 		else
-			return n, 0
+			return t, 0
 		end
 	elseif e == "dd" then
-		if t == "hostage" then
+		if n == "hostage" then
 			return a.GetFaceIdForDdHostage(vars.missionCode)
 		else
-			return n, 0
+			return t, 0
 		end
 	end
 	return e, 0
 end
-function a.RegisterUniqueSetting(d, o, l, n)
+function a.RegisterUniqueSetting(d, i, l, n)
 	local e = EnemyFova.NOT_USED_FOVA_VALUE
 	local a, l = a.GetFaceIdAndFlag(d, l)
 	if a == nil then
@@ -1205,43 +1205,43 @@ function a.RegisterUniqueSetting(d, o, l, n)
 	if n == nil then
 		n = e
 	end
-	table.insert(f, { name = o, faceId = a, bodyId = n, flag = l })
+	table.insert(c, { name = i, faceId = a, bodyId = n, flag = l })
 	do
-		local l = 1
+		local p = 1
 		local n = 2
 		local t = 3
-		local o = 4
+		local l = 4
 		local e = nil
-		for t, n in ipairs(p) do
-			if n[l] == a then
+		for t, n in ipairs(o) do
+			if n[p] == a then
 				e = n
 			end
 		end
 		if not e then
 			e = { a, 0, 0, 0 }
-			table.insert(p, e)
+			table.insert(o, e)
 		end
 		if d == "enemy" then
 			e[n] = e[n] + 1
 			e[t] = e[t] + 1
 		elseif d == "hostage" then
-			e[o] = e[o] + 1
+			e[l] = e[l] + 1
 		end
 	end
 	do
-		local o = 1
-		local a = 2
+		local l = 1
+		local o = 2
 		local e = nil
-		for t, a in ipairs(s) do
-			if a[o] == n then
+		for t, a in ipairs(p) do
+			if a[l] == n then
 				e = a
 			end
 		end
 		if not e then
 			e = { n, 0 }
-			table.insert(s, e)
+			table.insert(p, e)
 		end
-		e[a] = e[a] + 1
+		e[o] = e[o] + 1
 		if d == "hostage" then
 			local e = n
 			for t, a in ipairs(t) do
@@ -1262,7 +1262,7 @@ function a.AddUniqueSettingPackage(e)
 			a.RegisterUniqueSetting(e.type, e.name, e.faceId, e.bodyId, e.missionCode)
 		end
 	end
-	TppSoldierFace.OverwriteMissionFovaData({ face = p, body = s, additionalMode = true })
+	TppSoldierFace.OverwriteMissionFovaData({ face = o, body = p, additionalMode = true })
 	if #t > 0 then
 		TppSoldierFace.SetBodyFovaUserType({ hostage = t })
 	end
@@ -1284,7 +1284,7 @@ function a.ApplyUniqueSetting()
 	local e = EnemyFova.NOT_USED_FOVA_VALUE
 	if gvars.ene_fovaUniqueTargetIds[0] == t then
 		local e = 0
-		for n, a in ipairs(f) do
+		for n, a in ipairs(c) do
 			local n = GameObject.GetGameObjectId(a.name)
 			if n ~= t then
 				if e < TppDefine.ENEMY_FOVA_UNIQUE_SETTING_COUNT then
@@ -1313,10 +1313,10 @@ function a.ApplyUniqueSetting()
 			t = gvars.ene_fovaUniqueFlags[n]
 		end
 		if d(t, T) ~= 0 then
-			local n = vars.missionCode
-			local t = d(t, m)
-			local a = a.GetStaffIdForDD(n, t)
-			if a ~= c then
+			local o = vars.missionCode
+			local n = d(t, m)
+			local a = a.GetStaffIdForDD(o, n)
+			if a ~= f then
 				local a = { id = "SetStaffId", staffId = a }
 				GameObject.SendCommand(e, a)
 			end
@@ -1513,86 +1513,86 @@ function a.GetUavSetting()
 	local o = TppMotherBaseManagement.GetMbsUavLevel({})
 	local i = TppMotherBaseManagement.GetMbsUavSmokeGrenadeLevel({})
 	local _ = TppMotherBaseManagement.GetMbsUavSleepingGusGrenadeLevel({})
-	local t = TppMotherBaseManagement.GetMbsClusterSecuritySoldierEquipGrade({})
-	local c = TppMotherBaseManagement.GetMbsClusterSecurityIsNoKillMode()
+	local n = TppMotherBaseManagement.GetMbsClusterSecuritySoldierEquipGrade({})
+	local T = TppMotherBaseManagement.GetMbsClusterSecurityIsNoKillMode()
 	local l = TppUav.DEVELOP_LEVEL_LMG_0
 	local d = false
 	local s = false
 	local a = 100
 	local e = a
-	local n = a
+	local t = a
 	local p = a
 	local r = 7
 	local r = 4
 	local r = 3
 	local r = 3
 	local r = 3
-	local f = 3
+	local c = 3
 	local r = 6
-	local T = 7
-	if t < f then
+	local f = 7
+	if n < c then
 		e = a
 	elseif o > 0 then
 		if o == 1 then
 			e = TppUav.DEVELOP_LEVEL_LMG_0
 		elseif o == 2 then
-			if t >= r then
+			if n >= r then
 				e = TppUav.DEVELOP_LEVEL_LMG_1
 			else
 				e = TppUav.DEVELOP_LEVEL_LMG_0
 			end
-		elseif o == 3 then
-			if t >= T then
+		elseif o >= 3 then
+			if n >= f then
 				e = TppUav.DEVELOP_LEVEL_LMG_2
-			elseif t >= r then
+			elseif n >= r then
 				e = TppUav.DEVELOP_LEVEL_LMG_1
 			else
 				e = TppUav.DEVELOP_LEVEL_LMG_0
 			end
 		end
 	end
-	local f = 4
+	local c = 4
 	local r = 6
-	local T = 7
-	if t < f then
-		n = a
+	local f = 7
+	if n < c then
+		t = a
 	elseif o > 0 then
 		if i == 1 then
-			n = TppUav.DEVELOP_LEVEL_SMOKE_0
+			t = TppUav.DEVELOP_LEVEL_SMOKE_0
 		elseif i == 2 then
-			if t >= r then
-				n = TppUav.DEVELOP_LEVEL_SMOKE_1
+			if n >= r then
+				t = TppUav.DEVELOP_LEVEL_SMOKE_1
 			else
-				n = TppUav.DEVELOP_LEVEL_SMOKE_0
+				t = TppUav.DEVELOP_LEVEL_SMOKE_0
 			end
 		elseif i == 3 then
-			if t >= T then
-				n = TppUav.DEVELOP_LEVEL_SMOKE_2
-			elseif t >= r then
-				n = TppUav.DEVELOP_LEVEL_SMOKE_1
+			if n >= f then
+				t = TppUav.DEVELOP_LEVEL_SMOKE_2
+			elseif n >= r then
+				t = TppUav.DEVELOP_LEVEL_SMOKE_1
 			else
-				n = TppUav.DEVELOP_LEVEL_SMOKE_0
+				t = TppUav.DEVELOP_LEVEL_SMOKE_0
 			end
 		end
 	end
 	local i = 8
-	if t < i then
+	if n < i then
 		p = a
 	else
-		if _ == 1 then
+		if _ >= 1 then
 			p = TppUav.DEVELOP_LEVEL_SLEEP_0
 		end
 	end
 	if o == 0 then
 		d = false
 	else
-		if c == true then
+		if T == true then
 			if p ~= a then
 				l = p
 				d = true
 				s = true
-			elseif n ~= a then
-				l = n
+			elseif t ~= a then
+				l = t
 				d = true
 				s = true
 			elseif e ~= a then
@@ -1611,5 +1611,38 @@ function a.GetUavSetting()
 		end
 	end
 	return d, l, s
+end
+function a.GetUavCombatGradeAndEmpLevel(t, l, a, o)
+	if t < 9 then
+		return nil, 0
+	end
+	local d = { [9] = { 4, 2 }, [10] = { 5, 3 }, [11] = { 6, 4 } }
+	local n, e
+	if l then
+		e = 2
+		n = o
+	else
+		e = 1
+		n = a
+	end
+	local a
+	for t, d in pairs(d) do
+		if d[e] == n then
+			a = t
+		end
+	end
+	if not a then
+		if n > d[11][e] then
+		end
+		return nil, 0
+	end
+	local e, n
+	if t <= a then
+		e = t
+	else
+		e = a
+	end
+	n = e - 8
+	return e, n
 end
 return a

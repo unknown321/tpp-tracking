@@ -598,6 +598,7 @@ TppMotherBaseManagement.RegisterStaffBaseRankRange({ totalSectionLv = 840, g = 0
 TppMotherBaseManagement.RegisterStaffBaseRankRange({ totalSectionLv = 868, g = 0, f = 0, e = 0, d = 0, c = 3, b = 10, a = 22, s = 65, sp = 0, spp = 0 })
 TppMotherBaseManagement.RegisterStaffBaseRankRange({ totalSectionLv = 882, g = 0, f = 0, e = 0, d = 0, c = 3, b = 10, a = 17, s = 70, sp = 0, spp = 0 })
 TppMotherBaseManagement.RegisterStaffBaseRankRange({ totalSectionLv = 910, g = 0, f = 0, e = 0, d = 0, c = 3, b = 6, a = 16, s = 75, sp = 0, spp = 0 })
+TppMotherBaseManagement.RegisterStaffBaseRankRange({ totalSectionLv = 1050, g = 0, f = 0, e = 0, d = 0, c = 0, b = 3, a = 17, s = 80, sp = 0, spp = 0 })
 TppMotherBaseManagement.RegisterStaffMinBaseRank({ minBaseRank = "G" })
 local e = {
 	{ lv = 1, lineSectionPoint = 43 },
@@ -733,6 +734,35 @@ local e = {
 	{ lv = 131, lineSectionPoint = 174914 },
 	{ lv = 132, lineSectionPoint = 178140 },
 	{ lv = 133, lineSectionPoint = 181400 },
+	{ lv = 134, lineSectionPoint = 182930 },
+	{ lv = 135, lineSectionPoint = 184460 },
+	{ lv = 136, lineSectionPoint = 185990 },
+	{ lv = 137, lineSectionPoint = 187520 },
+	{ lv = 138, lineSectionPoint = 189050 },
+	{ lv = 139, lineSectionPoint = 190750 },
+	{ lv = 140, lineSectionPoint = 192450 },
+	{ lv = 141, lineSectionPoint = 194150 },
+	{ lv = 142, lineSectionPoint = 195850 },
+	{ lv = 143, lineSectionPoint = 197550 },
+	{ lv = 144, lineSectionPoint = 199250 },
+	{ lv = 145, lineSectionPoint = 201120 },
+	{ lv = 146, lineSectionPoint = 202990 },
+	{ lv = 147, lineSectionPoint = 204860 },
+	{ lv = 148, lineSectionPoint = 206730 },
+	{ lv = 149, lineSectionPoint = 208600 },
+	{ lv = 150, lineSectionPoint = 210640 },
+	{ lv = 151, lineSectionPoint = 212510 },
+	{ lv = 152, lineSectionPoint = 214550 },
+	{ lv = 153, lineSectionPoint = 216590 },
+	{ lv = 154, lineSectionPoint = 218630 },
+	{ lv = 155, lineSectionPoint = 220670 },
+	{ lv = 156, lineSectionPoint = 222710 },
+	{ lv = 157, lineSectionPoint = 224750 },
+	{ lv = 158, lineSectionPoint = 226790 },
+	{ lv = 159, lineSectionPoint = 228830 },
+	{ lv = 160, lineSectionPoint = 230870 },
+	{ lv = 161, lineSectionPoint = 232910 },
+	{ lv = 162, lineSectionPoint = 234950 },
 }
 for n, e in pairs(e) do
 	TppMotherBaseManagement.RegisterSectionLvLine(e)
@@ -975,6 +1005,150 @@ TppMotherBaseManagement.RegisterSkillDrawingParam({
 	rank = "A",
 	priority = 252,
 	rate = 20,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Defender1",
+	section = "All",
+	rank = "B",
+	priority = 165,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Defender2",
+	section = "All",
+	rank = "S",
+	priority = 185,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Defender3",
+	section = "All",
+	rank = "S++",
+	priority = 205,
+	rate = 4,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Sentry1",
+	section = "All",
+	rank = "B",
+	priority = 164,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Sentry2",
+	section = "All",
+	rank = "S",
+	priority = 184,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Sentry3",
+	section = "All",
+	rank = "S++",
+	priority = 204,
+	rate = 4,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Ranger1",
+	section = "All",
+	rank = "B",
+	priority = 163,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Ranger2",
+	section = "All",
+	rank = "S",
+	priority = 183,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Ranger3",
+	section = "All",
+	rank = "S++",
+	priority = 203,
+	rate = 4,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Medic1",
+	section = "All",
+	rank = "B",
+	priority = 162,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Medic2",
+	section = "All",
+	rank = "S",
+	priority = 182,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "Medic3",
+	section = "All",
+	rank = "S++",
+	priority = 202,
+	rate = 4,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "LiquidCarbonMissileEngineer1",
+	section = "All",
+	rank = "B",
+	priority = 161,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "LiquidCarbonMissileEngineer2",
+	section = "All",
+	rank = "S",
+	priority = 181,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "LiquidCarbonMissileEngineer3",
+	section = "All",
+	rank = "S++",
+	priority = 201,
+	rate = 4,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "InterceptorMissileEngineer1",
+	section = "All",
+	rank = "B",
+	priority = 160,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "InterceptorMissileEngineer2",
+	section = "All",
+	rank = "S",
+	priority = 180,
+	rate = 3,
+	isLocked = "false",
+})
+TppMotherBaseManagement.RegisterSkillDrawingParam({
+	skill = "InterceptorMissileEngineer3",
+	section = "All",
+	rank = "S++",
+	priority = 200,
+	rate = 4,
 	isLocked = "false",
 })
 TppMotherBaseManagement.SortSkillDrawingParamTable()

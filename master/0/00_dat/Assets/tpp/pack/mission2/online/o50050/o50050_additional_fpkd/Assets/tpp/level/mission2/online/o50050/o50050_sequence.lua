@@ -201,6 +201,37 @@ this.fieldClothings = {
 	PlayerCamoType.C46,
 	PlayerCamoType.C49,
 	PlayerCamoType.C52,
+	PlayerCamoType.C16,
+	PlayerCamoType.C17,
+	PlayerCamoType.C18,
+	PlayerCamoType.C19,
+	PlayerCamoType.C20,
+	PlayerCamoType.C22,
+	PlayerCamoType.C25,
+	PlayerCamoType.C26,
+	PlayerCamoType.C28,
+	PlayerCamoType.C31,
+	PlayerCamoType.C32,
+	PlayerCamoType.C33,
+	PlayerCamoType.C36,
+	PlayerCamoType.C37,
+	PlayerCamoType.C40,
+	PlayerCamoType.C41,
+	PlayerCamoType.C43,
+	PlayerCamoType.C44,
+	PlayerCamoType.C45,
+	PlayerCamoType.C47,
+	PlayerCamoType.C48,
+	PlayerCamoType.C50,
+	PlayerCamoType.C51,
+	PlayerCamoType.C53,
+	PlayerCamoType.C54,
+	PlayerCamoType.C55,
+	PlayerCamoType.C56,
+	PlayerCamoType.C57,
+	PlayerCamoType.C58,
+	PlayerCamoType.C59,
+	PlayerCamoType.C60,
 }
 
 this.nakedCamo = {
@@ -2368,6 +2399,26 @@ this.saveVarsList = {
 		name = "rank_cnt_down_dfp",
 		type = TppScriptVars.TYPE_UINT8,
 		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+
+	clearedPlantCount = {
+		name = "clearedPlantCount",
+		type = TppScriptVars.TYPE_UINT8,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	isTelopTrapEntered = {
+		name = "isTelopTrapEntered",
+		arraySize = 4,
+		type = TppScriptVars.TYPE_BOOL,
+		value = false,
 		save = true,
 		sync = true,
 		wait = true,
@@ -4615,6 +4666,9 @@ function this.MissionPrepare()
 
 		mvars.fobDebug.showESPBonusConf = false
 		DebugMenu.AddDebugMenu("FobLua", "showESPBonusConf", "bool", mvars.fobDebug, "showESPBonusConf")
+
+		mvars.fobDebug.showImportantRoute = false
+		DebugMenu.AddDebugMenu("FobLua", "showImportantRoute", "bool", mvars.fobDebug, "showImportantRoute")
 	end
 
 	if TppEnemy.IsParasiteMetalEventFOB() then
@@ -5046,6 +5100,27 @@ function this.Messages()
 						elseif neutralizeCause == NeutralizeFobCause.GRENADER then
 							FobUI.UpdateEventTask({ detectType = 98, diff = 1 })
 						end
+					elseif Tpp.IsParasiteSquad(neutralizedGameObjectId) then
+						FobUI.UpdateEventTask({ detectType = 101, diff = 1 })
+
+						local parasiteSquadNeutralizeCauseToDetectType = {
+							[NeutralizeFobCause.HANDGUN] = 102,
+							[NeutralizeFobCause.SUBMACHINE_GUN] = 103,
+							[NeutralizeFobCause.SHOTGUN] = 104,
+							[NeutralizeFobCause.ASSAULT_RIFLE] = 105,
+							[NeutralizeFobCause.MACHINE_GUN] = 106,
+							[NeutralizeFobCause.SNIPER_RIFLE] = 107,
+							[NeutralizeFobCause.ANTIMATERIAL_RIFLE] = 107,
+							[NeutralizeFobCause.MISSILE] = 108,
+							[NeutralizeFobCause.THROWING] = 109,
+							[NeutralizeFobCause.PLACED] = 110,
+							[NeutralizeFobCause.CQC] = 111,
+							[NeutralizeFobCause.GRENADER] = 113,
+						}
+						local detectType = parasiteSquadNeutralizeCauseToDetectType[neutralizeCause]
+						if detectType then
+							FobUI.UpdateEventTask({ detectType = detectType, diff = 1 })
+						end
 					end
 				end,
 			},
@@ -5101,6 +5176,11 @@ function this.Messages()
 				msg = "Enter",
 				sender = this.currentClusterSetting.strGoalTrap,
 				func = function(sender, gameObjectId)
+					if not this.IsOffencePlayer(gameObjectId) then
+						Fox.Log("#### Goal trap only can enter offence player. ####")
+						return
+					end
+
 					if mvars.fob_enteredGoalArea then
 						return
 					end
@@ -6920,6 +7000,37 @@ this.CalculateEspionageTotal = function(numClearType)
 	end
 end
 
+this.UpdateClearedPlantCount = function(plantNumber)
+	if (not Tpp.IsTypeNumber(plantNumber)) or (plantNumber < 0) or (plantNumber > 3) then
+		Fox.Error("Plant number must be 0-3. plantNumber = " .. tostring(plantNumber))
+		return
+	end
+
+	local isLastEntered = svars.isTelopTrapEntered[plantNumber]
+	svars.isTelopTrapEntered[plantNumber] = true
+
+	if isLastEntered == false then
+		if this.GetClearedPlantCount() > 0 then
+			TppUiCommand.AnnounceLogViewLangId("announce_get_plant_clear_bonus", "sfx_s_log_rank_up")
+		end
+	end
+end
+
+this.GetClearedPlantCount = function()
+	local enteredTelopTrapCount = 0
+	for plantNumber = 0, 3 do
+		if svars.isTelopTrapEntered[plantNumber] then
+			enteredTelopTrapCount = enteredTelopTrapCount + 1
+		end
+	end
+
+	if enteredTelopTrapCount > 0 then
+		return enteredTelopTrapCount - 1
+	else
+		return 0
+	end
+end
+
 this.CalculateResult = function(numClearType)
 	Fox.Log("### CalculateResult ### :: numClearType = " .. tostring(numClearType))
 
@@ -6991,18 +7102,14 @@ this.CalculateResult = function(numClearType)
 			+ mvars.mbUav_placedCountTotal
 			+ mvars.mbSecCam_placedCountTotal
 
-		local countPlant = 0
-		for key, svarsName in pairs(this.checkPointFlagList) do
-			if svars[svarsName] == true then
-				countPlant = countPlant + 1
-			end
-		end
+		local countPlant = this.GetClearedPlantCount()
 
 		if numClearType == CLEAR_TYPE_RESULT_GOAL then
 			countPlant = countPlant + 1
 
 			this.CheckEquipEspBonus_Offence()
 		end
+		svars.clearedPlantCount = countPlant
 
 		local espParm_plcn =
 			this.GetESPUnitValue_OFUp(baseDiffOF, 1, GetServerParameter("ESPIONAGE_POINT_OFFENSE_PLANT_COUNT"))
@@ -7033,16 +7140,6 @@ this.CalculateResult = function(numClearType)
 			svars.espt_of_perfect_stealth = svars.espt_of_no_alert + svars.espt_of_no_kill + svars.espt_of_no_reflex
 		end
 
-		if TppMotherBaseManagement.IsOpponentSupporter({}) == false then
-			Fox.Log(" ***** Day180:SetFobResultRankingParam ***** ")
-			local isPerfectStealth = false
-			if svars.espt_of_perfect_stealth ~= 0 then
-				isPerfectStealth = true
-			end
-
-			TppNetworkUtil.SetFobResultRankingParam(isPerfectStealth, svars.rank_cnt_down_ofp, svars.rank_cnt_down_dfp)
-		end
-
 		local espParm_hit = GetServerParameter("ESPIONAGE_POINT_OFFENSE_HIT")
 		espParm_hit = espParm_hit * svars.takeHitCount
 		svars.espt_of_offense_hit = svars.espt_of_offense_hit + espParm_hit
@@ -7054,6 +7151,8 @@ this.CalculateResult = function(numClearType)
 			svars.espt_of_sneak_day = 0
 			svars.espt_of_perfect_stealth = 0
 		end
+
+		this.SetFobResultRankingParam()
 
 		if numClearType ~= CLEAR_TYPE_RESULT_GOAL then
 			local espParm_block =
@@ -7122,6 +7221,33 @@ this.CalculateResult = function(numClearType)
 	this.CalculateSecurityDamage()
 
 	this.CalculateEspionageTotal(numClearType)
+end
+
+this.SetFobResultRankingParam = function()
+	local isPerfectStealth, offencePlayerNeutralizedCount, defencePlayerNeutralizedCount = false, 0, 0
+	if svars.espt_of_perfect_stealth ~= 0 then
+		isPerfectStealth = true
+	end
+
+	if TppMotherBaseManagement.IsOpponentSupporter({}) == false then
+		offencePlayerNeutralizedCount = svars.rank_cnt_down_ofp
+		defencePlayerNeutralizedCount = svars.rank_cnt_down_dfp
+	end
+
+	Fox.Log(
+		" ***** Day240:SetFobResultRankingParam ***** isPerfectStealth = "
+			.. tostring(isPerfectStealth)
+			.. ", offencePlayerNeutralizedCount = "
+			.. tostring(offencePlayerNeutralizedCount)
+			.. ", defencePlayerNeutralizedCount = "
+			.. tostring(defencePlayerNeutralizedCount)
+	)
+
+	TppNetworkUtil.SetFobResultRankingParam(
+		isPerfectStealth,
+		offencePlayerNeutralizedCount,
+		defencePlayerNeutralizedCount
+	)
 end
 
 this.AddRansomeGmpForOffence = function(addGmp)
@@ -7943,6 +8069,20 @@ function this.SetAndAnnounceEspPoint_TacticalTakedownOF(ttdType)
 			local param = GetESPValue_TacticalTakedownOF()
 			this.SetAnnounceEspPoint({ upPoint = param, upLangId = "esp_ttd_a" })
 		end)
+	end
+end
+
+function this.ShowAnnounceFobDeployDamageForDefence()
+	if TppNetworkUtil.IsEnableFobDeployDamage() then
+		local damageParams = TppNetworkUtil.GetFobDeployDamageParams()
+
+		if damageParams.reinforce > 0 then
+			TppUiCommand.AnnounceLogViewLangId("announce_fob_damage_reinforce", "sfx_s_rank_e")
+		end
+
+		if damageParams.antiReflex > 0 then
+			TppUiCommand.AnnounceLogViewLangId("announce_fob_damage_anti_reflex", "sfx_s_rank_e")
+		end
 	end
 end
 
@@ -9186,6 +9326,10 @@ sequences.Seq_Game_FOB = {
 								end)
 							end
 
+							if Tpp.IsHostage(gameObjectId) then
+								FobUI.UpdateEventTask({ detectType = 112, diff = 1 })
+							end
+
 							mvars.fultonInfo[gameObjectId] = nil
 
 							this.SwitchExecByIsGameMode(function()
@@ -9676,6 +9820,8 @@ sequences.Seq_Game_FOB = {
 				o50050_enemy.SetFriendly()
 
 				o50050_enemy.SetMarkerOnDefence()
+
+				this.ShowAnnounceFobDeployDamageForDefence()
 
 				local vsModeClientfunc = function()
 					if svars.fobIsThereRecoverStaff == true then

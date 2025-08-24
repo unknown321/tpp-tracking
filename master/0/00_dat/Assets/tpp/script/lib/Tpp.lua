@@ -758,7 +758,7 @@ function e.PatchDlcCheckCoroutine(r, l, a, e)
 end
 function e.IsPatchDlcValidPlatform(e)
 	local n = {
-		[PatchDlc.PATCH_DLC_TYPE_MGO_DATA] = { PS3 = true, PS4 = true },
+		[PatchDlc.PATCH_DLC_TYPE_MGO_DATA] = { Xbox360 = true, PS3 = true, PS4 = true },
 		[PatchDlc.PATCH_DLC_TYPE_TPP_COMPATIBILITY_DATA] = { Xbox360 = true, PS3 = true, PS4 = true },
 	}
 	local e = n[e]
