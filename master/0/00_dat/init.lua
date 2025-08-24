@@ -156,7 +156,7 @@ end
 if GrDaemon then
 	GrTools():EnableTextureStreaming()
 	if (e == "Windows" or e == "XboxOne") or e == "PS4" then
-		GrTools.FontSystemInit((((1024 * 1024) * 2) + (1024 * 200)))
+		GrTools.FontSystemInit((((1024 * 1024) * 2) + (1024 * 500)))
 	else
 		GrTools.FontSystemInit((((1024 * 1024) * 1) + (1024 * 700)))
 	end

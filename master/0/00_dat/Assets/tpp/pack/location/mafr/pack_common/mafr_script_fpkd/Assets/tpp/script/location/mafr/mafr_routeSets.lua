@@ -1009,7 +1009,7 @@ mafr_routeSets = {
 		},
 		sneak_day = {
 			groupA = {
-				"rt_swampSouth_d_0000",
+				"rt_swampSouth_d_0000_sub",
 				"rt_swampSouth_d_0001",
 			},
 			groupB = {
@@ -1023,7 +1023,7 @@ mafr_routeSets = {
 		},
 		sneak_night = {
 			groupA = {
-				"rt_swampSouth_n_0000",
+				"rt_swampSouth_n_0000_sub",
 				"rt_swampSouth_n_0001",
 			},
 			groupB = {
@@ -1086,7 +1086,7 @@ mafr_routeSets = {
 		sneak_day = {
 			groupA = {
 				"rt_swampWest_d_0000",
-				"rt_swampWest_d_0001",
+				"rt_swampWest_d_0001_sub",
 			},
 			groupB = {
 				"rt_swampWest_d_0002",
@@ -3160,7 +3160,7 @@ mafr_routeSets = {
 				"rt_labWest_d_0003",
 			},
 			groupB = {
-				"rt_labWest_d_0001",
+				"rt_labWest_d_0001_sub",
 				"rt_labWest_d_0004",
 			},
 			groupC = {
@@ -3174,7 +3174,7 @@ mafr_routeSets = {
 				"rt_labWest_n_0003",
 			},
 			groupB = {
-				"rt_labWest_n_0001",
+				"rt_labWest_n_0001_sub",
 				"rt_labWest_n_0004",
 			},
 			groupC = {

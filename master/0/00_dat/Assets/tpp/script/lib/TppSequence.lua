@@ -1,12 +1,12 @@
 local e = {}
-local a = {}
+local i = {}
 local r = {}
 local S = 256
 local c = 0
 local _ = 180
 local o = Fox.StrCode32
 local p = Tpp.IsTypeFunc
-local i = Tpp.IsTypeTable
+local a = Tpp.IsTypeTable
 local n = GkEventTimerManager.Start
 local s = TppScriptVars.SVarsIsSynchronized
 e.MISSION_PREPARE_STATE = Tpp.Enum({
@@ -31,7 +31,7 @@ local function d(n)
 	end
 end
 function e.RegisterSequences(n)
-	if not i(n) then
+	if not a(n) then
 		return
 	end
 	local s = #n
@@ -60,7 +60,7 @@ function e.RegisterSequenceTable(e)
 	if e == nil then
 		return
 	end
-	mvars.seq_sequenceTable = Tpp.MergeTable(e, a, true)
+	mvars.seq_sequenceTable = Tpp.MergeTable(e, i, true)
 	local s = {}
 	for t, n in ipairs(mvars.seq_sequenceNames) do
 		if e[n] == nil then
@@ -76,17 +76,17 @@ function e.SetNextSequence(s, e)
 	if n == nil then
 		return
 	end
-	local a = false
+	local i = false
 	local t = false
 	local r = false
 	local s = true
-	if e and i(e) then
-		a = e.isExecMissionClear
+	if e and a(e) then
+		i = e.isExecMissionClear
 		t = e.isExecGameOver
 		r = e.isExecDemoPlaying
 		s = e.isExecMissionPrepare
 	end
-	if TppMission.CheckMissionState(a, t, r, s) then
+	if TppMission.CheckMissionState(i, t, r, s) then
 		svars.seq_sequence = n
 		return
 	end
@@ -115,15 +115,15 @@ function e.GetSequenceNameWithIndex(n)
 	end
 	return ""
 end
-local i = e.GetSequenceNameWithIndex
+local a = e.GetSequenceNameWithIndex
 function e.GetCurrentSequenceName()
 	if svars then
-		return i(svars.seq_sequence)
+		return a(svars.seq_sequence)
 	end
 end
 function e.GetMissionStartSequenceName()
 	if mvars.seq_missionStartSequence then
-		return i(mvars.seq_missionStartSequence)
+		return a(mvars.seq_missionStartSequence)
 	end
 end
 function e.GetMissionStartSequenceIndex()
@@ -136,11 +136,11 @@ end
 function e.MakeSVarsTable(n)
 	local s = {}
 	local e, t, t = 1
-	for a, n in pairs(n) do
+	for i, n in pairs(n) do
 		local t = type(n)
 		if t == "boolean" then
 			s[e] = {
-				name = a,
+				name = i,
 				type = TppScriptVars.TYPE_BOOL,
 				value = n,
 				save = true,
@@ -149,7 +149,7 @@ function e.MakeSVarsTable(n)
 			}
 		elseif t == "number" then
 			s[e] = {
-				name = a,
+				name = i,
 				type = TppScriptVars.TYPE_INT32,
 				value = n,
 				save = true,
@@ -158,7 +158,7 @@ function e.MakeSVarsTable(n)
 			}
 		elseif t == "string" then
 			s[e] = {
-				name = a,
+				name = i,
 				type = TppScriptVars.TYPE_UINT32,
 				value = o(n),
 				save = true,
@@ -177,7 +177,7 @@ local s = 6
 local t = 2
 r = { "Seq_Mission_Prepare" }
 e.SYS_SEQUENCE_LENGTH = #r
-a.Seq_Mission_Prepare = {
+i.Seq_Mission_Prepare = {
 	Messages = function(e)
 		return Tpp.StrCode32Table({
 			UI = {
@@ -269,7 +269,7 @@ a.Seq_Mission_Prepare = {
 		else
 			if mvars.seq_isHelicopterStart then
 				if mvars.seq_noMissionTelopOnHelicopter then
-					a.Seq_Mission_Prepare.HelicopterMoveStart()
+					i.Seq_Mission_Prepare.HelicopterMoveStart()
 					n("Timer_FadeInStartOnNoTelopHelicopter", t)
 				else
 					TppSoundDaemon.ResetMute("Loading")
@@ -277,7 +277,7 @@ a.Seq_Mission_Prepare = {
 					TppUI.StartMissionTelop()
 				end
 			else
-				a.Seq_Mission_Prepare.FadeInStartOnGameStart()
+				i.Seq_Mission_Prepare.FadeInStartOnGameStart()
 			end
 		end
 	end,
@@ -312,17 +312,17 @@ a.Seq_Mission_Prepare = {
 		local r = 30
 		local d = 0.35
 		local s = false
-		local a = false
-		local a = Mission.GetTextureLoadedRate()
+		local i = false
+		local i = Mission.GetTextureLoadedRate()
 		local u = TppMission.CanStart()
 		local l = TppMotherBaseManagement.IsEndedSyncControl()
 		if t.SkipTextureLoadingWait() then
-			a = 1
+			i = 1
 		end
 		local c = 0
 		local t = r
-		local i = Time.GetRawElapsedTimeSinceStartUp()
-		local S = i - mvars.seq_canMissionStartWaitStartTime
+		local a = Time.GetRawElapsedTimeSinceStartUp()
+		local S = a - mvars.seq_canMissionStartWaitStartTime
 		if (u == false) and (S > _) then
 			if not mvars.seq_doneDumpCanMissionStartRefrainIds then
 				mvars.seq_doneDumpCanMissionStartRefrainIds = true
@@ -331,8 +331,10 @@ a.Seq_Mission_Prepare = {
 		if not l then
 			return
 		end
-		TppTerminal.VarSaveMbMissionStartSyncEnd()
-		TppSave.DoReservedSaveOnMissionStart()
+		if not TppMission.IsDefiniteMissionClear() then
+			TppTerminal.VarSaveMbMissionStartSyncEnd()
+			TppSave.DoReservedSaveOnMissionStart()
+		end
 		if TppMission.IsFOBMission(vars.missionCode) == true then
 			if TppNetworkUtil.IsRequestFobServerParameterBusy() then
 				return
@@ -342,11 +344,11 @@ a.Seq_Mission_Prepare = {
 			if mvars.seq_missionPrepareState < e.MISSION_PREPARE_STATE.WAIT_TEXTURE_LOADING then
 				mvars.seq_missionPrepareState = e.MISSION_PREPARE_STATE.WAIT_TEXTURE_LOADING
 				TppMain.OnTextureLoadingWaitStart()
-				mvars.seq_textureLoadWaitStartTime = i
+				mvars.seq_textureLoadWaitStartTime = a
 			end
 			c = Time.GetRawElapsedTimeSinceStartUp() - mvars.seq_textureLoadWaitStartTime
 			t = r - c
-			if (a > d) or (t < 0) then
+			if (i > d) or (t < 0) then
 				s = true
 			end
 			if mvars.seq_forceStopWhileNotPressedPad then
@@ -562,7 +564,7 @@ function e.OnChangeSVars(n, s)
 		end
 	end
 end
-function e.OnMessage(o, s, i, a, r, n, t)
+function e.OnMessage(o, s, a, i, r, n, t)
 	if mvars.seq_sequenceTable == nil then
 		return
 	end
@@ -571,7 +573,7 @@ function e.OnMessage(o, s, i, a, r, n, t)
 		return
 	end
 	local e = e._messageExecTable
-	Tpp.DoMessage(e, TppMission.CheckMessageOption, o, s, i, a, r, n, t)
+	Tpp.DoMessage(e, TppMission.CheckMessageOption, o, s, a, i, r, n, t)
 end
 function e.Update()
 	local e = mvars
@@ -595,7 +597,7 @@ function e.DebugUpdate()
 	if e.debug.showCurrentSequence or e.debug.showSequenceHistory then
 		if e.debug.showCurrentSequence then
 			(nil).Print(n, { 0.5, 0.5, 1 }, "LuaSystem SEQ.showCurrSequence");
-			(nil).Print(n, " current_sequence = " .. tostring(i(s.seq_sequence)))
+			(nil).Print(n, " current_sequence = " .. tostring(a(s.seq_sequence)))
 		end
 		if e.debug.showSequenceHistory then
 			(nil).Print(n, { 0.5, 0.5, 1 }, "LuaSystem SEQ.showSeqHistory")

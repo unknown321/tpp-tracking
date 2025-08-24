@@ -4470,7 +4470,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			1,
+			2,
 		},
 		{
 			TppEquip.WP_West_hg_020,
@@ -4545,7 +4545,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			2,
+			3,
 		},
 		{
 			TppEquip.WP_West_thg_030,
@@ -4575,7 +4575,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			5,
+			4,
 		},
 		{
 			TppEquip.WP_West_thg_050,
@@ -4620,7 +4620,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			3,
+			6,
 		},
 		{
 			TppEquip.WP_West_sm_014,
@@ -4935,7 +4935,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_40103,
 			TppEquip.LT_None,
-			6,
+			7,
 		},
 		{
 			TppEquip.WP_West_ar_010,
@@ -5580,7 +5580,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LS_30104,
-			6,
+			7,
 		},
 		{
 			TppEquip.WP_East_ms_010,
@@ -6060,7 +6060,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			6,
+			8,
 		},
 		{
 			TppEquip.WP_EX_gl_000,
@@ -6075,7 +6075,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			6,
+			8,
 		},
 		{
 			TppEquip.WP_EX_sr_000,
@@ -6090,7 +6090,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			6,
+			8,
 		},
 		{
 			TppEquip.WP_West_sm_016,
@@ -6154,7 +6154,7 @@ TppEquip.ReloadEquipParameterTables2({
 		},
 		{
 			TppEquip.WP_Com_sg_018,
-			TppEquip.RC_40207,
+			TppEquip.RC_40204,
 			TppEquip.BA_40205,
 			TppEquip.AM_40206,
 			TppEquip.SK_40203,
@@ -6779,7 +6779,7 @@ TppEquip.ReloadEquipParameterTables2({
 		{ TppEquip.RC_40136, TppDamage.ATK_40102, 52, 61, 34, 16 },
 		{ TppEquip.RC_40203, TppDamage.ATK_40203, 56, 62, 35, 17 },
 		{ TppEquip.RC_40204, TppDamage.ATK_40203, 56, 63, 36, 17 },
-		{ TppEquip.RC_40207, TppDamage.ATK_40203, 56, 64, 37, 17 },
+		{ TppEquip.RC_40207, TppDamage.ATK_40207, 56, 64, 37, 17 },
 		{ TppEquip.RC_40304, TppDamage.ATK_40304, 57, 65, 38, 18 },
 		{ TppEquip.RC_40305, TppDamage.ATK_40304, 57, 66, 39, 18 },
 		{ TppEquip.RC_40306, TppDamage.ATK_40304, 57, 67, 40, 18 },

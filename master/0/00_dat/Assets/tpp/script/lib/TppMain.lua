@@ -217,7 +217,9 @@ function e.OnAllocate(n)
 		end
 		TppUiCommand.ExcludeNonPermissionContents()
 		TppStory.SetMissionClearedS10030()
-		TppTerminal.StartSyncMbManagementOnMissionStart()
+		if not TppMission.IsDefiniteMissionClear() then
+			TppTerminal.StartSyncMbManagementOnMissionStart()
+		end
 		if TppLocation.IsMotherBase() then
 			if i ~= vars.mbLayoutCode then
 				if vars.missionCode == 30050 then
@@ -227,8 +229,10 @@ function e.OnAllocate(n)
 				end
 			end
 		end
+		TppPlayer.FailSafeInitialPositionForFreePlay()
 		e.StageBlockCurrentPosition(true)
 		TppMission.SetSortieBuddy()
+		TppMission.ResetQuietEquipIfUndevelop()
 		TppStory.UpdateStorySequence({ updateTiming = "BeforeBuddyBlockLoad" })
 		if n.sequence then
 			local e = n.sequence.DISABLE_BUDDY_TYPE

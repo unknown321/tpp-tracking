@@ -16,14 +16,23 @@ if TppSystemUtility.GetCurrentGameMode() == "MGO" then
 	dofile("Tpp/Scripts/Ui/MgoUiBlocksConfig.lua")
 	TppUiCommand.CreateResidentBlockController(152720, "/Assets/mgo/pack/ui/ui_resident_data.fpk")
 elseif TppGameSequence.GetGameTitleName() == "TPP" then
-	TppUiCommand.CreateResidentBlockController(338 * 1024, "/Assets/tpp/pack/ui/ui_resident_data.fpk")
+	if TppGameSequence.GetTargetArea() == "ChinaKorea" then
+		TppUiCommand.CreateResidentBlockController(348 * 1024, "/Assets/tpp/pack/ui/ui_resident_data_ck.fpk")
+	else
+		TppUiCommand.CreateResidentBlockController(338 * 1024, "/Assets/tpp/pack/ui/ui_resident_data.fpk")
+	end
 else
 	TppUiCommand.CreateResidentBlockController(460 * 1024, "/Assets/tpp/pack/ui/gz/gz_ui_resident_data.fpk")
 end
 TppUiCommand.UiPlatFormSetting()
 TppUiCommand.UiAreaSetting()
-LanguageBlock.Create(610 * 1024)
-LanguageBlock.Create(96 * 1024)
+if TppGameSequence.GetTargetArea() == "ChinaKorea" then
+	LanguageBlock.Create(640 * 1024)
+	LanguageBlock.Create(96 * 1024)
+else
+	LanguageBlock.Create(660 * 1024)
+	LanguageBlock.Create(96 * 1024)
+end
 if Fox.GetPlatformName() == "Windows" then
 	if Editor then
 		TppUiCommand.SetVarsLanguage(8)
@@ -38,7 +47,7 @@ local s = ""
 local o = ""
 local _ = ""
 local p = ""
-local n = ""
+local T = ""
 local a = ""
 local i = 1
 local t = 3
@@ -46,7 +55,7 @@ local e = "/Assets/tpp"
 if TppSystemUtility.GetCurrentGameMode() == "MGO" then
 	e = "/Assets/mgo"
 end
-local T = e .. "/pack/ui/lang/lang_default_data_eng.fpk"
+local n = e .. "/pack/ui/lang/lang_default_data_eng.fpk"
 if m == "jpn" then
 	s = "FontSystem_KanjiFont"
 	o = "/Assets/tpp/font/font_def_jp.ffnt"
@@ -54,7 +63,7 @@ if m == "jpn" then
 	p = "/Assets/tpp/font/KanjiFont.ffnt"
 	i = 2
 	t = 3
-	T = e .. "/pack/ui/lang/lang_default_data_jpn.fpk"
+	n = e .. "/pack/ui/lang/lang_default_data_jpn.fpk"
 elseif m == "eng" then
 	s = "FontSystem_LatinFont"
 	o = "/Assets/tpp/font/font_def_ltn.ffnt"
@@ -67,11 +76,11 @@ elseif m == "rus" then
 	o = "/Assets/tpp/font/font_def_rus.ffnt"
 	_ = "FontSystem_Slot3"
 	p = "/Assets/tpp/font/russian.ffnt"
-	n = "FontSystem_KanjiFont"
+	T = "FontSystem_KanjiFont"
 	a = "/Assets/tpp/font/font_def_ltn.ffnt"
 	i = 1
 	t = 3
-	T = e .. "/pack/ui/lang/lang_default_data_rus.fpk"
+	n = e .. "/pack/ui/lang/lang_default_data_rus.fpk"
 elseif m == "ara" then
 	s = "FontSystem_LatinFont"
 	o = "/Assets/tpp/font/arabia.ffnt"
@@ -79,7 +88,7 @@ elseif m == "ara" then
 	p = "/Assets/tpp/font/arabia.ffnt"
 	i = 1
 	t = 3
-	T = e .. "/pack/ui/lang/lang_default_data_ara.fpk"
+	n = e .. "/pack/ui/lang/lang_default_data_ara.fpk"
 else
 	s = "FontSystem_LatinFont"
 	o = "/Assets/tpp/font/font_def_ltn.ffnt"
@@ -93,7 +102,7 @@ GrTools.FontSystemLoad(_, p)
 UiDaemon.SetFontTypeTransTable(0, i)
 UiDaemon.SetFontTypeTransTable(1, t)
 if m == "rus" then
-	GrTools.FontSystemLoad(n, a)
+	GrTools.FontSystemLoad(T, a)
 end
 TppUiCommand.ChangeLanguage()
 FadeFunction.InitFadeSetting()

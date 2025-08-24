@@ -1389,6 +1389,215 @@ sequences.Seq_Demo_NoStorageSelected = {
 
 this.saveCoroutine = nil
 
+local function SearchSaveDataExistAreaList()
+	local fileName = TppSave.GetGameSaveFileName()
+	local currentArea = TppGameSequence.GetShortTargetArea()
+	local areas = TppGameSequence.GetShortTargetAreaList()
+
+	local foundAreas = {}
+	for i, area in ipairs(areas) do
+		if area ~= currentArea then
+			Fox.Log("SearchSaveDataExistAreaList : area = " .. tostring(area))
+			TppScriptVars.RequestAreaFileExistence(area, fileName)
+			while TppScriptVars.IsSavingOrLoading() do
+				coroutine.yield()
+			end
+			local result = TppScriptVars.GetLastResult()
+			if result == TppScriptVars.RESULT_OK then
+				if TppScriptVars.GetFileExistence() then
+					foundAreas[#foundAreas + 1] = area
+				end
+			else
+				Fox.Log(
+					"SearchSaveDataExistAreaList : TppScriptVars.GetLastResult is not TppScriptVars.RESULT_OK. result = "
+						.. tostring(result)
+				)
+			end
+		end
+	end
+	return foundAreas
+end
+
+local function ImportAnotherAreaSaveData(
+	foundAreas,
+	SAVE_FILE_CONFIG,
+	SAVE_FILE_PERSONAL,
+	SAVE_FILE_GAME,
+	SAVE_FILE_COUNT,
+	loadFuncs,
+	fileExists,
+	tempSaveConfig
+)
+	local function ClosePopupAndWait()
+		if TppUiCommand.IsShowPopup() then
+			TppUiCommand.ErasePopup()
+			while TppUiCommand.IsShowPopup() do
+				DebugPrintState("waiting popup closed...")
+				coroutine.yield()
+			end
+		end
+	end
+	local function RestoreTempSavedConfingAndVarSave()
+		for index, value in pairs(tempSaveConfig) do
+			Fox.Log("RestoreTempSavedConfing : index = " .. tostring(index) .. ", value = " .. tostring(value))
+			vars.optionSelectedIndices[index] = value
+		end
+		TppSave.VarSaveConfig()
+	end
+
+	ClosePopupAndWait()
+
+	TppUiCommand.ShowAreaPopup(foundAreas)
+	while TppUiCommand.IsShowAreaPopup() do
+		DebugPrintState("waiting area popup close...")
+		coroutine.yield()
+	end
+	local importArea = TppUiCommand.GetAreaPopupResult()
+	if importArea == "new" then
+		TppVarInit.ClearAllVarsAndSlot()
+		RestoreTempSavedConfingAndVarSave()
+		return importArea
+	end
+
+	this.ShowLoadingSaveDataPopUp()
+
+	local fileNames = {
+		[SAVE_FILE_CONFIG] = TppDefine.CONFIG_SAVE_FILE_NAME,
+		[SAVE_FILE_PERSONAL] = TppDefine.PERSONAL_DATA_SAVE_FILE_NAME,
+		[SAVE_FILE_GAME] = TppSave.GetGameSaveFileName(),
+	}
+
+	local loadCheckFuncs = {
+		[SAVE_FILE_CONFIG] = function()
+			TppScriptVars.LoadVarsFromSlot(
+				TppDefine.SAVE_SLOT.CONFIG,
+				TppScriptVars.GROUP_BIT_VARS,
+				TppScriptVars.CATEGORY_CONFIG
+			)
+
+			RestoreTempSavedConfingAndVarSave()
+		end,
+		[SAVE_FILE_PERSONAL] = function()
+			TppScriptVars.LoadVarsFromSlot(
+				TppDefine.SAVE_SLOT.PERSONAL,
+				TppScriptVars.GROUP_BIT_VARS,
+				TppScriptVars.CATEGORY_PERSONAL
+			)
+		end,
+		[SAVE_FILE_GAME] = function()
+			TppSave.CopyGameDataFromSavingSlot()
+		end,
+	}
+
+	local importSaveFuncs = {
+		[SAVE_FILE_CONFIG] = function()
+			return TppSave.SaveConfigData(false, true)
+		end,
+		[SAVE_FILE_PERSONAL] = function()
+			return TppSave.SavePersonalData(false, true)
+		end,
+		[SAVE_FILE_GAME] = function()
+			return TppSave.SaveImportedGameData()
+		end,
+	}
+
+	local importExistCount = 0
+	local importFileExists = { false, false, false }
+	local importFileLoaded = { false, false, false }
+
+	for i = 1, SAVE_FILE_COUNT do
+		Fox.Log(
+			"TppScriptVars.RequestAreaFileExistence( " .. tostring(importArea) .. ", " .. tostring(fileNames[i]) .. " )"
+		)
+		TppScriptVars.RequestAreaFileExistence(importArea, fileNames[i])
+		while TppScriptVars.IsSavingOrLoading() do
+			DebugPrintState("ImportAnotherAreaSaveData : check file existence: " .. fileNames[i])
+			coroutine.yield()
+		end
+
+		local result = TppScriptVars.GetLastResult()
+		if result == TppScriptVars.RESULT_OK then
+			importFileExists[i] = TppScriptVars.GetFileExistence()
+		else
+			Fox.Log("TppScriptVars.GetLastResult is not TppScriptVars.RESULT_OK. result = " .. tostring(result))
+			return false
+		end
+	end
+
+	for i = 1, SAVE_FILE_COUNT do
+		if importFileExists[i] then
+			local ret = loadFuncs[i](importArea)
+			if ret == TppScriptVars.READ_FAILED then
+				return false
+			end
+
+			Fox.Log(
+				"ImportAnotherAreaSaveData : import save data load "
+					.. tostring(fileNames[i])
+					.. ", importArea = "
+					.. tostring(importArea)
+			)
+
+			while TppScriptVars.IsSavingOrLoading() do
+				DebugPrintState(
+					"ImportAnotherAreaSaveData : import save data load "
+						.. tostring(fileNames[i])
+						.. ", importArea = "
+						.. tostring(importArea)
+				)
+				coroutine.yield()
+			end
+
+			local result = TppScriptVars.GetLastResult()
+			if (result == TppScriptVars.RESULT_OK) or (result == TppScriptVars.RESULT_ERROR_LOAD_BACKUP) then
+				loadCheckFuncs[i]()
+				importFileLoaded[i] = true
+			else
+				Fox.Log("TppScriptVars.GetLastResult is not TppScriptVars.RESULT_OK. result = " .. tostring(result))
+				return false
+			end
+		end
+	end
+
+	ClosePopupAndWait()
+	this.ShowMakingSaveDataPopUp()
+
+	for i = 1, SAVE_FILE_COUNT do
+		if importFileLoaded[i] then
+			local ret = importSaveFuncs[i]()
+			if ret == TppScriptVars.WRITE_FAILED then
+				return false
+			end
+
+			Fox.Log(
+				"ImportAnotherAreaSaveData : Save loaded import save data: "
+					.. fileNames[i]
+					.. ", importArea = "
+					.. tostring(importArea)
+			)
+			while TppScriptVars.IsSavingOrLoading() do
+				DebugPrintState(
+					"ImportAnotherAreaSaveData : Save loaded import save data: "
+						.. fileNames[i]
+						.. ", importArea = "
+						.. tostring(importArea)
+				)
+				coroutine.yield()
+			end
+
+			local result = TppScriptVars.GetLastResult()
+			if result == TppScriptVars.RESULT_OK then
+				fileExists[i] = true
+			else
+				Fox.Log("TppScriptVars.GetLastResult is not TppScriptVars.RESULT_OK. result = " .. tostring(result))
+				return false
+			end
+		end
+	end
+
+	return importArea
+end
+
 local function CreateOrLoadSaveData()
 	local DebugText = DebugText
 	local function DebugPrintState(state)
@@ -1440,14 +1649,14 @@ local function CreateOrLoadSaveData()
 	}
 
 	local loadFuncs = {
-		[SAVE_FILE_CONFIG] = function()
-			return TppSave.LoadConfigDataFromSaveFile()
+		[SAVE_FILE_CONFIG] = function(area)
+			return TppSave.LoadConfigDataFromSaveFile(area)
 		end,
-		[SAVE_FILE_PERSONAL] = function()
-			return TppSave.LoadPersonalDataFromSaveFile()
+		[SAVE_FILE_PERSONAL] = function(area)
+			return TppSave.LoadPersonalDataFromSaveFile(area)
 		end,
-		[SAVE_FILE_GAME] = function()
-			return TppSave.LoadGameDataFromSaveFile()
+		[SAVE_FILE_GAME] = function(area)
+			return TppSave.LoadGameDataFromSaveFile(area)
 		end,
 	}
 
@@ -1617,6 +1826,46 @@ local function CreateOrLoadSaveData()
 	end
 
 	ClosePopupAndWait()
+
+	if (not fileExists[SAVE_FILE_GAME]) and IsPlaystationFamily() then
+		this.ShowLoadingSaveDataPopUp()
+		local foundAreas = SearchSaveDataExistAreaList()
+		if next(foundAreas) then
+			local tempSaveConfig = {
+				[0] = vars.optionSelectedIndices[0],
+				[22] = vars.optionSelectedIndices[22],
+			}
+
+			local IMPORT_RESULT_FAILED = false
+			local result
+			repeat
+				result = ImportAnotherAreaSaveData(
+					foundAreas,
+					SAVE_FILE_CONFIG,
+					SAVE_FILE_PERSONAL,
+					SAVE_FILE_GAME,
+					SAVE_FILE_COUNT,
+					loadFuncs,
+					fileExists,
+					tempSaveConfig
+				)
+
+				ClosePopupAndWait()
+
+				if result == IMPORT_RESULT_FAILED then
+					TppUiCommand.ShowErrorPopup(1121, Popup.TYPE_ONE_BUTTON)
+				elseif result ~= "new" then
+					TppUiCommand.ShowErrorPopup(1120, Popup.TYPE_ONE_BUTTON)
+				end
+
+				while TppUiCommand.IsShowPopup() do
+					DebugPrintState("waiting import result popup close...")
+					coroutine.yield()
+				end
+
+			until result ~= IMPORT_RESULT_FAILED
+		end
+	end
 
 	if existCount > 0 then
 		this.ShowLoadingSaveDataPopUp()
@@ -2170,6 +2419,11 @@ sequences.Seq_Demo_CheckMgoInvitation = {
 	OnEnter = function(self)
 		if not InvitationManager.IsAccepted() then
 			TppSequence.SetNextSequence("Seq_Demo_CheckDlc")
+			return
+		end
+
+		if TppException.IsDisabledMgoInChinaKorea() then
+			TppUiCommand.ShowErrorPopup(5013, Popup.TYPE_ONE_BUTTON)
 			return
 		end
 

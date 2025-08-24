@@ -18,11 +18,21 @@ e.TYPE = Tpp.Enum({
 e.GAME_MODE = Tpp.Enum({ "TPP", "TPP_FOB", "MGO" })
 e.OnEndExceptionDialog = {}
 e.mgoInvitationUpdateCount = 0
+function e.IsDisabledMgoInChinaKorea()
+	if TppGameSequence.GetShortTargetArea() == "ck" then
+		if not TppGameSequence.IsMgoEnabled() then
+			return true
+		end
+	end
+	return false
+end
 e.SHOW_EXECPTION_DIALOG = {
 	[e.TYPE.INVITATION_ACCEPT] = function()
 		e.mgoInvitationUpdateCount = 0
 		e.mgoInvitationPopupId = nil
-		if TppStory.CanPlayMgo() then
+		if e.IsDisabledMgoInChinaKorea() then
+			return 5013
+		elseif TppStory.CanPlayMgo() then
 			if e.GetCurrentGameMode() == e.GAME_MODE.TPP_FOB then
 				e.mgoInvitationPopupId = e.MGO_INVITATION_CANCEL_POPUP_ID
 				return e.MGO_INVITATION_CANCEL_POPUP_ID
@@ -112,17 +122,7 @@ function e.OnEndExceptionDialogForSignInUserChange()
 		e.waitPatchDlcCheckCoroutine = nil
 		TppSave.missionStartSaveFilePool = nil
 		TppMission.DisablePauseForShowResult()
-		vars.locationCode = TppDefine.LOCATION_ID.INIT
-		vars.missionCode = TppDefine.SYS_MISSION_ID.INIT
-		TppScriptVars.InitForNewGame()
-		TppGVars.AllInitialize()
-		TppSave.VarSave(TppDefine.SYS_MISSION_ID.INIT, true)
-		TppSave.VarSaveConfig()
-		TppSave.VarSavePersonalData()
-		local n = TppSave.GetSaveGameDataQueue(vars.missionCode)
-		for t, e in ipairs(n.slot) do
-			TppScriptVars.CopySlot({ n.savingSlot, e }, e)
-		end
+		TppVarInit.ClearAllVarsAndSlot()
 		TppUiStatusManager.UnsetStatus("All", "ABORT")
 		FadeFunction.SetFadeCallEnable(true)
 	end)
@@ -140,6 +140,10 @@ end
 function e.OnEndExceptionDialogForMgoInvitationAccept()
 	if not gvars.canExceptionHandling then
 		return e.PROCESS_STATE.SUSPEND
+	end
+	if e.IsDisabledMgoInChinaKorea() then
+		e.CancelMgoInvitation()
+		return e.PROCESS_STATE.FINISH
 	end
 	if not TppStory.CanPlayMgo() then
 		e.CancelMgoInvitation()
@@ -199,8 +203,9 @@ function e.GoToMgoByInivitaion()
 	TppPause.RegisterPause("GoToMGO")
 	TppGameStatus.Set("GoToMGO", "S_DISABLE_PLAYER_PAD")
 	e.isNowGoingToMgo = true
-	TppUI.FadeOut(TppUI.FADE_SPEED.FADE_MOMENT, "GoToMgoByInivitaion", nil, { setMute = true })
-	Mission.SwitchApplication("mgo")
+	e.fadeOutRemainTimeForGoToMgo = TppUI.FADE_SPEED.FADE_HIGHSPEED
+	TppUI.FadeOut(TppUI.FADE_SPEED.FADE_HIGHSPEED, "GoToMgoByInivitaion", nil, { setMute = true })
+	FadeFunction.SetFadeCallEnable(false)
 end
 function e.UpdateMgoChunkInstallingPopup()
 	Tpp.ShowChunkInstallingPopup(Chunk.INDEX_MGO, true)
@@ -328,8 +333,8 @@ e.TPP_FOB_ON_END_EXECPTION_DIALOG = {
 	[e.TYPE.INVITATION_ACCEPT_WITHOUT_SIGNIN] = e.OnEndExceptionDialogForInvitationAcceptWithoutSignIn,
 	[e.TYPE.WAIT_MGO_CHUNK_INSTALLATION] = e.OnEndExceptionDialogForCheckMgoChunkInstallation,
 }
-function e.RegisterOnEndExceptionDialog(n, t)
-	e.OnEndExceptionDialog[n] = t
+function e.RegisterOnEndExceptionDialog(t, n)
+	e.OnEndExceptionDialog[t] = n
 end
 e.RegisterOnEndExceptionDialog(e.GAME_MODE.TPP, e.TPP_ON_END_EXECPTION_DIALOG)
 e.RegisterOnEndExceptionDialog(e.GAME_MODE.TPP_FOB, e.TPP_FOB_ON_END_EXECPTION_DIALOG)
@@ -355,24 +360,24 @@ function e.GetCurrentGameMode()
 		end
 	end
 end
-function e.Enqueue(n, i)
+function e.Enqueue(n, t)
 	if not e.TYPE[n] then
 		return
 	end
-	local t = gvars.exc_exceptionQueueDepth
-	local o = gvars.exc_exceptionQueueDepth + 1
-	if o >= TppDefine.EXCEPTION_QUEUE_MAX then
+	local o = gvars.exc_exceptionQueueDepth
+	local i = gvars.exc_exceptionQueueDepth + 1
+	if i >= TppDefine.EXCEPTION_QUEUE_MAX then
 		return
 	end
 	if gvars.exc_processingExecptionType == n then
 		return
 	end
-	if e.HasQueue(n, i) then
+	if e.HasQueue(n, t) then
 		return
 	end
-	gvars.exc_exceptionQueueDepth = o
-	gvars.exc_exceptionQueue[t] = n
-	gvars.exc_queueGameMode[t] = i
+	gvars.exc_exceptionQueueDepth = i
+	gvars.exc_exceptionQueue[o] = n
+	gvars.exc_queueGameMode[o] = t
 end
 function e.Dequeue(e)
 	local e = e or 0
@@ -391,18 +396,18 @@ function e.Dequeue(e)
 	gvars.exc_exceptionQueueDepth = n - 1
 	return o, t
 end
-function e.HasQueue(t, e)
-	for n = 0, gvars.exc_exceptionQueueDepth do
-		if (gvars.exc_exceptionQueue[n] == t) and ((e == nil) or (gvars.exc_queueGameMode[n] == e)) then
+function e.HasQueue(t, n)
+	for e = 0, gvars.exc_exceptionQueueDepth do
+		if (gvars.exc_exceptionQueue[e] == t) and ((n == nil) or (gvars.exc_queueGameMode[e] == n)) then
 			return true
 		end
 	end
 	return false
 end
-function e.StartProcess(n, t)
+function e.StartProcess(t, n)
 	gvars.exc_processState = e.PROCESS_STATE.START
-	gvars.exc_processingExecptionType = n
-	gvars.exc_processingExecptionGameMode = t
+	gvars.exc_processingExecptionType = t
+	gvars.exc_processingExecptionGameMode = n
 	local o = {
 		[e.TYPE.INVITATION_PATCH_DLC_CHECKING] = true,
 		[e.TYPE.INVITATION_PATCH_DLC_ERROR] = true,
@@ -411,7 +416,7 @@ function e.StartProcess(n, t)
 		[e.TYPE.INVITATION_ACCEPT] = true,
 		[e.TYPE.WAIT_MGO_CHUNK_INSTALLATION] = true,
 	}
-	if (t == e.GAME_MODE.TPP_FOB) and o[n] then
+	if (n == e.GAME_MODE.TPP_FOB) and o[t] then
 		TppGameStatus.Set("TppException", "S_DISABLE_PLAYER_PAD")
 	else
 		e.EnablePause()
@@ -432,8 +437,25 @@ function e.DisablePause()
 	TppGameStatus.Reset("TppException", "S_DISABLE_PLAYER_PAD")
 end
 e.currentErrorPopupLangId = nil
+local n = false
 function e.Update()
 	if not gvars then
+		return
+	end
+	if e.isNowGoingToMgo then
+		if e.fadeOutRemainTimeForGoToMgo ~= nil then
+			if e.fadeOutRemainTimeForGoToMgo > 0 then
+				e.fadeOutRemainTimeForGoToMgo = e.fadeOutRemainTimeForGoToMgo - Time.GetFrameTime()
+			else
+				if not n then
+					n = true
+					Mission.SwitchApplication("mgo")
+				end
+			end
+		end
+		return
+	end
+	if gvars.isLoadedInitMissionOnSignInUserChanged then
 		return
 	end
 	if gvars.exc_exceptionQueueDepth <= 0 and (gvars.exc_processState <= e.PROCESS_STATE.EMPTY) then
@@ -564,6 +586,10 @@ function e.SignInUserChanged()
 		return
 	end
 	TppSave.ForbidSave()
+	while TppSave.IsEnqueuedSaveData() do
+		TppSave.DequeueSave()
+	end
+	InvitationManager.EnableMessage(false)
 	local n = e.GetCurrentGameMode()
 	e.Enqueue(e.TYPE.SIGNIN_USER_CHANGED, n)
 	e.Update()
@@ -595,9 +621,9 @@ local n = {}
 function n.Update()
 	e.Update()
 end
-function n:OnMessage(i, a, o, n, t, E)
-	local T
-	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOptionWhileLoading, i, a, o, n, t, E, T)
+function n:OnMessage(i, a, o, n, t, T)
+	local E
+	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOptionWhileLoading, i, a, o, n, t, T, E)
 end
 ScriptUpdater.Create("exceptionMessageHandler", n, { "Network", "Nt", "UI", "Dlc" })
 return e

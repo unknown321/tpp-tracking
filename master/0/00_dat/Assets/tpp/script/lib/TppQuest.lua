@@ -1,20 +1,20 @@
 local e = {}
-local S = 256
+local D = 256
 local c = 0
-local p = 0
-local _ = "quest_block"
+local m = 0
+local S = "quest_block"
 local d = "QStep_Clear"
 local N = Fox.StrCode32
-local D = Tpp.StrCode32Table
+local h = Tpp.StrCode32Table
 local l = Tpp.IsTypeFunc
 local o = Tpp.IsTypeTable
-local q = Tpp.IsTypeString
+local T = Tpp.IsTypeString
 local i = TppDefine.Enum({ "NONE", "DEACTIVATE", "DEACTIVATING", "ACTIVATE" })
 local t = TppDefine.Enum({ "MISSION", "FREE", "HELI" })
 local s = TppDefine.Enum({ "OPEN", "CLEAR", "FAILURE", "UPDATE" })
-local h = { "tent", "field", "ruins", "waterway", "cliffTown", "commFacility", "sovietBase", "fort", "citadel" }
-local O = { "outland", "pfCamp", "savannah", "hill", "banana", "diamond", "lab" }
-local T = {
+local C = { "tent", "field", "ruins", "waterway", "cliffTown", "commFacility", "sovietBase", "fort", "citadel" }
+local A = { "outland", "pfCamp", "savannah", "hill", "banana", "diamond", "lab" }
+local p = {
 	Command = "ly003_cl00_npc0000|cl00pl0_uq_0000_npc2|Marker_shootingPractice",
 	Develop = "ly003_cl02_npc0000|cl02pl0_uq_0020_npc2|Marker_shootingPractice",
 	Support = "ly003_cl03_npc0000|cl03pl0_uq_0030_npc2|Marker_shootingPractice",
@@ -1136,7 +1136,7 @@ local u = {
 		plntId = TppDefine.PLNT_DEFINE.Special,
 	},
 }
-local g = {
+local O = {
 	ruins_q19010 = { radioNameFirst = "f1000_rtrg0700" },
 	outland_q19011 = { radioNameFirst = "f1000_rtrg4380" },
 	hill_q19012 = { radioNameFirst = "f1000_rtrg4390" },
@@ -1148,7 +1148,7 @@ local g = {
 	lab_q20914 = { radioNameFirst = "f2000_rtrg8320", radioNameSecond = "f2000_rtrg1560" },
 	cliffTown_q99080 = { radioNameFirst = "f2000_rtrg1561" },
 }
-local f = {
+local _ = {
 	tent_q10010 = "quest_extract_elite",
 	field_q10020 = "quest_extract_elite",
 	ruins_q10030 = "quest_extract_elite",
@@ -1257,7 +1257,7 @@ local f = {
 	mtbs_q42070 = "quest_target_eliminate",
 	mtbs_q42010 = "quest_target_eliminate",
 }
-local I = {
+local q = {
 	tent_q80010 = TppMotherBaseManagementConst.PHOTO_1006,
 	field_q80020 = TppMotherBaseManagementConst.PHOTO_1007,
 	waterway_q80040 = TppMotherBaseManagementConst.PHOTO_1009,
@@ -1272,7 +1272,7 @@ local I = {
 	tent_q99040 = TppMotherBaseManagementConst.DESIGN_3002,
 	mtbs_q99050 = TppMotherBaseManagementConst.DESIGN_3000,
 }
-local C = {
+local g = {
 	tent_q80010 = "key_photo_1006",
 	field_q80020 = "key_photo_1007",
 	waterway_q80040 = "key_photo_1009",
@@ -1284,13 +1284,13 @@ local C = {
 	diamond_q80600 = "key_photo_1004",
 	lab_q80700 = "key_photo_1001",
 }
-local A = {
+local I = {
 	mtbs_q99060 = { "base44", "front62" },
 	sovietBase_q99020 = { "word14", "word15", "word51", "front49" },
 	sovietBase_q99030 = { "word122", "word123", "word124", "word125", "word126" },
 	tent_q99040 = { "word78", "word79", "word87", "word91" },
 }
-local m = { "quest_q20015", "quest_q20085", "quest_q20205", "quest_q20705", "quest_q20095" }
+local f = { "quest_q20015", "quest_q20085", "quest_q20205", "quest_q20705", "quest_q20095" }
 local t = {}
 function t.waterway_q99010()
 	return TppStory.IsOccuringBossQuiet()
@@ -1317,9 +1317,9 @@ end
 function e.OpenChildSoldier_1()
 	local t = e.IsCleard("mtbs_q99050")
 	local n = e.IsNowOccurringElapsed()
-	local e = TppStory.IsNowOccurringElapsedMission(TppDefine.ELAPSED_MISSION_EVENT.STORY_SEQUENCE)
-	local a = TppStory.IsMissionCleard(10093)
-	return ((e or n) and t) and a
+	local a = TppStory.IsNowOccurringElapsedMission(TppDefine.ELAPSED_MISSION_EVENT.STORY_SEQUENCE)
+	local e = TppStory.IsMissionCleard(10093)
+	return ((a or n) and t) and e
 end
 function e.OpenChildSoldier_2()
 	return e.IsCleard("outland_q20913") and e.IsCleard("lab_q20914")
@@ -1974,15 +1974,15 @@ function t.Mtbs_ddog_walking()
 	return false
 end
 function t.mtbs_q99050()
-	local e = TppLocation.GetLocalMbStageClusterGrade(TppDefine.CLUSTER_DEFINE.Develop + 1) >= 2
-	local t = TppStory.IsMissionCleard("10211")
-	return t and e
+	local t = TppLocation.GetLocalMbStageClusterGrade(TppDefine.CLUSTER_DEFINE.Develop + 1) >= 2
+	local e = TppStory.IsMissionCleard("10211")
+	return e and t
 end
 function t.mtbs_q99011()
 	local n = TppBuddy2BlockController.DidObtainBuddyType(BuddyType.QUIET)
-	local t = TppStory.IsMissionCleard(10086)
-	local e = TppStory.IsNowOccurringElapsedMission(TppDefine.ELAPSED_MISSION_EVENT.QUIET_VISIT_MISSION)
-	return (n and t) and e
+	local e = TppStory.IsMissionCleard(10086)
+	local t = TppStory.IsNowOccurringElapsedMission(TppDefine.ELAPSED_MISSION_EVENT.QUIET_VISIT_MISSION)
+	return (n and e) and t
 end
 function t.mtbs_wait_quiet()
 	return false
@@ -2067,21 +2067,21 @@ end
 function e.UnregisterClusterForceDeactiveOnMBTerminal()
 	mvars.qst_forceDeactiveClusterOnMBTerminal = nil
 end
-function e.IsActiveOnMBTerminal(n)
-	local t = n.questName
+function e.IsActiveOnMBTerminal(t)
+	local n = t.questName
 	if mvars.qst_forceDeactiveOnMBTerminal then
-		for n, e in ipairs(mvars.qst_forceDeactiveOnMBTerminal) do
-			if e == t then
+		for t, e in ipairs(mvars.qst_forceDeactiveOnMBTerminal) do
+			if e == n then
 				return false
 			end
 		end
 	end
 	if mvars.qst_forceDeactiveClusterOnMBTerminal then
-		if mvars.qst_forceDeactiveClusterOnMBTerminal == n.clusterId then
+		if mvars.qst_forceDeactiveClusterOnMBTerminal == t.clusterId then
 			return false
 		end
 	end
-	return e.IsActive(t)
+	return e.IsActive(n)
 end
 function e.IsOpenLocation(e)
 	if e == TppDefine.LOCATION_ID.MAFR then
@@ -2147,7 +2147,7 @@ function e.RegisterQuestStepList(e)
 	if t == 0 then
 		return
 	end
-	if t >= S then
+	if t >= D then
 		return
 	end
 	table.insert(e, d)
@@ -2276,14 +2276,14 @@ function e.Clear(t)
 		TppTrophy.Unlock(15)
 	end
 	TppUiCommand.SetSideOpsListUpdate()
-	for n, e in ipairs(m) do
+	for n, e in ipairs(f) do
 		if t == e then
 			TppMotherBaseManagement.SetLockedTanFlag({ locked = false })
 			return
 		end
 	end
 end
-function e.GoToMBAfterClear(e)
+function e.GoToMBAfterClear(t)
 	if not Tpp.IsNotAlert() then
 		return
 	end
@@ -2293,14 +2293,14 @@ function e.GoToMBAfterClear(e)
 	if vars.missionCode == 30050 then
 		return
 	end
-	local t = TppStory.GetForceMBDemoNameOrRadioList("clearSideOpsForceMBDemo", { clearSideOpsName = e })
-	if t then
+	local e = TppStory.GetForceMBDemoNameOrRadioList("clearSideOpsForceMBDemo", { clearSideOpsName = t })
+	if e then
 		TppMission.ReserveMissionClear({
 			nextMissionId = TppDefine.SYS_MISSION_ID.MTBS_FREE,
 			missionClearType = TppDefine.MISSION_CLEAR_TYPE.FORCE_GO_TO_MB_ON_SIDE_OPS_CLEAR,
 		})
-		TppDemo.SetNextMBDemo(t)
-		mvars.qst_currentClearQuestName = e
+		TppDemo.SetNextMBDemo(e)
+		mvars.qst_currentClearQuestName = t
 	end
 end
 function e.Failure(t)
@@ -2336,13 +2336,13 @@ function e.Update(t)
 	if n == nil then
 		return
 	end
-	local o, i = TppEnemy.GetQuestCount()
-	local n, a = TppGimmick.GetQuestShootingPracticeCount()
-	if o > 0 and i > 1 then
-		e.ShowAnnounceLog(s.UPDATE, t, o, i)
-	elseif n > 0 and a > 1 then
+	local i, n = TppEnemy.GetQuestCount()
+	local a, o = TppGimmick.GetQuestShootingPracticeCount()
+	if i > 0 and n > 1 then
+		e.ShowAnnounceLog(s.UPDATE, t, i, n)
+	elseif a > 0 and o > 1 then
 		e.UpdateShootingPracticeUi()
-		e.ShowAnnounceLog(s.UPDATE, t, n, a)
+		e.ShowAnnounceLog(s.UPDATE, t, a, o)
 	end
 end
 function e.Retry(t)
@@ -2400,8 +2400,8 @@ function e.OnReload(t)
 	e.messageExecTable = Tpp.MakeMessageExecTable(e.Messages())
 end
 function e.Messages()
-	local o = e.DeactiveQuestAreaTrapMessages()
-	return D({
+	local t = e.DeactiveQuestAreaTrapMessages()
+	return h({
 		Block = { { msg = "StageBlockCurrentSmallBlockIndexUpdated", func = e.OnUpdateSmallBlockIndex } },
 		UI = {
 			{
@@ -2421,8 +2421,8 @@ function e.Messages()
 		},
 		Marker = { {
 			msg = "ChangeToEnable",
-			func = function(a, s, n, t)
-				e._ChangeToEnable(a, s, n, t)
+			func = function(t, a, n, s)
+				e._ChangeToEnable(t, a, n, s)
 			end,
 		} },
 		Timer = {
@@ -2451,16 +2451,16 @@ function e.Messages()
 				option = { isExecMissionPrepare = true, isExecMissionClear = true },
 			},
 		},
-		Trap = o,
+		Trap = t,
 	})
 end
-function e.OnMessage(i, n, t, s, a, o, r)
-	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, i, n, t, s, a, o, r)
+function e.OnMessage(i, r, t, o, s, n, a)
+	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, i, r, t, o, s, n, a)
 	local l = mvars.qst_questScriptBlockMessageExecTable
 	if l then
-		local e = r
-		local r
-		Tpp.DoMessage(l, TppMission.CheckMessageOption, i, n, t, s, a, o, e)
+		local e = a
+		local a
+		Tpp.DoMessage(l, TppMission.CheckMessageOption, i, r, t, o, s, n, e)
 	end
 	if e.IsInvoking() and mvars.qst_questStepList then
 		local l = gvars.qst_currentQuestStepNumber
@@ -2468,9 +2468,9 @@ function e.OnMessage(i, n, t, s, a, o, r)
 		if e then
 			local e = e._messageExecTable
 			if e then
-				local r = r
+				local a = a
 				local l
-				Tpp.DoMessage(e, TppMission.CheckMessageOption, i, n, t, s, a, o, r)
+				Tpp.DoMessage(e, TppMission.CheckMessageOption, i, r, t, o, s, n, a)
 			end
 		end
 	end
@@ -2505,10 +2505,10 @@ function e.RegisterQuestList(t)
 			return
 		end
 		for t, e in ipairs(n) do
-			if not q(e.name) then
+			if not T(e.name) then
 				return
 			end
-			if not q(e.invokeStepName) then
+			if not T(e.invokeStepName) then
 				return
 			end
 		end
@@ -2539,7 +2539,7 @@ function e.RegisterQuestPackList(t, i)
 	if not o(t) then
 		return
 	end
-	i = i or _
+	i = i or S
 	local o = TppLocation.IsMotherBase()
 	local a = {}
 	for t, n in pairs(t) do
@@ -2585,18 +2585,18 @@ function e.RegisterQuestPackList(t, i)
 								end
 							end
 						end
-						local o = e.GetRandomFaceId(t)
-						local i = { o }
-						local s = TppSoldierFace.GetFaceFpkFileCodeList({ face = i })
+						local i = e.GetRandomFaceId(t)
+						local o = { i }
+						local s = TppSoldierFace.GetFaceFpkFileCodeList({ face = o })
 						if s == nil then
 							if n.gender == TppDefine.QUEST_GENDER_TYPE.MAN then
 								e.SetRandomFaceId(t, TppDefine.QUEST_FACE_ID_LIST.DEFAULT_MAN)
 							elseif n.gender == TppDefine.QUEST_GENDER_TYPE.WOMAN then
 								e.SetRandomFaceId(t, TppDefine.QUEST_FACE_ID_LIST.DEFAULT_WOMAN)
 							end
-							o = e.GetRandomFaceId(t)
-							i = { o }
-							s = TppSoldierFace.GetFaceFpkFileCodeList({ face = i })
+							i = e.GetRandomFaceId(t)
+							o = { i }
+							s = TppSoldierFace.GetFaceFpkFileCodeList({ face = o })
 						end
 						if s ~= nil then
 							for n, e in ipairs(s) do
@@ -2613,7 +2613,7 @@ function e.RegisterQuestPackList(t, i)
 	TppScriptBlock.RegisterCommonBlockPackList(i, a)
 end
 function e.SetDefaultQuestBlock()
-	mvars.qst_blockName = _
+	mvars.qst_blockName = S
 end
 function e.InitializeQuestLoad(t)
 	local n = e.GetQuestBlockState()
@@ -2626,31 +2626,31 @@ function e.InitializeQuestLoad(t)
 	local n, a = Tpp.GetCurrentStageSmallBlockIndex()
 	e.UpdateQuestBlockStateAtNotLoaded(n, a, t)
 end
-function e.InitializeQuestActiveStatus(t)
-	local n = e.GetQuestBlockState()
-	if n == nil then
+function e.InitializeQuestActiveStatus(n)
+	local t = e.GetQuestBlockState()
+	if t == nil then
 		return
 	end
-	if n == ScriptBlock.SCRIPT_BLOCK_STATE_EMPTY then
+	if t == ScriptBlock.SCRIPT_BLOCK_STATE_EMPTY then
 		return
 	end
 	mvars.qst_requestInitializeQuestActiveStatus = false
 	mvars.qst_requestInitializeQuestActiveCluster = nil
-	if n < ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE or not e._CanActivateQuest() then
+	if t < ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE or not e._CanActivateQuest() then
 		mvars.qst_requestInitializeQuestActiveStatus = true
-		mvars.qst_requestInitializeQuestActiveCluster = t
+		mvars.qst_requestInitializeQuestActiveCluster = n
 		return
 	end
-	local n = e.GetCurrentQuestTable()
-	if n == nil then
+	local t = e.GetCurrentQuestTable()
+	if t == nil then
 		return
 	end
 	local a, s = Tpp.GetCurrentStageSmallBlockIndex()
-	if e.IsInsideArea("activeArea", n, a, s, t) then
+	if e.IsInsideArea("activeArea", t, a, s, n) then
 		e.ActivateCurrentQuestBlock()
 	end
 	if not e.IsInvoking() then
-		if e.IsInsideArea("invokeArea", n, a, s, t) then
+		if e.IsInsideArea("invokeArea", t, a, s, n) then
 			e.Invoke()
 		end
 	else
@@ -2691,27 +2691,27 @@ function e.DebugUpdate()
 		a(t, { 0.5, 0.5, 1 }, "LuaQuest showCurrentQuest")
 		a(t, "Current Area Name : " .. tostring(e.GetCurrentAreaName()))
 		a(t, "Current Quest Name : " .. tostring(e.GetCurrentQuestName()))
-		local i = e.GetQuestBlockState()
+		local o = e.GetQuestBlockState()
 		local s = {}
 		s[ScriptBlock.SCRIPT_BLOCK_STATE_EMPTY] = "EMPTY"
 		s[ScriptBlock.SCRIPT_BLOCK_STATE_PROCESSING] = "PROCESSING"
 		s[ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE] = "INACTIVE"
 		s[ScriptBlock.SCRIPT_BLOCK_STATE_ACTIVE] = "ACTIVE"
-		a(t, "Quest block state : " .. tostring(s[i]))
+		a(t, "Quest block state : " .. tostring(s[o]))
 		a(t, "gvars.qst_currentQuestName : " .. tostring(gvars.qst_currentQuestName))
 		a(t, "gvars.qst_currentQuestStepNumber : " .. tostring(gvars.qst_currentQuestStepNumber))
 		do
-			local o = { 0, 1, 0 }
+			local i = { 0, 1, 0 }
 			local r = { 1, 0, 0 }
 			local s = "OK"
-			local o = o
-			if not e.GetCurrentAreaName() or i < ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE then
+			local i = i
+			if not e.GetCurrentAreaName() or o < ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE then
 				s = "---"
 			elseif not n.qst_questStepTable then
 				s = "No register quest step table! Please Check quest script!"
-				o = r
+				i = r
 			end
-			a(t, o, "scriptStatus : " .. s)
+			a(t, i, "scriptStatus : " .. s)
 		end
 	end
 	if n.debug.showQuestStatus then
@@ -2730,16 +2730,16 @@ function e.DebugUpdate()
 					if n.clusterName then
 						DebutTextPrint(t, string.format("clusterName  =%s", n.clusterName))
 					else
-						local function a(t, n, e)
-							local a = (nil).Print
-							a(t, string.format("%s = { %03d, %03d, %03d, %03d }", n, e[1], e[2], e[3], e[4]))
+						local function a(a, n, e)
+							local t = (nil).Print
+							t(a, string.format("%s = { %03d, %03d, %03d, %03d }", n, e[1], e[2], e[3], e[4]))
 						end
 						local e = { "loadArea", "activeArea", "invokeArea" }
 						for n = 1, #e do
-							local n = e[n]
-							local e = s[n]
-							if e then
-								a(t, n, e)
+							local e = e[n]
+							local n = s[e]
+							if n then
+								a(t, e, n)
 							end
 						end
 					end
@@ -2767,27 +2767,27 @@ function e.DebugUpdate()
 		n.debug.updateActiveQuest = false
 	end
 	if n.debug.applyDebugFlags then
-		local e = n.debug.selectQuest
-		local s = n.debug.selectQuestIndex
-		if e > 0 and s > 0 then
-			local o = n.qst_questList[e]
-			if o then
-				local i = o.infoList[s]
-				if i then
-					local e = TppDefine.QUEST_INDEX[i.name]
+		local s = n.debug.selectQuest
+		local e = n.debug.selectQuestIndex
+		if s > 0 and e > 0 then
+			local s = n.qst_questList[s]
+			if s then
+				local o = s.infoList[e]
+				if o then
+					local e = TppDefine.QUEST_INDEX[o.name]
 					gvars.qst_questOpenFlag[e] = n.debug.updateOpenFlagSelectQuest
 					gvars.qst_questClearedFlag[e] = n.debug.updateClearFlagSelectQuest
 					gvars.qst_questActiveFlag[e] = n.debug.updateActiveFlagSelectQuest
 					if n.debug.updateActiveFlagSelectQuest then
-						for t, e in pairs(o.infoList) do
-							if e.name ~= i.name then
+						for t, e in pairs(s.infoList) do
+							if e.name ~= o.name then
 								local e = TppDefine.QUEST_INDEX[e.name]
 								gvars.qst_questActiveFlag[e] = false
 							end
 						end
 					end
 				else
-					a(t, "No define quest. index: " .. tostring(s))
+					a(t, "No define quest. index: " .. tostring(e))
 				end
 			end
 		end
@@ -2811,12 +2811,12 @@ function e.OnUpdateSmallBlockIndex(a, n, s)
 	if t == nil then
 		return
 	end
-	local l = ScriptBlock.SCRIPT_BLOCK_STATE_EMPTY
-	local r = ScriptBlock.SCRIPT_BLOCK_STATE_PROCESSING
+	local r = ScriptBlock.SCRIPT_BLOCK_STATE_EMPTY
+	local l = ScriptBlock.SCRIPT_BLOCK_STATE_PROCESSING
 	local i = ScriptBlock.SCRIPT_BLOCK_STATE_INACTIVE
 	local o = ScriptBlock.SCRIPT_BLOCK_STATE_ACTIVE
 	mvars.qst_invokeReserveOnActivate = false
-	if (t == l) or (t == r) then
+	if (t == r) or (t == l) then
 		if mvars.qst_reserveDynamicQuestOpen then
 			e.UpdateOpenQuest()
 			mvars.qst_reserveDynamicQuestOpen = false
@@ -2841,12 +2841,12 @@ function e.OnUpdateClusterIndex(n)
 	mvars.qst_skipTerminateFlag = e
 	return e
 end
-function e.UpdateQuestBlockStateAtNotLoaded(t, a, s)
+function e.UpdateQuestBlockStateAtNotLoaded(s, a, t)
 	if not mvars.qst_questList then
 		return
 	end
 	local n = e.GetCurrentQuestName()
-	local t = e.SearchQuestFromAllSpecifiedArea("loadArea", t, a, s)
+	local t = e.SearchQuestFromAllSpecifiedArea("loadArea", s, a, t)
 	if t == nil then
 		e.UnloadCurrentQuestBlock()
 		e.ClearCurrentQuestName()
@@ -2870,15 +2870,15 @@ function e.UpdateQuestBlockStateAtNotLoaded(t, a, s)
 	end
 	return t
 end
-function e.UpdateQuestBlockStateAtInactive(a, n)
-	local t = e.GetCurrentQuestTable()
-	if not e.IsInsideArea("loadArea", t, a, n) then
+function e.UpdateQuestBlockStateAtInactive(a, t)
+	local n = e.GetCurrentQuestTable()
+	if not e.IsInsideArea("loadArea", n, a, t) then
 		e.UnloadCurrentQuestBlock()
 		return
 	end
-	if e.IsInsideArea("activeArea", t, a, n) then
+	if e.IsInsideArea("activeArea", n, a, t) then
 		if not e.IsInvoking() then
-			if e.IsInsideArea("invokeArea", t, a, n) then
+			if e.IsInsideArea("invokeArea", n, a, t) then
 				mvars.qst_invokeReserveOnActivate = true
 			end
 		end
@@ -2886,9 +2886,9 @@ function e.UpdateQuestBlockStateAtInactive(a, n)
 		return
 	end
 end
-function e.UpdateQuestBlockStateAtActive(t, n)
-	local a = e.GetCurrentQuestTable()
-	if not e.IsInsideArea("activeArea", a, t, n) then
+function e.UpdateQuestBlockStateAtActive(a, n)
+	local t = e.GetCurrentQuestTable()
+	if not e.IsInsideArea("activeArea", t, a, n) then
 		if mvars.qst_blockStateRequest ~= i.DEACTIVATING then
 			mvars.qst_blockStateRequest = i.DEACTIVATING
 			local e = e.ExecuteSystemCallback("OnOutOfAcitveArea")
@@ -2899,7 +2899,7 @@ function e.UpdateQuestBlockStateAtActive(t, n)
 		return
 	end
 	if not e.IsInvoking() then
-		if e.IsInsideArea("invokeArea", a, t, n) then
+		if e.IsInsideArea("invokeArea", t, a, n) then
 			e.Invoke()
 		end
 	end
@@ -2939,68 +2939,68 @@ function e._CanActivateQuest()
 	return true
 end
 function e.QuestBlockOnUpdate()
-	local t = e
-	local a = t.GetQuestBlockState()
+	local e = e
+	local a = e.GetQuestBlockState()
 	if a == nil then
 		return
 	end
 	local n = ScriptBlock
-	local e = mvars
-	local s = e.qst_lastQuestBlockState
+	local t = mvars
+	local s = t.qst_lastQuestBlockState
 	local o = n.SCRIPT_BLOCK_STATE_INACTIVE
 	local n = n.SCRIPT_BLOCK_STATE_ACTIVE
-	if e.qst_requestInitializeQuestActiveStatus then
-		t.InitializeQuestActiveStatus(e.qst_requestInitializeQuestActiveCluster)
+	if t.qst_requestInitializeQuestActiveStatus then
+		e.InitializeQuestActiveStatus(t.qst_requestInitializeQuestActiveCluster)
 		return
 	end
 	if a == o then
 		if s == n then
-			t._DoDeactivate()
+			e._DoDeactivate()
 		end
-		if e.qst_blockStateRequest == i.ACTIVATE then
-			if t._CanActivateQuest() then
-				t.ActivateCurrentQuestBlock()
-				t.ClearBlockStateRequest()
+		if t.qst_blockStateRequest == i.ACTIVATE then
+			if e._CanActivateQuest() then
+				e.ActivateCurrentQuestBlock()
+				e.ClearBlockStateRequest()
 			end
 		end
-		e.qst_lastInactiveToActive = false
+		t.qst_lastInactiveToActive = false
 	elseif a == n then
-		if not t._CanActivateQuest() then
+		if not e._CanActivateQuest() then
 			return
 		end
 		local n
-		if t.IsInvoking() then
-			n = t.GetQuestStepTable(gvars.qst_currentQuestStepNumber)
+		if e.IsInvoking() then
+			n = e.GetQuestStepTable(gvars.qst_currentQuestStepNumber)
 		end
-		if e.qst_lastInactiveToActive then
-			e.qst_lastInactiveToActive = false
-			e.qst_deactivated = false
-			t.ExecuteSystemCallback("OnActivate")
-			e.qst_allocated = true
-			if e.qst_invokeReserveOnActivate then
-				e.qst_invokeReserveOnActivate = false
-				t.Invoke()
-				n = t.GetQuestStepTable(gvars.qst_currentQuestStepNumber)
+		if t.qst_lastInactiveToActive then
+			t.qst_lastInactiveToActive = false
+			t.qst_deactivated = false
+			e.ExecuteSystemCallback("OnActivate")
+			t.qst_allocated = true
+			if t.qst_invokeReserveOnActivate then
+				t.qst_invokeReserveOnActivate = false
+				e.Invoke()
+				n = e.GetQuestStepTable(gvars.qst_currentQuestStepNumber)
 			end
 			if n and l(n.OnEnter) then
 				n.OnEnter(n)
 			end
 		end
 		if (not s) or s <= o then
-			e.qst_lastInactiveToActive = true
+			t.qst_lastInactiveToActive = true
 		end
 		if n and l(n.OnUpdate) then
 			n.OnUpdate(n)
 		end
-		if e.qst_blockStateRequest == i.DEACTIVATE then
-			t.DeactivateCurrentQuestBlock()
-			t.ClearBlockStateRequest()
+		if t.qst_blockStateRequest == i.DEACTIVATE then
+			e.DeactivateCurrentQuestBlock()
+			e.ClearBlockStateRequest()
 		end
 	else
-		e.qst_lastInactiveToActive = false
-		t.ClearBlockStateRequest()
+		t.qst_lastInactiveToActive = false
+		e.ClearBlockStateRequest()
 	end
-	e.qst_lastQuestBlockState = a
+	t.qst_lastQuestBlockState = a
 end
 function e.OnMissionGameEnd()
 	local t = e.GetQuestBlockState()
@@ -3047,10 +3047,10 @@ function e.SetCurrentQuestName(e)
 end
 function e.ClearCurrentQuestName()
 	mvars.qst_currentQuestName = nil
-	gvars.qst_currentQuestName = p
+	gvars.qst_currentQuestName = m
 end
 function e.ResetQuestStatus()
-	gvars.qst_currentQuestName = p
+	gvars.qst_currentQuestName = m
 	gvars.qst_currentQuestStepNumber = c
 end
 function e.UnloadCurrentQuestBlock()
@@ -3064,11 +3064,11 @@ function e.DeactivateCurrentQuestBlock()
 	local e = ScriptBlock.GetScriptBlockId(mvars.qst_blockName)
 	TppScriptBlock.DeactivateScriptBlockState(e)
 end
-function e.SearchQuestFromAllSpecifiedArea(n, a, o, s)
+function e.SearchQuestFromAllSpecifiedArea(s, o, a, n)
 	local t = #mvars.qst_questList
 	for t = 1, t do
 		local t = mvars.qst_questList[t]
-		if e.IsInsideArea(n, t, a, o, s) then
+		if e.IsInsideArea(s, t, o, a, n) then
 			local n = {}
 			for n, t in ipairs(t.infoList) do
 				local t = t.name
@@ -3079,7 +3079,7 @@ function e.SearchQuestFromAllSpecifiedArea(n, a, o, s)
 		end
 	end
 end
-function e.IsInsideArea(o, e, s, a, n)
+function e.IsInsideArea(s, e, n, a, t)
 	do
 		local t = TppPackList.GetLocationNameFormMissionCode(vars.missionCode)
 		local t = TppDefine.LOCATION_ID[t]
@@ -3088,14 +3088,14 @@ function e.IsInsideArea(o, e, s, a, n)
 		end
 	end
 	if e.clusterName then
-		return TppDefine.CLUSTER_NAME[n] == e.clusterName
+		return TppDefine.CLUSTER_NAME[t] == e.clusterName
 	else
 		local t = e.areaName
-		local e = e[o]
+		local e = e[s]
 		if e == nil then
 			return
 		end
-		return Tpp.CheckBlockArea(e, s, a)
+		return Tpp.CheckBlockArea(e, n, a)
 	end
 end
 function e.GetCurrentQuestTable()
@@ -3173,14 +3173,14 @@ function e.IsInvoking()
 end
 function e.UpdateOpenQuest()
 	mvars.qst_isQuestNewOpenFlag = false
-	for e, n in pairs(TppDefine.QUEST_INDEX) do
-		local e = t[e]
-		if e then
-			if e() then
-				if gvars.qst_questOpenFlag[n] == false then
+	for n, e in pairs(TppDefine.QUEST_INDEX) do
+		local t = t[n]
+		if t then
+			if t() then
+				if gvars.qst_questOpenFlag[e] == false then
 					mvars.qst_isQuestNewOpenFlag = true
 				end
-				gvars.qst_questOpenFlag[n] = true
+				gvars.qst_questOpenFlag[e] = true
 			end
 		end
 	end
@@ -3194,30 +3194,30 @@ function e.UpdateActiveQuest(t)
 		for n, t in ipairs(mvars.qst_questList) do
 			local n = nil
 			local n = {}
-			local a = {}
-			local s = {}
+			local n = {}
 			local i = {}
-			for t, o in ipairs(t.infoList) do
-				local t = o.name
-				local n = TppDefine.QUEST_INDEX[t]
-				if n then
-					gvars.qst_questActiveFlag[n] = false
-					local n = r[t]
-					if e.IsOpen(t) and (not n or n()) then
+			local o = {}
+			for t, a in ipairs(t.infoList) do
+				local t = a.name
+				local s = TppDefine.QUEST_INDEX[t]
+				if s then
+					gvars.qst_questActiveFlag[s] = false
+					local s = r[t]
+					if e.IsOpen(t) and (not s or s()) then
 						if not e.IsCleard(t) then
-							if o.isStory then
-								table.insert(a, t)
+							if a.isStory then
+								table.insert(n, t)
 							else
-								table.insert(s, t)
+								table.insert(i, t)
 							end
 						elseif e.IsRepop(t) then
-							table.insert(i, t)
+							table.insert(o, t)
 						end
 					end
 				end
 			end
 			local e = nil
-			for n, t in ipairs({ a, s, i }) do
+			for n, t in ipairs({ n, i, o }) do
 				if not e then
 					e = t[1]
 				end
@@ -3245,20 +3245,20 @@ function e.UpdateActiveQuest(t)
 		gvars.qst_failedIndex[e] = -1
 	end
 	TppUiCommand.SetSideOpsListUpdate()
-	for t, e in ipairs(m) do
+	for t, e in ipairs(f) do
 		if gvars.qst_questActiveFlag[TppDefine.QUEST_INDEX[e]] == true then
 			TppMotherBaseManagement.SetLockedTanFlag({ locked = true })
 			return
 		end
 	end
 end
-function e.CanActiveQuestInMission(e, t)
-	if not TppMission.IsStoryMission(e) then
+function e.CanActiveQuestInMission(t, e)
+	if not TppMission.IsStoryMission(t) then
 		return true
 	else
 		if mvars.qst_canActiveQuestList then
-			for n, e in ipairs(mvars.qst_canActiveQuestList) do
-				if e == t then
+			for n, t in ipairs(mvars.qst_canActiveQuestList) do
+				if t == e then
 					return true
 				end
 			end
@@ -3315,8 +3315,8 @@ function e.CanOpenAndActivateSpecialQuest(t)
 			if t.locationId ~= n then
 				return true
 			end
-			local a, n = Tpp.GetCurrentStageSmallBlockIndex()
-			if not e.IsInsideArea("loadArea", t, a, n) then
+			local n, a = Tpp.GetCurrentStageSmallBlockIndex()
+			if not e.IsInsideArea("loadArea", t, n, a) then
 				return true
 			end
 		end
@@ -3324,17 +3324,17 @@ function e.CanOpenAndActivateSpecialQuest(t)
 	return false
 end
 function e.SwitchActiveQuest(n)
-	local t = a[n]
-	if not t then
+	local e = a[n]
+	if not e then
 		return
 	end
-	for a, e in ipairs(TppQuestList.questList) do
-		if e.areaName == t then
-			for t, e in ipairs(e.infoList) do
-				local e = e.name
-				local t = TppDefine.QUEST_INDEX[e]
-				if t then
-					gvars.qst_questActiveFlag[t] = (e == n)
+	for a, t in ipairs(TppQuestList.questList) do
+		if t.areaName == e then
+			for t, e in ipairs(t.infoList) do
+				local t = e.name
+				local e = TppDefine.QUEST_INDEX[t]
+				if e then
+					gvars.qst_questActiveFlag[e] = (t == n)
 				end
 			end
 		end
@@ -3437,9 +3437,9 @@ function e.UpdateRepopFlag(t)
 	end
 	e.UpdateRepopFlagImpl(t)
 end
-function e.UpdateRepopFlagImpl(a)
+function e.UpdateRepopFlagImpl(s)
 	local n = 0
-	for t, a in ipairs(a.infoList) do
+	for t, a in ipairs(s.infoList) do
 		local t = a.name
 		if e.IsOpen(t) then
 			if not a.isOnce then
@@ -3456,7 +3456,7 @@ function e.UpdateRepopFlagImpl(a)
 	if n <= 1 and (not TppLocation.IsMotherBase()) then
 		return
 	end
-	for n, t in ipairs(a.infoList) do
+	for n, t in ipairs(s.infoList) do
 		if e.IsCleard(t.name) and not t.isOnce then
 			gvars.qst_questRepopFlag[TppDefine.QUEST_INDEX[t.name]] = true
 		end
@@ -3536,6 +3536,9 @@ end
 function e.StartElapsedEvent(e)
 	gvars.qst_elapseCount = e
 end
+function e.GetElapsedCount()
+	return gvars.qst_elapseCount
+end
 function e.IsNowOccurringElapsed()
 	return gvars.qst_elapseCount == TppDefine.ELAPSED_QUEST_COUNT.NOW_OCCURRING
 end
@@ -3569,20 +3572,20 @@ function e.PlayClearRadio(e)
 	end
 	return false
 end
-function e.GetClearKeyItem(t)
-	for e, n in pairs(I) do
-		if e == t then
-			TppTerminal.AcquireKeyItem({ dataBaseId = n, isShowAnnounceLog = true })
-			for t, n in pairs(C) do
-				if e == t then
-					TppUI.ShowAnnounceLog("quest_get_photo", n)
+function e.GetClearKeyItem(n)
+	for e, t in pairs(q) do
+		if e == n then
+			TppTerminal.AcquireKeyItem({ dataBaseId = t, isShowAnnounceLog = true })
+			for n, t in pairs(g) do
+				if e == n then
+					TppUI.ShowAnnounceLog("quest_get_photo", t)
 				end
 			end
 		end
 	end
 end
 function e.GetClearEmblem(e)
-	local e = A[e]
+	local e = I[e]
 	if e then
 		for t, e in ipairs(e) do
 			TppEmblem.Add(e, false, true)
@@ -3615,7 +3618,7 @@ function e.GetClearCassette(t)
 		})
 	end
 end
-function e.ShowAnnounceLog(n, t, u, l)
+function e.ShowAnnounceLog(n, t, r, i)
 	if not n then
 		return
 	end
@@ -3628,14 +3631,14 @@ function e.ShowAnnounceLog(n, t, u, l)
 		end
 		local a = e.GetQuestNameLangId(t)
 		if a ~= false then
-			local n = f[t]
-			local s, r = TppEnemy.GetQuestCount()
-			local o, i = TppGimmick.GetQuestShootingPracticeCount()
+			local n = _[t]
+			local o, i = TppEnemy.GetQuestCount()
+			local s, r = TppGimmick.GetQuestShootingPracticeCount()
 			if n then
-				if s > 1 then
-					TppUI.ShowAnnounceLog(n, s, r)
-				elseif o > 1 then
+				if o > 1 then
 					TppUI.ShowAnnounceLog(n, o, i)
+				elseif s > 1 then
+					TppUI.ShowAnnounceLog(n, s, r)
 				end
 			end
 			TppUI.ShowAnnounceLog("quest_list_update")
@@ -3659,9 +3662,9 @@ function e.ShowAnnounceLog(n, t, u, l)
 		if not t then
 			return
 		end
-		local e = f[t]
+		local e = _[t]
 		if e then
-			TppUI.ShowAnnounceLog(e, u, l)
+			TppUI.ShowAnnounceLog(e, r, i)
 		end
 	end
 end
@@ -3700,7 +3703,7 @@ function e.OnQuestAreaAnnounceText(t)
 	local n = e.GetQuestName(t)
 	local t
 	if n then
-		for a, e in pairs(g) do
+		for a, e in pairs(O) do
 			if a == n then
 				if e.radioNameFirst then
 					if e.radioNameSecond then
@@ -3734,9 +3737,9 @@ function e.DeactiveQuestAreaTrapMessages()
 	local t = {}
 	local a = TppMission.GetMissionID()
 	if a == 30010 then
-		t = h
+		t = C
 	elseif a == 30020 then
-		t = O
+		t = A
 	else
 		return
 	end
@@ -3873,9 +3876,9 @@ function e.ShowShootingPracticeStartUi(t, n)
 	e.ShowShootingPracticeGroundUi(t, n)
 	e.ShowShootingPracticeMarker(t)
 end
-function e.ShowShootingPracticeGroundUi(e, t)
-	mvars.qst_shootingPracticeStartUiPos = t or mvars.qst_shootingPracticeStartUiPos
-	mvars.qst_shootingPracticeOffsetType = e or mvars.qst_shootingPracticeOffsetType
+function e.ShowShootingPracticeGroundUi(t, e)
+	mvars.qst_shootingPracticeStartUiPos = e or mvars.qst_shootingPracticeStartUiPos
+	mvars.qst_shootingPracticeOffsetType = t or mvars.qst_shootingPracticeOffsetType
 	local e, t = mtbs_cluster.GetPosAndRotY(
 		mvars.qst_shootingPracticeOffsetType,
 		"plnt0",
@@ -3884,13 +3887,13 @@ function e.ShowShootingPracticeGroundUi(e, t)
 	)
 	TppUiCommand.SetMbStageSpot("show", Vector3(e[1], e[2], e[3]))
 end
-function e.ShowShootingPracticeMarker(t)
-	if t then
-		for n, e in pairs(T) do
-			if n ~= t then
-				TppMarker.Disable(e)
+function e.ShowShootingPracticeMarker(e)
+	if e then
+		for n, t in pairs(p) do
+			if n ~= e then
+				TppMarker.Disable(t)
 			else
-				mvars.qst_shootingPracticeMarkerName = e or mvars.qst_shootingPracticeMarkerName
+				mvars.qst_shootingPracticeMarkerName = t or mvars.qst_shootingPracticeMarkerName
 			end
 		end
 	end
@@ -3920,7 +3923,7 @@ function e.ClearShootingPracticeMvars()
 	mvars.qst_isShootingPracticeStarted = false
 end
 function e.HideAllShootingPracticeForUi()
-	for t, e in pairs(T) do
+	for t, e in pairs(p) do
 		local t = GameObject.GetGameObjectId(e)
 		if t ~= GameObject.NULL_ID then
 			TppMarker.Disable(e)
@@ -3936,30 +3939,57 @@ function e.SetCancelShootingPracticeStartUi()
 	TppPlayer.ResetIconForQuest("ShootingPractice")
 end
 function e.UpdateShootingPracticeUi()
-	local t, e = TppGimmick.GetQuestShootingPracticeCount()
-	TppUiCommand.SetDisplayTimerText("time_quest", t, e)
+	local e, t = TppGimmick.GetQuestShootingPracticeCount()
+	TppUiCommand.SetDisplayTimerText("time_quest", e, t)
 end
-local t = {
+local a = {
 	ruins_q60115 = TppMotherBaseManagementConst.DESIGN_2027,
 	sovietBase_q60110 = TppMotherBaseManagementConst.DESIGN_2020,
+	citadel_q60112 = TppMotherBaseManagementConst.DESIGN_2021,
+	outland_q60113 = TppMotherBaseManagementConst.DESIGN_2022,
+	pfCamp_q60114 = TppMotherBaseManagementConst.DESIGN_2023,
 	sovietBase_q60111 = TppMotherBaseManagementConst.DESIGN_2024,
 }
-local a = { pfCamp_q39012 = { dataBaseId = TppMotherBaseManagementConst.ANIMAL_130, areaName = "anml_quest_00" } }
+local t = {
+	pfCamp_q39012 = { dataBaseId = TppMotherBaseManagementConst.ANIMAL_130 },
+	waterway_q39010 = { dataBaseId = TppMotherBaseManagementConst.ANIMAL_610 },
+	lab_q39011 = { dataBaseId = TppMotherBaseManagementConst.ANIMAL_2250 },
+}
 function e.AcquireKeyItemOnMissionStart()
-	for t, n in pairs(I) do
+	for t, n in pairs(q) do
+		if e.IsCleard(t) then
+			TppTerminal.AcquireKeyItem({ dataBaseId = n, isShowAnnounceLog = true })
+		end
+	end
+	if TppStory.IsMissionCleard(11050) then
+		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.DESIGN_3014, pushReward = true })
+		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.DESIGN_3015, pushReward = true })
+	end
+	if TppDemo.IsPlayedMBEventDemo("DecisionHuey") then
+		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.DESIGN_3007, pushReward = true })
+	end
+	if TppStory.IsMissionCleard(10280) then
+		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.DESIGN_3008, pushReward = true })
+		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.DESIGN_3010, pushReward = true })
+	end
+	if TppStory.IsMissionCleard(10100) then
+		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.DESIGN_3013, pushReward = true })
+	end
+	if e.IsCleard("mtbs_q99060") then
+		TppTerminal.AcquireKeyItem({ dataBaseId = TppMotherBaseManagementConst.PHOTO_1010, pushReward = true })
+	end
+	for t, n in pairs(a) do
 		if e.IsCleard(t) then
 			TppTerminal.AcquireKeyItem({ dataBaseId = n, isShowAnnounceLog = true })
 		end
 	end
 	for n, t in pairs(t) do
-		if e.IsCleard(n) then
-			TppTerminal.AcquireKeyItem({ dataBaseId = t, isShowAnnounceLog = true })
-		end
-	end
-	for n, t in pairs(a) do
 		if e.IsCleard(n) and not TppMotherBaseManagement.IsGotDataBase({ dataBaseId = t.dataBaseId }) then
 			TppMotherBaseManagement.DirectAddDataBaseAnimal({ dataBaseId = t.dataBaseId, areaName = t.areaName, isNew = true })
 		end
+	end
+	if TppUiCommand.HasEmblemTexture("front5019") then
+		TppTerminal.AcquireKeyItem({ dataBaseId = 428, isShowAnnounceLog = true })
 	end
 	if e.IsCleard("ruins_q19010") then
 		vars.isRussianTranslatable = 1
@@ -3975,6 +4005,85 @@ function e.AcquireKeyItemOnMissionStart()
 	end
 	if e.IsCleard("tent_q99072") then
 		vars.mbmMasterGunsmithSkill = 1
+	end
+	do
+		local t =
+			{
+				{
+					questName = "mtbs_q99060",
+					cassetteList = {
+						"tp_m_99060_01",
+						"tp_m_99060_02",
+						"tp_m_99060_03",
+						"tp_m_99060_04",
+						"tp_m_99060_05",
+						"tp_sp_01_03",
+					},
+				},
+				{ questName = "sovietBase_q99030", cassetteList = { "tp_m_10150_20", "tp_m_10150_29", "tp_m_10150_30" } },
+				{
+					questName = "tent_q99040",
+					cassetteList = { "tp_m_10150_21", "tp_m_10150_22", "tp_m_10150_24", "tp_m_10150_25" },
+				},
+				{ questName = "mtbs_q99011", cassetteList = { "tp_c_00000_13", "tp_m_10050_03" } },
+				{ storySequence = TppDefine.STORY_SEQUENCE.CLEARD_RESCUE_HUEY, cassetteList = { "tp_m_10050_01" } },
+				{
+					storySequence = TppDefine.STORY_SEQUENCE.CLEARD_FLAG_MISSIONS_BEFORE_ENDRESS_PROXY_WAR,
+					cassetteList = {
+						"tp_m_10160_06",
+						"tp_m_10160_07",
+						"tp_m_10160_08",
+						"tp_m_10160_09",
+						"tp_m_10160_10",
+						"tp_m_10160_05",
+					},
+				},
+				{
+					storySequence = TppDefine.STORY_SEQUENCE.CLEARD_MURDER_INFECTORS,
+					cassetteList = {
+						"tp_m_10160_11",
+						"tp_m_10160_04",
+						"tp_c_00000_18",
+						"tp_m_10240_05",
+						"tp_m_10190_02",
+						"tp_m_10190_03",
+					},
+				},
+				{
+					demoName = "DecisionHuey",
+					cassetteList = { "tp_m_10190_05", "tp_m_10190_06", "tp_m_10240_03", "tp_m_10240_04", "tp_m_10190_01" },
+				},
+			}
+		for n, t in pairs(t) do
+			if
+				(
+					(t.questName and e.IsCleard(t.questName))
+					or (t.storySequence and (TppStory.GetCurrentStorySequence() >= t.storySequence))
+				) or (t.demoName and TppDemo.IsPlayedMBEventDemo(t.demoName))
+			then
+				TppCassette.Acquire({ cassetteList = t.cassetteList, isShowAnnounceLog = true })
+			end
+		end
+	end
+	do
+		local t = 110
+		if e.IsCleard("cliffTown_q99080") and not TppMotherBaseManagement.IsExistStaff({ uniqueTypeId = t }) then
+			local e = TppMotherBaseManagement.GenerateStaffParameter({ staffType = "Unique", uniqueTypeId = t })
+			TppMotherBaseManagement.DirectAddStaff({ staffId = e })
+		end
+		local t = 111
+		if e.IsCleard("quest_q20095") and not TppMotherBaseManagement.IsExistStaff({ uniqueTypeId = t }) then
+			local e = TppMotherBaseManagement.GenerateStaffParameter({ staffType = "Unique", uniqueTypeId = t })
+			TppMotherBaseManagement.DirectAddStaff({ staffId = e })
+			TppMotherBaseManagement.SetLockedTanFlag({ locked = false })
+		end
+	end
+	do
+		for t, n in pairs(I) do
+			if e.IsCleard(t) then
+				e.GetClearEmblem(t)
+			end
+		end
 	end
 end
 return e

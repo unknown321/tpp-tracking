@@ -820,6 +820,17 @@ local function HeliSpaceGoToMgoCoroutine()
 
 	local function existPatchDlcFunc()
 		TppUiCommand.ErasePopup()
+
+		TppMotherBaseManagement.ProcessBeforeSync()
+		TppMotherBaseManagement.StartSyncControl({})
+		TppSave.SaveMBAndGlobal()
+		TppMission.CreateMbSaveCoroutine()
+
+		while TppMission.waitMbSyncAndSaveCoroutine or TppSave.IsSaving() do
+			coroutine.yield()
+			DebugPrintState("waiting save end.")
+		end
+
 		TppException.isNowGoingToMgo = true
 		TppUI.FadeOut(TppUI.FADE_SPEED.FADE_HIGHSPEED, "FadeOutGoToMGO", nil, { setMute = true })
 	end
@@ -1123,6 +1134,9 @@ sequences.Seq_Game_MainGame = {
 		else
 			TppUiStatusManager.UnsetStatus("MissionPrep", "DISABLE_CANCEL_OPERATION")
 		end
+
+		TppMission.ClearFobMode()
+		vars.fobIsSneak = 0
 
 		if not svars.showInfoTypingText then
 			svars.showInfoTypingText = true
@@ -2713,6 +2727,7 @@ sequences.Seq_Game_TutorialFobConstruct = {
 					func = function(tutorialNameHash, result)
 						if result == TERMINAL_TUTORIAL_RESULT.OK then
 							TppTerminal.ReleaseFunctionOfMbSection()
+							TppMotherBaseManagement.UpdateSections()
 							TppSequence.SetNextSequence("Seq_Game_MainGame")
 						else
 							TppSequence.SetNextSequence("Seq_Game_MainGame")

@@ -538,11 +538,17 @@ e.DDWeaponIdInfo = {
 		{ equipId = TppEquip.EQP_SWP_StunGrenade, isNoKill = true, developedEquipType = t.STUN_GRENADE, developId = 10060 },
 	},
 	SNEAKING_SUIT = {
+		{ equipId = 6, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19042 },
+		{ equipId = 5, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19057 },
+		{ equipId = 4, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19056 },
 		{ equipId = 3, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19052 },
 		{ equipId = 2, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19051 },
 		{ equipId = 1, isNoKill = true, developedEquipType = t.SNEAKING_SUIT, developId = 19050 },
 	},
 	BATTLE_DRESS = {
+		{ equipId = 6, developedEquipType = t.BATTLE_DRESS, developId = 19043 },
+		{ equipId = 5, developedEquipType = t.BATTLE_DRESS, developId = 19059 },
+		{ equipId = 4, developedEquipType = t.BATTLE_DRESS, developId = 19058 },
 		{ equipId = 3, developedEquipType = t.BATTLE_DRESS, developId = 19055 },
 		{ equipId = 2, developedEquipType = t.BATTLE_DRESS, developId = 19054 },
 		{ equipId = 1, developedEquipType = t.BATTLE_DRESS, developId = 19053 },

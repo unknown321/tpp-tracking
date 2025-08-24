@@ -110,6 +110,8 @@ local ESPT_DF_FULTON_OFP = 200
 local ESPT_DF_FULTONED = -10
 local ESPT_DF_DEAD = -10
 
+local ESPT_ROOKIE_GRADE = 4
+
 local OF_TOTAL_RESULT_MIN = 0
 local OF_TOTAL_SNEAK_MIN = -30000
 local OF_TOTAL_COLLECT_MIN = 0
@@ -172,6 +174,31 @@ this.OCEAN_LIST = {
 	ocean_area_70 = { 70, 71 },
 }
 
+this.fieldClothings = {
+	PlayerCamoType.OLIVEDRAB,
+	PlayerCamoType.SPLITTER,
+	PlayerCamoType.SQUARE,
+	PlayerCamoType.TIGERSTRIPE,
+	PlayerCamoType.GOLDTIGER,
+	PlayerCamoType.FOXTROT,
+	PlayerCamoType.WOODLAND,
+	PlayerCamoType.WETWORK,
+	PlayerCamoType.ARBANGRAY,
+	PlayerCamoType.ARBANBLUE,
+	PlayerCamoType.SANDSTORM,
+	PlayerCamoType.BLACK,
+	PlayerCamoType.MGS3,
+	PlayerCamoType.PANTHER,
+}
+
+this.nakedCamo = {
+	PlayerCamoType.MGS3_NAKED,
+	PlayerCamoType.GOLD,
+	PlayerCamoType.SILVER,
+	PlayerCamoType.EVA_OPEN,
+	PlayerCamoType.BOSS_OPEN,
+}
+
 this.ESP_RecordList_OF_Victory = {
 	"espt_of_goal",
 	"espt_of_abort",
@@ -209,6 +236,16 @@ this.ESP_RecordList_OF_Versus = {
 	"espt_of_fluton_dfp",
 }
 
+this.ESP_RecordList_OF_Rookie = {
+	"espt_of_rookie",
+	"espt_of_rookie_score",
+}
+
+this.ESP_RecordList_OF_Special = {
+	"espt_of_bonus_naked",
+	"espt_of_bonus_noBackWep",
+}
+
 this.ESP_RecordList_DF_Victory = {
 	"espt_df_block_goal",
 	"espt_df_failed_defense",
@@ -231,12 +268,23 @@ this.ESP_RecordList_DF_Versus = {
 	"espt_df_dead",
 }
 
+this.ESP_RecordList_DF_Rookie = {
+	"espt_df_rookie",
+	"espt_df_rookie_score",
+}
+
+this.ESP_RecordList_DF_Special = {
+	"espt_df_bonus_naked",
+	"espt_df_bonus_noBackWep",
+}
+
 this.ESP_RecordList_OF_Total = {
 	"espt_of_total_result",
 	"espt_of_total_sneak",
 	"espt_of_total_collect",
 	"espt_of_total_destroy",
 	"espt_of_total_versus",
+	"espt_of_total_special",
 	"espt_of_total",
 }
 
@@ -244,6 +292,7 @@ this.ESP_RecordList_DF_Total = {
 	"espt_df_total_result",
 	"espt_df_total_defense",
 	"espt_df_total_versus",
+	"espt_df_total_special",
 	"espt_df_total",
 }
 
@@ -2064,6 +2113,118 @@ this.saveVarsList = {
 		wait = true,
 		category = TppScriptVars.CATEGORY_MISSION,
 	},
+
+	isAlreadyMatchGame = {
+		name = "isAlreadyMatchGame",
+		type = TppScriptVars.TYPE_BOOL,
+		value = false,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+
+	cnt_AccidentalDeath_dds = {
+		name = "cnt_AccidentalDeath_dds",
+		type = TppScriptVars.TYPE_UINT8,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+
+	espt_of_rookie = {
+		name = "espt_of_rookie",
+		type = TppScriptVars.TYPE_BOOL,
+		value = false,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_of_rookie_score = {
+		name = "espt_of_rookie_score",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_df_rookie = {
+		name = "espt_df_rookie",
+		type = TppScriptVars.TYPE_BOOL,
+		value = false,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_df_rookie_score = {
+		name = "espt_df_rookie_score",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+
+	espt_of_total_special = {
+		name = "espt_of_total_special",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_of_bonus_naked = {
+		name = "espt_of_bonus_naked",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_of_bonus_noBackWep = {
+		name = "espt_of_bonus_noBackWep",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_df_total_special = {
+		name = "espt_df_total_special",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_df_bonus_naked = {
+		name = "espt_df_bonus_naked",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	espt_df_bonus_noBackWep = {
+		name = "espt_df_bonus_noBackWep",
+		type = TppScriptVars.TYPE_INT32,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
 }
 
 this.currentClusterSetting = {
@@ -3095,10 +3256,11 @@ function this.OnUpdate()
 
 		if mvars.fobDebug.forceClearEscape then
 			mvars.fobDebug.forceClearEscape = false
-			TppMission.ReserveMissionClear({
-				missionClearType = TppDefine.MISSION_CLEAR_TYPE.FOB_ESCAPE,
-				nextMissionId = TppDefine.SYS_MISSION_ID.MTBS_HELI,
-			})
+
+			TppMission.ReserveGameOver(
+				TppDefine.GAME_OVER_TYPE.FOB_ESCAPE,
+				TppDefine.GAME_OVER_RADIO.OUT_OF_MISSION_AREA
+			)
 		end
 
 		if mvars.fobDebug.forceGameOverOutOfMissionArea then
@@ -3409,6 +3571,20 @@ function this.OnUpdate()
 					": svars." .. tostring(name) .. " = " .. tostring(svars[name])
 				)
 			end
+			for key, name in pairs(this.ESP_RecordList_OF_Special) do
+				DebugText.Print(
+					DebugText.NewContext(),
+					{ 0.5, 0.5, 1.0 },
+					": svars." .. tostring(name) .. " = " .. tostring(svars[name])
+				)
+			end
+			for key, name in pairs(this.ESP_RecordList_OF_Rookie) do
+				DebugText.Print(
+					DebugText.NewContext(),
+					{ 0.5, 0.5, 1.0 },
+					": svars." .. tostring(name) .. " = " .. tostring(svars[name])
+				)
+			end
 		end
 
 		if mvars.fobDebug.showESPBaseBonusSvarsDefence then
@@ -3427,6 +3603,20 @@ function this.OnUpdate()
 				)
 			end
 			for key, name in pairs(this.ESP_RecordList_DF_Versus) do
+				DebugText.Print(
+					DebugText.NewContext(),
+					{ 0.5, 0.5, 1.0 },
+					": svars." .. tostring(name) .. " = " .. tostring(svars[name])
+				)
+			end
+			for key, name in pairs(this.ESP_RecordList_DF_Special) do
+				DebugText.Print(
+					DebugText.NewContext(),
+					{ 0.5, 0.5, 1.0 },
+					": svars." .. tostring(name) .. " = " .. tostring(svars[name])
+				)
+			end
+			for key, name in pairs(this.ESP_RecordList_DF_Rookie) do
 				DebugText.Print(
 					DebugText.NewContext(),
 					{ 0.5, 0.5, 1.0 },
@@ -3588,6 +3778,20 @@ function this.OnGameOverHost(gameOverType)
 
 			resultTypeForCalculate = CLEAR_TYPE_RESULT_TIME_OVER
 		end
+
+		if TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.FOB_ESCAPE) then
+			Fox.Log("### Escaped. Abort From FOB. ###")
+
+			svars.fobResultType = FobResult.RESULT_WORMHOLE
+			resultTypeForCalculate = CLEAR_TYPE_RESULT_ESCAPE
+
+			TppEventLog.WriteEvent({
+				event = EventLog.EVENT_PLAYER_ESCAPE,
+				playerIndex = 0,
+				playerPos = Vector3(vars.playerPosX, vars.playerPosY, vars.playerPosZ),
+				playerDir = TppPlayer.GetRotation(),
+			})
+		end
 	end
 
 	this.SwitchExecByIsGameMode(function()
@@ -3713,6 +3917,7 @@ function this.OnGameOverClient(gameOverType)
 		if
 			TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.OUTSIDE_OF_MISSION_AREA)
 			or TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.FOB_ABORT)
+			or TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.FOB_ESCAPE)
 		then
 			TppUI.ShowAnnounceLog("fobIntruderEscape")
 			o50050_radio.ClientMissionAbort()
@@ -3724,6 +3929,7 @@ function this.OnGameOverClient(gameOverType)
 		if
 			TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.OUTSIDE_OF_MISSION_AREA)
 			or TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.FOB_ABORT)
+			or TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.FOB_ESCAPE)
 		then
 			TppUI.ShowAnnounceLog("fobIntruderEscape")
 			o50050_radio.ClientMissionAbort()
@@ -3787,32 +3993,6 @@ function this.OnMissionClearHost(missionClearType)
 
 			svars.fobIsHostWin = true
 		end, function() end)
-	elseif missionClearType == TppDefine.MISSION_CLEAR_TYPE.FOB_ESCAPE then
-		Fox.Log("### Escaped. Abort From FOB ###")
-
-		this.SwitchExecByIsGameMode(function()
-			svars.fobResultType = FobResult.RESULT_WORMHOLE
-
-			svars.fobIsHostWin = false
-
-			TppEventLog.WriteEvent({
-				event = EventLog.EVENT_PLAYER_ESCAPE,
-				playerIndex = 0,
-				playerPos = Vector3(vars.playerPosX, vars.playerPosY, vars.playerPosZ),
-				playerDir = TppPlayer.GetRotation(),
-			})
-
-			TppEventLog.StopRecording()
-
-			resultTypeForCalculate = CLEAR_TYPE_RESULT_ESCAPE
-			this.CalculateResult(resultTypeForCalculate)
-
-			this.NeedSendRevengePointOnGameEnd()
-		end, function()
-			svars.fobResultType = FobResult.RESULT_WORMHOLE
-
-			svars.fobIsHostWin = false
-		end, function() end)
 	elseif missionClearType == TppDefine.MISSION_CLEAR_TYPE.FOB_DO_CRIME then
 		if TppMotherBaseManagement.IsMbsOwner({}) == false then
 			this.CalculateRansomeResult()
@@ -3832,27 +4012,6 @@ function this.OnMissionClearClient(missionClearType)
 		this.SwitchExecByIsGameMode(function()
 			TppHero.SetAndAnnounceHeroicOgrePoint(TppHero.DEFENCE_LOSE, "fobDefFailed", nil)
 		end, function() end, function() end)
-	elseif missionClearType == TppDefine.MISSION_CLEAR_TYPE.FOB_ESCAPE then
-		Fox.Log("### OffencePlayer Escaped. Abort From FOB. ###")
-		local fnc_vsCommon = function()
-			TppUI.ShowAnnounceLog("fobIntruderEscape")
-		end
-		this.SwitchExecByIsGameMode(function()
-			TppRanking.IncrementScore("FobDefenceSucceedCount")
-			TppUiCommand.AnnounceLogViewLangId("announce_log_fob_defense_win", gvars.rnk_FobDefenceSucceedCount)
-
-			this.ApplyWinReward()
-
-			fnc_vsCommon()
-			TppHero.SetAndAnnounceHeroicOgrePoint(TppHero.DEFENCE_WIN_ABORT, nil, "fobDefSuccess")
-
-			if TppMotherBaseManagement.IsMbsOwner({}) ~= true then
-				TppHero.SetAndAnnounceHeroicOgrePoint(TppHero.DEFENCE_WIN_FOR_FRIEND)
-			end
-		end, function()
-			fnc_vsCommon()
-			TppHero.SetAndAnnounceHeroicOgrePoint(TppHero.DEFENCE_WIN_ABORT_PRACTICE, nil, "fobDefSuccessPra")
-		end, function() end)
 	end
 
 	TppUiCommand.DeactivateSpySearchForFobDefense()
@@ -4650,6 +4809,16 @@ this.EnterGoalArea = function(enterObjID, cpName)
 	end
 end
 
+this.CheckPlayerCamo = function(checkCamoType, camoTypeList)
+	for k, v in pairs(camoTypeList) do
+		if v == checkCamoType then
+			return true
+		end
+	end
+
+	return false
+end
+
 this.GetGoalRewardStaff = function()
 	Fox.Log("######## GetGoalRewardStaff ########")
 
@@ -4838,6 +5007,8 @@ end
 
 this.HostExecuteRestart = function()
 	Fox.Log("######## HostExecuteRestart ########")
+
+	svars.isAlreadyMatchGame = true
 
 	TppEventLog.PauseRecording()
 
@@ -5072,6 +5243,10 @@ this.RespawnPlayer = function(respawnPointId)
 	MotherBaseStage.SetFobClientPlayerRespawnTrg()
 
 	TppUI.UnsetOverrideFadeInGameStatus()
+
+	Player.ResetPadMask({
+		settingName = "ClientFallDeath",
+	})
 
 	TppMain.EnableAllGameStatus()
 	Player.SetAroundCameraManualMode(false)
@@ -5899,7 +6074,7 @@ end
 
 this.CalculateSecurityDamage = function()
 	Fox.Log("### CalculateSecurityDamage ###")
-	local lostStaffs = svars.cnt_fltn_dds + svars.cnt_kill_dds
+	local lostStaffs = svars.cnt_fltn_dds + svars.cnt_kill_dds + svars.cnt_AccidentalDeath_dds
 	local grade = TppMotherBaseManagement.GetMbsClusterSecuritySoldierEquipGrade({})
 	local isKill = not (TppMotherBaseManagement.GetMbsClusterSecurityIsNoKillMode())
 
@@ -6017,11 +6192,23 @@ this.CalculateEspionageTotal = function(numClearType)
 	svars.espt_of_total_versus =
 		fnc_SetESPTotal(versusTotal, svars.espt_of_total_versus_min, svars.espt_of_total_versus_max)
 
+	local specialTotal = 0
+	for key, name in pairs(this.ESP_RecordList_OF_Special) do
+		specialTotal = specialTotal + svars[name]
+	end
+	svars.espt_of_total_special = specialTotal
+
 	svars.espt_of_total = svars.espt_of_total_result
 		+ svars.espt_of_total_sneak
 		+ svars.espt_of_total_collect
 		+ svars.espt_of_total_destroy
 		+ svars.espt_of_total_versus
+		+ svars.espt_of_total_special
+
+	if svars.espt_of_rookie and svars.espt_of_total < 0 then
+		svars.espt_of_rookie_score = math.abs(svars.espt_of_total)
+		svars.espt_of_total = 0
+	end
 
 	svars.espt_df_total_sneak = 0
 	svars.espt_df_total_battle = 0
@@ -6047,13 +6234,28 @@ this.CalculateEspionageTotal = function(numClearType)
 	svars.espt_df_total_versus =
 		fnc_SetESPTotal(versusTotalDF, svars.espt_df_total_versus_min, svars.espt_df_total_versus_max)
 
+	local specialTotalDF = 0
+	for key, name in pairs(this.ESP_RecordList_DF_Special) do
+		specialTotalDF = specialTotalDF + svars[name]
+	end
+	svars.espt_df_total_special = specialTotalDF
+
 	if numClearType == CLEAR_TYPE_RESULT_ABORT then
 		svars.espt_df_total_result = 0
 		svars.espt_df_total_defense = 0
 		svars.espt_df_total_versus = 0
+		svars.espt_df_total_special = 0
 	end
 
-	svars.espt_df_total = svars.espt_df_total_result + svars.espt_df_total_defense + svars.espt_df_total_versus
+	svars.espt_df_total = svars.espt_df_total_result
+		+ svars.espt_df_total_defense
+		+ svars.espt_df_total_versus
+		+ svars.espt_df_total_special
+
+	if svars.espt_df_rookie and svars.espt_df_total < 0 then
+		svars.espt_df_rookie_score = math.abs(svars.espt_df_total)
+		svars.espt_df_total = 0
+	end
 end
 
 this.CalculateResult = function(numClearType)
@@ -6121,6 +6323,8 @@ this.CalculateResult = function(numClearType)
 			svars.espt_of_escape = svars.espt_of_escape + espParm_escape
 		end
 
+		this.CheckRookieEspGrade()
+
 		local numTotalSecurityNPC = numTotalSoldierCount
 			+ mvars.mbUav_placedCountTotal
 			+ mvars.mbSecCam_placedCountTotal
@@ -6134,6 +6338,8 @@ this.CalculateResult = function(numClearType)
 
 		if numClearType == CLEAR_TYPE_RESULT_GOAL then
 			countPlant = countPlant + 1
+
+			this.CheckEquipEspBonus_Offence()
 		end
 
 		local espParm_plcn =
@@ -6181,6 +6387,8 @@ this.CalculateResult = function(numClearType)
 			local espParm_block =
 				this.GetESPUnitValue_DFUp(baseDiffDF, GetServerParameter("ESPIONAGE_POINT_DEFENSE_BLOCK_GOAL"))
 			svars.espt_df_block_goal = svars.espt_df_block_goal + espParm_block
+
+			this.CheckEquipEspBonus_Deffense()
 		else
 			local value = GetServerParameter("ESPIONAGE_POINT_DEFENSE_FAILED")
 			local espParm_failed_defence = this.GetESPUnitValue_DFDown(baseDiffDF, value)
@@ -6226,6 +6434,12 @@ this.CalculateResult = function(numClearType)
 				svars[name] = 0
 			end
 			for key, name in pairs(this.ESP_RecordList_DifficultyBonus_DF) do
+				svars[name] = 0
+			end
+			for key, name in pairs(this.ESP_RecordList_OF_Special) do
+				svars[name] = 0
+			end
+			for key, name in pairs(this.ESP_RecordList_DF_Special) do
 				svars[name] = 0
 			end
 		end
@@ -6431,7 +6645,13 @@ this.GetESPUnitValue_OFUp = function(baseDiff, coefficient, baseUnitValue)
 	if isPayingMember == true then
 		coefficientPaying = 1
 	end
-	UnitValue = MathCeil((baseDiff * coefficient * baseUnitValue) * coefficientPaying * AdjustDigit)
+
+	local tmpValue = (baseDiff * coefficient * baseUnitValue) * coefficientPaying * AdjustDigit
+	if 0 < tmpValue and tmpValue < 0.5 then
+		UnitValue = 1
+	else
+		UnitValue = foxmath.Round(tmpValue)
+	end
 	Fox.Log("### GetESPUnitValue_OFUp ### :: baseDiff = " .. baseDiff)
 	Fox.Log("### GetESPUnitValue_OFUp ### :: coefficient = " .. coefficient)
 	Fox.Log("### GetESPUnitValue_OFUp ### :: coefficientPaying = " .. coefficientPaying)
@@ -6443,9 +6663,13 @@ end
 this.GetESPUnitValue_OFDown = function(baseDiff, baseUnitValue)
 	local UnitValue
 
-	local CeilDown = -1
+	local tmpValue = baseDiff * mvars.defenceLevelInverse * baseUnitValue * AdjustDigit
+	if 0 > tmpValue and tmpValue > -0.5 then
+		UnitValue = -1
+	else
+		UnitValue = foxmath.Round(tmpValue)
+	end
 
-	UnitValue = MathCeil(baseDiff * mvars.defenceLevelInverse * baseUnitValue * AdjustDigit) + CeilDown
 	Fox.Log("### GetESPUnitValue_OFDown ### :: defenceLevelInverse = " .. mvars.defenceLevelInverse)
 	Fox.Log("### GetESPUnitValue_OFDown ### :: baseDiff = " .. baseDiff)
 	Fox.Log("### GetESPUnitValue_OFDown ### :: baseUnitValue = " .. baseUnitValue)
@@ -6454,8 +6678,14 @@ this.GetESPUnitValue_OFDown = function(baseDiff, baseUnitValue)
 end
 
 this.GetESPUnitValue_DFUp = function(baseDiff, baseUnitValue)
-	local UnitValue =
-		MathCeil(baseDiff * baseUnitValue * mvars.defenceRawScore * mvars.defenceLevelInverse * AdjustDigitDF)
+	local UnitValue
+
+	local tmpValue = baseDiff * baseUnitValue * mvars.defenceRawScore * mvars.defenceLevelInverse * AdjustDigitDF
+	if 0 < tmpValue and tmpValue < 0.5 then
+		UnitValue = 1
+	else
+		UnitValue = foxmath.Round(tmpValue)
+	end
 	Fox.Log("### GetESPUnitValue_DFUp ### :: baseDiff = " .. baseDiff)
 	Fox.Log("### GetESPUnitValue_DFUp ### :: baseUnitValue = " .. baseUnitValue)
 	Fox.Log("### GetESPUnitValue_DFUp ### :: UnitValue = " .. UnitValue)
@@ -6463,13 +6693,64 @@ this.GetESPUnitValue_DFUp = function(baseDiff, baseUnitValue)
 end
 
 this.GetESPUnitValue_DFDown = function(baseDiff, baseUnitValue)
-	local CeilDown = -1
-	local UnitValue = MathCeil(baseDiff * mvars.defenceLevelInverse * baseUnitValue * AdjustDigit) + CeilDown
+	local UnitValue
+
+	local tmpValue = baseDiff * mvars.defenceLevelInverse * baseUnitValue * AdjustDigit
+	if 0 > tmpValue and tmpValue > -0.5 then
+		UnitValue = -1
+	else
+		UnitValue = foxmath.Round(tmpValue)
+	end
+
 	Fox.Log("### GetESPUnitValue_DFDown ### :: baseDiff = " .. baseDiff)
 	Fox.Log("### GetESPUnitValue_DFDown ### :: mvars.defenceRawScore = " .. mvars.defenceRawScore)
 	Fox.Log("### GetESPUnitValue_DFDown ### :: baseUnitValue = " .. baseUnitValue)
 	Fox.Log("### GetESPUnitValue_DFDown ### :: UnitValue = " .. UnitValue)
 	return UnitValue
+end
+
+function this.CheckRookieEspGrade()
+	if TppServerManager.GetFobGrade() < ESPT_ROOKIE_GRADE then
+		Fox.Log("OffenceFobGrade:" .. TppServerManager.GetFobGrade())
+		svars.espt_of_rookie = true
+	end
+
+	if TppNetworkUtil.GetClientFobGrade() < ESPT_ROOKIE_GRADE then
+		Fox.Log("DefenseFobGrade:" .. TppNetworkUtil.GetClientFobGrade())
+		svars.espt_df_rookie = true
+	end
+end
+
+function this.CheckEquipEspBonus_Offence()
+	if
+		(
+			this.CheckPlayerCamo(vars.playerCamoType, this.fieldClothings)
+			and vars.playerPartsType == PlayerPartsType.NAKED
+		) or this.CheckPlayerCamo(vars.playerCamoType, this.nakedCamo)
+	then
+		Fox.Log("**** CheckEquipEspBonus:Naked::OffencePlayer ****")
+		svars.espt_of_bonus_naked = GetServerParameter("ESPIONAGE_POINT_OFFENSE_NAKED")
+	end
+
+	if vars.weapons[TppDefine.WEAPONSLOT.PRIMARY_BACK] == TppEquip.EQP_None then
+		Fox.Log("**** CheckEquipEspBonus:Primary Back::OffencePlayer ****")
+		svars.espt_of_bonus_noBackWep = GetServerParameter("ESPIONAGE_POINT_OFFENSE_NOBACK")
+	end
+end
+
+function this.CheckEquipEspBonus_Deffense()
+	if
+		(this.CheckPlayerCamo(vars.camoType2, this.fieldClothings) and vars.partsType2 == PlayerPartsType.NAKED)
+		or this.CheckPlayerCamo(vars.camoType2, this.nakedCamo)
+	then
+		Fox.Log("**** CheckEquipEspBonus:Naked::DefensePlayer ****")
+		svars.espt_df_bonus_naked = GetServerParameter("ESPIONAGE_POINT_DEFFENSE_NAKED")
+	end
+
+	if vars.weapons2[TppDefine.WEAPONSLOT.PRIMARY_BACK] == TppEquip.EQP_None then
+		Fox.Log("**** CheckEquipEspBonus:Primary Back::DefensePlayer ****")
+		svars.espt_df_bonus_noBackWep = GetServerParameter("ESPIONAGE_POINT_DEFFENSE_NOBACK")
+	end
 end
 
 this.SetAnnounceEspPoint = function(AnnounceParam)
@@ -6844,6 +7125,8 @@ this.ForceAlertOnDamageByDefencePlayer = function()
 		end
 
 		GameObject.SendCommand(cp, { id = "SetFOBPlayerDiscovery" })
+
+		svars.alertCount = svars.alertCount + 1
 	end
 
 	this.SwitchExecByIsGameMode(fnc_vsCommon, fnc_vsCommon, function() end)
@@ -7001,6 +7284,11 @@ this.OnDeadGameObject = function(gameObjectId, AttackerId)
 			svars.cntDmgUav = svars.cntDmgUav + 1
 			this.AddRevengePoint("REVENGE_POINT_DESTROY_SEC_GADJET")
 			this.SetAndAnnounceEspPoint_DestroyScgj("mb_fob_sec_uav")
+		end
+	else
+		Fox.Log("### Dead someone ###")
+		if Tpp.IsSoldier(gameObjectId) then
+			svars.cnt_AccidentalDeath_dds = svars.cnt_AccidentalDeath_dds + 1
 		end
 	end
 
@@ -7589,10 +7877,10 @@ sequences.Seq_Game_FOB = {
 						if TppServerManager.FobIsSneak() then
 							mvars.isAbortFromWhole = true
 							if mvars.isClientSessionStart ~= true then
-								TppMission.ReserveMissionClear({
-									missionClearType = TppDefine.MISSION_CLEAR_TYPE.FOB_ESCAPE,
-									nextMissionId = TppDefine.SYS_MISSION_ID.MTBS_HELI,
-								})
+								TppMission.ReserveGameOver(
+									TppDefine.GAME_OVER_TYPE.FOB_ESCAPE,
+									TppDefine.GAME_OVER_RADIO.OUT_OF_MISSION_AREA
+								)
 							end
 						end
 					end,
@@ -8096,7 +8384,7 @@ sequences.Seq_Game_FOB = {
 
 		TppTerminal.UnSetUsageRestrictionOnFOB(false)
 
-		o50050_enemy.SetTimerCheckFocusArea()
+		o50050_enemy.SetTimerCheckFocusArea_1st()
 
 		mvars.mbSoldier_PermitRouteChange = true
 		mvars.isClientSessionStart = false
@@ -8106,6 +8394,11 @@ sequences.Seq_Game_FOB = {
 		mvars.isDisableAbortTime = false
 
 		if svars.fob_isHostGameStart == false then
+			if TppMotherBaseManagement.GetMbsNuclearWeaponCount() > 0 then
+				Fox.Log("FOB have Nuclear:" .. TppMotherBaseManagement.GetMbsNuclearWeaponCount() .. ":SendNoticeSneak")
+				this.SendServerNoticeSneak()
+			end
+
 			this.GetAbortWarmHolePosition()
 
 			this.SwitchExecByIsGameMode(function()
@@ -8391,31 +8684,6 @@ sequences.Seq_ShowMissionClearDemo = {
 				},
 				{
 					msg = "Finish",
-					sender = "Timer_HostWHAbort",
-					func = function()
-						TppMusicManager.PostJingleEvent("MissionEnd", "Play_bgm_fob_jingle_retreat")
-
-						Player.RequestToSetCameraRotation({
-
-							rotX = 45,
-
-							rotY = vars.playerRotY,
-
-							interpTime = 1,
-						})
-					end,
-					option = { isExecMissionClear = true },
-				},
-				{
-					msg = "Finish",
-					sender = "Timer_ClientWHAbort",
-					func = function()
-						TppMusicManager.PostJingleEvent("MissionEnd", "Play_bgm_fob_jingle_achieved")
-					end,
-					option = { isExecMissionClear = true },
-				},
-				{
-					msg = "Finish",
 					sender = "Timer_StartEscapeCamera",
 					func = TppPlayer._StartGameOverCamera,
 					option = { isExecMissionClear = true },
@@ -8443,8 +8711,6 @@ sequences.Seq_ShowMissionClearDemo = {
 		local fnc_vsCommon = function()
 			if svars.mis_missionClearType == TppDefine.MISSION_CLEAR_TYPE.FOB_GOAL then
 				this.SwitchExecByIsHost(self.HostWin, self.ClientLose)
-			elseif svars.mis_missionClearType == TppDefine.MISSION_CLEAR_TYPE.FOB_ESCAPE then
-				this.SwitchExecByIsHost(self.HostWHAbort, self.ClientWHAbort)
 			else
 				Fox.Log(" ______THIS MISSION CLEAR TYPE IS UNKONWN.__________ ")
 				GkEventTimerManager.Start("ResultDelay", 1)
@@ -8485,32 +8751,6 @@ sequences.Seq_ShowMissionClearDemo = {
 		TppPlayer.FOBPlayMissionClearCamera()
 
 		GkEventTimerManager.Start("Timer_ClientLose", 0.25)
-	end,
-
-	HostWHAbort = function()
-		GkEventTimerManager.Start("ResultDelay", 3)
-
-		GkEventTimerManager.Start("Timer_HostWHAbort", 0.25)
-
-		o50050_radio.HostMissionAbort()
-	end,
-
-	ClientWHAbort = function()
-		GkEventTimerManager.Start("ResultDelay", 3)
-
-		GkEventTimerManager.Start("Timer_ClientWHAbort", 0.25)
-
-		o50050_radio.ClientMissionAbort()
-
-		this.SetCameraEscapeFromWH(OF_PLAYER_ID, "EndFadeOut_StartTargetEscapeCamera")
-
-		TppUiCommand.StopRespawnMenu()
-
-		TppUI.ShowAnnounceLog("fobRivalEscape")
-
-		TppMission.UpdateObjective({
-			objectives = { "announce_achieveAllObjectives" },
-		})
 	end,
 
 	HostVisitEnd = function()
@@ -8681,6 +8921,31 @@ sequences.Seq_ShowGameOverResult = {
 					end,
 					option = { isExecGameOver = true },
 				},
+				{
+					msg = "Finish",
+					sender = "Timer_HostWHAbort",
+					func = function()
+						TppMusicManager.PostJingleEvent("MissionEnd", "Play_bgm_fob_jingle_retreat")
+
+						Player.RequestToSetCameraRotation({
+
+							rotX = 45,
+
+							rotY = vars.playerRotY,
+
+							interpTime = 1,
+						})
+					end,
+					option = { isExecGameOver = true },
+				},
+				{
+					msg = "Finish",
+					sender = "Timer_ClientWHAbort",
+					func = function()
+						TppMusicManager.PostJingleEvent("MissionEnd", "Play_bgm_fob_jingle_achieved")
+					end,
+					option = { isExecGameOver = true },
+				},
 			},
 		})
 	end,
@@ -8695,7 +8960,9 @@ sequences.Seq_ShowGameOverResult = {
 		)
 
 		local fnc_vsCommon = function()
-			if not svars.fobIsHostWin then
+			if svars.mis_gameOverType == TppDefine.GAME_OVER_TYPE.FOB_ESCAPE then
+				this.SwitchExecByIsHost(self.HostWHAbort, self.ClientWHAbort)
+			elseif not svars.fobIsHostWin then
 				this.SwitchExecByIsHost(self.HostLose, self.ClientWin)
 			end
 		end
@@ -8746,6 +9013,32 @@ sequences.Seq_ShowGameOverResult = {
 		TppMusicManager.PostJingleEvent("MissionEnd", "Play_bgm_fob_jingle_achieved")
 
 		o50050_radio.ClientMissionWin()
+
+		TppMission.UpdateObjective({
+			objectives = { "announce_achieveAllObjectives" },
+		})
+	end,
+
+	HostWHAbort = function()
+		GkEventTimerManager.Start("ResultDelayGameOver", 3)
+
+		GkEventTimerManager.Start("Timer_HostWHAbort", 0.25)
+
+		o50050_radio.HostMissionAbort()
+	end,
+
+	ClientWHAbort = function()
+		GkEventTimerManager.Start("ResultDelayGameOver", 3)
+
+		GkEventTimerManager.Start("Timer_ClientWHAbort", 0.25)
+
+		o50050_radio.ClientMissionAbort()
+
+		this.SetCameraEscapeFromWH(OF_PLAYER_ID, "EndFadeOut_StartTargetEscapeCamera")
+
+		TppUiCommand.StopRespawnMenu()
+
+		TppUI.ShowAnnounceLog("fobRivalEscape")
 
 		TppMission.UpdateObjective({
 			objectives = { "announce_achieveAllObjectives" },
@@ -8821,7 +9114,11 @@ sequences.Seq_ConfirmRetryPractice = {
 		mvars.isFinishRetryDelay = false
 		local isDisplayPopUp = true
 
-		if this.IsThereDefencePlayer() == true or TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.FOB_ABORT) then
+		if
+			this.IsThereDefencePlayer() == true
+			or svars.isAlreadyMatchGame == true
+			or TppMission.CheckGameOverDemo(TppDefine.GAME_OVER_TYPE.FOB_ABORT)
+		then
 			isDisplayPopUp = false
 		end
 

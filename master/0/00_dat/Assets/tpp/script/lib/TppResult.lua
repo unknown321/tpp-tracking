@@ -330,6 +330,7 @@ function e.SetMissionFinalScore()
 	end
 	a = e.UpdateGmpOnMissionClear(vars.missionCode, t, n)
 	if vars.totalBatteryPowerAsGmp then
+		TppUiCommand.SetResultBatteryGmp(vars.totalBatteryPowerAsGmp)
 		TppTerminal.UpdateGMP({ gmp = vars.totalBatteryPowerAsGmp })
 	end
 	e.SetBestRank(vars.missionCode, t)
@@ -370,6 +371,7 @@ function e.RegistUsedLimitedItemLangId()
 		{ PlayerPlayFlag.USE_FULTON_MISSILE, "name_dw_31007" },
 		{ PlayerPlayFlag.USE_PARASITE_CAMO, "name_it_13050" },
 		{ PlayerPlayFlag.USE_MUGEN_BANDANA, "name_st_37002" },
+		{ PlayerPlayFlag.USE_HIGHGRADE_EQUIP, "result_spcialitem_etc" },
 	}
 	for t, e in ipairs(e) do
 		local e, t = e[1], e[2]

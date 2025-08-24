@@ -7,6 +7,7 @@ e.DeclareGVarsTable = {
 	{ name = "DEBUG_showGameStatus", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{ name = "usingNormalMissionSlot", type = TppScriptVars.TYPE_BOOL, value = true, save = false },
 	{ name = "DEBUG_usingTemporarySaveData", type = TppScriptVars.TYPE_BOOL, value = true, save = false },
+	{ name = "DEBUG_reserveDestroySaveData", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{ name = "permitGameSave", type = TppScriptVars.TYPE_BOOL, value = true, save = false },
 	{ name = "needWaitMissionInitialize", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{ name = "enableResultPause", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
@@ -497,6 +498,13 @@ e.DeclareGVarsTable = {
 	},
 	{ name = "isHero", type = TppScriptVars.TYPE_BOOL, value = false, save = true, category = TppScriptVars.CATEGORY_GAME_GLOBAL },
 	{
+		name = "str_quietReunionMissionCount",
+		type = TppScriptVars.TYPE_UINT8,
+		value = 0,
+		save = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	{
 		name = "firstRescueMillerClearedGMP",
 		type = TppScriptVars.TYPE_UINT32,
 		value = 0,
@@ -906,6 +914,13 @@ e.DeclareGVarsTable = {
 		value = false,
 		save = true,
 		category = TppScriptVars.CATEGORY_MB_MANAGEMENT,
+	},
+	{
+		name = "mb_isRecoverd_dlc_staffs",
+		type = TppScriptVars.TYPE_BOOL,
+		value = true,
+		save = true,
+		category = TppScriptVars.CATEGORY_GAME_GLOBAL,
 	},
 	{
 		name = "pck_missionPackLabelName",
