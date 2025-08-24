@@ -94,6 +94,26 @@ function e.ForceChangePlayerToSnake(e)
 	end
 	Player.SetItemLevel(TppEquip.EQP_SUIT, vars.sortiePrepPlayerSnakeSuitLevel)
 end
+function e.ForceChangePlayerFromOcelot()
+	if e.IsCurrentPlayerOcelot() then
+		if vars.sortiePrepPlayerType == PlayerType.SNAKE or vars.sortiePrepPlayerType == PlayerType.AVATAR then
+			vars.playerPartsType = vars.sortiePrepPlayerSnakePartsType
+			vars.playerCamoType = vars.sortiePrepPlayerSnakeCamoType
+			vars.playerFaceEquipId = vars.sortiePrepPlayerSnakeFaceEquipId
+			Player.SetItemLevel(TppEquip.EQP_SUIT, vars.sortiePrepPlayerSnakeSuitLevel)
+		elseif vars.sortiePrepPlayerType == PlayerType.DD_MALE or vars.sortiePrepPlayerType == PlayerType.DD_FEMALE then
+			vars.playerPartsType = vars.sortiePrepPlayerDDPartsType
+			vars.playerCamoType = vars.sortiePrepPlayerDDCamoType
+			vars.playerFaceEquipId = vars.sortiePrepPlayerDDFaceEquipId
+			Player.SetItemLevel(TppEquip.EQP_SUIT, vars.sortiePrepPlayerDDSuitLevel)
+		end
+		vars.playerStaffHeader = vars.sortiePrepPlayerStaffHeader
+		vars.playerStaffSeed = vars.sortiePrepPlayerStaffSeed
+		vars.playerType = vars.sortiePrepPlayerType
+		vars.playerFaceId = vars.sortiePrepPlayerFaceId
+		Player.ResetDirtyEffect()
+	end
+end
 function e.CheckRotationSetting(a)
 	if not t(a) then
 		return
@@ -3189,5 +3209,8 @@ function e.Refresh(e)
 		Player.ResetDirtyEffect()
 	end
 	vars.passageSecondsSinceOutMB = 0
+end
+function e.IsCurrentPlayerOcelot()
+	return vars.playerType == PlayerType.OCELOT
 end
 return e

@@ -45,8 +45,8 @@ s[10010] = function(p)
 				nrs_p21_010410_0001 = "/Assets/tpp/parts/chara/nrs/nrs0_main0_def_v00.parts",
 				nrs_p21_010410_0002 = "/Assets/tpp/parts/chara/nrs/nrs0_main0_def_v00.parts",
 			}
-			for s, p in pairs(s) do
-				TppHostage2.SetUniquePartsPath({ gameObjectType = "TppHostageUnique2", locatorName = s, parts = p })
+			for p, s in pairs(s) do
+				TppHostage2.SetUniquePartsPath({ gameObjectType = "TppHostageUnique2", locatorName = p, parts = s })
 			end
 			local s = { ish_p21_010410_0000 = "/Assets/tpp/parts/chara/ish/ish0_main0_def_v00.parts" }
 			for p, s in pairs(s) do
@@ -186,12 +186,12 @@ s[10041] = function(p)
 	TppPackList.AddDefaultMissionAreaPack(p)
 	do
 		local a = "sol_vip_field"
-		local s = "sol_vip_village"
-		local p = "sol_vip_enemyBase"
+		local p = "sol_vip_village"
+		local s = "sol_vip_enemyBase"
 		local s = {
 			{ type = "enemy", name = a, faceId = 637, bodyId = 268 },
-			{ type = "enemy", name = s, faceId = 638, bodyId = 269 },
-			{ type = "enemy", name = p, faceId = 639, bodyId = 270 },
+			{ type = "enemy", name = p, faceId = 638, bodyId = 269 },
+			{ type = "enemy", name = s, faceId = 639, bodyId = 270 },
 		}
 		TppEneFova.AddUniqueSettingPackage(s)
 	end
@@ -227,11 +227,11 @@ s[10052] = function(p)
 	TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.EAST_WAV)
 	TppPackList.AddDefaultMissionAreaPack(p)
 	do
-		local s = "hos_target_0000"
-		local p = "sol_s10052_transportVehicle_0000"
-		local s = { { type = "hostage", name = s, faceId = 607, bodyId = 200 }, {
+		local p = "hos_target_0000"
+		local s = "sol_s10052_transportVehicle_0000"
+		local s = { { type = "hostage", name = p, faceId = 607, bodyId = 200 }, {
 			type = "enemy",
-			name = p,
+			name = s,
 			faceId = 608,
 			bodyId = 263,
 		} }
@@ -308,19 +308,19 @@ s[10086] = function(p)
 	TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.MAFR_HOSTAGE_WOMAN)
 	TppPackList.AddDefaultMissionAreaPack(p)
 	do
-		local p = "hos_mis_0000"
-		local s = "hos_mis_0001"
-		local e = "hos_mis_0002"
-		local t = "hos_mis_0003"
-		local i = "sol_interpreter"
-		local a = "sol_interrogator"
+		local s = "hos_mis_0000"
+		local a = "hos_mis_0001"
+		local p = "hos_mis_0002"
+		local e = "hos_mis_0003"
+		local t = "sol_interpreter"
+		local i = "sol_interrogator"
 		local s = {
-			{ type = "hostage", name = p, faceId = 610, bodyId = 111 },
-			{ type = "hostage", name = s, faceId = 611, bodyId = 111 },
-			{ type = "hostage", name = e, faceId = 612, bodyId = 111 },
-			{ type = "hostage", name = t, faceId = "female", bodyId = 113 },
-			{ type = "enemy", name = i, faceId = 609, bodyId = 255 },
-			{ type = "enemy", name = a, faceId = 629, bodyId = TppEnemyBodyId.pfs0_unq_v155 },
+			{ type = "hostage", name = s, faceId = 610, bodyId = 111 },
+			{ type = "hostage", name = a, faceId = 611, bodyId = 111 },
+			{ type = "hostage", name = p, faceId = 612, bodyId = 111 },
+			{ type = "hostage", name = e, faceId = "female", bodyId = 113 },
+			{ type = "enemy", name = t, faceId = 609, bodyId = 255 },
+			{ type = "enemy", name = i, faceId = 629, bodyId = TppEnemyBodyId.pfs0_unq_v155 },
 		}
 		TppEneFova.AddUniqueSettingPackage(s)
 	end
@@ -354,11 +354,11 @@ s[10121] = function(p)
 	TppPackList.AddMissionPack(TppHelicopter.GetEnemyColoringPack(TppDefine.ENEMY_HELI_COLORING_TYPE.BLACK))
 	TppPackList.AddDefaultMissionAreaPack(p)
 	do
-		local s = "sol_pfCamp_vip_0001"
-		local p = "sol_pfCamp_vip_guard"
+		local p = "sol_pfCamp_vip_0001"
+		local s = "sol_pfCamp_vip_guard"
 		local s = {
-			{ type = "enemy", name = s, faceId = 617, bodyId = TppEnemyBodyId.pfa0_v00_b },
-			{ type = "enemy", name = p, faceId = 618, bodyId = 254 },
+			{ type = "enemy", name = p, faceId = 617, bodyId = TppEnemyBodyId.pfa0_v00_b },
+			{ type = "enemy", name = s, faceId = 618, bodyId = 254 },
 		}
 		TppEneFova.AddUniqueSettingPackage(s)
 	end
@@ -393,18 +393,18 @@ s[10100] = function(p)
 	do
 		local o = "sol_target_0000"
 		local s = EnemyFova.INVALID_FOVA_VALUE
-		local t = "hos_diamond_0000"
-		local i = "hos_diamond_0001"
-		local e = "hos_diamond_0002"
-		local p = "hos_diamond_0003"
-		local a = "hos_diamond_0004"
+		local e = "hos_diamond_0000"
+		local t = "hos_diamond_0001"
+		local a = "hos_diamond_0002"
+		local i = "hos_diamond_0003"
+		local p = "hos_diamond_0004"
 		local s = {
 			{ type = "enemy", name = o, faceId = 616, bodyId = 251 },
-			{ type = "hostage", name = t, faceId = s, bodyId = 130 },
-			{ type = "hostage", name = i, faceId = s, bodyId = 131 },
-			{ type = "hostage", name = e, faceId = s, bodyId = 132 },
-			{ type = "hostage", name = p, faceId = s, bodyId = 133 },
-			{ type = "hostage", name = a, faceId = s, bodyId = 134 },
+			{ type = "hostage", name = e, faceId = s, bodyId = 130 },
+			{ type = "hostage", name = t, faceId = s, bodyId = 131 },
+			{ type = "hostage", name = a, faceId = s, bodyId = 132 },
+			{ type = "hostage", name = i, faceId = s, bodyId = 133 },
+			{ type = "hostage", name = p, faceId = s, bodyId = 134 },
 		}
 		TppEneFova.AddUniqueSettingPackage(s)
 	end
@@ -481,19 +481,19 @@ s[10115] = function(p)
 	TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.MTBS_DECOY)
 	TppPackList.AddFOBLayoutPack(p)
 	do
-		local t = "hos_s10115_0000"
-		local e = "hos_s10115_0001"
-		local i = "hos_s10115_0002"
-		local p = "hos_s10115_0003"
-		local a = "hos_s10115_0004"
-		local s = "hos_s10115_0005"
+		local a = "hos_s10115_0000"
+		local t = "hos_s10115_0001"
+		local e = "hos_s10115_0002"
+		local i = "hos_s10115_0003"
+		local s = "hos_s10115_0004"
+		local p = "hos_s10115_0005"
 		local s = {
+			{ type = "hostage", name = a, faceId = "dd", bodyId = 143 },
 			{ type = "hostage", name = t, faceId = "dd", bodyId = 143 },
 			{ type = "hostage", name = e, faceId = "dd", bodyId = 143 },
 			{ type = "hostage", name = i, faceId = "dd", bodyId = 143 },
-			{ type = "hostage", name = p, faceId = "dd", bodyId = 143 },
-			{ type = "hostage", name = a, faceId = "dd", bodyId = 143 },
 			{ type = "hostage", name = s, faceId = "dd", bodyId = 143 },
+			{ type = "hostage", name = p, faceId = "dd", bodyId = 143 },
 		}
 		TppEneFova.AddUniqueSettingPackage(s)
 	end
@@ -519,12 +519,12 @@ s[10085] = function(p)
 	TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.WEST_LV)
 	TppPackList.AddDefaultMissionAreaPack(p)
 	do
-		local p = "hos_target_0000"
-		local s = "hos_target_0001"
-		local p = { { type = "hostage", name = p, faceId = 642, bodyId = 111 } }
-		local s = { { type = "hostage", name = s, faceId = 643, bodyId = 113 } }
-		TppEneFova.AddUniqueSettingPackage(p)
+		local s = "hos_target_0000"
+		local p = "hos_target_0001"
+		local s = { { type = "hostage", name = s, faceId = 642, bodyId = 111 } }
+		local p = { { type = "hostage", name = p, faceId = 643, bodyId = 113 } }
 		TppEneFova.AddUniqueSettingPackage(s)
+		TppEneFova.AddUniqueSettingPackage(p)
 	end
 end
 s[10211] = function(p)
@@ -775,9 +775,9 @@ s[30050] = function(p)
 				end
 			end
 		end
-		local s = TppDemo.IsUseMBDemoStage(TppDemo.GetMBDemoName())
+		local a = TppDemo.IsUseMBDemoStage(TppDemo.GetMBDemoName())
 		if TppPackList.IsMissionPackLabel("DemoStage") then
-			s = true
+			a = true
 			TppDemo.SetNextMBDemo(nil)
 		end
 		if TppPackList.IsMissionPackLabel("BattleHanger") or TppDemo.IsBattleHangerDemo(TppDemo.GetMBDemoName()) then
@@ -787,19 +787,19 @@ s[30050] = function(p)
 			)
 			TppPackList.AddMissionPack(s)
 			do
-				local s = 378
+				local p = 378
 				if TppStory.HueyHasKantokuGrass() then
-					s = 379
+					p = 379
 				end
-				local p = {}
+				local s = {}
 				table.insert(
-					p,
-					{ type = "hostage", name = "TppHuey2GameObjectLocator", faceId = EnemyFova.INVALID_FOVA_VALUE, bodyId = s }
+					s,
+					{ type = "hostage", name = "TppHuey2GameObjectLocator", faceId = EnemyFova.INVALID_FOVA_VALUE, bodyId = p }
 				)
-				TppEneFova.AddUniqueSettingPackage(p)
+				TppEneFova.AddUniqueSettingPackage(s)
 			end
 			gvars.f30050_missionPackIndex = 2
-		elseif s then
+		elseif a then
 			TppPackList.AddMissionPack("/Assets/tpp/pack/mission2/free/f30050/f30051.fpk")
 			TppPackList.SetMissionPackLabelName("DemoStage")
 			gvars.f30050_missionPackIndex = 1
@@ -924,15 +924,24 @@ s[65060] = function(p)
 end
 s[65415] = { "/Assets/tpp/pack/show/tgs_2014/s65415/s65415_area.fpk" }
 s[65416] = { "/Assets/tpp/pack/show/tgs_2014/s65416/s65416_area.fpk" }
-s[50050] = function(s)
-	local p = TppEnemy.GetDDSuit()
+s[50050] = function(a)
+	local i = TppEnemy.GetDDSuit()
 	if TppMotherBaseManagement.GetMbsClusterSecurityIsEquipSwimSuit() then
-		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_SWIM_SUIT)
-	elseif p == TppEnemy.FOB_DD_SUIT_SNEAKING then
+		local p = TppMotherBaseManagement.GetMbsClusterSecuritySwimSuitInfo()
+		local s
+		if p == TppMotherBaseManagementConst.SWIM_SUIT_TYPE_1 then
+			s = TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_SWIM_SUIT
+		elseif p == TppMotherBaseManagementConst.SWIM_SUIT_TYPE_2 then
+			s = TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_SWIM_SUIT2
+		elseif p == TppMotherBaseManagementConst.SWIM_SUIT_TYPE_3 then
+			s = TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_SWIM_SUIT3
+		end
+		TppPackList.AddMissionPack(s)
+	elseif i == TppEnemy.FOB_DD_SUIT_SNEAKING then
 		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_SNEAKING)
-	elseif p == TppEnemy.FOB_DD_SUIT_BTRDRS then
+	elseif i == TppEnemy.FOB_DD_SUIT_BTRDRS then
 		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_BTRDRS)
-	elseif p == TppEnemy.FOB_PF_SUIT_ARMOR then
+	elseif i == TppEnemy.FOB_PF_SUIT_ARMOR then
 		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_ARMOR)
 	else
 		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_ATTACKER)
@@ -958,20 +967,20 @@ s[50050] = function(s)
 		TppPackList.AddMissionPack("/Assets/tpp/pack/mission2/online/o50050/o50055_parasite_metal.fpk")
 	end
 	TppPackList.AddMissionPack("/Assets/tpp/pack/mission2/online/o50050/o50050_additional.fpk")
-	TppPackList.AddLocationCommonScriptPack(s)
+	TppPackList.AddLocationCommonScriptPack(a)
 	if TppEnemy.IsSpecialEventFOB() then
 		TppPackList.AddMissionPack("/Assets/tpp/pack/mission2/online/o50050/o50055_area.fpk")
 	else
-		TppPackList.AddDefaultMissionAreaPack(s)
+		TppPackList.AddDefaultMissionAreaPack(a)
 	end
-	TppPackList.AddFOBLayoutPack(s)
+	TppPackList.AddFOBLayoutPack(a)
 end
-function a.GetLocationPackagePath(s)
-	local p = p[s]
-	if p then
+function a.GetLocationPackagePath(a)
+	local s = p[a]
+	if s then
 	end
-	TppLocation.SetBuddyBlock(s)
-	return p
+	TppLocation.SetBuddyBlock(a)
+	return s
 end
 function a.GetMissionPackagePath(p)
 	TppPackList.SetUseDdEmblemFova(p)

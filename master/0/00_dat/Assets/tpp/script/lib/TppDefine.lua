@@ -190,7 +190,7 @@ _.PERSONAL_DATA_SAVE_FILE_NAME = "PERSONAL_DATA"
 _.CATEGORY_MISSION_RESTARTABLE = 2
 _.SAVE_FILE_INFO = {
 	[TppScriptVars.CATEGORY_GAME_GLOBAL] = { version = 107, slot = _.SAVE_SLOT.GLOBAL },
-	[TppScriptVars.CATEGORY_MISSION] = { version = 114, slot = _.SAVE_SLOT.CHECK_POINT },
+	[TppScriptVars.CATEGORY_MISSION] = { version = 115, slot = _.SAVE_SLOT.CHECK_POINT },
 	[TppScriptVars.CATEGORY_RETRY] = { version = 105, slot = _.SAVE_SLOT.RETRY },
 	[TppScriptVars.CATEGORY_MB_MANAGEMENT] = { version = 112, slot = _.SAVE_SLOT.MB_MANAGEMENT },
 	[TppScriptVars.CATEGORY_QUEST] = { version = 104, slot = _.SAVE_SLOT.QUEST },
@@ -582,6 +582,8 @@ _.MISSION_COMMON_PACK = {
 	DD_SOLDIER_ARMOR = "/Assets/tpp/pack/mission2/common/mis_com_dd_soldier_armor.fpk",
 	FOB_HOSTAGE = "/Assets/tpp/pack/mission2/common/mis_com_fob_hostage.fpk",
 	DD_SOLDIER_SWIM_SUIT = "/Assets/tpp/pack/mission2/common/mis_com_dd_soldier_swim_suit.fpk",
+	DD_SOLDIER_SWIM_SUIT2 = "/Assets/tpp/pack/mission2/common/mis_com_dd_soldier_swim_suit2.fpk",
+	DD_SOLDIER_SWIM_SUIT3 = "/Assets/tpp/pack/mission2/common/mis_com_dd_soldier_swim_suit3.fpk",
 	AFGH_DECOY = "/Assets/tpp/pack/collectible/decoy/decoy_svs.fpk",
 	MAFR_DECOY = "/Assets/tpp/pack/collectible/decoy/decoy_pf.fpk",
 	MTBS_DECOY = "/Assets/tpp/pack/collectible/decoy/decoy_fob.fpk",

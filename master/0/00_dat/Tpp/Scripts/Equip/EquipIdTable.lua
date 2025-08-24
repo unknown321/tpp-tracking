@@ -4224,5 +4224,29 @@ TppEquip.ReloadEquipIdTable({
 		"/Assets/tpp/parts/weapon/mis/ms03_main0_def_v00.parts",
 		"/Assets/tpp/pack/collectible/primary/EQP_WP_Com_ms_010.fpk",
 	},
+	{
+		TppEquip.EQP_SWP_WormholePortal_G01,
+		TppEquip.EQP_TYPE_Placed,
+		TppEquip.SWP_WormholePortal_G01,
+		TppEquip.EQP_BLOCK_COMMON,
+		"/Assets/tpp/parts/weapon/put/pt01_main1_def_v00.parts",
+		"",
+	},
+	{
+		TppEquip.EQP_SWP_WormholePortal_G02,
+		TppEquip.EQP_TYPE_Placed,
+		TppEquip.SWP_WormholePortal_G02,
+		TppEquip.EQP_BLOCK_COMMON,
+		"/Assets/tpp/parts/weapon/put/pt01_main1_def_v00.parts",
+		"",
+	},
+	{
+		TppEquip.EQP_SWP_WormholePortal_G03,
+		TppEquip.EQP_TYPE_Placed,
+		TppEquip.SWP_WormholePortal_G03,
+		TppEquip.EQP_BLOCK_COMMON,
+		"/Assets/tpp/parts/weapon/put/pt01_main1_def_v00.parts",
+		"",
+	},
 })
 return this

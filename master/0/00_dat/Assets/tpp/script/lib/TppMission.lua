@@ -2226,6 +2226,7 @@ function e.GetNextMissionCodeForEmergency()
 	return (mvars.mis_emergencyMissionCode or gvars.mis_nextMissionCodeForEmergency)
 end
 function e.OnAbortMissionPreparation()
+	TppPlayer.ForceChangePlayerFromOcelot()
 	e.SetNextMissionCodeForMissionClear(u)
 	gvars.heli_missionStartRoute = 0
 end

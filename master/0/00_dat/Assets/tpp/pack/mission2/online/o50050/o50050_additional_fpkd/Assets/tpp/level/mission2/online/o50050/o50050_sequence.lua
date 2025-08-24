@@ -252,6 +252,31 @@ this.nakedCamo = {
 	PlayerCamoType.SWIMWEAR_C46,
 	PlayerCamoType.SWIMWEAR_C48,
 	PlayerCamoType.SWIMWEAR_C53,
+
+	PlayerCamoType.SWIMWEAR_G_C00,
+	PlayerCamoType.SWIMWEAR_G_C01,
+	PlayerCamoType.SWIMWEAR_G_C02,
+	PlayerCamoType.SWIMWEAR_G_C03,
+	PlayerCamoType.SWIMWEAR_G_C05,
+	PlayerCamoType.SWIMWEAR_G_C06,
+	PlayerCamoType.SWIMWEAR_G_C38,
+	PlayerCamoType.SWIMWEAR_G_C39,
+	PlayerCamoType.SWIMWEAR_G_C44,
+	PlayerCamoType.SWIMWEAR_G_C46,
+	PlayerCamoType.SWIMWEAR_G_C48,
+	PlayerCamoType.SWIMWEAR_G_C53,
+	PlayerCamoType.SWIMWEAR_H_C00,
+	PlayerCamoType.SWIMWEAR_H_C01,
+	PlayerCamoType.SWIMWEAR_H_C02,
+	PlayerCamoType.SWIMWEAR_H_C03,
+	PlayerCamoType.SWIMWEAR_H_C05,
+	PlayerCamoType.SWIMWEAR_H_C06,
+	PlayerCamoType.SWIMWEAR_H_C38,
+	PlayerCamoType.SWIMWEAR_H_C39,
+	PlayerCamoType.SWIMWEAR_H_C44,
+	PlayerCamoType.SWIMWEAR_H_C46,
+	PlayerCamoType.SWIMWEAR_H_C48,
+	PlayerCamoType.SWIMWEAR_H_C53,
 }
 
 local ESP_SUBTRACTION_RATE = {
@@ -5514,9 +5539,11 @@ this.CheckEventTaskOnGoal = function()
 		FobUI.UpdateEventTask({ detectType = 69, diff = 1 })
 	end
 
-	local equipGrade = Player.GetGradeMaxInEquipment()
-	if equipGrade then
-		FobUI.UpdateEventTask({ detectType = 70, substitute = equipGrade })
+	if not TppPlayer.IsCurrentPlayerOcelot() then
+		local equipGrade = Player.GetGradeMaxInEquipment()
+		if equipGrade then
+			FobUI.UpdateEventTask({ detectType = 70, substitute = equipGrade })
+		end
 	end
 
 	FobUI.UpdateEventTask({ detectType = 71, substitute = svars.alarmCount })
@@ -8709,7 +8736,6 @@ sequences.Seq_Game_StartFromHeli = {
 					func = function(radioGroupName)
 						Fox.Log("#### f5000_rtrg0020 is finish ####" .. tostring(radioGroupName))
 						this.StartTelopMissionObjective(true)
-						this.TimerStartTimeLimit("timeLimitforSneaking")
 					end,
 				},
 				{
@@ -8718,11 +8744,17 @@ sequences.Seq_Game_StartFromHeli = {
 					func = function(radioGroupName)
 						Fox.Log("#### f1000_oprg1100 is finish ####" .. tostring(radioGroupName))
 						this.StartTelopMissionObjective(true)
-						this.TimerStartTimeLimit("timeLimitforSneaking")
 					end,
 				},
 			},
 			Timer = {
+				{
+					msg = "Finish",
+					sender = "TimerStartLimitForSneaking",
+					func = function()
+						this.TimerStartTimeLimit("timeLimitforSneaking")
+					end,
+				},
 				{
 					msg = "Finish",
 					sender = "TimerStartDelay",
@@ -8742,15 +8774,27 @@ sequences.Seq_Game_StartFromHeli = {
 								local radioGroups = o50050_radio.GetHostMissionStart(svars.fobIsThereRecoverStaff)
 								Fox.Log("#### radioGroups ####")
 
-								TppMission.UpdateObjective({
-									radio = {
-										radioGroups = radioGroups,
-									},
-									objectives = {
-										"clst_goalOfCurrentCluster_test",
-									},
-								})
+								if radioGroups then
+									TppMission.UpdateObjective({
+										radio = {
+											radioGroups = radioGroups,
+										},
+										objectives = {
+											"clst_goalOfCurrentCluster_test",
+										},
+									})
+								else
+									TppMission.UpdateObjective({
+										objectives = {
+											"clst_goalOfCurrentCluster_test",
+										},
+									})
+
+									this.StartTelopMissionObjective(true)
+								end
 							end
+
+							GkEventTimerManager.Start("TimerStartLimitForSneaking", this.HELICOPTER_DOOR_OPEN_TIME_SEC)
 						end
 						this.SwitchExecByIsGameMode(function()
 							fnc_vsCommon()
@@ -8827,7 +8871,7 @@ sequences.Seq_Game_StartFromHeli = {
 		local fnc_vsCommon = function()
 			svars.timeLimitforSneaking = this.GetTimeLimit()
 
-			if not TppEnemy.IsParasiteMetalEventFOB() then
+			if (not TppEnemy.IsParasiteMetalEventFOB()) and (not TppPlayer.IsCurrentPlayerOcelot()) then
 				if svars.fobIsThereRecoverStaff == true then
 					TppRadio.SetOptionalRadio("Set_f5000_rtrg0020")
 				else
@@ -9814,10 +9858,12 @@ sequences.Seq_Game_FOB = {
 				TppUiStatusManager.ClearStatus("PauseMenu")
 
 				local vsModeHostfunc = function()
-					if svars.fobIsThereRecoverStaff == true then
-						TppRadio.SetOptionalRadio("Set_f5000_rtrg0020")
-					else
-						TppRadio.SetOptionalRadio("Set_f5000_rtrg0010")
+					if not TppPlayer.IsCurrentPlayerOcelot() then
+						if svars.fobIsThereRecoverStaff == true then
+							TppRadio.SetOptionalRadio("Set_f5000_rtrg0020")
+						else
+							TppRadio.SetOptionalRadio("Set_f5000_rtrg0010")
+						end
 					end
 
 					TppUI.ShowAnnounceLog("fobRivalArrive")
@@ -9853,7 +9899,9 @@ sequences.Seq_Game_FOB = {
 					if svars.fobIsThereRecoverStaff == true then
 						TppRadio.SetOptionalRadio("Set_f5000_rtrg0040")
 					else
-						TppRadio.SetOptionalRadio("Set_f5000_rtrg0030")
+						if TppPlayer.IsCurrentPlayerOcelot() then
+							TppRadio.SetOptionalRadio("Set_f5000_rtrg0030")
+						end
 					end
 
 					o50050_radio.ClientMissionStart(svars.fobIsThereRecoverStaff)
