@@ -2490,6 +2490,7 @@ function e.MakeFultonRecoverSucceedRatio(t, a, p, r, l, i)
 		l,
 		nil,
 		nil,
+		nil,
 		e.GetSoldierFultonSucceedRatio,
 		e.GetVolginFultonSucceedRatio,
 		e.GetDefaultSucceedRatio,
