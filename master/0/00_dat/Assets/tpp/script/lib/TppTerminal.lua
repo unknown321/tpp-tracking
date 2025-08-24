@@ -1,9 +1,9 @@
 local e = {}
-local a = Tpp.IsTypeTable
+local o = Tpp.IsTypeTable
 local i = GameObject.SendCommand
 local t = GameObject.GetGameObjectId
 local t = GameObject.NULL_ID
-local E = 500
+local u = 500
 local s = 1e3
 local r = 4
 e.GMP_POSTER = 500
@@ -56,7 +56,7 @@ e.parasiteSquadFultonResouceId = {
 }
 e.MOTHER_BASE_SECTION_LIST = { "Combat", "BaseDev", "Spy", "Medical", "Security", "Hospital", "Prison", "Separation" }
 local t = TppMotherBaseManagementConst or {}
-local u = {
+local E = {
 	Combat = { DispatchSoldier = t.SECTION_FUNC_ID_COMBAT_DEPLOY, DispatchFobDefence = t.SECTION_FUNC_ID_COMBAT_DEFENCE },
 	Develop = {
 		Weapon = t.SECTION_FUNC_ID_DEVELOP_WEAPON,
@@ -339,7 +339,7 @@ function e.UpdateGMP(e)
 	if not TppMotherBaseManagement.AddGmp then
 		return
 	end
-	if not a(e) then
+	if not o(e) then
 		return
 	end
 	local t = e.gmp
@@ -363,7 +363,7 @@ function e.CorrectGMP(e)
 	if not TppMotherBaseManagement.CorrectGmp then
 		return
 	end
-	if not a(e) then
+	if not o(e) then
 		return
 	end
 	local e = e.gmp
@@ -372,12 +372,12 @@ function e.CorrectGMP(e)
 	end
 	return TppMotherBaseManagement.CorrectGmp({ gmp = e })
 end
-function e.ClearStaffNewIcon(t, n, a, e)
+function e.ClearStaffNewIcon(a, n, e, t)
 	if TppMission.IsEmergencyMission() then
 		return
 	end
-	if t or n then
-		if (not a) and not e then
+	if a or n then
+		if (not e) and not t then
 			TppMotherBaseManagement.ClearAllStaffNew()
 		end
 	end
@@ -477,9 +477,9 @@ function e.AddVolunteerStaffs()
 	if e then
 		return
 	end
-	local e = svars.killCount
-	local t = (svars.scoreTime / 1e3) / 60
-	local e = { missionId = vars.missionCode, clearTimeMinute = t, killCount = e }
+	local t = svars.killCount
+	local e = (svars.scoreTime / 1e3) / 60
+	local e = { missionId = vars.missionCode, clearTimeMinute = e, killCount = t }
 	if (vars.missionCode ~= 30010) and (vars.missionCode ~= 30020) then
 		TppMotherBaseManagement.AddVolunteerStaffs(e)
 	else
@@ -622,7 +622,7 @@ function e.GetPandemicBingoCount()
 	local e = gvars.trm_currentPandemicBingoCount / e
 	return gvars.trm_currentPandemicBingoCount, t, e
 end
-local a = {
+local n = {
 	GROUP_A = {
 		storySequence = TppDefine.STORY_SEQUENCE.CLEARD_TO_MATHER_BASE,
 		missionList = { 10033, 10043, 10036 },
@@ -676,18 +676,18 @@ function e.AcquirePrivilegeStaff()
 	if (vars.missionCode == 10030) or (TppMission.IsFOBMission(vars.missionCode)) then
 		return
 	end
-	local n = TppStory.GetCurrentStorySequence()
-	for a, t in pairs(a) do
-		if t.storySequence <= n then
-			local n = true
-			local a = t.missionList
-			if a then
-				local e = TppStory.GetClearedMissionCount(a)
+	local a = TppStory.GetCurrentStorySequence()
+	for n, t in pairs(n) do
+		if t.storySequence <= a then
+			local a = true
+			local n = t.missionList
+			if n then
+				local e = TppStory.GetClearedMissionCount(n)
 				if e < t.proceedCount then
-					n = false
+					a = false
 				end
 			end
-			if n then
+			if a then
 				for n, t in ipairs(t.privilegeNameList) do
 					e.AcquireGzPrivilege(t, e._AcquireGzPrivilegeStaff)
 				end
@@ -766,22 +766,32 @@ function e.AcquireDlcItemKeyItem()
 		TppMotherBaseManagement.DirectAddDataBase({ dataBaseId = e, isNew = true })
 		return true
 	end
+	local function r(n, e)
+		local e = t[e]
+		TppMotherBaseManagement.DirectRemoveDataBase({ dataBaseId = e })
+		return true
+	end
 	for n, t in pairs(t) do
 		local t = DlcItem[n]
 		if t then
+			e.EraseDlcItem(t, r, n)
 			e.AcquireDlcItem(t, a, n)
 		end
 	end
 end
 function e.AcquireDlcItemEmblem()
 	local t = { EMBLEM_FRONT_VENOM_SNAKE = "front85" }
-	local function n(t, e)
+	local function a(t, e)
 		return TppEmblem.Add(e)
 	end
-	for t, a in pairs(t) do
+	local function r(t, e)
+		return TppEmblem.Remove(e)
+	end
+	for t, n in pairs(t) do
 		local t = DlcItem[t]
 		if t then
-			e.AcquireDlcItem(t, n, a)
+			e.EraseDlcItem(t, r, n)
+			e.AcquireDlcItem(t, a, n)
 		end
 	end
 end
@@ -815,6 +825,21 @@ function e.AcquireDlcItem(e, t, n)
 		TppUiCommand.SetDlcAcquired(e)
 	end
 end
+function e.EraseDlcItem(e, t, n)
+	if not TppUiCommand.CheckDlcAcquiredFlag(e) then
+		return
+	end
+	if TppUiCommand.CheckDlcFlag(e) then
+		return
+	end
+	if not Tpp.IsTypeFunc(t) then
+		return
+	end
+	local t = t(e, n)
+	if t then
+		TppUiCommand.ResetDlcAcquired(e)
+	end
+end
 local n = {
 	[t.STAFF_UNIQUE_TYPE_ID_OCELOT] = TppDefine.STORY_SEQUENCE.CLEARD_TO_MATHER_BASE,
 	[t.STAFF_UNIQUE_TYPE_ID_MILLER] = TppDefine.STORY_SEQUENCE.CLEARD_TO_MATHER_BASE,
@@ -822,10 +847,10 @@ local n = {
 	[t.STAFF_UNIQUE_TYPE_ID_CODE_TALKER] = TppDefine.STORY_SEQUENCE.CLEARD_METALLIC_ARCHAEA,
 }
 function e.AddUniqueCharactor()
-	local a = TppStory.GetCurrentStorySequence()
-	for t, e in pairs(n) do
-		if e <= a then
-			local e = TppMotherBaseManagement.GenerateStaffParameter({ staffType = "Unique", uniqueTypeId = t })
+	local e = TppStory.GetCurrentStorySequence()
+	for n, t in pairs(n) do
+		if t <= e then
+			local e = TppMotherBaseManagement.GenerateStaffParameter({ staffType = "Unique", uniqueTypeId = n })
 			if not TppMotherBaseManagement.IsExistStaff({ staffId = e }) then
 				TppMotherBaseManagement.DirectAddStaff({ staffId = e })
 			end
@@ -1044,9 +1069,9 @@ function e.Messages()
 			},
 			{
 				msg = "FultonInfo",
-				func = function(n, t)
+				func = function(a, n, t)
 					if not TppMission.IsFOBMission(vars.missionCode) then
-						e.OnFultonInfoMessage(n, t)
+						e.OnFultonInfoMessage(a, n, t)
 					end
 				end,
 				option = { isExecMissionClear = true, isExecDemoPlaying = true },
@@ -1058,8 +1083,8 @@ function e.Messages()
 		MotherBaseManagement = {
 			{
 				msg = "AssignedStaff",
-				func = function(n, e)
-					if (n == t.SECTION_SEPARATION) and (e > 0) then
+				func = function(e, n)
+					if (e == t.SECTION_SEPARATION) and (n > 0) then
 						gvars.trm_doneIsolateByManual = true
 						if
 							(
@@ -1105,18 +1130,18 @@ function e.Messages()
 		},
 	})
 end
-function e.OnMessage(n, t, a, r, M, o, _)
-	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, n, t, a, r, M, o, _)
+function e.OnMessage(_, M, n, t, a, r, o)
+	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, _, M, n, t, a, r, o)
 end
-function e.OnFultonMessage(e, n, a, t)
+function e.OnFultonMessage(e, t, a, n)
 	mvars.trm_fultonInfo = mvars.trm_fultonInfo or {}
-	mvars.trm_fultonInfo[e] = { e, n, a, t }
+	mvars.trm_fultonInfo[e] = { e, t, a, n }
 end
-function e.OnFultonInfoMessage(n, a)
+function e.OnFultonInfoMessage(n, a, r)
 	mvars.trm_fultonInfo = mvars.trm_fultonInfo or {}
 	local t = mvars.trm_fultonInfo[n]
 	if t then
-		e.OnFulton(t[1], t[2], t[3], t[4], nil, nil, a)
+		e.OnFulton(t[1], t[2], t[3], t[4], nil, nil, a, r)
 		mvars.trm_fultonInfo[n] = nil
 	end
 	mvars.trm_fultonFaileEndInfo = mvars.trm_fultonFaileEndInfo or {}
@@ -1240,50 +1265,51 @@ function e.SetUpBuddyMBDVCMenu()
 		end
 	end
 end
-function e.DoFuncByFultonTypeSwitch(e, a, r, t, o, n, c, d, p, S, T, _, M, i, u, E, s)
+function e.DoFuncByFultonTypeSwitch(e, a, n, r, o, t, S, c, T, p, s, _, M, i, E, u, d, l)
 	if Tpp.IsSoldier(e) then
-		return c(e, a, r, t, o, n)
+		return c(e, a, n, r, o, t)
 	elseif Tpp.IsVolgin(e) then
-		return d(e)
+		return T(e)
 	elseif Tpp.IsHostage(e) then
-		return p(e, a, r, t, o, n)
+		return p(e, a, n, r, o, t)
 	elseif Tpp.IsVehicle(e) then
-		return S(e, a, r, t, nil, n)
+		return s(e, a, n, r, nil, t)
 	elseif Tpp.IsFultonContainer(e) then
-		return T(e, a, r, t, nil, n)
+		return _(e, a, n, r, nil, t, S)
 	elseif Tpp.IsFultonableGimmick(e) then
-		return _(e, a, r, t, nil, n)
+		return M(e, a, n, r, nil, t)
 	elseif Tpp.IsEnemyWalkerGear(e) then
-		return i(e, a, r, t, nil, n)
+		return E(e, a, n, r, nil, t)
 	elseif Tpp.IsAnimal(e) then
-		return u(e, a, r, t, nil, n)
+		return u(e, a, n, r, nil, t)
 	elseif Tpp.IsBossQuiet(e) then
-		return E(e, a, r, t, o, n)
+		return d(e, a, n, r, o, t)
 	elseif Tpp.IsParasiteSquad(e) then
-		return s(e, a, r, t, nil, n)
+		return l(e, a, n, r, nil, t)
 	else
 		local o = Tpp.GetBuddyTypeFromGameObjectId(e)
 		if o then
-			return M(e, a, r, t, o, n)
+			return i(e, a, n, r, o, t)
 		end
 	end
 end
-function e.OnFulton(t, a, n, o, M, _, r)
+function e.OnFulton(t, a, o, n, M, _, r, i)
 	if _ then
 		mvars.trm_needHeliSoundOnAddStaffsFromTempBuffer = true
 	end
 	TppEnemy.SetRecovered(t)
-	TppEnemy.ExecuteOnRecoveredCallback(t, a, n, o, M, _, r)
+	TppEnemy.ExecuteOnRecoveredCallback(t, a, o, n, M, _, r)
 	if Tpp.IsLocalPlayer(r) then
-		TppEnemy._OnFulton(t, a, n, o)
+		TppEnemy._OnFulton(t, a, o, n)
 	end
 	e.DoFuncByFultonTypeSwitch(
 		t,
 		a,
-		n,
 		o,
+		n,
 		M,
 		r,
+		i,
 		e.OnFultonSoldier,
 		e.OnFultonVolgin,
 		e.OnFultonHostage,
@@ -1319,7 +1345,7 @@ function e.GetRecoveredHostageCount()
 end
 function e.GetFultonCountKeyItem()
 	local n = gvars.trm_recoveredSoldierCount + gvars.trm_recoveredHostageCount
-	if n >= E then
+	if n >= u then
 		e.AcquireKeyItem({ dataBaseId = t.DESIGN_3006, isShowAnnounceLog = true })
 	end
 	if n >= s then
@@ -1359,18 +1385,18 @@ function e.OnFultonVolgin(e)
 	end
 	TppMotherBaseManagement.AddTempCorpse()
 end
-function e.OnFultonHostage(t, n, n, o, r, a)
+function e.OnFultonHostage(t, n, n, r, o, a)
 	local M = TppMotherBaseManagement.GetTempStaffStatusFromGameObject({ gameObjectId = t })
 	local n
-	if o then
-		n = o
+	if r then
+		n = r
 	else
 		n = TppMotherBaseManagement.GetStaffIdFromGameObject({ gameObjectId = t })
 	end
 	if Tpp.IsLocalPlayer(a) then
-		TppHero.OnFultonHostage(t, r)
+		TppHero.OnFultonHostage(t, o)
 		e.IncrementFultonCount()
-		if not r then
+		if not o then
 			e.IncrementRecoveredHostageCount()
 		end
 		PlayRecord.RegistPlayRecord("HOSTAGE_RESCUE")
@@ -1382,32 +1408,36 @@ function e.OnFultonHostage(t, n, n, o, r, a)
 	end
 	e.AddTempStaffFulton({ staffId = n, gameObjectId = t, tempStaffStatus = M, fultonedPlayer = a })
 end
-function e.OnFultonVehicle(a, a, a, t, a, n)
+function e.OnFultonVehicle(a, a, a, n, a, t)
 	if mvars.trm_isSkipAddResourceToTempBuffer then
 		return
 	end
-	e.AddTempResource(t, nil, n)
+	e.AddTempResource(n, nil, t)
 end
-function e.OnFultonContainer(r, n, t, o, o, a)
+function e.OnFultonContainer(o, t, n, M, M, r, a)
 	if mvars.trm_isSkipAddResourceToTempBuffer then
 		return
 	end
 	if TppMission.IsFOBMission(vars.missionCode) then
-		if not e.CheckAddTempBuffer(a) then
+		if not e.CheckAddTempBuffer(r) then
 			return
 		end
-		local e, t, n = MotherBaseConstructConnector.GetContainerResourceId(n, t)
+		local e, t, n = MotherBaseConstructConnector.GetContainerResourceId(t, n)
 		if e == nil then
 			e = 0
 		end
 		TppMotherBaseManagement.AddTempResource({ resourceId = e, count = 1, visual = t, owner = n })
 	else
-		local e = TppGimmick.GetGimmickID(r, n, t)
+		local e = TppGimmick.GetGimmickID(o, t, n)
 		if not e then
 			e = "commFacility_cntn001"
 		end
-		Gimmick.CallFindContainerResourceLog(e)
-		TppMotherBaseManagement.AddTempGimmickResource({ gimmickName = e })
+		local t = false
+		if a == 1 then
+			t = true
+		end
+		Gimmick.CallFindContainerResourceLog(e, t)
+		TppMotherBaseManagement.AddTempGimmickResource({ gimmickName = e, reduceAmount = t })
 	end
 end
 e.GIMMICK_RESOURCE_ID_TABLE = {
@@ -1417,15 +1447,15 @@ e.GIMMICK_RESOURCE_ID_TABLE = {
 	[3601635493] = t.RESOURCE_ID_ANTI_AIR_GATLING_GUN_EAST,
 	[20562949] = t.RESOURCE_ID_ANTI_AIR_GATLING_GUN_WEST,
 }
-function e.OnFultonGimmickCommon(t, t, t, n, t, a)
+function e.OnFultonGimmickCommon(t, t, t, a, t, n)
 	if mvars.trm_isSkipAddResourceToTempBuffer then
 		return
 	end
-	local t = e.GIMMICK_RESOURCE_ID_TABLE[n]
+	local t = e.GIMMICK_RESOURCE_ID_TABLE[a]
 	if t then
-		e.AddTempResource(t, nil, a)
+		e.AddTempResource(t, nil, n)
 	else
-		e.AddTempResource(n, nil, a)
+		e.AddTempResource(a, nil, n)
 	end
 end
 function e.OnFultonBuddy(t, t, t, t, e, t)
@@ -1721,19 +1751,19 @@ function e.AddTempStaffFulton(t)
 		end
 	end
 end
-function e.AddTempResource(a, n, t)
-	local t = t or 0
-	if not e.CheckAddTempBuffer(t) then
+function e.AddTempResource(t, n, a)
+	local a = a or 0
+	if not e.CheckAddTempBuffer(a) then
 		return
 	end
 	local e = n or 1
-	TppMotherBaseManagement.AddTempResource({ resourceId = a, count = e })
+	TppMotherBaseManagement.AddTempResource({ resourceId = t, count = e })
 end
 function e.AddTempDataBase(e)
 	TppMotherBaseManagement.AddTempDataBase({ dataBaseId = e })
 end
-function e.AddTempDataBaseAnimal(t, e)
-	TppMotherBaseManagement.AddTempDataBaseAnimal({ dataBaseId = t, areaName = e })
+function e.AddTempDataBaseAnimal(e, t)
+	TppMotherBaseManagement.AddTempDataBaseAnimal({ dataBaseId = e, areaName = t })
 end
 local n = 4
 local n = 1.67
@@ -2007,8 +2037,8 @@ end
 function e.StartChangeDayTerminalAnnounce()
 	mvars.trm_stopChangeDayTerminalAnnounce = nil
 end
-function e.TerminalVoiceWeatherForecast(t)
-	local n = {
+function e.TerminalVoiceWeatherForecast(n)
+	local t = {
 		[TppDefine.WEATHER.SUNNY] = "VOICE_WEATHER_CLAER",
 		[TppDefine.WEATHER.CLOUDY] = nil,
 		[TppDefine.WEATHER.RAINY] = nil,
@@ -2022,13 +2052,13 @@ function e.TerminalVoiceWeatherForecast(t)
 		[TppDefine.WEATHER.SANDSTORM] = "weather_sandstorm",
 		[TppDefine.WEATHER.FOGGY] = "weather_foggy",
 	}
-	local n = n[t]
-	local t = a[t]
-	if n then
-		e.PlayTerminalVoice(n)
-	end
+	local t = t[n]
+	local n = a[n]
 	if t then
-		TppUI.ShowAnnounceLog(t)
+		e.PlayTerminalVoice(t)
+	end
+	if n then
+		TppUI.ShowAnnounceLog(n)
 	end
 end
 function e.TerminalVoiceOnSunSet()
@@ -2441,8 +2471,8 @@ function e.OnEstablishMissionClear()
 	end
 	e.AddUniqueCharactor()
 end
-function e.AddUniqueVolunteerStaff(n)
-	local a = {
+function e.AddUniqueVolunteerStaff(a)
+	local n = {
 		{ 186 },
 		{ 209 },
 		{ 210, 211 },
@@ -2474,30 +2504,30 @@ function e.AddUniqueVolunteerStaff(n)
 		[10151] = 12,
 		[10280] = 13,
 	}
-	local t = t[n]
+	local t = t[a]
 	if t then
-		local t = a[t]
+		local t = n[t]
 		for n, t in ipairs(t) do
 			e._AddUniqueVolunteerStaff(t)
 		end
 	end
 end
-function e._AddUniqueVolunteerStaff(e, n)
+function e._AddUniqueVolunteerStaff(e, t)
 	if TppMotherBaseManagement.IsExistStaff({ uniqueTypeId = e }) then
 		return
 	end
-	local t = false
-	if n ~= nil then
-		t = true
+	local n = false
+	if t ~= nil then
+		n = true
 	end
 	local e = TppMotherBaseManagement.GenerateStaffParameter({ staffType = "Unique", uniqueTypeId = e })
-	TppMotherBaseManagement.DirectAddStaff({ staffId = e, section = "Wait", isNew = true, specialContract = t })
-	TppUiCommand.ShowBonusPopupStaff(e, n)
+	TppMotherBaseManagement.DirectAddStaff({ staffId = e, section = "Wait", isNew = true, specialContract = n })
+	TppUiCommand.ShowBonusPopupStaff(e, t)
 	return true
 end
-function e.ForceStartBuildPlatform(e, t)
-	local n = TppMotherBaseManagement.GetClusterGrade({ base = "MotherBase", category = e })
-	if n < t then
+function e.ForceStartBuildPlatform(e, n)
+	local t = TppMotherBaseManagement.GetClusterGrade({ base = "MotherBase", category = e })
+	if t < n then
 		local t = TppMotherBaseManagement.GetClusterBuildStatus({ base = "MotherBase", category = e })
 		if t == "Completed" then
 			TppMotherBaseManagement.SetClusterSvars({
@@ -2632,19 +2662,19 @@ e.SectionFuncOpenCondition = {
 }
 function e.ReleaseFunctionOfMbSection()
 	local r = TppMotherBaseManagement.OpenedSectionFunc
-	for n, t in pairs(u) do
-		for o, a in pairs(t) do
+	for a, t in pairs(E) do
+		for o, n in pairs(t) do
 			local t
-			if e.SectionFuncOpenCondition[n] then
-				t = e.SectionFuncOpenCondition[n][o]
+			if e.SectionFuncOpenCondition[a] then
+				t = e.SectionFuncOpenCondition[a][o]
 			end
 			if t == true then
-				r({ sectionFuncId = a, opened = true })
+				r({ sectionFuncId = n, opened = true })
 			elseif t then
-				if t(n) then
-					r({ sectionFuncId = a, opened = true })
+				if t(a) then
+					r({ sectionFuncId = n, opened = true })
 				else
-					r({ sectionFuncId = a, opened = false })
+					r({ sectionFuncId = n, opened = false })
 				end
 			end
 		end
@@ -2731,11 +2761,11 @@ end
 function e.EnableTerminalVoice(e)
 	mvars.trm_voiceDisabled = not e
 end
-function e.PlayTerminalVoice(t, e, n)
+function e.PlayTerminalVoice(n, e, t)
 	if mvars.trm_voiceDisabled and e ~= false then
 		return
 	end
-	TppUiCommand.RequestMbSoundControllerVoice(t, e, n)
+	TppUiCommand.RequestMbSoundControllerVoice(n, e, t)
 end
 function e.OnFultonFailedEnd(e, t, n, a)
 	mvars.trm_fultonFaileEndInfo = mvars.trm_fultonFaileEndInfo or {}
