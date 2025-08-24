@@ -1131,6 +1131,7 @@ function e.RegisterHeliSpacePauseMenuPage(n)
 		GamePauseMenu.ONLINE_NEWS,
 		GamePauseMenu.RECORDS_ITEM,
 		GamePauseMenu.CONTROLS_AND_TIPS_ITEM,
+		GamePauseMenu.TERMS_OF_USE_MENU_ITEM,
 		GamePauseMenu.OPEN_OPTION_MENU,
 		GamePauseMenu.GOTO_MGO,
 	}

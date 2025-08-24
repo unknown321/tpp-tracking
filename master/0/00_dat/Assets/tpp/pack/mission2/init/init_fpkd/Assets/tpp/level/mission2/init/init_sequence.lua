@@ -143,6 +143,8 @@ function this.OnLoad()
 		"Seq_Demo_GoToMgo",
 		"Seq_Demo_CheckCompatibilityPatchDlc",
 		"Seq_Demo_CheckBootTypeMgo",
+		"Seq_Demo_GoToGz",
+		"Seq_Demo_CheckBootGz",
 		"Seq_Demo_Init",
 		"Seq_Demo_StartTitle",
 		"Seq_Demo_ShowKonamiAndFoxLogo",
@@ -1405,23 +1407,21 @@ local function SearchSaveDataExistAreaList()
 
 	local foundAreas = {}
 	for i, area in ipairs(areas) do
-		if area ~= currentArea then
-			Fox.Log("SearchSaveDataExistAreaList : area = " .. tostring(area))
-			TppScriptVars.RequestAreaFileExistence(area, fileName)
-			while TppScriptVars.IsSavingOrLoading() do
-				coroutine.yield()
+		Fox.Log("SearchSaveDataExistAreaList : area = " .. tostring(area))
+		TppScriptVars.RequestAreaFileExistence(area, fileName)
+		while TppScriptVars.IsSavingOrLoading() do
+			coroutine.yield()
+		end
+		local result = TppScriptVars.GetLastResult()
+		if result == TppScriptVars.RESULT_OK then
+			if TppScriptVars.GetFileExistence() then
+				foundAreas[#foundAreas + 1] = area
 			end
-			local result = TppScriptVars.GetLastResult()
-			if result == TppScriptVars.RESULT_OK then
-				if TppScriptVars.GetFileExistence() then
-					foundAreas[#foundAreas + 1] = area
-				end
-			else
-				Fox.Log(
-					"SearchSaveDataExistAreaList : TppScriptVars.GetLastResult is not TppScriptVars.RESULT_OK. result = "
-						.. tostring(result)
-				)
-			end
+		else
+			Fox.Log(
+				"SearchSaveDataExistAreaList : TppScriptVars.GetLastResult is not TppScriptVars.RESULT_OK. result = "
+					.. tostring(result)
+			)
 		end
 	end
 	return foundAreas
@@ -2646,11 +2646,11 @@ sequences.Seq_Demo_CheckCompatibilityPatchDlc = {
 sequences.Seq_Demo_CheckBootTypeMgo = {
 	OnEnter = function(self)
 		if (not TppUiCommand.IsBootTypeMGO()) or Mission.IsBootedFromMgo() then
-			self.GoInitSequence()
+			self.GoCheckBootGz()
 			return
 		else
 			if (not Tpp.IsMaster()) and this.IsWindowsEditor() then
-				self.GoInitSequence()
+				self.GoCheckBootGz()
 				return
 			end
 		end
@@ -2675,7 +2675,44 @@ sequences.Seq_Demo_CheckBootTypeMgo = {
 			return
 		end
 
+		self.GoCheckBootGz()
+	end,
+
+	GoCheckBootGz = function(self)
+		TppSequence.SetNextSequence("Seq_Demo_CheckBootGz")
+	end,
+
+	OnLeave = function(self, nextSequenceName) end,
+}
+
+sequences.Seq_Demo_CheckBootGz = {
+	OnEnter = function(self)
+		if (not Tpp.IsMaster()) and this.IsWindowsEditor() then
+			self.GoInitSequence()
+			return
+		end
+
+		local storySequence = GetSavingSlotStorySequence()
+
+		if IsPlaystationFamily() and (not Mission.IsBootedFromGz()) and (not TppStory.CanPlayMgo(storySequence)) then
+			TppUiCommand.ShowErrorPopup(9030, Popup.TYPE_TWO_BUTTON)
+			return
+		end
+
 		self.GoInitSequence()
+	end,
+
+	OnUpdate = function(self)
+		if TppUiCommand.IsShowPopup() then
+			return
+		end
+
+		local popUpSelect = TppUiCommand.GetPopupSelect()
+		if popUpSelect == Popup.SELECT_OK then
+			TppSequence.SetNextSequence("Seq_Demo_GoToGz")
+		else
+			self.GoInitSequence()
+		end
 	end,
 
 	GoInitSequence = function(self)
@@ -2683,6 +2720,31 @@ sequences.Seq_Demo_CheckBootTypeMgo = {
 	end,
 
 	OnLeave = function(self, nextSequenceName) end,
+}
+
+sequences.Seq_Demo_GoToGz = {
+	OnEnter = function(self)
+		TppUiCommand.SetPopupType("POPUP_TYPE_NO_BUTTON_NO_EFFECT")
+		TppUiCommand.ShowErrorPopup(9031)
+		mvars.init_goingToGzDialogShowTime = 2.0
+	end,
+	OnUpdate = function(self)
+		if mvars.init_goingToGzDialogShowTime then
+			mvars.init_goingToGzDialogShowTime = mvars.init_goingToGzDialogShowTime - Time.GetFrameTime()
+			if mvars.init_goingToGzDialogShowTime <= 0 then
+				TppUiCommand.ErasePopup()
+			end
+		end
+
+		if TppUiCommand.IsShowPopup() then
+			return
+		end
+
+		if mvars.init_goingToGzDialogShowTime then
+			Mission.SwitchApplication("gz")
+			return
+		end
+	end,
 }
 
 sequences.Seq_Demo_Init = {
