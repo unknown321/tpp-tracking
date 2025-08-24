@@ -1,8 +1,8 @@
 local e = {}
 local r = Tpp.ApendArray
 local n = Tpp.DEBUG_StrCode32ToString
-local i = Tpp.IsTypeFunc
-local t = Tpp.IsTypeTable
+local t = Tpp.IsTypeFunc
+local i = Tpp.IsTypeTable
 local f = TppScriptVars.IsSavingOrLoading
 local M = ScriptBlock.UpdateScriptsInScriptBlocks
 local m = Mission.GetCurrentMessageResendCount
@@ -158,26 +158,26 @@ function e.OnAllocate(n)
 		if f30050_sequence then
 			function f30050_sequence.NeedPlayQuietWishGoMission()
 				local n = TppQuest.IsCleard("mtbs_q99011")
-				local t = not TppDemo.IsPlayedMBEventDemo("QuietWishGoMission")
+				local i = not TppDemo.IsPlayedMBEventDemo("QuietWishGoMission")
 				local e = TppDemo.GetMBDemoName() == nil
-				return (n and t) and e
+				return (n and i) and e
 			end
 		end
-		if i(n.sequence.MissionPrepare) then
+		if t(n.sequence.MissionPrepare) then
 			n.sequence.MissionPrepare()
 		end
-		if i(n.sequence.OnEndMissionPrepareSequence) then
+		if t(n.sequence.OnEndMissionPrepareSequence) then
 			TppSequence.SetOnEndMissionPrepareFunction(n.sequence.OnEndMissionPrepareSequence)
 		end
 	end
 	for n, e in pairs(n) do
-		if i(e.OnLoad) then
+		if t(e.OnLoad) then
 			e.OnLoad()
 		end
 	end
 	do
 		local o = {}
-		for t, e in ipairs(Tpp._requireList) do
+		for i, e in ipairs(Tpp._requireList) do
 			if _G[e] then
 				if _G[e].DeclareSVars then
 					r(o, _G[e].DeclareSVars(n))
@@ -186,10 +186,10 @@ function e.OnAllocate(n)
 		end
 		local s = {}
 		for n, e in pairs(n) do
-			if i(e.DeclareSVars) then
+			if t(e.DeclareSVars) then
 				r(s, e.DeclareSVars())
 			end
-			if t(e.saveVarsList) then
+			if i(e.saveVarsList) then
 				r(s, TppSequence.MakeSVarsTable(e.saveVarsList))
 			end
 		end
@@ -200,7 +200,7 @@ function e.OnAllocate(n)
 			coroutine.yield()
 		end
 		TppRadioCommand.SetScriptDeclVars()
-		local i = vars.mbLayoutCode
+		local t = vars.mbLayoutCode
 		if gvars.ini_isTitleMode then
 			TppPlayer.MissionStartPlayerTypeSetting()
 		else
@@ -221,9 +221,9 @@ function e.OnAllocate(n)
 			TppTerminal.StartSyncMbManagementOnMissionStart()
 		end
 		if TppLocation.IsMotherBase() then
-			if i ~= vars.mbLayoutCode then
+			if t ~= vars.mbLayoutCode then
 				if vars.missionCode == 30050 then
-					vars.mbLayoutCode = i
+					vars.mbLayoutCode = t
 				else
 					vars.mbLayoutCode = TppLocation.ModifyMbsLayoutCode(TppMotherBaseManagement.GetMbsTopologyType())
 				end
@@ -232,13 +232,15 @@ function e.OnAllocate(n)
 		TppPlayer.FailSafeInitialPositionForFreePlay()
 		e.StageBlockCurrentPosition(true)
 		TppMission.SetSortieBuddy()
-		TppMission.ResetQuietEquipIfUndevelop()
+		if vars.missionCode ~= 10260 then
+			TppMission.ResetQuietEquipIfUndevelop()
+		end
 		TppStory.UpdateStorySequence({ updateTiming = "BeforeBuddyBlockLoad" })
 		if n.sequence then
 			local e = n.sequence.DISABLE_BUDDY_TYPE
 			if e then
 				local n
-				if t(e) then
+				if i(e) then
 					n = e
 				else
 					n = { e }
@@ -263,7 +265,7 @@ function e.OnAllocate(n)
 		TppScriptVars.SetSVarsNotificationEnabled(true)
 	end
 	if n.enemy then
-		if t(n.enemy.soldierPowerSettings) then
+		if i(n.enemy.soldierPowerSettings) then
 			TppEnemy.SetUpPowerSettings(n.enemy.soldierPowerSettings)
 		end
 	end
@@ -320,30 +322,30 @@ function e.OnInitialize(n)
 	TppHelicopter.AdjustBuddyDropPoint()
 	if n.sequence then
 		local e = n.sequence.NPC_ENTRY_POINT_SETTING
-		if t(e) then
+		if i(e) then
 			TppEnemy.NPCEntryPointSetting(e)
 		end
 	end
 	TppLandingZone.OverwriteBuddyVehiclePosForALZ()
 	if n.enemy then
-		if t(n.enemy.vehicleSettings) then
+		if i(n.enemy.vehicleSettings) then
 			TppEnemy.SetUpVehicles()
 		end
-		if i(n.enemy.SpawnVehicleOnInitialize) then
+		if t(n.enemy.SpawnVehicleOnInitialize) then
 			n.enemy.SpawnVehicleOnInitialize()
 		end
 		TppReinforceBlock.SetUpReinforceBlock()
 	end
-	for t, e in pairs(n) do
-		if i(e.Messages) then
-			n[t]._messageExecTable = Tpp.MakeMessageExecTable(e.Messages())
+	for i, e in pairs(n) do
+		if t(e.Messages) then
+			n[i]._messageExecTable = Tpp.MakeMessageExecTable(e.Messages())
 		end
 	end
 	if mvars.loc_locationCommonTable then
 		mvars.loc_locationCommonTable.OnInitialize()
 	end
 	TppLandingZone.OnInitialize()
-	for t, e in ipairs(Tpp._requireList) do
+	for i, e in ipairs(Tpp._requireList) do
 		if _G[e].Init then
 			_G[e].Init(n)
 		end
@@ -352,20 +354,20 @@ function e.OnInitialize(n)
 		if GameObject.DoesGameObjectExistWithTypeName("TppSoldier2") then
 			GameObject.SendCommand({ type = "TppSoldier2" }, { id = "CreateFaceIdList" })
 		end
-		if t(n.enemy.soldierDefine) then
+		if i(n.enemy.soldierDefine) then
 			TppEnemy.DefineSoldiers(n.enemy.soldierDefine)
 		end
-		if n.enemy.InitEnemy and i(n.enemy.InitEnemy) then
+		if n.enemy.InitEnemy and t(n.enemy.InitEnemy) then
 			n.enemy.InitEnemy()
 		end
-		if t(n.enemy.soldierPersonalAbilitySettings) then
+		if i(n.enemy.soldierPersonalAbilitySettings) then
 			TppEnemy.SetUpPersonalAbilitySettings(n.enemy.soldierPersonalAbilitySettings)
 		end
-		if t(n.enemy.travelPlans) then
+		if i(n.enemy.travelPlans) then
 			TppEnemy.SetTravelPlans(n.enemy.travelPlans)
 		end
 		TppEnemy.SetUpSoldiers()
-		if t(n.enemy.soldierDefine) then
+		if i(n.enemy.soldierDefine) then
 			TppEnemy.InitCpGroups()
 			TppEnemy.RegistCpGroups(n.enemy.cpGroups)
 			TppEnemy.SetCpGroups()
@@ -373,21 +375,21 @@ function e.OnInitialize(n)
 				TppGimmick.SetCommunicateGimmick(mvars.loc_locationGimmickCpConnectTable)
 			end
 		end
-		if t(n.enemy.interrogation) then
+		if i(n.enemy.interrogation) then
 			TppInterrogation.InitInterrogation(n.enemy.interrogation)
 		end
-		if t(n.enemy.useGeneInter) then
+		if i(n.enemy.useGeneInter) then
 			TppInterrogation.AddGeneInter(n.enemy.useGeneInter)
 		end
-		if t(n.enemy.uniqueInterrogation) then
+		if i(n.enemy.uniqueInterrogation) then
 			TppInterrogation.InitUniqueInterrogation(n.enemy.uniqueInterrogation)
 		end
 		do
 			local e
-			if t(n.enemy.routeSets) then
+			if i(n.enemy.routeSets) then
 				e = n.enemy.routeSets
 				for e, n in pairs(e) do
-					if not t(mvars.ene_soldierDefine[e]) then
+					if not i(mvars.ene_soldierDefine[e]) then
 					end
 				end
 			end
@@ -406,7 +408,7 @@ function e.OnInitialize(n)
 		TppEnemy.ApplyPersonalAbilitySettingsOnInitialize()
 		TppEnemy.SetOccasionalChatList()
 		TppEneFova.ApplyUniqueSetting()
-		if n.enemy.SetUpEnemy and i(n.enemy.SetUpEnemy) then
+		if n.enemy.SetUpEnemy and t(n.enemy.SetUpEnemy) then
 			n.enemy.SetUpEnemy()
 		end
 		if TppMission.IsMissionStart() then
@@ -424,12 +426,12 @@ function e.OnInitialize(n)
 	TppTerminal.MakeMessage()
 	if n.sequence then
 		local e = n.sequence.SetUpRoutes
-		if e and i(e) then
+		if e and t(e) then
 			e()
 		end
 		TppEnemy.RegisterRouteAnimation()
 		local e = n.sequence.SetUpLocation
-		if e and i(e) then
+		if e and t(e) then
 			e()
 		end
 	end
@@ -451,6 +453,8 @@ function e.OnInitialize(n)
 	else
 		TppRadioCommand.RestoreRadioStateContinueFromCheckpoint()
 	end
+	TppMission.SetPlayRecordClearInfo()
+	TppChallengeTask.RequestUpdateAllChecker()
 	TppMission.PostMissionOrderBoxPositionToBuddyDog()
 	e.SetUpdateFunction(n)
 	e.SetMessageFunction(n)
@@ -481,7 +485,7 @@ function e.SetUpdateFunction(e)
 	}
 	l = #a
 	for n, e in pairs(e) do
-		if i(e.OnUpdate) then
+		if t(e.OnUpdate) then
 			o = o + 1
 			c[o] = e.OnUpdate
 		end
@@ -564,10 +568,10 @@ function e.ClearStageBlockMessage()
 	StageBlock.ClearLargeBlockNameForMessage()
 	StageBlock.ClearSmallBlockIndexForMessage()
 end
-function e.ReservePlayerLoadingPosition(n, s, o, t, i, a, p)
+function e.ReservePlayerLoadingPosition(n, s, o, i, t, a, p)
 	e.DisableGameStatus()
 	if n == TppDefine.MISSION_LOAD_TYPE.MISSION_FINALIZE then
-		if t then
+		if i then
 			TppHelicopter.ResetMissionStartHelicopterRoute()
 			TppPlayer.ResetInitialPosition()
 			TppPlayer.ResetMissionStartPosition()
@@ -595,7 +599,7 @@ function e.ReservePlayerLoadingPosition(n, s, o, t, i, a, p)
 			TppPlayer.ResetNoOrderBoxMissionStartPosition()
 			TppMission.SetIsStartFromHelispace()
 			TppMission.ResetIsStartFromFreePlay()
-		elseif i then
+		elseif t then
 			if TppLocation.IsMotherBase() then
 				TppPlayer.SetStartStatusRideOnHelicopter()
 			else
@@ -674,21 +678,21 @@ function e.ReservePlayerLoadingPosition(n, s, o, t, i, a, p)
 		TppMission.ResetIsStartFromHelispace()
 		TppMission.ResetIsStartFromFreePlay()
 		if a then
-			if i then
+			if t then
 				TppPlayer.SetStartStatus(TppDefine.INITIAL_PLAYER_STATE.ON_FOOT)
 				TppHelicopter.ResetMissionStartHelicopterRoute()
 				TppPlayer.SetMissionStartPositionToCurrentPosition()
 				TppPlayer.ResetNoOrderBoxMissionStartPosition()
-			elseif t then
+			elseif i then
 				TppPlayer.ResetMissionStartPosition()
 			elseif vars.missionCode ~= 5 then
 			end
 		else
-			if t then
+			if i then
 				TppHelicopter.ResetMissionStartHelicopterRoute()
 				TppPlayer.ResetInitialPosition()
 				TppPlayer.ResetMissionStartPosition()
-			elseif i then
+			elseif t then
 				TppMission.SetMissionOrderBoxPosition()
 			elseif vars.missionCode ~= 5 then
 			end
@@ -722,23 +726,23 @@ function e.StageBlockCurrentPosition(e)
 	end
 end
 function e.OnReload(n)
-	for t, e in pairs(n) do
-		if i(e.OnLoad) then
+	for i, e in pairs(n) do
+		if t(e.OnLoad) then
 			e.OnLoad()
 		end
-		if i(e.Messages) then
-			n[t]._messageExecTable = Tpp.MakeMessageExecTable(e.Messages())
+		if t(e.Messages) then
+			n[i]._messageExecTable = Tpp.MakeMessageExecTable(e.Messages())
 		end
 	end
 	if n.enemy then
-		if t(n.enemy.routeSets) then
+		if i(n.enemy.routeSets) then
 			TppClock.UnregisterClockMessage("ShiftChangeAtNight")
 			TppClock.UnregisterClockMessage("ShiftChangeAtMorning")
 			TppEnemy.RegisterRouteSet(n.enemy.routeSets)
 			TppEnemy.MakeShiftChangeTable()
 		end
 	end
-	for t, e in ipairs(Tpp._requireList) do
+	for i, e in ipairs(Tpp._requireList) do
 		if _G[e].OnReload then
 			_G[e].OnReload(n)
 		end
@@ -756,7 +760,7 @@ function e.OnUpdate(e)
 	local e
 	local n = a
 	local e = c
-	local t = T
+	local i = T
 	for e = 1, l do
 		n[e]()
 	end
@@ -765,10 +769,10 @@ function e.OnUpdate(e)
 	end
 	M()
 end
-function e.OnChangeSVars(e, n, t)
-	for i, e in ipairs(Tpp._requireList) do
+function e.OnChangeSVars(e, n, i)
+	for t, e in ipairs(Tpp._requireList) do
 		if _G[e].OnChangeSVars then
-			_G[e].OnChangeSVars(n, t)
+			_G[e].OnChangeSVars(n, i)
 		end
 	end
 end
@@ -783,14 +787,14 @@ function e.SetMessageFunction(e)
 			S[s] = _G[e].OnMessage
 		end
 	end
-	for n, t in pairs(e) do
+	for n, i in pairs(e) do
 		if e[n]._messageExecTable then
 			p = p + 1
 			d[p] = e[n]._messageExecTable
 		end
 	end
 end
-function e.OnMessage(n, e, t, i, o, a, r)
+function e.OnMessage(n, e, i, t, o, a, r)
 	local n = mvars
 	local l = ""
 	local T
@@ -799,7 +803,7 @@ function e.OnMessage(n, e, t, i, o, a, r)
 	local T = TppDebug
 	local T = P
 	local T = h
-	local T = TppDefine.MESSAGE_GENERATION[e] and TppDefine.MESSAGE_GENERATION[e][t]
+	local T = TppDefine.MESSAGE_GENERATION[e] and TppDefine.MESSAGE_GENERATION[e][i]
 	if not T then
 		T = TppDefine.DEFAULT_MESSAGE_GENERATION
 	end
@@ -809,25 +813,25 @@ function e.OnMessage(n, e, t, i, o, a, r)
 	end
 	for s = 1, s do
 		local n = l
-		S[s](e, t, i, o, a, r, n)
+		S[s](e, i, t, o, a, r, n)
 	end
 	for n = 1, p do
 		local s = l
-		c(d[n], u, e, t, i, o, a, r, s)
+		c(d[n], u, e, i, t, o, a, r, s)
 	end
 	if n.loc_locationCommonTable then
-		n.loc_locationCommonTable.OnMessage(e, t, i, o, a, r, l)
+		n.loc_locationCommonTable.OnMessage(e, i, t, o, a, r, l)
 	end
 	if n.order_box_script then
-		n.order_box_script.OnMessage(e, t, i, o, a, r, l)
+		n.order_box_script.OnMessage(e, i, t, o, a, r, l)
 	end
 	if n.animalBlockScript and n.animalBlockScript.OnMessage then
-		n.animalBlockScript.OnMessage(e, t, i, o, a, r, l)
+		n.animalBlockScript.OnMessage(e, i, t, o, a, r, l)
 	end
 end
 function e.OnTerminate(e)
 	if e.sequence then
-		if i(e.sequence.OnTerminate) then
+		if t(e.sequence.OnTerminate) then
 			e.sequence.OnTerminate()
 		end
 	end

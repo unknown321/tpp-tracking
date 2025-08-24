@@ -38,6 +38,7 @@ e.DeclareGVarsTable = {
 	{ name = "isContinueFromTitle", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{ name = "sav_isCheckPointSaving", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{ name = "isLoadedInitMissionOnSignInUserChanged", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
+	{ name = "isFinishFobManualPlacementTutorial", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{ name = "exc_processState", type = TppScriptVars.TYPE_UINT8, value = 0, save = false },
 	{ name = "exc_exceptionProcessing", type = TppScriptVars.TYPE_BOOL, value = false, save = false },
 	{ name = "exc_processingExecptionType", type = TppScriptVars.TYPE_UINT8, value = 0, save = false },

@@ -117,6 +117,9 @@ TppEquip.ReloadEquipParameterTables({
 		{ TppEquip.SWP_SleepingGusMine_G01, 8, 0.8, 0, 5 },
 		{ TppEquip.SWP_SleepingGusMine_G02, 12, 0.8, 0, 8 },
 		{ TppEquip.SWP_Dung, 0, 1, 120, 1 },
+		{ TppEquip.SWP_WormholePortal, 3, 0, 0, 9 },
+		{ TppEquip.SWP_DMineLocator, -1, 0, 0, 1 },
+		{ TppEquip.SWP_SleepingGusMineLocator, -1, 0, 0, 1 },
 	},
 })
 return this

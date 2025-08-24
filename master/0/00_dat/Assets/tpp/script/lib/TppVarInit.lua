@@ -245,6 +245,7 @@ function e.InitializeForNewMission(e)
 	end
 	Gimmick.RestoreSaveDataPermanentGimmickFromMission()
 	TppMotherBaseManagement.SetupAfterRestoreFromSVars()
+	RecordRanking.WriteServerRankingScore()
 end
 function e.InitializeForContinue(e)
 	TppSave.VarRestoreOnContinueFromCheckPoint()
@@ -291,7 +292,7 @@ function e.SetInitPlayerWeapons(e)
 		local a = i.ammo
 		local e = i.slot
 		local t = i.equip
-		local p = i.ammoMax
+		local o = i.ammoMax
 		local i = i.bulletId
 		if e >= TppDefine.WEAPONSLOT.SUPPORT_0 and e <= TppDefine.WEAPONSLOT.SUPPORT_3 then
 			local n = e - TppDefine.WEAPONSLOT.SUPPORT_0
@@ -302,7 +303,7 @@ function e.SetInitPlayerWeapons(e)
 			vars.initWeapons[e] = t
 			vars.ammoStockIds[e] = i
 			vars.ammoStockCounts[e] = a
-			vars.ammoInWeapons[e] = p
+			vars.ammoInWeapons[e] = o
 			vars.isInitialWeapon[e] = 1
 		end
 	end

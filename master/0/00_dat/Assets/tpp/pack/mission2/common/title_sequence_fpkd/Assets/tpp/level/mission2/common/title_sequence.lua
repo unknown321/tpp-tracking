@@ -1129,9 +1129,14 @@ this.RestoreSaveDetaForBtk44624 = function()
 	local isOnPlntXZ, clusterName, plntName = CheckPlayerOnPlntXZ(playerPos)
 	if isOnPlntXZ then
 		if CheckPlayerOnPlntY(playerPos, clusterName, plntName) then
+			vars.mbClusterId = TppDefine.CLUSTER_DEFINE[clusterName]
+			TppScriptVars.SetVarValueInSlot(TppDefine.SAVE_SLOT.CHECK_POINT, "vars", "mbClusterId", vars.mbClusterId)
 			return
 		end
 	end
+
+	vars.mbClusterId = TppDefine.CLUSTER_DEFINE.Command
+	TppScriptVars.SetVarValueInSlot(TppDefine.SAVE_SLOT.CHECK_POINT, "vars", "mbClusterId", vars.mbClusterId)
 
 	local MB_COMMAND_POS = { 9, 0.8, -42 }
 	if isUseMissionStartPos then

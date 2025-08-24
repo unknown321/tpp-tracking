@@ -12,10 +12,10 @@ local n = PlayRecord.RegistPlayRecord
 local t = bit.bnot
 local E, t, t = bit.band, bit.bor, bit.bxor
 local t = GkEventTimerManager.Start
-local C = GkEventTimerManager.Stop
+local _ = GkEventTimerManager.Stop
 local m = GkEventTimerManager.IsTimerActive
 local a = Tpp.IsHelicopter
-local _ = Tpp.IsNotAlert
+local C = Tpp.IsNotAlert
 local R = Tpp.IsPlayerStatusNormal
 local l = DemoDaemon.IsDemoPlaying
 local l = 10
@@ -26,7 +26,7 @@ local l = "Timer_outsideOfInnerZone"
 local u = 0
 local M = 64
 local y = 1
-local h = 3
+local h = 0
 local I = (24 * 60) * 60
 local c = 2
 local c = TppDefine.MAX_32BIT_UINT
@@ -838,6 +838,7 @@ function e.VarSaveForMissionAbort()
 		if gvars.usingNormalMissionSlot then
 			TppStory.FailedRetakeThePlatformIfOpened()
 		end
+		TppMotherBaseManagement.CheckMisogi()
 	else
 		if gvars.usingNormalMissionSlot then
 			TppPlayer.RestoreWeaponsFromUsingTemp()
@@ -895,6 +896,9 @@ function e.LoadForMissionAbort()
 	end
 end
 function e.ReturnToTitle()
+	if TppException.isNowGoingToMgo then
+		return
+	end
 	if e.IsHelicopterSpace(vars.missionCode) then
 		TppMotherBaseManagement.ProcessBeforeSync()
 		TppMotherBaseManagement.StartSyncControl({})
@@ -1262,6 +1266,9 @@ function e.ExecuteMissionFinalize()
 	local l = vars.locationCode
 	local i, a
 	local t, s
+	if not (mvars.mis_isInterruptMissionEnd or (not TppSave.CanSaveMbMangementData())) then
+		TppMotherBaseManagement.CheckMisogi()
+	end
 	if e.IsFOBMission(gvars.mis_nextMissionCodeForMissionClear) then
 		r = false
 		TppSave.VarSave(n, true)
@@ -1812,6 +1819,7 @@ function e.Messages()
 			{ msg = "PauseMenuCheckpoint", func = e.ContinueFromCheckPoint },
 			{ msg = "PauseMenuAbortMission", func = e.AbortMissionByMenu },
 			{ msg = "PauseMenuAbortMissionGoToAcc", func = e.AbortMissionByMenu },
+			{ msg = "PauseMenuFinishFobManualPlaecementMode", func = e.AbortMissionByMenu },
 			{ msg = "PauseMenuRestart", func = e.RestartMission },
 			{ msg = "PauseMenuReturnToTitle", func = e.ReturnToTitle },
 			{
@@ -2082,15 +2090,10 @@ function e.Messages()
 			{
 				msg = "RequestSaveMbManagement",
 				func = function()
-					if vars.missionCode == 10030 then
-						TppMotherBaseManagement.SetRequestSaveResultFailure()
-						return
-					end
-					if vars.missionCode == 10115 then
-						TppMotherBaseManagement.SetRequestSaveResultFailure()
-						return
-					end
-					if not e.CheckMissionState() then
+					if
+						((TppSave.IsForbidSave() or (vars.missionCode == 10030)) or (vars.missionCode == 10115))
+						or (not e.CheckMissionState())
+					then
 						TppMotherBaseManagement.SetRequestSaveResultFailure()
 						return
 					end
@@ -2102,6 +2105,12 @@ function e.Messages()
 					isExecGameOver = true,
 					isExecMissionPrepare = true,
 				},
+			},
+			{
+				msg = "RequestSavePersonal",
+				func = function()
+					TppSave.CheckAndSavePersonalData()
+				end,
 			},
 		},
 		Trap = {
@@ -2584,7 +2593,7 @@ function e.ExitHotZone()
 	e.ExecuteSystemCallback("OnOutOfHotZone")
 	if svars.mis_canMissionClear then
 		TppUI.ShowAnnounceLog("leaveHotZone")
-		if not _() and not a(vars.playerVehicleGameObjectId) then
+		if not C() and not a(vars.playerVehicleGameObjectId) then
 			TppRadio.PlayCommonRadio(TppDefine.COMMON_RADIO.OUTSIDE_HOTZONE_ALERT)
 		else
 			TppRadio.PlayCommonRadio(TppDefine.COMMON_RADIO.OUTSIDE_HOTZONE)
@@ -2654,7 +2663,7 @@ function e.OutsideOfHotZoneCount()
 end
 local function c()
 	if m("Timer_OutsideOfHotZoneCount") then
-		C("Timer_OutsideOfHotZoneCount")
+		_("Timer_OutsideOfHotZoneCount")
 	end
 end
 function e.CheckMissionClearOnRideOnFultonContainer()
@@ -2724,7 +2733,7 @@ function e.Update()
 			end
 		else
 			if m(l) then
-				C(l)
+				_(l)
 			end
 		end
 	end
@@ -2994,7 +3003,7 @@ function e.UpdateAtCanMissionClear(n, o)
 		c()
 		return
 	end
-	local i = _()
+	local i = C()
 	local n = R()
 	local s = not a(vars.playerVehicleGameObjectId)
 	if o then
@@ -3804,6 +3813,7 @@ function e.VarSaveOnUpdateCheckPoint(n)
 	if Gimmick.StoreSaveDataPermanentGimmickFromCheckPoint then
 		Gimmick.StoreSaveDataPermanentGimmickFromCheckPoint()
 	end
+	TppMotherBaseManagement.CheckMisogi()
 	TppSave.VarSave(vars.missionCode)
 	if vars.missionCode == 10115 then
 		return
@@ -4132,6 +4142,7 @@ function e.SetNextMissionStartHeliRoute(e)
 end
 function e.ClearFobMode()
 	vars.fobSneakMode = FobMode.MODE_NONE
+	vars.fobIsPlaceMode = 0
 end
 function e.UnsetFobSneakFlag(n)
 	if not e.IsFOBMission(n) then

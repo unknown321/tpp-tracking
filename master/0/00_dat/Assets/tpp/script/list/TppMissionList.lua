@@ -949,9 +949,19 @@ s[50050] = function(s)
 			TppEneFova.AddUniqueSettingPackage(s)
 		end
 	end
+	if TppEnemy.IsZombieEventFOB() then
+		TppSoldierFace.SetUseZombieFova({ enabled = true })
+	end
+	if TppEnemy.IsParasiteMetalEventFOB() then
+		TppPackList.AddMissionPack("/Assets/tpp/pack/mission2/online/o50050/o50055_parasite_metal.fpk")
+	end
 	TppPackList.AddMissionPack("/Assets/tpp/pack/mission2/online/o50050/o50050_additional.fpk")
 	TppPackList.AddLocationCommonScriptPack(s)
-	TppPackList.AddDefaultMissionAreaPack(s)
+	if TppEnemy.IsSpecialEventFOB() then
+		TppPackList.AddMissionPack("/Assets/tpp/pack/mission2/online/o50050/o50055_area.fpk")
+	else
+		TppPackList.AddDefaultMissionAreaPack(s)
+	end
 	TppPackList.AddFOBLayoutPack(s)
 end
 function a.GetLocationPackagePath(s)

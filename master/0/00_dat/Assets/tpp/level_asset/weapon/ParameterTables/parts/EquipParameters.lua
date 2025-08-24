@@ -6060,7 +6060,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			8,
+			9,
 		},
 		{
 			TppEquip.WP_EX_gl_000,
@@ -6075,7 +6075,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			8,
+			9,
 		},
 		{
 			TppEquip.WP_EX_sr_000,
@@ -6090,7 +6090,7 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.UD_None,
 			TppEquip.LT_None,
 			TppEquip.LT_None,
-			8,
+			9,
 		},
 		{
 			TppEquip.WP_West_sm_016,
@@ -6286,6 +6286,21 @@ TppEquip.ReloadEquipParameterTables2({
 			TppEquip.LT_30105,
 			TppEquip.LT_None,
 			7,
+		},
+		{
+			TppEquip.WP_SCamLocator,
+			TppEquip.RC_10302,
+			TppEquip.BA_10302,
+			TppEquip.AM_10703,
+			TppEquip.SK_None,
+			TppEquip.MZ_None,
+			TppEquip.MO_None,
+			TppEquip.ST_None,
+			TppEquip.ST_None,
+			TppEquip.UD_None,
+			TppEquip.LT_None,
+			TppEquip.LT_None,
+			1,
 		},
 	},
 	receiverParamSetsBase = {

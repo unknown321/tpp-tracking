@@ -12340,7 +12340,7 @@ TppDamage.ReloadDamageParameter({
 			0,
 			1,
 			TppDamage.DAM_SOURCE_Antimaterial,
-			2800,
+			4e3,
 			0,
 			2200,
 		},

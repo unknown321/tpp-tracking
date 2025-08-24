@@ -1781,7 +1781,7 @@ _.SECURITY_SETTING = {
 	numInCommandPlatform = { alarm = { 1, 1, 1, 1, 1, 2, 1, 2, 3, 2, 3, 4, 2, 3, 5, 2, 4, 6, 3, 5, 6 } },
 	numInBaseDevPlatform = { alarm = { 1, 1, 1, 1, 1, 2, 2, 4, 6, 3, 6, 10, 4, 9, 14, 6, 12, 18, 7, 14, 22 } },
 }
-_.FOB_EVENT_ID_LIST = { ARMOR = { 3 }, HOSTAGE = { 3 } }
+_.FOB_EVENT_ID_LIST = { ARMOR = { 3 }, HOSTAGE = { 3 }, ZOMBIE = { 5 }, PARASITE_METAL = { 5 } }
 _.STATION_LIST = {
 	afgh = {
 		"bridge",

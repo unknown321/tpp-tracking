@@ -1,6 +1,6 @@
 local e = {}
 local S = GameObject.SendCommand
-local r = Tpp.IsTypeTable
+local n = Tpp.IsTypeTable
 local t, t, t = bit.band, bit.bor, bit.bxor
 local s = TppDefine.MAX_32BIT_UINT
 e.PLAYSTYLE_HEAD_SHOT = 0.9
@@ -166,7 +166,7 @@ for a, t in ipairs(e.HARD_MISSION_LIST) do
 end
 e.NO_SPECIAL_BONUS = { [10030] = true, [10115] = true, [10240] = true }
 function e.AcquireSpecialBonus(t)
-	if not r(t) then
+	if not n(t) then
 		return
 	end
 	if t.first then
@@ -200,12 +200,12 @@ function e.AcquireSpecialBonus(t)
 		end
 	end
 end
-function e._AcquireSpecialBonus(t, a, o, s, c, u, i, n, l)
+function e._AcquireSpecialBonus(t, a, o, s, l, u, i, n, c)
 	local r = t.isComplete
 	if t.isComplete then
 		r = true
 		if (not n) and not s then
-			svars[o] = c
+			svars[o] = l
 		end
 	end
 	if t.count then
@@ -218,7 +218,7 @@ function e._AcquireSpecialBonus(t, a, o, s, c, u, i, n, l)
 			else
 				svars[a] = s
 			end
-			svars[o] = (svars[a] / s) * c
+			svars[o] = (svars[a] / s) * l
 			if svars[a] == s then
 				r = true
 			end
@@ -238,10 +238,10 @@ function e._AcquireSpecialBonus(t, a, o, s, c, u, i, n, l)
 		if t > #n then
 			return
 		end
-		svars[l][t] = true
-		local e, t = e.CalcPoinListBonusScore(n, l)
-		svars[a] = e
-		svars[o] = t
+		svars[c][t] = true
+		local t, e = e.CalcPoinListBonusScore(n, c)
+		svars[a] = t
+		svars[o] = e
 		if svars[a] == #n then
 			r = true
 		end
@@ -254,15 +254,15 @@ function e._AcquireSpecialBonus(t, a, o, s, c, u, i, n, l)
 	end
 end
 function e.CalcPoinListBonusScore(a, s)
-	local t = 0
 	local e = 0
+	local t = 0
 	for a, n in ipairs(a) do
 		if svars[s][a] then
-			t = t + 1
-			e = e + n
+			e = e + 1
+			t = t + n
 		end
 	end
-	return t, e
+	return e, t
 end
 function e.SetSpecialBonusMaxCount(e)
 	if not Tpp.IsTypeTable(e) then
@@ -275,22 +275,22 @@ function e.SetSpecialBonusMaxCount(e)
 		mvars.res_secondSpecialBonusMaxCount = e.second.maxCount
 	end
 end
-function e._CompleteBonus(a, e)
-	local t = true
-	if svars[a] then
-		t = false
+function e._CompleteBonus(t, e)
+	local a = true
+	if svars[t] then
+		a = false
 	end
-	svars[a] = true
+	svars[t] = true
 	if e then
 		e.isComplete = true
-		TppUI.EnableMissionTask(e, t)
+		TppUI.EnableMissionTask(e, a)
 	end
 end
 function e.RegistNoMissionClearRank()
 	mvars.res_noMissionClearRank = true
 end
 function e.SetMissionScoreTable(e)
-	if not r(e) then
+	if not n(e) then
 		return
 	end
 	mvars.res_missionScoreTable = e
@@ -302,8 +302,8 @@ function e.SetMissionFinalScore()
 	e.RegistUsedLimitedItemLangId()
 	TppBuddyService.BuddyProcessMissionSuccess()
 	e.SaveBestCount()
-	local t, a = e.CalcBaseScore()
-	e.CalcTimeScore(t, a)
+	local a, t = e.CalcBaseScore()
+	e.CalcTimeScore(a, t)
 	e.CalcEachScore()
 	local n = e.CalcTotalScore()
 	local t = e.DecideMissionClearRank()
@@ -1310,8 +1310,8 @@ function e.Init(t)
 				local t = e.missionTask
 				if t then
 					mvars.res_firstBonusMissionTask = {}
-					for t, e in pairs(t) do
-						mvars.res_firstBonusMissionTask[t] = e
+					for e, t in pairs(t) do
+						mvars.res_firstBonusMissionTask[e] = t
 					end
 					mvars.res_firstBonusMissionTask.isFirstHide = true
 				end
@@ -1356,8 +1356,8 @@ function e.Init(t)
 			perfectBonusBase = 3e4,
 		}
 		if t.sequence.hitRatioBonusParam then
-			for e, t in pairs(t.sequence.hitRatioBonusParam) do
-				mvars.res_hitRatioBonusParam[e] = t
+			for t, e in pairs(t.sequence.hitRatioBonusParam) do
+				mvars.res_hitRatioBonusParam[t] = e
 			end
 		end
 	end
@@ -1384,8 +1384,8 @@ end
 function e.OnReload(t)
 	e.Init(t)
 end
-function e.OnMessage(o, t, i, a, r, n, s)
-	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, o, t, i, a, r, n, s)
+function e.OnMessage(o, r, n, i, t, a, s)
+	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, o, r, n, i, t, a, s)
 end
 function e.OnMissionCanStart()
 	if mvars.res_firstBonusMissionTask then
@@ -1404,13 +1404,13 @@ function e.OnMissionCanStart()
 	end
 end
 function e.SetScoreTable(e)
-	if not r(e) then
+	if not n(e) then
 		return
 	end
 	mvars.res_scoreTable = e
 end
 function e.SetRankTable(t)
-	if not r(t) then
+	if not n(t) then
 		return
 	end
 	mvars.res_rankTable = t
@@ -1437,20 +1437,20 @@ function e.DEBUG_Count()
 	for e, e in pairs(e.saveCountTable) do
 	end
 end
-local o = 1e3
+local i = 1e3
 function e.CalcBaseScore()
 	if not mvars.res_missionScoreTable then
 		return
 	end
-	local i = svars
-	local s
-	local n, t
-	local a = TppMission.GetMissionName()
+	local o = svars
+	local a
+	local n, s
+	local t = TppMission.GetMissionName()
 	local r = #TppDefine.MISSION_CLEAR_RANK_LIST
 	for e = 1, r do
-		s = TppDefine.MISSION_CLEAR_RANK_LIST[e]
-		local t = mvars.res_missionScoreTable.baseTime[s] * o
-		if i.bestScoreTime <= t then
+		a = TppDefine.MISSION_CLEAR_RANK_LIST[e]
+		local t = mvars.res_missionScoreTable.baseTime[a] * i
+		if o.bestScoreTime <= t then
 			n = e
 			break
 		end
@@ -1458,71 +1458,71 @@ function e.CalcBaseScore()
 	if n == nil then
 		n = r
 	end
-	if a == "s10040" then
-		t = e.RANK_BASE_SCORE_10040[s]
-	elseif a == "s10054" or a == "s11054" then
-		t = e.RANK_BASE_SCORE_10054[s]
-	elseif a == "s10130" or a == "s11130" then
-		t = e.RANK_BASE_SCORE_10130[s]
-	elseif a == "s10140" or a == "s11140" then
-		t = e.RANK_BASE_SCORE_10140[s]
+	if t == "s10040" then
+		s = e.RANK_BASE_SCORE_10040[a]
+	elseif t == "s10054" or t == "s11054" then
+		s = e.RANK_BASE_SCORE_10054[a]
+	elseif t == "s10130" or t == "s11130" then
+		s = e.RANK_BASE_SCORE_10130[a]
+	elseif t == "s10140" or t == "s11140" then
+		s = e.RANK_BASE_SCORE_10140[a]
 	else
-		t = e.RANK_BASE_SCORE[s]
+		s = e.RANK_BASE_SCORE[a]
 	end
 	if e.IsUsedChickCap() then
-		t = 0
+		s = 0
 		n = TppDefine.MISSION_CLEAR_RANK.E
 	end
-	return t, n
+	return s, n
 end
 local a = 1 / 1e3
 local t = 60
-local n = (t * 60) * 5
-local i = (t * 60) * 0.25
-local o = (t * 60) * 1
-local c = (t * 60) * 4
-local u = (t * 60) * 0.5
-function e.CalcTimeScore(r, l)
+local r = (t * 60) * 5
+local u = (t * 60) * 0.25
+local i = (t * 60) * 1
+local o = (t * 60) * 4
+local l = (t * 60) * 0.5
+function e.CalcTimeScore(c, s)
 	if not mvars.res_missionScoreTable then
 		return
 	end
-	local s = svars
-	local S = TppDefine.MISSION_CLEAR_RANK_LIST[l]
+	local n = svars
+	local S = TppDefine.MISSION_CLEAR_RANK_LIST[s]
 	local S = mvars.res_missionScoreTable.baseTime[S]
-	local a = S - (s.bestScoreTime * a)
+	local a = S - (n.bestScoreTime * a)
 	if a < 0 then
 		a = 0
 	end
 	local t = a * t
 	local a = TppMission.GetMissionName()
-	if l > TppDefine.MISSION_CLEAR_RANK.S then
+	if s > TppDefine.MISSION_CLEAR_RANK.S then
 		if a == "s10040" then
+			if t > l then
+				t = l
+			end
+		elseif a == "s10054" or a == "s11054" then
 			if t > u then
 				t = u
 			end
-		elseif a == "s10054" or a == "s11054" then
+		elseif a == "s10130" or a == "s11130" then
 			if t > i then
 				t = i
 			end
-		elseif a == "s10130" or a == "s11130" then
+		elseif a == "s10140" or a == "s11140" then
 			if t > o then
 				t = o
 			end
-		elseif a == "s10140" or a == "s11140" then
-			if t > c then
-				t = c
-			end
 		else
-			if t > n then
-				t = n
+			if t > r then
+				t = r
 			end
 		end
 	end
 	if e.IsUsedChickCap() then
 		t = 0
-		r = 0
+		c = 0
 	end
-	s.bestScoreTimeScore = t + r
+	n.bestScoreTimeScore = t + c
 end
 e.calcScoreTable = {
 	bestScoreAlertScore = { "alertCount", "bestScoreAlert" },
@@ -1545,6 +1545,12 @@ e.bonusScoreTable = {
 		true,
 	},
 }
+e.eachScoreLimit = {
+	bestScoreHeadShotBonusScore = 100,
+	bestScoreNeutralizeBonusScore = 100,
+	bestScoreMarkingCountScore = 100,
+	bestScoreInterrogateScore = 100,
+}
 function e.CalcEachScore()
 	local t = svars
 	for n, a in pairs(e.calcScoreTable) do
@@ -1554,12 +1560,12 @@ function e.CalcEachScore()
 		else
 			s = t[a[2]]
 		end
-		t[n] = e.CalcScore(s, mvars.res_scoreTable[a[1]], mvars.res_missionScoreTable[a[3]])
+		t[n] = e.CalcScore(s, mvars.res_scoreTable[a[1]], mvars.res_missionScoreTable[a[3]], e.eachScoreLimit[n])
 	end
 	if not e.IsUsedChickCap() then
-		for n, e in pairs(e.bonusScoreTable) do
+		for r, e in pairs(e.bonusScoreTable) do
 			local a
-			if r(e[1]) then
+			if n(e[1]) then
 				a = e[1]
 			else
 				a = { e[1] }
@@ -1576,7 +1582,7 @@ function e.CalcEachScore()
 				a = mvars.res_bonusMissionClearTimeRatio
 			end
 			if s and not isUsedChickCap then
-				t[n] = mvars.res_scoreTable[e[2]] * a
+				t[r] = mvars.res_scoreTable[e[2]] * a
 			end
 		end
 		t.bestScoreHitRatioBonusScore = e.CalcHitRatioBonusScore(
@@ -1590,26 +1596,29 @@ function e.CalcEachScore()
 			mvars.res_hitRatioBonusParam.limitHitRatioBonus,
 			mvars.res_hitRatioBonusParam.perfectBonusBase
 		)
-		if bit.band(vars.playerPlayFlag, PlayerPlayFlag.FAILED_NO_TRACE_PLAY) == 0 then
+		if
+			(bit.band(vars.playerPlayFlag, PlayerPlayFlag.FAILED_NO_TRACE_PLAY) == 0)
+			and (t.bestScorePerfectStealthNoKillBonusScore > 0)
+		then
 			t.bestScoreNoTraceBonusScore = mvars.res_scoreTable.noTraceBonus * mvars.res_bonusMissionClearTimeRatio
 		end
 	end
 end
 local r = 999999
 local i = -999999
-function e.CalcScore(s, a, n)
-	local t = a.unitValue or 1
-	local s = s / t
+function e.CalcScore(n, s, a, l)
+	local t = s.unitValue or 1
+	local n = n / t
 	local t = 0
-	local o = a.valueToScoreRatio or 1
-	local a = 999999
-	if n and n.countLimit then
-		a = n.countLimit
+	local o = s.valueToScoreRatio or 1
+	local s = l or 999999
+	if a and a.countLimit then
+		s = a.countLimit
 	end
-	if s > a then
-		s = a
+	if n > s then
+		n = s
 	end
-	t = s * o
+	t = n * o
 	if t < i then
 		t = i
 	elseif t > r then
@@ -1620,31 +1629,31 @@ function e.CalcScore(s, a, n)
 	end
 	return t
 end
-function e.CalcHitRatioBonusScore(o, t, r, a, l, u, c, s, n)
-	local t = t - r
-	if t <= 0 then
+function e.CalcHitRatioBonusScore(s, r, i, t, a, l, c, o, n)
+	local r = r - i
+	if r <= 0 then
 		return 0
 	end
-	local r = t
-	local i = o / r
-	if a < 1 then
-		a = 0.5
+	local r = r
+	local i = s / r
+	if t < 1 then
+		t = 0.5
 	end
-	local t = (((l * 2) * r) / (a * u)) * (i ^ c)
-	local t = (l + t) * o
-	if t > (a * s) then
-		t = a * s
+	local l = (((a * 2) * r) / (t * l)) * (i ^ c)
+	local a = (a + l) * s
+	if a > (t * o) then
+		a = t * o
 	end
 	local s
 	if i >= 1 then
-		s = (((n / 2) * a) / 10) * (a / r)
+		s = (((n / 2) * t) / 10) * (t / r)
 		if s > n then
 			s = n
 		end
-		t = t + s
+		a = a + s
 	end
-	t = math.ceil(t)
-	return t
+	a = math.ceil(a)
+	return a
 end
 e.playScoreList = {
 	"bestScoreTimeScore",
@@ -1740,19 +1749,19 @@ function e.DecideMissionClearRank()
 	svars.bestRank = t
 	return svars.bestRank
 end
-function e.UpdateGmpOnMissionClear(t, a, n)
-	local s = e.MISSION_GUARANTEE_GMP[t]
-	if not s then
+function e.UpdateGmpOnMissionClear(t, a, s)
+	local n = e.MISSION_GUARANTEE_GMP[t]
+	if not n then
 		return
 	end
 	if t == 10020 and (not TppStory.IsMissionCleard(t)) then
 		return
 	end
-	local s = e.GetMissionGuaranteeGMP(t)
-	svars.gmpClear = TppTerminal.CorrectGMP({ gmp = s })
+	local n = e.GetMissionGuaranteeGMP(t)
+	svars.gmpClear = TppTerminal.CorrectGMP({ gmp = n })
 	if a ~= TppDefine.MISSION_CLEAR_RANK.NOT_DEFINED then
 		local e = e.GetMissionClearRankGMP(a, t)
-		e = e + n
+		e = e + s
 		svars.gmpOutcome = TppTerminal.CorrectGMP({ gmp = e })
 	else
 		svars.gmpOutcome = 0
@@ -1832,10 +1841,10 @@ function e.GetMissionGuaranteeGMP(t)
 	end
 	return t
 end
-local a = 0.5
-function e.GetRepeatPlayGMPReduceRatio(t)
-	local e = e.GetMissionClearCountFromHistory(t)
-	local e = a ^ e
+local t = 0.5
+function e.GetRepeatPlayGMPReduceRatio(a)
+	local e = e.GetMissionClearCountFromHistory(a)
+	local e = t ^ e
 	return e
 end
 local a = 0
@@ -1847,11 +1856,11 @@ function e.AddMissionClearHistory(a)
 	gvars.res_missionClearHistory[0] = a
 	e.ClearOverSizeHistory(gvars.res_missionClearHistorySize)
 end
-function e.GetMissionClearCountFromHistory(a)
+function e.GetMissionClearCountFromHistory(t)
 	local e = 0
-	local t = gvars.res_missionClearHistorySize - 1
-	for t = 0, t do
-		if gvars.res_missionClearHistory[t] == a then
+	local a = gvars.res_missionClearHistorySize - 1
+	for a = 0, a do
+		if gvars.res_missionClearHistory[a] == t then
 			e = e + 1
 		end
 	end
@@ -1909,26 +1918,26 @@ function e.SetSpecialBonusResultScore()
 		)
 	end
 end
-function e._SetSpecialBonusResultScore(t, i, n, r, s, o, a)
+function e._SetSpecialBonusResultScore(t, i, o, r, n, s, a)
 	if not a.taskNo then
 		TppUiCommand.SetResultScore("invalid", "bonus", t)
 		return
 	end
-	local s = e.MakeMissionTaskLangId(a.taskNo)
+	local n = e.MakeMissionTaskLangId(a.taskNo)
 	local a = svars[i]
-	if (not svars[o]) and (a == 0) then
+	if (not svars[s]) and (a == 0) then
 		TppUiCommand.SetResultScore("invalid", "bonus", t)
 		return
 	end
-	local n = svars[n]
+	local s = svars[o]
 	local e = -1
 	if a > 0 then
 		e = a
 	end
 	if e == -1 then
-		TppUiCommand.SetResultScore(s, "bonus", t, e, n)
+		TppUiCommand.SetResultScore(n, "bonus", t, e, s)
 	else
-		TppUiCommand.SetResultScore(s, "bonus_rate", t, e, r, n)
+		TppUiCommand.SetResultScore(n, "bonus_rate", t, e, r, s)
 	end
 end
 function e.MakeMissionTaskLangId(t)
@@ -2043,7 +2052,7 @@ e.DEBUG_NEUTRALIZE_TYPE_TEXT = {
 	" ASSIST",
 }
 function e.DebugUpdate()
-	local n = 5
+	local r = 5
 	local s = svars
 	local a = mvars
 	local t = (nil).NewContext()
@@ -2068,9 +2077,9 @@ function e.DebugUpdate()
 		(nil).Print(t, "historySize = " .. tostring(gvars.res_missionClearHistorySize))
 		local a = {}
 		local s, e = 0, 1
-		local r = gvars.res_missionClearHistorySize - 1
-		for t = 0, r do
-			e = math.floor(s / n) + 1
+		local n = gvars.res_missionClearHistorySize - 1
+		for t = 0, n do
+			e = math.floor(s / r) + 1
 			a[e] = a[e] or "   "
 			a[e] = a[e] .. (tostring(gvars.res_missionClearHistory[t]) .. ", ")
 			s = s + 1
@@ -2265,19 +2274,39 @@ function e.Messages()
 		GameObject = {
 			{
 				msg = "Dead",
-				func = function(e, t, a, a)
-					if not Tpp.IsLocalPlayer(t) then
+				func = function(t, e, a, a)
+					if not Tpp.IsLocalPlayer(e) then
 						return
 					end
-					if Tpp.IsEnemyWalkerGear(e) then
+					if Tpp.IsEnemyWalkerGear(t) then
 						Tpp.IncrementPlayData("totalWalkerGearDestoryCount")
 					end
 				end,
 			},
-			{ msg = "TapHeadShotFar", func = e.OnTacticalActionPoint },
-			{ msg = "TapRocketArm", func = e.OnTacticalActionPoint },
-			{ msg = "TapHoldup", func = e.OnTacticalActionPoint },
-			{ msg = "TapCqc", func = e.OnTacticalActionPoint },
+			{
+				msg = "TapHeadShotFar",
+				func = function(t)
+					e.OnTacticalActionPoint(t, "TapHeadShotFar")
+				end,
+			},
+			{
+				msg = "TapRocketArm",
+				func = function(t)
+					e.OnTacticalActionPoint(t, "TapRocketArm")
+				end,
+			},
+			{
+				msg = "TapHoldup",
+				func = function(t)
+					e.OnTacticalActionPoint(t, "TapHoldup")
+				end,
+			},
+			{
+				msg = "TapCqc",
+				func = function(t)
+					e.OnTacticalActionPoint(t, "TapCqc")
+				end,
+			},
 			{ msg = "HeadShot", func = e.OnHeadShot },
 			{ msg = "Neutralize", func = e.OnNeutralize },
 			{ msg = "InterrogateSetMarker", func = e.IncrementInterrogateCount },
@@ -2296,9 +2325,10 @@ end
 local t = s
 local t = s
 local t = true
-local a = false
+local n = false
 function e.IncrementInterrogateCount()
 	Tpp.IncrementPlayData("totalInterrogateCount")
+	TppChallengeTask.RequestUpdate("PLAY_RECORD")
 	if svars.interrogateCount < s then
 		svars.interrogateCount = svars.interrogateCount + 1
 	end
@@ -2312,24 +2342,58 @@ function e.IncrementTakeHitCount()
 		e.CallCountAnnounce("result_hit", svars.takeHitCount, t)
 	end
 end
-function e.OnTacticalActionPoint(t)
+function e.OnTacticalActionPoint(t, a)
 	if S(t, { id = "IsDoneTacticalTakedown" }) then
 	else
 		S(t, { id = "SetTacticalTakedown" })
-		e.AddTacticalActionPoint()
+		e.AddTacticalActionPoint({ isSneak = true, gameObjectId = t, tacticalTakeDownType = a })
 	end
 end
-function e.AddTacticalActionPoint()
+function e.GetTacticalActionPoint(e)
+	if e then
+		return svars.tacticalActionPoint
+	else
+		if vars.missionCode ~= 50050 then
+			return 0
+		end
+		return svars.tacticalActionPointClient
+	end
+end
+function e.AddTacticalActionPoint(t)
 	if mvars.res_noTacticalTakeDown then
 		return
 	end
-	Tpp.IncrementPlayData("rnk_TotalTacticalTakeDownCount")
-	if svars.tacticalActionPoint >= mvars.res_missionScoreTable.tacticalTakeDownPoint.countLimit then
+	local function r(t, e)
+		if t then
+			svars.tacticalActionPoint = e
+		else
+			if vars.missionCode ~= 50050 then
+				return
+			end
+			svars.tacticalActionPointClient = e
+		end
+	end
+	local a = true
+	if t and (t.isSneak == false) then
+		a = false
+	end
+	local s = e.GetTacticalActionPoint(a)
+	if a then
+		Tpp.IncrementPlayData("rnk_TotalTacticalTakeDownCount")
+		TppChallengeTask.RequestUpdate("PLAY_RECORD")
+	end
+	if s >= mvars.res_missionScoreTable.tacticalTakeDownPoint.countLimit then
 		return
 	end
-	svars.tacticalActionPoint = svars.tacticalActionPoint + 1
-	e.CallCountAnnounce("result_tactical_takedown", svars.tacticalActionPoint, a)
-	TppTutorial.DispGuide("TAKE_DOWN", TppTutorial.DISPLAY_OPTION.TIPS)
+	r(a, s + 1)
+	if a then
+		e.CallCountAnnounce("result_tactical_takedown", svars.tacticalActionPoint, n)
+		TppTutorial.DispGuide("TAKE_DOWN", TppTutorial.DISPLAY_OPTION.TIPS)
+		local e = t and t.tacticalTakeDownType
+		if e then
+			Mission.SendMessage("Mission", "OnAddTacticalActionPoint", t.gameObjectId, t.tacticalTakeDownType)
+		end
+	end
 end
 function e.CallCountAnnounce(t, a, s)
 	TppUiCommand.CallCountAnnounce(t, a, s)
@@ -2418,22 +2482,14 @@ function e.IncrementPlayDataNeutralizeCount(e)
 		gvars.res_neutralizeCountForPlayData[e] = gvars.res_neutralizeCountForPlayData[e] + 1
 	end
 end
-function e.OnHeadShot(a, a, e, t)
-	if not Tpp.IsPlayer(e) then
+function e.OnHeadShot(n, n, a, t)
+	if not Tpp.IsPlayer(a) then
 		return
 	end
-	local e = false
-	if bit.band(t, HeadshotMessageFlag.IS_JUST_UNCONSCIOUS) == HeadshotMessageFlag.IS_JUST_UNCONSCIOUS then
-		if HeadshotMessageFlag.NEUTRALIZE_DONE == nil then
-			e = true
-		else
-			if bit.band(t, HeadshotMessageFlag.NEUTRALIZE_DONE) ~= HeadshotMessageFlag.NEUTRALIZE_DONE then
-				e = true
-			end
-		end
-	end
+	local e = e.IsCountUpHeadShot(t)
 	if e then
 		Tpp.IncrementPlayData("totalheadShotCount")
+		TppChallengeTask.RequestUpdate("PLAY_RECORD")
 	end
 	if mvars.res_noResult then
 		return
@@ -2447,6 +2503,19 @@ function e.OnHeadShot(a, a, e, t)
 			gvars.res_headShotCount[0] = gvars.res_headShotCount[0] + 1
 		end
 	end
+end
+function e.IsCountUpHeadShot(t)
+	local e = false
+	if bit.band(t, HeadshotMessageFlag.IS_JUST_UNCONSCIOUS) == HeadshotMessageFlag.IS_JUST_UNCONSCIOUS then
+		if HeadshotMessageFlag.NEUTRALIZE_DONE == nil then
+			e = true
+		else
+			if bit.band(t, HeadshotMessageFlag.NEUTRALIZE_DONE) ~= HeadshotMessageFlag.NEUTRALIZE_DONE then
+				e = true
+			end
+		end
+	end
+	return e
 end
 function e.AddNewPlayStyleHistory()
 	if gvars.res_neutralizeHistorySize < TppDefine.PLAYSTYLE_HISTORY_MAX then
@@ -2480,9 +2549,9 @@ function e.GetTotalHeadShotCount()
 end
 function e.GetTotalNeutralizeCount()
 	local e = 0
-	for a = 0, TppDefine.PLAYSTYLE_HISTORY_MAX do
-		for t = 0, TppDefine.PLAYSTYLE_SAVE_INDEX_MAX - 1 do
-			e = e + gvars.res_neutralizeCount[a * TppDefine.PLAYSTYLE_SAVE_INDEX_MAX + t]
+	for t = 0, TppDefine.PLAYSTYLE_HISTORY_MAX do
+		for a = 0, TppDefine.PLAYSTYLE_SAVE_INDEX_MAX - 1 do
+			e = e + gvars.res_neutralizeCount[t * TppDefine.PLAYSTYLE_SAVE_INDEX_MAX + a]
 		end
 	end
 	return e
@@ -2497,31 +2566,31 @@ function e.IsTotalPlayStyleStealth()
 	end
 	return e
 end
-function e.GetNeutralizeCountBySaveIndex(a)
+function e.GetNeutralizeCountBySaveIndex(t)
 	local e = 0
-	for t = 0, TppDefine.PLAYSTYLE_HISTORY_MAX do
-		e = e + gvars.res_neutralizeCount[t * TppDefine.PLAYSTYLE_SAVE_INDEX_MAX + a]
+	for a = 0, TppDefine.PLAYSTYLE_HISTORY_MAX do
+		e = e + gvars.res_neutralizeCount[a * TppDefine.PLAYSTYLE_SAVE_INDEX_MAX + t]
 	end
 	return e
 end
 function e.DecideNeutralizePlayStyle()
 	local t
-	local r
-	local s = -1
-	for a = 0, TppDefine.PLAYSTYLE_SAVE_INDEX_MAX - 1 do
-		local n = e.GetNeutralizeCountBySaveIndex(a)
-		if s < n then
+	local n
+	local a = -1
+	for s = 0, TppDefine.PLAYSTYLE_SAVE_INDEX_MAX - 1 do
+		local r = e.GetNeutralizeCountBySaveIndex(s)
+		if a < r then
 			t = false
-			r = a
-			s = n
-		elseif s == e.GetNeutralizeCountBySaveIndex(a) then
+			n = s
+			a = r
+		elseif a == e.GetNeutralizeCountBySaveIndex(s) then
 			t = true
 		end
 	end
 	if t then
 		return 28
 	else
-		local e = e.NEUTRALIZE_PLAY_STYLE_ID[r + 1]
+		local e = e.NEUTRALIZE_PLAY_STYLE_ID[n + 1]
 		if e then
 			return e
 		else

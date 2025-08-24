@@ -1,0 +1,547 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x2D76D70" id="0x9B70">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="10">
+          <containerEntry key="avr_stage_0000">
+            <data>0x2D77160</data>
+          </containerEntry>
+          <containerEntry key="BoxShape0000">
+            <data>0x2D77320</data>
+          </containerEntry>
+          <containerEntry key="avatar_space_GeoTrap0000">
+            <data>0x2D774E0</data>
+          </containerEntry>
+          <containerEntry key="avatar_space_GeoModuleCondition0000">
+            <data>0x2D77710</data>
+          </containerEntry>
+          <containerEntry key="TppLightProbeSHCoefficients0000">
+            <data>0x2D77A90</data>
+          </containerEntry>
+          <containerEntry key="warp_avatarEdit">
+            <data>0x2D77E10</data>
+          </containerEntry>
+          <containerEntry key="AvatarEditIdentifier">
+            <data>0x2D77FD0</data>
+          </containerEntry>
+          <containerEntry key="LightArray0000">
+            <data>0x2D7BDF0</data>
+          </containerEntry>
+          <containerEntry key="TppLightProbeArray0000">
+            <data>0x2D7C1E0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x2D7C2C0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x2D77160" id="0x9B89">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>avr_stage_0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D771D0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/chara/avr/Scenes/avr_stage.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/chara/avr/Scenes/avr_stage.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x2D771D0" id="0x9B8C">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77160</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="BoxShape" classVersion="0" classID="0x100" addr="0x2D77320" id="0x9B94">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>BoxShape0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D774E0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77390</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x2D77390" id="0x9B97">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77320</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="25.11544" y="25.11544" z="25.11544" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="1000" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoTrap" classVersion="2" classID="0x120" addr="0x2D774E0" id="0x9B9D">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>avatar_space_GeoTrap0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77550</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List" arraySize="2">
+          <containerEntry>0x2D77320</containerEntry>
+          <containerEntry>0x2D77710</containerEntry>
+        </property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="conditionArray" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/chara/avr/avr_stage.fox2" nameInArchive="avatar_space_GeoModuleCondition0000">0x2D77710</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x2D77550" id="0x9BA3">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D774E0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoModuleCondition" classVersion="0" classID="0x160" addr="0x2D77710" id="0x9BA9">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>avatar_space_GeoModuleCondition0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D774E0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77780</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="trapCategory" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="trapPriority" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="isOnce" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isAndCheck" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="checkFuncNames" type="String" container="DynamicArray" arraySize="2">
+          <containerEntry>IsPlayer</containerEntry>
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="execFuncNames" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>TppRequestWeatherTagTrapExec</containerEntry>
+        </property>
+        <property name="checkCallbackDataElements" type="EntityPtr" container="DynamicArray" arraySize="1">
+          <containerEntry>0x2D778D0</containerEntry>
+        </property>
+        <property name="execCallbackDataElements" type="EntityPtr" container="DynamicArray" arraySize="1">
+          <containerEntry>0x2D77940</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x2D77780" id="0x9BAC">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77710</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.1" y="-0.1" z="-0.1" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTrapCheckIsPlayerCallbackDataElement" classVersion="0" classID="0x20" addr="0x2D778D0" id="0x9BB2">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77710</containerEntry>
+        </property>
+        <property name="funcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>IsPlayer</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppRequestWeatherTagTrapExecDataElement" classVersion="0" classID="0x2C" addr="0x2D77940" id="0x9BB4">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77710</containerEntry>
+        </property>
+        <property name="funcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppRequestWeatherTagTrapExec</containerEntry>
+        </property>
+        <property name="tagName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>avatar_space</containerEntry>
+        </property>
+        <property name="priority" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>5</containerEntry>
+        </property>
+        <property name="interpTime" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppLightProbeSHCoefficients" classVersion="1" classID="0x68" addr="0x2D77A90" id="0x9BC0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppLightProbeSHCoefficients0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="filePath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/chara/avr/avr_stage.lpsh</containerEntry>
+        </property>
+        <property name="lpshFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/chara/avr/avr_stage.lpsh</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x2D77E10" id="0x9BD5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>warp_avatarEdit</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77E80</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x2D77E80" id="0x9BD8">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D77E10</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="1001" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DataIdentifier" classVersion="0" classID="0x78" addr="0x2D77FD0" id="0x9BDE">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>AvatarEditIdentifier</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="identifier" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CheckPointIdentifier</containerEntry>
+        </property>
+        <property name="links" type="EntityLink" container="StringMap" arraySize="2">
+          <containerEntry key="AvatarEditIdentifier">
+            <data packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/chara/avr/avr_stage.fox2" nameInArchive="AvatarEditIdentifier">0x2D77FD0</data>
+          </containerEntry>
+          <containerEntry key="warp_avatarEdit">
+            <data packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/chara/avr/avr_stage.fox2" nameInArchive="warp_avatarEdit">0x2D77E10</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x2D78190" id="0x9BEF">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D78120</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.024644" y="-0.539691" z="0.630933" w="0.556821"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-1.596789" y="1001.91644" z="-1.44" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ShearTransformEntity" classVersion="0" classID="0x30" addr="0x2D78200" id="0x9BF1">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D78120</containerEntry>
+        </property>
+        <property name="shearTransform_shear" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-0" y="0" z="-2e-06" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x2D78350" id="0x9BFB">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D782E0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.42297" y="0.093178" z="-0.241465" w="0.868394"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.267" y="1002.70184" z="1.734" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ShearTransformEntity" classVersion="0" classID="0x30" addr="0x2D783C0" id="0x9BFD">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D782E0</containerEntry>
+        </property>
+        <property name="shearTransform_shear" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-1e-06" z="-0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="LightArray" classVersion="2" classID="0x120" addr="0x2D7BDF0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>LightArray0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>134217735</containerEntry>
+        </property>
+        <property name="lightArrayFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/chara/avr/avr_stage_fox2_grxla_win.grxla</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppLightProbeArray" classVersion="2" classID="0x150" addr="0x2D7C1E0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppLightProbeArray0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>134217735</containerEntry>
+        </property>
+        <property name="drawRejectionLevels" type="Int32" container="DynamicArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="relatedLights" type="EntityLink" container="DynamicArray"></property>
+        <property name="shDatas" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/chara/avr/avr_stage.fox2" nameInArchive="TppLightProbeSHCoefficients0000">0x2D77A90</containerEntry>
+        </property>
+        <property name="lightArrayFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/chara/avr/avr_stage_fox2_tgrxla_win.grxla</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x2D7C2C0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D76D70</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

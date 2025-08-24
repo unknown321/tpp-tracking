@@ -2275,6 +2275,8 @@ function e.Clear(t)
 	if e.GetSideOpsInfo(t) then
 		TppTrophy.Unlock(15)
 	end
+	TppMission.SetPlayRecordClearInfo()
+	TppChallengeTask.RequestUpdate("SIDEOPS")
 	TppUiCommand.SetSideOpsListUpdate()
 	for n, e in ipairs(f) do
 		if t == e then

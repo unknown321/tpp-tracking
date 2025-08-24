@@ -1,7 +1,7 @@
 local e = {}
-local s = Fox.StrCode32
+local p = Fox.StrCode32
 local n = Tpp.IsTypeFunc
-local p = Tpp.IsTypeTable
+local s = Tpp.IsTypeTable
 local o = Tpp.IsTypeString
 local l = Tpp.IsTypeNumber
 local r = GameObject.GetGameObjectId
@@ -12,19 +12,19 @@ local n = GameObject.SendCommand
 local t = Tpp.DEBUG_StrCode32ToString
 local _ = "quest_cp"
 local d = EnemySubType or {}
-local function c(i)
-	local e = {}
-	for t, n in ipairs(i) do
-		if p(n) then
-			e[t] = c(n)
+local function c(e)
+	local t = {}
+	for n, i in ipairs(e) do
+		if s(i) then
+			t[n] = c(i)
 		else
-			local n = r(i[t])
-			if n and n ~= a then
-				e[n] = t
+			local e = r(e[n])
+			if e and e ~= a then
+				t[e] = n
 			end
 		end
 	end
-	return e
+	return t
 end
 function e.Messages()
 	return Tpp.StrCode32Table({
@@ -555,15 +555,15 @@ e.DDWeaponIdInfo = {
 	},
 }
 do
-	e.ROUTE_SET_TYPETAG[s("day")] = "day"
-	e.ROUTE_SET_TYPETAG[s("night")] = "night"
-	e.ROUTE_SET_TYPETAG[s("caution")] = "caution"
-	e.ROUTE_SET_TYPETAG[s("hold")] = "hold"
-	e.ROUTE_SET_TYPETAG[s("travel")] = "travel"
-	e.ROUTE_SET_TYPETAG[s("new")] = "new"
-	e.ROUTE_SET_TYPETAG[s("old")] = "old"
-	e.ROUTE_SET_TYPETAG[s("midnight")] = "midnight"
-	e.ROUTE_SET_TYPETAG[s("sleep")] = "sleep"
+	e.ROUTE_SET_TYPETAG[p("day")] = "day"
+	e.ROUTE_SET_TYPETAG[p("night")] = "night"
+	e.ROUTE_SET_TYPETAG[p("caution")] = "caution"
+	e.ROUTE_SET_TYPETAG[p("hold")] = "hold"
+	e.ROUTE_SET_TYPETAG[p("travel")] = "travel"
+	e.ROUTE_SET_TYPETAG[p("new")] = "new"
+	e.ROUTE_SET_TYPETAG[p("old")] = "old"
+	e.ROUTE_SET_TYPETAG[p("midnight")] = "midnight"
+	e.ROUTE_SET_TYPETAG[p("sleep")] = "sleep"
 end
 e.DEFAULT_HOLD_TIME = 60
 e.DEFAULT_TRAVEL_HOLD_TIME = 15
@@ -573,25 +573,25 @@ e.FOB_DD_SUIT_SNEAKING = 2
 e.FOB_DD_SUIT_BTRDRS = 3
 e.FOB_PF_SUIT_ARMOR = 4
 function e._ConvertSoldierNameKeysToId(e)
-	local i = {}
+	local t = {}
 	local n = {}
 	Tpp.MergeTable(n, e)
 	for n, s in pairs(n) do
 		if o(n) then
-			local t = r("TppSoldier2", n)
-			if t ~= a then
-				table.insert(i, n)
-				e[t] = s
+			local i = r("TppSoldier2", n)
+			if i ~= a then
+				table.insert(t, n)
+				e[i] = s
 			end
 		end
 	end
-	for t, n in ipairs(i) do
+	for t, n in ipairs(t) do
 		e[n] = nil
 	end
 end
 function e._SetUpSoldierTypes(t, n)
 	for a, n in ipairs(n) do
-		if p(n) then
+		if s(n) then
 			e._SetUpSoldierTypes(t, n)
 		else
 			mvars.ene_soldierTypes[n] = EnemyType["TYPE_" .. t]
@@ -605,7 +605,7 @@ function e.SetUpSoldierTypes(n)
 end
 function e._SetUpSoldierSubTypes(t, n)
 	for a, n in ipairs(n) do
-		if p(n) then
+		if s(n) then
 			e._SetUpSoldierSubTypes(t, n)
 		else
 			local e = r("TppSoldier2", n)
@@ -669,9 +669,9 @@ function e.ApplyPersonalAbilitySettingsOnInitialize()
 		end
 	end
 end
-function e.SetSoldierType(e, n)
-	mvars.ene_soldierTypes[e] = n
-	GameObject.SendCommand(e, { id = "SetSoldier2Type", type = n })
+function e.SetSoldierType(n, e)
+	mvars.ene_soldierTypes[n] = e
+	GameObject.SendCommand(n, { id = "SetSoldier2Type", type = e })
 end
 function e.GetSoldierType(n)
 	local e = TppMission.GetMissionID()
@@ -707,8 +707,8 @@ function e.GetSoldierType(n)
 	end
 	return e
 end
-function e.SetSoldierSubType(n, e)
-	mvars.ene_soldierSubType[n] = e
+function e.SetSoldierSubType(e, n)
+	mvars.ene_soldierSubType[e] = n
 end
 function e.GetSoldierSubType(t, a)
 	local n = TppMission.GetMissionID()
@@ -767,7 +767,7 @@ function e.GetDefaultSoldierSubType(n)
 	end
 	return nil
 end
-function e._CreateDDWeaponIdTable(s, o, p)
+function e._CreateDDWeaponIdTable(p, s, o)
 	local r = { NORMAL = {} }
 	local t = r.NORMAL
 	mvars.ene_ddWeaponCount = 0
@@ -779,12 +779,12 @@ function e._CreateDDWeaponIdTable(s, o, p)
 			local i = e.developedEquipType
 			if i == nil then
 				n = true
-			elseif e.isNoKill and not p then
+			elseif e.isNoKill and not o then
 				n = false
 			else
 				local e = e.developId
 				local e = TppMotherBaseManagement.GetEquipDevelopRank(e)
-				if o >= e and s[i] >= e then
+				if s >= e and p[i] >= e then
 					n = true
 				end
 			end
@@ -895,14 +895,14 @@ function e.GetWeaponIdTable(t, a)
 	return n
 end
 function e.GetWeaponId(t, i)
-	local a, p, r
+	local a, p, s
 	local n = e.GetSoldierType(t)
-	local o = e.GetSoldierSubType(t, n)
+	local r = e.GetSoldierSubType(t, n)
 	local t = TppMission.GetMissionID()
 	if (t == 10080 or t == 11080) and n == EnemyType.TYPE_CHILD then
 		return TppEquip.EQP_WP_Wood_ar_010, TppEquip.EQP_WP_West_hg_010, nil
 	end
-	local t = e.GetWeaponIdTable(n, o)
+	local t = e.GetWeaponIdTable(n, r)
 	if t == nil then
 		return nil, nil, nil
 	end
@@ -912,22 +912,22 @@ function e.GetWeaponId(t, i)
 	else
 		n = t.NORMAL
 	end
-	r = TppEquip.EQP_None
+	s = TppEquip.EQP_None
 	p = n.HANDGUN
-	local s = {}
-	if TppRevenge.IsUsingStrongSniper() and t.STRONG then
-		s = t.STRONG
-	else
-		s = t.NORMAL
-	end
 	local o = {}
-	if TppRevenge.IsUsingStrongMissile() and t.STRONG then
+	if TppRevenge.IsUsingStrongSniper() and t.STRONG then
 		o = t.STRONG
 	else
 		o = t.NORMAL
 	end
-	if i.SNIPER and s.SNIPER then
-		a = s.SNIPER
+	local r = {}
+	if TppRevenge.IsUsingStrongMissile() and t.STRONG then
+		r = t.STRONG
+	else
+		r = t.NORMAL
+	end
+	if i.SNIPER and o.SNIPER then
+		a = o.SNIPER
 	elseif i.SHOTGUN and n.SHOTGUN then
 		a = n.SHOTGUN
 	elseif i.MG and n.MG then
@@ -938,15 +938,15 @@ function e.GetWeaponId(t, i)
 		a = n.ASSAULT
 	end
 	if i.SHIELD and n.SHIELD then
-		r = n.SHIELD
-	elseif i.MISSILE and o.MISSILE then
-		r = o.MISSILE
+		s = n.SHIELD
+	elseif i.MISSILE and r.MISSILE then
+		s = r.MISSILE
 	end
 	if i.GUN_LIGHT then
 		local e = e.gunLightWeaponIds[a]
 		a = e or a
 	end
-	return a, p, r
+	return a, p, s
 end
 function e.GetBodyId(t, o, r, a)
 	local i
@@ -1089,12 +1089,12 @@ function e.IsNVG(e)
 	end
 	return false
 end
-function e.AddPowerSetting(t, a)
-	local n = mvars.ene_soldierPowerSettings[t] or {}
-	for t, a in pairs(a) do
-		n[t] = a
+function e.AddPowerSetting(n, a)
+	local t = mvars.ene_soldierPowerSettings[n] or {}
+	for a, n in pairs(a) do
+		t[a] = n
 	end
-	e.ApplyPowerSetting(t, n)
+	e.ApplyPowerSetting(n, t)
 end
 function e.ApplyPowerSetting(t, i)
 	if t == a then
@@ -1181,9 +1181,9 @@ function e.ApplyPowerSetting(t, i)
 	i = n
 	local n = 0
 	local o = e.GetBodyId(t, r, a, i)
-	local s = e.GetFaceId(t, r, a, i)
+	local p = e.GetFaceId(t, r, a, i)
 	local l = e.GetBalaclavaFaceId(t, r, a, i)
-	local e, p, r = e.GetWeaponId(t, i)
+	local r, s, e = e.GetWeaponId(t, i)
 	if i.HELMET then
 		n = n + WearEquip.HELMET
 	end
@@ -1196,10 +1196,10 @@ function e.ApplyPowerSetting(t, i)
 	if i.SOFT_ARMOR then
 		n = n + WearEquip.SOFT_ARMOR
 	end
-	if (e ~= nil or secondaryWeapon ~= nil) or r ~= nil then
-		GameObject.SendCommand(t, { id = "SetEquipId", primary = e, secondary = p, tertiary = r })
+	if (r ~= nil or secondaryWeapon ~= nil) or e ~= nil then
+		GameObject.SendCommand(t, { id = "SetEquipId", primary = r, secondary = s, tertiary = e })
 	end
-	GameObject.SendCommand(t, { id = "ChangeFova", bodyId = o, faceId = s, balaclavaFaceId = l })
+	GameObject.SendCommand(t, { id = "ChangeFova", bodyId = o, faceId = p, balaclavaFaceId = l })
 	GameObject.SendCommand(t, { id = "SetWearEquip", flag = n })
 	local e = {
 		SOVIET_A = d.SOVIET_A,
@@ -1688,9 +1688,9 @@ function e.SetSaluteVoiceList()
 	if TppUiCommand.IsBirthDay() then
 		table.insert(r, "salute0380")
 	end
-	local n = { high = { normal = r, once = i }, mid = { normal = t, once = p }, low = { normal = e, once = s } }
-	local e = { type = "TppSoldier2" }
-	GameObject.SendCommand(e, { id = "SetSaluteVoiceList", list = n })
+	local e = { high = { normal = r, once = i }, mid = { normal = t, once = p }, low = { normal = e, once = s } }
+	local n = { type = "TppSoldier2" }
+	GameObject.SendCommand(n, { id = "SetSaluteVoiceList", list = e })
 end
 function e.RequestLoadWalkerGearEquip()
 	TppEquip.RequestLoadToEquipMissionBlock({ TppEquip.EQP_WP_West_hg_010 })
@@ -1699,7 +1699,7 @@ function e.SetSoldier2CommonPackageLabel(e)
 	mvars.ene_soldier2CommonBlockPackageLabel = e
 end
 function e.AssignUniqueStaffType(e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	local t = e.locaterName
@@ -1741,7 +1741,7 @@ function e.IsActiveSoldierInRange(t, e)
 	return n({ type = "TppSoldier2" }, e)
 end
 function e._SetOutOfArea(n, t)
-	if p(n) then
+	if s(n) then
 		for a, n in ipairs(n) do
 			e._SetOutOfArea(n, t)
 		end
@@ -1750,10 +1750,10 @@ function e._SetOutOfArea(n, t)
 		table.insert(t, e)
 	end
 end
-function e.SetOutOfArea(i, a)
+function e.SetOutOfArea(a, i)
 	local t = {}
-	e._SetOutOfArea(i, t)
-	local e = { id = "SetOutOfArea", soldiers = t, isOut = a }
+	e._SetOutOfArea(a, t)
+	local e = { id = "SetOutOfArea", soldiers = t, isOut = i }
 	n({ type = "TppSoldier2" }, e)
 end
 function e.SetEliminateTargets(t, n)
@@ -1847,28 +1847,28 @@ function e.GetAllHostages()
 	local s = TppGameObject.NPC_STATE_DISABLE
 	local o = {}
 	for e, r in ipairs(e) do
-		local t = 1
+		local e = 1
 		local i = 0
-		while i < t do
-			local e = T(r, i)
-			if e == a then
+		while i < e do
+			local t = T(r, i)
+			if t == a then
 				break
 			end
-			if t == 1 then
-				t = n({ type = r }, { id = "GetMaxInstanceCount" })
-				if not t or t < 1 then
+			if e == 1 then
+				e = n({ type = r }, { id = "GetMaxInstanceCount" })
+				if not e or e < 1 then
 					break
 				end
 			end
-			local t = true
-			if mvars.ene_excludeHostageGameObjectId and mvars.ene_excludeHostageGameObjectId == e then
-				t = false
+			local e = true
+			if mvars.ene_excludeHostageGameObjectId and mvars.ene_excludeHostageGameObjectId == t then
+				e = false
 			end
-			if t then
-				local t = n(e, { id = "GetLifeStatus" })
-				local n = n(e, { id = "GetStatus" })
-				if (n ~= s) and (t ~= TppGameObject.NPC_LIFE_STATE_DEAD) then
-					table.insert(o, e)
+			if e then
+				local e = n(t, { id = "GetLifeStatus" })
+				local n = n(t, { id = "GetStatus" })
+				if (n ~= s) and (e ~= TppGameObject.NPC_LIFE_STATE_DEAD) then
+					table.insert(o, t)
 				end
 			end
 			i = i + 1
@@ -1879,10 +1879,10 @@ end
 function e.GetAllActiveEnemyWalkerGear()
 	local r = {}
 	local e = 1
-	local i = 0
-	while i < e do
-		local t = T("TppCommonWalkerGear2", i)
-		if t == a then
+	local t = 0
+	while t < e do
+		local i = T("TppCommonWalkerGear2", t)
+		if i == a then
 			break
 		end
 		if e == 1 then
@@ -1891,12 +1891,12 @@ function e.GetAllActiveEnemyWalkerGear()
 				break
 			end
 		end
-		local a = n(t, { id = "IsBroken" })
-		local e = n(t, { id = "IsFultonCaptured" })
+		local a = n(i, { id = "IsBroken" })
+		local e = n(i, { id = "IsFultonCaptured" })
 		if (a == false) and (e == false) then
-			table.insert(r, t)
+			table.insert(r, i)
 		end
-		i = i + 1
+		t = t + 1
 	end
 	return r
 end
@@ -1919,19 +1919,19 @@ function e.SetTargetOption(e)
 		n(e, { id = "SetIgnoreSupportBlastInUnreal", enabled = true })
 	end
 end
-function e.LetCpHasTarget(e, t)
-	local n
-	if l(e) then
-		n = e
-	elseif o(e) then
-		n = r(e)
+function e.LetCpHasTarget(n, t)
+	local e
+	if l(n) then
+		e = n
+	elseif o(n) then
+		e = r(n)
 	else
 		return
 	end
-	if n == a then
+	if e == a then
 		return
 	end
-	GameObject.SendCommand(n, { id = "SetCpMissionTarget", enable = t })
+	GameObject.SendCommand(e, { id = "SetCpMissionTarget", enable = t })
 end
 function e.GetPhase(e)
 	local t = r(e)
@@ -1981,42 +1981,42 @@ function e.IsNeutralized(n)
 	local n = e.GetStatus(n)
 	return e._IsNeutralized(t, n)
 end
-function e.IsRecovered(n)
+function e.IsRecovered(e)
 	if not mvars.ene_recoverdStateIndexByName then
 		return
 	end
-	local e
-	if o(n) then
-		e = mvars.ene_recoverdStateIndexByName[n]
-	elseif l(n) then
-		e = mvars.ene_recoverdStateIndexByGameObjectId[n]
+	local n
+	if o(e) then
+		n = mvars.ene_recoverdStateIndexByName[e]
+	elseif l(e) then
+		n = mvars.ene_recoverdStateIndexByGameObjectId[e]
 	end
-	if e then
-		return svars.ene_isRecovered[e]
+	if n then
+		return svars.ene_isRecovered[n]
 	end
 end
-function e.ChangeLifeState(e)
-	if not Tpp.IsTypeTable(e) then
+function e.ChangeLifeState(n)
+	if not Tpp.IsTypeTable(n) then
 		return "Support table only"
 	end
-	local n = e.lifeState
+	local e = n.lifeState
 	local t = 0
 	local i = 4
-	if not ((n > t) and (n < i)) then
+	if not ((e > t) and (e < i)) then
 		return "lifeState must be index"
 	end
-	local e = e.targetName
-	if not o(e) then
+	local n = n.targetName
+	if not o(n) then
 		return "targetName must be string"
 	end
-	local t = r(e)
+	local t = r(n)
 	if t ~= a then
-		GameObject.SendCommand(t, { id = "ChangeLifeState", state = n })
+		GameObject.SendCommand(t, { id = "ChangeLifeState", state = e })
 	else
-		return "Cannot get gameObjectId. targetName = " .. tostring(e)
+		return "Cannot get gameObjectId. targetName = " .. tostring(n)
 	end
 end
-function e.SetSneakRoute(e, s, t, i)
+function e.SetSneakRoute(e, s, t, r)
 	if not e then
 		return
 	end
@@ -2024,12 +2024,12 @@ function e.SetSneakRoute(e, s, t, i)
 		e = GameObject.GetGameObjectId(e)
 	end
 	t = t or 0
-	local r = false
-	if Tpp.IsTypeTable(i) then
-		r = i.isRelaxed
+	local i = false
+	if Tpp.IsTypeTable(r) then
+		i = r.isRelaxed
 	end
 	if e ~= a then
-		n(e, { id = "SetSneakRoute", route = s, point = t, isRelaxed = r })
+		n(e, { id = "SetSneakRoute", route = s, point = t, isRelaxed = i })
 	end
 end
 function e.UnsetSneakRoute(e)
@@ -2090,15 +2090,15 @@ function e.UnsetAlertRoute(e)
 	end
 end
 function e.RegistRoutePointMessage(e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	mvars.ene_routePointMessage = mvars.ene_routePointMessage or {}
 	mvars.ene_routePointMessage.main = mvars.ene_routePointMessage.main or {}
 	mvars.ene_routePointMessage.sequence = mvars.ene_routePointMessage.sequence or {}
 	local n = {}
-	n[s("GameObject")] = Tpp.StrCode32Table(e.messages)
-	local n = (Tpp.MakeMessageExecTable(n))[s("GameObject")]
+	n[p("GameObject")] = Tpp.StrCode32Table(e.messages)
+	local n = (Tpp.MakeMessageExecTable(n))[p("GameObject")]
 	local e = e.sequenceName
 	if e then
 		mvars.ene_routePointMessage.sequence[e] = mvars.ene_routePointMessage.sequence[e] or {}
@@ -2134,22 +2134,22 @@ function e.ChangeRouteSets(t, a)
 	end
 end
 function e.InitialRouteSetGroup(e)
-	local t = r(e.cpName)
+	local i = r(e.cpName)
 	local o = e.groupName
-	if not p(e.soldierList) then
+	if not s(e.soldierList) then
 		return
 	end
-	local i = {}
+	local t = {}
 	for n, e in pairs(e.soldierList) do
 		local e = r(e)
 		if e ~= a then
-			i[n] = e
+			t[n] = e
 		end
 	end
-	if t == a then
+	if i == a then
 		return
 	end
-	n(t, { id = "AssignSneakRouteGroup", soldiers = i, group = o })
+	n(i, { id = "AssignSneakRouteGroup", soldiers = t, group = o })
 end
 function e.RegisterHoldTime(e, n)
 	local e = r(e)
@@ -2187,9 +2187,9 @@ function e.NoShifhtChangeGruopSetting(e, n)
 		return
 	end
 	mvars.ene_noShiftChangeGroupSetting[e] = mvars.ene_noShiftChangeGroupSetting[e] or {}
-	mvars.ene_noShiftChangeGroupSetting[e][s(n)] = true
+	mvars.ene_noShiftChangeGroupSetting[e][p(n)] = true
 end
-function e.RegisterCombatSetting(t)
+function e.RegisterCombatSetting(a)
 	local function i(t, e)
 		local n = {}
 		for e, a in pairs(e) do
@@ -2200,10 +2200,10 @@ function e.RegisterCombatSetting(t)
 		end
 		return n
 	end
-	if not p(t) then
+	if not s(a) then
 		return
 	end
-	for n, e in pairs(t) do
+	for n, e in pairs(a) do
 		if e.USE_COMMON_COMBAT and mvars.loc_locationCommonCombat then
 			if mvars.loc_locationCommonCombat[n] then
 				if e.combatAreaList then
@@ -2213,7 +2213,7 @@ function e.RegisterCombatSetting(t)
 				end
 			end
 		end
-		if e.combatAreaList and p(e.combatAreaList) then
+		if e.combatAreaList and s(e.combatAreaList) then
 			for t, e in pairs(e.combatAreaList) do
 				for t, e in pairs(e) do
 					if e.guardTargetName and e.locatorSetName then
@@ -2271,7 +2271,7 @@ function e.SetDisableRestrictNotice(e)
 	end
 end
 function e.RealizeParasiteSquad()
-	if not p(mvars.ene_parasiteSquadList) then
+	if not s(mvars.ene_parasiteSquadList) then
 		return
 	end
 	for t, e in pairs(mvars.ene_parasiteSquadList) do
@@ -2282,7 +2282,7 @@ function e.RealizeParasiteSquad()
 	end
 end
 function e.UnRealizeParasiteSquad()
-	if not p(mvars.ene_parasiteSquadList) then
+	if not s(mvars.ene_parasiteSquadList) then
 		return
 	end
 	for t, e in pairs(mvars.ene_parasiteSquadList) do
@@ -2377,7 +2377,7 @@ function e.OnAllocate(n)
 		if n.enemy.vehicleSettings then
 			e.RegistVehicleSettings(n.enemy.vehicleSettings)
 		end
-		if p(n.enemy.disablePowerSettings) then
+		if s(n.enemy.disablePowerSettings) then
 			e.DisablePowerSettings(n.enemy.disablePowerSettings)
 		end
 		if n.enemy.soldierTypes then
@@ -2399,28 +2399,28 @@ function e.OnAllocate(n)
 	mvars.ene_isQuestHeli = false
 end
 function e.DeclareSVars(t)
-	local e = 0
-	local n = TppMission.GetMissionID()
-	if TppMission.IsFOBMission(n) then
-		e = TppDefine.MAX_UAV_COUNT
-	end
 	local n = 0
+	local e = TppMission.GetMissionID()
+	if TppMission.IsFOBMission(e) then
+		n = TppDefine.MAX_UAV_COUNT
+	end
+	local e = 0
 	if t.enemy then
-		local e = t.enemy.soldierDefine
-		if e ~= nil then
-			for e, e in pairs(e) do
-				n = n + 1
+		local n = t.enemy.soldierDefine
+		if n ~= nil then
+			for n, n in pairs(n) do
+				e = e + 1
 			end
 		end
 	end
-	if n == 1 then
-		n = 2
+	if e == 1 then
+		e = 2
 	end
-	mvars.ene_cpCount = n
+	mvars.ene_cpCount = e
 	local n = {
 		{
 			name = "cpNames",
-			arraySize = n,
+			arraySize = e,
 			type = TppScriptVars.TYPE_UINT32,
 			value = 0,
 			save = true,
@@ -2430,7 +2430,7 @@ function e.DeclareSVars(t)
 		},
 		{
 			name = "cpFlags",
-			arraySize = n,
+			arraySize = e,
 			type = TppScriptVars.TYPE_UINT8,
 			value = 0,
 			save = true,
@@ -3130,7 +3130,7 @@ function e.DeclareSVars(t)
 		},
 		{
 			name = "uavName",
-			arraySize = e,
+			arraySize = n,
 			type = TppScriptVars.TYPE_UINT32,
 			value = 0,
 			save = true,
@@ -3140,7 +3140,7 @@ function e.DeclareSVars(t)
 		},
 		{
 			name = "uavIsDead",
-			arraySize = e,
+			arraySize = n,
 			type = TppScriptVars.TYPE_UINT8,
 			value = 0,
 			save = true,
@@ -3150,7 +3150,7 @@ function e.DeclareSVars(t)
 		},
 		{
 			name = "uavMarker",
-			arraySize = e,
+			arraySize = n,
 			type = TppScriptVars.TYPE_UINT32,
 			value = 0,
 			save = true,
@@ -3160,7 +3160,7 @@ function e.DeclareSVars(t)
 		},
 		{
 			name = "uavCp",
-			arraySize = e,
+			arraySize = n,
 			type = TppScriptVars.TYPE_UINT32,
 			value = 0,
 			save = true,
@@ -3170,7 +3170,7 @@ function e.DeclareSVars(t)
 		},
 		{
 			name = "uavPatrolRoute",
-			arraySize = e,
+			arraySize = n,
 			type = TppScriptVars.TYPE_UINT32,
 			value = 0,
 			save = true,
@@ -3180,7 +3180,7 @@ function e.DeclareSVars(t)
 		},
 		{
 			name = "uavCombatRoute",
-			arraySize = e,
+			arraySize = n,
 			type = TppScriptVars.TYPE_UINT32,
 			value = 0,
 			save = true,
@@ -3237,7 +3237,7 @@ function e.RegisterSoldier2CommonMotionPackagePath(n)
 	local a = TppDefine.SOLIDER2_COMMON_PACK_PREREQUISITES[n]
 	if t then
 		if o(n) then
-			gvars.ene_soldier2CommonPackageLabelIndex = s(n)
+			gvars.ene_soldier2CommonPackageLabelIndex = p(n)
 		else
 			gvars.ene_soldier2CommonPackageLabelIndex = n
 		end
@@ -3249,14 +3249,14 @@ function e.RegisterSoldier2CommonMotionPackagePath(n)
 	TppSoldier2CommonBlockController.SetPackagePathWithPrerequisites({ path = t, prerequisites = a })
 end
 function e.IsRequiredToLoadSpecialSolider2CommonBlock()
-	if s(mvars.ene_soldier2CommonBlockPackageLabel) ~= TppDefine.DEFAULT_SOLIDER2_COMMON_PACKAGE then
+	if p(mvars.ene_soldier2CommonBlockPackageLabel) ~= TppDefine.DEFAULT_SOLIDER2_COMMON_PACKAGE then
 		return true
 	else
 		return false
 	end
 end
 function e.IsRequiredToLoadDefaultSoldier2CommonPackage()
-	local e = s(mvars.ene_soldier2CommonBlockPackageLabel)
+	local e = p(mvars.ene_soldier2CommonBlockPackageLabel)
 	if e == TppDefine.DEFAULT_SOLIDER2_COMMON_PACKAGE then
 		return true
 	else
@@ -3297,7 +3297,7 @@ function e.RestoreOnMissionStart2()
 	if mvars.ene_cpList ~= nil then
 		for t, e in pairs(mvars.ene_cpList) do
 			if n < mvars.ene_cpCount then
-				svars.cpNames[n] = s(e)
+				svars.cpNames[n] = p(e)
 				svars.cpFlags[n] = 0
 				n = n + 1
 			end
@@ -3539,8 +3539,8 @@ function e.OnReload(n)
 		e.SetUpSwitchRouteFunc()
 	end
 end
-function e.OnMessage(r, o, i, n, a, t, s)
-	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, r, o, i, n, a, t, s)
+function e.OnMessage(t, n, a, s, o, i, r)
+	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, t, n, a, s, o, i, r)
 end
 function e.DefineSoldiers(n)
 	mvars.ene_soldierDefine = {}
@@ -3583,7 +3583,7 @@ function e.DefineSoldiers(n)
 	end
 end
 function e.SetUpSoldiers()
-	if not p(mvars.ene_soldierDefine) then
+	if not s(mvars.ene_soldierDefine) then
 		return
 	end
 	local o = TppMission.GetMissionID()
@@ -3631,9 +3631,9 @@ function e.SetUpSoldiers()
 			end
 		end
 	end
-	for t, e in pairs(mvars.ene_cpList) do
-		if mvars.ene_baseCpList[t] then
-			local e = mvars.ene_soldierDefine[e]
+	for e, t in pairs(mvars.ene_cpList) do
+		if mvars.ene_baseCpList[e] then
+			local e = mvars.ene_soldierDefine[t]
 			for t, e in ipairs(e) do
 				local e = r(e)
 				if e == a then
@@ -3658,17 +3658,17 @@ function e.SetUpSoldiers()
 	e.AssignSoldiersToCP()
 end
 function e.AssignSoldiersToCP()
-	local s = TppMission.GetMissionID()
+	local r = TppMission.GetMissionID()
 	e._ConvertSoldierNameKeysToId(mvars.ene_soldierTypes)
 	mvars.ene_soldierSubType = mvars.ene_soldierSubType or {}
 	mvars.ene_soldierLrrp = mvars.ene_soldierLrrp or {}
-	local i = e.subTypeOfCp
-	for a, t in pairs(mvars.ene_soldierIDList) do
-		local r = mvars.ene_cpList[a]
-		local o = i[r]
-		local i = false
-		for t, p in pairs(t) do
-			n(t, { id = "SetCommandPost", cp = r })
+	local t = e.subTypeOfCp
+	for a, p in pairs(mvars.ene_soldierIDList) do
+		local i = mvars.ene_cpList[a]
+		local o = t[i]
+		local s = false
+		for t, p in pairs(p) do
+			n(t, { id = "SetCommandPost", cp = i })
 			if mvars.ene_lrrpTravelPlan[a] then
 				n(t, { id = "SetLrrp", travelPlan = mvars.ene_lrrpTravelPlan[a] })
 				mvars.ene_soldierLrrp[t] = true
@@ -3685,13 +3685,13 @@ function e.AssignSoldiersToCP()
 			if (e ~= EnemyType.TYPE_SKULL and e ~= EnemyType.TYPE_CHILD) and o then
 				mvars.ene_soldierSubType[t] = o
 			end
-			if s ~= 10080 and s ~= 11080 then
+			if r ~= 10080 and r ~= 11080 then
 				if e == EnemyType.TYPE_CHILD then
-					i = true
+					s = true
 				end
 			end
 		end
-		if i then
+		if s then
 			n(a, { id = "SetChildCp" })
 		end
 	end
@@ -3701,7 +3701,7 @@ function e.InitCpGroups()
 end
 function e.RegistCpGroups(n)
 	e.SetCommonCpGroups()
-	if p(n) then
+	if s(n) then
 		for e, n in pairs(n) do
 			mvars.ene_cpGroups[e] = mvars.ene_cpGroups[e] or {}
 			for t, n in pairs(n) do
@@ -3711,11 +3711,11 @@ function e.RegistCpGroups(n)
 	end
 end
 function e.SetCommonCpGroups()
-	if not p(mvars.loc_locationCommonCpGroups) then
+	if not s(mvars.loc_locationCommonCpGroups) then
 		return
 	end
 	for n, t in pairs(mvars.loc_locationCommonCpGroups) do
-		if p(t) then
+		if s(t) then
 			mvars.ene_cpGroups[n] = {}
 			for e, a in pairs(mvars.ene_soldierDefine) do
 				if t[e] then
@@ -3726,12 +3726,12 @@ function e.SetCommonCpGroups()
 	end
 end
 function e.SetCpGroups()
-	local t = { type = "TppCommandPost2" }
-	local e = { id = "SetCpGroups", cpGroups = mvars.ene_cpGroups }
-	n(t, e)
+	local e = { type = "TppCommandPost2" }
+	local t = { id = "SetCpGroups", cpGroups = mvars.ene_cpGroups }
+	n(e, t)
 end
 function e.RegistVehicleSettings(e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	mvars.ene_vehicleSettings = e
@@ -3748,7 +3748,7 @@ function e.SpawnVehicles(n)
 	end
 end
 function e.SpawnVehicle(e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	if e.id ~= "Spawn" then
@@ -3763,7 +3763,7 @@ function e.SpawnVehicle(e)
 	end
 end
 function e.RespawnVehicle(e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	if e.id ~= "Respawn" then
@@ -3783,7 +3783,7 @@ function e.DespawnVehicles(n)
 	end
 end
 function e.DespawnVehicle(e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	if e.id ~= "Despawn" then
@@ -3802,7 +3802,7 @@ function e.SetUpVehicles()
 		return
 	end
 	for t, e in pairs(mvars.ene_vehicleSettings) do
-		if (o(t) and p(e)) and e.type then
+		if (o(t) and s(e)) and e.type then
 			local t = { id = "Spawn", locator = t, type = e.type }
 			if e.subType then
 				t.subType = e.subType
@@ -3864,7 +3864,7 @@ end
 function e.GetPrioritizedRouteTable(e, n, t, r)
 	local i = {}
 	local a = t[e]
-	if not p(a) then
+	if not s(a) then
 		return
 	end
 	if mvars.ene_funcRouteSetPriority then
@@ -3880,11 +3880,11 @@ function e.GetPrioritizedRouteTable(e, n, t, r)
 			end
 		end
 		local e = 1
-		for r = 1, t do
-			for a, t in ipairs(a) do
-				local n = n[t]
+		for t = 1, t do
+			for r, a in ipairs(a) do
+				local n = n[a]
 				if n then
-					local n = n[r]
+					local n = n[t]
 					if n and Tpp.IsTypeTable(n) then
 						i[e] = n
 						e = e + 1
@@ -3912,8 +3912,8 @@ function e.RouteSelector(n, i, a)
 	if t == nil then
 		return { "dummyRoute" }
 	end
-	if a == s("immediately") then
-		if i == s("old") then
+	if a == p("immediately") then
+		if i == p("old") then
 			local t = e.GetCurrentRouteSetType(nil, e.GetPhaseByCPID(n), n)
 			return e.GetPrioritizedRouteTable(
 				n,
@@ -3925,11 +3925,11 @@ function e.RouteSelector(n, i, a)
 			return e.GetPrioritizedRouteTable(n, t[a], mvars.ene_routeSetsPriority)
 		end
 	end
-	if a == s("SYS_Sneak") then
+	if a == p("SYS_Sneak") then
 		local i = e.GetCurrentRouteSetType(nil, e.PHASE.SNEAK, n)
 		return e.GetPrioritizedRouteTable(n, t[i], mvars.ene_routeSetsPriority, a)
 	end
-	if a == s("SYS_Caution") then
+	if a == p("SYS_Caution") then
 		local i = e.GetCurrentRouteSetType(nil, e.PHASE.CAUTION, n)
 		return e.GetPrioritizedRouteTable(n, t[i], mvars.ene_routeSetsPriority, a)
 	end
@@ -3947,10 +3947,10 @@ function e.RouteSelector(n, i, a)
 		end
 	end
 end
-e.STR32_CAN_USE_SEARCH_LIGHT = s("CanUseSearchLight")
-e.STR32_CAN_NOT_USE_SEARCH_LIGHT = s("CanNotUseSearchLight")
-e.STR32_IS_GIMMICK_BROKEN = s("IsGimmickBroken")
-e.STR32_IS_NOT_GIMMICK_BROKEN = s("IsNotGimmickBroken")
+e.STR32_CAN_USE_SEARCH_LIGHT = p("CanUseSearchLight")
+e.STR32_CAN_NOT_USE_SEARCH_LIGHT = p("CanNotUseSearchLight")
+e.STR32_IS_GIMMICK_BROKEN = p("IsGimmickBroken")
+e.STR32_IS_NOT_GIMMICK_BROKEN = p("IsNotGimmickBroken")
 function e.SetUpSwitchRouteFunc()
 	if not GameObject.DoesGameObjectExistWithTypeName("TppSoldier2") then
 		return
@@ -3999,7 +3999,7 @@ function e.SwitchRouteFunc(a, n, t, a, a)
 	return true
 end
 function e.SetUpCommandPost()
-	if not p(mvars.ene_soldierIDList) then
+	if not s(mvars.ene_soldierIDList) then
 		return
 	end
 	for t, a in pairs(mvars.ene_cpList) do
@@ -4031,7 +4031,7 @@ function e.MergeRouteSetDefine(o)
 			if t[e] then
 				for t, a in pairs(t[e]) do
 					mvars.ene_routeSetsDefine[n][e][t] = {}
-					if p(a) then
+					if s(a) then
 						for i, a in ipairs(a) do
 							mvars.ene_routeSetsDefine[n][e][t][i] = a
 						end
@@ -4077,12 +4077,12 @@ function e.UpdateRouteSet(n)
 				mvars.ene_routeSetsPriority[n] = {}
 				mvars.ene_routeSetsFixedShiftChange[n] = {}
 				for e = 1, #t.priority do
-					mvars.ene_routeSetsPriority[n][e] = s(t.priority[e])
+					mvars.ene_routeSetsPriority[n][e] = p(t.priority[e])
 				end
 			end
 			if t.fixedShiftChangeGroup then
 				for e = 1, #t.fixedShiftChangeGroup do
-					mvars.ene_routeSetsFixedShiftChange[n][s(t.fixedShiftChangeGroup[e])] = e
+					mvars.ene_routeSetsFixedShiftChange[n][p(t.fixedShiftChangeGroup[e])] = e
 				end
 			end
 			if mvars.ene_noShiftChangeGroupSetting[n] then
@@ -4094,11 +4094,11 @@ function e.UpdateRouteSet(n)
 				mvars.ene_routeSets[n][e] = mvars.ene_routeSets[n][e] or {}
 				if t[e] then
 					for t, a in pairs(t[e]) do
-						mvars.ene_routeSets[n][e][s(t)] = mvars.ene_routeSets[n][e][s(t)] or {}
+						mvars.ene_routeSets[n][e][p(t)] = mvars.ene_routeSets[n][e][p(t)] or {}
 						if type(a) == "number" then
 						else
 							for a, i in ipairs(a) do
-								mvars.ene_routeSets[n][e][s(t)][a] = i
+								mvars.ene_routeSets[n][e][p(t)][a] = i
 							end
 						end
 					end
@@ -4131,11 +4131,11 @@ function e._InsertShiftChangeUnit(t, a, n)
 		end
 	end
 end
-function e._GetShiftChangeRouteGroup(n, r, a, l, p, i, s, t)
-	local e = (r - a) + 1
-	local o = a
+function e._GetShiftChangeRouteGroup(n, o, a, l, s, i, p, t)
+	local e = (o - a) + 1
+	local r = a
 	if t[n[a]] then
-		e = o
+		e = r
 	else
 		local i = 0
 		for a = 1, a do
@@ -4145,7 +4145,7 @@ function e._GetShiftChangeRouteGroup(n, r, a, l, p, i, s, t)
 		end
 		e = e + i
 		local a = 0
-		for i = e, r do
+		for i = e, o do
 			if t[n[i]] then
 				a = a + 1
 			end
@@ -4167,25 +4167,25 @@ function e._GetShiftChangeRouteGroup(n, r, a, l, p, i, s, t)
 		t = i
 	end
 	local e = nil
-	if s then
+	if p then
 		e = "default"
-		if p[i] then
+		if s[i] then
 			e = i
 		end
 	end
-	local n = n[o]
+	local n = n[r]
 	return a, t, e, n
 end
-function e._MakeShiftChangeUnit(t, a, n, r, o, _, T, d, i, c, l)
+function e._MakeShiftChangeUnit(t, i, n, r, o, d, l, a, T, c, _)
 	if mvars.ene_noShiftChangeGroupSetting[t] and mvars.ene_noShiftChangeGroupSetting[t][n] then
 		return nil
 	end
-	local n, i, e, a = e._GetShiftChangeRouteGroup(a, d, i, r, _, n, o, l)
+	local n, i, e, a = e._GetShiftChangeRouteGroup(i, a, T, r, d, n, o, _)
 	local e = {}
 	for n, t in pairs(mvars.ene_shiftChangeTable[t]) do
 		e[n] = {}
 	end
-	if (i ~= "default") or (p(r[s("default")]) and next(r[s("default")])) then
+	if (i ~= "default") or (s(r[p("default")]) and next(r[p("default")])) then
 		e.shiftAtNight.start = { "day", n }
 		e.shiftAtNight.hold = { "hold", i }
 		e.shiftAtNight.holdTime = mvars.ene_holdTimes[t]
@@ -4202,7 +4202,7 @@ function e._MakeShiftChangeUnit(t, a, n, r, o, _, T, d, i, c, l)
 		e.shiftAtMidNight.start = { "night", n }
 		e.shiftAtMidNight.hold = { "sleep", i }
 		e.shiftAtMidNight.holdTime = mvars.ene_sleepTimes[t]
-		if T then
+		if l then
 			e.shiftAtMidNight.goal = { "midnight", a }
 		else
 			e.shiftAtMidNight.goal = { "night", n }
@@ -4215,15 +4215,15 @@ function e._MakeShiftChangeUnit(t, a, n, r, o, _, T, d, i, c, l)
 end
 function e.MakeShiftChangeTable()
 	mvars.ene_shiftChangeTable = {}
-	for n, a in pairs(mvars.ene_routeSetsPriority) do
-		if not p(a) then
+	for n, t in pairs(mvars.ene_routeSetsPriority) do
+		if not s(t) then
 			return
 		end
-		local i = false
+		local r = false
 		local o = false
 		if next(mvars.ene_routeSets[n].sleep) then
 			mvars.ene_shiftChangeTable[n] = { shiftAtNight = {}, shiftAtMorning = {}, shiftAtMidNight = {} }
-			i = true
+			r = true
 			if next(mvars.ene_routeSets[n].sneak_midnight) then
 				o = true
 			end
@@ -4232,17 +4232,17 @@ function e.MakeShiftChangeTable()
 		end
 		local p = mvars.ene_routeSets[n].hold
 		local s = nil
-		if i then
+		if r then
 			s = mvars.ene_routeSets[n].sleep
 		end
-		local t = 1
-		local l = #a
-		for _, d in ipairs(a) do
-			local r
-			r = e._MakeShiftChangeUnit(n, a, d, p, i, s, o, l, _, t, mvars.ene_routeSetsFixedShiftChange[n])
-			if r then
-				e._InsertShiftChangeUnit(n, t, r)
-				t = t + 1
+		local a = 1
+		local l = #t
+		for _, d in ipairs(t) do
+			local i
+			i = e._MakeShiftChangeUnit(n, t, d, p, r, s, o, l, _, a, mvars.ene_routeSetsFixedShiftChange[n])
+			if i then
+				e._InsertShiftChangeUnit(n, a, i)
+				a = a + 1
 			end
 		end
 	end
@@ -4251,7 +4251,7 @@ function e.ShiftChangeByTime(t)
 	if TppLocation.IsMotherBase() or TppLocation.IsMBQF() then
 		return
 	end
-	if not p(mvars.ene_shiftChangeTable) then
+	if not s(mvars.ene_shiftChangeTable) then
 		return
 	end
 	for a, e in pairs(mvars.ene_shiftChangeTable) do
@@ -4260,64 +4260,64 @@ function e.ShiftChangeByTime(t)
 		end
 	end
 end
-local function d(a, e, t)
-	local n = n(t, { id = "GetPosition" })
+local function d(t, e, a)
+	local n = n(a, { id = "GetPosition" })
 	local e = e - n
 	local e = e:GetLengthSqr()
-	if e > a then
+	if e > t then
 		return false
 	else
 		return true
 	end
 end
-function e.MakeCpLinkDefineTable(t, e)
-	local n = {}
-	for a = 1, #e do
-		local i = Tpp.SplitString(e[a], "	")
-		local e = t[a]
-		if e then
-			n[e] = n[e] or {}
+function e.MakeCpLinkDefineTable(t, n)
+	local e = {}
+	for a = 1, #n do
+		local i = Tpp.SplitString(n[a], "	")
+		local n = t[a]
+		if n then
+			e[n] = e[n] or {}
 			for a, i in pairs(i) do
 				local t = t[a]
 				if t then
-					n[e][t] = n[e][t] or {}
+					e[n][t] = e[n][t] or {}
 					local a = false
 					if tonumber(i) > 0 then
 						a = true
 					end
-					n[e][t] = a
+					e[n][t] = a
 				end
 			end
 		end
 	end
-	return n
+	return e
 end
-function e.MakeReinforceTravelPlan(i, a, s, t, n)
-	if not Tpp.IsTypeTable(n) then
+function e.MakeReinforceTravelPlan(i, a, p, n, t)
+	if not Tpp.IsTypeTable(t) then
 		return
 	end
-	local a = a[t]
+	local a = a[n]
 	if a == nil then
 		return
 	end
 	mvars.ene_travelPlans = mvars.ene_travelPlans or {}
 	local r = 0
-	for r, n in pairs(n) do
-		if mvars.ene_soldierDefine[n] then
-			if a[n] then
-				local o = i[t]
-				local r = i[n]
-				local a = "rp_" .. (t .. ("_From_" .. n))
+	for r, t in pairs(t) do
+		if mvars.ene_soldierDefine[t] then
+			if a[t] then
+				local o = i[n]
+				local r = i[t]
+				local a = "rp_" .. (n .. ("_From_" .. t))
 				mvars.ene_travelPlans[a] = mvars.ene_travelPlans[a] or {}
-				local p = string.format("rp_%02dto%02d", r, o)
-				local e = e.GetFormattedLrrpCpNameByLrrpNum(o, r, s, i)
-				mvars.ene_travelPlans[a] = { { cp = e, routeGroup = { "travel", p } }, { cp = t, finishTravel = true } }
-				mvars.ene_reinforcePlans[a] = { { toCp = t, fromCp = n, type = "respawn" } }
+				local s = string.format("rp_%02dto%02d", r, o)
+				local e = e.GetFormattedLrrpCpNameByLrrpNum(o, r, p, i)
+				mvars.ene_travelPlans[a] = { { cp = e, routeGroup = { "travel", s } }, { cp = n, finishTravel = true } }
+				mvars.ene_reinforcePlans[a] = { { toCp = n, fromCp = t, type = "respawn" } }
 			end
 		end
 	end
 end
-function e.MakeTravelPlanTable(T, d, _, t, n, l)
+function e.MakeTravelPlanTable(T, _, d, t, n, l)
 	if
 		((not Tpp.IsTypeTable(n) or not Tpp.IsTypeTable(n[1])) or not Tpp.IsTypeString(t))
 		or (n[1].cp == nil and n[1].base == nil)
@@ -4326,54 +4326,54 @@ function e.MakeTravelPlanTable(T, d, _, t, n, l)
 	end
 	mvars.ene_travelPlans = mvars.ene_travelPlans or {}
 	mvars.ene_travelPlans[t] = mvars.ene_travelPlans[t] or {}
-	local s = mvars.ene_travelPlans[t]
-	local o = #n
-	local r, i
+	local o = mvars.ene_travelPlans[t]
+	local p = #n
+	local i, r
 	if (not n.ONE_WAY) and n[#n].base then
-		r = n[#n]
+		i = n[#n]
 	end
-	for t = 1, o do
+	for t = 1, p do
 		local a
-		if n.ONE_WAY and (t == o) then
+		if n.ONE_WAY and (t == p) then
 			a = true
 		end
 		if n[t].base then
 			if t == 1 then
-				i = n[t]
+				r = n[t]
 			else
-				r = n[t - 1]
-				i = n[t]
+				i = n[t - 1]
+				r = n[t]
 			end
-			e.AddLinkedBaseTravelCourse(T, d, _, l, s, r, i, a)
+			e.AddLinkedBaseTravelCourse(T, _, d, l, o, i, r, a)
 		elseif n[t].cp then
 			local n = n[t]
-			if p(n) then
-				e.AddTravelCourse(s, n, a)
+			if s(n) then
+				e.AddTravelCourse(o, n, a)
 			end
 		end
 	end
 end
-function e.AddLinkedBaseTravelCourse(l, i, r, p, s, a, t, d)
+function e.AddLinkedBaseTravelCourse(d, l, o, i, s, a, t, p)
 	local n
 	if a and a.base then
 		n = a.base
 	end
 	local a = t.base
-	local o = false
+	local r = false
 	if n then
-		o = i[n][a]
+		r = l[n][a]
 	end
-	if o then
-		local t, n = e.GetFormattedLrrpCpName(n, a, r, l)
-		local n = { cp = t, routeGroup = { "travel", n } }
+	if r then
+		local n, t = e.GetFormattedLrrpCpName(n, a, o, d)
+		local n = { cp = n, routeGroup = { "travel", t } }
 		e.AddTravelCourse(s, n)
 	elseif n == nil then
 	end
-	local r
+	local o
 	if t.wait then
-		r = t.wait
+		o = t.wait
 	else
-		r = p
+		o = i
 	end
 	local i
 	if t.routeGroup and Tpp.IsTypeTable(t.routeGroup) then
@@ -4381,7 +4381,7 @@ function e.AddLinkedBaseTravelCourse(l, i, r, p, s, a, t, d)
 	else
 		local t
 		local e = mvars.ene_defaultTravelRouteGroup
-		if ((e and o) and e[n]) and Tpp.IsTypeTable(e[n][a]) then
+		if ((e and r) and e[n]) and Tpp.IsTypeTable(e[n][a]) then
 			t = e[n][a]
 		end
 		if t then
@@ -4390,34 +4390,34 @@ function e.AddLinkedBaseTravelCourse(l, i, r, p, s, a, t, d)
 			i = { "travel", "lrrpHold" }
 		end
 	end
-	local n = { cp = a, routeGroup = i, wait = r }
-	e.AddTravelCourse(s, n, d)
+	local n = { cp = a, routeGroup = i, wait = o }
+	e.AddTravelCourse(s, n, p)
 end
-function e.GetFormattedLrrpCpNameByLrrpNum(n, e, i, t)
+function e.GetFormattedLrrpCpNameByLrrpNum(e, n, i, t)
 	local t, a
-	if n < e then
-		t = n
-		a = e
-	else
+	if e < n then
 		t = e
 		a = n
+	else
+		t = n
+		a = e
 	end
 	local t = string.format("%s_%02d_%02d_lrrp", i, t, a)
-	local e = string.format("lrrp_%02dto%02d", n, e)
+	local e = string.format("lrrp_%02dto%02d", e, n)
 	return t, e
 end
-function e.GetFormattedLrrpCpName(a, t, i, n)
-	local a = n[a]
+function e.GetFormattedLrrpCpName(t, a, i, n)
 	local t = n[t]
-	return e.GetFormattedLrrpCpNameByLrrpNum(a, t, i, n)
+	local a = n[a]
+	return e.GetFormattedLrrpCpNameByLrrpNum(t, a, i, n)
 end
-function e.AddTravelCourse(n, e, t)
-	if t then
+function e.AddTravelCourse(t, e, n)
+	if n then
 		e.finishTravel = true
 	else
 		e.finishTravel = nil
 	end
-	table.insert(n, e)
+	table.insert(t, e)
 end
 function e.SetTravelPlans(i)
 	mvars.ene_reinforcePlans = {}
@@ -4425,16 +4425,16 @@ function e.SetTravelPlans(i)
 	if mvars.loc_locationCommonTravelPlans then
 		local n = TppLocation.GetLocationName()
 		if n then
-			local r = mvars.ene_lrrpNumberDefine
+			local t = mvars.ene_lrrpNumberDefine
 			local a = mvars.ene_cpLinkDefine
-			for i, t in pairs(i) do
-				e.MakeTravelPlanTable(r, a, n, i, t, e.DEFAULT_TRAVEL_HOLD_TIME)
+			for r, i in pairs(i) do
+				e.MakeTravelPlanTable(t, a, n, r, i, e.DEFAULT_TRAVEL_HOLD_TIME)
 			end
-			local t = mvars.loc_locationCommonTravelPlans.reinforceTravelPlan
-			if mvars.ene_useCommonReinforcePlan and t then
-				for t, i in pairs(t) do
-					if mvars.ene_soldierDefine[t] then
-						e.MakeReinforceTravelPlan(r, a, n, t, i)
+			local i = mvars.loc_locationCommonTravelPlans.reinforceTravelPlan
+			if mvars.ene_useCommonReinforcePlan and i then
+				for i, r in pairs(i) do
+					if mvars.ene_soldierDefine[i] then
+						e.MakeReinforceTravelPlan(t, a, n, i, r)
 					end
 				end
 			end
@@ -4466,11 +4466,11 @@ function e.RegistHoldBrokenState(n)
 end
 function e.AddBrokenStateList(n)
 	local e
-	local a = s(n)
-	for n = 0, (TppDefine.MAX_HOLD_VEHICLE_BROKEN_STATE_COUNT - 1) do
-		local t = svars.ene_holdBrokenStateName[n]
-		if (t == 0) or (t == a) then
-			e = n
+	local a = p(n)
+	for t = 0, (TppDefine.MAX_HOLD_VEHICLE_BROKEN_STATE_COUNT - 1) do
+		local n = svars.ene_holdBrokenStateName[t]
+		if (n == 0) or (n == a) then
+			e = t
 			break
 		end
 	end
@@ -4481,20 +4481,20 @@ function e.AddBrokenStateList(n)
 		return
 	end
 end
-function e._OnHeliBroken(t, n)
-	if n == s("Start") then
-		e.PlayTargetEliminatedRadio(t)
+function e._OnHeliBroken(n, t)
+	if t == p("Start") then
+		e.PlayTargetEliminatedRadio(n)
 	end
 end
 function e._OnVehicleBroken(n, t)
 	e.SetVehicleBroken(n)
-	if t == s("End") then
+	if t == p("End") then
 		e.PlayTargetEliminatedRadio(n)
 	end
 end
-function e._OnWalkerGearBroken(n, t)
-	if t == s("End") then
-		e.PlayTargetEliminatedRadio(n)
+function e._OnWalkerGearBroken(t, n)
+	if n == p("End") then
+		e.PlayTargetEliminatedRadio(t)
 	end
 end
 function e.SetVehicleBroken(e)
@@ -4506,15 +4506,15 @@ function e.SetVehicleBroken(e)
 		svars.ene_isVehicleBroken[e] = true
 	end
 end
-function e.IsVehicleBroken(n)
-	local e
-	if o(n) then
-		e = mvars.ene_vehicleBrokenStateIndexByName[n]
-	elseif l(n) then
-		e = mvars.ene_vehicleBrokenStateIndexByGameObjectId[n]
+function e.IsVehicleBroken(e)
+	local n
+	if o(e) then
+		n = mvars.ene_vehicleBrokenStateIndexByName[e]
+	elseif l(e) then
+		n = mvars.ene_vehicleBrokenStateIndexByGameObjectId[e]
 	end
-	if e then
-		return svars.ene_isVehicleBroken[e]
+	if n then
+		return svars.ene_isVehicleBroken[n]
 	end
 end
 function e.IsVehicleAlive(t)
@@ -4563,16 +4563,16 @@ function e.RegistHoldRecoveredState(n)
 end
 function e.AddRecoveredStateList(n)
 	local e
-	local t = s(n)
-	for a = 0, (TppDefine.MAX_HOLD_RECOVERED_STATE_COUNT - 1) do
-		local n = svars.ene_holdRecoveredStateName[a]
-		if (n == 0) or (n == t) then
-			e = a
+	local a = p(n)
+	for n = 0, (TppDefine.MAX_HOLD_RECOVERED_STATE_COUNT - 1) do
+		local t = svars.ene_holdRecoveredStateName[n]
+		if (t == 0) or (t == a) then
+			e = n
 			break
 		end
 	end
 	if e then
-		svars.ene_holdRecoveredStateName[e] = t
+		svars.ene_holdRecoveredStateName[e] = a
 		return e
 	else
 		return
@@ -4587,7 +4587,7 @@ function e.SetRecovered(e)
 		svars.ene_isRecovered[e] = true
 	end
 end
-function e.ExecuteOnRecoveredCallback(n, r, i, t, a, o, s)
+function e.ExecuteOnRecoveredCallback(n, s, r, o, a, i, t)
 	if not mvars.ene_recoverdStateIndexByGameObjectId then
 		return
 	end
@@ -4605,7 +4605,7 @@ function e.ExecuteOnRecoveredCallback(n, r, i, t, a, o, s)
 	if not TppMission.CheckMissionState(true, false, true, false) then
 		return
 	end
-	e(n, r, i, t, a, o, s)
+	e(n, s, r, o, a, i, t)
 end
 local T = 10 * 10
 function e.CheckAllVipClear(n)
@@ -4629,10 +4629,10 @@ function e.CheckAllTargetClear(n)
 		end
 	end
 	for e = 1, #t do
-		local e, n, t = t[e][1], t[e][2], t[e][3]
-		if p(e) and next(e) then
-			for e, t in pairs(e) do
-				if not n(e, a, t) then
+		local e, t, n = t[e][1], t[e][2], t[e][3]
+		if s(e) and next(e) then
+			for n, e in pairs(e) do
+				if not t(n, a, e) then
 					return false
 				end
 			end
@@ -4753,7 +4753,7 @@ function e.AutoFultonRecoverNeutralizedTarget(t, a)
 	end
 end
 function e.CheckQuestTargetOnOutOfActiveArea(n)
-	if not p(n) then
+	if not s(n) then
 		return
 	end
 	local o = Vector3(vars.playerPosX, vars.playerPosY, vars.playerPosZ)
@@ -4771,41 +4771,41 @@ function e.CheckQuestTargetOnOutOfActiveArea(n)
 	end
 	return t
 end
-function e.ChangeRouteUsingGimmick(e, a, t, a)
-	local a = TppGimmick.GetRouteConnectedGimmickId(e)
-	if (a ~= nil) and TppGimmick.IsBroken({ gimmickId = a }) then
-		local a
-		for n, e in pairs(mvars.ene_soldierIDList) do
-			if e[t] then
-				a = n
+function e.ChangeRouteUsingGimmick(e, t, a, t)
+	local t = TppGimmick.GetRouteConnectedGimmickId(e)
+	if (t ~= nil) and TppGimmick.IsBroken({ gimmickId = t }) then
+		local t
+		for e, n in pairs(mvars.ene_soldierIDList) do
+			if n[a] then
+				t = e
 				break
 			end
 		end
-		if a then
+		if t then
 			local e = { id = "SetRouteEnabled", routes = { e }, enabled = false }
-			n(a, e)
+			n(t, e)
 		end
 	else
 		mvars.ene_usingGimmickRouteEnemyList = mvars.ene_usingGimmickRouteEnemyList or {}
 		mvars.ene_usingGimmickRouteEnemyList[e] = mvars.ene_usingGimmickRouteEnemyList[e] or {}
-		mvars.ene_usingGimmickRouteEnemyList[e] = t
-		n(t, { id = "SetSneakRoute", route = e })
+		mvars.ene_usingGimmickRouteEnemyList[e] = a
+		n(a, { id = "SetSneakRoute", route = e })
 	end
 end
 function e.DisableUseGimmickRouteOnShiftChange(a, e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	if mvars.ene_usingGimmickRouteEnemyList == nil then
 		return
 	end
 	for t, e in pairs(e) do
-		local t = s(e)
+		local t = p(e)
 		local t = mvars.ene_usingGimmickRouteEnemyList[t]
 		if t then
 			n(t, { id = "SetSneakRoute", route = "" })
 		end
-		local t = mvars.gim_routeGimmickConnectTable[s(e)]
+		local t = mvars.gim_routeGimmickConnectTable[p(e)]
 		if (t ~= nil) and TppGimmick.IsBroken({ gimmickId = t }) then
 			local e = { id = "SetRouteEnabled", routes = { e }, enabled = false }
 			n(a, e)
@@ -4813,11 +4813,11 @@ function e.DisableUseGimmickRouteOnShiftChange(a, e)
 	end
 end
 function e.IsEliminateTarget(e)
-	local n = mvars.ene_eliminateTargetList and mvars.ene_eliminateTargetList[e]
-	local a = mvars.ene_eliminateHelicopterList and mvars.ene_eliminateHelicopterList[e]
+	local a = mvars.ene_eliminateTargetList and mvars.ene_eliminateTargetList[e]
+	local n = mvars.ene_eliminateHelicopterList and mvars.ene_eliminateHelicopterList[e]
 	local t = mvars.ene_eliminateVehicleList and mvars.ene_eliminateVehicleList[e]
 	local e = mvars.ene_eliminateWalkerGearList and mvars.ene_eliminateWalkerGearList[e]
-	local e = ((n or a) or t) or e
+	local e = ((a or n) or t) or e
 	return e
 end
 function e.IsRescueTarget(e)
@@ -4870,15 +4870,15 @@ function e._AddTakingOverHostage(t)
 	end
 	local e = gvars.ene_takingOverHostageCount
 	local a = n(t, { id = "GetPosition" })
-	local i, r = n(t, { id = "GetStaffId", divided = true })
-	local o = n(t, { id = "GetFaceId" })
+	local o, r = n(t, { id = "GetStaffId", divided = true })
+	local i = n(t, { id = "GetFaceId" })
 	local n = n(t, { id = "GetKeepFlagValue" })
 	gvars.ene_takingOverHostagePositions[e * 3 + 0] = a:GetX()
 	gvars.ene_takingOverHostagePositions[e * 3 + 1] = a:GetY()
 	gvars.ene_takingOverHostagePositions[e * 3 + 2] = a:GetZ()
-	gvars.ene_takingOverHostageStaffIdsUpper[e] = i
+	gvars.ene_takingOverHostageStaffIdsUpper[e] = o
 	gvars.ene_takingOverHostageStaffIdsLower[e] = r
-	gvars.ene_takingOverHostageFaceIds[e] = o
+	gvars.ene_takingOverHostageFaceIds[e] = i
 	gvars.ene_takingOverHostageFlags[e] = n
 	gvars.ene_takingOverHostageCount = gvars.ene_takingOverHostageCount + 1
 end
@@ -4908,11 +4908,11 @@ function e.ResetTakingOverHostageInfo()
 	end
 end
 function e.SpawnTakingOverHostage(n)
-	if not p(n) then
+	if not s(n) then
 		return
 	end
-	for n, t in ipairs(n) do
-		e._SpawnTakingOverHostage(n - 1, t)
+	for t, n in ipairs(n) do
+		e._SpawnTakingOverHostage(t - 1, n)
 	end
 end
 function e._SpawnTakingOverHostage(t, e)
@@ -4921,9 +4921,9 @@ function e._SpawnTakingOverHostage(t, e)
 		return
 	end
 	if t < gvars.ene_takingOverHostageCount then
-		local i = gvars.ene_takingOverHostageStaffIdsUpper[infoIndex]
-		local a = gvars.ene_takingOverHostageStaffIdsLower[infoIndex]
-		n(e, { id = "SetStaffId", divided = true, staffId = i, staffId2 = a })
+		local a = gvars.ene_takingOverHostageStaffIdsUpper[infoIndex]
+		local i = gvars.ene_takingOverHostageStaffIdsLower[infoIndex]
+		n(e, { id = "SetStaffId", divided = true, staffId = a, staffId2 = i })
 		if TppMission.IsMissionStart() then
 			n(e, { id = "SetEnabled", enabled = true })
 			local a = Vector3(
@@ -4940,7 +4940,7 @@ function e._SpawnTakingOverHostage(t, e)
 	end
 end
 function e.SetIgnoreTakingOverHostage(e)
-	if not p(e) then
+	if not s(e) then
 		return
 	end
 	mvars.ene_ignoreTakingOverHostage = mvars.ene_ignoreTakingOverHostage or {}
@@ -4953,19 +4953,19 @@ function e.SetIgnoreTakingOverHostage(e)
 		end
 	end
 end
-function e.SetIgnoreDisableNpc(e, i)
-	local t
-	if l(e) then
-		t = e
-	elseif o(e) then
-		t = r(e)
+function e.SetIgnoreDisableNpc(t, i)
+	local e
+	if l(t) then
+		e = t
+	elseif o(t) then
+		e = r(t)
 	else
 		return
 	end
-	if t == a then
+	if e == a then
 		return
 	end
-	n(t, { id = "SetIgnoreDisableNpc", enable = i })
+	n(e, { id = "SetIgnoreDisableNpc", enable = i })
 	return true
 end
 function e.NPCEntryPointSetting(e)
@@ -4994,19 +4994,19 @@ function e.SetupQuestEnemy()
 	TppCombatLocatorProvider.RegisterCombatLocatorSetToCpforLua({ cpName = t, locatorSetName = n })
 end
 function e.OnAllocateQuest(e, n, a)
-	local function i(t, n)
-		local e = "SetNone"
-		if p(n) and p(t) then
-			TppSoldierFace.SetAndConvertExtendFova({ face = n, body = t })
-			e = "SetFaceAndBody"
-		elseif p(n) then
+	local function i(e, n)
+		local t = "SetNone"
+		if s(n) and s(e) then
+			TppSoldierFace.SetAndConvertExtendFova({ face = n, body = e })
+			t = "SetFaceAndBody"
+		elseif s(n) then
 			TppSoldierFace.SetAndConvertExtendFova({ face = n })
-			e = "SetFace"
-		elseif p(t) then
-			TppSoldierFace.SetAndConvertExtendFova({ body = t })
-			e = "SetBody"
+			t = "SetFace"
+		elseif s(e) then
+			TppSoldierFace.SetAndConvertExtendFova({ body = e })
+			t = "SetBody"
 		end
-		return e
+		return t
 	end
 	if n == nil and e == nil then
 		return
@@ -5046,10 +5046,10 @@ function e.OnAllocateQuest(e, n, a)
 	end
 end
 function e.OnAllocateQuestFova(n)
-	local t = {}
 	local a = {}
-	local o = false
+	local t = {}
 	local s = false
+	local o = false
 	local p = false
 	local d = false
 	mvars.ene_questArmorId = 0
@@ -5066,8 +5066,8 @@ function e.OnAllocateQuestFova(n)
 			local n = #mvars.ene_questGetLoadedFaceTable
 			if mvars.ene_questBalaclavaId ~= 0 and n > 0 then
 				e = { mvars.ene_questBalaclavaId, TppDefine.QUEST_ENEMY_MAX, 0 }
-				table.insert(t, e)
-				s = true
+				table.insert(a, e)
+				o = true
 			end
 		end
 	end
@@ -5086,8 +5086,8 @@ function e.OnAllocateQuestFova(n)
 		end
 		if mvars.ene_questArmorId ~= 0 then
 			e = { mvars.ene_questArmorId, TppDefine.QUEST_ENEMY_MAX, 0 }
-			table.insert(a, e)
-			o = true
+			table.insert(t, e)
+			s = true
 		end
 	end
 	if (n.enemyList and Tpp.IsTypeTable(n.enemyList)) and next(n.enemyList) then
@@ -5096,14 +5096,14 @@ function e.OnAllocateQuestFova(n)
 				if e.bodyId then
 					local n = 1
 					local e = { e.bodyId, n, 0 }
-					table.insert(a, e)
-					o = true
+					table.insert(t, e)
+					s = true
 				end
 				if e.faceId then
 					local n = 1
 					local e = { e.faceId, n, 0 }
-					table.insert(t, e)
-					s = true
+					table.insert(a, e)
+					o = true
 				end
 			end
 		end
@@ -5114,13 +5114,13 @@ function e.OnAllocateQuestFova(n)
 				if e.bodyId then
 					local n = 1
 					local e = { e.bodyId, 0, n }
-					table.insert(a, e)
+					table.insert(t, e)
 					p = true
 				end
 				if e.faceId then
 					local n = 1
 					local e = { e.faceId, 0, n }
-					table.insert(t, e)
+					table.insert(a, e)
 					d = true
 				end
 				if e.isFaceRandom then
@@ -5128,7 +5128,7 @@ function e.OnAllocateQuestFova(n)
 					if e then
 						local n = 1
 						local e = { e, 0, n }
-						table.insert(t, e)
+						table.insert(a, e)
 						d = true
 					end
 				end
@@ -5136,44 +5136,44 @@ function e.OnAllocateQuestFova(n)
 		end
 	end
 	if p == true then
-		local t = {}
-		local e = false
-		for a, n in ipairs(a) do
-			if n[3] >= 1 then
-				local n = n[1]
-				if l(n) then
-					table.insert(t, n)
-					e = true
+		local a = {}
+		local n = false
+		for t, e in ipairs(t) do
+			if e[3] >= 1 then
+				local e = e[1]
+				if l(e) then
+					table.insert(a, e)
+					n = true
 				end
 			end
 		end
-		if e == true then
+		if n == true then
 			TppSoldierFace.SetBodyFovaUserType({ hostage = hostageBodyTable })
 		end
 	end
 	local i = "SetNone"
-	if ((o == true or s == true) or p == true) or d == true then
-		local e = o or p
-		local n = s or d
-		if e == true and n == true then
-			TppSoldierFace.SetAndConvertExtendFova({ face = t, body = a })
+	if ((s == true or o == true) or p == true) or d == true then
+		local n = s or p
+		local e = o or d
+		if n == true and e == true then
+			TppSoldierFace.SetAndConvertExtendFova({ face = a, body = t })
 			i = "SetFaceAndBody"
-		elseif n == true then
-			TppSoldierFace.SetAndConvertExtendFova({ face = t })
-			i = "SetFace"
 		elseif e == true then
-			TppSoldierFace.SetAndConvertExtendFova({ body = a })
+			TppSoldierFace.SetAndConvertExtendFova({ face = a })
+			i = "SetFace"
+		elseif n == true then
+			TppSoldierFace.SetAndConvertExtendFova({ body = t })
 			i = "SetBody"
 		end
 	end
 	local r
-	if o == true or s == true then
+	if s == true or o == true then
 		if i == "SetFaceAndBody" then
-			r = { id = "InitializeAndAllocateExtendFova", face = t, body = a }
+			r = { id = "InitializeAndAllocateExtendFova", face = a, body = t }
 		elseif i == "SetFace" then
-			r = { id = "InitializeAndAllocateExtendFova", face = t }
+			r = { id = "InitializeAndAllocateExtendFova", face = a }
 		elseif i == "SetBody" then
-			r = { id = "InitializeAndAllocateExtendFova", body = a }
+			r = { id = "InitializeAndAllocateExtendFova", body = t }
 		end
 		if r then
 			GameObject.SendCommand({ type = "TppSoldier2" }, r)
@@ -5182,11 +5182,11 @@ function e.OnAllocateQuestFova(n)
 	end
 	if p == true or d == true then
 		if i == "SetFaceAndBody" then
-			TppSoldierFace.ReserveExtendFovaForHostage({ face = t, body = a })
+			TppSoldierFace.ReserveExtendFovaForHostage({ face = a, body = t })
 		elseif i == "SetFace" then
-			TppSoldierFace.ReserveExtendFovaForHostage({ face = t })
+			TppSoldierFace.ReserveExtendFovaForHostage({ face = a })
 		elseif i == "SetBody" then
-			TppSoldierFace.ReserveExtendFovaForHostage({ body = a })
+			TppSoldierFace.ReserveExtendFovaForHostage({ body = t })
 		end
 	end
 	local n = n.heliList
@@ -5271,26 +5271,26 @@ function e.SetupActivateQuestVehicle(n, t)
 		end
 	end
 end
-function e.SetupActivateQuestHeli(r)
+function e.SetupActivateQuestHeli(t)
 	if mvars.ene_isQuestSetup == false then
 		if not e.IsQuestHeli() then
 			return
 		end
-		local t = false
-		for n, i in ipairs(r) do
-			if i.routeName then
+		local i = false
+		for n, t in ipairs(t) do
+			if t.routeName then
 				local n = GameObject.GetGameObjectId(TppReinforceBlock.REINFORCE_HELI_NAME)
 				if n == a then
 				else
-					GameObject.SendCommand(n, { id = "RequestRoute", route = i.routeName })
+					GameObject.SendCommand(n, { id = "RequestRoute", route = t.routeName })
 					GameObject.SendCommand(n, { id = "DisablePullOut" })
-					t = true
+					i = true
 					e.SetQuestEnemy(n, false)
 				end
 			end
 		end
-		if t == true then
-			e.ActivateQuestHeli(r.coloringType)
+		if i == true then
+			e.ActivateQuestHeli(t.coloringType)
 		end
 	end
 end
@@ -5323,14 +5323,14 @@ function e.SetupActivateQuestCp(e)
 					if e.gtName then
 						if ((not e.gtPosition_x or not e.gtPosition_y) or not e.gtPosition_z) or not e.gtPosition_r then
 						end
-						local r = { type = "TppCommandPost2" }
-						local i = e.gtPosition_x or e.cpPosition_x
-						local n = e.gtPosition_y or e.cpPosition_y
+						local a = { type = "TppCommandPost2" }
+						local r = e.gtPosition_x or e.cpPosition_x
+						local i = e.gtPosition_y or e.cpPosition_y
 						local t = e.gtPosition_z or e.cpPosition_z
-						local a = e.gtPosition_r or e.cpPosition_r
+						local n = e.gtPosition_r or e.cpPosition_r
 						GameObject.SendCommand(
-							r,
-							{ id = "SetLocatorPosition", name = e.gtName, x = i, y = n, z = t, r = a }
+							a,
+							{ id = "SetLocatorPosition", name = e.gtName, x = r, y = i, z = t, r = n }
 						)
 					end
 				end
@@ -5409,9 +5409,9 @@ function e.SetupActivateQuestEnemy(p)
 							GameObject.SendCommand(t, { id = "SetVoiceType", voiceType = n.voiceType })
 						end
 					else
-						local e = { "ene_a", "ene_b", "ene_c", "ene_d" }
-						local n = math.random(4)
-						local e = e[n]
+						local n = { "ene_a", "ene_b", "ene_c", "ene_d" }
+						local e = math.random(4)
+						local e = n[e]
 						GameObject.SendCommand(t, { id = "SetVoiceType", voiceType = e })
 					end
 				end
@@ -5499,9 +5499,9 @@ function e.SetupActivateQuestEnemy(p)
 			if n == a then
 			else
 				local n = nil
-				for a, t in pairs(mvars.ene_cpList) do
-					if t == e.setCp then
-						n = a
+				for t, a in pairs(mvars.ene_cpList) do
+					if a == e.setCp then
+						n = t
 					end
 				end
 				if n then
@@ -5551,7 +5551,7 @@ function e.SetupActivateQuestHostage(n)
 						end
 					end
 					if n.voiceType then
-						if p(n.voiceType) then
+						if s(n.voiceType) then
 							local e = #n.voiceType
 							local e = math.random(e)
 							local e = n.voiceType[e]
@@ -5565,9 +5565,9 @@ function e.SetupActivateQuestHostage(n)
 							end
 						end
 					else
-						local e = { "hostage_a", "hostage_b", "hostage_c", "hostage_d" }
-						local n = math.random(4)
-						local e = e[n]
+						local n = { "hostage_a", "hostage_b", "hostage_c", "hostage_d" }
+						local e = math.random(4)
+						local e = n[e]
 						GameObject.SendCommand(t, { id = "SetVoiceType", voiceType = e })
 					end
 					if n.langType then
@@ -5761,9 +5761,9 @@ function e.SetupTerminateQuestHeli(n)
 	e.UnloadQuestHeli()
 end
 function e.SetupTerminateQuestCp(e) end
-function e.SetupTerminateQuestEnemy(i)
-	local s = TppLocation.IsAfghan()
-	local p = TppLocation.IsMiddleAfrica()
+function e.SetupTerminateQuestEnemy(s)
+	local p = TppLocation.IsAfghan()
+	local i = TppLocation.IsMiddleAfrica()
 	local function t(n, t)
 		local e = n.enemyName
 		if o(e) then
@@ -5803,9 +5803,9 @@ function e.SetupTerminateQuestEnemy(i)
 						end
 					end
 				end
-				if s == true then
+				if p == true then
 					GameObject.SendCommand(e, { id = "SetSoldier2Type", type = EnemyType.TYPE_SOVIET })
-				elseif p == true then
+				elseif i == true then
 					GameObject.SendCommand(e, { id = "SetSoldier2Type", type = EnemyType.TYPE_PF })
 				end
 			else
@@ -5816,7 +5816,7 @@ function e.SetupTerminateQuestEnemy(i)
 			end
 		end
 	end
-	for n, e in pairs(i) do
+	for n, e in pairs(s) do
 		if e.enemyName then
 			t(e, false)
 			TppUiCommand.UnRegisterIconUniqueInformation(GameObject.GetGameObjectId(e.enemyName))
@@ -5898,26 +5898,26 @@ function e.IsQuestTarget(e)
 	end
 	return false
 end
-function e.IsQuestNpc(n)
-	for e, t in pairs(mvars.ene_questTargetList) do
-		if n == e then
+function e.IsQuestNpc(e)
+	for n, t in pairs(mvars.ene_questTargetList) do
+		if e == n then
 			return true
 		end
 	end
 	return false
 end
 function e.GetQuestCount()
-	local e = 0
 	local n = 0
+	local e = 0
 	for a, t in pairs(mvars.ene_questTargetList) do
 		if t.isTarget == true then
-			e = e + 1
+			n = n + 1
 			if t.messageId ~= "None" then
-				n = n + 1
+				e = e + 1
 			end
 		end
 	end
-	return n, e
+	return e, n
 end
 function e.SetQuestEnemy(e, n)
 	if o(e) then
@@ -5951,52 +5951,52 @@ function e.CheckDeactiveQuestAreaForceFulton()
 		end
 	end
 end
-function e.CheckQuestAllTarget(T, f, u, t, a)
+function e.CheckQuestAllTarget(p, S, T, a, t)
 	local n = TppDefine.QUEST_CLEAR_TYPE.NONE
-	local p = t or false
-	local c = a or false
-	local l = false
+	local l = a or false
+	local u = t or false
+	local c = false
 	local r = 0
 	local a = 0
-	local s = 0
 	local o = 0
-	local _ = 0
+	local s = 0
+	local d = 0
 	local i = 0
 	local t = true
-	local d = false
-	local S = TppQuest.GetCurrentQuestName()
-	if TppQuest.IsEnd(S) then
+	local _ = false
+	local f = TppQuest.GetCurrentQuestName()
+	if TppQuest.IsEnd(f) then
 		return n
 	end
-	if mvars.ene_questTargetList[u] then
-		local e = mvars.ene_questTargetList[u]
+	if mvars.ene_questTargetList[T] then
+		local e = mvars.ene_questTargetList[T]
 		if e.messageId ~= "None" and e.isTarget == true then
-			d = true
+			_ = true
 		elseif e.isTarget == false then
-			d = true
+			_ = true
 		end
-		e.messageId = f or "None"
-		l = true
+		e.messageId = S or "None"
+		c = true
 	end
-	if (p == false and c == false) and l == false then
+	if (l == false and u == false) and c == false then
 		return n
 	end
-	for l, n in pairs(mvars.ene_questTargetList) do
-		local d = false
-		local T = n.isTarget or false
-		if p == true then
-			if Tpp.IsSoldier(l) or Tpp.IsHostage(l) then
-				if e.CheckQuestDistance(l) then
-					n.messageId = "Fulton"
+	for n, p in pairs(mvars.ene_questTargetList) do
+		local _ = false
+		local T = p.isTarget or false
+		if l == true then
+			if Tpp.IsSoldier(n) or Tpp.IsHostage(n) then
+				if e.CheckQuestDistance(n) then
+					p.messageId = "Fulton"
 					a = a + 1
-					d = false
+					_ = false
 					t = true
 				end
 			end
 		end
 		if T == true then
-			if d == false then
-				local e = n.messageId
+			if _ == false then
+				local e = p.messageId
 				if e ~= "None" then
 					if e == "Fulton" then
 						a = a + 1
@@ -6005,54 +6005,54 @@ function e.CheckQuestAllTarget(T, f, u, t, a)
 						i = i + 1
 						t = true
 					elseif e == "FultonFailed" then
-						s = s + 1
-						t = true
-					elseif (e == "Dead" or e == "VehicleBroken") or e == "LostControl" then
 						o = o + 1
 						t = true
+					elseif (e == "Dead" or e == "VehicleBroken") or e == "LostControl" then
+						s = s + 1
+						t = true
 					elseif e == "Vanished" then
-						_ = _ + 1
+						d = d + 1
 						t = true
 					end
 				end
-				if p == true then
+				if l == true then
 					t = false
 				end
 			end
 			r = r + 1
 		end
 	end
-	if d == true then
+	if _ == true then
 		t = false
 	end
 	if r > 0 then
-		if T == TppDefine.QUEST_TYPE.RECOVERED then
+		if p == TppDefine.QUEST_TYPE.RECOVERED then
 			if a + i >= r then
 				n = TppDefine.QUEST_CLEAR_TYPE.CLEAR
-			elseif s > 0 or o > 0 then
+			elseif o > 0 or s > 0 then
 				n = TppDefine.QUEST_CLEAR_TYPE.FAILURE
 			elseif a + i > 0 then
 				if t == true then
 					n = TppDefine.QUEST_CLEAR_TYPE.UPDATE
 				end
 			end
-		elseif T == TppDefine.QUEST_TYPE.ELIMINATE then
-			if ((a + s) + o) + i >= r then
+		elseif p == TppDefine.QUEST_TYPE.ELIMINATE then
+			if ((a + o) + s) + i >= r then
 				n = TppDefine.QUEST_CLEAR_TYPE.CLEAR
-			elseif ((a + s) + o) + i > 0 then
+			elseif ((a + o) + s) + i > 0 then
 				if t == true then
 					n = TppDefine.QUEST_CLEAR_TYPE.UPDATE
 				end
 			end
-		elseif T == TppDefine.QUEST_TYPE.MSF_RECOVERED then
+		elseif p == TppDefine.QUEST_TYPE.MSF_RECOVERED then
 			if a >= r or i >= r then
 				n = TppDefine.QUEST_CLEAR_TYPE.CLEAR
-			elseif (s > 0 or o > 0) or _ > 0 then
+			elseif (o > 0 or s > 0) or d > 0 then
 				n = TppDefine.QUEST_CLEAR_TYPE.FAILURE
 			end
 		end
 	end
-	if c == true then
+	if u == true then
 		if n == TppDefine.QUEST_CLEAR_TYPE.NONE or n == TppDefine.QUEST_CLEAR_TYPE.UPDATE then
 			n = TppDefine.QUEST_CLEAR_TYPE.NONE
 		end
@@ -6112,7 +6112,17 @@ function e.GetDDSuit()
 	return e.FOB_DD_SUIT_ATTCKER
 end
 function e.IsHostageEventFOB()
-	local e = TppDefine.FOB_EVENT_ID_LIST.HOSTAGE
+	local n = TppDefine.FOB_EVENT_ID_LIST.HOSTAGE
+	local e = TppServerManager.GetEventId()
+	for t, n in ipairs(n) do
+		if e == n then
+			return true
+		end
+	end
+	return false
+end
+function e.IsZombieEventFOB()
+	local e = TppDefine.FOB_EVENT_ID_LIST.ZOMBIE
 	local n = TppServerManager.GetEventId()
 	for t, e in ipairs(e) do
 		if n == e then
@@ -6121,21 +6131,34 @@ function e.IsHostageEventFOB()
 	end
 	return false
 end
-function e._OnDead(t, a)
-	local i
-	if a then
-		i = Tpp.IsPlayer(a)
+function e.IsParasiteMetalEventFOB()
+	local e = TppDefine.FOB_EVENT_ID_LIST.PARASITE_METAL
+	local n = TppServerManager.GetEventId()
+	for t, e in ipairs(e) do
+		if n == e then
+			return true
+		end
 	end
-	local a = e.IsEliminateTarget(t)
-	local r = e.IsRescueTarget(t)
+	return false
+end
+function e.IsSpecialEventFOB()
+	return e.IsParasiteMetalEventFOB()
+end
+function e._OnDead(t, i)
+	local a
 	if i then
+		a = Tpp.IsPlayer(i)
+	end
+	local i = e.IsEliminateTarget(t)
+	local r = e.IsRescueTarget(t)
+	if a then
 		if Tpp.IsHostage(t) then
 			if e.IsChildHostage(t) then
 				if TppMission.GetMissionID() ~= 10100 then
 					TppMission.ReserveGameOverOnPlayerKillChild(t)
 				end
 			else
-				if not a and not r then
+				if not i and not r then
 					TppRadio.PlayCommonRadio(TppDefine.COMMON_RADIO.HOSTAGE_DEAD)
 				end
 			end
@@ -6193,37 +6216,37 @@ function e._RideHelicopterWithHuman(t, n, t)
 	e.PlayTargetRescuedRadio(n)
 end
 function e._AnnouncePhaseChange(n, t)
-	local e = e.GetCpSubType(n)
-	local n = "cmmn_ene_soviet"
-	if e == "SOVIET_A" or e == "SOVIET_B" then
-		n = "cmmn_ene_soviet"
-	elseif e == "PF_A" then
-		n = "cmmn_ene_cfa"
-	elseif e == "PF_B" then
-		n = "cmmn_ene_zrs"
-	elseif e == "PF_C" then
-		n = "cmmn_ene_coyote"
-	elseif e == "DD_A" then
+	local n = e.GetCpSubType(n)
+	local e = "cmmn_ene_soviet"
+	if n == "SOVIET_A" or n == "SOVIET_B" then
+		e = "cmmn_ene_soviet"
+	elseif n == "PF_A" then
+		e = "cmmn_ene_cfa"
+	elseif n == "PF_B" then
+		e = "cmmn_ene_zrs"
+	elseif n == "PF_C" then
+		e = "cmmn_ene_coyote"
+	elseif n == "DD_A" then
 		return
-	elseif e == "DD_PW" then
-		n = "cmmn_ene_pf"
-	elseif e == "DD_FOB" then
-		n = "cmmn_ene_pf"
-	elseif e == "SKULL_AFGH" then
-		n = "cmmn_ene_xof"
-	elseif e == "SKULL_CYPR" then
+	elseif n == "DD_PW" then
+		e = "cmmn_ene_pf"
+	elseif n == "DD_FOB" then
+		e = "cmmn_ene_pf"
+	elseif n == "SKULL_AFGH" then
+		e = "cmmn_ene_xof"
+	elseif n == "SKULL_CYPR" then
 		return
-	elseif e == "CHILD_A" then
+	elseif n == "CHILD_A" then
 		return
 	end
 	if t == TppGameObject.PHASE_ALERT then
-		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_alert", n)
+		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_alert", e)
 	elseif t == TppGameObject.PHASE_EVASION then
-		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_evasion", n)
+		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_evasion", e)
 	elseif t == TppGameObject.PHASE_CAUTION then
-		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_caution", n)
+		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_caution", e)
 	elseif t == TppGameObject.PHASE_SNEAK then
-		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_sneak", n)
+		TppUiCommand.AnnounceLogViewLangId("announce_phase_to_sneak", e)
 	end
 end
 function e._IsGameObjectIDValid(e)
@@ -6312,8 +6335,8 @@ function e._RestoreOnMissionStart_Hostage2()
 		end
 	end
 end
-function e._StoreSVars_Hostage(t)
-	local e = {
+function e._StoreSVars_Hostage(i)
+	local t = {
 		"TppHostage2",
 		"TppHostageUnique",
 		"TppHostageUnique2",
@@ -6325,36 +6348,36 @@ function e._StoreSVars_Hostage(t)
 		"TppMantis2",
 	}
 	if TppHostage2.SetSVarsKeyNames2 then
-		for t, e in ipairs(e) do
+		for t, e in ipairs(t) do
 			if GameObject.GetGameObjectIdByIndex(e, 0) ~= a then
 				n({ type = e }, { id = "ReadyToStoreToSVars" })
 			end
 		end
 	end
-	for i, e in ipairs(e) do
+	for t, e in ipairs(t) do
 		if GameObject.GetGameObjectIdByIndex(e, 0) ~= a then
-			n({ type = e }, { id = "StoreToSVars", markerOnly = t })
+			n({ type = e }, { id = "StoreToSVars", markerOnly = i })
 		end
 	end
 end
-function e._DoRoutePointMessage(r, o, s, i)
+function e._DoRoutePointMessage(t, a, i, o)
 	local n = mvars.ene_routePointMessage
 	if not n then
 		return
 	end
-	local t = TppSequence.GetCurrentSequenceName()
-	local a = n.sequence[t]
-	local t = ""
-	if a then
-		e.ExecuteRoutePointMessage(a, r, o, s, i, t)
+	local r = TppSequence.GetCurrentSequenceName()
+	local r = n.sequence[r]
+	local s = ""
+	if r then
+		e.ExecuteRoutePointMessage(r, t, a, i, o, s)
 	end
-	e.ExecuteRoutePointMessage(n.main, r, o, s, i, t)
+	e.ExecuteRoutePointMessage(n.main, t, a, i, o, s)
 end
-function e.ExecuteRoutePointMessage(n, i, t, a, e, r)
+function e.ExecuteRoutePointMessage(n, i, a, t, e, r)
 	local n = n[e]
 	if not n then
 		return
 	end
-	Tpp.DoMessageAct(n, TppMission.CheckMessageOption, a, t, i, e, r)
+	Tpp.DoMessageAct(n, TppMission.CheckMessageOption, t, a, i, e, r)
 end
 return e

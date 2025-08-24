@@ -548,7 +548,7 @@ function a.QARELEASE_DEBUG_Init()
 	e.AddDebugMenu("LuaUI", "showEventTask", "bool", mvars.qaDebug, "showEventTask")
 end
 function a.QAReleaseDebugUpdate()
-	local e = svars
+	local t = svars
 	local o = mvars
 	local e = (nil).Print
 	local r = (nil).NewContext()
@@ -607,6 +607,8 @@ function a.QAReleaseDebugUpdate()
 		e(r, "GMP(inSlot) = " .. tostring(a))
 		local a = TppScriptVars.GetVarValueInSlot(TppDefine.SAVE_SLOT.MB_MANAGEMENT, "vars", "mbmTppHeroicPoint", 0)
 		e(r, "HeroicPoint(inSlot) = " .. tostring(a))
+		e(r, "killCount = " .. tostring(t.killCount))
+		e(r, "totalKillCount = " .. tostring(gvars.totalKillCount))
 	end
 	if gvars.DEBUG_showGameStatus then
 		e(r, "")

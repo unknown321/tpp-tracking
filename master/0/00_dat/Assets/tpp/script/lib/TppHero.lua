@@ -1,11 +1,11 @@
 local e = {}
-local _ = Fox.StrCode32
+local r = Fox.StrCode32
 local n = Tpp.Code32Table
 local n = GameObject.SendCommand
 local t = bit.band
 local o = GameObject.GetGameObjectId
-local r = GameObject.GetTypeIndex
-local c = Tpp.IsTypeString
+local _ = GameObject.GetTypeIndex
+local E = Tpp.IsTypeString
 e.MISSION_ABORT = { heroicPoint = -50, ogrePoint = 0 }
 e.MISSION_CLEAR = {
 	S = { heroicPoint = 1600, ogrePoint = 0 },
@@ -140,10 +140,10 @@ function e.AddTargetLifesavingHeroicPoint(e, n)
 	end
 end
 function e.OnFultonSoldier(o, i)
-	local _ = n(o, { id = "GetStateFlag" })
-	local r = n(o, { id = "IsZombieOrMsf" })
+	local r = n(o, { id = "GetStateFlag" })
+	local _ = n(o, { id = "IsZombieOrMsf" })
 	local n = n(o, { id = "IsChild" })
-	if r then
+	if _ then
 		if i then
 			TppMotherBaseManagement.AddTempLifesavingLog({ heroicPoint = 60, subOgrePoint = 60 })
 		else
@@ -152,7 +152,7 @@ function e.OnFultonSoldier(o, i)
 	elseif n then
 		e.AddTargetLifesavingHeroicPoint(n, i)
 	else
-		if t(_, StateFlag.DYING_LIFE) ~= 0 then
+		if t(r, StateFlag.DYING_LIFE) ~= 0 then
 			if i then
 				e.SetAndAnnounceHeroicOgrePoint(e.ON_HELI_DYING_ENEMY)
 			else
@@ -199,7 +199,7 @@ function e.OnFultonEli(n, e)
 end
 function e.GetFobServerParameter(e)
 	local n, o
-	if c(e) then
+	if E(e) then
 		o = e
 		n = TppNetworkUtil.GetFobServerParameterByName(e)
 	else
@@ -241,12 +241,12 @@ function e.AnnounceHeroicPoint(i, o, n)
 		TppUI.ShowAnnounceLog(n, e)
 	end
 end
-function e.SetAndAnnounceHeroicOgrePoint(n, i, o)
+function e.SetAndAnnounceHeroicOgrePoint(n, o, i)
 	if TppMission.IsFOBMission(vars.missionCode) and (vars.fobSneakMode == FobMode.MODE_SHAM) then
 		return
 	end
 	e.SetHeroicPoint(n.heroicPoint)
-	e.AnnounceHeroicPoint(n, i, o)
+	e.AnnounceHeroicPoint(n, o, i)
 	e.SetOgrePoint(n.ogrePoint)
 end
 function e.AnnounceMissionAbort()
@@ -282,7 +282,7 @@ function e.AnnounceBreakGimmick(n, i, i, o)
 	if not Tpp.IsLocalPlayer(o) then
 		return
 	end
-	local n = r(n)
+	local n = _(n)
 	local n = e.BREAK_GIMMICK[n]
 	if n then
 		Tpp.IncrementPlayData("totalBreakPlacedGimmickCount")
@@ -295,10 +295,10 @@ function e.AnnounceBreakGimmickByGimmickType(n)
 		e.SetAndAnnounceHeroicOgrePoint(n)
 	end
 end
-function e.OnHelicopterLostControl(o, n)
-	local o = r(o)
-	local n = Tpp.IsLocalPlayer(n)
-	if o == TppGameObject.GAME_OBJECT_TYPE_HELI2 then
+function e.OnHelicopterLostControl(n, o)
+	local i = _(n)
+	local n = Tpp.IsLocalPlayer(o)
+	if i == TppGameObject.GAME_OBJECT_TYPE_HELI2 then
 		if n then
 			e.SetAndAnnounceHeroicOgrePoint(e.SUPPORT_HELI_LOST_CONTROLE, "destroyed_support_heli")
 		else
@@ -414,77 +414,94 @@ function e.Messages()
 			},
 			{
 				msg = "Dead",
-				func = function(o, r, _, i)
+				func = function(i, r, _, o)
 					if r and Tpp.IsLocalPlayer(r) then
-						if Tpp.IsHostage(o) then
-							if n(o, { id = "IsDD" }) and (not TppMission.IsFOBMission(vars.missionCode)) then
-								if (i ~= nil) and (t(i, DeadMessageFlag.FIRE) ~= 0) then
+						if Tpp.IsHostage(i) then
+							if n(i, { id = "IsDD" }) and (not TppMission.IsFOBMission(vars.missionCode)) then
+								if (o ~= nil) and (t(o, DeadMessageFlag.FIRE) ~= 0) then
 									e.SetAndAnnounceHeroicOgrePoint(e.FIRE_KILL_DD_HOSTAGE, "mbstaff_died")
 								else
 									e.SetAndAnnounceHeroicOgrePoint(e.KILL_DD_HOSTAGE, "mbstaff_died")
 								end
 							else
-								if not n(o, { id = "IsChild" }) then
-									if (i ~= nil) and (t(i, DeadMessageFlag.FIRE) ~= 0) then
+								if not n(i, { id = "IsChild" }) then
+									if (o ~= nil) and (t(o, DeadMessageFlag.FIRE) ~= 0) then
 										e.SetAndAnnounceHeroicOgrePoint(e.FIRE_KILL_HOSTAGE, "hostage_died")
 									else
 										e.SetAndAnnounceHeroicOgrePoint(e.KILL_HOSTAGE, "hostage_died")
 									end
 								end
 							end
-						elseif Tpp.IsSoldier(o) then
-							Tpp.IncrementPlayData("totalKillCount")
-							local r = TppEnemy.GetSoldierType(o)
-							if n(o, { id = "IsDD" }) then
-								if (i ~= nil) and (t(i, DeadMessageFlag.FIRE) ~= 0) then
+						elseif Tpp.IsSoldier(i) then
+							if o == nil then
+								Tpp.IncrementPlayData("totalKillCount")
+							else
+								if
+									(t(o, DeadMessageFlag.NOT_DAMAGE_DEAD) == 0)
+									and (t(o, DeadMessageFlag.INDIRECTLY_TARGET) == 0)
+								then
+									Tpp.IncrementPlayData("totalKillCount")
+								end
+							end
+							local r = TppEnemy.GetSoldierType(i)
+							if n(i, { id = "IsDD" }) then
+								if (o ~= nil) and (t(o, DeadMessageFlag.FIRE) ~= 0) then
 									e.SetAndAnnounceHeroicOgrePoint(e.FIRE_KILL_DD_SOLDIER, "mbstaff_died")
 								else
 									e.SetAndAnnounceHeroicOgrePoint(e.KILL_DD_SOLDIER, "mbstaff_died")
 								end
 							else
 								if r ~= EnemyType.TYPE_CHILD then
-									local n = DeadMessageFlag.FIRE
+									local r = DeadMessageFlag.FIRE
 									if DeadMessageFlag.FIRE_OR_DYING ~= nil then
-										n = DeadMessageFlag.FIRE_OR_DYING
+										r = DeadMessageFlag.FIRE_OR_DYING
 									end
-									local o = TppMission.IsFOBMission(vars.missionCode)
+									local _ = TppMission.IsFOBMission(vars.missionCode)
 										and TppServerManager.FobIsSneak()
-									if (i ~= nil) and (t(i, n) ~= 0) then
-										if not o then
+									local n = n(i, { id = "GetStateFlag" })
+									if (o ~= nil) and (t(o, r) ~= 0) then
+										if not _ then
 											e.SetAndAnnounceHeroicOgrePoint(e.FIRE_KILL_SOLDIER)
 										else
-											e.SetAndAnnounceHeroicOgrePoint(e.FIRE_KILL_SOLDIER_FOB_SNEAK)
+											if bit.band(n, StateFlag.ZOMBIE) ~= StateFlag.ZOMBIE then
+												e.SetAndAnnounceHeroicOgrePoint(e.FIRE_KILL_SOLDIER_FOB_SNEAK)
+											end
 										end
 									else
-										if not o then
+										if not _ then
 											e.SetAndAnnounceHeroicOgrePoint(e.KILL_SOLDIER)
 										else
-											e.SetAndAnnounceHeroicOgrePoint(e.KILL_SOLDIER_FOB_SNEAK)
+											if bit.band(n, StateFlag.ZOMBIE) ~= StateFlag.ZOMBIE then
+												e.SetAndAnnounceHeroicOgrePoint(e.KILL_SOLDIER_FOB_SNEAK)
+											end
 										end
 									end
 								end
 							end
 						end
-						if Tpp.IsAnimal(o) then
-							if (i ~= nil) and (t(i, DeadMessageFlag.FIRE) ~= 0) then
+						if Tpp.IsAnimal(i) then
+							if (o ~= nil) and (t(o, DeadMessageFlag.FIRE) ~= 0) then
 								e.SetAndAnnounceHeroicOgrePoint({ heroicPoint = 0, ogrePoint = 40 })
 							else
 								e.SetAndAnnounceHeroicOgrePoint({ heroicPoint = 0, ogrePoint = 20 })
 							end
 						end
 					else
-						if Tpp.IsHostage(o) then
-							if n(o, { id = "IsDD" }) and (not TppMission.IsFOBMission(vars.missionCode)) then
+						if Tpp.IsHostage(i) then
+							if n(i, { id = "IsDD" }) and (not TppMission.IsFOBMission(vars.missionCode)) then
 								e.SetAndAnnounceHeroicOgrePoint(e.DEAD_DD_SOLDIER, "mbstaff_died")
 							else
-								if not n(o, { id = "IsChild" }) then
+								if not n(i, { id = "IsChild" }) then
 									e.SetAndAnnounceHeroicOgrePoint(e.DEAD_HOSTAGE, "hostage_died")
 								end
 							end
-						elseif Tpp.IsSoldier(o) then
+						elseif Tpp.IsSoldier(i) then
+							if (o ~= nil) and (t(o, DeadMessageFlag.FROM_PLAYER_ORDER) ~= 0) then
+								Tpp.IncrementPlayData("totalKillCount")
+							end
 							if TppMission.IsFOBMission(vars.missionCode) then
 							else
-								if n(o, { id = "IsDD" }) then
+								if n(i, { id = "IsDD" }) then
 									e.SetAndAnnounceHeroicOgrePoint(e.DEAD_DD_SOLDIER, "mbstaff_died")
 								end
 							end
@@ -513,7 +530,7 @@ function e.Messages()
 			{
 				msg = "VehicleBroken",
 				func = function(o, n)
-					if n == _("Start") then
+					if n == r("Start") then
 						e.AnnounceVehicleBroken(o)
 					end
 				end,
@@ -521,7 +538,7 @@ function e.Messages()
 			{
 				msg = "LostControl",
 				func = function(i, o, n)
-					if o == _("Start") then
+					if o == r("Start") then
 						e.OnHelicopterLostControl(i, n)
 					end
 				end,
@@ -541,12 +558,14 @@ function e.Messages()
 								e.SetAndAnnounceHeroicOgrePointForAnnihilateCp(e.ON_ANNIHILATE_BASE, true)
 								TppTrophy.Unlock(18)
 								Tpp.IncrementPlayData("totalAnnihilateBaseCount")
+								TppChallengeTask.RequestUpdate("ENEMY_BASE")
 							end
 							TppEmblem.AcquireOnCommandPostAnnihilated(n)
 						elseif TppEnemy.IsOuterBaseCp(n) then
 							if o then
 								e.SetAndAnnounceHeroicOgrePointForAnnihilateCp(e.ON_ANNIHILATE_OUTER_BASE, false)
 								Tpp.IncrementPlayData("totalAnnihilateOutPostCount")
+								TppChallengeTask.RequestUpdate("ENEMY_BASE")
 								TppTrophy.Unlock(18)
 							end
 							TppEmblem.AcquireOnCommandPostAnnihilated(n)
@@ -596,8 +615,8 @@ end
 function e.OnReload(n)
 	e.messageExecTable = Tpp.MakeMessageExecTable(e.Messages())
 end
-function e.OnMessage(t, i, o, n, r, c, _)
-	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, t, i, o, n, r, c, _)
+function e.OnMessage(t, i, o, n, r, E, _)
+	Tpp.DoMessage(e.messageExecTable, TppMission.CheckMessageOption, t, i, o, n, r, E, _)
 end
 function e.DeclareSVars()
 	return {
@@ -623,21 +642,21 @@ function e.DeclareSVars()
 	}
 end
 function e.UpdateHero()
-	local n = gvars.isHero
-	local e = TppMotherBaseManagement.GetHeroicPoint()
-	if e >= vars.mbmHeroThreshold then
+	local e = gvars.isHero
+	local n = TppMotherBaseManagement.GetHeroicPoint()
+	if n >= vars.mbmHeroThreshold then
 		gvars.isHero = true
 	end
-	if e < vars.mbmNotHeroThreshold then
+	if n < vars.mbmNotHeroThreshold then
 		gvars.isHero = false
 	end
 	if TppStory.GetCurrentStorySequence() < TppDefine.STORY_SEQUENCE.CLEARD_OKB_ZERO then
 		gvars.isHero = false
 	end
-	if (not n) and gvars.isHero then
+	if (not e) and gvars.isHero then
 		TppUI.ShowAnnounceLog("get_hero")
 	end
-	if n and not gvars.isHero then
+	if e and not gvars.isHero then
 		TppUI.ShowAnnounceLog("lost_hero")
 	end
 	if gvars.isHero then

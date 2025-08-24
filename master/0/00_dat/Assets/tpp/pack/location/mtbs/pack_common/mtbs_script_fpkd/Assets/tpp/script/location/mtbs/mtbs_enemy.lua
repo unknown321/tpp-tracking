@@ -1110,9 +1110,14 @@ mtbs_enemy.SetupEnemy = function(clusterId)
 
 	mtbs_enemy._SetAssetsTable(clusterId)
 
-	mtbs_enemy.SetupSecurityCamera()
+	if TppEnemy.IsSpecialEventFOB() then
+		mvars.mbSecCam_placedCountTotal = 0
+		mvars.mbUav_placedCountTotal = 0
+	else
+		mtbs_enemy.SetupSecurityCamera()
 
-	mtbs_enemy.SetupUAV()
+		mtbs_enemy.SetupUAV()
+	end
 
 	mtbs_enemy.SetupDecy()
 	mtbs_enemy.SetupMine()
@@ -1702,6 +1707,11 @@ mtbs_enemy.OnAllocateDemoBlock = function()
 	if not mvars.mbEnemy_initializedEnemy then
 		return
 	end
+
+	if mvars.f30050demo_fovaPackList == nil then
+		return
+	end
+
 	if #mvars.f30050demo_fovaPackList == 0 then
 		return
 	end
