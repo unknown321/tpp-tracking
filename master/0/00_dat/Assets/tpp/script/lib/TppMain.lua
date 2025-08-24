@@ -1,25 +1,25 @@
 local e = {}
-local l = Tpp.ApendArray
+local r = Tpp.ApendArray
 local n = Tpp.DEBUG_StrCode32ToString
 local i = Tpp.IsTypeFunc
 local t = Tpp.IsTypeTable
-local f = TppScriptVars.IsSavingOrLoading
-local m = ScriptBlock.UpdateScriptsInScriptBlocks
-local M = Mission.GetCurrentMessageResendCount
-local o = {}
-local p = 0
+local M = TppScriptVars.IsSavingOrLoading
+local P = ScriptBlock.UpdateScriptsInScriptBlocks
+local f = Mission.GetCurrentMessageResendCount
+local a = {}
+local l = 0
 local T = {}
-local a = 0
-local d = {}
+local o = 0
+local c = {}
 local u = 0
 local n = {}
 local n = 0
-local S = {}
-local P = {}
+local d = {}
+local m = {}
 local s = 0
-local c = {}
+local S = {}
 local h = {}
-local r = 0
+local p = 0
 local function n()
 	if QuarkSystem.GetCompilerState() == QuarkSystem.COMPILER_STATE_WAITING_TO_LOAD then
 		QuarkSystem.PostRequestToLoad()
@@ -100,9 +100,9 @@ function e.OnAllocate(n)
 	e.DisableGameStatus()
 	e.EnablePause()
 	TppClock.Stop()
-	o = {}
-	p = 0
-	d = {}
+	a = {}
+	l = 0
+	c = {}
 	u = 0
 	TppUI.FadeOut(TppUI.FADE_SPEED.FADE_MOMENT, nil, nil)
 	TppSave.WaitingAllEnqueuedSaveOnStartMission()
@@ -134,7 +134,7 @@ function e.OnAllocate(n)
 	e.ClearStageBlockMessage()
 	TppQuest.OnAllocate(n)
 	TppAnimal.OnAllocate(n)
-	local function o()
+	local function s()
 		if TppLocation.IsAfghan() then
 			if afgh then
 				afgh.OnAllocate()
@@ -153,7 +153,7 @@ function e.OnAllocate(n)
 			end
 		end
 	end
-	o()
+	s()
 	if n.sequence then
 		if i(n.sequence.MissionPrepare) then
 			n.sequence.MissionPrepare()
@@ -172,23 +172,23 @@ function e.OnAllocate(n)
 		for t, e in ipairs(Tpp._requireList) do
 			if _G[e] then
 				if _G[e].DeclareSVars then
-					l(s, _G[e].DeclareSVars(n))
+					r(s, _G[e].DeclareSVars(n))
 				end
 			end
 		end
 		local o = {}
 		for n, e in pairs(n) do
 			if i(e.DeclareSVars) then
-				l(o, e.DeclareSVars())
+				r(o, e.DeclareSVars())
 			end
 			if t(e.saveVarsList) then
-				l(o, TppSequence.MakeSVarsTable(e.saveVarsList))
+				r(o, TppSequence.MakeSVarsTable(e.saveVarsList))
 			end
 		end
-		l(s, o)
+		r(s, o)
 		TppScriptVars.DeclareSVars(s)
 		TppScriptVars.SetSVarsNotificationEnabled(false)
-		while f() do
+		while M() do
 			coroutine.yield()
 		end
 		TppRadioCommand.SetScriptDeclVars()
@@ -452,13 +452,13 @@ function e.OnInitialize(n)
 	TppQuest.AcquireKeyItemOnMissionStart()
 end
 function e.SetUpdateFunction(e)
-	o = {}
-	p = 0
+	a = {}
+	l = 0
 	T = {}
-	a = 0
-	d = {}
+	o = 0
+	c = {}
 	u = 0
-	o = {
+	a = {
 		TppMission.Update,
 		TppSequence.Update,
 		TppSave.Update,
@@ -466,11 +466,11 @@ function e.SetUpdateFunction(e)
 		TppPlayer.Update,
 		TppMission.UpdateForMissionLoad,
 	}
-	p = #o
+	l = #a
 	for n, e in pairs(e) do
 		if i(e.OnUpdate) then
-			a = a + 1
-			T[a] = e.OnUpdate
+			o = o + 1
+			T[o] = e.OnUpdate
 		end
 	end
 end
@@ -518,6 +518,14 @@ function e.OnMissionCanStart()
 	if vars.missionCode == 10240 and TppLocation.IsMBQF() then
 		Player.AttachGasMask()
 	end
+	if vars.missionCode == 10150 then
+		local e = TppSequence.GetMissionStartSequenceIndex()
+		if (e ~= nil) and (e < TppSequence.GetSequenceIndex("Seq_Game_SkullFaceToPlant")) then
+			if svars.mis_objectiveEnable[17] == false then
+				Gimmick.ForceResetOfRadioCassetteWithCassette()
+			end
+		end
+	end
 end
 function e.OnMissionGameStart(n)
 	TppClock.Start()
@@ -543,7 +551,7 @@ function e.ClearStageBlockMessage()
 	StageBlock.ClearLargeBlockNameForMessage()
 	StageBlock.ClearSmallBlockIndexForMessage()
 end
-function e.ReservePlayerLoadingPosition(n, o, s, t, i, a, p)
+function e.ReservePlayerLoadingPosition(n, o, s, t, i, p, a)
 	e.DisableGameStatus()
 	if n == TppDefine.MISSION_LOAD_TYPE.MISSION_FINALIZE then
 		if t then
@@ -652,7 +660,7 @@ function e.ReservePlayerLoadingPosition(n, o, s, t, i, a, p)
 		TppHelicopter.ResetMissionStartHelicopterRoute()
 		TppMission.ResetIsStartFromHelispace()
 		TppMission.ResetIsStartFromFreePlay()
-		if a then
+		if p then
 			if i then
 				TppPlayer.SetStartStatus(TppDefine.INITIAL_PLAYER_STATE.ON_FOOT)
 				TppHelicopter.ResetMissionStartHelicopterRoute()
@@ -675,7 +683,7 @@ function e.ReservePlayerLoadingPosition(n, o, s, t, i, a, p)
 	elseif n == TppDefine.MISSION_LOAD_TYPE.MISSION_RESTART then
 	elseif n == TppDefine.MISSION_LOAD_TYPE.CONTINUE_FROM_CHECK_POINT then
 	end
-	if o and p then
+	if o and a then
 		Mission.AddLocationFinalizer(function()
 			e.StageBlockCurrentPosition()
 		end)
@@ -733,16 +741,16 @@ function e.OnReload(n)
 end
 function e.OnUpdate(e)
 	local e
-	local n = o
-	local t = T
-	local e = d
-	for e = 1, p do
+	local e = a
+	local n = T
+	local t = c
+	for n = 1, l do
+		e[n]()
+	end
+	for e = 1, o do
 		n[e]()
 	end
-	for e = 1, a do
-		t[e]()
-	end
-	m()
+	P()
 end
 function e.OnChangeSVars(e, n, t)
 	for i, e in ipairs(Tpp._requireList) do
@@ -752,56 +760,56 @@ function e.OnChangeSVars(e, n, t)
 	end
 end
 function e.SetMessageFunction(e)
-	S = {}
+	d = {}
 	s = 0
-	c = {}
-	r = 0
+	S = {}
+	p = 0
 	for n, e in ipairs(Tpp._requireList) do
 		if _G[e].OnMessage then
 			s = s + 1
-			S[s] = _G[e].OnMessage
+			d[s] = _G[e].OnMessage
 		end
 	end
 	for n, t in pairs(e) do
 		if e[n]._messageExecTable then
-			r = r + 1
-			c[r] = e[n]._messageExecTable
+			p = p + 1
+			S[p] = e[n]._messageExecTable
 		end
 	end
 end
-function e.OnMessage(e, n, t, i, l, a, p)
-	local e = mvars
-	local o = ""
+function e.OnMessage(n, e, t, i, o, a, r)
+	local n = mvars
+	local l = ""
 	local T
-	local m = Tpp.DoMessage
-	local d = TppMission.CheckMessageOption
+	local c = Tpp.DoMessage
+	local u = TppMission.CheckMessageOption
 	local T = TppDebug
-	local T = P
+	local T = m
 	local T = h
-	local T = TppDefine.MESSAGE_GENERATION[n] and TppDefine.MESSAGE_GENERATION[n][t]
+	local T = TppDefine.MESSAGE_GENERATION[e] and TppDefine.MESSAGE_GENERATION[e][t]
 	if not T then
 		T = TppDefine.DEFAULT_MESSAGE_GENERATION
 	end
-	local u = M()
-	if u < T then
+	local m = f()
+	if m < T then
 		return Mission.ON_MESSAGE_RESULT_RESEND
 	end
-	for e = 1, s do
-		local o = o
-		S[e](n, t, i, l, a, p, o)
+	for s = 1, s do
+		local n = l
+		d[s](e, t, i, o, a, r, n)
 	end
-	for e = 1, r do
-		local o = o
-		m(c[e], d, n, t, i, l, a, p, o)
+	for s = 1, p do
+		local n = l
+		c(S[s], u, e, t, i, o, a, r, n)
 	end
-	if e.loc_locationCommonTable then
-		e.loc_locationCommonTable.OnMessage(n, t, i, l, a, p, o)
+	if n.loc_locationCommonTable then
+		n.loc_locationCommonTable.OnMessage(e, t, i, o, a, r, l)
 	end
-	if e.order_box_script then
-		e.order_box_script.OnMessage(n, t, i, l, a, p, o)
+	if n.order_box_script then
+		n.order_box_script.OnMessage(e, t, i, o, a, r, l)
 	end
-	if e.animalBlockScript and e.animalBlockScript.OnMessage then
-		e.animalBlockScript.OnMessage(n, t, i, l, a, p, o)
+	if n.animalBlockScript and n.animalBlockScript.OnMessage then
+		n.animalBlockScript.OnMessage(e, t, i, o, a, r, l)
 	end
 end
 function e.OnTerminate(e)

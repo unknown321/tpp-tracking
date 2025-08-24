@@ -22,7 +22,7 @@ else
 end
 TppUiCommand.UiPlatFormSetting()
 TppUiCommand.UiAreaSetting()
-LanguageBlock.Create(600 * 1024)
+LanguageBlock.Create(610 * 1024)
 LanguageBlock.Create(96 * 1024)
 if Fox.GetPlatformName() == "Windows" then
 	if Editor then
@@ -38,7 +38,7 @@ local s = ""
 local o = ""
 local _ = ""
 local p = ""
-local T = ""
+local n = ""
 local a = ""
 local i = 1
 local t = 3
@@ -46,7 +46,7 @@ local e = "/Assets/tpp"
 if TppSystemUtility.GetCurrentGameMode() == "MGO" then
 	e = "/Assets/mgo"
 end
-local n = e .. "/pack/ui/lang/lang_default_data_eng.fpk"
+local T = e .. "/pack/ui/lang/lang_default_data_eng.fpk"
 if m == "jpn" then
 	s = "FontSystem_KanjiFont"
 	o = "/Assets/tpp/font/font_def_jp.ffnt"
@@ -54,7 +54,7 @@ if m == "jpn" then
 	p = "/Assets/tpp/font/KanjiFont.ffnt"
 	i = 2
 	t = 3
-	n = e .. "/pack/ui/lang/lang_default_data_jpn.fpk"
+	T = e .. "/pack/ui/lang/lang_default_data_jpn.fpk"
 elseif m == "eng" then
 	s = "FontSystem_LatinFont"
 	o = "/Assets/tpp/font/font_def_ltn.ffnt"
@@ -67,11 +67,11 @@ elseif m == "rus" then
 	o = "/Assets/tpp/font/font_def_rus.ffnt"
 	_ = "FontSystem_Slot3"
 	p = "/Assets/tpp/font/russian.ffnt"
-	T = "FontSystem_KanjiFont"
+	n = "FontSystem_KanjiFont"
 	a = "/Assets/tpp/font/font_def_ltn.ffnt"
 	i = 1
 	t = 3
-	n = e .. "/pack/ui/lang/lang_default_data_rus.fpk"
+	T = e .. "/pack/ui/lang/lang_default_data_rus.fpk"
 elseif m == "ara" then
 	s = "FontSystem_LatinFont"
 	o = "/Assets/tpp/font/arabia.ffnt"
@@ -79,7 +79,7 @@ elseif m == "ara" then
 	p = "/Assets/tpp/font/arabia.ffnt"
 	i = 1
 	t = 3
-	n = e .. "/pack/ui/lang/lang_default_data_ara.fpk"
+	T = e .. "/pack/ui/lang/lang_default_data_ara.fpk"
 else
 	s = "FontSystem_LatinFont"
 	o = "/Assets/tpp/font/font_def_ltn.ffnt"
@@ -93,7 +93,7 @@ GrTools.FontSystemLoad(_, p)
 UiDaemon.SetFontTypeTransTable(0, i)
 UiDaemon.SetFontTypeTransTable(1, t)
 if m == "rus" then
-	GrTools.FontSystemLoad(T, a)
+	GrTools.FontSystemLoad(n, a)
 end
 TppUiCommand.ChangeLanguage()
 FadeFunction.InitFadeSetting()
@@ -142,6 +142,7 @@ _.SetButtonMap("UI_KBD_SHIFT", fox.GK_PAD_NO_BUTTON, fox.KEY_SHIFT)
 _.SetButtonMap("UI_KBD_ALT", fox.GK_PAD_NO_BUTTON, fox.KEY_ALT)
 _.SetButtonMap("UI_KBD_CTRL", fox.GK_PAD_NO_BUTTON, fox.KEY_CTRL)
 _.SetButtonMap("UI_KBD_BS", fox.GK_PAD_NO_BUTTON, fox.KEY_BS)
+_.SetButtonMap("UI_KBD_RETURN", fox.GK_PAD_NO_BUTTON, fox.KEY_RETURN)
 _.SetButtonMap("UI_KBD_1", fox.GK_PAD_NO_BUTTON, fox.KEY_1)
 _.SetButtonMap("UI_KBD_2", fox.GK_PAD_NO_BUTTON, fox.KEY_2)
 _.SetButtonMap("UI_KBD_3", fox.GK_PAD_NO_BUTTON, fox.KEY_3)
