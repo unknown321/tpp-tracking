@@ -27,10 +27,10 @@ end
 TppUiCommand.UiPlatFormSetting()
 TppUiCommand.UiAreaSetting()
 if TppGameSequence.GetTargetArea() == "ChinaKorea" then
-	LanguageBlock.Create(665 * 1024)
+	LanguageBlock.Create(670 * 1024)
 	LanguageBlock.Create(96 * 1024)
 else
-	LanguageBlock.Create(685 * 1024)
+	LanguageBlock.Create(690 * 1024)
 	LanguageBlock.Create(96 * 1024)
 end
 if Fox.GetPlatformName() == "Windows" then

@@ -926,7 +926,9 @@ s[65415] = { "/Assets/tpp/pack/show/tgs_2014/s65415/s65415_area.fpk" }
 s[65416] = { "/Assets/tpp/pack/show/tgs_2014/s65416/s65416_area.fpk" }
 s[50050] = function(s)
 	local p = TppEnemy.GetDDSuit()
-	if p == TppEnemy.FOB_DD_SUIT_SNEAKING then
+	if TppMotherBaseManagement.GetMbsClusterSecurityIsEquipSwimSuit() then
+		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_SWIM_SUIT)
+	elseif p == TppEnemy.FOB_DD_SUIT_SNEAKING then
 		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_SNEAKING)
 	elseif p == TppEnemy.FOB_DD_SUIT_BTRDRS then
 		TppPackList.AddMissionPack(TppDefine.MISSION_COMMON_PACK.DD_SOLDIER_BTRDRS)

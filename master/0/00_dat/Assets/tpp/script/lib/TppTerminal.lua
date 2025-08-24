@@ -730,14 +730,17 @@ function e.AcquirePrivilegeInTitleScreen()
 	e.AcquireDlcItemEmblem()
 end
 function e.AcquireGzPrivilegeKeyItem()
-	local t = { SAVEDATA_EXIST = t.EXTRA_4011, CLEAR_MISSION_20060 = t.EXTRA_4012 }
-	local function n(e)
-		local e = t[e]
+	local n = { SAVEDATA_EXIST = t.EXTRA_4011, CLEAR_MISSION_20060 = t.EXTRA_4012 }
+	local function a(e)
+		local e = n[e]
 		TppMotherBaseManagement.DirectAddDataBase({ dataBaseId = e, isNew = true })
 		return true
 	end
-	for t, a in pairs(t) do
-		e.AcquireGzPrivilege(t, n)
+	for t, n in pairs(n) do
+		e.AcquireGzPrivilege(t, a)
+	end
+	if TppMotherBaseManagement.IsGotDataBase({ dataBaseId = t.EXTRA_4011 }) then
+		TppMotherBaseManagement.DirectAddDataBase({ dataBaseId = t.EXTRA_6000, isNew = false })
 	end
 end
 function e.AcquireDlcItemKeyItem()
@@ -764,6 +767,7 @@ function e.AcquireDlcItemKeyItem()
 		SUIT_EVA = t.EXTRA_4027,
 		HORSE_WESTERN = t.EXTRA_4028,
 		HORSE_PARADE = t.EXTRA_4009,
+		ARM_GOLD = t.EXTRA_6000,
 	}
 	local function o(t, e)
 		local e = n[e]

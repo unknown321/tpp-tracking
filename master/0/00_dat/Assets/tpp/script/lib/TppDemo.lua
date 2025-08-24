@@ -147,6 +147,7 @@ e.PLAY_REQUEST_START_FUNC = {
 		mvars.dem_tempPlayerInfo.playerCamoType = vars.playerCamoType
 		mvars.dem_tempPlayerInfo.playerFaceId = vars.playerFaceId
 		mvars.dem_tempPlayerInfo.playerFaceEquipId = vars.playerFaceEquipId
+		mvars.dem_tempPlayerSuitLevel = Player.GetItemLevel(TppEquip.EQP_SUIT)
 		TppPlayer.ForceChangePlayerToSnake(true)
 		mvars.dem_tempPlayerReloadCounter = {}
 		mvars.dem_tempPlayerReloadCounter.start = 0
@@ -275,6 +276,10 @@ e.FINISH_WAIT_START_FUNC = {
 		end
 		for e, n in pairs(mvars.dem_tempPlayerInfo) do
 			vars[e] = n
+		end
+		if mvars.dem_tempPlayerSuitLevel then
+			Player.SetItemLevel(TppEquip.EQP_SUIT, mvars.dem_tempPlayerSuitLevel)
+			mvars.dem_tempPlayerSuitLevel = nil
 		end
 		mvars.dem_tempPlayerInfo = nil
 		return true

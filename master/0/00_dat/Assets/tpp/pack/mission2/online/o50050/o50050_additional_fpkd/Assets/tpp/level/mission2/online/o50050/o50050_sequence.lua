@@ -240,6 +240,18 @@ this.nakedCamo = {
 	PlayerCamoType.SILVER,
 	PlayerCamoType.EVA_OPEN,
 	PlayerCamoType.BOSS_OPEN,
+	PlayerCamoType.SWIMWEAR_C00,
+	PlayerCamoType.SWIMWEAR_C01,
+	PlayerCamoType.SWIMWEAR_C02,
+	PlayerCamoType.SWIMWEAR_C03,
+	PlayerCamoType.SWIMWEAR_C05,
+	PlayerCamoType.SWIMWEAR_C06,
+	PlayerCamoType.SWIMWEAR_C38,
+	PlayerCamoType.SWIMWEAR_C39,
+	PlayerCamoType.SWIMWEAR_C44,
+	PlayerCamoType.SWIMWEAR_C46,
+	PlayerCamoType.SWIMWEAR_C48,
+	PlayerCamoType.SWIMWEAR_C53,
 }
 
 local ESP_SUBTRACTION_RATE = {
@@ -3923,6 +3935,14 @@ function this.OnUpdate()
 				)
 			end
 		end
+
+		if mvars.fobDebug.showEventTaskClearTime then
+			DebugText.Print(
+				DebugText.NewContext(),
+				{ 0.5, 0.5, 1.0 },
+				string.format("MissionTaskClearTime = %04d[sec]", (this.GetTimeLimit() - svars.timeLimitforSneaking))
+			)
+		end
 	end
 end
 
@@ -4669,6 +4689,9 @@ function this.MissionPrepare()
 
 		mvars.fobDebug.showImportantRoute = false
 		DebugMenu.AddDebugMenu("FobLua", "showImportantRoute", "bool", mvars.fobDebug, "showImportantRoute")
+
+		mvars.fobDebug.showEventTaskClearTime = false
+		DebugMenu.AddDebugMenu("FobLua", "showEventTaskClearTime", "bool", mvars.fobDebug, "showEventTaskClearTime")
 	end
 
 	if TppEnemy.IsParasiteMetalEventFOB() then
@@ -5498,13 +5521,14 @@ this.CheckEventTaskOnGoal = function()
 
 	FobUI.UpdateEventTask({ detectType = 71, substitute = svars.alarmCount })
 
-	local scoreTimeSec = svars.scoreTime / 1000
 	if TppServerManager.FobIsSneak() then
 		local rankBonus = TppUiCommand.GetCurrentPlayerStaffRankBonus()
 		if rankBonus ~= 0 then
 			FobUI.UpdateEventTask({ detectType = 72, substitute = (rankBonus * 1000) })
 		end
-		FobUI.UpdateEventTask({ detectType = 73, substitute = scoreTimeSec })
+
+		local initialLimitTimeSec, currentLimitTimeSec = this.GetTimeLimit(), svars.timeLimitforSneaking
+		FobUI.UpdateEventTask({ detectType = 73, substitute = (initialLimitTimeSec - currentLimitTimeSec) })
 	end
 
 	if svars.isFailedNoKillNoAlert == false then
@@ -7571,6 +7595,7 @@ function this.CheckEquipEspBonus_Offence()
 	then
 		Fox.Log("**** CheckEquipEspBonus:Naked::OffencePlayer ****")
 		svars.espt_of_bonus_naked = GetServerParameter("ESPIONAGE_POINT_OFFENSE_NAKED")
+		FobUI.UpdateEventTask({ detectType = 114, diff = 1 })
 	end
 
 	if vars.weapons[TppDefine.WEAPONSLOT.PRIMARY_BACK] == TppEquip.EQP_None then
@@ -7586,6 +7611,7 @@ function this.CheckEquipEspBonus_Deffense()
 	then
 		Fox.Log("**** CheckEquipEspBonus:Naked::DefensePlayer ****")
 		svars.espt_df_bonus_naked = GetServerParameter("ESPIONAGE_POINT_DEFFENSE_NAKED")
+		FobUI.UpdateEventTask({ detectType = 115, diff = 1 })
 	end
 
 	if vars.weapons2[TppDefine.WEAPONSLOT.PRIMARY_BACK] == TppEquip.EQP_None then
