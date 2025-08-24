@@ -250,6 +250,7 @@ this.ESP_RecordList_OF_Collect = {
 	"espt_of_fluton_cntn",
 	"espt_of_fluton_ptwp",
 	"espt_of_fluton_dds",
+	"espt_of_pick_scgj",
 }
 
 this.ESP_RecordList_OF_Destroy = {
@@ -2348,6 +2349,25 @@ this.saveVarsList = {
 		name = "espt_of_ttd_pl_done",
 		type = TppScriptVars.TYPE_BOOL,
 		value = false,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+
+	rank_cnt_down_ofp = {
+		name = "rank_cnt_down_ofp",
+		type = TppScriptVars.TYPE_UINT8,
+		value = 0,
+		save = true,
+		sync = true,
+		wait = true,
+		category = TppScriptVars.CATEGORY_MISSION,
+	},
+	rank_cnt_down_dfp = {
+		name = "rank_cnt_down_dfp",
+		type = TppScriptVars.TYPE_UINT8,
+		value = 0,
 		save = true,
 		sync = true,
 		wait = true,
@@ -4665,6 +4685,9 @@ function this.OnRestoreSVars()
 
 	svars.espt_of_ttd_pl_done = false
 
+	svars.rank_cnt_down_ofp = 0
+	svars.rank_cnt_down_dfp = 0
+
 	if Tpp.IsQARelease() or DEBUG then
 		FobUI.DEBUG_DetectTypeText({
 			[1] = "RecoveryCount: Container",
@@ -4690,6 +4713,7 @@ function this.OnRestoreSVars()
 			[18] = "Enemy-Neutralized :Placed",
 			[19] = "Enemy-Neutralized :HoldUp",
 			[20] = "Enemy-Neutralized :CQC",
+			[98] = "Enemy-Neutralized :Grenader",
 
 			[22] = "RecoveryCount: Enemy",
 			[37] = "HeadShotRange: Enemy",
@@ -4705,6 +4729,7 @@ function this.OnRestoreSVars()
 			[48] = "Deffense-Neutralized :Throwing",
 			[49] = "Deffense-Neutralized :Placed",
 			[51] = "Deffense-Neutralized :CQC",
+			[99] = "Deffense-Neutralized :Grenader",
 
 			[67] = "Clear",
 			[68] = "Clear: SortieCost",
@@ -4731,6 +4756,7 @@ function this.OnRestoreSVars()
 			[86] = "Offence-Neutralized :Throwing",
 			[87] = "Offence-Neutralized :Placed",
 			[89] = "Offence-Neutralized :CQC",
+			[100] = "Offence-Neutralized :Grenader",
 
 			[92] = "Offence-Eliminated :Gun Emplacement",
 			[93] = "Offence-Eliminated :Mortar",
@@ -4938,6 +4964,8 @@ function this.Messages()
 							FobUI.UpdateEventTask({ detectType = 93, diff = 1 })
 						elseif neutralizeCause == NeutralizeFobCause.ANTI_AIR then
 							FobUI.UpdateEventTask({ detectType = 94, diff = 1 })
+						elseif neutralizeCause == NeutralizeFobCause.GRENADER then
+							FobUI.UpdateEventTask({ detectType = 100, diff = 1 })
 						end
 					elseif neutralizedGameObjectId == DF_PLAYER_ID then
 						Fox.Log("***************************************************************************")
@@ -4979,6 +5007,8 @@ function this.Messages()
 							or neutralizeCause == NeutralizeFobCause.CQC_KNIFE
 						then
 							FobUI.UpdateEventTask({ detectType = 51, diff = 1 })
+						elseif neutralizeCause == NeutralizeFobCause.GRENADER then
+							FobUI.UpdateEventTask({ detectType = 99, diff = 1 })
 						end
 					elseif Tpp.IsSoldier(neutralizedGameObjectId) then
 						FobUI.UpdateEventTask({ detectType = 8, diff = 1 })
@@ -5013,6 +5043,8 @@ function this.Messages()
 							or neutralizeCause == NeutralizeFobCause.CQC_KNIFE
 						then
 							FobUI.UpdateEventTask({ detectType = 20, diff = 1 })
+						elseif neutralizeCause == NeutralizeFobCause.GRENADER then
+							FobUI.UpdateEventTask({ detectType = 98, diff = 1 })
 						end
 					end
 				end,
@@ -6170,6 +6202,8 @@ this.OffencePlayerDead = function(playerId, AttackerId, espParam)
 			svars.espt_df_kill_ofp = svars.espt_df_kill_ofp + espParam
 
 			svars.fobIsEnableOpenWormhole = true
+
+			svars.rank_cnt_down_ofp = svars.rank_cnt_down_ofp + 1
 		end
 	end, function() end, function() end)
 end
@@ -6250,6 +6284,8 @@ this.KillDefencePlayer = function(deadPlayerId, attakerId, espParam)
 			TppHero.SetAndAnnounceHeroicOgrePoint(TppHero.KILLED_PLAYER)
 
 			svars.espt_df_dead = svars.espt_df_dead + espParam
+
+			svars.rank_cnt_down_dfp = svars.rank_cnt_down_dfp + 1
 		end
 	end, function() end, function()
 		if attakerId == OF_PLAYER_ID then
@@ -6997,6 +7033,16 @@ this.CalculateResult = function(numClearType)
 			svars.espt_of_perfect_stealth = svars.espt_of_no_alert + svars.espt_of_no_kill + svars.espt_of_no_reflex
 		end
 
+		if TppMotherBaseManagement.IsOpponentSupporter({}) == false then
+			Fox.Log(" ***** Day180:SetFobResultRankingParam ***** ")
+			local isPerfectStealth = false
+			if svars.espt_of_perfect_stealth ~= 0 then
+				isPerfectStealth = true
+			end
+
+			TppNetworkUtil.SetFobResultRankingParam(isPerfectStealth, svars.rank_cnt_down_ofp, svars.rank_cnt_down_dfp)
+		end
+
 		local espParm_hit = GetServerParameter("ESPIONAGE_POINT_OFFENSE_HIT")
 		espParm_hit = espParm_hit * svars.takeHitCount
 		svars.espt_of_offense_hit = svars.espt_of_offense_hit + espParm_hit
@@ -7581,7 +7627,18 @@ function this.SetAndAnnounceEspPoint_FultonPtwp(strFultoned)
 end
 
 function this.SetAndAnnounceEspPoint_PickUpScgj(strFultoned)
+	svars.cnt_pick_scgj = svars.cnt_pick_scgj + 1
 	if vars.fobSneakMode == FobMode.MODE_ACTUAL then
+		this.SwitchExecByIsHost(function()
+			local baseDiffOF, baseDiffDF = this.GetCurrentBaseDifficulty()
+			local param = this.GetESPUnitValue_OFUp(
+				baseDiffOF,
+				GetServerParameter("ESPIONAGE_POINT_COEFFICIENT_OFFENSE_PICKUP_MINE"),
+				GetServerParameter("ESPIONAGE_POINT_OFFENSE_PICKUP_MINE")
+			)
+			svars.espt_of_pick_scgj = svars.espt_of_pick_scgj + param
+			this.SetAnnounceEspPoint({ upPoint = param, sbj = strFultoned, upLangId = "espFulton_a" })
+		end, function() end)
 	end
 end
 
@@ -7927,11 +7984,15 @@ function this.OnPlayerStaminaOut(playerId, value)
 				if this.IsThereDefencePlayer() == true then
 					svars.espt_df_down_ofp = svars.espt_df_down_ofp + param_df
 				end
+
+				svars.rank_cnt_down_ofp = svars.rank_cnt_down_ofp + 1
 			end, function()
 				Fox.Log("_____Client OnPlayerStaminaOut.")
 
 				this.SetAnnounceEspPoint({ upPoint = param_df, upLangId = lang_df })
 			end)
+		elseif playerId == DF_PLAYER_ID then
+			svars.rank_cnt_down_dfp = svars.rank_cnt_down_dfp + 1
 		end
 	end
 
@@ -8196,6 +8257,7 @@ this.OnPickupPlaced = function(playerId, equipId, instanceIndex)
 		elseif TppPlayer.IsMine(equipId) == true then
 			Fox.Log("#### OnPickupPlaced : #### :: IsMine")
 			this.AddRevengePoint("REVENGE_POINT_DESTROY_SEC_GADJET")
+			this.SetAndAnnounceEspPoint_PickUpScgj("mb_fob_sec_mine")
 			svars.cntDmgMine = svars.cntDmgMine + 1
 		end
 

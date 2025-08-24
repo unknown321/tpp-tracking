@@ -1,11 +1,11 @@
 local a = {}
 local e = EnemyFova.MAX_REALIZED_COUNT
 local n = 0
-local p = 1
+local l = 1
 local d = 2
 local r = 3
 local i = 4
-local l = 5
+local p = 5
 local c = 6
 local _ = "/Assets/tpp/parts/chara/prs/prs2_main0_def_v00.parts"
 local f = "/Assets/tpp/parts/chara/prs/prs5_main0_def_v00.parts"
@@ -75,27 +75,27 @@ local t = {
 	[11050] = { count = 0 },
 	[10052] = { count = 6, lang = c, overlap = true, ignoreList = { 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 }, modelNum = 5 },
 	[11052] = { count = 6, lang = c, overlap = true, ignoreList = { 40, 41, 42, 43, 44, 45, 46, 47, 48, 49 }, modelNum = 5 },
-	[10054] = { count = 4, lang = p, overlap = true },
-	[11054] = { count = 4, lang = p, overlap = true },
+	[10054] = { count = 4, lang = l, overlap = true },
+	[11054] = { count = 4, lang = l, overlap = true },
 	[10070] = { count = 0 },
 	[10080] = { count = 0 },
 	[11080] = { count = 0 },
 	[10081] = { count = 0 },
-	[10082] = { count = 2, lang = l, overlap = true },
-	[11082] = { count = 2, lang = l, overlap = true },
+	[10082] = { count = 2, lang = p, overlap = true },
+	[11082] = { count = 2, lang = p, overlap = true },
 	[10085] = { count = 0 },
 	[11085] = { count = 0 },
 	[10086] = { count = 0 },
 	[10090] = { count = 0 },
 	[11090] = { count = 0 },
-	[10091] = { count = 1, lang = p, useHair = true, overlap = true },
-	[11091] = { count = 1, lang = p, useHair = true, overlap = true },
+	[10091] = { count = 1, lang = l, useHair = true, overlap = true },
+	[11091] = { count = 1, lang = l, useHair = true, overlap = true },
 	[10093] = { count = 0 },
 	[10100] = { count = 0 },
 	[10110] = { count = 0 },
 	[10115] = { count = 0 },
 	[11115] = { count = 0 },
-	[10120] = { count = 1, lang = p, overlap = true },
+	[10120] = { count = 1, lang = l, overlap = true },
 	[10121] = { count = 0 },
 	[11121] = { count = 0 },
 	[10130] = { count = 0 },
@@ -109,10 +109,10 @@ local t = {
 	[10171] = { count = 0 },
 	[11171] = { count = 0 },
 	[10156] = { count = 1, lang = d, overlap = true },
-	[10195] = { count = 1, lang = l },
-	[11195] = { count = 1, lang = l },
-	[10200] = { count = 1, lang = l },
-	[11200] = { count = 1, lang = l },
+	[10195] = { count = 1, lang = p },
+	[11195] = { count = 1, lang = p },
+	[10200] = { count = 1, lang = p },
+	[11200] = { count = 1, lang = p },
 	[10240] = { count = 0 },
 	[10211] = { count = 4, lang = r, overlap = true },
 	[11211] = { count = 4, lang = i, overlap = true },
@@ -213,7 +213,7 @@ function a.GetHostageCountAtMissionId(a)
 	return e
 end
 function a.GetHostageLangAtMissionId(e)
-	local a = p
+	local a = l
 	if t[e] ~= nil then
 		local e = t[e]
 		if e ~= nil then
@@ -294,7 +294,7 @@ function a.SetHostageFaceTable(o)
 	local f = 0
 	if s > 0 then
 		local n = {}
-		if t == p then
+		if t == l then
 			table.insert(n, 3)
 			local e = bit.rshift(gvars.hosface_groupNumber, 8) % 100
 			if e < 40 then
@@ -302,7 +302,7 @@ function a.SetHostageFaceTable(o)
 			end
 		elseif t == d then
 			table.insert(n, 0)
-		elseif t == l then
+		elseif t == p then
 			table.insert(n, 2)
 			local e = bit.rshift(gvars.hosface_groupNumber, 8) % 100
 			if e < 10 then
@@ -367,11 +367,11 @@ function a.SetHostageFaceTable(o)
 		else
 			local a = {}
 			local n = gvars.hosface_groupNumber % 9
-			if t == p then
+			if t == l then
 				table.insert(a, { 25 + n, 0, 0, e })
 			elseif t == d then
 				table.insert(a, { 100 + n, 0, 0, e })
-			elseif t == l then
+			elseif t == p then
 				table.insert(a, { 210 + n, 0, 0, e })
 			elseif t == i then
 				table.insert(a, { 9 + n, 0, 0, e })
@@ -1280,15 +1280,15 @@ function a.AddUniquePackage(e)
 	end
 end
 function a.ApplyUniqueSetting()
-	local n = GameObject.NULL_ID
+	local t = GameObject.NULL_ID
 	local e = EnemyFova.NOT_USED_FOVA_VALUE
-	if gvars.ene_fovaUniqueTargetIds[0] == n then
+	if gvars.ene_fovaUniqueTargetIds[0] == t then
 		local e = 0
-		for t, a in ipairs(f) do
-			local t = GameObject.GetGameObjectId(a.name)
-			if t ~= n then
+		for n, a in ipairs(f) do
+			local n = GameObject.GetGameObjectId(a.name)
+			if n ~= t then
 				if e < TppDefine.ENEMY_FOVA_UNIQUE_SETTING_COUNT then
-					gvars.ene_fovaUniqueTargetIds[e] = t
+					gvars.ene_fovaUniqueTargetIds[e] = n
 					gvars.ene_fovaUniqueFaceIds[e] = a.faceId
 					gvars.ene_fovaUniqueBodyIds[e] = a.bodyId
 					if gvars.ene_fovaUniqueFlags then
@@ -1300,29 +1300,29 @@ function a.ApplyUniqueSetting()
 		end
 	end
 	local d = bit.band
-	for t = 0, TppDefine.ENEMY_FOVA_UNIQUE_SETTING_COUNT - 1 do
-		local e = gvars.ene_fovaUniqueTargetIds[t]
-		if e == n then
+	for n = 0, TppDefine.ENEMY_FOVA_UNIQUE_SETTING_COUNT - 1 do
+		local e = gvars.ene_fovaUniqueTargetIds[n]
+		if e == t then
 			break
 		end
-		local n =
-			{ id = "ChangeFova", faceId = gvars.ene_fovaUniqueFaceIds[t], bodyId = gvars.ene_fovaUniqueBodyIds[t] }
-		GameObject.SendCommand(e, n)
-		local n = 0
+		local t =
+			{ id = "ChangeFova", faceId = gvars.ene_fovaUniqueFaceIds[n], bodyId = gvars.ene_fovaUniqueBodyIds[n] }
+		GameObject.SendCommand(e, t)
+		local t = 0
 		if gvars.ene_fovaUniqueFlags then
-			n = gvars.ene_fovaUniqueFlags[t]
+			t = gvars.ene_fovaUniqueFlags[n]
 		end
-		if d(n, T) ~= 0 then
-			local t = vars.missionCode
-			local n = d(n, m)
-			local a = a.GetStaffIdForDD(t, n)
+		if d(t, T) ~= 0 then
+			local n = vars.missionCode
+			local t = d(t, m)
+			local a = a.GetStaffIdForDD(n, t)
 			if a ~= c then
 				local a = { id = "SetStaffId", staffId = a }
 				GameObject.SendCommand(e, a)
 			end
 			local a = { id = "SetHostage2Flag", flag = "dd", on = true }
 			GameObject.SendCommand(e, a)
-		elseif d(n, _) ~= 0 then
+		elseif d(t, _) ~= 0 then
 			local a = { id = "SetHostage2Flag", flag = "female", on = true }
 			GameObject.SendCommand(e, a)
 		end
@@ -1513,15 +1513,15 @@ function a.GetUavSetting()
 	local o = TppMotherBaseManagement.GetMbsUavLevel({})
 	local i = TppMotherBaseManagement.GetMbsUavSmokeGrenadeLevel({})
 	local _ = TppMotherBaseManagement.GetMbsUavSleepingGusGrenadeLevel({})
-	local a = TppMotherBaseManagement.GetMbsClusterSecuritySoldierEquipGrade({})
+	local t = TppMotherBaseManagement.GetMbsClusterSecuritySoldierEquipGrade({})
 	local c = TppMotherBaseManagement.GetMbsClusterSecurityIsNoKillMode()
 	local l = TppUav.DEVELOP_LEVEL_LMG_0
-	local t = false
+	local d = false
 	local s = false
-	local e = 0
-	local n = 0
-	local p = 0
-	local d = 100
+	local a = 100
+	local e = a
+	local n = a
+	local p = a
 	local r = 7
 	local r = 4
 	local r = 3
@@ -1530,21 +1530,21 @@ function a.GetUavSetting()
 	local f = 3
 	local r = 6
 	local T = 7
-	if a < f then
-		e = d
+	if t < f then
+		e = a
 	elseif o > 0 then
 		if o == 1 then
 			e = TppUav.DEVELOP_LEVEL_LMG_0
 		elseif o == 2 then
-			if a >= r then
+			if t >= r then
 				e = TppUav.DEVELOP_LEVEL_LMG_1
 			else
 				e = TppUav.DEVELOP_LEVEL_LMG_0
 			end
 		elseif o == 3 then
-			if a >= T then
+			if t >= T then
 				e = TppUav.DEVELOP_LEVEL_LMG_2
-			elseif a >= r then
+			elseif t >= r then
 				e = TppUav.DEVELOP_LEVEL_LMG_1
 			else
 				e = TppUav.DEVELOP_LEVEL_LMG_0
@@ -1554,21 +1554,21 @@ function a.GetUavSetting()
 	local f = 4
 	local r = 6
 	local T = 7
-	if a < f then
-		n = d
+	if t < f then
+		n = a
 	elseif o > 0 then
 		if i == 1 then
 			n = TppUav.DEVELOP_LEVEL_SMOKE_0
 		elseif i == 2 then
-			if a >= r then
+			if t >= r then
 				n = TppUav.DEVELOP_LEVEL_SMOKE_1
 			else
 				n = TppUav.DEVELOP_LEVEL_SMOKE_0
 			end
 		elseif i == 3 then
-			if a >= T then
+			if t >= T then
 				n = TppUav.DEVELOP_LEVEL_SMOKE_2
-			elseif a >= r then
+			elseif t >= r then
 				n = TppUav.DEVELOP_LEVEL_SMOKE_1
 			else
 				n = TppUav.DEVELOP_LEVEL_SMOKE_0
@@ -1576,40 +1576,40 @@ function a.GetUavSetting()
 		end
 	end
 	local i = 8
-	if a < i then
-		p = d
+	if t < i then
+		p = a
 	else
 		if _ == 1 then
 			p = TppUav.DEVELOP_LEVEL_SLEEP_0
 		end
 	end
 	if o == 0 then
-		t = false
+		d = false
 	else
 		if c == true then
-			if p ~= d then
+			if p ~= a then
 				l = p
-				t = true
+				d = true
 				s = true
-			elseif n ~= d then
+			elseif n ~= a then
 				l = n
-				t = true
+				d = true
 				s = true
-			elseif e ~= d then
+			elseif e ~= a then
 				l = e
-				t = true
+				d = true
 			else
-				t = false
+				d = false
 			end
 		else
-			if e ~= d then
+			if e ~= a then
 				l = e
-				t = true
+				d = true
 			else
-				t = false
+				d = false
 			end
 		end
 	end
-	return t, l, s
+	return d, l, s
 end
 return a

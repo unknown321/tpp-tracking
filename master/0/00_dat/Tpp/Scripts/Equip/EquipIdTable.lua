@@ -3681,6 +3681,22 @@ TppEquip.ReloadEquipIdTable({
 		"/Assets/tpp/pack/collectible/special/EQP_WP_EX_hg_000.fpk",
 	},
 	{
+		TppEquip.EQP_WP_EX_hg_000_G01,
+		TppEquip.EQP_TYPE_Handgun,
+		TppEquip.WP_EX_hg_000_G01,
+		TppEquip.EQP_BLOCK_MISSION,
+		"/Assets/tpp/parts/weapon/hag/hg12_main0_def_v00.parts",
+		"/Assets/tpp/pack/collectible/special/EQP_WP_EX_hg_000.fpk",
+	},
+	{
+		TppEquip.EQP_WP_EX_hg_000_G02,
+		TppEquip.EQP_TYPE_Handgun,
+		TppEquip.WP_EX_hg_000_G02,
+		TppEquip.EQP_BLOCK_MISSION,
+		"/Assets/tpp/parts/weapon/hag/hg12_main0_def_v00.parts",
+		"/Assets/tpp/pack/collectible/special/EQP_WP_EX_hg_000.fpk",
+	},
+	{
 		TppEquip.EQP_WP_EX_gl_000,
 		TppEquip.EQP_TYPE_GrenadeLauncher,
 		TppEquip.WP_EX_gl_000,
