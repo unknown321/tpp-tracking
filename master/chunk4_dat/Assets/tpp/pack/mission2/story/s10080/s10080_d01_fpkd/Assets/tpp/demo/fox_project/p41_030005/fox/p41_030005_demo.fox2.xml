@@ -1,0 +1,525 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x317E080" id="0x34A92">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="5">
+          <containerEntry key="p41_030005_000_final">
+            <data>0x317E0F0</data>
+          </containerEntry>
+          <containerEntry key="p41_030005_DSA">
+            <data>0x317E470</data>
+          </containerEntry>
+          <containerEntry key="p41_030005_dmd_sna">
+            <data>0x317E4E0</data>
+          </containerEntry>
+          <containerEntry key="p51_030005_dmd_uth">
+            <data>0x317E550</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x648CA30</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoData" classVersion="36" classID="0x4F0" addr="0x317E0F0" id="0x34A94">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_030005_000_final</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E080</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E160</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="evfFiles" type="FilePtr" container="DynamicArray"></property>
+        <property name="onMemory" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="demoLength" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>1946</containerEntry>
+        </property>
+        <property name="priority" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="scriptPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="fmdlFiles" type="FilePtr" container="StringMap"></property>
+        <property name="helpBoneFiles" type="FilePtr" container="StringMap"></property>
+        <property name="partsDesc" type="EntityPtr" container="StringMap"></property>
+        <property name="clipDatas" type="EntityPtr" container="DynamicArray" arraySize="3">
+          <containerEntry>0x317E1D0</containerEntry>
+          <containerEntry>0x317E240</containerEntry>
+          <containerEntry>0x317E2B0</containerEntry>
+        </property>
+        <property name="loadFiles" type="Path" container="DynamicArray"></property>
+        <property name="demoId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_030005_000_final</containerEntry>
+        </property>
+        <property name="playingRoot" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="streamAnimation" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/demo/fox_project/p41_030005/fox/p41_030005_demo.fox2" nameInArchive="p41_030005_DSA">0x317E470</containerEntry>
+        </property>
+        <property name="demoStreamPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/demo_stream/p41_030005_000_final.fsm</containerEntry>
+        </property>
+        <property name="motionPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/si_project/p41_030005/fani/p41_030005_000_final/p41_030005_000_final.sani</containerEntry>
+        </property>
+        <property name="motionFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="audioPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/sound/external/demo/p41_030005.mas</containerEntry>
+        </property>
+        <property name="subtitleFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="subtitleBinaryFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="nodeDataFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/si_project/p41_030005/fani/p41_030005_000_final/p41_030005_000_final.sand</containerEntry>
+        </property>
+        <property name="stringParams" type="String" container="DynamicArray"></property>
+        <property name="entityParams" type="EntityLink" container="StringMap" arraySize="2">
+          <containerEntry key="Player">
+            <data packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/demo/fox_project/p41_030005/fox/p41_030005_demo.fox2" nameInArchive="p41_030005_dmd_sna">0x317E4E0</data>
+          </containerEntry>
+          <containerEntry key="HM_uth0_main0_def">
+            <data packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/demo/fox_project/p41_030005/fox/p41_030005_demo.fox2" nameInArchive="p51_030005_dmd_uth">0x317E550</data>
+          </containerEntry>
+        </property>
+        <property name="fileParams" type="FilePtr" container="StringMap" arraySize="1">
+          <containerEntry key="/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchuthdnwblr01_s5MG.vfx">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchuthdnwblr01_s5MG.vfx</data>
+          </containerEntry>
+        </property>
+        <property name="controlCharacters" type="EntityPtr" container="StringMap" arraySize="2">
+          <containerEntry key="HM_sna0_main0_def">
+            <data>0x317E320</data>
+          </containerEntry>
+          <containerEntry key="HM_uth0_main0_def">
+            <data>0x317E390</data>
+          </containerEntry>
+        </property>
+        <property name="controlDatas" type="EntityLink" container="StringMap"></property>
+        <property name="controlCollectibles" type="String" container="StringMap"></property>
+        <property name="parameters" type="EntityPtr" container="StringMap" arraySize="1">
+          <containerEntry key="Game">
+            <data>0x317E400</data>
+          </containerEntry>
+        </property>
+        <property name="setupLights" type="String" container="StringMap" arraySize="4">
+          <containerEntry key="DemoLightFunctor_CreateLight_2015012821180018_0">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2015020219503030_0">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2015012821180359_0">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="Demo_SL24_2015020220432250">
+            <data>Spot</data>
+          </containerEntry>
+        </property>
+        <property name="cameraInterpType" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="cameraInterpFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>60</containerEntry>
+        </property>
+        <property name="cameraInterpCurveRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.9</containerEntry>
+        </property>
+        <property name="cameraInterpScurveCenter" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.65</containerEntry>
+        </property>
+        <property name="cameraTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-440.5787" y="-20.77391" z="1326.0516" w="0"></containerEntry>
+        </property>
+        <property name="cameraRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.038843" y="0.960041" z="0.172528" w="0.216901"></containerEntry>
+        </property>
+        <property name="cameraParam" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>17.138105</containerEntry>
+        </property>
+        <property name="cameraDistanceToLookAt" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="cameraStartTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-435.92755" y="24.377636" z="1488.748" w="0"></containerEntry>
+        </property>
+        <property name="cameraStartRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.001173" y="-0.998736" z="0.027638" w="0.041977"></containerEntry>
+        </property>
+        <property name="cameraStartParam" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>249.83072</containerEntry>
+        </property>
+        <property name="cameraStartDistanceToLookAt" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="eventCacheNum" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="eventInterpCacheNum" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="eventSkipCacheNum" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="highestTextureStreamModel" type="String" container="DynamicArray" arraySize="3">
+          <containerEntry>HM_uth0_main0_def</containerEntry>
+          <containerEntry>HM_dds9_main0_def</containerEntry>
+          <containerEntry>HM_sna0_main0_def</containerEntry>
+        </property>
+        <property name="highestTexture" type="Path" container="DynamicArray"></property>
+        <property name="objectNum" type="Int32" container="StringMap"></property>
+        <property name="blockPositionSetter" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x317E160" id="0x34A9C">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E0F0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ClipData" classVersion="0" classID="0x30" addr="0x317E1D0" id="0x5BF89">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E0F0</containerEntry>
+        </property>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Shot</containerEntry>
+        </property>
+        <property name="cameraName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>konShotCamera3</containerEntry>
+        </property>
+        <property name="startFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8004</containerEntry>
+        </property>
+        <property name="endFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8353</containerEntry>
+        </property>
+        <property name="offsetFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>-8004</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ClipData" classVersion="0" classID="0x30" addr="0x317E240" id="0x5BF8A">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E0F0</containerEntry>
+        </property>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Shot3</containerEntry>
+        </property>
+        <property name="cameraName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>konShotCamera_004</containerEntry>
+        </property>
+        <property name="startFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8362</containerEntry>
+        </property>
+        <property name="endFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8701</containerEntry>
+        </property>
+        <property name="offsetFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>-8012</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ClipData" classVersion="0" classID="0x30" addr="0x317E2B0" id="0x5BF8B">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E0F0</containerEntry>
+        </property>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Shot1</containerEntry>
+        </property>
+        <property name="cameraName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>konShotCamera_002</containerEntry>
+        </property>
+        <property name="startFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>10432</containerEntry>
+        </property>
+        <property name="endFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>11692</containerEntry>
+        </property>
+        <property name="offsetFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>-9742</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoControlCharacterDesc" classVersion="2" classID="0x80" addr="0x317E320" id="0x34AA4">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E0F0</containerEntry>
+        </property>
+        <property name="characterId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Player</containerEntry>
+        </property>
+        <property name="releaseGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="releaseTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="controlledAtStart" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-422.54843" y="-19.96483" z="1347.3748" w="0"></containerEntry>
+        </property>
+        <property name="rotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.009723" y="0.221718" z="0.031444" w="0.974555"></containerEntry>
+        </property>
+        <property name="startGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-422.54843" y="-19.964832" z="1347.3748" w="0"></containerEntry>
+        </property>
+        <property name="startRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.009723" y="0.221718" z="0.031444" w="0.974555"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoControlCharacterDesc" classVersion="2" classID="0x80" addr="0x317E390" id="0x34AA6">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E0F0</containerEntry>
+        </property>
+        <property name="characterId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SupportHeli</containerEntry>
+        </property>
+        <property name="releaseGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="releaseTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="controlledAtStart" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-586.48956" y="4.436344" z="2192.278" w="0"></containerEntry>
+        </property>
+        <property name="rotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0.996195" z="0" w="0.087156"></containerEntry>
+        </property>
+        <property name="startGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-431.76733" y="22.554678" z="1540.3312" w="0"></containerEntry>
+        </property>
+        <property name="startRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.021962" y="-0.993935" z="0.098109" w="0.044568"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppDemoParameter" classVersion="3" classID="0x44" addr="0x317E400" id="0x34AA8">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E0F0</containerEntry>
+        </property>
+        <property name="pauseEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="fadeSerchLightEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="fadeDirectionalLightEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="fadeSandStormEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="sandStormDensityMin" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.006</containerEntry>
+        </property>
+        <property name="fadeTime" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="useSetTime" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="hour" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="minute" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="second" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="weatherType" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoStreamAnimation" classVersion="3" classID="0x2C8" addr="0x317E470" id="0x34AAA">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_030005_DSA</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E080</containerEntry>
+        </property>
+        <property name="streamPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/si_project/p41_030005/fani/p41_030005_000_final/p41_030005_000_final.sani</containerEntry>
+        </property>
+        <property name="demoLength" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="locatorTypes" type="Int32" container="StringMap" arraySize="1">
+          <containerEntry key="Eff_HeriDownWash">
+            <data>0</data>
+          </containerEntry>
+        </property>
+        <property name="cameraTypes" type="Int32" container="StringMap" arraySize="3">
+          <containerEntry key="konShotCamera3">
+            <data>1</data>
+          </containerEntry>
+          <containerEntry key="konShotCamera_004">
+            <data>1</data>
+          </containerEntry>
+          <containerEntry key="konShotCamera_002">
+            <data>1</data>
+          </containerEntry>
+        </property>
+        <property name="modelFiles" type="FilePtr" container="StringMap" arraySize="3">
+          <containerEntry key="HM_dds9_main0_def">
+            <data>/Assets/tpp/chara/dds/Scenes/dds9_main0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_sna0_main0_def">
+            <data hash="0xB8A0BF169F98"></data>
+          </containerEntry>
+          <containerEntry key="HM_uth0_main0_def">
+            <data hash="0xB8A0BF169F98"></data>
+          </containerEntry>
+        </property>
+        <property name="helpBoneFiles" type="FilePtr" container="StringMap" arraySize="1">
+          <containerEntry key="HM_dds9_main0_def">
+            <data>/Assets/tpp/chara/dds/Scenes/dds9_main0_def.frdv</data>
+          </containerEntry>
+        </property>
+        <property name="partsFiles" type="FilePtr" container="StringMap"></property>
+        <property name="coverModelFiles" type="FilePtr" container="StringMap"></property>
+        <property name="modelPartsDictionary" type="String" container="StringMap"></property>
+        <property name="coverModelDictionary" type="String" container="StringMap"></property>
+        <property name="updateJobCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="modelProxyPaths" type="Path" container="StringMap"></property>
+        <property name="partsProxyPaths" type="Path" container="StringMap"></property>
+        <property name="dynamicModel" type="EntityPtr" container="StringMap"></property>
+        <property name="dynamicParts" type="EntityPtr" container="StringMap"></property>
+        <property name="dynamicFv2" type="EntityPtr" container="StringMap"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoModelDataNode" classVersion="2" classID="0x90" addr="0x317E4E0" id="0x34AAC">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_030005_dmd_sna</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E080</containerEntry>
+        </property>
+        <property name="partNames" type="String" container="StringMap" arraySize="1">
+          <containerEntry key="HM_sna0_main0_def">
+            <data>Body</data>
+          </containerEntry>
+        </property>
+        <property name="target" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoModelDataNode" classVersion="2" classID="0x90" addr="0x317E550" id="0x34AAF">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p51_030005_dmd_uth</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E080</containerEntry>
+        </property>
+        <property name="partNames" type="String" container="StringMap" arraySize="1">
+          <containerEntry key="HM_uth0_main0_def">
+            <data>Body</data>
+          </containerEntry>
+        </property>
+        <property name="target" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x648CA30" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317E080</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

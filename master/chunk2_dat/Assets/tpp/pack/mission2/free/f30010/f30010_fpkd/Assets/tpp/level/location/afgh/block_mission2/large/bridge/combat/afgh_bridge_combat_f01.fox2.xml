@@ -1,0 +1,1336 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x4507010" id="0x98AC">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="22">
+          <containerEntry key="gt_bridge_0000">
+            <data>0x4506D70</data>
+          </containerEntry>
+          <containerEntry key="aimPoints_0001">
+            <data>0x4506910</data>
+          </containerEntry>
+          <containerEntry key="aimPoints_0002">
+            <data>0x4507550</data>
+          </containerEntry>
+          <containerEntry key="aimPoints_0000">
+            <data>0x4507710</data>
+          </containerEntry>
+          <containerEntry key="cs_bridge_0000">
+            <data>0x45078D0</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_EastLine01">
+            <data>0x4507940</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_EastLine02">
+            <data>0x4507B70</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_GoalLine01">
+            <data>0x4507D30</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_GoalLine0001">
+            <data>0x4507E80</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_SouthLine02">
+            <data>0x4508040</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_SouthLine03">
+            <data>0x4508200</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_WestLine01">
+            <data>0x45083C0</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_WestLine0001">
+            <data>0x4508580</data>
+          </containerEntry>
+          <containerEntry key="ActivateCombatArea_GeoTrap0000">
+            <data>0x4508740</data>
+          </containerEntry>
+          <containerEntry key="ActivateCombatArea_GeoModuleCondition0000">
+            <data>0x4508900</data>
+          </containerEntry>
+          <containerEntry key="BoxShape0000">
+            <data>0x4508BA0</data>
+          </containerEntry>
+          <containerEntry key="ActivateCombatArea_GeoTrap0001">
+            <data>0x4508D60</data>
+          </containerEntry>
+          <containerEntry key="ActivateCombatArea_GeoModuleCondition0001">
+            <data>0x4508F20</data>
+          </containerEntry>
+          <containerEntry key="BoxShape0001">
+            <data>0x45091C0</data>
+          </containerEntry>
+          <containerEntry key="BoxShape0002">
+            <data>0x4509380</data>
+          </containerEntry>
+          <containerEntry key="CombatLocator_UnderBridge">
+            <data>0x45095B0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x13426EC0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppGuardTargetData" classVersion="2" classID="0x120" addr="0x4506D70" id="0x98AE">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>gt_bridge_0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4506AD0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List" arraySize="3">
+          <containerEntry>0x4506910</containerEntry>
+          <containerEntry>0x4507550</containerEntry>
+          <containerEntry>0x4507710</containerEntry>
+        </property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="aimPoints" type="EntityLink" container="DynamicArray" arraySize="3">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="aimPoints_0001">0x4506910</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="aimPoints_0001">0x4506910</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="aimPoints_0000">0x4507710</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4506AD0" id="0x98B7">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4506D70</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1962.2816" y="322.0112" z="-535.27673" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x4506910" id="0x98BD">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>aimPoints_0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4506D70</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507400</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4507400" id="0x98C0">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4506910</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-13.804296" y="0.232093" z="22.944216" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x4507550" id="0x98C6">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>aimPoints_0002</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4506D70</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x45075C0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x45075C0" id="0x98C9">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507550</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="7.713557" y="-0.001774" z="17.920107" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x4507710" id="0x98CF">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>aimPoints_0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4506D70</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507780</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4507780" id="0x98D2">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507710</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="17.17794" y="0.231788" z="11.391495" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorSetData" classVersion="1" classID="0x58" addr="0x45078D0" id="0x98D8">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>cs_bridge_0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>5</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="locators" type="EntityLink" container="DynamicArray" arraySize="6">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_GoalLine01">0x4507D30</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_EastLine02">0x4507B70</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_SouthLine02">0x4508040</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_EastLine01">0x4507940</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_SouthLine03">0x4508200</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_WestLine01">0x45083C0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x4507940" id="0x98E0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_EastLine01</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x45079B0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>11</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x45079B0" id="0x98E3">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507940</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="1e-06" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2052.861" y="326.90906" z="-477.2525" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x4507B70" id="0x98E9">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_EastLine02</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507BE0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>14</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4507BE0" id="0x98EC">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507B70</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="1e-06" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2013.67" y="323.44714" z="-499.81808" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x4507D30" id="0x98F2">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_GoalLine01</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507DA0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List" arraySize="2">
+          <containerEntry>0x4507E80</containerEntry>
+          <containerEntry>0x45095B0</containerEntry>
+        </property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>12</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray" arraySize="2">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_GoalLine0001">0x4507E80</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_UnderBridge">0x45095B0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4507DA0" id="0x98F8">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507D30</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1947.35" y="322.37634" z="-514.30707" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x4507E80" id="0x98FE">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_GoalLine0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507D30</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507EF0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>5</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_WestLine01">0x45083C0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4507EF0" id="0x9902">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507E80</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-15.810756" y="0.579211" z="22.119503" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x4508040" id="0x9908">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_SouthLine02</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x45080B0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>12</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x45080B0" id="0x990B">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508040</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1873.2311" y="322.03787" z="-409.6136" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x4508200" id="0x9911">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_SouthLine03</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508270</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>9</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4508270" id="0x9914">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508200</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1889.2267" y="322.9715" z="-428.5397" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x45083C0" id="0x991A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_WestLine01</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508430</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List" arraySize="1">
+          <containerEntry>0x4508580</containerEntry>
+        </property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>9</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="CombatLocator_WestLine0001">0x4508580</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4508430" id="0x991F">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x45083C0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1926.2869" y="318.97638" z="-496.14545" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x4508580" id="0x9925">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_WestLine0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x45083C0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x45085F0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>5</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x45085F0" id="0x9928">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508580</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-16.272095" y="0.460504" z="26.016785" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoTrap" classVersion="2" classID="0x120" addr="0x4508740" id="0x992E">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>ActivateCombatArea_GeoTrap0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x45087B0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List" arraySize="2">
+          <containerEntry>0x4508900</containerEntry>
+          <containerEntry>0x4508BA0</containerEntry>
+        </property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="conditionArray" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="ActivateCombatArea_GeoModuleCondition0000">0x4508900</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x45087B0" id="0x9934">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508740</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.301908" z="0" w="0.953337"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1922.349" y="323.08298" z="-476.893" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoModuleCondition" classVersion="0" classID="0x160" addr="0x4508900" id="0x993A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>ActivateCombatArea_GeoModuleCondition0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508740</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508970</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="trapCategory" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="trapPriority" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="isOnce" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isAndCheck" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="checkFuncNames" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>IsPlayer</containerEntry>
+        </property>
+        <property name="execFuncNames" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>CombatLocator</containerEntry>
+        </property>
+        <property name="checkCallbackDataElements" type="EntityPtr" container="DynamicArray" arraySize="1">
+          <containerEntry>0x4508AC0</containerEntry>
+        </property>
+        <property name="execCallbackDataElements" type="EntityPtr" container="DynamicArray" arraySize="1">
+          <containerEntry>0x4508B30</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4508970" id="0x993D">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508900</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.1" y="-0.1" z="-0.1" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTrapCheckIsPlayerCallbackDataElement" classVersion="0" classID="0x20" addr="0x4508AC0" id="0x9943">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508900</containerEntry>
+        </property>
+        <property name="funcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>IsPlayer</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTrapExecCombatLocatorCallbackDataElement" classVersion="0" classID="0x38" addr="0x4508B30" id="0x9945">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508900</containerEntry>
+        </property>
+        <property name="funcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator</containerEntry>
+        </property>
+        <property name="frontLineName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_GoalLine01</containerEntry>
+        </property>
+        <property name="inactiveLocators" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>CombatLocator_WestLine01</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="BoxShape" classVersion="0" classID="0x100" addr="0x4508BA0" id="0x9947">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>BoxShape0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508740</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508C10</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4508C10" id="0x994A">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508BA0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="8.612" y="2.287" z="70.084" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoTrap" classVersion="2" classID="0x120" addr="0x4508D60" id="0x9950">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>ActivateCombatArea_GeoTrap0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508DD0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List" arraySize="3">
+          <containerEntry>0x4508F20</containerEntry>
+          <containerEntry>0x45091C0</containerEntry>
+          <containerEntry>0x4509380</containerEntry>
+        </property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="conditionArray" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_mission2/large/bridge/combat/afgh_bridge_combat_f01.fox2" nameInArchive="ActivateCombatArea_GeoModuleCondition0001">0x4508F20</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4508DD0" id="0x9957">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508D60</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.301908" z="0" w="0.953337"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1914.3" y="304.69302" z="-489.346" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoModuleCondition" classVersion="0" classID="0x160" addr="0x4508F20" id="0x995D">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>ActivateCombatArea_GeoModuleCondition0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508D60</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508F90</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="trapCategory" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="trapPriority" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="isOnce" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isAndCheck" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="checkFuncNames" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>IsPlayer</containerEntry>
+        </property>
+        <property name="execFuncNames" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>CombatLocator</containerEntry>
+        </property>
+        <property name="checkCallbackDataElements" type="EntityPtr" container="DynamicArray" arraySize="1">
+          <containerEntry>0x45090E0</containerEntry>
+        </property>
+        <property name="execCallbackDataElements" type="EntityPtr" container="DynamicArray" arraySize="1">
+          <containerEntry>0x4509150</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4508F90" id="0x9960">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508F20</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.1" y="-0.1" z="-0.1" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTrapCheckIsPlayerCallbackDataElement" classVersion="0" classID="0x20" addr="0x45090E0" id="0x9966">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508F20</containerEntry>
+        </property>
+        <property name="funcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>IsPlayer</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTrapExecCombatLocatorCallbackDataElement" classVersion="0" classID="0x38" addr="0x4509150" id="0x9968">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508F20</containerEntry>
+        </property>
+        <property name="funcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator</containerEntry>
+        </property>
+        <property name="frontLineName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_WestLine01</containerEntry>
+        </property>
+        <property name="inactiveLocators" type="String" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="BoxShape" classVersion="0" classID="0x100" addr="0x45091C0" id="0x996A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>BoxShape0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508D60</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4509230</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4509230" id="0x996D">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x45091C0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="57.562" y="34.332" z="53.262" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="BoxShape" classVersion="0" classID="0x100" addr="0x4509380" id="0x9973">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>BoxShape0002</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4508D60</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x45093F0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x45093F0" id="0x9976">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4509380</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="57.562" y="34.332" z="53.262" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-26" y="23.35" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppCombatLocatorData" classVersion="5" classID="0x120" addr="0x45095B0" id="0x3782F">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CombatLocator_UnderBridge</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507D30</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4509620</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="radius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>9</containerEntry>
+        </property>
+        <property name="lostSearchRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>45</containerEntry>
+        </property>
+        <property name="isUseWaitPrioirty" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isReinforcePoint" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="memberCount" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="memberCountFront" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="subLocators" type="EntityLink" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4509620" id="0x37830">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x45095B0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="1e-06" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-1.856567" y="-14.508575" z="16.64972" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x13426EC0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4507010</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

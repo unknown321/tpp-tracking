@@ -1,0 +1,213 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x32EE010" id="0x2D50FCA">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="5">
+          <containerEntry key="SG_120113_H1">
+            <data>0x32ED9F0</data>
+          </containerEntry>
+          <containerEntry key="SA_120113_H1">
+            <data>0x32ED750</data>
+          </containerEntry>
+          <containerEntry key="SM_120113_H1">
+            <data>0x32ED440</data>
+          </containerEntry>
+          <containerEntry key="SE_120113_H1-G">
+            <data>0x32ED210</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x33689E0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="SoundAreaGroup" classVersion="3" classID="0x70" addr="0x32ED9F0" id="0x2D50FCC">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SG_120113_H1</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32EE010</containerEntry>
+        </property>
+        <property name="priority" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>10</containerEntry>
+        </property>
+        <property name="parameter" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x32EDA60</containerEntry>
+        </property>
+        <property name="members" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_small/120/120_113/afgh_120_113_sound_se.fox2" nameInArchive="SM_120113_H1">0x32ED440</containerEntry>
+        </property>
+        <property name="edges" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_small/120/120_113/afgh_120_113_sound_se.fox2" nameInArchive="SE_120113_H1-G">0x32ED210</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="SoundAreaParameter" classVersion="4" classID="0x68" addr="0x32EDA60" id="0x2D50FD0">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32ED9F0</containerEntry>
+        </property>
+        <property name="ambientEvent" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="ambientRtpcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>in_out</containerEntry>
+        </property>
+        <property name="ambientRtpcValue" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>14</containerEntry>
+        </property>
+        <property name="objectRtpcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>in_out</containerEntry>
+        </property>
+        <property name="objectRtpcValue" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>14</containerEntry>
+        </property>
+        <property name="auxSends" type="Float" container="StringMap" arraySize="3">
+          <containerEntry key="gen8_int_m">
+            <data>0.3</data>
+          </containerEntry>
+          <containerEntry key="gen8_ext">
+            <data>0.6</data>
+          </containerEntry>
+          <containerEntry key="interior">
+            <data>0.36</data>
+          </containerEntry>
+        </property>
+        <property name="dryVolume" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="BoxShape" classVersion="0" classID="0x100" addr="0x32ED750" id="0x2D50FD2">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SA_120113_H1</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32EE010</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x32ED7C0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x32ED7C0" id="0x2D50FD5">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32ED750</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="33.320374" y="21.42954" z="19.453806" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.338852" z="0" w="0.94084"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-1639.0107" y="542.6074" z="-2461.807" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="SoundAreaMember" classVersion="2" classID="0x60" addr="0x32ED440" id="0x2D50FD9">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SM_120113_H1</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32EE010</containerEntry>
+        </property>
+        <property name="shapes" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_small/120/120_113/afgh_120_113_sound_se.fox2" nameInArchive="SA_120113_H1">0x32ED750</containerEntry>
+        </property>
+        <property name="priority" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameter" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="SoundAreaEdge" classVersion="1" classID="0x88" addr="0x32ED210" id="0x2D50FDC">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SE_120113_H1-G</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32EE010</containerEntry>
+        </property>
+        <property name="parameter" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x32ED280</containerEntry>
+        </property>
+        <property name="prevArea" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_small/120/120_113/afgh_120_113_sound_se.fox2" nameInArchive="SG_120113_H1">0x32ED9F0</containerEntry>
+        </property>
+        <property name="nextArea" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppAreaEdgeParameter" classVersion="0" classID="0x30" addr="0x32ED280" id="0x2D50FE0">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32ED210</containerEntry>
+        </property>
+        <property name="fadeTime" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>2000</containerEntry>
+        </property>
+        <property name="connectedClearObstruction" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="connectedClearOcclusion" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="connectedBlockedObstruction" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.7</containerEntry>
+        </property>
+        <property name="connectedBlockedOcclusion" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x33689E0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32EE010</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

@@ -1,0 +1,132 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x3C2CFE0" id="0x1E5996">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="3">
+          <containerEntry key="f30050_mission_data">
+            <data>0x43B2230</data>
+          </containerEntry>
+          <containerEntry key="player_locator_0000">
+            <data>0x43B2070</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x46B2700</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppSimpleMissionData" classVersion="1" classID="0x88" addr="0x43B2230" id="0x1E5998">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>f30050_mission_data</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3C2CFE0</containerEntry>
+        </property>
+        <property name="script" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/script/mission/mission_main.lua</containerEntry>
+        </property>
+        <property name="subScripts" type="FilePtr" container="StringMap" arraySize="5">
+          <containerEntry key="sequence">
+            <data>/Assets/tpp/level/mission2/free/f30050/f30050_sequence.lua</data>
+          </containerEntry>
+          <containerEntry key="enemy">
+            <data>/Assets/tpp/level/mission2/free/f30050/f30050_enemy.lua</data>
+          </containerEntry>
+          <containerEntry key="demo">
+            <data>/Assets/tpp/level/mission2/free/f30050/f30050_demo.lua</data>
+          </containerEntry>
+          <containerEntry key="radio">
+            <data>/Assets/tpp/level/mission2/free/f30050/f30050_radio.lua</data>
+          </containerEntry>
+          <containerEntry key="sound">
+            <data>/Assets/tpp/level/mission2/free/f30050/f30050_sound.lua</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x43B2070" id="0x1E599A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>player_locator_0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3C2CFE0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B2770</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPlayer2</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B5E20</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x43B2770" id="0x1E599D">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B2070</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.988475" z="0" w="0.15137"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="9.184141" y="0.000107" z="-42.44194" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPlayer2LocatorParameter" classVersion="0" classID="0x1C" addr="0x43B5E20" id="0x1E59A3">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B2070</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x46B2700" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3C2CFE0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

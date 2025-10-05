@@ -1,0 +1,210 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x4A8BB50" id="0x279743F">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="4">
+          <containerEntry key="BuddyWalkerGearGameObject">
+            <data>0x4A8BBC0</data>
+          </containerEntry>
+          <containerEntry key="BuddyWalkerGearGameObjectLocator">
+            <data>0x4A8BCA0</data>
+          </containerEntry>
+          <containerEntry key="TppVfxFileLoader0000">
+            <data>0x4A8BDF0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x4B97940</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObject" classVersion="2" classID="0x58" addr="0x4A8BBC0" id="0x2797441">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>BuddyWalkerGearGameObject</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BB50</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWalkerGear2</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="totalCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="realizedCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BC30</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWalkerGear2Parameter" classVersion="0" classID="0xE0" addr="0x4A8BC30" id="0x2797443">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BBC0</containerEntry>
+        </property>
+        <property name="partsFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/parts/mecha/mgm/mgm1_main0_def.parts</containerEntry>
+        </property>
+        <property name="motionGraphFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="mtarFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="extensionMtarFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="vfxFiles" type="FilePtr" container="StringMap"></property>
+        <property name="extraPartsFiles" type="FilePtr" container="StringMap" arraySize="10">
+          <containerEntry key="TestKey0">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm0_attc0_def.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey3">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm0_ammo0_def_v00.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey4">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm0_mcht0_def.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey5">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm1_head0_def.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey6">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm1_head1_def.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey7">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm1_head2_def.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey8">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm1_rarm0_def.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey12">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm0_famo0_def_v00.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey1">
+            <data>/Assets/tpp/parts/mecha/mgm/mgm1_rarm1_def.parts</data>
+          </containerEntry>
+          <containerEntry key="TestKey2">
+            <data>/Assets/tpp/parts/weapon/bld/bl03_main0_def.parts</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x4A8BCA0" id="0x2797445">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>BuddyWalkerGearGameObjectLocator</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BB50</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BD10</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWalkerGear2</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BD80</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4A8BD10" id="0x2797448">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BCA0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWalkerGear2LocatorParameter" classVersion="0" classID="0x20" addr="0x4A8BD80" id="0x279744A">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BCA0</containerEntry>
+        </property>
+        <property name="identifier" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppVfxFileLoader" classVersion="2" classID="0xD0" addr="0x4A8BDF0" id="0x279744C">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppVfxFileLoader0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BB50</containerEntry>
+        </property>
+        <property name="vfxFiles" type="FilePtr" container="StringMap" arraySize="3">
+          <containerEntry key="fx_tpp_mchmgmwhlsmk01_s5">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchmgmwhlsmk01_s5.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_spkptlcom01_s1">
+            <data>/Assets/tpp/effect/vfx_data/spark/fx_tpp_spkptlcom01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_mzfflt01_s2">
+            <data>/Assets/tpp/effect/vfx_data/muzzle/fx_tpp_mzfflt01_s2.vfx</data>
+          </containerEntry>
+        </property>
+        <property name="geoMaterialFiles" type="FilePtr" container="StringMap"></property>
+        <property name="otherFiles" type="FilePtr" container="StringMap"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x4B97940" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4A8BB50</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

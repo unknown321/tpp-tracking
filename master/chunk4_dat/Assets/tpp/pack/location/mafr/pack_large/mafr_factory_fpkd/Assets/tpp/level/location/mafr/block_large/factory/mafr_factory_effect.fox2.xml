@@ -1,0 +1,898 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x4C8C9C0" id="0x2C3328">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="8">
+          <containerEntry key="mafr_rivr001_vrtn017_0000">
+            <data>0x4C8CD40</data>
+          </containerEntry>
+          <containerEntry key="pddl_TppPrimRiverModel">
+            <data>0x4C8CF00</data>
+          </containerEntry>
+          <containerEntry key="pddl_TppPrimRiverModelParam">
+            <data>0x4C8CF70</data>
+          </containerEntry>
+          <containerEntry key="TppTextureLoader_pddl">
+            <data>0x4C8CFE0</data>
+          </containerEntry>
+          <containerEntry key="mafr_rivr001_vrtn017_onlygeom">
+            <data>0x4C8D210</data>
+          </containerEntry>
+          <containerEntry key="pddl_TppPrimRiverModelParam_TargetLP">
+            <data>0x6D2C330</data>
+          </containerEntry>
+          <containerEntry key="TppRainFilterInterrupt0000">
+            <data>0x6D2C410</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0xA0B3110</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x4C8CD40" id="0x2C3331">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_rivr001_vrtn017_0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8CDB0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/river/mafr_rivr001/scenes/mafr_rivr001_vrtn017.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/river/mafr_rivr001/scenes/mafr_rivr001_vrtn017.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8CDB0" id="0x2C3334">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8CD40</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0.8790239" y="1" z="0.975847" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0.9396928" z="0" w="0.34201974"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2833.6282" y="96.46" z="-877.58014" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPrimRiverModel" classVersion="0" classID="0x60" addr="0x4C8CF00" id="0x2C333A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>pddl_TppPrimRiverModel</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="primRiverGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>factory_pddl</containerEntry>
+        </property>
+        <property name="visibility" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="depthBlendLength" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.25</containerEntry>
+        </property>
+        <property name="raise" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1000</containerEntry>
+        </property>
+        <property name="staticModels" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_large/factory/mafr_factory_effect.fox2" nameInArchive="mafr_rivr001_vrtn017_0000">0x4C8CD40</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPrimRiverModelParam" classVersion="5" classID="0xB0" addr="0x4C8CF70" id="0x2C333D">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>pddl_TppPrimRiverModelParam</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="primRiverGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>factory_pddl</containerEntry>
+        </property>
+        <property name="visibility" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="baseTextureName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_bsm</containerEntry>
+        </property>
+        <property name="normalTextureName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>base_nrm</containerEntry>
+        </property>
+        <property name="cubeMapName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>cm_mafr_labs002_cbm</containerEntry>
+        </property>
+        <property name="lightCaptureLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_large/factory/mafr_factory_effect.fox2" nameInArchive="pddl_TppPrimRiverModelParam_TargetLP">0x6D2C330</containerEntry>
+        </property>
+        <property name="scrollDirection0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>250</containerEntry>
+        </property>
+        <property name="scrollSpeed0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.05</containerEntry>
+        </property>
+        <property name="scrollScale0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.31</containerEntry>
+        </property>
+        <property name="scrollDirection1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>150</containerEntry>
+        </property>
+        <property name="scrollSpeed1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.05</containerEntry>
+        </property>
+        <property name="scrollScale1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.33</containerEntry>
+        </property>
+        <property name="transparency" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.22</containerEntry>
+        </property>
+        <property name="transparencyDepthBlend" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.2</containerEntry>
+        </property>
+        <property name="reflectionRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.45</containerEntry>
+        </property>
+        <property name="distortionPower" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>65</containerEntry>
+        </property>
+        <property name="surfaceShadowRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="oilIntensity" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="useHnmTexture" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="debugReset" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTextureLoader" classVersion="1" classID="0xA0" addr="0x4C8CFE0" id="0x2C3340">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppTextureLoader_pddl</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="textures" type="Path" container="StringMap"></property>
+        <property name="forceLargeTextures" type="Path" container="StringMap" arraySize="3">
+          <containerEntry key="mafr_pddl001_bsm">
+            <data>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/sourceimages/mafr_pddl001_bsm.ftex</data>
+          </containerEntry>
+          <containerEntry key="cm_mafr_labs002_cbm">
+            <data>/Assets/tpp/common_source/cubemap/environ/mafr/cm_mafr_labs003_cbm/sourceimages/cm_mafr_labs003_cbm.ftex</data>
+          </containerEntry>
+          <containerEntry key="base_nrm">
+            <data>/Assets/tpp/environ/object/afghanistan/puddle/afgh_pddl001/sourceimages/afgh_pddl001_w5_nrm.ftex</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x4C8D210" id="0x2C3342">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_rivr001_vrtn017_onlygeom</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8D280</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/river/mafr_rivr001/scenes/mafr_rivr001_vrtn017.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8D280" id="0x2C3345">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8D210</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0.8790239" y="1" z="0.975847" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0.9396928" z="0" w="0.34201974"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2833.6282" y="96.46" z="-877.58014" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8D4B0" id="0x2C3363">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8D3D0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8D600" id="0x2C336A">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8D590</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="-0.05716" w="0.998365"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2377.8418" y="86.16486" z="-1127.9653" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8D830" id="0x2C3373">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8D7C0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.003732" y="0.347545" z="-0.097009" w="0.932624"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2417.8843" y="81.111755" z="-1131.771" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8D9F0" id="0x2C337C">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8D980</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.003732" y="0.347545" z="-0.097009" w="0.932624"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2384.0354" y="88.2251" z="-1070.3323" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8DB40" id="0x2C3385">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8D6E0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.110483" y="-0.117116" z="-0.06401" w="0.984876"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2307.814" y="76.92603" z="-527.5715" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8DDE0" id="0x2C338E">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8DD70</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.060836" y="-0.127365" z="-0.017153" w="0.98984"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2334.354" y="83.75597" z="-561.0163" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8DFA0" id="0x2C3397">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8DF30</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.116399" y="-0.379571" z="-0.120626" w="0.90985"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2305.405" y="89.90339" z="-576.63525" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8E160" id="0x2C33A0">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8E0F0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0.039951" w="0.999202"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2392.634" y="96.320366" z="-507.40237" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8E320" id="0x2C33A9">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8E2B0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.086125" y="0.005633" z="0.06502" w="0.994144"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2413.6277" y="90.35861" z="-562.34283" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8E4E0" id="0x2C33B2">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8E470</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.122136" y="-0.002207" z="0.049725" w="0.991265"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2422.7488" y="95.459015" z="-591.8568" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8E710" id="0x2C33BB">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8E630</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.009636" y="2.3e-05" z="-0.002405" w="0.999951"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2403.775" y="97.347046" z="-598.60846" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8E940" id="0x2C33C4">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8E8D0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.000823" y="-0.342335" z="-0.00226" w="0.939575"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2357.1711" y="86.87966" z="-640.2728" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8EB00" id="0x2C33CD">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8EA90</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.002805" y="-0.106489" z="-0.067083" w="0.992045"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2334.2424" y="87.49941" z="-592.7604" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8ECC0" id="0x2C33D6">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8EC50</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0.084182" w="0.99645"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2438.882" y="97.12012" z="-574.67065" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8EE80" id="0x2C33DF">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8EE10</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.040614" y="-0.284117" z="0.012047" w="0.957853"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2441.24" y="94.81585" z="-547.2458" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8F040" id="0x2C33E8">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8EFD0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2724.6887" y="93.412445" z="-917.4188" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8F2E0" id="0x2C33F1">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8F200</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2772.6384" y="94.16426" z="-923.16797" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8F4A0" id="0x2C33FA">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8F430</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2804.283" y="95.11678" z="-915.74243" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8F660" id="0x2C3403">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8F5F0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.112573" y="0.444359" z="0.060636" w="0.886677"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2789.106" y="94.860855" z="-851.5265" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8F820" id="0x2C340C">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8F7B0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0.007928" y="0.000295" z="0.037207" w="0.999276"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2843.0005" y="98.701706" z="-943.5753" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8F9E0" id="0x2C3415">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8F970</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.017336" y="-0.183308" z="0.092541" w="0.978537"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2844.9185" y="97.65094" z="-868.59265" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x4C8FBA0" id="0x2C341E">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8FB30</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2857.9473" y="102.03404" z="-832.8258" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x6D2C250" id="0x2C3440">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x6D2C1E0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0.420815" z="0" w="0.907146"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2895.902" y="101.6401" z="-923.87836" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x6D2C330" id="0x2C3444">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>pddl_TppPrimRiverModelParam_TargetLP</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x6D2C3A0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x6D2C3A0" id="0x2C3447">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x6D2C330</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2820.6257" y="200" z="-875.7576" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppRainFilterInterrupt" classVersion="2" classID="0xD0" addr="0x6D2C410" id="0x2C3449">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppRainFilterInterrupt0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="planeMatrices" type="Matrix4" container="DynamicArray" arraySize="28">
+          <containerEntry r11="6.589761" r12="2.059228" r13="5.71125" r14="0" r21="-0.177801" r22="0.973213" r23="-0.145748" r24="0" r31="-2.299161" r32="-0.021594" r33="2.660607" r34="0" r41="2878.9604" r42="112.94209" r43="-857.01526" r44="1"></containerEntry>
+          <containerEntry r11="-8.141192" r12="0.047668" r13="-1.555776" r14="0" r21="-0.035267" r22="0.976097" r23="0.214456" r24="0" r31="2.005453" r32="2.362237" r33="-10.421926" r34="0" r41="2779.5598" r42="103.57994" r43="-876.5188" r44="1"></containerEntry>
+          <containerEntry r11="3.95894" r12="1.245019" r13="3.483882" r14="0" r21="-0.177801" r22="0.973214" r23="-0.145747" r24="0" r31="-1.818064" r32="-0.021597" r33="2.073691" r34="0" r41="2881.6633" r42="111.70734" r43="-864.5349" r44="1"></containerEntry>
+          <containerEntry r11="7.927534" r12="0.046417" r13="1.514947" r14="0" r21="0.035267" r22="0.976097" r23="-0.214456" r24="0" r31="-0.943656" r32="1.111539" r33="4.90398" r34="0" r41="2747.5466" r42="105.83623" r43="-893.0856" r44="1"></containerEntry>
+          <containerEntry r11="-4.471662" r12="-0.000604" r13="1.46184" r14="0" r21="-0.094544" r22="0.952707" r23="-0.288809" r24="0" r31="-0.606281" r32="-0.622447" r33="-1.854826" r34="0" r41="2527.3481" r42="74.161865" r43="-817.7634" r44="1"></containerEntry>
+          <containerEntry r11="3.834" r12="1.229848" r13="-3.588892" r14="0" r21="-0.145748" r22="0.973214" r23="0.1778" r24="0" r31="1.843695" r32="-0.078791" r33="1.942612" r34="0" r41="2870.5955" r42="111.53026" r43="-915.1229" r44="1"></containerEntry>
+          <containerEntry r11="-3.643838" r12="1.113035" r13="-2.986979" r14="0" r21="0.1778" r22="0.973214" r23="0.145748" r24="0" r31="1.832981" r32="-1e-06" r33="-2.236067" r34="0" r41="2895.6748" r42="112.68048" r43="-852.7168" r44="1"></containerEntry>
+          <containerEntry r11="-5.768361" r12="2.058677" r13="6.540007" r14="0" r21="0.145748" r22="0.973214" r23="-0.177799" r24="0" r31="-2.798339" r32="-0.030106" r33="-2.45869" r34="0" r41="2884.4944" r42="111.89932" r43="-924.89075" r44="1"></containerEntry>
+          <containerEntry r11="16.1208" r12="0.094389" r13="3.080675" r14="0" r21="0.035267" r22="0.976097" r23="-0.214456" r24="0" r31="-1.24349" r32="1.464716" r33="6.462157" r34="0" r41="2774.7522" r42="105.42609" r43="-887.66376" r44="1"></containerEntry>
+          <containerEntry r11="-8.626653" r12="0.05051" r13="-1.648547" r14="0" r21="-0.035267" r22="0.976097" r23="0.214456" r24="0" r31="0.927489" r32="1.092495" r33="-4.819967" r34="0" r41="2762.1643" r42="104.78742" r43="-874.9726" r44="1"></containerEntry>
+          <containerEntry r11="4.747794" r12="0.027799" r13="0.907301" r14="0" r21="0.035267" r22="0.976097" r23="-0.214456" r24="0" r31="-0.95362" r32="1.123275" r33="4.95576" r34="0" r41="2770.1567" r42="103.16911" r43="-897.3198" r44="1"></containerEntry>
+          <containerEntry r11="11.635545" r12="0.068128" r13="2.223546" r14="0" r21="0.035267" r22="0.976097" r23="-0.214456" r24="0" r31="-0.95362" r32="1.123275" r33="4.95576" r34="0" r41="2753.5505" r42="103.071884" r43="-900.4932" r44="1"></containerEntry>
+          <containerEntry r11="-12.106289" r12="0.070884" r13="-2.313503" r14="0" r21="-0.035267" r22="0.976097" r23="0.214456" r24="0" r31="1.157037" r32="1.362882" r33="-6.012883" r34="0" r41="2750.8284" r42="104.59383" r43="-885.96344" r44="1"></containerEntry>
+          <containerEntry r11="3.240107" r12="1.159006" r13="-3.687968" r14="0" r21="-0.145749" r22="0.973214" r23="0.177799" r24="0" r31="2.175492" r32="-0.022109" r33="1.904355" r34="0" r41="2880.4976" r42="111.7013" r43="-907.9419" r44="1"></containerEntry>
+          <containerEntry r11="6.033022" r12="0.035324" r13="1.152907" r14="0" r21="0.035267" r22="0.976097" r23="-0.214456" r24="0" r31="-0.944289" r32="1.112284" r33="4.907269" r34="0" r41="2784.3098" r42="103.19756" r43="-894.92145" r44="1"></containerEntry>
+          <containerEntry r11="-6.157804" r12="0.036055" r13="-1.176752" r14="0" r21="-0.035267" r22="0.976097" r23="0.214456" r24="0" r31="0.969619" r32="1.142121" r33="-5.038908" r34="0" r41="2745.0332" r42="104.96182" r43="-878.4457" r44="1"></containerEntry>
+          <containerEntry r11="-4.135028" r12="1.310912" r13="-3.709059" r14="0" r21="0.1778" r22="0.973213" r23="0.145749" r24="0" r31="3.385002" r32="-0.050584" r33="-3.791634" r34="0" r41="2887.8176" r42="112.47903" r43="-851.1807" r44="1"></containerEntry>
+          <containerEntry r11="12.449081" r12="0" r13="-3.175064" r14="0" r21="0" r22="1" r23="0" r24="0" r31="3.546237" r32="0" r33="13.904412" r34="0" r41="2630.709" r42="104.08632" r43="-950.16125" r44="1"></containerEntry>
+          <containerEntry r11="3.904698" r12="1.228427" r13="3.439244" r14="0" r21="-0.1778" r22="0.973213" r23="-0.145749" r24="0" r31="-3.170443" r32="-0.038116" r33="3.613132" r34="0" r41="2872.3306" r42="111.623825" r43="-853.70715" r44="1"></containerEntry>
+          <containerEntry r11="12.768103" r12="0" r13="5.960342" r14="0" r21="0" r22="0.778651" r23="0" r24="0" r31="-6.069785" r32="0" r33="13.002546" r34="0" r41="2691.2815" r42="104.14485" r43="-938.03015" r44="1"></containerEntry>
+          <containerEntry r11="3.752479" r12="1.328072" r13="-4.193398" r14="0" r21="-0.145748" r22="0.973214" r23="0.177799" r24="0" r31="3.597784" r32="-0.046673" r33="3.20471" r34="0" r41="2878.836" r42="111.450035" r43="-915.9827" r44="1"></containerEntry>
+          <containerEntry r11="-3.847131" r12="1.318342" r13="-4.10987" r14="0" r21="0.177801" r22="0.973213" r23="0.145748" r24="0" r31="2.136065" r32="-0.08664" r33="-2.027301" r34="0" r41="2888.5408" r42="112.5057" r43="-842.8469" r44="1"></containerEntry>
+          <containerEntry r11="32.306217" r12="0" r13="0.166249" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.176226" r32="0" r33="34.24485" r34="0" r41="2662.9387" r42="104.576035" r43="-955.9319" r44="1"></containerEntry>
+          <containerEntry r11="-3.483889" r12="1.245017" r13="3.958944" r14="0" r21="0.145747" r22="0.973214" r23="-0.177801" r24="0" r31="-2.073693" r32="-0.021597" r33="-1.818068" r34="0" r41="2892.1707" r42="110.66067" r43="-922.08075" r44="1"></containerEntry>
+          <containerEntry r11="-3.165757" r12="0.018536" r13="-0.604974" r14="0" r21="-0.035267" r22="0.976097" r23="0.214456" r24="0" r31="1.157037" r32="1.362882" r33="-6.012883" r34="0" r41="2766.3738" r42="104.40518" r43="-882.54846" r44="1"></containerEntry>
+          <containerEntry r11="4.471657" r12="-0.000604" r13="-1.46184" r14="0" r21="0.094544" r22="0.952707" r23="0.288809" r24="0" r31="0.603362" r32="-0.61945" r33="1.845894" r34="0" r41="2528.0942" r42="74.14559" r43="-815.7047" r44="1"></containerEntry>
+          <containerEntry r11="-3.406946" r12="1.230641" r13="3.943298" r14="0" r21="0.145749" r22="0.973213" r23="-0.177799" r24="0" r31="-4.429082" r32="-0.033868" r33="-3.816085" r34="0" r41="2881.8357" r42="110.55623" r43="-931.12463" r44="1"></containerEntry>
+          <containerEntry r11="14.6797" r12="3e-06" r13="-17.693394" r14="0" r21="-0.135748" r22="0.984321" r23="-0.112626" r24="0" r31="4.05529" r32="0.944239" r33="3.364558" r34="0" r41="2894.0586" r42="110.61393" r43="-896.6579" r44="1"></containerEntry>
+        </property>
+        <property name="maskTextures" type="Path" container="DynamicArray" arraySize="28">
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinmsk01_iy_alp_clp.ftex</containerEntry>
+        </property>
+        <property name="interruptFlags" type="UInt32" container="DynamicArray" arraySize="28">
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>3</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>3</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>3</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="levels" type="UInt32" container="DynamicArray" arraySize="28">
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0xA0B3110" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x4C8C9C0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

@@ -1,0 +1,685 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0xBCBCE90" id="0x1E25806A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="13">
+          <containerEntry key="s10041_mission_data">
+            <data>0xBCBC8E0</data>
+          </containerEntry>
+          <containerEntry key="CheckPointIdentifier">
+            <data>0xBCBC950</data>
+          </containerEntry>
+          <containerEntry key="CHK_MissionStart_Player">
+            <data>0x79B56B0</data>
+          </containerEntry>
+          <containerEntry key="player_locator_0000">
+            <data>0x95D3A40</data>
+          </containerEntry>
+          <containerEntry key="animal_block">
+            <data>0x95D7C50</data>
+          </containerEntry>
+          <containerEntry key="TppMarker2LocatorSystem">
+            <data>0x95DC480</data>
+          </containerEntry>
+          <containerEntry key="s10041_marker_village">
+            <data>0x95DC6B0</data>
+          </containerEntry>
+          <containerEntry key="s10041_marker_SubTarget">
+            <data>0x96BF580</data>
+          </containerEntry>
+          <containerEntry key="s10041_marker_meetingPoint">
+            <data>0x9710320</data>
+          </containerEntry>
+          <containerEntry key="s10041_marker_field">
+            <data>0x9711040</data>
+          </containerEntry>
+          <containerEntry key="s10041_marker_enemyBase">
+            <data>0x9712CB0</data>
+          </containerEntry>
+          <containerEntry key="s10041_marker_meetingPointIntel">
+            <data>0x9714370</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0xAD113C0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppSimpleMissionData" classVersion="1" classID="0x88" addr="0xBCBC8E0" id="0x1E25806C">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_mission_data</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="script" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/script/mission/mission_main.lua</containerEntry>
+        </property>
+        <property name="subScripts" type="FilePtr" container="StringMap" arraySize="6">
+          <containerEntry key="sequence">
+            <data>/Assets/tpp/level/mission2/story/s10041/s10041_sequence.lua</data>
+          </containerEntry>
+          <containerEntry key="enemy">
+            <data>/Assets/tpp/level/mission2/story/s10041/s10041_enemy.lua</data>
+          </containerEntry>
+          <containerEntry key="radio">
+            <data>/Assets/tpp/level/mission2/story/s10041/s10041_radio.lua</data>
+          </containerEntry>
+          <containerEntry key="sound">
+            <data>/Assets/tpp/level/mission2/story/s10041/s10041_sound.lua</data>
+          </containerEntry>
+          <containerEntry key="score">
+            <data>/Assets/tpp/level/mission2/story/s10041/s10041_score.lua</data>
+          </containerEntry>
+          <containerEntry key="telop">
+            <data>/Assets/tpp/level/mission2/story/s10041/s10041_telop.lua</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DataIdentifier" classVersion="0" classID="0x78" addr="0xBCBC950" id="0x1E25806E">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CheckPointIdentifier</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="identifier" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CheckPointIdentifier</containerEntry>
+        </property>
+        <property name="links" type="EntityLink" container="StringMap" arraySize="1">
+          <containerEntry key="CHK_MissionStart_Player">
+            <data packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/mission2/story/s10041/s10041_sequence.fox2" nameInArchive="CHK_MissionStart_Player">0x79B56B0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x79B56B0" id="0x1E258071">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CHK_MissionStart_Player</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x915EB70</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x915EB70" id="0x1E258074">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x79B56B0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.65607" z="0" w="-0.7547"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="837.4638" y="382.52484" z="883.20764" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x95D3A40" id="0x1E258078">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>player_locator_0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x95D4300</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPlayer2</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x95D77F0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x95D4300" id="0x1E25807B">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x95D3A40</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.522494" z="0" w="0.757146"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="840.7138" y="382.7748" z="883.2076" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPlayer2LocatorParameter" classVersion="0" classID="0x1C" addr="0x95D77F0" id="0x1E258081">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x95D3A40</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ScriptBlockData" classVersion="0" classID="0x58" addr="0x95D7C50" id="0x1E258083">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>animal_block</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="enabled" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="sizeInBytes" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>921600</containerEntry>
+        </property>
+        <property name="prerequisites" type="String" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObject" classVersion="2" classID="0x58" addr="0x95DC480" id="0x1E2580A8">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="totalCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>60</containerEntry>
+        </property>
+        <property name="realizedCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x95DC4F0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppMarker2LocatorSystemParameter" classVersion="0" classID="0x1C" addr="0x95DC4F0" id="0x1E2580AA">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x95DC480</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x95DC6B0" id="0x1E2580AC">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_village</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x95DC720</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x95DCA30</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x95DC720" id="0x1E2580AF">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x95DC6B0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="524.9328" y="319.75818" z="1130.0693" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppMarker2LocatorParameter" classVersion="0" classID="0x24" addr="0x95DCA30" id="0x1E2580B3">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x95DC6B0</containerEntry>
+        </property>
+        <property name="markerType" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TYPE_MISSION_KEY_PLACE</containerEntry>
+        </property>
+        <property name="markerId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_village</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x96BF580" id="0x1E258191">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_SubTarget</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x96BF5F0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x96BFC80</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x96BF5F0" id="0x1E258194">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x96BF580</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="492.57382" y="322.34534" z="76.959625" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppMarker2LocatorParameter" classVersion="0" classID="0x24" addr="0x96BFC80" id="0x1E258198">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x96BF580</containerEntry>
+        </property>
+        <property name="markerType" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TYPE_MISSION_KEY_PLACE</containerEntry>
+        </property>
+        <property name="markerId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_SubTarget</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x9710320" id="0x1E25819A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_meetingPoint</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x9710390</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x9710A20</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x9710390" id="0x1E25819D">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9710320</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="501.49344" y="320.4994" z="1141.4116" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppMarker2LocatorParameter" classVersion="0" classID="0x24" addr="0x9710A20" id="0x1E2581A1">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9710320</containerEntry>
+        </property>
+        <property name="markerType" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TYPE_MISSION_KEY_PLACE</containerEntry>
+        </property>
+        <property name="markerId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_meetingPoint</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x9711040" id="0x1E2581A3">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_field</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x97110B0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x97127E0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x97110B0" id="0x1E2581A6">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9711040</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="421.51968" y="269.75238" z="2208.524" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppMarker2LocatorParameter" classVersion="0" classID="0x24" addr="0x97127E0" id="0x1E2581AA">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9711040</containerEntry>
+        </property>
+        <property name="markerType" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TYPE_MISSION_KEY_PLACE</containerEntry>
+        </property>
+        <property name="markerId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_field</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x9712CB0" id="0x1E2581AC">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_enemyBase</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x9712D20</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x9713260</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x9712D20" id="0x1E2581AF">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9712CB0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-529.325" y="333.11902" z="484.65393" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppMarker2LocatorParameter" classVersion="0" classID="0x24" addr="0x9713260" id="0x1E2581B3">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9712CB0</containerEntry>
+        </property>
+        <property name="markerType" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TYPE_MISSION_KEY_PLACE</containerEntry>
+        </property>
+        <property name="markerId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_enemyBase</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x9714370" id="0x1E2581B5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_meetingPointIntel</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x97143E0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppMarker2LocatorSystem</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x9715020</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x97143E0" id="0x1E2581B8">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9714370</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="504.41376" y="321.6604" z="1139.6101" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppMarker2LocatorParameter" classVersion="0" classID="0x24" addr="0x9715020" id="0x1E2581BC">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9714370</containerEntry>
+        </property>
+        <property name="markerType" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TYPE_MISSION_KEY_PLACE</containerEntry>
+        </property>
+        <property name="markerId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>s10041_marker_meetingPointIntel</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0xAD113C0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0xBCBCE90</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

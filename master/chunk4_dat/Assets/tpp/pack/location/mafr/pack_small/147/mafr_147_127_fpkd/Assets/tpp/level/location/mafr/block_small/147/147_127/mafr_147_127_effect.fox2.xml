@@ -1,0 +1,731 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x3175250" id="0x53C22">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="12">
+          <containerEntry key="TppPrimRiverModel0000">
+            <data>0x31753A0</data>
+          </containerEntry>
+          <containerEntry key="TppWaterBounding0008">
+            <data>0x31756B0</data>
+          </containerEntry>
+          <containerEntry key="mafr_pddl001_147_126">
+            <data>0x3175F70</data>
+          </containerEntry>
+          <containerEntry key="TppPrimRiverModelParam_147_127">
+            <data>0x31767C0</data>
+          </containerEntry>
+          <containerEntry key="TppTextureLoader_147_127">
+            <data>0x3176BB0</data>
+          </containerEntry>
+          <containerEntry key="mafr_pddl001_126">
+            <data>0x31771D0</data>
+          </containerEntry>
+          <containerEntry key="mafr_pddl001_0125">
+            <data>0x3178040</data>
+          </containerEntry>
+          <containerEntry key="mafr_pddl001_147_0126">
+            <data>0x32F4370</data>
+          </containerEntry>
+          <containerEntry key="mafr_pddl001_148_126">
+            <data>0x3178510</data>
+          </containerEntry>
+          <containerEntry key="TppPrimRiverModelParam_swamparound_TargetLP0001">
+            <data>0x31790E0</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0000">
+            <data>0x317F660</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x317FC80</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPrimRiverModel" classVersion="0" classID="0x60" addr="0x31753A0" id="0x53C24">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPrimRiverModel0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="primRiverGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_147_127</containerEntry>
+        </property>
+        <property name="visibility" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="depthBlendLength" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.1</containerEntry>
+        </property>
+        <property name="raise" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1000</containerEntry>
+        </property>
+        <property name="staticModels" type="EntityLink" container="DynamicArray" arraySize="5">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/147/147_127/mafr_147_127_effect.fox2" nameInArchive="mafr_pddl001_147_126">0x3175F70</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/147/147_127/mafr_147_127_effect.fox2" nameInArchive="mafr_pddl001_0125">0x3178040</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/147/147_127/mafr_147_127_effect.fox2" nameInArchive="mafr_pddl001_126">0x31771D0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/147/147_127/mafr_147_127_effect.fox2" nameInArchive="mafr_pddl001_147_0126">0x32F4370</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/147/147_127/mafr_147_127_effect.fox2" nameInArchive="mafr_pddl001_148_126">0x3178510</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWaterBounding" classVersion="2" classID="0x110" addr="0x31756B0" id="0x53C2B">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWaterBounding0008</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175A30</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="enableRotate" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="debugDraw" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="type" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x3175A30" id="0x53C2E">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x31756B0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="227.89308" y="2" z="128" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1848.7593" y="92.202" z="-777.83435" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x3175F70" id="0x53C32">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_147_126</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x31760C0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x31760C0" id="0x53C35">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175F70</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.788784" y="1" z="1" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1863.4357" y="93.200005" z="-728" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPrimRiverModelParam" classVersion="5" classID="0xB0" addr="0x31767C0" id="0x53C3B">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPrimRiverModelParam_147_127</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="primRiverGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_147_127</containerEntry>
+        </property>
+        <property name="visibility" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="baseTextureName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>swmp001_bsm</containerEntry>
+        </property>
+        <property name="normalTextureName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>swmp001_nrm</containerEntry>
+        </property>
+        <property name="cubeMapName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>cm_mafr_dmnd003_cbm</containerEntry>
+        </property>
+        <property name="lightCaptureLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/147/147_127/mafr_147_127_effect.fox2" nameInArchive="TppPrimRiverModelParam_swamparound_TargetLP0001">0x31790E0</containerEntry>
+        </property>
+        <property name="scrollDirection0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>19</containerEntry>
+        </property>
+        <property name="scrollSpeed0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.21</containerEntry>
+        </property>
+        <property name="scrollScale0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.3</containerEntry>
+        </property>
+        <property name="scrollDirection1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>77</containerEntry>
+        </property>
+        <property name="scrollSpeed1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.13</containerEntry>
+        </property>
+        <property name="scrollScale1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.44</containerEntry>
+        </property>
+        <property name="transparency" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.7</containerEntry>
+        </property>
+        <property name="transparencyDepthBlend" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.15</containerEntry>
+        </property>
+        <property name="reflectionRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.5</containerEntry>
+        </property>
+        <property name="distortionPower" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>30</containerEntry>
+        </property>
+        <property name="surfaceShadowRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="oilIntensity" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="useHnmTexture" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="debugReset" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTextureLoader" classVersion="1" classID="0xA0" addr="0x3176BB0" id="0x53C3E">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppTextureLoader_147_127</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="textures" type="Path" container="StringMap"></property>
+        <property name="forceLargeTextures" type="Path" container="StringMap" arraySize="3">
+          <containerEntry key="swmp001_nrm">
+            <data>/Assets/tpp/environ/object/middle_africa/swamp/mafr_swmp001/sourceimages/mafr_swmp001_nrm.ftex</data>
+          </containerEntry>
+          <containerEntry key="swmp001_bsm">
+            <data>/Assets/tpp/environ/object/middle_africa/swamp/mafr_swmp001/sourceimages/mafr_swmp001_bsm.ftex</data>
+          </containerEntry>
+          <containerEntry key="cm_mafr_dmnd003_cbm">
+            <data>/Assets/tpp/common_source/cubemap/environ/mafr/cm_mafr_dmnd003_cbm/sourceimages/cm_mafr_dmnd003_cbm.ftex</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x31771D0" id="0x53C40">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_126</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x3177710</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x3177710" id="0x53C43">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x31771D0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1752" y="93.2" z="-808" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x3178040" id="0x53C49">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_0125</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x3174E60</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x3174E60" id="0x53C4C">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3178040</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1752" y="93.2" z="-728" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x32F4370" id="0x53C52">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_147_0126</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F44C0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x32F44C0" id="0x53C55">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F4370</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.6" y="1" z="1" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1856.0042" y="93.2" z="-807.99994" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x3178510" id="0x53C5B">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_pddl001_148_126</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x3178580</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x3178580" id="0x53C5E">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3178510</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.6" y="1" z="1" w="1.1e-44"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1984.0042" y="93.2" z="-807.99994" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x31790E0" id="0x53CA5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPrimRiverModelParam_swamparound_TargetLP0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x3179150</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x3179150" id="0x53CA8">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x31790E0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1822.617" y="300" z="-775.029" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x317F660" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/puddle/mafr_pddl001/scenes/mafr_pddl001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="5">
+          <containerEntry r11="1" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="1752" r42="93.2" r43="-728" r44="1"></containerEntry>
+          <containerEntry r11="1" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="1752" r42="93.2" r43="-808" r44="1"></containerEntry>
+          <containerEntry r11="1.6" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="1856.0042" r42="93.2" r43="-807.99994" r44="1"></containerEntry>
+          <containerEntry r11="1.785519" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="1863.5663" r42="93.19999" r43="-728" r44="1"></containerEntry>
+          <containerEntry r11="1.6" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="1984.0042" r42="93.2" r43="-807.99994" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="5">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x317FC80" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3175250</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

@@ -1,0 +1,136 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x9A28580" id="0x130B54">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="3">
+          <containerEntry key="TppWeatherSandStormData0000">
+            <data>0x9A285F0</data>
+          </containerEntry>
+          <containerEntry key="WindGlobal0000">
+            <data>0x9A28660</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x9A205C0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWeatherSandStormData" classVersion="3" classID="0xF0" addr="0x9A285F0" id="0x130B56">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWeatherSandStormData0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9A28580</containerEntry>
+        </property>
+        <property name="vfxFileSandStormStart" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstsndstmstr01_l4LG.vfx</containerEntry>
+        </property>
+        <property name="vfxFileSandStormFar" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="vfxFileSandStormNear" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstsndstmner01_s6LG.vfx</containerEntry>
+        </property>
+        <property name="vfxFileSandStormCamera" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstsndstmviw01_m1VG.vfx</containerEntry>
+        </property>
+        <property name="sandStormFarDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>15</containerEntry>
+        </property>
+        <property name="sandStormFarHeight" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="sandStormNearDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>15</containerEntry>
+        </property>
+        <property name="sandStormNearHeight" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="noiseScale" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.2</containerEntry>
+        </property>
+        <property name="noiseOffset" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.5</containerEntry>
+        </property>
+        <property name="noiseCutScale" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="noiseCutOffset" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="noiseColor" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="0"></containerEntry>
+        </property>
+        <property name="noiseSunLightColorMul" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="WindGlobal" classVersion="0" classID="0x48" addr="0x9A28660" id="0x130B58">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>WindGlobal0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9A28580</containerEntry>
+        </property>
+        <property name="parameter" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x9A286D0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="WindParameter" classVersion="6" classID="0x50" addr="0x9A286D0" id="0x130B5A">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9A28660</containerEntry>
+        </property>
+        <property name="decayRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="velocity" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="3" w="0"></containerEntry>
+        </property>
+        <property name="speedTurbulentRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.5</containerEntry>
+        </property>
+        <property name="speedTurbulentCycle" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.1</containerEntry>
+        </property>
+        <property name="rotTurbulentRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.1</containerEntry>
+        </property>
+        <property name="rotTurbulentCycle" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.01</containerEntry>
+        </property>
+        <property name="influenceOfGlobal" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x9A205C0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9A28580</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

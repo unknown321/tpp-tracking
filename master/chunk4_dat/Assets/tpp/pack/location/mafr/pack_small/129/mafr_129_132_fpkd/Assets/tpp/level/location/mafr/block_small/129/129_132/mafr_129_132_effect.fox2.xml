@@ -1,0 +1,429 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x317C2C0" id="0xE652C">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="8">
+          <containerEntry key="TppPrimRiverModel0000">
+            <data>0x317C090</data>
+          </containerEntry>
+          <containerEntry key="mafr_swmp001_0004">
+            <data>0x317C100</data>
+          </containerEntry>
+          <containerEntry key="TppWaterBounding0000">
+            <data>0x317BD80</data>
+          </containerEntry>
+          <containerEntry key="mafr_swmp001_0005_onlygeom">
+            <data>0x317B990</data>
+          </containerEntry>
+          <containerEntry key="TppPrimRiverModelParam_swamparound">
+            <data>0x317B610</data>
+          </containerEntry>
+          <containerEntry key="TppTextureLoader_swamparound">
+            <data>0x317B680</data>
+          </containerEntry>
+          <containerEntry key="TppPrimRiverModelParam_swamparound_TargetLP">
+            <data>0x317B4C0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x32F12E0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPrimRiverModel" classVersion="0" classID="0x60" addr="0x317C090" id="0xE652E">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPrimRiverModel0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="primRiverGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>swamparound_129_132</containerEntry>
+        </property>
+        <property name="visibility" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="depthBlendLength" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.22</containerEntry>
+        </property>
+        <property name="raise" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1000</containerEntry>
+        </property>
+        <property name="staticModels" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/129/129_132/mafr_129_132_effect.fox2" nameInArchive="mafr_swmp001_0004">0x317C100</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x317C100" id="0xE6531">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_swmp001_0004</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x317BED0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/swamp/mafr_swmp001/scenes/mafr_swmp001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x317BED0" id="0xE6534">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C100</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.6" y="1.6" z="1.6" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-448" y="-3.893002" z="-64" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWaterBounding" classVersion="2" classID="0x110" addr="0x317BD80" id="0xE653A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWaterBounding0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x317BB50</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="enableRotate" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="debugDraw" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="type" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x317BB50" id="0xE653D">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317BD80</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="128" y="2" z="128" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-448" y="-4.893" z="-64" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModel" classVersion="9" classID="0x160" addr="0x317B990" id="0xE6541">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_swmp001_0005_onlygeom</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x317BA00</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/swamp/mafr_swmp001/scenes/mafr_swmp001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="isIsolated" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="color" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x317BA00" id="0xE6544">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317B990</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.6" y="1.6" z="1.6" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-448" y="-3.893002" z="-64" w="1"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppPrimRiverModelParam" classVersion="5" classID="0xB0" addr="0x317B610" id="0xE654A">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPrimRiverModelParam_swamparound</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="primRiverGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>swamparound_129_132</containerEntry>
+        </property>
+        <property name="visibility" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="baseTextureName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_swmp001_bsm</containerEntry>
+        </property>
+        <property name="normalTextureName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>mafr_swmp001_nrm</containerEntry>
+        </property>
+        <property name="cubeMapName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>cm_mafr_swmp001_cbm</containerEntry>
+        </property>
+        <property name="lightCaptureLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/129/129_132/mafr_129_132_effect.fox2" nameInArchive="TppPrimRiverModelParam_swamparound_TargetLP">0x317B4C0</containerEntry>
+        </property>
+        <property name="scrollDirection0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>200</containerEntry>
+        </property>
+        <property name="scrollSpeed0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.008</containerEntry>
+        </property>
+        <property name="scrollScale0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>3</containerEntry>
+        </property>
+        <property name="scrollDirection1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>150</containerEntry>
+        </property>
+        <property name="scrollSpeed1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.01</containerEntry>
+        </property>
+        <property name="scrollScale1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>3.3</containerEntry>
+        </property>
+        <property name="transparency" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.1</containerEntry>
+        </property>
+        <property name="transparencyDepthBlend" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.21</containerEntry>
+        </property>
+        <property name="reflectionRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.44</containerEntry>
+        </property>
+        <property name="distortionPower" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>50</containerEntry>
+        </property>
+        <property name="surfaceShadowRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="oilIntensity" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="useHnmTexture" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="debugReset" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTextureLoader" classVersion="1" classID="0xA0" addr="0x317B680" id="0xE654D">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppTextureLoader_swamparound</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="textures" type="Path" container="StringMap"></property>
+        <property name="forceLargeTextures" type="Path" container="StringMap" arraySize="3">
+          <containerEntry key="mafr_swmp001_bsm">
+            <data>/Assets/tpp/environ/object/middle_africa/swamp/mafr_swmp001/sourceimages/mafr_swmp001_bsm.ftex</data>
+          </containerEntry>
+          <containerEntry key="mafr_swmp001_nrm">
+            <data>/Assets/tpp/environ/object/middle_africa/swamp/mafr_swmp001/sourceimages/mafr_swmp001_nrm.ftex</data>
+          </containerEntry>
+          <containerEntry key="cm_mafr_swmp001_cbm">
+            <data>/Assets/tpp/common_source/cubemap/environ/mafr/cm_mafr_swmp001_cbm/sourceimages/cm_mafr_swmp001_cbm.ftex</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Locator" classVersion="0" classID="0x110" addr="0x317B4C0" id="0xE654F">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppPrimRiverModelParam_swamparound_TargetLP</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x317A810</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="size" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x317A810" id="0xE6552">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317B4C0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-435.625" y="150" z="-65.358" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x32F12E0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x317C2C0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

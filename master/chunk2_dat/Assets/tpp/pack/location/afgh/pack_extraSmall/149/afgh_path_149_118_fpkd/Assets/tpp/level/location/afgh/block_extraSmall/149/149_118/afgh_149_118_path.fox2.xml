@@ -1,0 +1,359 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x29741B0" id="0x1897F015">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="4">
+          <containerEntry key="pathBehind_0026">
+            <data>0x38FFF90</data>
+          </containerEntry>
+          <containerEntry key="GeoxPathPack0000">
+            <data>0x38F6FA0</data>
+          </containerEntry>
+          <containerEntry key="GeoxGeomSetLoader0000">
+            <data>0x2AE4FB0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x3846EC0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPath2" classVersion="1" classID="0x140" addr="0x38FFF90" id="0x18987953">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>pathBehind_0026</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x29741B0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x3980080</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="nodes" type="EntityPtr" container="DynamicArray" arraySize="6">
+          <containerEntry>0x3980160</containerEntry>
+          <containerEntry>0x39801D0</containerEntry>
+          <containerEntry>0x3980240</containerEntry>
+          <containerEntry>0x39802B0</containerEntry>
+          <containerEntry>0x3980320</containerEntry>
+          <containerEntry>0x3980390</containerEntry>
+        </property>
+        <property name="edges" type="EntityPtr" container="DynamicArray" arraySize="5">
+          <containerEntry>0x3980400</containerEntry>
+          <containerEntry>0x3980470</containerEntry>
+          <containerEntry>0x39804E0</containerEntry>
+          <containerEntry>0x3980550</containerEntry>
+          <containerEntry>0x39805C0</containerEntry>
+        </property>
+        <property name="selectIndex" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>11</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="tags" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>Behind</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x3980080" id="0x18987957">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2049.757" y="457.40192" z="-1928.053" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathNode" classVersion="0" classID="0x60" addr="0x3980160" id="0x1898795B">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0.000488" y="6.1e-05" z="0.019756" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="1">
+          <containerEntry>0x3980400</containerEntry>
+        </property>
+        <property name="nodeTags" type="String" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathNode" classVersion="0" classID="0x60" addr="0x39801D0" id="0x1898795E">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0.034912" y="6.1e-05" z="1.925171" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="2">
+          <containerEntry>0x3980400</containerEntry>
+          <containerEntry>0x3980470</containerEntry>
+        </property>
+        <property name="nodeTags" type="String" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathNode" classVersion="0" classID="0x60" addr="0x3980240" id="0x18987962">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0.116699" y="0.012054" z="5.168213" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="2">
+          <containerEntry>0x3980470</containerEntry>
+          <containerEntry>0x39804E0</containerEntry>
+        </property>
+        <property name="nodeTags" type="String" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathNode" classVersion="0" classID="0x60" addr="0x39802B0" id="0x18987966">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.37793" y="0.068329" z="5.21814" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="2">
+          <containerEntry>0x39804E0</containerEntry>
+          <containerEntry>0x3980550</containerEntry>
+        </property>
+        <property name="nodeTags" type="String" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathNode" classVersion="0" classID="0x60" addr="0x3980320" id="0x1898796A">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1.489746" y="0.010071" z="3.208618" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="2">
+          <containerEntry>0x3980550</containerEntry>
+          <containerEntry>0x39805C0</containerEntry>
+        </property>
+        <property name="nodeTags" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>BEHIND_STOP</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathNode" classVersion="0" classID="0x60" addr="0x3980390" id="0x1898796E">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2.646729" y="6.1e-05" z="3.208496" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="1">
+          <containerEntry>0x39805C0</containerEntry>
+        </property>
+        <property name="nodeTags" type="String" container="DynamicArray"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathEdge" classVersion="0" classID="0x38" addr="0x3980400" id="0x18987971">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="prevNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3980160</containerEntry>
+        </property>
+        <property name="nextNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x39801D0</containerEntry>
+        </property>
+        <property name="edgeTags" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>BEHIND_LOW</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathEdge" classVersion="0" classID="0x38" addr="0x3980470" id="0x18987975">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="prevNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x39801D0</containerEntry>
+        </property>
+        <property name="nextNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3980240</containerEntry>
+        </property>
+        <property name="edgeTags" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>BEHIND_LOW</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathEdge" classVersion="0" classID="0x38" addr="0x39804E0" id="0x18987979">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="prevNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3980240</containerEntry>
+        </property>
+        <property name="nextNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x39802B0</containerEntry>
+        </property>
+        <property name="edgeTags" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>BEHIND_LOW</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathEdge" classVersion="0" classID="0x38" addr="0x3980550" id="0x1898797D">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="prevNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x39802B0</containerEntry>
+        </property>
+        <property name="nextNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3980320</containerEntry>
+        </property>
+        <property name="edgeTags" type="String" container="DynamicArray" arraySize="1">
+          <containerEntry>BEHIND_LOW</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathEdge" classVersion="0" classID="0x38" addr="0x39805C0" id="0x18987981">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x38FFF90</containerEntry>
+        </property>
+        <property name="prevNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3980320</containerEntry>
+        </property>
+        <property name="nextNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3980390</containerEntry>
+        </property>
+        <property name="edgeTags" type="String" container="DynamicArray" arraySize="2">
+          <containerEntry>BEHIND_LOW</containerEntry>
+          <containerEntry>LineCheck</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxPathPack" classVersion="0" classID="0x120" addr="0x38F6FA0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>GeoxPathPack0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x29741B0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>134217735</containerEntry>
+        </property>
+        <property name="pathFixedPackFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/level/location/afgh/block_extraSmall/149/149_118/afgh_149_118_path_fox2_0_win.gpfp</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GeoxGeomSetLoader" classVersion="0" classID="0x120" addr="0x2AE4FB0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>GeoxGeomSetLoader0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x29741B0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>134217735</containerEntry>
+        </property>
+        <property name="geomSetFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/level/location/afgh/block_extraSmall/149/149_118/afgh_149_118_path_fox2_0_geoprim_win.geoms</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x3846EC0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x29741B0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

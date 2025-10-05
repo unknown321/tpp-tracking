@@ -1,0 +1,970 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x43B9FC0" id="0x91EE">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="5">
+          <containerEntry key="p41_060010_dmd_cdt">
+            <data>0x43BA030</data>
+          </containerEntry>
+          <containerEntry key="p41_060010_dmd_sna">
+            <data>0x43BA0A0</data>
+          </containerEntry>
+          <containerEntry key="p41_060010_000_final">
+            <data>0x43BA110</data>
+          </containerEntry>
+          <containerEntry key="p41_060010_000_final_DSA">
+            <data>0x43BA500</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x605FC10</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoModelDataNode" classVersion="2" classID="0x90" addr="0x43BA030" id="0x91F0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_060010_dmd_cdt</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B9FC0</containerEntry>
+        </property>
+        <property name="partNames" type="String" container="StringMap" arraySize="1">
+          <containerEntry key="HM_cdt0_main0_def">
+            <data>Body</data>
+          </containerEntry>
+        </property>
+        <property name="target" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoModelDataNode" classVersion="2" classID="0x90" addr="0x43BA0A0" id="0x91F3">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_060010_dmd_sna</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B9FC0</containerEntry>
+        </property>
+        <property name="partNames" type="String" container="StringMap" arraySize="1">
+          <containerEntry key="HM_sna0_main0_def">
+            <data>Body</data>
+          </containerEntry>
+        </property>
+        <property name="target" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoData" classVersion="36" classID="0x4F0" addr="0x43BA110" id="0x91F6">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_060010_000_final</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B9FC0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA180</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="evfFiles" type="FilePtr" container="DynamicArray"></property>
+        <property name="onMemory" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="demoLength" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>16312</containerEntry>
+        </property>
+        <property name="priority" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="scriptPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="fmdlFiles" type="FilePtr" container="StringMap"></property>
+        <property name="helpBoneFiles" type="FilePtr" container="StringMap"></property>
+        <property name="partsDesc" type="EntityPtr" container="StringMap"></property>
+        <property name="clipDatas" type="EntityPtr" container="DynamicArray" arraySize="4">
+          <containerEntry>0x43BA1F0</containerEntry>
+          <containerEntry>0x43BA260</containerEntry>
+          <containerEntry>0x43BA2D0</containerEntry>
+          <containerEntry>0x43BA340</containerEntry>
+        </property>
+        <property name="loadFiles" type="Path" container="DynamicArray"></property>
+        <property name="demoId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_060010</containerEntry>
+        </property>
+        <property name="playingRoot" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="streamAnimation" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/demo/fox_project/p41_060010/fox/p41_060010_demo.fox2" nameInArchive="p41_060010_000_final_DSA">0x43BA500</containerEntry>
+        </property>
+        <property name="demoStreamPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/demo_stream/p41_060010.fsm</containerEntry>
+        </property>
+        <property name="motionPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/si_project/p41_060010/fani/p41_060010_000_final/p41_060010_000_final.sani</containerEntry>
+        </property>
+        <property name="motionFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="audioPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/sound/external/demo/p41_060010.mas</containerEntry>
+        </property>
+        <property name="subtitleFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="subtitleBinaryFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="nodeDataFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/si_project/p41_060010/fani/p41_060010_000_final/p41_060010_000_final.sand</containerEntry>
+        </property>
+        <property name="stringParams" type="String" container="DynamicArray"></property>
+        <property name="entityParams" type="EntityLink" container="StringMap" arraySize="9">
+          <containerEntry key="Player">
+            <data packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/demo/fox_project/p41_060010/fox/p41_060010_demo.fox2" nameInArchive="p41_060010_dmd_sna">0x43BA0A0</data>
+          </containerEntry>
+          <containerEntry key="CodeTalker">
+            <data packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/demo/fox_project/p41_060010/fox/p41_060010_demo.fox2" nameInArchive="p41_060010_dmd_cdt">0x43BA030</data>
+          </containerEntry>
+          <containerEntry key="Light_D1_Isolate">
+            <data packagePath="DATA_IDENTIFIER" archivePath="mafr_lab_light_id_20140402_154637_950" nameInArchive="Light_D1_Isolate">0x0</data>
+          </containerEntry>
+          <containerEntry key="Light_D3_Isolate">
+            <data packagePath="DATA_IDENTIFIER" archivePath="mafr_lab_light_id_20140402_154637_950" nameInArchive="Light_D3_Isolate">0x0</data>
+          </containerEntry>
+          <containerEntry key="Light_D2_Isolate">
+            <data packagePath="DATA_IDENTIFIER" archivePath="mafr_lab_light_id_20140402_154637_950" nameInArchive="Light_D2_Isolate">0x0</data>
+          </containerEntry>
+          <containerEntry key="Light_Under">
+            <data packagePath="DATA_IDENTIFIER" archivePath="mafr_lab_light_id_20140402_154637_950" nameInArchive="Light_Under">0x0</data>
+          </containerEntry>
+          <containerEntry key="Light_UnderShadow">
+            <data packagePath="DATA_IDENTIFIER" archivePath="mafr_lab_light_id_20140402_154637_950" nameInArchive="Light_UnderShadow">0x0</data>
+          </containerEntry>
+          <containerEntry key="Light_D1v_Isolate">
+            <data packagePath="DATA_IDENTIFIER" archivePath="id_20150327_213317_629_lab_main" nameInArchive="Light_D1v">0x0</data>
+          </containerEntry>
+          <containerEntry key="Light_D3v_Isolate">
+            <data packagePath="DATA_IDENTIFIER" archivePath="id_20150327_213317_629_lab_main" nameInArchive="Light_D3v">0x0</data>
+          </containerEntry>
+        </property>
+        <property name="fileParams" type="FilePtr" container="StringMap" arraySize="16">
+          <containerEntry key="cdt0_v01">
+            <data>/Assets/tpp/fova/chara/cdt/cdt0_v01.fv2</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/fire/fx_tpp_fircdl01_s0.vfx">
+            <data>/Assets/tpp/effect/vfx_data/fire/fx_tpp_fircdl01_s0.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt02ev_s1LD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt02ev_s1LD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt23_m1LD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt23_m1LD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt22_m1LD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt22_m1LD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/filter/fx_tpp_filfadblnviw01_VD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/filter/fx_tpp_filfadblnviw01_VD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt32ev_m1LD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt32ev_m1LD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkciglin01_s1.vfx">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkciglin01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt33ev_m1LD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt33ev_m1LD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt21_m1LD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlgt21_m1LD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkcig06_s0.vfx">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkcig06_s0.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstcomviw05_s2LD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstcomviw05_s2LD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrcom02_m0.vfx">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrcom02_m0.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkcig07_s0.vfx">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkcig07_s0.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/filter/fx_tpp_filfadaddviw01_VD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/filter/fx_tpp_filfadaddviw01_VD.vfx</data>
+          </containerEntry>
+          <containerEntry key="/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstcomviw04_s2VD.vfx">
+            <data>/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstcomviw04_s2VD.vfx</data>
+          </containerEntry>
+        </property>
+        <property name="controlCharacters" type="EntityPtr" container="StringMap" arraySize="2">
+          <containerEntry key="HM_sna0_main0_def">
+            <data>0x43BA3B0</data>
+          </containerEntry>
+          <containerEntry key="HM_cdt0_main0_def">
+            <data>0x43BA420</data>
+          </containerEntry>
+        </property>
+        <property name="controlDatas" type="EntityLink" container="StringMap"></property>
+        <property name="controlCollectibles" type="String" container="StringMap"></property>
+        <property name="parameters" type="EntityPtr" container="StringMap" arraySize="1">
+          <containerEntry key="Game">
+            <data>0x43BA490</data>
+          </containerEntry>
+        </property>
+        <property name="setupLights" type="String" container="StringMap" arraySize="59">
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613565295_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613374305_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613555798_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2013041615550399">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460607_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143426_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460602_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2013041815043296">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100615200827_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100615200347_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460650_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460629_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613565315_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100615172760_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613370376_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2013041614165177">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143435_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143478_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460618_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143470_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143461_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143452_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143444_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2013041812295890">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100614143417_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460634_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563219_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613375372_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613351077_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014032517194245_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563929_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563918_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460645_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563907_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563210_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563227_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613565325_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563203_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613560372_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613560062_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613373667_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460655_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2013041614165176">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613275654_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613374297_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613565306_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613375352_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613373661_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460623_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613374312_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2012100321293085">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2013041814515632">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613375361_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460613_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460596_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613460639_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoLightFunctor_CreateLight_2013041613515427">
+            <data>Spot</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613373673_0">
+            <data>Point</data>
+          </containerEntry>
+          <containerEntry key="DemoPointLightFunctor_CreateLight_2014100613563940_0">
+            <data>Point</data>
+          </containerEntry>
+        </property>
+        <property name="cameraInterpType" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="cameraInterpFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>70</containerEntry>
+        </property>
+        <property name="cameraInterpCurveRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.9</containerEntry>
+        </property>
+        <property name="cameraInterpScurveCenter" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.65</containerEntry>
+        </property>
+        <property name="cameraTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2698.105" y="164.20358" z="-2388.283" w="0"></containerEntry>
+        </property>
+        <property name="cameraRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.008635" y="0.144453" z="0.001261" w="0.989473"></containerEntry>
+        </property>
+        <property name="cameraParam" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>21.000301</containerEntry>
+        </property>
+        <property name="cameraDistanceToLookAt" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="cameraStartTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2691.6602" y="164.7059" z="-2409.7056" w="0"></containerEntry>
+        </property>
+        <property name="cameraStartRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.010746" y="-0.836089" z="-0.016388" w="0.548243"></containerEntry>
+        </property>
+        <property name="cameraStartParam" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>23.052227</containerEntry>
+        </property>
+        <property name="cameraStartDistanceToLookAt" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="eventCacheNum" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="eventInterpCacheNum" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="eventSkipCacheNum" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="highestTextureStreamModel" type="String" container="DynamicArray"></property>
+        <property name="highestTexture" type="Path" container="DynamicArray"></property>
+        <property name="objectNum" type="Int32" container="StringMap"></property>
+        <property name="blockPositionSetter" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x43BA180" id="0x9205">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ClipData" classVersion="0" classID="0x30" addr="0x43BA1F0" id="0xA5F4">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Shot</containerEntry>
+        </property>
+        <property name="cameraName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>konShotCamera3</containerEntry>
+        </property>
+        <property name="startFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>11600</containerEntry>
+        </property>
+        <property name="endFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>18954</containerEntry>
+        </property>
+        <property name="offsetFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>-11600</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ClipData" classVersion="0" classID="0x30" addr="0x43BA260" id="0xA5F5">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Shot1</containerEntry>
+        </property>
+        <property name="cameraName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>konShotCamera3</containerEntry>
+        </property>
+        <property name="startFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>18954</containerEntry>
+        </property>
+        <property name="endFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>19032</containerEntry>
+        </property>
+        <property name="offsetFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>-11599</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ClipData" classVersion="0" classID="0x30" addr="0x43BA2D0" id="0xA5F6">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Shot2</containerEntry>
+        </property>
+        <property name="cameraName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>konShotCamera3</containerEntry>
+        </property>
+        <property name="startFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>19032</containerEntry>
+        </property>
+        <property name="endFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>25197</containerEntry>
+        </property>
+        <property name="offsetFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>-11598</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ClipData" classVersion="0" classID="0x30" addr="0x43BA340" id="0xA5F7">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Shot3</containerEntry>
+        </property>
+        <property name="cameraName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>konShotCamera4</containerEntry>
+        </property>
+        <property name="startFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>25197</containerEntry>
+        </property>
+        <property name="endFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>27799</containerEntry>
+        </property>
+        <property name="offsetFrame" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>-11597</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoControlCharacterDesc" classVersion="2" classID="0x80" addr="0x43BA3B0" id="0x920F">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="characterId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Player</containerEntry>
+        </property>
+        <property name="releaseGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="releaseTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="controlledAtStart" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2697.1438" y="162.73328" z="-2391.3994" w="0"></containerEntry>
+        </property>
+        <property name="rotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.992255" z="0" w="0.124217"></containerEntry>
+        </property>
+        <property name="startGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2692.554" y="163.2381" z="-2409.6138" w="0"></containerEntry>
+        </property>
+        <property name="startRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.148437" z="0" w="0.988922"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoControlCharacterDesc" classVersion="2" classID="0x80" addr="0x43BA420" id="0x9211">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="characterId" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>CodeTalker</containerEntry>
+        </property>
+        <property name="releaseGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="releaseTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="controlledAtStart" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2697.0852" y="162.8021" z="-2391.42" w="0"></containerEntry>
+        </property>
+        <property name="rotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0.789515" z="0" w="0.613732"></containerEntry>
+        </property>
+        <property name="startGroupName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTag" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="startTranslation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="2697.3623" y="162.73279" z="-2390.861" w="0"></containerEntry>
+        </property>
+        <property name="startRotation" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="-0.992083" z="0" w="0.125585"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppDemoParameter" classVersion="3" classID="0x44" addr="0x43BA490" id="0x9213">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43BA110</containerEntry>
+        </property>
+        <property name="pauseEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="fadeSerchLightEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="fadeDirectionalLightEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="fadeSandStormEnable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="sandStormDensityMin" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.006</containerEntry>
+        </property>
+        <property name="fadeTime" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="useSetTime" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="hour" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="minute" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="second" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="weatherType" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DemoStreamAnimation" classVersion="3" classID="0x2C8" addr="0x43BA500" id="0x9215">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>p41_060010_000_final_DSA</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B9FC0</containerEntry>
+        </property>
+        <property name="streamPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/demo/si_project/p41_060010/fani/p41_060010_000_final/p41_060010_000_final.sani</containerEntry>
+        </property>
+        <property name="demoLength" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="locatorTypes" type="Int32" container="StringMap" arraySize="48">
+          <containerEntry key="ENV_mafr_cndl001">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn004">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn6">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn7">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn8">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl2">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl3">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_gate001_door001">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003_vrtn001">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003_vrtn002">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003_vrtn2">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf4">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf5">
+            <data>2</data>
+          </containerEntry>
+          <containerEntry key="Eff_Light_pos_0001">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_Light_pos_0002">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_Light_pos_0003">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_SMO">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_01">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_02">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_03">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_04">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_05">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_06">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_07">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_08">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_09">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_10">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_11">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_12">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_13">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_14">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_15">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_16">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_17">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_18">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_19">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_20">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_21">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_22">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_23">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_24">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_cdl_25">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_flare02_01">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_flare02_02">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_flare08_01">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_flare08_02">
+            <data>0</data>
+          </containerEntry>
+          <containerEntry key="Eff_pwp0_cons_Null">
+            <data>0</data>
+          </containerEntry>
+        </property>
+        <property name="cameraTypes" type="Int32" container="StringMap" arraySize="2">
+          <containerEntry key="konShotCamera3">
+            <data>1</data>
+          </containerEntry>
+          <containerEntry key="konShotCamera4">
+            <data>1</data>
+          </containerEntry>
+        </property>
+        <property name="modelFiles" type="FilePtr" container="StringMap" arraySize="23">
+          <containerEntry key="ENV_mafr_cndl001">
+            <data>/Assets/tpp/environ/object/middle_africa/candle/mafr_cndl001/scenes/mafr_cndl001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn004">
+            <data>/Assets/tpp/environ/object/middle_africa/candle/mafr_cndl001/scenes/mafr_cndl001_vrtn004.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn6">
+            <data>/Assets/tpp/environ/object/middle_africa/candle/mafr_cndl001/scenes/mafr_cndl001_vrtn001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn7">
+            <data>/Assets/tpp/environ/object/middle_africa/candle/mafr_cndl001/scenes/mafr_cndl001_vrtn002.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl001_vrtn8">
+            <data>/Assets/tpp/environ/object/middle_africa/candle/mafr_cndl001/scenes/mafr_cndl001_vrtn001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl2">
+            <data>/Assets/tpp/environ/object/middle_africa/candle/mafr_cndl001/scenes/mafr_cndl001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_cndl3">
+            <data>/Assets/tpp/environ/object/middle_africa/candle/mafr_cndl001/scenes/mafr_cndl001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_gate001_door001">
+            <data>/Assets/tpp/environ/object/middle_africa/gate/mafr_gate001/scenes/mafr_gate001_door001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003">
+            <data>/Assets/tpp/environ/object/middle_africa/leaf/mafr_leaf003/scenes/mafr_leaf003.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003_vrtn001">
+            <data>/Assets/tpp/environ/object/middle_africa/leaf/mafr_leaf003/scenes/mafr_leaf003_vrtn001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003_vrtn002">
+            <data>/Assets/tpp/environ/object/middle_africa/leaf/mafr_leaf003/scenes/mafr_leaf003_vrtn002.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf003_vrtn2">
+            <data>/Assets/tpp/environ/object/middle_africa/leaf/mafr_leaf003/scenes/mafr_leaf003_vrtn001.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf4">
+            <data>/Assets/tpp/environ/object/middle_africa/leaf/mafr_leaf003/scenes/mafr_leaf003.fmdl</data>
+          </containerEntry>
+          <containerEntry key="ENV_mafr_leaf5">
+            <data>/Assets/tpp/environ/object/middle_africa/leaf/mafr_leaf003/scenes/mafr_leaf003.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_cdt0_coat0_def">
+            <data>/Assets/tpp/chara/cdt/Scenes/cdt0_coat0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_cdt0_main0_def">
+            <data hash="0xB8A0BF169F98"></data>
+          </containerEntry>
+          <containerEntry key="HM_hg00_main0_def">
+            <data>/Assets/tpp/weapon/asw/Scenes/hg00_main0_aw0.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_pik0_main0_def">
+            <data>/Assets/tpp/item/pik/Scenes/pik0_main0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_pik1_main0_def">
+            <data>/Assets/tpp/item/pik/Scenes/pik1_main0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_pik2_main0_def">
+            <data>/Assets/tpp/item/pik/Scenes/pik2_main0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_pip0_main0_def">
+            <data>/Assets/tpp/item/pip/Scenes/pip0_main0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_pwp0_main0_def">
+            <data>/Assets/tpp/item/pwp/Scenes/pwp0_main0_def.fmdl</data>
+          </containerEntry>
+          <containerEntry key="HM_sna0_main0_def">
+            <data hash="0xB8A0BF169F98"></data>
+          </containerEntry>
+        </property>
+        <property name="helpBoneFiles" type="FilePtr" container="StringMap"></property>
+        <property name="partsFiles" type="FilePtr" container="StringMap"></property>
+        <property name="coverModelFiles" type="FilePtr" container="StringMap"></property>
+        <property name="modelPartsDictionary" type="String" container="StringMap"></property>
+        <property name="coverModelDictionary" type="String" container="StringMap"></property>
+        <property name="updateJobCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="modelProxyPaths" type="Path" container="StringMap"></property>
+        <property name="partsProxyPaths" type="Path" container="StringMap"></property>
+        <property name="dynamicModel" type="EntityPtr" container="StringMap"></property>
+        <property name="dynamicParts" type="EntityPtr" container="StringMap"></property>
+        <property name="dynamicFv2" type="EntityPtr" container="StringMap"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x605FC10" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x43B9FC0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

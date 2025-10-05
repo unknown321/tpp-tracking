@@ -1,0 +1,78 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x2D75870" id="0x10E4">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="3">
+          <containerEntry key="UiInstanceData0000">
+            <data>0x2D758E0</data>
+          </containerEntry>
+          <containerEntry key="UiGraphEntry0000">
+            <data>0x2D75950</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x2D78BA0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="UiInstanceData" classVersion="1" classID="0x78" addr="0x2D758E0" id="0x10E6">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>UiInstanceData0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D75870</containerEntry>
+        </property>
+        <property name="createWindowParams" type="FilePtr" container="StringMap"></property>
+        <property name="windowFactoryName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>PauseRankingFactory</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="UiGraphEntry" classVersion="1" classID="0x60" addr="0x2D75950" id="0x10E8">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>UiGraphEntry0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D75870</containerEntry>
+        </property>
+        <property name="files" type="FilePtr" container="DynamicArray"></property>
+        <property name="rawFiles" type="FilePtr" container="DynamicArray" arraySize="9">
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/sys_ranking/UI_tpp_sys_ranking.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/sys_ranking/UI_tpp_sys_rank_sc_list.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/sys_ranking/UI_tpp_sys_rank_sc_record.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/sys_ranking/UI_tpp_sys_rank_sc_recordtitle.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/prefab_common/record/UI_cursor.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/prefab_common/scrollbar/UI_scrollbar.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/sys_ranking/UI_tpp_sys_rank_list.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/sys_ranking/UI_tpp_sys_rank_record.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/sys_ranking/UI_tpp_sys_rank_recordtitle.uilb</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x2D78BA0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D75870</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

@@ -1,0 +1,73 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x2D74D10" id="0x10A6">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="3">
+          <containerEntry key="UiGraphEntry0000">
+            <data>0x2D74D80</data>
+          </containerEntry>
+          <containerEntry key="UiInstanceData0000">
+            <data>0x2D74E60</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x2D78200</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="UiGraphEntry" classVersion="1" classID="0x60" addr="0x2D74D80" id="0x10A8">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>UiGraphEntry0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D74D10</containerEntry>
+        </property>
+        <property name="files" type="FilePtr" container="DynamicArray"></property>
+        <property name="rawFiles" type="FilePtr" container="DynamicArray" arraySize="4">
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/hud_wpscope/UI_bino.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/hud_wpscope/UI_wpscope_st09.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/hud_bino/UI_wp_zoom.uilb</containerEntry>
+          <containerEntry>/Assets/tpp/ui/LayoutAsset/hud_keyhelp/UI_bino_keyhelp_zoom_icon.uilb</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="UiInstanceData" classVersion="1" classID="0x78" addr="0x2D74E60" id="0x10AB">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>UiInstanceData0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D74D10</containerEntry>
+        </property>
+        <property name="createWindowParams" type="FilePtr" container="StringMap"></property>
+        <property name="windowFactoryName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SightSt09Factory</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x2D78200" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x2D74D10</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

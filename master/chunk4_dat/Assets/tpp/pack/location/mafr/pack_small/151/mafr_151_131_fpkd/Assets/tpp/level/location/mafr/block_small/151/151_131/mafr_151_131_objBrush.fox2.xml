@@ -1,0 +1,178 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x3370CC0" id="0xF6A82">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="3">
+          <containerEntry key="ObjectBrushBlock_1970">
+            <data>0x3370D30</data>
+          </containerEntry>
+          <containerEntry key="TppObjectBrushPluginBush0000">
+            <data>0x3370DA0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x43E0780</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ObjectBrushBlock" classVersion="3" classID="0x80" addr="0x3370D30" id="0xF6A84">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>ObjectBrushBlock_1970</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3370CC0</containerEntry>
+        </property>
+        <property name="filePath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/level/location/mafr/block_small/151/151_131/mafr_151_131_objBrush.obrb</containerEntry>
+        </property>
+        <property name="obrbFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/level/location/mafr/block_small/151/151_131/mafr_151_131_objBrush.obrb</containerEntry>
+        </property>
+        <property name="blockId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>1970</containerEntry>
+        </property>
+        <property name="objectBrushName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>ObjectBrush0000</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppObjectBrushPluginBush" classVersion="3" classID="0xA8" addr="0x3370DA0" id="0xF6A86">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppObjectBrushPluginBush0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3370CC0</containerEntry>
+        </property>
+        <property name="parentDataName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="visibility" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="minSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="maxSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="enableLod" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="modelRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>10</containerEntry>
+        </property>
+        <property name="reservedCount" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>50</containerEntry>
+        </property>
+        <property name="upgradeLodRateForHighEnd" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="gimmickParameter" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x3370E10</containerEntry>
+        </property>
+        <property name="externalGimmickParameter" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="ObjectBrushPluginBushDataElement" classVersion="20" classID="0xE0" addr="0x3370E10" id="0xF6A89">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3370DA0</containerEntry>
+        </property>
+        <property name="lodMeshName" type="String" container="DynamicArray"></property>
+        <property name="lodDistance" type="Float" container="DynamicArray"></property>
+        <property name="lodDistanceHighEnd" type="Float" container="DynamicArray"></property>
+        <property name="rotationRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="elasticRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.8</containerEntry>
+        </property>
+        <property name="alphaMinimizeDist" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="alphaMaximizeDist" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>3</containerEntry>
+        </property>
+        <property name="baseDensity" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>25</containerEntry>
+        </property>
+        <property name="camoufDensity" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>25</containerEntry>
+        </property>
+        <property name="camofRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.5</containerEntry>
+        </property>
+        <property name="camofHeight" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.8</containerEntry>
+        </property>
+        <property name="modelRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="stopEyeRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.5</containerEntry>
+        </property>
+        <property name="stopEyeHeight" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.8</containerEntry>
+        </property>
+        <property name="noiseSeType" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Plant</containerEntry>
+        </property>
+        <property name="bushFlags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="baseCycleSpeedRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="windAmplitude" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.1</containerEntry>
+        </property>
+        <property name="windDirYAxisFixZero" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="windOffsetFactor" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="bulletEffect" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="fairEffect" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="rainEffect" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x43E0780" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3370CC0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

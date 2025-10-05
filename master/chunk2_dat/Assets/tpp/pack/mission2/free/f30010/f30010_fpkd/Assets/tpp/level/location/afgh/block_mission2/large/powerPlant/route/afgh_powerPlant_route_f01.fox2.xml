@@ -1,0 +1,220 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x8AFDFA0" id="0xB33C1C3">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="3">
+          <containerEntry key="afgh_powerPlant_cp">
+            <data>0x8AFE080</data>
+          </containerEntry>
+          <containerEntry key="GkPathLineTarget0000">
+            <data>0x8AFFD60</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x4B845A0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GameObjectLocator" classVersion="2" classID="0x110" addr="0x8AFE080" id="0xB33C1C5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>afgh_powerPlant_cp</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFDFA0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFE0F0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="typeName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppCommandPost2</containerEntry>
+        </property>
+        <property name="groupId" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="parameters" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x8AFE0F0" id="0xB33C1C8">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFE080</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="197.21747" y="2.39422" z="2.39422" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-714" y="532.9274" z="-1556.1246" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GkPathLineTarget" classVersion="0" classID="0x120" addr="0x8AFFD60" id="0xB33C24C">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>GkPathLineTarget0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFDFA0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFDD0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="nodes" type="EntityPtr" container="DynamicArray" arraySize="3">
+          <containerEntry>0x8AFFF20</containerEntry>
+          <containerEntry>0x8AFFF90</containerEntry>
+          <containerEntry>0x9BF0080</containerEntry>
+        </property>
+        <property name="edges" type="EntityPtr" container="DynamicArray" arraySize="2">
+          <containerEntry>0x9BF00F0</containerEntry>
+          <containerEntry>0x9BF0160</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x8AFFDD0" id="0xB33C24F">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFD60</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-772.5709" y="530.01794" z="-1374.9408" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GraphxSpatialGraphDataNode" classVersion="0" classID="0x50" addr="0x8AFFF20" id="0xB33C255">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFD60</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.000122" y="0.000122" z="-0.000244" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="1">
+          <containerEntry>0x9BF00F0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GraphxSpatialGraphDataNode" classVersion="0" classID="0x50" addr="0x8AFFF90" id="0xB33C258">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFD60</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.919556" y="-3.67749" z="23.450195" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="2">
+          <containerEntry>0x9BF00F0</containerEntry>
+          <containerEntry>0x9BF0160</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GraphxSpatialGraphDataNode" classVersion="0" classID="0x50" addr="0x9BF0080" id="0xB33C25C">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFD60</containerEntry>
+        </property>
+        <property name="position" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="-16.495178" y="-4.262146" z="47.026123" w="0"></containerEntry>
+        </property>
+        <property name="inlinks" type="EntityHandle" container="DynamicArray"></property>
+        <property name="outlinks" type="EntityHandle" container="DynamicArray" arraySize="1">
+          <containerEntry>0x9BF0160</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GraphxSpatialGraphDataEdge" classVersion="0" classID="0x24" addr="0x9BF00F0" id="0xB33C25F">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFD60</containerEntry>
+        </property>
+        <property name="prevNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFF20</containerEntry>
+        </property>
+        <property name="nextNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFF90</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="GraphxSpatialGraphDataEdge" classVersion="0" classID="0x24" addr="0x9BF0160" id="0xB33C263">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFD60</containerEntry>
+        </property>
+        <property name="prevNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFFF90</containerEntry>
+        </property>
+        <property name="nextNode" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x9BF0080</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x4B845A0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x8AFDFA0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

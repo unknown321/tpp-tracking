@@ -1,0 +1,825 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x939C4F0" id="0x226D5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="12">
+          <containerEntry key="TppSunLightFlare0000">
+            <data>0x939C100</data>
+          </containerEntry>
+          <containerEntry key="TppTextureLoader0000">
+            <data>0x939BFB0</data>
+          </containerEntry>
+          <containerEntry key="TppHeatHaze0000">
+            <data>0x939BCA0</data>
+          </containerEntry>
+          <containerEntry key="TppWaterRippleViewport0000">
+            <data>0x939BAE0</data>
+          </containerEntry>
+          <containerEntry key="TppFloorRainSplashData">
+            <data>0x939BB50</data>
+          </containerEntry>
+          <containerEntry key="TppRainFilter0000">
+            <data>0x939B840</data>
+          </containerEntry>
+          <containerEntry key="TppWeatherRainData">
+            <data>0x939B8B0</data>
+          </containerEntry>
+          <containerEntry key="TppVfxFileLoader0000">
+            <data>0x939B680</data>
+          </containerEntry>
+          <containerEntry key="TppDroplets0000">
+            <data>0x939B6F0</data>
+          </containerEntry>
+          <containerEntry key="TppWeatherParasiteUnitParam0000">
+            <data>0x939B450</data>
+          </containerEntry>
+          <containerEntry key="FxLocatorArrayData0000">
+            <data>0xB3A5A30</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0xB3A5DB0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x939C330" id="0x226DA">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C2C0</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppSunLightFlare" classVersion="1" classID="0x110" addr="0x939C100" id="0x226DE">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppSunLightFlare0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x939BF40</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="flareName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>fx_tpp_flrlns01_s2LG</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TransformEntity" classVersion="0" classID="0x50" addr="0x939BF40" id="0x226E1">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C100</containerEntry>
+        </property>
+        <property name="transform_scale" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="1" y="1" z="1" w="0"></containerEntry>
+        </property>
+        <property name="transform_rotation_quat" type="Quat" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="1"></containerEntry>
+        </property>
+        <property name="transform_translation" type="Vector3" container="StaticArray" arraySize="1">
+          <containerEntry x="0" y="0" z="0" w="0"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppTextureLoader" classVersion="1" classID="0xA0" addr="0x939BFB0" id="0x226E3">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppTextureLoader0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="textures" type="Path" container="StringMap"></property>
+        <property name="forceLargeTextures" type="Path" container="StringMap" arraySize="6">
+          <containerEntry key="fx_smkfilblr01_iy">
+            <data>/Assets/tpp/effect/vfx_pic/smoke/fx_smkfilblr01_iy.ftex</data>
+          </containerEntry>
+          <containerEntry key="gr_comsnd01_iy">
+            <data>/Assets/tpp/effect/gr_pic/gr_comsnd01_iy.ftex</data>
+          </containerEntry>
+          <containerEntry key="WaterRipple">
+            <data>/Assets/tpp/effect/vfx_pic/blur/fx_blrrip03_iy_alp_clp.ftex</data>
+          </containerEntry>
+          <containerEntry key="fx_wtrdrp04n_ks_alp">
+            <data>/Assets/tpp/effect/vfx_pic/water/fx_wtrdrp04n_ks_alp.ftex</data>
+          </containerEntry>
+          <containerEntry key="fx_mrktir01_iy_hnm">
+            <data>/Assets/tpp/effect/vfx_pic/mark/fx_mrktir01_iy_hnm.ftex</data>
+          </containerEntry>
+          <containerEntry key="fx_mrktir01_iy">
+            <data>/Assets/tpp/effect/vfx_pic/mark/fx_mrktir01_iy.ftex</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppHeatHaze" classVersion="1" classID="0xA0" addr="0x939BCA0" id="0x226E5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppHeatHaze0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="distortionIntensityFullResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.12</containerEntry>
+        </property>
+        <property name="distortionVelocityFullResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>7</containerEntry>
+        </property>
+        <property name="distortionTextureRepetitionFullResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="hazeMirageIntensityFullResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="hazeStartDistanceFullResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>100</containerEntry>
+        </property>
+        <property name="hazeEndDistanceFullResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1500</containerEntry>
+        </property>
+        <property name="hazeRangeAttenuationFullResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>150</containerEntry>
+        </property>
+        <property name="hazeSecondLayerIntensityDifference" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="hazeSecondLayerStartDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>500</containerEntry>
+        </property>
+        <property name="hazeSecondLayerBlurRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>50</containerEntry>
+        </property>
+        <property name="hazeDistortionIntensityAddedOnBinoculars" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.1</containerEntry>
+        </property>
+        <property name="mirageColorSaturation" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="mirageSpreadingPower" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1.5</containerEntry>
+        </property>
+        <property name="mirageRayLength" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.3</containerEntry>
+        </property>
+        <property name="mirageHitRange" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>10</containerEntry>
+        </property>
+        <property name="mirageStartDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>50</containerEntry>
+        </property>
+        <property name="mirageRangeAttenuation" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>30</containerEntry>
+        </property>
+        <property name="distortionIntensityHalfResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.17</containerEntry>
+        </property>
+        <property name="distortionVelocityHalfResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="distortionTextureRepetitionHalfResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>10</containerEntry>
+        </property>
+        <property name="hazeIntensityHalfResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.85</containerEntry>
+        </property>
+        <property name="hazeStartDistanceHalfResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>250</containerEntry>
+        </property>
+        <property name="hazeEndDistanceHalfResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1100</containerEntry>
+        </property>
+        <property name="hazeRangeAttenuationHalfResolution" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>400</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWaterRippleViewport" classVersion="0" classID="0x50" addr="0x939BAE0" id="0x226E9">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWaterRippleViewport0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="rippleTextureName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>WaterRipple</containerEntry>
+        </property>
+        <property name="viewportWidth" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>512</containerEntry>
+        </property>
+        <property name="ripplePower" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>20</containerEntry>
+        </property>
+        <property name="debugView" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppFloorRainSplashData" classVersion="1" classID="0x88" addr="0x939BB50" id="0x226EB">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppFloorRainSplashData</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="vfxFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/rain/fx_tpp_rinspl01_s1MG.vfx</containerEntry>
+        </property>
+        <property name="materialSoundList" type="String" container="StringMap" arraySize="54">
+          <containerEntry key="MTR_CLOT_A">
+            <data>sfx_f_rain_CLOT_A</data>
+          </containerEntry>
+          <containerEntry key="MTR_CLOT_B">
+            <data>sfx_f_rain_CLOT_B</data>
+          </containerEntry>
+          <containerEntry key="MTR_CLOT_C">
+            <data>sfx_f_rain_CLOT_C</data>
+          </containerEntry>
+          <containerEntry key="MTR_CONC_A">
+            <data>sfx_f_rain_CONC</data>
+          </containerEntry>
+          <containerEntry key="MTR_CONC_B">
+            <data>sfx_f_rain_CONC</data>
+          </containerEntry>
+          <containerEntry key="MTR_FENC_A">
+            <data>sfx_f_rain_FENC_A</data>
+          </containerEntry>
+          <containerEntry key="MTR_FENC_B">
+            <data>sfx_f_rain_FENC_B</data>
+          </containerEntry>
+          <containerEntry key="MTR_GRAV_A">
+            <data>sfx_f_rain_GRAV</data>
+          </containerEntry>
+          <containerEntry key="MTR_IRON_A">
+            <data>sfx_f_rain_IRON_A</data>
+          </containerEntry>
+          <containerEntry key="MTR_IRON_B">
+            <data>sfx_f_rain_IRON_B</data>
+          </containerEntry>
+          <containerEntry key="MTR_IRON_C">
+            <data>sfx_f_rain_IRON_C</data>
+          </containerEntry>
+          <containerEntry key="MTR_IRON_D">
+            <data>sfx_f_rain_IRON_D</data>
+          </containerEntry>
+          <containerEntry key="MTR_PAPE_A">
+            <data>sfx_f_rain_PAPE</data>
+          </containerEntry>
+          <containerEntry key="MTR_PAPE_B">
+            <data>sfx_f_rain_PAPE</data>
+          </containerEntry>
+          <containerEntry key="MTR_ROCK_A">
+            <data>sfx_f_rain_ROCK</data>
+          </containerEntry>
+          <containerEntry key="MTR_ROCK_B">
+            <data>sfx_f_rain_ROCK</data>
+          </containerEntry>
+          <containerEntry key="MTR_PAPE_C">
+            <data>sfx_f_rain_PAPE</data>
+          </containerEntry>
+          <containerEntry key="MTR_PIPE_A">
+            <data>sfx_f_rain_PIPE_A</data>
+          </containerEntry>
+          <containerEntry key="MTR_PIPE_B">
+            <data>sfx_f_rain_PIPE_B</data>
+          </containerEntry>
+          <containerEntry key="MTR_RUBB_A">
+            <data>sfx_f_rain_RUBB</data>
+          </containerEntry>
+          <containerEntry key="MTR_RUST_A">
+            <data>sfx_f_rain_RUST</data>
+          </containerEntry>
+          <containerEntry key="MTR_RUST_B">
+            <data>sfx_f_rain_RUST</data>
+          </containerEntry>
+          <containerEntry key="MTR_SOIL_A">
+            <data>sfx_f_rain_SOIL</data>
+          </containerEntry>
+          <containerEntry key="MTR_SOIL_B">
+            <data>sfx_f_rain_SOIL</data>
+          </containerEntry>
+          <containerEntry key="MTR_SOIL_C">
+            <data>sfx_f_rain_SOIL</data>
+          </containerEntry>
+          <containerEntry key="MTR_TIN_A">
+            <data>sfx_f_rain_TIN</data>
+          </containerEntry>
+          <containerEntry key="MTR_TLRF_A">
+            <data>sfx_f_rain_TLRF</data>
+          </containerEntry>
+          <containerEntry key="MTR_TURF_A">
+            <data>sfx_f_rain_SOIL</data>
+          </containerEntry>
+          <containerEntry key="MTR_VINL_A">
+            <data>sfx_f_rain_VINL</data>
+          </containerEntry>
+          <containerEntry key="MTR_WATE_A">
+            <data>sfx_f_rain_WATE</data>
+          </containerEntry>
+          <containerEntry key="MTR_WATE_B">
+            <data>sfx_f_rain_WATE</data>
+          </containerEntry>
+          <containerEntry key="MTR_WOOD_A">
+            <data>sfx_f_rain_WOOD_D</data>
+          </containerEntry>
+          <containerEntry key="MTR_WOOD_B">
+            <data>sfx_f_rain_WOOD_D</data>
+          </containerEntry>
+          <containerEntry key="MTR_WOOD_C">
+            <data>sfx_f_rain_WOOD_C</data>
+          </containerEntry>
+          <containerEntry key="MTR_WOOD_D">
+            <data>sfx_f_rain_WOOD_D</data>
+          </containerEntry>
+          <containerEntry key="MTR_FWOD_A">
+            <data>sfx_f_rain_WOOD_D</data>
+          </containerEntry>
+          <containerEntry key="MTR_GRAS_A">
+            <data>sfx_f_rain_GRAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_GRAS_B">
+            <data>sfx_f_rain_GRAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_GRAS_C">
+            <data>sfx_f_rain_GRAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_GLAS_A">
+            <data>sfx_f_rain_GLAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_GLAS_B">
+            <data>sfx_f_rain_GLAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_WOOD_G">
+            <data>sfx_f_rain_WOOD_D</data>
+          </containerEntry>
+          <containerEntry key="MTR_PLAS_A">
+            <data>sfx_f_rain_PLAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_PLAS_B">
+            <data>sfx_f_rain_PLAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_TILE_A">
+            <data>sfx_f_rain_TILE</data>
+          </containerEntry>
+          <containerEntry key="MTR_WATE_C">
+            <data>sfx_f_rain_WATE</data>
+          </containerEntry>
+          <containerEntry key="MTR_RLEF">
+            <data>sfx_f_rain_GRAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_LEAF">
+            <data>sfx_f_rain_GRAS</data>
+          </containerEntry>
+          <containerEntry key="MTR_MOSS_A">
+            <data>sfx_f_rain_MOSS</data>
+          </containerEntry>
+          <containerEntry key="MTR_SAND_A">
+            <data>sfx_f_rain_SAND_A</data>
+          </containerEntry>
+          <containerEntry key="MTR_SAND_B">
+            <data>sfx_f_rain_SAND_B</data>
+          </containerEntry>
+          <containerEntry key="MTR_SOIL_R">
+            <data>sfx_f_rain_SOIL</data>
+          </containerEntry>
+          <containerEntry key="MTR_ALRM_A">
+            <data>sfx_f_rain_PIPE_A</data>
+          </containerEntry>
+          <containerEntry key="MTR_BRIC_A">
+            <data>sfx_f_rain_CONC</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppRainFilter" classVersion="2" classID="0xE0" addr="0x939B840" id="0x226ED">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppRainFilter0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="enable" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+        <property name="startFadeInDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="endFadeInDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>4.5</containerEntry>
+        </property>
+        <property name="startFadeOutDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>30</containerEntry>
+        </property>
+        <property name="endFadeOutDistance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>170</containerEntry>
+        </property>
+        <property name="albedoExtinctionRatio" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="roughnessExtinctionCoefficient" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.55</containerEntry>
+        </property>
+        <property name="roughnessEffectiveThreshold" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.2</containerEntry>
+        </property>
+        <property name="LABDiffuseScale" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.7</containerEntry>
+        </property>
+        <property name="LABDiffuseAdd" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="floorTexScale" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.9</containerEntry>
+        </property>
+        <property name="wallTexScale0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.8</containerEntry>
+        </property>
+        <property name="wallTexScale1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.2</containerEntry>
+        </property>
+        <property name="wallTexSpeed" type="Vector4" container="StaticArray" arraySize="1">
+          <containerEntry x="0.03" y="0.3" z="-0.03" w="0.25"></containerEntry>
+        </property>
+        <property name="maskTexScale0" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.04</containerEntry>
+        </property>
+        <property name="maskTexScale1" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.02</containerEntry>
+        </property>
+        <property name="maskTexSpeed" type="Vector4" container="StaticArray" arraySize="1">
+          <containerEntry x="-0.35" y="-0.15" z="-0.03" w="0.05"></containerEntry>
+        </property>
+        <property name="rainColor" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="windScale" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="wallAlphaRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.25</containerEntry>
+        </property>
+        <property name="normalWallTexPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="normalFloorTexPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_rinrip04_sm_bsm.ftex</containerEntry>
+        </property>
+        <property name="reflectionCubeMapTexPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/gr_pic/gr_cub01_sm_cbm.ftex</containerEntry>
+        </property>
+        <property name="maskTexPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWeatherRainData" classVersion="4" classID="0xC8" addr="0x939B8B0" id="0x226EF">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWeatherRainData</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="rainFilter" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="floorRainSplash" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/afgh/block_common/afgh_common_effect.fox2" nameInArchive="TppFloorRainSplashData">0x939BB50</containerEntry>
+        </property>
+        <property name="vfxFileFallRain" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/rain/fx_tpp_rinenvviw03_s0VG.vfx</containerEntry>
+        </property>
+        <property name="vfxFileFallRainSlow" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/rain/fx_tpp_rinenvviwslw01_s0VG.vfx</containerEntry>
+        </property>
+        <property name="vfxFileCameraFog" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/rain/fx_tpp_rinfog03_s0VG.vfx</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppVfxFileLoader" classVersion="2" classID="0xD0" addr="0x939B680" id="0x226F3">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppVfxFileLoader0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="vfxFiles" type="FilePtr" container="StringMap" arraySize="49">
+          <containerEntry key="fx_tpp_chrsndstm01_s1LG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrsndstm01_s1LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdsthndspl21_s0LG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdsthndspl21_s0LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrcqcsmk02_s1">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrcqcsmk02_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdsthnd05_s0">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdsthnd05_s0.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdsthnd06_s0">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdsthnd06_s0.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdsthnd07_s0LG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdsthnd07_s0LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdsthnd12_s0LG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdsthnd12_s0LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdivspl01_s1">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdivspl01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrwstspl01_s1">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrwstspl01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrcqcspl02_s1">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrcqcspl02_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdwnsmk01_s2">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdwnsmk01_s2.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdwnspl01_s2">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdwnspl01_s2.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdsthndspl11_s0LG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdsthndspl11_s0LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrfotpdl01_s0LG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrfotpdl01_s0LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_dstboxsnd01_s1">
+            <data>/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstboxsnd01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrcqcspl03_s1">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrcqcspl03_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrdwnspl02_s2">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrdwnspl02_s2.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrcqcspl04_s1">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrcqcspl04_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_dstgrs01_s2">
+            <data>/Assets/tpp/effect/vfx_data/dust/fx_tpp_dstgrs01_s2.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_flrlns01_s2LG">
+            <data>/Assets/tpp/effect/vfx_data/flare/fx_tpp_flrlns01_s2LG.vfxlf</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrwtrsplcom01_s0">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrwtrsplcom01_s0.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_smkafgsnd02_s5">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkafgsnd02_s5.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_firdrm02lpf_s1LG">
+            <data>/Assets/tpp/effect/vfx_data/fire/fx_tpp_firdrm02lpf_s1LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="WheelSandSmoke">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchwhlsmksnd02_m1.vfx</data>
+          </containerEntry>
+          <containerEntry key="WheelSplash">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchwhlspl01_s0LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="WheelSplashMud">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchwhlsplmud01_s0LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="WheelSplashPuddle">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchwhlsplpdl02_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="BreakExplosionS">
+            <data>/Assets/tpp/effect/vfx_data/explosion/fx_tpp_expmch01_m1LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="FinalExp">
+            <data>/Assets/tpp/effect/vfx_data/explosion/fx_tpp_expfir11_s5.vfx</data>
+          </containerEntry>
+          <containerEntry key="CollisionDebri">
+            <data>/Assets/tpp/effect/vfx_data/spark/fx_tpp_spkcnc01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="CollisionSmoke">
+            <data>/Assets/tpp/effect/vfx_data/spark/fx_tpp_spkdst01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="CollisionSpark">
+            <data>/Assets/tpp/effect/vfx_data/spark/fx_tpp_spkirn01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="VehicleSandstorm">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchsndstm01_s2LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_lgthedamb01_m1MG">
+            <data>/Assets/tpp/effect/vfx_data/light/fx_tpp_lgthedamb01_m1MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_mchextsmk02_s0MG">
+            <data>/Assets/tpp/effect/vfx_data/mecha/fx_tpp_mchextsmk02_s0MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_lgttil00_s0FG">
+            <data>/Assets/tpp/effect/vfx_data/light/fx_tpp_lgttil00_s0FG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_smkmchbrk02_m2LG">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkmchbrk02_m2LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_smkmchbrk01_m1LG">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkmchbrk01_m1LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_brklgtgnt01_s1LG">
+            <data>/Assets/tpp/effect/vfx_data/break/fx_tpp_brklgtgnt01_s1LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="BreakExplosion">
+            <data>/Assets/tpp/effect/vfx_data/explosion/fx_tpp_expmch02_m1LG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_smkdnwobj01_m1">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkdnwobj01_m1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_brkbttl01_s1">
+            <data>/Assets/tpp/effect/vfx_data/break/fx_tpp_brkbttl01_s1.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrfotsmk01_s0MG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrfotsmk01_s0MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrfotsmk02_s5MG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrfotsmk02_s5MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_chrfotsmk03_s5MG">
+            <data>/Assets/tpp/effect/vfx_data/chara/fx_tpp_chrfotsmk03_s5MG.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_wepfltgndsol01_s3">
+            <data>/Assets/tpp/effect/vfx_data/weapon/fx_tpp_wepfltgndsol01_s3.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_brkcmmn01_s2">
+            <data>/Assets/tpp/effect/vfx_data/break/fx_tpp_brkcmmn01_s2.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_smkwmuviw01_s0">
+            <data>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkwmuviw01_s0.vfx</data>
+          </containerEntry>
+          <containerEntry key="fx_tpp_brkantafg04_m1">
+            <data>/Assets/tpp/effect/vfx_data/break/fx_tpp_brkantafg04_m1.vfx</data>
+          </containerEntry>
+        </property>
+        <property name="geoMaterialFiles" type="FilePtr" container="StringMap" arraySize="3">
+          <containerEntry key="fx_default">
+            <data>/Assets/tpp/level/location/afgh/block_common/afgh_common_fx_mtr_def.lua</data>
+          </containerEntry>
+          <containerEntry key="tppef_rainy">
+            <data>/Assets/tpp/level/location/afgh/block_common/afgh_common_fx_mtr_rain.lua</data>
+          </containerEntry>
+          <containerEntry key="tppef_underwater">
+            <data>/Assets/tpp/level/location/afgh/block_common/afgh_common_fx_mtr_underwater.lua</data>
+          </containerEntry>
+        </property>
+        <property name="otherFiles" type="FilePtr" container="StringMap"></property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppDroplets" classVersion="0" classID="0x70" addr="0x939B6F0" id="0x226F5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppDroplets0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="timeBetweenNewDroplets" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.1</containerEntry>
+        </property>
+        <property name="timeBetweenNewBigDroplets" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>5</containerEntry>
+        </property>
+        <property name="timeBetweenTwoNewBigDropletsAtTheSameTime" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>600</containerEntry>
+        </property>
+        <property name="dropletsSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1.5</containerEntry>
+        </property>
+        <property name="dropletsVelocity" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>150</containerEntry>
+        </property>
+        <property name="dropletsTransparency" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="minimumMassToStartMoving" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1.6</containerEntry>
+        </property>
+        <property name="minimumVelocityToAdvance" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.04</containerEntry>
+        </property>
+        <property name="remainingMassPropotionWhenDropletsMove" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.085</containerEntry>
+        </property>
+        <property name="residualWaterMinimumRenderingRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.2</containerEntry>
+        </property>
+        <property name="residualWaterMaximumRenderingRadius" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.75</containerEntry>
+        </property>
+        <property name="residualWaterMaximumIntensity" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.5</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppWeatherParasiteUnitParam" classVersion="0" classID="0x60" addr="0x939B450" id="0x226FF">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppWeatherParasiteUnitParam0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="vfxCameraFront" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/effect/vfx_data/smoke/fx_tpp_smkwmuviw01_s0.vfx</containerEntry>
+        </property>
+        <property name="enableDebugMistRate" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="debugMistRate" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="FxLocatorArrayData" classVersion="0" classID="0x120" addr="0xB3A5A30" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>FxLocatorArrayData0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>134217735</containerEntry>
+        </property>
+        <property name="vfxlbFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/level/location/afgh/block_common/afgh_common_FxLocators.vfxlb</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0xB3A5DB0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x939C4F0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

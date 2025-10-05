@@ -1,0 +1,534 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x32F43E0" id="0x1EF349">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="6">
+          <containerEntry key="Material0000">
+            <data>0x317EC50</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0000">
+            <data>0x32F0FD0</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0001">
+            <data>0x32F10B0</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0002">
+            <data>0x32F1040</data>
+          </containerEntry>
+          <containerEntry key="DecalArray0000">
+            <data>0x32F1350</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x32F1890</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="Material" classVersion="6" classID="0xB0" addr="0x317EC50" id="0x1EF6AE">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>Material0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F43E0</containerEntry>
+        </property>
+        <property name="materialName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="shader" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="diffuseTexture" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/common_source/fmtr/decal/middle_africa/cm_mafr_dc_grnd006/sourceimages/cm_mafr_dc_grnd006_bsm_alp.ftex</containerEntry>
+        </property>
+        <property name="srmTexture" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/common_source/fmtr/decal/middle_africa/cm_mafr_dc_grnd006/sourceimages/cm_mafr_dc_grnd006_srm.ftex</containerEntry>
+        </property>
+        <property name="normalTexture" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/common_source/fmtr/decal/middle_africa/cm_mafr_dc_grnd006/sourceimages/cm_mafr_dc_grnd006_nrm.ftex</containerEntry>
+        </property>
+        <property name="materialMapTexture" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="materialIndex" type="UInt8" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="diffuseColor" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="1" g="1" b="1" a="1"></containerEntry>
+        </property>
+        <property name="specularColor" type="Color" container="StaticArray" arraySize="1">
+          <containerEntry r="0" g="0" b="0" a="0"></containerEntry>
+        </property>
+        <property name="fmtrPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="residentFlag" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x32F0FD0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F43E0</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_grnd001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_grnd001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="10">
+          <containerEntry r11="-0.49173248" r12="-0.0038927367" r13="0.8707381" r14="0" r21="0.002856382" r22="0.9999774" r23="0.006083603" r24="0" r31="-0.87074214" r32="0.0054786624" r33="-0.49171025" r34="0" r41="154.51114" r42="-7.115553" r43="32.438843" r44="1"></containerEntry>
+          <containerEntry r11="-0.66883147" r12="-0.0038936622" r13="-0.7434017" r14="0" r21="-0.0066769198" r22="0.9999774" r23="0.00076966453" r24="0" r31="0.7433819" r32="0.005478415" r33="-0.6688424" r34="0" r41="142.13835" r42="-7.115553" r43="26.883753" r44="1"></containerEntry>
+          <containerEntry r11="0.6057193" r12="-0.003892546" r13="0.795668" r14="0" r21="0.0067163543" r22="0.9999774" r23="-0.0002208997" r24="0" r31="-0.7956492" r32="0.0054778" r33="0.60573184" r34="0" r41="190.68872" r42="-7.204641" r43="47.12164" r44="1"></containerEntry>
+          <containerEntry r11="0.9449199" r12="-0.0038929582" r13="0.32727826" r14="0" r21="0.005471332" r22="0.9999774" r23="-0.003902175" r24="0" r31="-0.32725567" r32="0.0054778936" r33="0.9449198" r34="0" r41="205.00803" r42="-7.11301" r43="64.31762" r44="1"></containerEntry>
+          <containerEntry r11="0.22350268" r12="-0.0038931475" r13="-0.9746941" r14="0" r21="-0.0044688005" r22="0.9999774" r23="-0.0050188396" r24="0" r31="0.97469157" r32="0.0054774387" r33="0.22348022" r34="0" r41="183.53114" r42="-7.230236" r43="41.509468" r44="1"></containerEntry>
+          <containerEntry r11="0.5744319" r12="-0.0038936762" r13="-0.81854254" r14="0" r21="-0.0022469494" r22="0.9999774" r23="-0.006333575" r24="0" r31="0.81854874" r32="0.00547743" r33="0.57441014" r34="0" r41="168.22147" r42="-7.178957" r43="23.23981" r44="1"></containerEntry>
+          <containerEntry r11="-0.7944228" r12="-0.0038934113" r13="0.60735047" r14="0" r21="0.0002334034" r22="0.99997747" r23="0.006715631" r24="0" r31="-0.60736287" r32="0.0054768175" r33="-0.794404" r34="0" r41="208.20906" r42="-7.069512" r43="14.028448" r44="1"></containerEntry>
+          <containerEntry r11="-0.77860355" r12="-0.0038934317" r13="-0.627502" r14="0" r21="-0.0064685377" r22="0.9999774" r23="0.0018216512" r24="0" r31="0.6274808" r32="0.0054773698" r33="-0.7786111" r34="0" r41="226.36414" r42="-7.16264" r43="11.731066" r44="1"></containerEntry>
+          <containerEntry r11="-0.77860355" r12="-0.0038934317" r13="-0.627502" r14="0" r21="-0.0064685377" r22="0.9999774" r23="0.0018216512" r24="0" r31="0.6274808" r32="0.0054773698" r33="-0.7786111" r34="0" r41="217.991" r42="-7.251811" r43="11.731066" r44="1"></containerEntry>
+          <containerEntry r11="0.5268518" r12="0.0048086643" r13="-0.8499433" r14="0" r21="0.052274987" r22="0.99790764" r23="0.03804929" r24="0" r31="0.8483478" r32="-0.06447712" r33="0.52549803" r34="0" r41="185.0793" r42="-6.987886" r43="110.29136" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="10">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x32F10B0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F43E0</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="81">
+          <containerEntry r11="0.98341614" r12="0.0034537436" r13="-0.18133046" r14="0" r21="0.0035811877" r22="0.9992539" r23="0.03845445" r24="0" r31="0.18132798" r32="-0.038466103" r33="0.98267007" r34="0" r41="190.60773" r42="-7.159" r43="16.098606" r44="1"></containerEntry>
+          <containerEntry r11="0.3735904" r12="0" r13="0.9275925" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.9275925" r32="0" r33="0.3735904" r34="0" r41="226.99435" r42="-7.315988" r43="33.032825" r44="1"></containerEntry>
+          <containerEntry r11="0.87513375" r12="-0.040155325" r13="0.48221192" r14="0" r21="0.07192573" r22="0.99627495" r23="-0.047570094" r24="0" r31="-0.47850546" r32="0.07631365" r33="0.87476206" r34="0" r41="203.62492" r42="-7.313202" r43="99.5196" r44="1"></containerEntry>
+          <containerEntry r11="0.7533545" r12="0.047000762" r13="0.65593266" r14="0" r21="0.02944285" r22="0.9940317" r23="-0.105042964" r24="0" r31="-0.656955" r32="0.098447114" r33="0.74747443" r34="0" r41="181.54158" r42="-7.486174" r43="112.87038" r44="1"></containerEntry>
+          <containerEntry r11="0.540535" r12="0.0086053535" r13="0.84127617" r14="0" r21="0.035262726" r22="0.99883723" r23="-0.032873835" r24="0" r31="-0.8405808" r32="0.047435183" r33="0.539603" r34="0" r41="168.2364" r42="-7.436945" r43="82.425995" r44="1"></containerEntry>
+          <containerEntry r11="-0.46669942" r12="0.003737865" r13="0.88440657" r14="0" r21="0.029290142" r22="0.99950784" r23="0.0112320455" r24="0" r31="-0.8839294" r32="0.031146422" r33="-0.4665792" r34="0" r41="245.34485" r42="-7.359557" r43="78.53699" r44="1"></containerEntry>
+          <containerEntry r11="-0.56434524" r12="-0.0072444025" r13="-0.8255026" r14="0" r21="0.03526368" r22="0.99883723" r23="-0.03287323" r24="0" r31="0.8247809" r32="-0.047662303" r33="-0.5634335" r34="0" r41="163.51251" r42="-7.533527" r43="62.804977" r44="1"></containerEntry>
+          <containerEntry r11="-0.9982384" r12="-0.014403348" r13="0.057414167" r14="0" r21="-0.009436234" r22="0.9962622" r23="0.08586388" r24="0" r31="-0.058436297" r32="0.08517154" r33="-0.99464303" r34="0" r41="137.13588" r42="-7.118158" r43="31.4425" r44="1"></containerEntry>
+          <containerEntry r11="0.842923" r12="0.003083738" r13="0.5380245" r14="0" r21="-0.015813967" r22="0.9996935" r23="0.01904583" r24="0" r31="-0.53780085" r32="-0.024562486" r33="0.8427134" r34="0" r41="177.9522" r42="-7.495868" r43="32.531723" r44="1"></containerEntry>
+          <containerEntry r11="-0.8753852" r12="0.05003076" r13="0.48082754" r14="0" r21="0.0516105" r22="0.99861777" r23="-0.009946336" r24="0" r31="-0.48066053" r32="0.016108878" r33="-0.8767573" r34="0" r41="144.83025" r42="-7.191336" r43="123.414116" r44="1"></containerEntry>
+          <containerEntry r11="-0.848727" r12="0.002359342" r13="0.528827" r14="0" r21="-0.006824093" r22="0.99985796" r23="-0.015412974" r24="0" r31="-0.52878827" r32="-0.016690163" r33="-0.8485903" r34="0" r41="137.96817" r42="-7.229845" r43="123.339966" r44="1"></containerEntry>
+          <containerEntry r11="-0.13339815" r12="0.044347417" r13="0.9900687" r14="0" r21="-0.022179585" r22="0.9986145" r23="-0.047718577" r24="0" r31="-0.99081314" r32="-0.028324962" r33="-0.13222975" r34="0" r41="133.85321" r42="-7.306269" r43="126.121086" r44="1"></containerEntry>
+          <containerEntry r11="-0.018412685" r12="-0.047870208" r13="0.9986836" r14="0" r21="0.024608295" r22="0.99852884" r23="0.048316486" r24="0" r31="-0.99952734" r32="0.025465555" r33="-0.017207623" r34="0" r41="129.2392" r42="-7.206717" r43="106.07614" r44="1"></containerEntry>
+          <containerEntry r11="-0.8631516" r12="0.01029961" r13="0.5048378" r14="0" r21="0.038924128" r22="0.9981742" r23="0.046186414" r24="0" r31="-0.5034403" r32="0.059516307" r33="-0.86197656" r34="0" r41="129.34999" r42="-7.1614" r43="99.48361" r44="1"></containerEntry>
+          <containerEntry r11="-0.8631209" r12="0.011527717" r13="0.5048677" r14="0" r21="0.032567278" r22="0.99892896" r23="0.03286822" r24="0" r31="-0.5039481" r32="0.044811375" r33="-0.8625719" r34="0" r41="147.18848" r42="-7.230436" r43="68.07486" r44="1"></containerEntry>
+          <containerEntry r11="-0.9314943" r12="0.011528035" r13="-0.36357507" r14="0" r21="-0.0055665104" r22="0.9989289" r23="0.04593511" r24="0" r31="0.3637152" r32="0.044812106" r33="-0.9304324" r34="0" r41="142.39761" r42="-7.163027" r43="67.09273" r44="1"></containerEntry>
+          <containerEntry r11="-0.8212719" r12="0.0014057793" r13="0.5705257" r14="0" r21="0.046609778" r22="0.9968196" r23="0.06463887" r24="0" r31="-0.5686204" r32="0.079678595" r33="-0.81872547" r34="0" r41="131.3042" r42="-7.145729" r43="66.825386" r44="1"></containerEntry>
+          <containerEntry r11="-0.8446954" r12="-0.013312821" r13="0.535075" r14="0" r21="0.012318143" r22="0.9989423" r23="0.04429999" r24="0" r31="-0.53509885" r32="0.044011302" r33="-0.84363794" r34="0" r41="137.90067" r42="-7.107373" r43="65.33751" r44="1"></containerEntry>
+          <containerEntry r11="-0.98323345" r12="0.049059905" r13="0.17560177" r14="0" r21="0.035894886" r22="0.99635535" r23="-0.07737878" r24="0" r31="-0.17875798" r32="-0.06977853" r33="-0.9814109" r34="0" r41="136.2454" r42="-7.136158" r43="59.03848" r44="1"></containerEntry>
+          <containerEntry r11="0.99973863" r12="-0.022288058" r13="0.005095435" r14="0" r21="0.022736493" r22="0.99261844" r23="-0.11912876" r24="0" r31="-0.002402668" r32="0.11921348" r33="0.99286574" r34="0" r41="130.44896" r42="-7.025194" r43="56.542088" r44="1"></containerEntry>
+          <containerEntry r11="-0.92385125" r12="0.0023600778" r13="0.38274053" r14="0" r21="-0.0042077955" r22="0.99985796" r23="-0.016322078" r24="0" r31="-0.38272467" r32="-0.016689694" r33="-0.92371005" r34="0" r41="145.9156" r42="-7.298576" r43="120.03919" r44="1"></containerEntry>
+          <containerEntry r11="0.03001796" r12="-0.0072146542" r13="-0.9995208" r14="0" r21="-0.023454359" r22="0.9996936" r23="-0.007920211" r24="0" r31="0.99927163" r32="0.023680909" r33="0.029839575" r34="0" r41="136.4596" r42="-7.384276" r43="46.39206" r44="1"></containerEntry>
+          <containerEntry r11="-0.99606663" r12="-0.0072151404" r13="-0.08827148" r14="0" r21="-0.009275492" r22="0.99969345" r23="0.022953162" r24="0" r31="0.088078804" r32="0.023681724" r33="-0.9958283" r34="0" r41="135.5739" r42="-7.329343" r43="40.966377" r44="1"></containerEntry>
+          <containerEntry r11="0.9569266" r12="0.06326834" r13="0.28335178" r14="0" r21="-0.061318975" r22="0.9979939" r23="-0.015753051" r24="0" r31="-0.28378004" r32="-0.0023004063" r33="0.95888644" r34="0" r41="147.48433" r42="-7.3844395" r43="35.776123" r44="1"></containerEntry>
+          <containerEntry r11="-0.9914708" r12="0.06326917" r13="0.11385699" r14="0" r21="0.06259304" r22="0.9979938" r23="-0.009507189" r24="0" r31="-0.11423009" r32="-0.002299502" r33="-0.99344194" r34="0" r41="152.88676" r42="-7.424544" r43="36.693413" r44="1"></containerEntry>
+          <containerEntry r11="-0.7772839" r12="0.03003386" r13="0.6284331" r14="0" r21="0.005313508" r22="0.99913764" r23="-0.041178387" r24="0" r31="-0.629128" r32="-0.028668102" r33="-0.7767732" r34="0" r41="149.62448" r42="-7.1983895" r43="27.964405" r44="1"></containerEntry>
+          <containerEntry r11="0.97504354" r12="0.030032732" r13="0.21997267" r14="0" r21="-0.035596453" r22="0.9991377" r23="0.021371877" r24="0" r31="-0.21914113" r32="-0.028668793" r33="0.97527176" r34="0" r41="138.29427" r42="-7.473689" r43="22.506882" r44="1"></containerEntry>
+          <containerEntry r11="1" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="158.32292" r42="-7.44659" r43="18.519276" r44="1"></containerEntry>
+          <containerEntry r11="-0.58609694" r12="-0.016729541" r13="0.8100673" r14="0" r21="0.048527792" r22="0.9972672" r23="0.05570627" r24="0" r31="-0.8087854" r32="0.07196111" r33="-0.5836833" r34="0" r41="133.24074" r42="-7.392193" r43="23.214174" r44="1"></containerEntry>
+          <containerEntry r11="0.62805754" r12="0.028784968" r13="-0.7776342" r14="0" r21="-0.045518823" r22="0.9989635" r23="0.00021436438" r24="0" r31="0.7768343" r32="0.035262372" r33="0.62871677" r34="0" r41="133.00436" r42="-7.397208" r43="5.095434" r44="1"></containerEntry>
+          <containerEntry r11="-0.98782015" r12="-0.016730865" r13="-0.15463537" r14="0" r21="-0.027617643" r22="0.99726707" r23="0.06852468" r24="0" r31="0.15306628" r32="0.07196141" r33="-0.98558253" r34="0" r41="138.95389" r42="-7.355926" r43="7.110126" r44="1"></containerEntry>
+          <containerEntry r11="-0.8318178" r12="-0.023149481" r13="0.5545469" r14="0" r21="-0.02132179" r22="0.99972516" r23="0.009750338" r24="0" r31="-0.5546202" r32="-0.003713393" r33="-0.83208275" r34="0" r41="145.99702" r42="-7.3958416" r43="6.4719753" r44="1"></containerEntry>
+          <containerEntry r11="-0.5907835" r12="0.031934" r13="-0.8061912" r14="0" r21="0.014293033" r22="0.99947387" r23="0.029115865" r24="0" r31="0.8066968" r32="0.0056783725" r33="-0.5909291" r34="0" r41="148.62125" r42="-7.285903" r43="1.7136959" r44="1"></containerEntry>
+          <containerEntry r11="0.99869335" r12="-0.0034579951" r13="0.05098663" r14="0" r21="0.0074141957" r22="0.9969563" r23="-0.07760925" r24="0" r31="-0.05056307" r32="0.07788586" r33="0.9956792" r34="0" r41="180.73856" r42="-7.518794" r43="124.04353" r44="1"></containerEntry>
+          <containerEntry r11="-0.36174357" r12="0.044017047" r13="0.9312351" r14="0" r21="0.007478889" r22="0.99898964" r23="-0.044314303" r24="0" r31="-0.9322448" r32="-0.009065915" r33="-0.36170727" r34="0" r41="184.58751" r42="-7.410451" r43="109.3937" r44="1"></containerEntry>
+          <containerEntry r11="0.9985626" r12="0.016528983" r13="0.05098637" r14="0" r21="-0.012538806" r22="0.99690497" r23="-0.077609845" r24="0" r31="-0.052111376" r32="0.076858975" r33="0.99567926" r34="0" r41="196.1569" r42="-7.332936" r43="119.32364" r44="1"></containerEntry>
+          <containerEntry r11="0.7799667" r12="0.018172905" r13="0.62555665" r14="0" r21="0.023083404" r22="0.9980627" r23="-0.057775635" r24="0" r31="-0.62539464" r32="0.059503052" r33="0.7780362" r34="0" r41="190.28432" r42="-7.435465" r43="125.67222" r44="1"></containerEntry>
+          <containerEntry r11="0.8977504" r12="0.018173127" r13="0.4401294" r14="0" r21="0.009909149" r22="0.9980627" r23="-0.061422504" r24="0" r31="-0.44039297" r32="0.059503384" r33="0.89583105" r34="0" r41="187.23001" r42="-7.277331" r43="123.00443" r44="1"></containerEntry>
+          <containerEntry r11="0.9971871" r12="0.015495457" r13="0.07333322" r14="0" r21="-0.013301056" r22="0.9994518" r23="-0.03031805" r24="0" r31="-0.073762804" r32="0.029257359" r33="0.99684656" r34="0" r41="202.23726" r42="-7.3350797" r43="106.927795" r44="1"></containerEntry>
+          <containerEntry r11="0.45374358" r12="-0.045614667" r13="-0.88996285" r14="0" r21="-0.08186475" r22="0.99233234" r23="-0.09259966" r24="0" r31="0.8873628" r32="0.114873126" r33="0.44653022" r34="0" r41="191.24182" r42="-7.115314" r43="76.5061" r44="1"></containerEntry>
+          <containerEntry r11="0.5348683" r12="0.056789827" r13="-0.84302473" r14="0" r21="-0.09895496" r22="0.9950828" r23="0.004249841" r24="0" r31="0.83912075" r32="0.08114839" r33="0.5378579" r34="0" r41="196.26982" r42="-7.320115" r43="72.27238" r44="1"></containerEntry>
+          <containerEntry r11="0.842923" r12="0.003083738" r13="0.5380245" r14="0" r21="-0.015813967" r22="0.9996935" r23="0.01904583" r24="0" r31="-0.53780085" r32="-0.024562486" r33="0.8427134" r34="0" r41="179.4559" r42="-7.422209" r43="28.215794" r44="1"></containerEntry>
+          <containerEntry r11="-0.99568826" r12="0.0030846726" r13="-0.09262062" r14="0" r21="0.005345596" r22="0.9996935" r23="-0.024172327" r24="0" r31="0.09251767" r32="-0.024563419" r33="-0.99539953" r34="0" r41="174.23682" r42="-7.487428" r43="24.28401" r44="1"></containerEntry>
+          <containerEntry r11="0.3085197" r12="-0.04995639" r13="0.9499031" r14="0" r21="0.04792227" r22="0.9981682" r23="0.036929984" r24="0" r31="-0.95000786" r32="0.03412809" r33="0.31034857" r34="0" r41="183.40822" r42="-7.417987" r43="33.294422" r44="1"></containerEntry>
+          <containerEntry r11="0.55593926" r12="-0.015784826" r13="0.83107144" r14="0" r21="0.01688534" r22="0.99982786" r23="0.007694753" r24="0" r31="-0.83104986" r32="0.009755161" r33="0.55611014" r34="0" r41="181.34201" r42="-7.279931" r43="30.07955" r44="1"></containerEntry>
+          <containerEntry r11="0.4812639" r12="-0.031749886" r13="0.87600005" r14="0" r21="0.075522944" r22="0.9971297" r23="-0.0053512305" r24="0" r31="-0.8733158" r32="0.068733506" r33="0.48228037" r34="0" r41="171.29193" r42="-7.63878" r43="52.069878" r44="1"></containerEntry>
+          <containerEntry r11="0.96188504" r12="0.026265236" r13="0.27218994" r14="0" r21="-0.030998996" r22="0.9994335" r23="0.013105235" r24="0" r31="-0.27169153" r32="-0.021043342" r33="0.9621543" r34="0" r41="186.46019" r42="-7.30325" r43="12.967226" r44="1"></containerEntry>
+          <containerEntry r11="0.88680625" r12="0" r13="0.46214125" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.46214125" r32="0" r33="0.88680625" r34="0" r41="186.33096" r42="-7.534735" r43="3.422027" r44="1"></containerEntry>
+          <containerEntry r11="0.98982435" r12="0" r13="-0.14229451" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.14229451" r32="0" r33="0.98982435" r34="0" r41="190.63956" r42="-7.534735" r43="4.101022" r44="1"></containerEntry>
+          <containerEntry r11="-0.78348804" r12="0" r13="-0.6214016" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.6214016" r32="0" r33="-0.78348804" r34="0" r41="195.97476" r42="-7.298808" r43="7.154795" r44="1"></containerEntry>
+          <containerEntry r11="0.41813195" r12="0" r13="-0.9083857" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.9083857" r32="0" r33="0.41813195" r34="0" r41="195.92593" r42="-7.298808" r43="13.005833" r44="1"></containerEntry>
+          <containerEntry r11="0.9990114" r12="0" r13="-0.044455018" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.044455018" r32="0" r33="0.9990114" r34="0" r41="208.98267" r42="-7.222769" r43="64.02346" r44="1"></containerEntry>
+          <containerEntry r11="-0.9070655" r12="0" r13="0.42097852" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.42097852" r32="0" r33="-0.9070655" r34="0" r41="213.67288" r42="-7.222769" r43="65.7096" r44="1"></containerEntry>
+          <containerEntry r11="0.3735904" r12="0" r13="0.9275925" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.9275925" r32="0" r33="0.3735904" r34="0" r41="233.92577" r42="-7.359311" r43="28.353662" r44="1"></containerEntry>
+          <containerEntry r11="-0.9142513" r12="0" r13="0.40514323" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.40514323" r32="0" r33="-0.9142513" r34="0" r41="229.46689" r42="-7.359311" r43="25.769365" r44="1"></containerEntry>
+          <containerEntry r11="-0.74183583" r12="0.02962792" r13="0.66992253" r14="0" r21="4.917383e-07" r22="0.9990235" r23="-0.044182085" r24="0" r31="-0.67057735" r32="-0.032775648" r33="-0.74111146" r34="0" r41="226.75554" r42="-7.217937" r43="49.750107" r44="1"></containerEntry>
+          <containerEntry r11="0.80813074" r12="0.0722953" r13="0.5845489" r14="0" r21="-0.10808549" r22="0.9937878" r23="0.026517801" r24="0" r31="-0.5790004" r32="-0.084611215" r33="0.8109246" r34="0" r41="240.84549" r42="-7.305" r43="23.658798" r44="1"></containerEntry>
+          <containerEntry r11="-0.8341119" r12="-0.030022576" r13="0.5507743" r14="0" r21="-0.09153877" r22="0.992206" r23="-0.08454482" r24="0" r31="-0.54394335" r32="-0.12093726" r33="-0.8303591" r34="0" r41="240.17902" r42="-7.135828" r43="38.0117" r44="1"></containerEntry>
+          <containerEntry r11="0.95534915" r12="0" r13="-0.2954793" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.2954793" r32="0" r33="0.95534915" r34="0" r41="232.23921" r42="-7.358804" r43="14.768185" r44="1"></containerEntry>
+          <containerEntry r11="-0.7118011" r12="0.09784034" r13="0.6955224" r14="0" r21="0.108247444" r22="0.9937008" r23="-0.029003335" r24="0" r31="-0.6939789" r32="0.05464404" r33="-0.71790826" r34="0" r41="221.077" r42="-6.961473" r43="74.35022" r44="1"></containerEntry>
+          <containerEntry r11="-0.91600794" r12="0.0037372995" r13="-0.40114117" r14="0" r21="-0.00907291" r22="0.99950784" r23="0.030030126" r24="0" r31="0.401056" r32="0.03114737" r33="-0.9155232" r34="0" r41="239.83969" r42="-7.337092" r43="76.126144" r44="1"></containerEntry>
+          <containerEntry r11="-0.91600794" r12="0.0037372995" r13="-0.40114117" r14="0" r21="-0.00907291" r22="0.99950784" r23="0.030030126" r24="0" r31="0.401056" r32="0.03114737" r33="-0.9155232" r34="0" r41="237.63466" r42="-7.316444" r43="71.43398" r44="1"></containerEntry>
+          <containerEntry r11="0.999972" r12="0.003737531" r13="0.0064884997" r14="0" r21="-0.0035335312" r22="0.9995078" r23="-0.03117188" r24="0" r31="-0.006601812" r32="0.03114808" r33="0.999493" r34="0" r41="249.1897" r42="-7.298059" r43="66.43092" r44="1"></containerEntry>
+          <containerEntry r11="0.97076684" r12="0.003737503" r13="0.23999506" r14="0" r21="0.0038486675" r22="0.99950784" r23="-0.031133179" r24="0" r31="-0.2399933" r32="0.03114672" r33="0.9702747" r34="0" r41="246.97758" r42="-7.419284" r43="71.93358" r44="1"></containerEntry>
+          <containerEntry r11="0.7680034" r12="0.0037383158" r13="-0.6404346" r14="0" r21="-0.022817884" r22="0.99950784" r23="-0.021528702" r24="0" r31="0.64003897" r32="0.031147484" r33="0.7677107" r34="0" r41="253.26334" r42="-7.513115" r43="52.43288" r44="1"></containerEntry>
+          <containerEntry r11="-0.37880838" r12="-0.02290914" r13="0.92519146" r14="0" r21="0.026733803" r22="0.9990055" r23="0.03568272" r24="0" r31="-0.9250888" r32="0.0382508" r33="-0.37781924" r34="0" r41="246.61206" r42="-7.211988" r43="53.49335" r44="1"></containerEntry>
+          <containerEntry r11="-0.7043552" r12="-0.081952564" r13="0.70510244" r14="0" r21="-0.023778833" r22="0.99547976" r23="0.091948956" r24="0" r31="-0.7094507" r32="0.047999125" r33="-0.70312" r34="0" r41="235.02386" r42="-7.2983127" r43="60.584972" r44="1"></containerEntry>
+          <containerEntry r11="-0.55944586" r12="-0.0089062955" r13="0.8288199" r14="0" r21="0.040864237" r22="0.99842995" r23="0.038311854" r24="0" r31="-0.82785976" r32="0.055302456" r33="-0.5582035" r34="0" r41="201.33669" r42="-7.283396" r43="93.74962" r44="1"></containerEntry>
+          <containerEntry r11="0.9561026" r12="0.018172473" r13="-0.2924681" r14="0" r21="-0.03475535" r22="0.9980627" r23="-0.051603675" r24="0" r31="0.29096374" r32="0.059503235" r33="0.95488197" r34="0" r41="198.48888" r42="-7.19654" r43="117.2229" r44="1"></containerEntry>
+          <containerEntry r11="0.9268743" r12="0.013113625" r13="-0.37514243" r14="0" r21="-0.015107727" r22="0.99988306" r23="-0.002374745" r24="0" r31="0.37506738" r32="0.0078686485" r33="0.92696404" r34="0" r41="209.23909" r42="-7.294056" r43="123.098305" r44="1"></containerEntry>
+          <containerEntry r11="0.904644" r12="-0.02197436" r13="-0.42560092" r14="0" r21="-0.015216077" r22="0.9963675" r23="-0.08378658" r24="0" r31="0.42589608" r32="0.08227301" r33="0.90102357" r34="0" r41="224.10959" r42="-7.170898" r43="112.16136" r44="1"></containerEntry>
+          <containerEntry r11="0.90464383" r12="0.015957516" r13="-0.42586887" r14="0" r21="-0.015215611" r22="0.999871" r23="0.005144178" r24="0" r31="0.42589605" r32="0.0018262265" r33="0.90476996" r34="0" r41="209.72112" r42="-7.372092" r43="116.48881" r44="1"></containerEntry>
+          <containerEntry r11="0.9572479" r12="-0.0034571672" r13="-0.2892481" r14="0" r21="-0.019229561" r22="0.9969562" r23="-0.07555491" r24="0" r31="0.28862888" r32="0.077886894" r33="0.9542678" r34="0" r41="171.97104" r42="-7.545653" r43="120.647766" r44="1"></containerEntry>
+          <containerEntry r11="-0.7683632" r12="0.00987248" r13="0.6399337" r14="0" r21="0.010893303" r22="0.9999379" r23="-0.002346842" r24="0" r31="-0.63991714" r32="0.005167769" r33="-0.768423" r34="0" r41="223.49493" r42="-7.315427" r43="119.73877" r44="1"></containerEntry>
+          <containerEntry r11="0.9516566" r12="0.003736977" r13="-0.30714113" r14="0" r21="-0.013121497" r22="0.9995078" r23="-0.02849506" r24="0" r31="0.30688345" r32="0.031147668" r33="0.9512372" r34="0" r41="253.79265" r42="-7.298059" r43="62.43774" r44="1"></containerEntry>
+          <containerEntry r11="-0.18790886" r12="0.0073639452" r13="-0.98215264" r14="0" r21="-0.04249891" r22="0.9989744" r23="0.015621294" r24="0" r31="0.98126036" r32="0.044676106" r33="-0.18740314" r34="0" r41="223.40169" r42="-7.336377" r43="53.116047" r44="1"></containerEntry>
+          <containerEntry r11="0.55593926" r12="-0.015784826" r13="0.83107144" r14="0" r21="0.01688534" r22="0.99982786" r23="0.007694753" r24="0" r31="-0.83104986" r32="0.009755161" r33="0.55611014" r34="0" r41="184.44627" r42="-7.400536" r43="36.764122" r44="1"></containerEntry>
+          <containerEntry r11="-0.98642373" r12="-0.040705256" r13="-0.15909436" r14="0" r21="-0.035444602" r22="0.99873143" r23="-0.03576629" r24="0" r31="0.16034842" r32="-0.029641682" r33="-0.9866151" r34="0" r41="203.52293" r42="-7.411489" r43="13.289387" r44="1"></containerEntry>
+          <containerEntry r11="-0.7065488" r12="-0.0065586846" r13="0.7076294" r14="0" r21="0.045911983" r22="0.99742544" r23="0.055086654" r24="0" r31="-0.70616883" r32="0.07141031" r33="-0.7044287" r34="0" r41="175.26578" r42="-7.352557" r43="63.444073" r44="1"></containerEntry>
+          <containerEntry r11="0.8397994" r12="0" r13="-0.54289633" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.54289633" r32="0" r33="0.8397994" r34="0" r41="210.5078" r42="-7.637512" r43="31.526651" r44="1"></containerEntry>
+          <containerEntry r11="-0.57139343" r12="0.047674738" r13="0.81928897" r14="0" r21="0.075523466" r22="0.9971296" r23="-0.0053512193" r24="0" r31="-0.81719244" r32="0.058817934" r33="-0.5733539" r34="0" r41="199.23972" r42="-7.63878" r43="59.69791" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="81">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x32F1040" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0002</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F43E0</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_rock001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_rock001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="12">
+          <containerEntry r11="-0.24789432" r12="-0.12785473" r13="-0.9603125" r14="0" r21="-0.005156175" r22="0.6940313" r23="-0.091071345" r24="0" r31="0.96875834" r32="-0.02517799" r33="-0.24672234" r34="0" r41="163.53883" r42="-8.321401" r43="105.26574" r44="1"></containerEntry>
+          <containerEntry r11="0.67195356" r12="0.034565173" r13="-0.73978615" r14="0" r21="0.15437265" r22="0.6609792" r23="0.17110091" r24="0" r31="0.7069963" r32="-0.32739234" r33="0.6268735" r34="0" r41="189.54616" r42="-9.380921" r43="105.594246" r44="1"></containerEntry>
+          <containerEntry r11="0.0016006194" r12="-0.089414895" r13="-0.9959933" r14="0" r21="0.119241334" r22="0.6870233" r23="-0.061485592" r24="0" r31="0.98538333" r32="-0.16952163" r33="0.016802311" r34="0" r41="166.29874" r42="-8.806235" r43="95.5901" r44="1"></containerEntry>
+          <containerEntry r11="-0.36425605" r12="0.034341063" r13="0.9306653" r14="0" r21="0.011138032" r22="0.69958246" r23="-0.021454873" r24="0" r31="-0.9311628" r32="0.0036438731" r33="-0.36458522" r34="0" r41="184.96648" r42="-8.85171" r43="84.82236" r44="1"></containerEntry>
+          <containerEntry r11="-0.67065907" r12="-0.045677494" r13="-0.7403572" r14="0" r21="0.098798856" r22="0.6804063" r23="-0.13147657" r24="0" r31="0.72821313" r32="-0.23046072" r33="-0.6454396" r34="0" r41="167.40004" r42="-9.799504" r43="88.53117" r44="1"></containerEntry>
+          <containerEntry r11="0.8470673" r12="-0.027880609" r13="0.53075373" r14="0" r21="0.083765894" r22="0.6880906" r23="-0.097542316" r24="0" r31="-0.51783884" r32="0.18154855" r33="0.8359922" r34="0" r41="166.47647" r42="-9.226071" r43="115.68146" r44="1"></containerEntry>
+          <containerEntry r11="-0.9204563" r12="-0.028724456" r13="0.3897985" r14="0" r21="0.003514669" r22="0.6974412" r23="0.05969431" r24="0" r31="-0.39082316" r32="0.080451116" r33="-0.9169474" r34="0" r41="175.77373" r42="-9.002438" r43="84.37733" r44="1"></containerEntry>
+          <containerEntry r11="0.48925307" r12="-0.0033807158" r13="0.8721351" r14="0" r21="0.04444065" r22="0.69823426" r23="-0.02222382" r24="0" r31="-0.8698278" r32="0.07090191" r33="0.48823357" r34="0" r41="243.56265" r42="-9.257662" r43="32.38738" r44="1"></containerEntry>
+          <containerEntry r11="-0.12184412" r12="-0.098557256" r13="0.98764396" r14="0" r21="0.04138394" r22="0.6947993" r23="0.07443969" r24="0" r31="-0.990787" r32="0.07134662" r33="-0.115112185" r34="0" r41="206.05713" r42="-8.713944" r43="86.387886" r44="1"></containerEntry>
+          <containerEntry r11="0.37277177" r12="-0.071597956" r13="-0.92515683" r14="0" r21="0.0338639" r22="0.69801366" r23="-0.040374618" r24="0" r31="0.92666125" r32="-0.023255559" r33="0.37517768" r34="0" r41="214.73862" r42="-8.443448" r43="78.474625" r44="1"></containerEntry>
+          <containerEntry r11="-0.027112313" r12="0.04881013" r13="-0.9984397" r14="0" r21="-0.11384216" r22="0.6896993" r23="0.036808286" r24="0" r31="0.986314" r32="0.16380364" r33="-0.018775284" r34="0" r41="150.89928" r42="-8.781179" r43="33.554253" r44="1"></containerEntry>
+          <containerEntry r11="-0.3505886" r12="0.09400793" r13="-0.93179834" r14="0" r21="-0.0842119" r22="0.48619947" r23="0.08073674" r24="0" r31="0.9212595" r32="0.21354806" r33="-0.3250788" r34="0" r41="179.08467" r42="-8.31745" r43="38.332634" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="12">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="DecalArray" classVersion="1" classID="0x1C0" addr="0x32F1350" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>DecalArray0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F43E0</containerEntry>
+        </property>
+        <property name="parent" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="transform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="shearTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="pivotTransform" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="children" type="EntityHandle" container="List"></property>
+        <property name="flags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>134217735</containerEntry>
+        </property>
+        <property name="material" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/134/134_133/mafr_134_133_asset.fox2" nameInArchive="Material0000">0x317EC50</containerEntry>
+        </property>
+        <property name="projectionMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="nearClipScale" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.5</containerEntry>
+        </property>
+        <property name="projectionTarget" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="repeatU" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="repeatV" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="transparency" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="polygonDataSource" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+        <property name="drawRejectionDegree" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>90</containerEntry>
+        </property>
+        <property name="decalFlags" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="scales" type="Vector3" container="DynamicArray" arraySize="4">
+          <containerEntry x="7.9999924" y="8" z="7.999992" w="0"></containerEntry>
+          <containerEntry x="7.9999757" y="7.999999" z="7.999975" w="0"></containerEntry>
+          <containerEntry x="3.9999957" y="4" z="3.9999957" w="0"></containerEntry>
+          <containerEntry x="7.9999924" y="8" z="7.999992" w="0"></containerEntry>
+        </property>
+        <property name="rotations" type="Quat" container="DynamicArray" arraySize="4">
+          <containerEntry x="-0.028119009" y="0.866041" z="0.016775995" w="-0.4988994"></containerEntry>
+          <containerEntry x="-0.008058" y="0.231133" z="-0.031736" w="0.97237104"></containerEntry>
+          <containerEntry x="-0.028557973" y="0.86413515" z="-0.016018018" w="0.50219333"></containerEntry>
+          <containerEntry x="-0.028119009" y="0.866041" z="0.016775995" w="-0.4988994"></containerEntry>
+        </property>
+        <property name="translations" type="Vector3" container="DynamicArray" arraySize="4">
+          <containerEntry x="229.80109" y="-6.552952" z="48.196384" w="1"></containerEntry>
+          <containerEntry x="217.99374" y="-7.315364" z="69.73973" w="1"></containerEntry>
+          <containerEntry x="240.11867" y="-6.552952" z="67.36881" w="1"></containerEntry>
+          <containerEntry x="228.89201" y="-6.552952" z="59.412" w="1"></containerEntry>
+        </property>
+        <property name="targets" type="EntityLink" container="DynamicArray" arraySize="1">
+          <containerEntry packagePath="/Assets/tpp/pack/location/mafr/pack_common/mafr_common.fpk" archivePath="/Assets/tpp/level/location/mafr/block_common/mafr_common_terrain.fox2" nameInArchive="TerrainRender0000">0x0</containerEntry>
+        </property>
+        <property name="targetIndices" type="UInt32" container="DynamicArray" arraySize="4">
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="targetStartIndices" type="UInt32" container="DynamicArray" arraySize="5">
+          <containerEntry>0</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>2</containerEntry>
+          <containerEntry>3</containerEntry>
+          <containerEntry>4</containerEntry>
+        </property>
+        <property name="renderingPriorities" type="Int32" container="DynamicArray" arraySize="4">
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x32F1890" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x32F43E0</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

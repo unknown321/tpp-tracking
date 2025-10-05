@@ -1,0 +1,198 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x847A180" id="0x11145AD">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="4">
+          <containerEntry key="SoundAreaGlobal">
+            <data>0x847A260</data>
+          </containerEntry>
+          <containerEntry key="SDF">
+            <data>0x847A340</data>
+          </containerEntry>
+          <containerEntry key="SoundWorld_mtbs">
+            <data>0x847A3B0</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x8ABA6C0</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="SoundAreaGlobal" classVersion="1" classID="0x50" addr="0x847A260" id="0x11145AF">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SoundAreaGlobal</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x847A180</containerEntry>
+        </property>
+        <property name="parameter" type="EntityPtr" container="StaticArray" arraySize="1">
+          <containerEntry>0x847A2D0</containerEntry>
+        </property>
+        <property name="volumeRtpc" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>ambient_volume</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="SoundAreaParameter" classVersion="4" classID="0x68" addr="0x847A2D0" id="0x11145B1">
+      <staticProperties>
+        <property name="owner" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x847A260</containerEntry>
+        </property>
+        <property name="ambientEvent" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>env_mtbs_global</containerEntry>
+        </property>
+        <property name="ambientRtpcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>in_out</containerEntry>
+        </property>
+        <property name="ambientRtpcValue" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>24.5</containerEntry>
+        </property>
+        <property name="objectRtpcName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>in_out</containerEntry>
+        </property>
+        <property name="objectRtpcValue" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>24.5</containerEntry>
+        </property>
+        <property name="auxSends" type="Float" container="StringMap" arraySize="2">
+          <containerEntry key="gen8_ext">
+            <data>1.5</data>
+          </containerEntry>
+          <containerEntry key="gen8_int_m">
+            <data>0.1</data>
+          </containerEntry>
+        </property>
+        <property name="dryVolume" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="SoundPackage" classVersion="1" classID="0x60" addr="0x847A340" id="0x11145B3">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SDF</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x847A180</containerEntry>
+        </property>
+        <property name="soundDataFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/sound/package/env_mtbs.sdf</containerEntry>
+        </property>
+        <property name="syncLoad" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>true</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppSoundWorld" classVersion="8" classID="0x198" addr="0x847A3B0" id="0x11145B5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>SoundWorld_mtbs</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x847A180</containerEntry>
+        </property>
+        <property name="updateSeconds" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="startMorning" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="midMorning" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>7.5</containerEntry>
+        </property>
+        <property name="endMorning" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>9</containerEntry>
+        </property>
+        <property name="startEvening" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>17</containerEntry>
+        </property>
+        <property name="midEvening" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>18</containerEntry>
+        </property>
+        <property name="endEvening" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>19</containerEntry>
+        </property>
+        <property name="situationEvent" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>env_mtbs_situation</containerEntry>
+        </property>
+        <property name="clockRtpc" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>BG_afgh_24hours</containerEntry>
+        </property>
+        <property name="windVelocityRtpc" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>wind_volume</containerEntry>
+        </property>
+        <property name="windDirectionRtpc" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>wind_direction</containerEntry>
+        </property>
+        <property name="rainRtpc" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>rain_volume</containerEntry>
+        </property>
+        <property name="heightRtpc" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>height</containerEntry>
+        </property>
+        <property name="ambientParameter" type="EntityLink" container="StaticArray" arraySize="8">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="categoryFpvStateGroup" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>camera_fps</containerEntry>
+        </property>
+        <property name="categoryFpvStateValue" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>fps</containerEntry>
+        </property>
+        <property name="dashStartEventName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>sfx_p_fastmv_wind_dash_st</containerEntry>
+        </property>
+        <property name="dashFinishEventName" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>sfx_p_fastmv_wind_dash_ed</containerEntry>
+        </property>
+        <property name="blockedObstruction" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.7</containerEntry>
+        </property>
+        <property name="blockedOcclusion" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="unlinkedObstruction" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="unlinkedOcclusion" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>0.2</containerEntry>
+        </property>
+        <property name="interferenceSlope" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>1</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x8ABA6C0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x847A180</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>

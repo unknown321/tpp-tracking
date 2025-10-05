@@ -1,0 +1,820 @@
+<fox formatVersion="2" fileVersion="0">
+  <entities>
+    <entity class="DataSet" classVersion="0" classID="0xE8" addr="0x3334E60" id="0x504CFF">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x0</containerEntry>
+        </property>
+        <property name="dataList" type="EntityPtr" container="StringMap" arraySize="14">
+          <containerEntry key="TppGimmickElectricCableLinkSetData0000">
+            <data>0x317B6F0</data>
+          </containerEntry>
+          <containerEntry key="TppGimmickElectricCableLinkSetData0001">
+            <data>0x317D520</data>
+          </containerEntry>
+          <containerEntry key="cypr_utpl001_vrtn001_gim_i0000|TppSharedGimmickData_cypr_utpl001_vrtn001">
+            <data>0x317DDE0</data>
+          </containerEntry>
+          <containerEntry key="cypr_cabl002_vrtn001_gim_i0000|TppSharedGimmick_cypr_cabl002_vrtn001">
+            <data>0x317E0F0</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0000">
+            <data>0x3333500</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0001">
+            <data>0x3332BD0</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0002">
+            <data>0x3332700</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0003">
+            <data>0x317FDD0</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0004">
+            <data>0x3332620</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0005">
+            <data>0x3332690</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0006">
+            <data>0x3332770</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0007">
+            <data>0x3332930</data>
+          </containerEntry>
+          <containerEntry key="StaticModelArray0008">
+            <data>0x3332F50</data>
+          </containerEntry>
+          <containerEntry key="TexturePackLoadConditioner0000">
+            <data>0x3334680</data>
+          </containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppGimmickElectricCableLinkSetData" classVersion="0" classID="0xB0" addr="0x317B6F0" id="0x504FC5">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppGimmickElectricCableLinkSetData0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="electricCableData" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/130/130_135/mafr_130_135_asset.fox2" nameInArchive="cypr_cabl002_vrtn001_gim_i0000|TppSharedGimmick_cypr_cabl002_vrtn001">0x0</containerEntry>
+        </property>
+        <property name="poleData" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/130/130_135/mafr_130_135_asset.fox2" nameInArchive="cypr_utpl001_vrtn001_gim_i0000|TppSharedGimmickData_cypr_utpl001_vrtn001">0x0</containerEntry>
+        </property>
+        <property name="electricCable" type="String" container="DynamicArray" arraySize="15">
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0001|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0001|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0002|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0002|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0003|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0003|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0004|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0004|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0005|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0005|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0006|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0006|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0000|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0007|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0008|srt_cypr_cabl002_vrtn001</containerEntry>
+        </property>
+        <property name="pole" type="String" container="DynamicArray" arraySize="15">
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0001|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0000|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0001|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0000|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0001|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0000|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0002|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0001|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0002|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0001|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0002|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0001|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0000|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0000|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0000|srt_cypr_utpl001_vrtn001</containerEntry>
+        </property>
+        <property name="cnpIndex" type="UInt8" container="DynamicArray" arraySize="15">
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>2</containerEntry>
+          <containerEntry>2</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>2</containerEntry>
+          <containerEntry>2</containerEntry>
+          <containerEntry>0</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppGimmickElectricCableLinkSetData" classVersion="0" classID="0xB0" addr="0x317D520" id="0x505030">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TppGimmickElectricCableLinkSetData0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="electricCableData" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePath="/Assets/tpp/pack/location/mafr/pack_small/130/mafr_130_134.fpk" archivePath="/Assets/tpp/level/location/mafr/block_small/130/130_134/mafr_130_134_asset.fox2" nameInArchive="cypr_cabl002_vrtn001_gim_i0000|TppSharedGimmick_cypr_cabl002_vrtn001">0x0</containerEntry>
+        </property>
+        <property name="poleData" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePath="/Assets/tpp/level/location/mafr/block_small/130/130_135/mafr_130_135_asset.fox2" nameInArchive="cypr_utpl001_vrtn001_gim_i0000|TppSharedGimmickData_cypr_utpl001_vrtn001">0x0</containerEntry>
+        </property>
+        <property name="electricCable" type="String" container="DynamicArray" arraySize="3">
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0000|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0007|srt_cypr_cabl002_vrtn001</containerEntry>
+          <containerEntry>cypr_cabl002_vrtn001_gim_n0008|srt_cypr_cabl002_vrtn001</containerEntry>
+        </property>
+        <property name="pole" type="String" container="DynamicArray" arraySize="3">
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0002|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0002|srt_cypr_utpl001_vrtn001</containerEntry>
+          <containerEntry>cypr_utpl001_vrtn001_gim_n0002|srt_cypr_utpl001_vrtn001</containerEntry>
+        </property>
+        <property name="cnpIndex" type="UInt8" container="DynamicArray" arraySize="3">
+          <containerEntry>0</containerEntry>
+          <containerEntry>1</containerEntry>
+          <containerEntry>2</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppSharedGimmickData" classVersion="1" classID="0xF0" addr="0x317DDE0" id="0xC619">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>cypr_utpl001_vrtn001_gim_i0000|TppSharedGimmickData_cypr_utpl001_vrtn001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/cyprus/utility_pole/cypr_utpl001/scenes/cypr_utpl001_vrtn001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/cyprus/utility_pole/cypr_utpl001/scenes/cypr_utpl001_vrtn001.geom</containerEntry>
+        </property>
+        <property name="breakedModelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="breakedGeomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="partsFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/parts/environ/object/cyprus/utility_pole/cypr_utpl001/cypr_utpl001_vrtn001.parts</containerEntry>
+        </property>
+        <property name="numDynamicGimmick" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="locaterFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/level/location/mafr/block_small/130/130_135/lba/cypr_utpl001_vrtn001.lba</containerEntry>
+        </property>
+        <property name="flags1" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>284</containerEntry>
+        </property>
+        <property name="flags2" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TppSharedGimmickData" classVersion="1" classID="0xF0" addr="0x317E0F0" id="0xCF4">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>cypr_cabl002_vrtn001_gim_i0000|TppSharedGimmick_cypr_cabl002_vrtn001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/cyprus/cable/cypr_cabl002/scenes/cypr_cabl002_vrtn001_fl.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="breakedModelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="breakedGeomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="partsFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/parts/environ/object/cyprus/cable/cypr_cabl002/cypr_cabl002_vrtn001.parts</containerEntry>
+        </property>
+        <property name="numDynamicGimmick" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>6</containerEntry>
+        </property>
+        <property name="locaterFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/level/location/mafr/block_small/130/130_135/lba/cypr_cabl002_vrtn001_scl.lba</containerEntry>
+        </property>
+        <property name="flags1" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>274</containerEntry>
+        </property>
+        <property name="flags2" type="UInt32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3333500" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock007/scenes/mafr_rock007.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock007/scenes/mafr_rock007.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="6">
+          <containerEntry r11="0.8780967" r12="-0.029308798" r13="0.47758448" r14="0" r21="-0.064938754" r22="0.98158735" r23="0.17963642" r24="0" r31="-0.47405583" r32="-0.1887519" r33="0.86002535" r34="0" r41="-369.83447" r42="-2.557021" r43="341.06012" r44="1"></containerEntry>
+          <containerEntry r11="0.09487761" r12="-0.046263114" r13="-0.9944118" r14="0" r21="0.3587891" r22="0.9333733" r23="-0.009191617" r24="0" r31="0.92858255" r32="-0.35591263" r33="0.10515505" r34="0" r41="-358.5822" r42="-2.872707" r43="306.879" r44="1"></containerEntry>
+          <containerEntry r11="0.98350495" r12="-0.026475552" r13="0.17893319" r14="0" r21="-0.040330213" r22="0.9322306" r23="0.3596102" r24="0" r31="-0.17632787" r32="-0.3608948" r33="0.9157856" r34="0" r41="-356.18063" r42="-2.889581" r43="347.42953" r44="1"></containerEntry>
+          <containerEntry r11="0.3341166" r12="0.09196274" r13="-0.938033" r14="0" r21="0.34358275" r22="0.9148643" r23="0.21207052" r24="0" r31="0.8776753" r32="-0.39314866" r33="0.2740746" r34="0" r41="-344.84488" r42="-2.889581" r43="331.48465" r44="1"></containerEntry>
+          <containerEntry r11="0.88677835" r12="0.3039833" r13="0.34816357" r14="0" r21="-0.41129103" r22="0.8626617" r23="0.29437038" r24="0" r31="-0.2108635" r32="-0.40423802" r33="0.89001566" r34="0" r41="-318.2059" r42="0.512987" r43="321.32642" r44="1"></containerEntry>
+          <containerEntry r11="0.9411642" r12="0.32971847" r13="0.074131966" r14="0" r21="-0.32790816" r22="0.9440331" r23="-0.035743188" r24="0" r31="-0.08176823" r32="0.009331688" r33="0.99660766" r34="0" r41="-365.08215" r42="-3.986504" r43="263.66864" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="6">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3332BD0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0001</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock010/scenes/mafr_rock010.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock010/scenes/mafr_rock010.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="6">
+          <containerEntry r11="0.8787563" r12="-0.2453138" r13="0.4093998" r14="0" r21="0.175971" r22="0.9638941" r23="0.1998555" r24="0" r31="-0.44364542" r32="-0.10358164" r33="0.8901962" r34="0" r41="-382.54776" r42="-3.743611" r43="305.0378" r44="1"></containerEntry>
+          <containerEntry r11="-0.4882557" r12="-0.24531363" r13="0.8375092" r14="0" r21="-0.21514909" r22="0.96389425" r23="0.15690301" r24="0" r31="-0.84576076" r32="-0.10358043" r33="-0.5234059" r34="0" r41="-346.10706" r42="-3.74361" r43="326.78473" r44="1"></containerEntry>
+          <containerEntry r11="-0.4882557" r12="-0.24531363" r13="0.8375092" r14="0" r21="-0.21514909" r22="0.96389425" r23="0.15690301" r24="0" r31="-0.84576076" r32="-0.10358043" r33="-0.5234059" r34="0" r41="-282.7446" r42="-4.845393" r43="294.37585" r44="1"></containerEntry>
+          <containerEntry r11="0.38758114" r12="-0.15829012" r13="-0.90814203" r14="0" r21="-0.07068035" r22="0.9771444" r23="-0.20048195" r24="0" r31="0.91912025" r32="0.14189067" r33="0.36753476" r34="0" r41="-353.12878" r42="-4.317952" r43="318.89648" r44="1"></containerEntry>
+          <containerEntry r11="-0.8235156" r12="-0.0029928896" r13="0.5672762" r14="0" r21="-0.003519255" r22="0.99999374" r23="0.00016692089" r24="0" r31="-0.5672732" r32="-0.0018589327" r33="-0.823521" r34="0" r41="-377.1325" r42="-3.743609" r43="280.9575" r44="1"></containerEntry>
+          <containerEntry r11="-0.92023784" r12="-0.1825909" r13="-0.34614015" r14="0" r21="-0.22918838" r22="0.9683867" r23="0.09848687" r24="0" r31="0.31721467" r32="0.16996333" r33="-0.93299377" r34="0" r41="-307.536" r42="-1.3007" r43="280.00302" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="6">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3332700" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0002</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_grnd001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_grnd001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="16">
+          <containerEntry r11="1" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="-360.6768" r42="-4.001824" r43="375.87637" r44="1"></containerEntry>
+          <containerEntry r11="0.38636076" r12="0" r13="0.92234826" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.92234826" r32="0" r33="0.38636076" r34="0" r41="-321.1941" r42="-3.921532" r43="373.32938" r44="1"></containerEntry>
+          <containerEntry r11="1" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="-313.62024" r42="-3.937682" r43="355.27258" r44="1"></containerEntry>
+          <containerEntry r11="0.9266049" r12="0" r13="0.37603602" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.37603602" r32="0" r33="0.9266049" r34="0" r41="-289.7882" r42="-4.058623" r43="340.86615" r44="1"></containerEntry>
+          <containerEntry r11="-0.99986005" r12="0" r13="-0.016715415" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.016715415" r32="0" r33="-0.99986005" r34="0" r41="-275.1427" r42="-3.881859" r43="342.8521" r44="1"></containerEntry>
+          <containerEntry r11="-0.53219163" r12="0" r13="0.846625" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.846625" r32="0" r33="-0.53219163" r34="0" r41="-270.87494" r42="-3.881859" r43="326.08667" r44="1"></containerEntry>
+          <containerEntry r11="-0.9882374" r12="0" r13="0.15292831" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.15292831" r32="0" r33="-0.9882374" r34="0" r41="-259.43823" r42="-3.881859" r43="324.16812" r44="1"></containerEntry>
+          <containerEntry r11="0.34288806" r12="0" r13="-0.9393764" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.9393764" r32="0" r33="0.34288806" r34="0" r41="-264.94693" r42="-3.881859" r43="358.6505" r44="1"></containerEntry>
+          <containerEntry r11="-0.51804173" r12="0" r13="-0.85535485" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.85535485" r32="0" r33="-0.51804173" r34="0" r41="-265.75504" r42="-3.881859" r43="348.65186" r44="1"></containerEntry>
+          <containerEntry r11="0.37435806" r12="0" r13="-0.9272835" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.9272835" r32="0" r33="0.37435806" r34="0" r41="-250.46132" r42="-3.881859" r43="389.08115" r44="1"></containerEntry>
+          <containerEntry r11="-0.7248039" r12="0" r13="-0.68895316" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.68895316" r32="0" r33="-0.7248039" r34="0" r41="-262.9517" r42="-3.881859" r43="348.4456" r44="1"></containerEntry>
+          <containerEntry r11="-0.36208844" r12="0" r13="0.93214095" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.93214095" r32="0" r33="-0.36208844" r34="0" r41="-274.01974" r42="-3.873793" r43="362.10776" r44="1"></containerEntry>
+          <containerEntry r11="0.5922468" r12="0" r13="0.8057554" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.8057554" r32="0" r33="0.5922468" r34="0" r41="-277.7683" r42="-3.873793" r43="359.11142" r44="1"></containerEntry>
+          <containerEntry r11="0.7009417" r12="0" r13="-0.71321875" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.71321875" r32="0" r33="0.7009417" r34="0" r41="-258.4384" r42="-3.881859" r43="336.02142" r44="1"></containerEntry>
+          <containerEntry r11="1" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="-301.45972" r42="-3.929607" r43="350.93842" r44="1"></containerEntry>
+          <containerEntry r11="0.4508605" r12="0" r13="-0.89259446" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.89259446" r32="0" r33="0.4508605" r34="0" r41="-302.57077" r42="-3.929607" r43="382.59436" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="16">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x317FDD0" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0003</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock011/scenes/mafr_rock011.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock011/scenes/mafr_rock011.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="28">
+          <containerEntry r11="-0.82235664" r12="0.15844509" r13="0.5464541" r14="0" r21="-0.10335923" r22="0.902858" r23="-0.41732973" r24="0" r31="-0.5594949" r32="-0.3996759" r33="-0.72609514" r34="0" r41="-357.71442" r42="-6.461385" r43="350.77362" r44="1"></containerEntry>
+          <containerEntry r11="-0.98735636" r12="0.08063588" r13="0.1364522" r14="0" r21="3.2488257e-05" r22="0.86101574" r23="-0.50857806" r24="0" r31="-0.15849715" r32="-0.5021444" r33="-0.8501317" r34="0" r41="-366.9361" r42="-5.6837597" r43="354.06796" r44="1"></containerEntry>
+          <containerEntry r11="0.67738473" r12="0.0879488" r13="-0.73035043" r14="0" r21="0.47946844" r22="0.70018256" r23="0.5290117" r24="0" r31="0.55790436" r32="-0.7085248" r33="0.43212444" r34="0" r41="-377.54547" r42="-5.5032063" r43="358.0254" r44="1"></containerEntry>
+          <containerEntry r11="-0.6128751" r12="0.08063702" r13="-0.78605086" r14="0" r21="0.44012636" r22="0.8610158" r23="-0.25483435" r24="0" r31="0.65625304" r32="-0.5021433" r33="-0.56318563" r34="0" r41="-338.02197" r42="-5.0034246" r43="345.22296" r44="1"></containerEntry>
+          <containerEntry r11="-0.9175367" r12="0.17058943" r13="0.35918555" r14="0" r21="0.008571319" r22="0.91157573" r23="-0.41104278" r24="0" r31="-0.3975448" r32="-0.37406883" r33="-0.8378671" r34="0" r41="-328.19202" r42="-6.671625" r43="351.0744" r44="1"></containerEntry>
+          <containerEntry r11="0.9491241" r12="0.058705516" r13="0.3093784" r14="0" r21="-0.21455592" r22="0.83968693" r23="0.4988902" r24="0" r31="-0.23049334" r32="-0.5398877" r33="0.80956274" r34="0" r41="-363.15216" r42="-5.9614954" r43="337.72665" r44="1"></containerEntry>
+          <containerEntry r11="-0.032150887" r12="0.09497464" r13="0.994958" r14="0" r21="-0.39132947" r22="0.9148047" r23="-0.0999687" r24="0" r31="-0.9196876" r32="-0.39257056" r33="0.0077545485" r34="0" r41="-381.90027" r42="-5.3695216" r43="340.41226" r44="1"></containerEntry>
+          <containerEntry r11="0.39527464" r12="0.033982463" r13="0.9179286" r14="0" r21="-0.31693918" r22="0.9429917" r23="0.10156864" r24="0" r31="-0.86214834" r32="-0.33107543" r33="0.38351145" r34="0" r41="-383.49774" r42="-5.662523" r43="330.52585" r44="1"></containerEntry>
+          <containerEntry r11="-0.2625346" r12="0.16563588" r13="0.9505939" r14="0" r21="-0.29197058" r22="0.92533845" r23="-0.24187163" r24="0" r31="-0.9196846" r32="-0.34104583" r33="-0.19457263" r34="0" r41="-385.94342" r42="-5.633099" r43="317.95407" r44="1"></containerEntry>
+          <containerEntry r11="-0.28902242" r12="0.20761752" r13="-0.9345315" r14="0" r21="0.3320968" r22="0.93732333" r23="0.10552985" r24="0" r31="0.897869" r32="-0.27985483" r33="-0.33985692" r34="0" r41="-350.1008" r42="-5.072761" r43="314.31342" r44="1"></containerEntry>
+          <containerEntry r11="-0.55666155" r12="0.09167587" r13="-0.82566196" r14="0" r21="0.3654781" r22="0.91956645" r23="-0.14430305" r24="0" r31="0.7460219" r32="-0.3820893" r33="-0.5453928" r34="0" r41="-354.73645" r42="-4.224367" r43="305.29245" r44="1"></containerEntry>
+          <containerEntry r11="0.6225026" r12="-0.058218542" r13="-0.78044504" r14="0" r21="0.37177947" r22="0.8995207" r23="0.22943917" r24="0" r31="0.68866885" r32="-0.43298012" r33="0.5815986" r34="0" r41="-354.8751" r42="-4.302871" r43="289.32944" r44="1"></containerEntry>
+          <containerEntry r11="0.7790376" r12="0.008375187" r13="0.62691647" r14="0" r21="-0.24253158" r22="0.9260949" r23="0.2890097" r24="0" r31="-0.57816356" r32="-0.3771965" r33="0.723494" r34="0" r41="-338.4487" r42="-4.3499937" r43="295.24854" r44="1"></containerEntry>
+          <containerEntry r11="-0.7092208" r12="0.06458796" r13="0.7020138" r14="0" r21="-0.23418564" r22="0.9176624" r23="-0.32101837" r24="0" r31="-0.66494626" r32="-0.392075" r33="-0.63570035" r34="0" r41="-390.19916" r42="-3.725029" r43="293.3059" r44="1"></containerEntry>
+          <containerEntry r11="0.38986394" r12="0.21888822" r13="0.8944738" r14="0" r21="-0.44600323" r22="0.89469457" r23="-0.024548143" r24="0" r31="-0.80565494" r32="-0.3893684" r33="0.4464345" r34="0" r41="-384.80914" r42="-4.668023" r43="283.75067" r44="1"></containerEntry>
+          <containerEntry r11="0.05265847" r12="0.14303385" r13="-0.9883133" r14="0" r21="0.34570765" r22="0.9258807" r23="0.1524182" r24="0" r31="0.93686116" r32="-0.3496935" r33="-0.0006924251" r34="0" r41="-324.44043" r42="-3.9159966" r43="320.3491" r44="1"></containerEntry>
+          <containerEntry r11="-0.9411443" r12="0.07097536" r13="-0.3304548" r14="0" r21="0.17467462" r22="0.9391547" r23="-0.29576552" r24="0" r31="0.2893564" r32="-0.33608034" r33="-0.89627856" r34="0" r41="-318.0988" r42="-4.102329" r43="328.48877" r44="1"></containerEntry>
+          <containerEntry r11="0.5997236" r12="0.0359139" r13="-0.7993985" r14="0" r21="0.6320088" r22="0.5914784" r23="0.5007178" r24="0" r31="0.49080977" r32="-0.8055191" r33="0.33202562" r34="0" r41="-298.41602" r42="-4.1481686" r43="286.86826" r44="1"></containerEntry>
+          <containerEntry r11="-0.93095934" r12="0.037506074" r13="-0.3631678" r14="0" r21="0.14969474" r22="0.9464682" r23="-0.28598833" r24="0" r31="0.33300075" r32="-0.32060924" r33="-0.88673854" r34="0" r41="-313.39294" r42="-5.068646" r43="291.22888" r44="1"></containerEntry>
+          <containerEntry r11="-0.93752944" r12="0.046119675" r13="0.34481168" r14="0" r21="-0.061410367" r22="0.9536674" r23="-0.29452857" r24="0" r31="-0.34241956" r32="-0.2973055" r33="-0.89125985" r34="0" r41="-304.4064" r42="-5.5488853" r43="293.2087" r44="1"></containerEntry>
+          <containerEntry r11="0.36005357" r12="0.03309808" r13="-0.93234116" r14="0" r21="0.3090253" r22="0.9387209" r23="0.15266466" r24="0" r31="0.88026106" r32="-0.34308445" r33="0.32776162" r34="0" r41="-321.76" r42="-5.5570292" r43="263.16132" r44="1"></containerEntry>
+          <containerEntry r11="-0.3665783" r12="0.015266908" r13="-0.9302548" r14="0" r21="0.39036864" r22="0.9101212" r23="-0.13889356" r24="0" r31="0.8445249" r32="-0.41405877" r33="-0.33959067" r34="0" r41="-325.16373" r42="-6.049352" r43="271.8976" r44="1"></containerEntry>
+          <containerEntry r11="-0.5618498" r12="0.08201622" r13="0.8231578" r14="0" r21="-0.24276318" r22="0.9349132" r23="-0.25885007" r24="0" r31="-0.7908118" r32="-0.3452675" r33="-0.5053708" r34="0" r41="-303.2363" r42="-4.729577" r43="327.3296" r44="1"></containerEntry>
+          <containerEntry r11="-0.4069296" r12="0.025470398" r13="-0.91310006" r14="0" r21="0.7266449" r22="0.6147616" r23="-0.30668542" r24="0" r31="0.55352825" r32="-0.7882988" r33="-0.2686733" r34="0" r41="-307.07425" r42="-3.265513" r43="318.9204" r44="1"></containerEntry>
+          <containerEntry r11="-0.96932244" r12="0.13524084" r13="0.20520814" r14="0" r21="-0.00911767" r22="0.8146134" r23="-0.57993233" r24="0" r31="-0.24559611" r32="-0.5640141" r33="-0.78839046" r34="0" r41="-276.7826" r42="-5.574428" r43="274.48572" r44="1"></containerEntry>
+          <containerEntry r11="-0.25382808" r12="0.07906138" r13="-0.96400464" r14="0" r21="0.56451404" r22="0.8214119" r23="-0.08127451" r24="0" r31="0.7854196" r32="-0.5648259" r33="-0.25312853" r34="0" r41="-287.49503" r42="-6.6414747" r43="306.27402" r44="1"></containerEntry>
+          <containerEntry r11="-0.931554" r12="0.03367572" r13="0.36201313" r14="0" r21="-0.19041118" r22="0.8030433" r23="-0.5646805" r24="0" r31="-0.30972838" r32="-0.59496516" r33="-0.7416657" r34="0" r41="-270.29465" r42="-6.15309" r43="305.97708" r44="1"></containerEntry>
+          <containerEntry r11="0.83752596" r12="0.15372935" r13="0.5243164" r14="0" r21="-0.30713844" r22="0.9261049" r23="0.2190795" r24="0" r31="-0.45189348" r32="-0.34452277" r33="0.82285386" r34="0" r41="-319.39307" r42="-6.433702" r43="299.78363" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="28">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3332620" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0004</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_rock001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003_rock001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="2">
+          <containerEntry r11="1" r12="0" r13="0" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0" r32="0" r33="1" r34="0" r41="-305.4835" r42="-6.771861" r43="365.0095" r44="1"></containerEntry>
+          <containerEntry r11="0.7731908" r12="0" r13="-0.63417345" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.63417345" r32="0" r33="0.7731908" r34="0" r41="-306.89645" r42="-7.17188" r43="339.80035" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="2">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3332690" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0005</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/cliff/mafr_clff004/scenes/mafr_clff004_rock001.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/cliff/mafr_clff004/scenes/mafr_clff004_rock001.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="5">
+          <containerEntry r11="0.98944396" r12="-0.14490841" r13="-0.0014843848" r14="0" r21="0.14490841" r22="0.9892352" r23="0.020376934" r24="0" r31="-0.0014843848" r32="-0.020376934" r33="0.99979126" r34="0" r41="-259.13647" r42="-3.423931" r43="330.98618" r44="1"></containerEntry>
+          <containerEntry r11="0.98944396" r12="-0.14490841" r13="-0.0014843848" r14="0" r21="0.14490841" r22="0.9892352" r23="0.020376934" r24="0" r31="-0.0014843848" r32="-0.020376934" r33="0.99979126" r34="0" r41="-273.65875" r42="-3.269544" r43="337.4783" r44="1"></containerEntry>
+          <containerEntry r11="-0.9981596" r12="0.06057902" r13="-0.00076260796" r14="0" r21="0.06055093" r22="0.99795693" r23="0.02038539" r24="0" r31="0.001995979" r32="0.020301769" r33="-0.9997884" r34="0" r41="-298.0538" r42="-3.446458" r43="353.42236" r44="1"></containerEntry>
+          <containerEntry r11="0.98944396" r12="-0.14490841" r13="-0.0014843848" r14="0" r21="0.14490841" r22="0.9892352" r23="0.020376934" r24="0" r31="-0.0014843848" r32="-0.020376934" r33="0.99979126" r34="0" r41="-284.81085" r42="-3.136887" r43="369.54736" r44="1"></containerEntry>
+          <containerEntry r11="-0.07087203" r12="0.03091733" r13="-0.99700546" r14="0" r21="0.003731491" r22="0.9995208" r23="0.030730054" r24="0" r31="0.99747777" r32="-0.0015423959" r33="-0.07095343" r34="0" r41="-261.3063" r42="-3.466329" r43="360.99133" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="5">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3332770" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0006</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock002/scenes/mafr_rock002.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/rock/mafr_rock002/scenes/mafr_rock002.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="7">
+          <containerEntry r11="0.97469157" r12="0" r13="-0.22355403" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.22355403" r32="0" r33="0.97469157" r34="0" r41="-265.38205" r42="-3.741729" r43="335.95682" r44="1"></containerEntry>
+          <containerEntry r11="0.7767624" r12="0" r13="0.6297939" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.6297939" r32="0" r33="0.7767624" r34="0" r41="-279.3916" r42="-2.969657" r43="376.48334" r44="1"></containerEntry>
+          <containerEntry r11="0.22196412" r12="0" r13="0.97505426" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.97505426" r32="0" r33="0.22196412" r34="0" r41="-283.893" r42="-3.857723" r43="361.88702" r44="1"></containerEntry>
+          <containerEntry r11="0.67169225" r12="0.0075107175" r13="-0.74079216" r14="0" r21="0.008311551" r22="0.99980927" r23="0.017673092" r24="0" r31="0.7407836" r32="-0.018028012" r33="0.67150176" r34="0" r41="-379.39" r42="-3.88413" r43="321.81848" r44="1"></containerEntry>
+          <containerEntry r11="0.60577995" r12="-0.014529806" r13="0.7954992" r14="0" r21="-0.08366151" r22="0.99312717" r23="0.0818484" r24="0" r31="-0.79122114" r32="-0.11613481" r33="0.6004009" r34="0" r41="-346.93964" r42="-0.037723" r43="308.84857" r44="1"></containerEntry>
+          <containerEntry r11="0.12914734" r12="0.10181255" r13="-0.9863837" r14="0" r21="-0.040656142" r22="0.9944225" r23="0.097319104" r24="0" r31="0.99079037" r32="0.027534232" r33="0.13256633" r34="0" r41="-290.6677" r42="-4.023456" r43="324.00812" r44="1"></containerEntry>
+          <containerEntry r11="-0.73597306" r12="-0.014529813" r13="-0.6768528" r14="0" r21="0.06800039" r22="0.99312717" r23="-0.09525918" r24="0" r31="0.67358506" r32="-0.11613462" r33="-0.7299268" r34="0" r41="-305.3605" r42="-0.308374" r43="279.47955" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="7">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3332930" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0007</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003.fmdl</containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/middle_africa/mud/mafr_mudd003/scenes/mafr_mudd003.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="10">
+          <containerEntry r11="0.27905077" r12="0.045274764" r13="0.9592079" r14="0" r21="-0.009508165" r22="0.99896926" r23="-0.04438538" r24="0" r31="-0.9602287" r32="0.003265433" r33="0.27919364" r34="0" r41="-378.17557" r42="-3.767445" r43="274.14862" r44="1"></containerEntry>
+          <containerEntry r11="-0.6287029" r12="-0.040489465" r13="-0.7765894" r14="0" r21="-0.00950879" r22="0.9989692" r23="-0.04438573" r24="0" r31="0.7775861" r32="-0.020521052" r33="-0.6284398" r34="0" r41="-373.94952" r42="-3.752322" r43="271.27225" r44="1"></containerEntry>
+          <containerEntry r11="-0.58056736" r12="0" r13="-0.8142123" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.8142123" r32="0" r33="-0.58056736" r34="0" r41="-288.9775" r42="-4.026978" r43="367.13635" r44="1"></containerEntry>
+          <containerEntry r11="-0.7739444" r12="0" r13="0.6332515" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.6332515" r32="0" r33="-0.7739444" r34="0" r41="-286.9471" r42="-4.026978" r43="353.9253" r44="1"></containerEntry>
+          <containerEntry r11="0.6939502" r12="0" r13="0.7200227" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.7200227" r32="0" r33="0.6939502" r34="0" r41="-302.90186" r42="-4.026978" r43="382.2066" r44="1"></containerEntry>
+          <containerEntry r11="0.6705375" r12="0" r13="-0.74187535" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.74187535" r32="0" r33="0.6705375" r34="0" r41="-282.60303" r42="-4.026978" r43="353.73154" r44="1"></containerEntry>
+          <containerEntry r11="-0.54066885" r12="0" r13="-0.84123665" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.84123665" r32="0" r33="-0.54066885" r34="0" r41="-260.5724" r42="-4.026978" r43="378.5462" r44="1"></containerEntry>
+          <containerEntry r11="-0.53735304" r12="0" r13="-0.8433557" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.8433557" r32="0" r33="-0.53735304" r34="0" r41="-285.12906" r42="-4.026978" r43="379.00034" r44="1"></containerEntry>
+          <containerEntry r11="-0.58056736" r12="0" r13="-0.8142123" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.8142123" r32="0" r33="-0.58056736" r34="0" r41="-307.30957" r42="-4.026978" r43="371.06052" r44="1"></containerEntry>
+          <containerEntry r11="0.57754856" r12="0" r13="-0.81635576" r14="0" r21="0" r22="1" r23="0" r24="0" r31="0.81635576" r32="0" r33="0.57754856" r34="0" r41="-295.70456" r42="-4.026978" r43="352.1977" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="10">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="StaticModelArray" classVersion="4" classID="0xD0" addr="0x3332F50" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>StaticModelArray0008</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="modelFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+        <property name="geomFile" type="FilePtr" container="StaticArray" arraySize="1">
+          <containerEntry>/Assets/tpp/environ/object/cyprus/utility_pole/cypr_utpl001/scenes/cypr_utpl001_vrtn001_pc.geom</containerEntry>
+        </property>
+        <property name="isVisibleGeom" type="Bool" container="StaticArray" arraySize="1">
+          <containerEntry>false</containerEntry>
+        </property>
+        <property name="lodFarSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodNearSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="lodPolygonSize" type="Float" container="StaticArray" arraySize="1">
+          <containerEntry>-1</containerEntry>
+        </property>
+        <property name="drawRejectionLevel" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>8</containerEntry>
+        </property>
+        <property name="drawMode" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>0</containerEntry>
+        </property>
+        <property name="rejectFarRangeShadowCast" type="Int32" container="StaticArray" arraySize="1">
+          <containerEntry>2</containerEntry>
+        </property>
+        <property name="parentLocator" type="EntityLink" container="StaticArray" arraySize="1">
+          <containerEntry packagePathHash="0xB8A0BF169F98" archivePathHash="0xB8A0BF169F98" nameInArchiveHash="0xB8A0BF169F98">0x0</containerEntry>
+        </property>
+        <property name="transforms" type="Matrix4" container="DynamicArray" arraySize="3">
+          <containerEntry r11="-0.92226624" r12="0" r13="0.3865497" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.3865497" r32="0" r33="-0.92226624" r34="0" r41="-343.79364" r42="-2.32653" r43="339.16052" r44="1"></containerEntry>
+          <containerEntry r11="-0.92226624" r12="0" r13="0.3865497" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.3865497" r32="0" r33="-0.92226624" r34="0" r41="-367.327" r42="-2.39993" r43="304.69864" r44="1"></containerEntry>
+          <containerEntry r11="-0.99970007" r12="0" r13="0.024376173" r14="0" r21="0" r22="1" r23="0" r24="0" r31="-0.024376173" r32="0" r33="-0.99970007" r34="0" r41="-354.72208" r42="-2.529705" r43="258.94092" r44="1"></containerEntry>
+        </property>
+        <property name="colors" type="UInt32" container="DynamicArray" arraySize="3">
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+          <containerEntry>4294967295</containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+    <entity class="TexturePackLoadConditioner" classVersion="0" classID="0x48" addr="0x3334680" id="0x0">
+      <staticProperties>
+        <property name="name" type="String" container="StaticArray" arraySize="1">
+          <containerEntry>TexturePackLoadConditioner0000</containerEntry>
+        </property>
+        <property name="dataSet" type="EntityHandle" container="StaticArray" arraySize="1">
+          <containerEntry>0x3334E60</containerEntry>
+        </property>
+        <property name="texturePackPath" type="Path" container="StaticArray" arraySize="1">
+          <containerEntry hash="0xB8A0BF169F98"></containerEntry>
+        </property>
+      </staticProperties>
+      <dynamicProperties></dynamicProperties>
+    </entity>
+  </entities>
+</fox>
