@@ -1,7 +1,7 @@
 tpp-tracking
 ===
 
-Lua / .fox2 from `master/00`, all public manifest changes recorded by SteamDB. Formatted with [StyLua 2.1.0](https://github.com/JohnnyMorganz/StyLua).
+Lua / .fox2 from main game, all public manifest changes recorded by SteamDB. Formatted with [StyLua 2.1.0](https://github.com/JohnnyMorganz/StyLua).
 
 Unpacked with [datfpk](https://github.com/unknown321/datfpk).
 
