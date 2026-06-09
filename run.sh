@@ -1,11 +1,10 @@
-DOWNLOADER=/tmp/DepotDownloader
+DOWNLOADER=DepotDownloader
 USERNAME=
 DICT=/media/ssd/dev/mgs/datfpk/dictionary.txt
 
 APPID=287700
 DEPOT=287701
-IMAGE=johnnymorganz/stylua:2.1.0
-# IMAGE=stylua:2.1.0 # local build
+IMAGE=johnnymorganz/stylua:2.5.2
 
 # https://steamdb.info/depot/287701/history/
 manifests=( 
@@ -40,6 +39,7 @@ manifests=(
     "1345014682290952729_2019-10-29T06:07:08+00:00" \
     "5134963791992431862_2021-02-09T06:03:59+00:00" \
     "2518831260221836800_2021-03-23T07:29:37+00:00" \
+    "8183974873990090295_2026-06-09T06:18:46+00:00" \
 #    ===
 #    ["7298946272394009999_2015-09-08T09:43:50+00:00"
 #    ["7044904432373616336_2015-09-07T02:11:09+00:00"
@@ -47,7 +47,7 @@ manifests=(
 #    ["8211872047025774467_2015-09-02T05:14:15+00:00"
 #    ["1169535579591939527_2015-09-01T04:01:47+00:00"
  )
-prefix=depots/287701/6239679/
+prefix=depots/287701/23407568/
 files=( master/0/00.dat master/1/MGSVTUPDATEV0110/0/00.dat master/1/MGSVTUPDATEV0110/0/01.dat master/0/01.dat )
 
 
